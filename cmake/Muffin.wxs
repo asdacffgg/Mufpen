@@ -1,10 +1,10 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
   <Package
-    Name="Muffin"
-    Manufacturer="Muffin"
+    Name="Mufpen"
+    Manufacturer="Mufpen"
     Version="$(var.MuffinVersion)"
-    UpgradeCode="b5e2b3a0-1234-4d5e-8f9a-1b2c3d4e5f6a"
+    UpgradeCode="af6d833d-99d8-4038-a848-a463caee0fea"
     Language="1033"
     Compressed="yes">
 
@@ -13,7 +13,7 @@
     <!-- Remove the old product inside the MSI transaction. The default
          afterInstallValidate schedule cannot restore it if the update fails. -->
     <MajorUpgrade Schedule="afterInstallInitialize" MigrateFeatures="no"
-                  DowngradeErrorMessage="A newer version of Muffin is already installed." />
+                  DowngradeErrorMessage="A newer version of Mufpen is already installed." />
 
     <Property Id="MUFFINCONTEXTMENUSAVED">
       <RegistrySearch Id="SavedContextMenu" Root="HKCU" Key="Software\Muffin\Muffin\integration"
@@ -55,7 +55,7 @@
     <ui:WixUI Id="WixUI_FeatureTree" />
 
     <StandardDirectory Id="ProgramFiles6432Folder">
-      <Directory Id="INSTALLFOLDER" Name="Muffin">
+      <Directory Id="INSTALLFOLDER" Name="Mufpen">
         <Directory Id="PlatformsDir" Name="platforms" />
         <Directory Id="StylesDir" Name="styles" />
         <Directory Id="ImageformatsDir" Name="imageformats" />
@@ -84,7 +84,7 @@
       <ComponentRef Id="IntegrationChoices" />
 
       <Feature Id="ShellContextMenu" Title="Explorer context menu" Level="1"
-               Description="Adds &quot;Open with Muffin&quot; to the right-click menu for Markdown files, folders, and folder backgrounds.">
+               Description="Adds &quot;Open with Mufpen&quot; to the right-click menu for Markdown files, folders, and folder backgrounds.">
         <Level Value="2" Condition="MUFFINCONTEXTMENUSAVED = &quot;#0&quot; OR (MUFFINCONTEXTMENUSAVED &lt;&gt; &quot;#1&quot; AND (WIX_UPGRADE_DETECTED OR Installed OR MUFFINCONTEXTMENUFOUND OR MUFFINOPENWITHFOUND) AND NOT MUFFINCONTEXTMENUFOUND)" />
         <ComponentGroupRef Id="MuffinContextMenu" />
       </Feature>
@@ -98,10 +98,10 @@
 
     <!-- Start Menu shortcut -->
     <StandardDirectory Id="ProgramMenuFolder">
-      <Directory Id="ApplicationProgramsFolder" Name="Muffin">
+      <Directory Id="ApplicationProgramsFolder" Name="Mufpen">
         <Component Id="ApplicationShortcut" Guid="c1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c">
           <Shortcut Id="ApplicationStartMenuShortcut"
-            Name="Muffin"
+            Name="Mufpen"
             Target="[INSTALLFOLDER]Muffin.exe"
             WorkingDirectory="INSTALLFOLDER" />
           <RemoveFolder Id="RemoveApplicationProgramsFolder"
@@ -258,43 +258,43 @@
   <Fragment>
     <ComponentGroup Id="MuffinContextMenu" Directory="TARGETDIR">
       <Component Id="CtxFile_md" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5001">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; &quot;%1&quot;" />
       </Component>
       <Component Id="CtxFile_markdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5002">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; &quot;%1&quot;" />
       </Component>
       <Component Id="CtxFile_mdx" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5003">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; &quot;%1&quot;" />
       </Component>
       <Component Id="CtxFile_mkd" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5004">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; &quot;%1&quot;" />
       </Component>
       <Component Id="CtxFile_mdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5005">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; &quot;%1&quot;" />
       </Component>
       <Component Id="CtxDirectory" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5006">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; --folder &quot;%1&quot;" />
       </Component>
       <Component Id="CtxDirectoryBackground" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5007">
-        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Muffin" Type="string" Value="Open with Muffin" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Muffin" Type="string" Value="Open with Mufpen" KeyPath="yes" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Muffin" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Muffin.exe,-1001" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Muffin\Icon" Type="string" Value="[INSTALLFOLDER]Muffin.exe,0" />
         <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Muffin\command" Type="string" Value="&quot;[INSTALLFOLDER]Muffin.exe&quot; --folder &quot;%V&quot;" />

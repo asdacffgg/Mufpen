@@ -52,12 +52,12 @@ namespace Muffin.Setup
 
         protected override void Run()
         {
-            Engine.Log(LogLevel.Standard, "Muffin BA starting");
+            Engine.Log(LogLevel.Standard, "Mufpen BA starting");
             AppDomain.CurrentDomain.UnhandledException += (s, e) =>
             {
                 try
                 {
-                    Engine.Log(LogLevel.Standard, "Muffin BA unhandled exception: " + e.ExceptionObject);
+                    Engine.Log(LogLevel.Standard, "Mufpen BA unhandled exception: " + e.ExceptionObject);
                 }
                 catch
                 {
@@ -78,7 +78,7 @@ namespace Muffin.Setup
                 // Quiet mode: Burn still needs a valid parent HWND (UAC
                 // prompts, MSI internal UI). A message-only window stays
                 // invisible while providing one.
-                var parameters = new System.Windows.Interop.HwndSourceParameters("MuffinBAHidden")
+                var parameters = new System.Windows.Interop.HwndSourceParameters("MufpenBAHidden")
                 {
                     ParentWindow = new IntPtr(-3),  // HWND_MESSAGE
                 };
@@ -91,7 +91,7 @@ namespace Muffin.Setup
                 _update = UpdateHandoff.FromCommand(_command);
                 if (_update != null)
                 {
-                    Engine.Log(LogLevel.Standard, "Muffin update handoff: waiting for editor approval and exit");
+                    Engine.Log(LogLevel.Standard, "Mufpen update handoff: waiting for editor approval and exit");
                     // Do not block the BA dispatcher: it must paint progress
                     // while the editor finishes its save-and-exit workflow.
                     System.Threading.ThreadPool.QueueUserWorkItem(_ =>
@@ -108,12 +108,12 @@ namespace Muffin.Setup
                         {
                             if (ready)
                             {
-                                Engine.Log(LogLevel.Standard, "Muffin update handoff: editor exited; starting detection");
+                                Engine.Log(LogLevel.Standard, "Mufpen update handoff: editor exited; starting detection");
                                 Engine.Detect();
                             }
                             else
                             {
-                                Engine.Log(LogLevel.Standard, "Muffin update handoff: canceled; no installation started");
+                                Engine.Log(LogLevel.Standard, "Mufpen update handoff: canceled; no installation started");
                                 _exitCode = 1602;
                                 RequestShutdown();
                             }
@@ -140,7 +140,7 @@ namespace Muffin.Setup
                 try { _update.MarkFinished(); }
                 catch (Exception error) { Engine.Log(LogLevel.Error, "Could not mark update completion: " + error.GetType().Name); }
                 try { _update.Relaunch(_exitCode); }
-                catch (Exception error) { Engine.Log(LogLevel.Error, "Could not restart Muffin: " + error.GetType().Name); }
+                catch (Exception error) { Engine.Log(LogLevel.Error, "Could not restart Mufpen: " + error.GetType().Name); }
                 _update.Dispose();
             }
             Engine.Quit(_exitCode);
@@ -149,7 +149,7 @@ namespace Muffin.Setup
         /// <summary>Close the UI (if any) and let Run() return the stored exit code.</summary>
         public void RequestShutdown()
         {
-            Engine.Log(LogLevel.Standard, "Muffin BA request shutdown");
+            Engine.Log(LogLevel.Standard, "Mufpen BA request shutdown");
             if (_window != null)
             {
                 _window.Dispatcher.BeginInvoke(new Action(_window.FinishAndClose));
@@ -230,7 +230,7 @@ namespace Muffin.Setup
 
         protected override void OnDetectRelatedMsiPackage(DetectRelatedMsiPackageEventArgs e)
         {
-            if (e.PackageId == "MuffinMsi")
+            if (e.PackageId == "MufpenMsi")
             {
                 OnUi(() => _model.MsiInstalled = true);
             }
@@ -238,7 +238,7 @@ namespace Muffin.Setup
 
         protected override void OnDetectPackageComplete(DetectPackageCompleteEventArgs e)
         {
-            if (e.PackageId == "MuffinMsi" && e.State == PackageState.Present)
+            if (e.PackageId == "MufpenMsi" && e.State == PackageState.Present)
             {
                 OnUi(() => _model.MsiInstalled = true);
             }
@@ -268,7 +268,7 @@ namespace Muffin.Setup
         protected override void OnDetectComplete(DetectCompleteEventArgs e)
         {
             Engine.Log(LogLevel.Standard, string.Format(
-                "Muffin BA detect complete: display={0} action={1} showUi={2}",
+                "Mufpen BA detect complete: display={0} action={1} showUi={2}",
                 _command.Display, _command.Action, ShowUi));
             if (_cancelRequested)
             {
@@ -320,7 +320,7 @@ namespace Muffin.Setup
 
         protected override void OnApplyBegin(ApplyBeginEventArgs e)
         {
-            Engine.Log(LogLevel.Standard, "Muffin BA on apply begin");
+            Engine.Log(LogLevel.Standard, "Mufpen BA on apply begin");
             OnUi(() => _model.OnApplyBegin());
         }
 
@@ -371,11 +371,11 @@ namespace Muffin.Setup
         protected override void OnApplyComplete(ApplyCompleteEventArgs e)
         {
             Engine.Log(LogLevel.Standard, string.Format(
-                "Muffin BA on apply complete: status=0x{0:X8} thread={1}",
+                "Mufpen BA on apply complete: status=0x{0:X8} thread={1}",
                 (uint)e.Status, System.Threading.Thread.CurrentThread.ManagedThreadId));
             _exitCode = e.Status;
             OnUi(() => _model.OnApplyComplete(e.Status));
-            Engine.Log(LogLevel.Standard, "Muffin BA apply complete handled");
+            Engine.Log(LogLevel.Standard, "Mufpen BA apply complete handled");
         }
 
         protected override void OnShutdown(ShutdownEventArgs e)
@@ -392,7 +392,7 @@ namespace Muffin.Setup
             if (e.OverallPercentage - _lastLoggedPercent >= 25 || e.OverallPercentage >= 100)
             {
                 _lastLoggedPercent = e.OverallPercentage;
-                Engine.Log(LogLevel.Standard, "Muffin BA progress " + e.OverallPercentage + "%");
+                Engine.Log(LogLevel.Standard, "Mufpen BA progress " + e.OverallPercentage + "%");
             }
             OnUi(() => _model.OnProgress(e.OverallPercentage));
         }

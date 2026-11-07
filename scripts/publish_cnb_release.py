@@ -21,7 +21,7 @@ REPO = "jstzwj/Muffin"
 API = f"https://api.cnb.cool/{REPO}/-/releases"
 WEB = f"https://cnb.cool/{REPO}/-/releases"
 GITHUB = f"https://github.com/{REPO}/releases"
-CATALOG = "muffin-update.json"
+CATALOG = "mufpen-update.json"
 FEED_URL = f"{WEB}/download/updates/{CATALOG}"
 SUFFIXES = (".7z", ".tar.gz", ".msi", ".exe", ".dmg", ".update.json")
 

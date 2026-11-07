@@ -35,7 +35,7 @@ namespace Muffin.Setup
             var parsed = command.ParseCommandLine();
             foreach (var variable in parsed.Variables)
             {
-                if (!string.Equals(variable.Key, "MuffinUpdate", StringComparison.OrdinalIgnoreCase)) continue;
+                if (!string.Equals(variable.Key, "MufpenUpdate", StringComparison.OrdinalIgnoreCase)) continue;
                 if (token != null || string.IsNullOrEmpty(variable.Value))
                     throw new ArgumentException("Missing or duplicate update handoff.");
                 token = variable.Value;
@@ -45,7 +45,7 @@ namespace Muffin.Setup
                 var name = argument.TrimStart('-', '/');
                 var separator = name.IndexOf('=');
                 if (separator >= 0) name = name.Substring(0, separator);
-                if (string.Equals(name, "MuffinUpdate", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(name, "MufpenUpdate", StringComparison.OrdinalIgnoreCase))
                     throw new ArgumentException("Invalid update handoff assignment.");
             }
             if (token == null) return null; // Ordinary interactive/quiet installation.
@@ -70,7 +70,7 @@ namespace Muffin.Setup
                 throw new ArgumentException("Invalid update handoff.");
             var application = Path.GetFullPath(Encoding.UTF8.GetString(Convert.FromBase64String(parts[1])));
             var ready = Path.GetFullPath(Encoding.UTF8.GetString(Convert.FromBase64String(parts[2])));
-            if (!string.Equals(Path.GetFileName(application), "Muffin.exe", StringComparison.OrdinalIgnoreCase) ||
+            if (!string.Equals(Path.GetFileName(application), "Mufpen.exe", StringComparison.OrdinalIgnoreCase) ||
                 !IsReadyName(Path.GetFileName(ready)) || !Directory.Exists(Path.GetDirectoryName(ready)))
                 throw new ArgumentException("Invalid update handoff paths.");
             var parent = Process.GetProcessById(pid);
@@ -139,7 +139,7 @@ namespace Muffin.Setup
                 return false;
             // Refuse to update a copy that is still in use by another process.
             // Neither the editor nor the installer force-terminates writers.
-            foreach (var process in Process.GetProcessesByName("Muffin"))
+            foreach (var process in Process.GetProcessesByName("Mufpen"))
             {
                 using (process)
                 {

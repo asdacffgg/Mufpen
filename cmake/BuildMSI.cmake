@@ -35,7 +35,7 @@ while(_part_count LESS 4)
   math(EXPR _part_count "${_part_count} + 1")
 endwhile()
 
-set(MSI_OUTPUT "${CMAKE_BINARY_DIR}/Muffin-${MUFFIN_VERSION}-windows-${MSI_ARCH}.msi")
+set(MSI_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFFIN_VERSION}-windows-${MSI_ARCH}.msi")
 
 message(STATUS "Building MSI installer...")
 message(STATUS "  WiX:      ${WIX_COMMAND}")

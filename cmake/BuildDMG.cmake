@@ -77,7 +77,7 @@ math(EXPR DMG_SIZE_KIB
 message(STATUS "DMG volume capacity: ${DMG_SIZE_KIB} KiB (${DMG_CONTENT_BYTES} content bytes)")
 
 # Create the DMG
-set(DMG_OUTPUT "${CMAKE_BINARY_DIR}/Muffin-${MUFFIN_VERSION}-macos-arm64.dmg")
+set(DMG_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFFIN_VERSION}-macos-arm64.dmg")
 execute_process(
   COMMAND hdiutil create
     -volname "Muffin"

@@ -10,7 +10,7 @@ if ($Version -notmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$') {
     throw 'Expected a stable X.Y.Z version.'
 }
 $installerPath = (Resolve-Path -LiteralPath $Installer).Path
-$expectedName = "Muffin-Setup-$Version-windows-$Architecture.exe"
+$expectedName = "Mufpen-Setup-$Version-windows-$Architecture.exe"
 if ([IO.Path]::GetFileName($installerPath) -cne $expectedName) {
     throw "Installer must be named $expectedName"
 }

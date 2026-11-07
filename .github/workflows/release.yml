@@ -325,14 +325,14 @@ jobs:
       - name: Archive Unix distribution
         if: runner.os != 'Windows'
         shell: bash
-        run: tar -czf "Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.tar.gz" -C build/Release/dist .
+        run: tar -czf "Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.tar.gz" -C build/Release/dist .
 
       - name: Upload distribution artifact
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
-          path: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.*
+          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
+          path: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.*
           if-no-files-found: error
 
       - name: Build setup bundle
@@ -350,7 +350,7 @@ jobs:
         run: |
           cmake "-DBINARY_DIR=$pwd/build" "-DDIST_DIR=$pwd/build/dist" "-DOUTPUT_DIR=$pwd/build/portable" -P cmake/BuildPortable.cmake
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $archive = "Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z"
+          $archive = "Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z"
           & "$env:ProgramFiles/7-Zip/7z.exe" a -t7z $archive "./build/portable/*" -m0=LZMA2 -mx=9 -md=64m -ms=on -mmt=2
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           & "$env:ProgramFiles/7-Zip/7z.exe" t $archive
@@ -359,15 +359,15 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
-          path: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z
+          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
+          path: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z
           if-no-files-found: error
 
       - name: Verify installer integration choices
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $msiPath = (Resolve-Path -LiteralPath "./build/Muffin-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.msi").Path
+          $msiPath = (Resolve-Path -LiteralPath "./build/Mufpen-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.msi").Path
           & ./build/installer-options-test/IntegrationOptionsTest.exe $msiPath
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
@@ -375,7 +375,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $bundlePath = (Resolve-Path -LiteralPath "./build/Muffin-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe").Path
+          $bundlePath = (Resolve-Path -LiteralPath "./build/Mufpen-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe").Path
           & ./build/installer-options-test/IntegrationOptionsTest.exe --update-bundle $bundlePath
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
@@ -385,7 +385,7 @@ jobs:
         env:
           MUFFIN_UPDATE_SIGNING_KEY: ${{ secrets.MUFFIN_UPDATE_SIGNING_KEY }}
         run: |
-          ./scripts/Sign-WindowsUpdate.ps1 -Installer "./build/Muffin-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe" -Version "${{ env.MUFFIN_RELEASE_VERSION }}" -Architecture "${{ matrix.conan-arch == 'armv8' && 'arm64' || 'x64' }}"
+          ./scripts/Sign-WindowsUpdate.ps1 -Installer "./build/Mufpen-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe" -Version "${{ env.MUFFIN_RELEASE_VERSION }}" -Architecture "${{ matrix.conan-arch == 'armv8' && 'arm64' || 'x64' }}"
 
       - name: Upload failed update entry logs
         if: failure() && runner.os == 'Windows'
@@ -399,7 +399,7 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-msi
+          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-msi
           path: build/Muffin-*-${{ matrix.artifact-suffix }}.msi
           if-no-files-found: error
 
@@ -407,17 +407,17 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-setup
+          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-setup
           path: |
-            build/Muffin-Setup-*-${{ matrix.artifact-suffix }}.exe
-            build/Muffin-Setup-*-${{ matrix.artifact-suffix }}.update.json
+            build/Mufpen-Setup-*-${{ matrix.artifact-suffix }}.exe
+            build/Mufpen-Setup-*-${{ matrix.artifact-suffix }}.update.json
           if-no-files-found: error
 
       - name: Upload DMG artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v4
         with:
-          name: Muffin-${{ env.MUFFIN_RELEASE_TAG }}-macos-arm64-dmg
+          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-macos-arm64-dmg
           path: build/Release/Muffin-*-macos-arm64.dmg
           if-no-files-found: error
 
@@ -472,7 +472,7 @@ jobs:
             release-artifacts/**/*.exe
             release-artifacts/**/*.dmg
             release-artifacts/**/*.update.json
-            update-metadata/github/muffin-update.json
+            update-metadata/github/mufpen-update.json
 
       - name: Mirror the same build artifacts to CNB, then advance update channel
         env:

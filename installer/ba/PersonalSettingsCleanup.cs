@@ -11,12 +11,12 @@ namespace Muffin.Setup
 
         internal static void Clear(RegistryKey user)
         {
-            user.DeleteSubKeyTree(@"Software\Muffin\Muffin", false);
-            using (var parent = user.OpenSubKey(@"Software\Muffin"))
+            user.DeleteSubKeyTree(@"Software\Mufpen\Mufpen", false);
+            using (var parent = user.OpenSubKey(@"Software\Mufpen"))
             {
                 if (parent == null || parent.SubKeyCount != 0 || parent.ValueCount != 0) return;
             }
-            user.DeleteSubKey(@"Software\Muffin", false);
+            user.DeleteSubKey(@"Software\Mufpen", false);
         }
     }
 }

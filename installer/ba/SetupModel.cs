@@ -50,7 +50,7 @@ namespace Muffin.Setup
             OpenLogCommand = new RelayCommand(_ => OpenLog());
             CloseCommand = new RelayCommand(_ => _ba.RequestShutdown());
             RemovePersonalSettings = ba.Command.Action == LaunchAction.Uninstall &&
-                ba.Command.Relation == RelationType.None && ba.Engine.GetVariableNumeric("MuffinRemoveSettings") == 1;
+                ba.Command.Relation == RelationType.None && ba.Engine.GetVariableNumeric("MufpenRemoveSettings") == 1;
         }
 
         public ICommand InstallCommand { get; }
@@ -281,7 +281,7 @@ namespace Muffin.Setup
                 _ba.Engine.Log(LogLevel.Error, "Could not read integration choices: " + error.Message);
             }
             _ba.Engine.Log(LogLevel.Standard, string.Format(
-                "Muffin BA deciding page: installed={0} isUpdate={1} newer={2} quiet={3}",
+                "Mufpen BA deciding page: installed={0} isUpdate={1} newer={2} quiet={3}",
                 BundleInstalled, IsUpdate, NewerVersionInstalled, quiet));
             if (NewerVersionInstalled && _ba.Command.Action == LaunchAction.Install)
             {
@@ -379,12 +379,12 @@ namespace Muffin.Setup
         /// </summary>
         public void OnExecutePackageBegin(string packageId)
         {
-            if (packageId != "MuffinMsi")
+            if (packageId != "MufpenMsi")
             {
                 // Related-bundle clean-up during an upgrade.
                 ProgressStage = UiStrings.Get("StageRemovePrevious");
             }
-            ProgressDetail = "Muffin";
+            ProgressDetail = "Mufpen";
         }
 
         /// <summary>Live MSI progress messages, localized by msiexec itself.</summary>
@@ -414,13 +414,13 @@ namespace Muffin.Setup
                     {
                         // A still-running editor can write its cached preferences back.
                         // Do not terminate any process to clear settings.
-                        var editors = Process.GetProcessesByName("Muffin");
+                        var editors = Process.GetProcessesByName("Mufpen");
                         var running = editors.Length != 0;
                         foreach (var editor in editors) editor.Dispose();
                         if (running)
-                            throw new InvalidOperationException("Muffin is still running");
+                            throw new InvalidOperationException("Mufpen is still running");
                         PersonalSettingsCleanup.Clear(Registry.CurrentUser);
-                        _ba.Engine.Log(LogLevel.Standard, "Removed current-user Muffin preferences");
+                        _ba.Engine.Log(LogLevel.Standard, "Removed current-user Mufpen preferences");
                     }
                     catch (Exception error)
                     {
@@ -491,10 +491,10 @@ namespace Muffin.Setup
                 var dir = FindInstallDirectory()
                     ?? System.IO.Path.Combine(
                         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
-                        "Muffin");
+                        "Mufpen");
                 if (!string.IsNullOrEmpty(dir))
                 {
-                    var exe = System.IO.Path.Combine(dir, "Muffin.exe");
+                    var exe = System.IO.Path.Combine(dir, "Mufpen.exe");
                     if (System.IO.File.Exists(exe))
                     {
                         Process.Start(new ProcessStartInfo(exe) { UseShellExecute = true });
@@ -508,7 +508,7 @@ namespace Muffin.Setup
             }
 
             // The installer window leaves together with the app launch —
-            // staying open after "Launch Muffin" reads as a stuck setup.
+            // staying open after "Launch Mufpen" reads as a stuck setup.
             if (launched)
             {
                 _ba.RequestShutdown();
@@ -551,7 +551,7 @@ namespace Muffin.Setup
                     {
                         using (var sub = uninstall.OpenSubKey(subName))
                         {
-                            if (sub?.GetValue("DisplayName") as string != "Muffin")
+                            if (sub?.GetValue("DisplayName") as string != "Mufpen")
                             {
                                 continue;
                             }

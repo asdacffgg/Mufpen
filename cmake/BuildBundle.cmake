@@ -31,7 +31,7 @@ while(_part_count LESS 4)
   math(EXPR _part_count "${_part_count} + 1")
 endwhile()
 
-set(_msi_path "${CMAKE_BINARY_DIR}/Muffin-${MUFFIN_VERSION}-windows-${MSI_ARCH}.msi")
+set(_msi_path "${CMAKE_BINARY_DIR}/Mufpen-${MUFFIN_VERSION}-windows-${MSI_ARCH}.msi")
 if(NOT EXISTS "${_msi_path}")
   message(FATAL_ERROR "MSI not found at ${_msi_path}. Build the 'msi' target first (the 'bundle' target depends on it).")
 endif()
@@ -70,7 +70,7 @@ message(STATUS "Building setup bundle...")
 message(STATUS "  MSI:      ${_msi_path}")
 message(STATUS "  Version:  ${_bundle_version}")
 
-set(BUNDLE_OUTPUT "${CMAKE_BINARY_DIR}/Muffin-Setup-${MUFFIN_VERSION}-windows-${MSI_ARCH}.exe")
+set(BUNDLE_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-Setup-${MUFFIN_VERSION}-windows-${MSI_ARCH}.exe")
 
 execute_process(
   COMMAND "${WIX_COMMAND}" build

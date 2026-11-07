@@ -20,10 +20,10 @@
 
        Requires the WixToolset.Bal.wixext extension (same 4.0.5 line). -->
 
-  <Bundle Name="Muffin"
+  <Bundle Name="Mufpen"
           Version="$(var.MuffinVersion)"
-          Manufacturer="Muffin"
-          UpgradeCode="A7F94030-6C1E-4D2F-9B58-8F4A2D5C7E91"
+          Manufacturer="Mufpen"
+          UpgradeCode="d10d91f3-dcd1-4df9-b4b2-bedf169ccf78"
           IconSourceFile="$(var.SourceDir)/resources/app-icons/muffin.ico"
           Compressed="yes">
 
@@ -62,7 +62,7 @@
            property, not one of Burn's controlled action properties, so this
            is legal where ADDLOCAL/REMOVE would be rejected (WIX0365). -->
       <MsiPackage Id="MuffinMsi"
-                  Name="Muffin.msi"
+                  Name="Mufpen.msi"
                   SourceFile="$(var.MsiPath)"
                   EnableFeatureSelection="yes"
                   ForcePerMachine="yes"

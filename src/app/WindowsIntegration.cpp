@@ -17,11 +17,11 @@ const wchar_t* const kProgId = L"Muffin.md";
 const wchar_t* const kAppName = L"Muffin";
 
 QString contextMenuLabel() {
-  return QCoreApplication::translate("muffin::WindowsIntegration", "Open with Muffin");
+  return QCoreApplication::translate("muffin::WindowsIntegration", "Open with Mufpen");
 }
 
 QString documentTypeLabel() {
-  return QCoreApplication::translate("muffin::WindowsIntegration", "Muffin Markdown Document");
+  return QCoreApplication::translate("muffin::WindowsIntegration", "Mufpen Markdown Document");
 }
 
 QString openLabel() {

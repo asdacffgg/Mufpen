@@ -10,11 +10,11 @@
   <key>CFBundleIconFile</key>
   <string>muffin</string>
   <key>CFBundleIdentifier</key>
-  <string>com.muffin-editor.Muffin</string>
+  <string>io.github.asdacffgg.Mufpen</string>
   <key>CFBundleName</key>
-  <string>Muffin</string>
+  <string>Mufpen</string>
   <key>CFBundleDisplayName</key>
-  <string>Muffin</string>
+  <string>Mufpen</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>

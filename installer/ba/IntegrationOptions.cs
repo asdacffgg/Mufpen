@@ -11,9 +11,9 @@ namespace Muffin.Setup
     /// </summary>
     internal sealed class IntegrationOptions
     {
-        internal const string SettingsKey = @"Software\Muffin\Muffin\integration";
-        internal const string ContextMenuKey = @"SOFTWARE\Classes\Directory\shell\Muffin";
-        internal const string OpenWithKey = @"SOFTWARE\Classes\Muffin.md";
+        internal const string SettingsKey = @"Software\Mufpen\Mufpen\integration";
+        internal const string ContextMenuKey = @"SOFTWARE\Classes\Directory\shell\Mufpen";
+        internal const string OpenWithKey = @"SOFTWARE\Classes\Mufpen.md";
 
         public bool ContextMenu { get; private set; }
         public bool OpenWith { get; private set; }
