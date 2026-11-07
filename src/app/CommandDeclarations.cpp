@@ -2138,7 +2138,11 @@ const std::vector<muffin::CommandDeclaration>& muffin::commandDeclarations() {
                                                          "<b>Author:</b> 夏寒<br>"
                                                          "<b>License:</b> MIT License<br>"
                                                          "<b>Website:</b> https://github.com/asdacffgg/Mufpen</p>")
-                                      .arg(QApplication::applicationVersion(), QSysInfo::prettyProductName()));
+                                          .arg(QApplication::applicationVersion(), QSysInfo::prettyProductName()) +
+                                      // Attribution is not translatable: a copyright notice must read
+                                      // the same in every language.
+                                      QStringLiteral("<p>Copyright © 2026 Muffin Contributors — "
+                                                     "Mufpen fork maintained by asdacffgg.</p>"));
              }},
     };
     commandsValid() = true;

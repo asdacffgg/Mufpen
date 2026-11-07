@@ -1749,6 +1749,7 @@ add_custom_target(dist
       "-DMMDC_FILE=$<TARGET_FILE:muffin-mmdc>"
       "-DMMDC_RUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:muffin-mmdc>,|>"
       "-DICU_DATA_DIR=$<TARGET_FILE_DIR:MuffinUi>/resources/icu"
+      "-DLICENSE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/LICENSE"
       -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinDeploy.cmake"
   DEPENDS Muffin muffin-mmdc
   COMMENT "Create Muffin distribution directory"

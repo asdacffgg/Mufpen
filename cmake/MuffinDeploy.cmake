@@ -12,6 +12,16 @@ endif()
 file(REMOVE_RECURSE "${DIST_DIR}")
 file(MAKE_DIRECTORY "${DIST_DIR}")
 
+# MIT requires the copyright and permission notice in every distributed copy; the tar/zip/7z
+# artifacts are built from this directory, so it rides along automatically.
+if(DEFINED LICENSE_FILE AND NOT LICENSE_FILE STREQUAL "")
+  if(NOT EXISTS "${LICENSE_FILE}")
+    message(FATAL_ERROR "LICENSE_FILE does not exist: ${LICENSE_FILE}")
+  endif()
+  file(COPY "${LICENSE_FILE}" DESTINATION "${DIST_DIR}")
+  file(RENAME "${DIST_DIR}/LICENSE" "${DIST_DIR}/LICENSE.txt")
+endif()
+
 if(APPLE)
   # --- macOS: copy the entire .app bundle ---
   # When MACOSX_BUNDLE is set, APP_FILE points to Muffin.app/Contents/MacOS/Muffin.
@@ -27,7 +37,17 @@ if(APPLE)
   endif()
 
   file(COPY "${APP_BUNDLE_DIR}" DESTINATION "${DIST_DIR}")
-  message(STATUS "Muffin macOS dist written to ${DIST_DIR}/Muffin.app")
+  message(STATUS "Mufpen macOS dist written to ${DIST_DIR}/Muffin.app")
+
+  # MIT: the notice ships with every distributed copy. A DMG consumer only ever sees the
+  # .app, so put it where they can read it.
+  if(DEFINED LICENSE_FILE AND NOT LICENSE_FILE STREQUAL "")
+    get_filename_component(app_bundle_name "${APP_BUNDLE_DIR}" NAME)
+    file(MAKE_DIRECTORY "${DIST_DIR}/${app_bundle_name}/Contents/Resources")
+    file(COPY "${LICENSE_FILE}" DESTINATION "${DIST_DIR}/${app_bundle_name}/Contents/Resources")
+    file(RENAME "${DIST_DIR}/${app_bundle_name}/Contents/Resources/LICENSE"
+                "${DIST_DIR}/${app_bundle_name}/Contents/Resources/LICENSE.txt")
+  endif()
 
   # The headless CLI rides as a sibling of the bundle (the DMG ships the .app
   # alone; the tar.gz picked up from this directory carries the CLI too). Its

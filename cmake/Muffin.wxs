@@ -139,6 +139,11 @@
       <Component Id="MuffinMmdc" Guid="a3b4c5d6-e7f8-4a9b-8c0d-2e3f4a5b6c7d">
         <File Id="MuffinMmdcFile" Source="$(var.DistDir)/muffin-mmdc.exe" KeyPath="yes" />
       </Component>
+      <!-- MIT requires the copyright and permission notice to travel with every
+           distributed copy. dist/ carries it as LICENSE.txt on all platforms. -->
+      <Component Id="LicenseFile" Guid="*">
+        <File Id="LicenseTxt" Source="$(var.DistDir)/LICENSE.txt" />
+      </Component>
       <Component Id="Qt6Core" Guid="*">
         <File Id="Qt6CoreDll" Source="$(var.DistDir)/Qt6Core.dll" />
       </Component>
