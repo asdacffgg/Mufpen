@@ -43,7 +43,7 @@ class PublicationTests(unittest.TestCase):
         self.assets = self.root / "assets"
         self.assets.mkdir()
         for arch in ("x64", "arm64"):
-            installer = self.assets / f"Muffin-Setup-1.2.3-windows-{arch}.exe"
+            installer = self.assets / f"Mufpen-Setup-1.2.3-windows-{arch}.exe"
             installer.write_bytes((arch + " fixture").encode() * 100)
             payload = json.dumps({"schema": 1, "version": "1.2.3", "architecture": arch, "fileName": installer.name,
                                   "size": installer.stat().st_size, "sha256": publisher.sha256(installer)}).encode()
@@ -116,7 +116,7 @@ class PublicationTests(unittest.TestCase):
 
     def test_credentials_never_follow_upload_or_download_hosts(self):
         client = publisher.Cnb("test credential, never used on network")
-        for url in ("https://example.com/verify", "https://api.cnb.cool.evil.test/jstzwj/Muffin/-/releases", "http://api.cnb.cool/jstzwj/Muffin/-/releases"):
+        for url in ("https://example.com/verify", "https://api.cnb.cool.evil.test/asdacffgg/Mufpen/-/releases", "http://api.cnb.cool/asdacffgg/Mufpen/-/releases"):
             with self.assertRaises(publisher.PublishError):
                 client.api("POST", url)
 

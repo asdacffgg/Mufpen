@@ -17,7 +17,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-REPO = "jstzwj/Muffin"
+REPO = "asdacffgg/Mufpen"
 API = f"https://api.cnb.cool/{REPO}/-/releases"
 WEB = f"https://cnb.cool/{REPO}/-/releases"
 GITHUB = f"https://github.com/{REPO}/releases"
@@ -52,7 +52,7 @@ def artifact_files(directory, tag):
     for path in sorted(directory.rglob("*")):
         if not path.is_file() or not path.name.endswith(SUFFIXES):
             continue
-        if not path.name.startswith((f"Muffin-{tag}-", f"Muffin-{release_version}-", f"Muffin-Setup-{release_version}-")):
+        if not path.name.startswith((f"Mufpen-{tag}-", f"Mufpen-{release_version}-", f"Mufpen-Setup-{release_version}-")):
             raise PublishError(f"Artifact belongs to a different release: {path.name}")
         if path.name in result:
             raise PublishError(f"Duplicate artifact: {path.name}")
@@ -69,7 +69,7 @@ def verify_windows_packages(files, tag, public_key_path):
         raise PublishError("Invalid embedded update public key")
     key = ec.EllipticCurvePublicNumbers(int.from_bytes(blob[8:40], "big"), int.from_bytes(blob[40:], "big"), ec.SECP256R1()).public_key()
     for arch in ("x64", "arm64"):
-        stem = f"Muffin-Setup-{tag[1:]}-windows-{arch}"
+        stem = f"Mufpen-Setup-{tag[1:]}-windows-{arch}"
         installer, manifest = files.get(stem + ".exe"), files.get(stem + ".update.json")
         if not installer or not manifest:
             raise PublishError(f"Missing signed Windows {arch} update")
@@ -106,7 +106,7 @@ def write_catalog(directory, obj):
 class Cnb:
     def __init__(self, token):
         if not token:
-            raise PublishError("CNB_RELEASE_TOKEN is required (repo-release:rw, scoped to jstzwj/Muffin)")
+            raise PublishError("CNB_RELEASE_TOKEN is required (repo-release:rw, scoped to asdacffgg/Mufpen)")
         self.token = token
         self.authenticated = urllib.request.build_opener(NoRedirect())
 
@@ -117,7 +117,7 @@ class Cnb:
             raise PublishError("Refusing a publication request outside the official CNB API")
         request = urllib.request.Request(url, method=method, data=None if body is None else json.dumps(body).encode(),
                                          headers={"Authorization": "Bearer " + self.token, "Accept": "application/vnd.cnb.api+json",
-                                                  "Content-Type": "application/json", "User-Agent": "Muffin-Release-Publisher"})
+                                                  "Content-Type": "application/json", "User-Agent": "Mufpen-Release-Publisher"})
         try:
             with self.authenticated.open(request, timeout=60) as response:
                 data = response.read(1024 * 1024)
@@ -132,8 +132,8 @@ class Cnb:
         existing = self.api("GET", f"{API}/tags/{tag}", missing_ok=True)
         if existing:
             return existing
-        return self.api("POST", API, {"tag_name": tag, "target_commitish": "main", "name": f"Muffin {tag}" if tag != "updates" else "Muffin update channel",
-                                      "body": f"Official binary mirror. Source and release notes: {GITHUB}/tag/{tag}" if tag != "updates" else "Static update discovery. Installers are verified against Muffin's embedded signing key.",
+        return self.api("POST", API, {"tag_name": tag, "target_commitish": "main", "name": f"Mufpen {tag}" if tag != "updates" else "Mufpen update channel",
+                                      "body": f"Official binary mirror. Source and release notes: {GITHUB}/tag/{tag}" if tag != "updates" else "Static update discovery. Installers are verified against Mufpen's embedded signing key.",
                                       "draft": draft, "prerelease": tag == "updates", "make_latest": "false"})
 
     def upload(self, release, path, overwrite=False):
@@ -173,7 +173,7 @@ class Cnb:
 def verify_public(url, path):
     # A fresh anonymous request proves that installed clients need no token/login.
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Muffin-Release-Verifier"}), timeout=180) as response:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mufpen-Release-Verifier"}), timeout=180) as response:
             digest = hashlib.sha256()
             size = 0
             while chunk := response.read(1024 * 1024):
