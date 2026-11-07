@@ -19,7 +19,6 @@ constexpr qsizetype kCatalogLimit = 128 * 1024;
 muffin::UpdateChecker::UpdateChecker(QObject* parent)
     : QObject(parent),
       sources_{
-          QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/latest/download/mufpen-update.json")),
           QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/latest/download/mufpen-update.json"))} {
 }
 

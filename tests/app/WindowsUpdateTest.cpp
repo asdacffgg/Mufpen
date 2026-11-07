@@ -35,15 +35,16 @@ void waitUntil(const std::function<bool()>& condition) {
 }
 
 QJsonObject releaseJson() {
-  const QString name = QStringLiteral("Muffin-Setup-9.8.7-windows-x64");
+  const QString name = QStringLiteral("Mufpen-Setup-9.8.7-windows-x64");
   const auto asset = [&](const QString& suffix) {
-    return QJsonObject{{QStringLiteral("name"), name + suffix},
-                       {QStringLiteral("size"), 1024},
-                       {QStringLiteral("browser_download_url"),
-                        QStringLiteral("https://github.com/jstzwj/Muffin/releases/download/v9.8.7/") + name + suffix}};
+    return QJsonObject{
+        {QStringLiteral("name"), name + suffix},
+        {QStringLiteral("size"), 1024},
+        {QStringLiteral("browser_download_url"),
+         QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/download/v9.8.7/") + name + suffix}};
   };
   return {{QStringLiteral("tag_name"), QStringLiteral("v9.8.7")},
-          {QStringLiteral("html_url"), QStringLiteral("https://github.com/jstzwj/Muffin/releases/tag/v9.8.7")},
+          {QStringLiteral("html_url"), QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/tag/v9.8.7")},
           {QStringLiteral("assets"), QJsonArray{asset(QStringLiteral(".exe")), asset(QStringLiteral(".update.json"))}}};
 }
 
@@ -63,27 +64,25 @@ void assetSelection() {
     require(!muffin::UpdatePackage::release(json, QStringLiteral("x64")), "nonstable and malformed versions rejected");
   }
   json = releaseJson();
-  json.insert(QStringLiteral("html_url"), QStringLiteral("https://github.com/attacker/Muffin/releases/tag/v9.8.7"));
+  json.insert(QStringLiteral("html_url"), QStringLiteral("https://github.com/attacker/Mufpen/releases/tag/v9.8.7"));
   require(!muffin::UpdatePackage::release(json, QStringLiteral("x64")),
           "release must belong to the official repository");
-  const auto cnb = QJsonDocument::fromJson(QJsonDocument(releaseJson())
-                                               .toJson()
-                                               .replace("https://github.com/jstzwj/Muffin/releases/",
-                                                        "https://cnb.cool/jstzwj/Muffin/-/releases/"))
-                       .object();
-  const auto selected = muffin::UpdatePackage::release(cnb, QStringLiteral("x64"));
-  require(selected && selected->installer.host() == "cnb.cool" &&
-              muffin::UpdatePackage::githubFallbackUrl(selected->installer) ==
-                  muffin::UpdatePackage::release(releaseJson(), QStringLiteral("x64"))->installer,
-          "CNB versioned assets map to the same official GitHub binary fallback");
-  auto foreign = cnb;
-  auto assets = foreign.value("assets").toArray();
+  // Updates come from this repository's GitHub releases only: a mirror would carry a
+  // different signature contract, so any other host is rejected outright.
+  auto mirror = QJsonDocument::fromJson(QJsonDocument(releaseJson())
+                                            .toJson()
+                                            .replace("https://github.com/asdacffgg/Mufpen/releases/",
+                                                     "https://mirror.example/asdacffgg/Mufpen/releases/"))
+                    .object();
+  require(!muffin::UpdatePackage::release(mirror, QStringLiteral("x64")), "mirror hosts cannot supply update packages");
+  auto foreignAsset = releaseJson();
+  auto assets = foreignAsset.value("assets").toArray();
   auto asset = assets[0].toObject();
   asset.insert("browser_download_url",
-               "https://cnb.cool/attacker/Muffin/-/releases/download/v9.8.7/Muffin-Setup-9.8.7-windows-x64.exe");
+               "https://github.com/attacker/Mufpen/releases/download/v9.8.7/Mufpen-Setup-9.8.7-windows-x64.exe");
   assets[0] = asset;
-  foreign.insert("assets", assets);
-  require(!muffin::UpdatePackage::release(foreign, "x64"), "foreign CNB repositories cannot supply update packages");
+  foreignAsset.insert("assets", assets);
+  require(!muffin::UpdatePackage::release(foreignAsset, "x64"), "foreign repositories cannot supply update packages");
 }
 
 #ifdef Q_OS_WIN
@@ -102,7 +101,7 @@ void signatureValidation() {
   const QJsonObject metadata{{QStringLiteral("schema"), 1},
                              {QStringLiteral("version"), release.version},
                              {QStringLiteral("architecture"), QStringLiteral("x64")},
-                             {QStringLiteral("fileName"), QStringLiteral("Muffin-Setup-9.8.7-windows-x64.exe")},
+                             {QStringLiteral("fileName"), QStringLiteral("Mufpen-Setup-9.8.7-windows-x64.exe")},
                              {QStringLiteral("size"), 1024},
                              {QStringLiteral("sha256"), QString(64, u'a')}};
   const auto envelope = [&](const QJsonObject& object, bool tamper = false) {

@@ -268,11 +268,11 @@ void muffin::WindowsUpdater::refresh() {
   cancel_->setText(downloading ? tr("Cancel Download") : tr("Later"));
 }
 
-void muffin::WindowsUpdater::get(const QUrl& url, qint64 limit, const std::function<void(const QByteArray&)>& completed,
-                                 bool allowFallback) {
+void muffin::WindowsUpdater::get(const QUrl& url, qint64 limit,
+                                 const std::function<void(const QByteArray&)>& completed) {
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
-                    QStringLiteral("Muffin/%1").arg(QCoreApplication::applicationVersion()));
+                    QStringLiteral("Mufpen/%1").arg(QCoreApplication::applicationVersion()));
   request.setTransferTimeout(60000);
   request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
   auto* reply = network_.get(request);
@@ -306,25 +306,12 @@ void muffin::WindowsUpdater::get(const QUrl& url, qint64 limit, const std::funct
     }
   };
   connect(reply, &QNetworkReply::readyRead, this, consume);
-  connect(reply, &QNetworkReply::finished, this, [this, reply, buffer, completed, consume, url, limit, allowFallback] {
+  connect(reply, &QNetworkReply::finished, this, [this, reply, buffer, completed, consume, url, limit] {
     reply->deleteLater();
     if (reply_ != reply)
       return;
     if (reply->error() != QNetworkReply::NoError ||
         reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() != 200) {
-      const auto fallback = UpdatePackage::githubFallbackUrl(url);
-      if (allowFallback && !fallback.isEmpty()) {
-        // A different mirror starts from byte zero. Keep the original signed
-        // size/hash contract, and never concatenate bytes from two origins.
-        if (file_ && (!file_->resize(0) || !file_->seek(0))) {
-          fail(tr("The update download could not be saved or exceeded its expected size."));
-          return;
-        }
-        written_ = 0;
-        hash_.reset();
-        get(fallback, limit, completed, false);
-        return;
-      }
       fail(tr("Could not download the update: %1").arg(reply->errorString()));
       return;
     }

@@ -422,7 +422,7 @@ jobs:
           if-no-files-found: error
 
   publish:
-    name: Publish GitHub release and mirror to CNB
+    name: Publish GitHub release
     needs: build
     runs-on: ubuntu-latest
     # Serialize publication across tags: a historical rebuild must not race the
@@ -463,7 +463,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag || github.ref_name }}
-          name: Muffin ${{ inputs.tag || github.ref_name }}
+          name: Mufpen ${{ inputs.tag || github.ref_name }}
           make_latest: legacy
           files: |
             release-artifacts/**/*.7z
@@ -473,9 +473,3 @@ jobs:
             release-artifacts/**/*.dmg
             release-artifacts/**/*.update.json
             update-metadata/github/mufpen-update.json
-
-      - name: Mirror the same build artifacts to CNB, then advance update channel
-        env:
-          CNB_RELEASE_TOKEN: ${{ secrets.CNB_RELEASE_TOKEN }}
-          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
-        run: python scripts/publish_cnb_release.py --tag "$RELEASE_TAG" --assets release-artifacts --output update-metadata

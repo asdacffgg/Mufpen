@@ -55,8 +55,7 @@ private:
   void restart();
   void awaitInstaller(const QString& ready, const QList<QPointer<MainWindow>>& windows,
                       std::shared_ptr<void> packageLock);
-  void get(const QUrl& url, qint64 limit, const std::function<void(const QByteArray&)>& completed,
-           bool allowFallback = true);
+  void get(const QUrl& url, qint64 limit, const std::function<void(const QByteArray&)>& completed);
   QNetworkAccessManager network_;
   QPointer<QNetworkReply> reply_;
   UpdateRelease release_;

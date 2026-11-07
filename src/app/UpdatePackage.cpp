@@ -70,13 +70,6 @@ QByteArray muffin::UpdatePackage::trustedPublicKey() {
   return QByteArray::fromHex(MUFFIN_UPDATE_PUBLIC_KEY_HEX);
 }
 
-QUrl muffin::UpdatePackage::githubFallbackUrl(const QUrl& url) {
-  const QString prefix = QStringLiteral("/asdacffgg/Mufpen/releases/download/");
-  if (!url.path().startsWith(prefix) || !releaseUrl(url, QStringLiteral("cnb.cool"), url.path()))
-    return {};
-  return QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/download/") + url.path().mid(prefix.size()));
-}
-
 std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonObject& json,
                                                                     const QString& architecture) {
   const QString tag = json.value(QStringLiteral("tag_name")).toString();
@@ -88,10 +81,10 @@ std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonO
   UpdateRelease result;
   result.version = version;
   result.page = QUrl(json.value(QStringLiteral("html_url")).toString());
-  const bool cnb = result.page.host() == QStringLiteral("cnb.cool");
-  const QString host = cnb ? QStringLiteral("cnb.cool") : QStringLiteral("github.com");
-  const QString repository =
-      cnb ? QStringLiteral("/asdacffgg/Mufpen/releases/") : QStringLiteral("/asdacffgg/Mufpen/releases/");
+  // Only this repository's GitHub releases can deliver update packages; a mirror would need
+  // its own signature contract, so there is deliberately no fallback host.
+  const QString host = QStringLiteral("github.com");
+  const QString repository = QStringLiteral("/asdacffgg/Mufpen/releases/");
   if (!releaseUrl(result.page, host, repository + QStringLiteral("tag/") + tag))
     return std::nullopt;
   const auto stem = QStringLiteral("Mufpen-Setup-%1-windows-%2").arg(version, architecture);
