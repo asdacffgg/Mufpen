@@ -73,9 +73,50 @@ void installPerfFileLogger() {
   qInstallMessageHandler(muffinMessageHandler);
 }
 
+#if defined(Q_OS_LINUX)
+// Ubuntu's im-config exports QT_IM_MODULES="wayland;ibus" to every Qt application, and Qt 6.9+
+// prefers that list over QT_IM_MODULE (QPlatformInputContextFactory::requested() reads the list
+// first). A build without the qtwayland platform plugin cannot satisfy "wayland", so Qt moves
+// on to "ibus" -- which is not running on a fcitx5 desktop -- and the input method the user
+// actually configured (QT_IM_MODULE=fcitx / XMODIFIERS=@im=fcitx) is never asked. Every
+// non-Latin input then fails silently, in the editor and in the dialogs alike.
+//
+// Normalize the list before QGuiApplication reads it: drop the entries this process cannot use
+// and put the configured input method first.
+void normaliseInputMethodModules() {
+  const QString configured = QString::fromLocal8Bit(qgetenv("QT_IM_MODULE"));
+  const QStringList requested = QString::fromLocal8Bit(qgetenv("QT_IM_MODULES")).split(u';', Qt::SkipEmptyParts);
+  if (requested.isEmpty())
+    return;
+
+  const bool waylandSession = qgetenv("QT_QPA_PLATFORM").startsWith("wayland");
+  QStringList candidates;
+  if (!configured.isEmpty())
+    candidates.append(configured);
+  candidates.append(requested);
+
+  QStringList modules;
+  for (const QString& module : candidates) {
+    if (modules.contains(module))
+      continue;
+    // Only the xcb platform plugin ships with this build; "wayland" would fail to load and
+    // push Qt onto an input method the user does not have.
+    if (!waylandSession && module == u"wayland")
+      continue;
+    modules.append(module);
+  }
+  if (modules != requested)
+    qputenv("QT_IM_MODULES", modules.join(u';').toLocal8Bit());
+}
+#endif
+
 } // namespace
 
 int main(int argc, char* argv[]) {
+#if defined(Q_OS_LINUX)
+  normaliseInputMethodModules();
+#endif
+
   // Qt 6 defaults to PassThrough (fractional) scaling and Per-Monitor V2 DPI
   // awareness. Set it explicitly so a stray env var or qt.conf can't silently
   // change it and reintroduce blurry chrome.
