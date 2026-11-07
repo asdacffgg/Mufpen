@@ -683,14 +683,14 @@ Set up an image uploader in Preferences → Images.</source>
         <translation type="obsolete">關於</translation>
     </message>
     <message>
-        <source>About Muffin</source>
-        <translation type="obsolete">關於 Muffin</translation>
+        <source>About Mufpen</source>
+        <translation type="obsolete">關於 Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="obsolete">Muffin %1
+        <translation type="obsolete">Mufpen %1
 
 一款使用 C++ 和 Qt 6 Widgets 建構的快速、輕量級原生 Markdown 編輯器。</translation>
     </message>
@@ -991,8 +991,8 @@ A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</sou
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
-        <source>Cannot load the bundled ICU data. Please reinstall Muffin.</source>
-        <translation>無法載入隨附的 ICU 資料。請重新安裝 Muffin。</translation>
+        <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
+        <translation>無法載入隨附的 ICU 資料。請重新安裝 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
@@ -1014,9 +1014,9 @@ A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</sou
         <translation type="vanished">預設 Markdown 編輯器</translation>
     </message>
     <message>
-        <source>Muffin is registered as an editor for Markdown files.
+        <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Muffin 已註冊為 Markdown 檔案的編輯器。
+        <translation type="vanished">Mufpen 已註冊為 Markdown 檔案的編輯器。
 現在要將它設為你的預設編輯器嗎？</translation>
     </message>
     <message>
@@ -1167,8 +1167,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <location filename="../src/io/FileController.cpp" line="658"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
@@ -1197,8 +1197,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
-        <source>The file &quot;%1&quot; has been changed outside Muffin. Overwrite it?</source>
-        <translation>檔案「%1」已在 Muffin 之外被修改。要覆寫嗎？</translation>
+        <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
+        <translation>檔案「%1」已在 Mufpen 之外被修改。要覆寫嗎？</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
@@ -1392,8 +1392,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
-        <source>%1 — Muffin Help</source>
-        <translation>%1 — Muffin 說明</translation>
+        <source>%1 — Mufpen Help</source>
+        <translation>%1 — Mufpen 說明</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
@@ -1624,8 +1624,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
@@ -2294,12 +2294,12 @@ Set up a custom upload command in Preferences → Images.</source>
         <translation>已上傳 %1 張圖片。</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 一款使用 C++ 和 Qt 6 建置的快速、輕量級原生 Markdown 編輯器。
 
@@ -2424,8 +2424,8 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <translation>切換視窗</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
@@ -2940,14 +2940,14 @@ Set up an image uploader in Preferences → Images.</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
-        <source>About Muffin</source>
-        <translation>關於 Muffin</translation>
+        <source>About Mufpen</source>
+        <translation>關於 Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 一款使用 C++ 和 Qt 6 Widgets 建構的快速、輕量級原生 Markdown 編輯器。</translation>
     </message>
@@ -3112,9 +3112,9 @@ Parse time: %6 ms</source>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
-        <source>Muffin found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
+        <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Muffin 發現上次工作階段留下的 %n 個未儲存草稿。可將其中一個還原至目前視窗、全部捨棄，或留待稍後處理。</numerusform>
+            <numerusform>Mufpen 發現上次工作階段留下的 %n 個未儲存草稿。可將其中一個還原至目前視窗、全部捨棄，或留待稍後處理。</numerusform>
         </translation>
     </message>
     <message>
@@ -3615,8 +3615,8 @@ Location: %3
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
@@ -3645,8 +3645,8 @@ Location: %3
         <translation type="vanished">安裝並使用 Pandoc</translation>
     </message>
     <message>
-        <source>Use Images in Muffin</source>
-        <translation type="vanished">在 Muffin 中使用圖片</translation>
+        <source>Use Images in Mufpen</source>
+        <translation type="vanished">在 Mufpen 中使用圖片</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
@@ -3701,9 +3701,9 @@ Location: %3
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
-        <source>The file &quot;%1&quot; has changed outside Muffin. Reload it?
+        <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>檔案「%1」已在 Muffin 之外被修改。要重新載入嗎？
+        <translation>檔案「%1」已在 Mufpen 之外被修改。要重新載入嗎？
 編輯器中尚未儲存的變更將會遺失。</translation>
     </message>
     <message>
@@ -3714,17 +3714,17 @@ Unsaved changes in the editor will be lost.</source>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
-        <source>A new version of Muffin (%1) is available.
+        <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Muffin 的新版本 (%1) 已可供下載。
+        <translation>Mufpen 的新版本 (%1) 已可供下載。
 
 是否要開啟下載頁面？</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
-        <source>Muffin %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Muffin %1 已可供下載。請使用 說明 &gt; 檢查更新 進行下載。</translation>
+        <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
+        <translation>Mufpen %1 已可供下載。請使用 說明 &gt; 檢查更新 進行下載。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
@@ -3733,8 +3733,8 @@ Would you like to open the download page?</source>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>您正在使用最新版本的 Muffin。</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>您正在使用最新版本的 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
@@ -4716,8 +4716,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
-        <source>PDF, HTML and images use Muffin&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF、HTML 和圖片使用 Muffin 的算繪引擎。其他格式需要 Pandoc。</translation>
+        <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
+        <translation>PDF、HTML 和圖片使用 Mufpen 的算繪引擎。其他格式需要 Pandoc。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
@@ -4843,8 +4843,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
-        <source>Muffin adds no theme stylesheet to this format.</source>
-        <translation>Muffin 不會為此格式加入佈景主題樣式表。</translation>
+        <source>Mufpen adds no theme stylesheet to this format.</source>
+        <translation>Mufpen 不會為此格式加入佈景主題樣式表。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
@@ -4924,8 +4924,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
-        <source>Quote paths containing spaces. Muffin manages the input format, output format and output path.</source>
-        <translation>包含空格的路徑需加上引號。輸入格式、輸出格式和輸出路徑由 Muffin 管理。</translation>
+        <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
+        <translation>包含空格的路徑需加上引號。輸入格式、輸出格式和輸出路徑由 Mufpen 管理。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
@@ -5091,8 +5091,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
-        <source>Files opened from the file manager or command line use the existing Muffin window. Turn this off to open them in a new window.</source>
-        <translation>從檔案管理員或命令列開啟的檔案會使用現有的 Muffin 視窗。關閉此選項可在新視窗中開啟檔案。</translation>
+        <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
+        <translation>從檔案管理員或命令列開啟的檔案會使用現有的 Mufpen 視窗。關閉此選項可在新視窗中開啟檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
@@ -5173,8 +5173,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
-        <source>Open in Muffin</source>
-        <translation>在 Muffin 中開啟</translation>
+        <source>Open in Mufpen</source>
+        <translation>在 Mufpen 中開啟</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
@@ -5204,17 +5204,17 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
-        <source>Add &quot;Open with Muffin&quot; to File Explorer context menu for files and folders</source>
-        <translation>在檔案總管中為檔案和資料夾的右鍵選單新增「用 Muffin 開啟」</translation>
+        <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
+        <translation>在檔案總管中為檔案和資料夾的右鍵選單新增「用 Mufpen 開啟」</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
-        <source>Register Muffin as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>將 Muffin 註冊為 Markdown 檔案（.md、.markdown、.mdx、.mkd、.mdown）的編輯器</translation>
+        <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
+        <translation>將 Mufpen 註冊為 Markdown 檔案（.md、.markdown、.mdx、.mkd、.mdown）的編輯器</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
-        <source>Set Muffin as Default…</source>
+        <source>Set Mufpen as Default…</source>
         <translation>設為預設程式…</translation>
     </message>
     <message>
@@ -5237,8 +5237,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
-        <source>A new version of Muffin (%1) is available.</source>
-        <translation>Muffin 的新版本 (%1) 已可供下載。</translation>
+        <source>A new version of Mufpen (%1) is available.</source>
+        <translation>Mufpen 的新版本 (%1) 已可供下載。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
@@ -5247,8 +5247,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>您正在使用最新版本的 Muffin。</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>您正在使用最新版本的 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
@@ -6394,8 +6394,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
-        <source>Could not reach the update service. Please try again later or download Muffin from the official release page.</source>
-        <translation>無法連線至更新服務。請稍後再試，或從官方發佈頁面下載 Muffin。</translation>
+        <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
+        <translation>無法連線至更新服務。請稍後再試，或從官方發佈頁面下載 Mufpen。</translation>
     </message>
 </context>
 <context>
@@ -6445,13 +6445,13 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     <name>muffin::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
-        <source>Open with Muffin</source>
-        <translation>用 Muffin 開啟</translation>
+        <source>Open with Mufpen</source>
+        <translation>用 Mufpen 開啟</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
-        <source>Muffin Markdown Document</source>
-        <translation>Muffin Markdown 文件</translation>
+        <source>Mufpen Markdown Document</source>
+        <translation>Mufpen Markdown 文件</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
@@ -6465,8 +6465,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
-        <source>Update Muffin</source>
-        <translation>更新 Muffin</translation>
+        <source>Update Mufpen</source>
+        <translation>更新 Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
@@ -6480,13 +6480,13 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
-        <source>Downloading Muffin %1… You can continue writing.</source>
-        <translation>正在下載 Muffin %1… 您可以繼續寫作。</translation>
+        <source>Downloading Mufpen %1… You can continue writing.</source>
+        <translation>正在下載 Mufpen %1… 您可以繼續寫作。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
-        <source>Muffin %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Muffin %1 已準備就緒。重新啟動前將檢查文件中是否有未儲存的變更。Windows 可能會要求系統管理員權限。</translation>
+        <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
+        <translation>Mufpen %1 已準備就緒。重新啟動前將檢查文件中是否有未儲存的變更。Windows 可能會要求系統管理員權限。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
@@ -6495,8 +6495,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
-        <source>Muffin %1 is available. Download the update now?</source>
-        <translation>Muffin %1 已推出。要立即下載更新嗎？</translation>
+        <source>Mufpen %1 is available. Download the update now?</source>
+        <translation>Mufpen %1 已推出。要立即下載更新嗎？</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
@@ -6554,8 +6554,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
-        <source>Close other running Muffin instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>更新前請關閉其他正在執行的 Muffin 執行個體。只有已安裝的版本才能在應用程式內更新。</translation>
+        <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
+        <translation>更新前請關閉其他正在執行的 Mufpen 執行個體。只有已安裝的版本才能在應用程式內更新。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
@@ -6570,8 +6570,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
-        <source>The installer did not become ready. Muffin will stay open; please try again.</source>
-        <translation>安裝程式未能準備就緒。Muffin 將保持開啟，請重試。</translation>
+        <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
+        <translation>安裝程式未能準備就緒。Mufpen 將保持開啟，請重試。</translation>
     </message>
 </context>
 <context>

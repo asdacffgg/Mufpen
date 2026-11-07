@@ -434,7 +434,7 @@ void muffin::MainWindow::updateTitle() {
       tab_->pendingOpenPath.isEmpty() ? tab_->session.displayName() : QFileInfo(tab_->pendingOpenPath).fileName();
   // 锁定编辑时，状态标记紧跟标题栏的 “Muffin”。
   const QString lockMarker = editingLocked() ? tr(" (Editing Locked)") : QString();
-  setWindowTitle(QStringLiteral("%1%2 - Muffin%3").arg(name, marker, lockMarker));
+  setWindowTitle(QStringLiteral("%1%2 - Mufpen%3").arg(name, marker, lockMarker));
 }
 
 // 生效状态：功能在偏好里关掉时永远是「未锁定」；「独立标签页」读当前页签自己的状态，

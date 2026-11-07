@@ -35,7 +35,7 @@ bool exportNativePdf(const QString& path, const MarkdownDocument& document, Rend
     }
   }
   printer.setDocName(title);
-  printer.setCreator(QStringLiteral("Muffin"));
+  printer.setCreator(QStringLiteral("Mufpen"));
   QFont decorationFont = theme.paragraphFont();
   decorationFont.setPixelSize(11);
   const QFontMetricsF metrics(decorationFont, &printer);

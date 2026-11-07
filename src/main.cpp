@@ -131,7 +131,7 @@ int main(int argc, char* argv[]) {
     QTranslator translator;
     if (translator.load(QLocale::system(), QStringLiteral("muffin"), QStringLiteral("_"), QStringLiteral(":/i18n")))
       app.installTranslator(&translator);
-    QMessageBox::critical(nullptr, QStringLiteral("Muffin"),
+    QMessageBox::critical(nullptr, QStringLiteral("Mufpen"),
                           QCoreApplication::translate("main", "Cannot write to the portable data folder.") +
                               QLatin1Char('\n') + storageError);
     return 1;
@@ -141,8 +141,8 @@ int main(int argc, char* argv[]) {
     if (translator.load(QLocale::system(), QStringLiteral("muffin"), QStringLiteral("_"), QStringLiteral(":/i18n")))
       app.installTranslator(&translator);
     QMessageBox::critical(
-        nullptr, QStringLiteral("Muffin"),
-        QCoreApplication::translate("main", "Cannot load the bundled ICU data. Please reinstall Muffin.") +
+        nullptr, QStringLiteral("Mufpen"),
+        QCoreApplication::translate("main", "Cannot load the bundled ICU data. Please reinstall Mufpen.") +
             QLatin1Char('\n') + storageError);
     return 1;
   }

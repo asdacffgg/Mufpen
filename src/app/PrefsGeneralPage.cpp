@@ -96,7 +96,7 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
               return;
             }
             QMessageBox::information(window(), tr("Update Available"),
-                                     tr("A new version of Muffin (%1) is available.").arg(version));
+                                     tr("A new version of Mufpen (%1) is available.").arg(version));
           });
   connect(&checker, &muffin::UpdateChecker::upToDate, this, [this](QObject* requester) {
     if (requester != this) {
@@ -104,7 +104,7 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
     }
     checkUpdateButton_->setEnabled(true);
     retranslateUi();
-    QMessageBox::information(window(), tr("Up to Date"), tr("You are running the latest version of Muffin."));
+    QMessageBox::information(window(), tr("Up to Date"), tr("You are running the latest version of Mufpen."));
   });
   connect(&checker, &muffin::UpdateChecker::checkFailed, this, [this](const QString& errorMessage, QObject* requester) {
     if (requester != this) {

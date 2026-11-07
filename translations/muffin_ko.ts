@@ -683,14 +683,14 @@ Set up an image uploader in Preferences → Images.</source>
         <translation type="obsolete">정보</translation>
     </message>
     <message>
-        <source>About Muffin</source>
-        <translation type="obsolete">Muffin 정보</translation>
+        <source>About Mufpen</source>
+        <translation type="obsolete">Mufpen 정보</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="obsolete">Muffin %1
+        <translation type="obsolete">Mufpen %1
 
 C++와 Qt 6 Widgets으로 제작된 빠르고 가벼운 네이티브 Markdown 편집기.</translation>
     </message>
@@ -987,8 +987,8 @@ C++와 Qt 6 Widgets으로 제작된 빠르고 가벼운 네이티브 Markdown �
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
-        <source>Cannot load the bundled ICU data. Please reinstall Muffin.</source>
-        <translation>함께 제공된 ICU 데이터를 불러올 수 없습니다. Muffin을 다시 설치해 주세요.</translation>
+        <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
+        <translation>함께 제공된 ICU 데이터를 불러올 수 없습니다. Mufpen을 다시 설치해 주세요.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
@@ -1010,9 +1010,9 @@ C++와 Qt 6 Widgets으로 제작된 빠르고 가벼운 네이티브 Markdown �
         <translation type="vanished">기본 Markdown 편집기</translation>
     </message>
     <message>
-        <source>Muffin is registered as an editor for Markdown files.
+        <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Muffin이 Markdown 파일용 편집기로 등록되어 있습니다.
+        <translation type="vanished">Mufpen이 Markdown 파일용 편집기로 등록되어 있습니다.
 지금 기본 편집기로 설정할까요?</translation>
     </message>
     <message>
@@ -1163,8 +1163,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <location filename="../src/io/FileController.cpp" line="658"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
@@ -1193,8 +1193,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
-        <source>The file &quot;%1&quot; has been changed outside Muffin. Overwrite it?</source>
-        <translation>파일 &quot;%1&quot;이(가) Muffin 외부에서 변경되었습니다. 덮어쓰시겠습니까?</translation>
+        <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
+        <translation>파일 &quot;%1&quot;이(가) Mufpen 외부에서 변경되었습니다. 덮어쓰시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
@@ -1388,8 +1388,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
-        <source>%1 — Muffin Help</source>
-        <translation>%1 — Muffin 도움말</translation>
+        <source>%1 — Mufpen Help</source>
+        <translation>%1 — Mufpen 도움말</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
@@ -1620,8 +1620,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
@@ -2290,12 +2290,12 @@ Set up a custom upload command in Preferences → Images.</source>
         <translation>이미지 %1개를 업로드했습니다.</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 빠르고 가벼운 네이티브 Markdown 편집기로, C++ 및 Qt 6로 만들어졌습니다.
 
@@ -2420,8 +2420,8 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <translation>창 전환</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
@@ -2936,14 +2936,14 @@ Set up an image uploader in Preferences → Images.</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
-        <source>About Muffin</source>
-        <translation>Muffin 정보</translation>
+        <source>About Mufpen</source>
+        <translation>Mufpen 정보</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 C++와 Qt 6 Widgets으로 제작된 빠르고 가벼운 네이티브 Markdown 편집기.</translation>
     </message>
@@ -3108,7 +3108,7 @@ Parse time: %6 ms</source>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
-        <source>Muffin found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
+        <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
             <numerusform>이전 세션에서 저장되지 않은 초안 %n개를 발견했습니다. 이 창에 하나를 복원하거나, 모두 삭제하거나, 나중을 위해 보관할 수 있습니다.</numerusform>
         </translation>
@@ -3611,8 +3611,8 @@ Location: %3
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
@@ -3641,8 +3641,8 @@ Location: %3
         <translation type="vanished">Pandoc 설치 및 사용</translation>
     </message>
     <message>
-        <source>Use Images in Muffin</source>
-        <translation type="vanished">Muffin에서 이미지 사용</translation>
+        <source>Use Images in Mufpen</source>
+        <translation type="vanished">Mufpen에서 이미지 사용</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
@@ -3697,9 +3697,9 @@ Location: %3
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
-        <source>The file &quot;%1&quot; has changed outside Muffin. Reload it?
+        <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>파일 &quot;%1&quot;이(가) Muffin 외부에서 변경되었습니다. 다시 불러오시겠습니까?
+        <translation>파일 &quot;%1&quot;이(가) Mufpen 외부에서 변경되었습니다. 다시 불러오시겠습니까?
 편집기에서 저장하지 않은 변경 사항은 사라집니다.</translation>
     </message>
     <message>
@@ -3710,17 +3710,17 @@ Unsaved changes in the editor will be lost.</source>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
-        <source>A new version of Muffin (%1) is available.
+        <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Muffin의 새 버전(%1)을 사용할 수 있습니다.
+        <translation>Mufpen의 새 버전(%1)을 사용할 수 있습니다.
 
 다운로드 페이지를 여시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
-        <source>Muffin %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Muffin %1을(를) 사용할 수 있습니다. 도움말 &gt; 업데이트 확인에서 다운로드하세요.</translation>
+        <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
+        <translation>Mufpen %1을(를) 사용할 수 있습니다. 도움말 &gt; 업데이트 확인에서 다운로드하세요.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
@@ -3729,8 +3729,8 @@ Would you like to open the download page?</source>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Muffin의 최신 버전을 사용 중입니다.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Mufpen의 최신 버전을 사용 중입니다.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
@@ -4712,8 +4712,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
-        <source>PDF, HTML and images use Muffin&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML 및 이미지는 Muffin의 렌더러를 사용합니다. 다른 형식에는 Pandoc이 필요합니다.</translation>
+        <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
+        <translation>PDF, HTML 및 이미지는 Mufpen의 렌더러를 사용합니다. 다른 형식에는 Pandoc이 필요합니다.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
@@ -4839,8 +4839,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
-        <source>Muffin adds no theme stylesheet to this format.</source>
-        <translation>Muffin은 이 형식에 테마 스타일시트를 추가하지 않습니다.</translation>
+        <source>Mufpen adds no theme stylesheet to this format.</source>
+        <translation>Mufpen은 이 형식에 테마 스타일시트를 추가하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
@@ -4920,8 +4920,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
-        <source>Quote paths containing spaces. Muffin manages the input format, output format and output path.</source>
-        <translation>공백이 포함된 경로는 따옴표로 묶으세요. 입력 형식, 출력 형식 및 출력 경로는 Muffin이 관리합니다.</translation>
+        <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
+        <translation>공백이 포함된 경로는 따옴표로 묶으세요. 입력 형식, 출력 형식 및 출력 경로는 Mufpen이 관리합니다.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
@@ -5087,8 +5087,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
-        <source>Files opened from the file manager or command line use the existing Muffin window. Turn this off to open them in a new window.</source>
-        <translation>파일 관리자나 명령줄에서 연 파일은 기존 Muffin 창에서 열립니다. 새 창에서 열려면 이 옵션을 끄세요.</translation>
+        <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
+        <translation>파일 관리자나 명령줄에서 연 파일은 기존 Mufpen 창에서 열립니다. 새 창에서 열려면 이 옵션을 끄세요.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
@@ -5169,8 +5169,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
-        <source>Open in Muffin</source>
-        <translation>Muffin에서 열기</translation>
+        <source>Open in Mufpen</source>
+        <translation>Mufpen에서 열기</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
@@ -5200,18 +5200,18 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
-        <source>Add &quot;Open with Muffin&quot; to File Explorer context menu for files and folders</source>
-        <translation>파일 탐색기의 파일 및 폴더 상황에 맞는 메뉴에 &quot;Muffin으로 열기&quot; 추가</translation>
+        <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
+        <translation>파일 탐색기의 파일 및 폴더 상황에 맞는 메뉴에 &quot;Mufpen으로 열기&quot; 추가</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
-        <source>Register Muffin as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Muffin을 Markdown 파일(.md, .markdown, .mdx, .mkd, .mdown)의 편집기로 등록</translation>
+        <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
+        <translation>Mufpen을 Markdown 파일(.md, .markdown, .mdx, .mkd, .mdown)의 편집기로 등록</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
-        <source>Set Muffin as Default…</source>
-        <translation>Muffin을 기본 앱으로 설정…</translation>
+        <source>Set Mufpen as Default…</source>
+        <translation>Mufpen을 기본 앱으로 설정…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
@@ -5233,8 +5233,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
-        <source>A new version of Muffin (%1) is available.</source>
-        <translation>Muffin의 새 버전(%1)을 사용할 수 있습니다.</translation>
+        <source>A new version of Mufpen (%1) is available.</source>
+        <translation>Mufpen의 새 버전(%1)을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
@@ -5243,8 +5243,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Muffin의 최신 버전을 사용 중입니다.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Mufpen의 최신 버전을 사용 중입니다.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
@@ -6390,8 +6390,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
-        <source>Could not reach the update service. Please try again later or download Muffin from the official release page.</source>
-        <translation>업데이트 서비스에 연결할 수 없습니다. 나중에 다시 시도하거나 공식 릴리스 페이지에서 Muffin을 다운로드하세요.</translation>
+        <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
+        <translation>업데이트 서비스에 연결할 수 없습니다. 나중에 다시 시도하거나 공식 릴리스 페이지에서 Mufpen을 다운로드하세요.</translation>
     </message>
 </context>
 <context>
@@ -6441,13 +6441,13 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     <name>muffin::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
-        <source>Open with Muffin</source>
-        <translation>Muffin으로 열기</translation>
+        <source>Open with Mufpen</source>
+        <translation>Mufpen으로 열기</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
-        <source>Muffin Markdown Document</source>
-        <translation>Muffin Markdown 문서</translation>
+        <source>Mufpen Markdown Document</source>
+        <translation>Mufpen Markdown 문서</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
@@ -6461,8 +6461,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
-        <source>Update Muffin</source>
-        <translation>Muffin 업데이트</translation>
+        <source>Update Mufpen</source>
+        <translation>Mufpen 업데이트</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
@@ -6476,13 +6476,13 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
-        <source>Downloading Muffin %1… You can continue writing.</source>
-        <translation>Muffin %1 다운로드 중… 계속 글을 작성할 수 있습니다.</translation>
+        <source>Downloading Mufpen %1… You can continue writing.</source>
+        <translation>Mufpen %1 다운로드 중… 계속 글을 작성할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
-        <source>Muffin %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Muffin %1 업데이트가 준비되었습니다. 다시 시작하기 전에 문서에 저장하지 않은 변경 사항이 있는지 확인합니다. Windows에서 관리자 권한을 요청할 수 있습니다.</translation>
+        <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
+        <translation>Mufpen %1 업데이트가 준비되었습니다. 다시 시작하기 전에 문서에 저장하지 않은 변경 사항이 있는지 확인합니다. Windows에서 관리자 권한을 요청할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
@@ -6491,8 +6491,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
-        <source>Muffin %1 is available. Download the update now?</source>
-        <translation>Muffin %1을 사용할 수 있습니다. 지금 업데이트를 다운로드할까요?</translation>
+        <source>Mufpen %1 is available. Download the update now?</source>
+        <translation>Mufpen %1을 사용할 수 있습니다. 지금 업데이트를 다운로드할까요?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
@@ -6550,8 +6550,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
-        <source>Close other running Muffin instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>업데이트하기 전에 실행 중인 다른 Muffin 인스턴스를 닫으세요. 설치된 버전만 앱 내에서 업데이트할 수 있습니다.</translation>
+        <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
+        <translation>업데이트하기 전에 실행 중인 다른 Mufpen 인스턴스를 닫으세요. 설치된 버전만 앱 내에서 업데이트할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
@@ -6566,8 +6566,8 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
-        <source>The installer did not become ready. Muffin will stay open; please try again.</source>
-        <translation>설치 프로그램이 준비되지 않았습니다. Muffin은 계속 열려 있습니다. 다시 시도하세요.</translation>
+        <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
+        <translation>설치 프로그램이 준비되지 않았습니다. Mufpen은 계속 열려 있습니다. 다시 시도하세요.</translation>
     </message>
 </context>
 <context>

@@ -2103,19 +2103,21 @@ const std::vector<muffin::CommandDeclaration>& muffin::commandDeclarations() {
          .handler =
              [](MainWindow&) {
                QDesktopServices::openUrl(
-                   QUrl(QStringLiteral("https://github.com/jstzwj/Muffin/blob/main/CHANGELOG.md")));
+                   QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/blob/main/CHANGELOG.md")));
              }},
         {.id = QStringLiteral("help.website"),
          .category = CommandCategory::Help,
          .text = muffin::MainWindow::tr("Official Website"),
          .handler =
-             [](MainWindow&) { QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/jstzwj/Muffin"))); }},
+             [](MainWindow&) {
+               QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen")));
+             }},
         {.id = QStringLiteral("help.feedback"),
          .category = CommandCategory::Help,
          .text = muffin::MainWindow::tr("Feedback"),
          .handler =
              [](MainWindow&) {
-               QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/jstzwj/Muffin/issues")));
+               QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/issues")));
              }},
         {.id = QStringLiteral("help.update"),
          .category = CommandCategory::Help,
@@ -2130,12 +2132,12 @@ const std::vector<muffin::CommandDeclaration>& muffin::commandDeclarations() {
          .text = muffin::MainWindow::tr("About"),
          .handler =
              [](MainWindow& window) {
-               QMessageBox::about(&window, muffin::MainWindow::tr("About Muffin"),
-                                  muffin::MainWindow::tr("<h3>Muffin %1</h3>"
+               QMessageBox::about(&window, muffin::MainWindow::tr("About Mufpen"),
+                                  muffin::MainWindow::tr("<h3>Mufpen %1</h3>"
                                                          "<p><b>Platform:</b> %2<br>"
                                                          "<b>Author:</b> 夏寒<br>"
                                                          "<b>License:</b> MIT License<br>"
-                                                         "<b>Website:</b> https://github.com/jstzwj/Muffin</p>")
+                                                         "<b>Website:</b> https://github.com/asdacffgg/Mufpen</p>")
                                       .arg(QApplication::applicationVersion(), QSysInfo::prettyProductName()));
              }},
     };

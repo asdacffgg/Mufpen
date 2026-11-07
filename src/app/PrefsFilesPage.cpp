@@ -462,7 +462,7 @@ void muffin::PrefsFilesPage::retranslateUi() {
   startupLabel_->setText(tr("Startup"));
   openingLabel_->setText(tr("Opening Files"));
   openInTabsCheck_->setText(tr("Open files in tabs by default"));
-  openInTabsHint_->setText(tr("Files opened from the file manager or command line use the existing Muffin window. "
+  openInTabsHint_->setText(tr("Files opened from the file manager or command line use the existing Mufpen window. "
                               "Turn this off to open them in a new window."));
   {
     const int cur = startupCombo_->currentIndex();
@@ -506,7 +506,7 @@ void muffin::PrefsFilesPage::retranslateUi() {
     const int cur = dropFolderCombo_->currentIndex();
     dropFolderCombo_->blockSignals(true);
     dropFolderCombo_->clear();
-    dropFolderCombo_->addItem(tr("Open in Muffin"));
+    dropFolderCombo_->addItem(tr("Open in Mufpen"));
     dropFolderCombo_->addItem(tr("Open in File Manager"));
     polishComboBox(dropFolderCombo_);
     dropFolderCombo_->setCurrentIndex(qBound(0, cur, dropFolderCombo_->count() - 1));
@@ -517,7 +517,7 @@ void muffin::PrefsFilesPage::retranslateUi() {
     const int cur = dropMdCombo_->currentIndex();
     dropMdCombo_->blockSignals(true);
     dropMdCombo_->clear();
-    dropMdCombo_->addItem(tr("Open in Muffin"));
+    dropMdCombo_->addItem(tr("Open in Mufpen"));
     dropMdCombo_->addItem(tr("Import File"));
     polishComboBox(dropMdCombo_);
     dropMdCombo_->setCurrentIndex(qBound(0, cur, dropMdCombo_->count() - 1));
@@ -529,7 +529,7 @@ void muffin::PrefsFilesPage::retranslateUi() {
     dropImportCombo_->blockSignals(true);
     dropImportCombo_->clear();
     dropImportCombo_->addItem(tr("Import File"));
-    dropImportCombo_->addItem(tr("Open in Muffin"));
+    dropImportCombo_->addItem(tr("Open in Mufpen"));
     polishComboBox(dropImportCombo_);
     dropImportCombo_->setCurrentIndex(qBound(0, cur, dropImportCombo_->count() - 1));
     dropImportCombo_->blockSignals(false);
@@ -537,10 +537,10 @@ void muffin::PrefsFilesPage::retranslateUi() {
 
 #ifdef Q_OS_WIN
   winIntegrationLabel_->setText(tr("Windows Integration"));
-  winContextMenuCheck_->setText(tr("Add \"Open with Muffin\" to File Explorer context menu for files and folders"));
+  winContextMenuCheck_->setText(tr("Add \"Open with Mufpen\" to File Explorer context menu for files and folders"));
   winAssociateCheck_->setText(
-      tr("Register Muffin as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)"));
-  winSetDefaultButton_->setText(tr("Set Muffin as Default…"));
+      tr("Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)"));
+  winSetDefaultButton_->setText(tr("Set Mufpen as Default…"));
 #endif
 }
 

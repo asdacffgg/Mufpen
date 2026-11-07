@@ -197,7 +197,7 @@ void muffin::WindowsUpdater::showUpdate(const UpdateRelease& release, QWidget* p
   if (parent)
     dialog_->setPalette(parent->palette());
   dialog_->setAttribute(Qt::WA_DeleteOnClose);
-  dialog_->setWindowTitle(tr("Update Muffin"));
+  dialog_->setWindowTitle(tr("Update Mufpen"));
   dialog_->setMinimumWidth(440);
   auto* layout = new QVBoxLayout(dialog_);
   label_ = new QLabel(dialog_);
@@ -246,13 +246,13 @@ void muffin::WindowsUpdater::refresh() {
   const bool downloading = state_ == State::Downloading;
   progress_->setVisible(downloading);
   if (downloading) {
-    label_->setText(tr("Downloading Muffin %1… You can continue writing.").arg(release_.version));
+    label_->setText(tr("Downloading Mufpen %1… You can continue writing.").arg(release_.version));
     progress_->setRange(0, 1000);
     progress_->setValue(release_.size > 0 ? int(written_ * 1000 / release_.size) : 0);
   } else if (state_ == State::Ready) {
     label_->setText(
         error_.isEmpty()
-            ? tr("Muffin %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.")
+            ? tr("Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.")
                   .arg(release_.version)
             : error_);
   } else if (restartPending()) {
@@ -260,7 +260,7 @@ void muffin::WindowsUpdater::refresh() {
   } else if (state_ == State::Failed) {
     label_->setText(error_);
   } else {
-    label_->setText(tr("Muffin %1 is available. Download the update now?").arg(release_.version));
+    label_->setText(tr("Mufpen %1 is available. Download the update now?").arg(release_.version));
   }
   primary_->setText(state_ == State::Ready ? tr("Restart and Update") : tr("Download Update"));
   primary_->setEnabled(!downloading && !restartPending());
@@ -450,8 +450,8 @@ void muffin::WindowsUpdater::restart() {
   }
   if (!installedCopy() || anotherProcessRunning()) {
     QMessageBox::information(
-        dialog_, tr("Update Muffin"),
-        tr("Close other running Muffin instances before updating. Only installed copies can be updated in the app."));
+        dialog_, tr("Update Mufpen"),
+        tr("Close other running Mufpen instances before updating. Only installed copies can be updated in the app."));
     state_ = State::Ready;
     refresh();
     return;
@@ -600,7 +600,7 @@ void muffin::WindowsUpdater::awaitInstaller(const QString& ready, const QList<QP
       for (const auto& window : windows)
         if (window)
           window->finishUpdateClose(false);
-      failRestart(tr("The installer did not become ready. Muffin will stay open; please try again."));
+      failRestart(tr("The installer did not become ready. Mufpen will stay open; please try again."));
     }
   });
   timer->start(100);

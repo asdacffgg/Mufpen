@@ -404,7 +404,7 @@ void muffin::MainWindow::showNextExternalFileChange() {
   }
   externalFileChangePromptActive_ = true;
   auto* dialog = new QMessageBox(QMessageBox::Question, tr("File Changed on Disk"),
-                                 tr("The file \"%1\" has changed outside Muffin. Reload it?\n"
+                                 tr("The file \"%1\" has changed outside Mufpen. Reload it?\n"
                                     "Unsaved changes in the editor will be lost.")
                                      .arg(path),
                                  QMessageBox::Yes | QMessageBox::No, this);
@@ -490,7 +490,7 @@ void muffin::MainWindow::connectApplicationSignals() {
           const int result = QMessageBox::information(
               &window, muffin::MainWindow::tr("Update Available"),
               muffin::MainWindow::tr(
-                  "A new version of Muffin (%1) is available.\n\nWould you like to open the download page?")
+                  "A new version of Mufpen (%1) is available.\n\nWould you like to open the download page?")
                   .arg(version),
               QMessageBox::Yes | QMessageBox::No);
           if (result == QMessageBox::Yes) {
@@ -511,14 +511,14 @@ void muffin::MainWindow::connectApplicationSignals() {
             }
           }
           window.statusBar()->showMessage(
-              muffin::MainWindow::tr("Muffin %1 is available. Use Help > Check for Updates to download.").arg(version),
+              muffin::MainWindow::tr("Mufpen %1 is available. Use Help > Check for Updates to download.").arg(version),
               15000);
         }
       });
   QObject::connect(&updateChecker, &muffin::UpdateChecker::upToDate, &window, [&window](QObject* requester) {
     if (requester == &window) {
       QMessageBox::information(&window, muffin::MainWindow::tr("Up to Date"),
-                               muffin::MainWindow::tr("You are running the latest version of Muffin."));
+                               muffin::MainWindow::tr("You are running the latest version of Mufpen."));
     }
   });
   QObject::connect(&updateChecker, &muffin::UpdateChecker::checkFailed, &window,

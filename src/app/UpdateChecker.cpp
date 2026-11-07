@@ -18,8 +18,9 @@ constexpr qsizetype kCatalogLimit = 128 * 1024;
 
 muffin::UpdateChecker::UpdateChecker(QObject* parent)
     : QObject(parent),
-      sources_{QUrl(QStringLiteral("https://cnb.cool/jstzwj/Muffin/-/releases/download/updates/muffin-update.json")),
-               QUrl(QStringLiteral("https://github.com/jstzwj/Muffin/releases/latest/download/muffin-update.json"))} {
+      sources_{
+          QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/latest/download/mufpen-update.json")),
+          QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/latest/download/mufpen-update.json"))} {
 }
 
 muffin::UpdateChecker& muffin::UpdateChecker::instance() {
@@ -81,7 +82,7 @@ void muffin::UpdateChecker::requestCatalog(QPointer<QObject> owner, bool manual,
     settings.setValue(QStringLiteral("update/retryAt"),
                       QDateTime::currentDateTimeUtc().addSecs(std::min(86400, 3600 * (1 << (failures - 1)))));
     emit checkFailed(
-        tr("Could not reach the update service. Please try again later or download Muffin from the official release page."),
+        tr("Could not reach the update service. Please try again later or download Mufpen from the official release page."),
         owner.data());
     return;
   }
@@ -93,7 +94,7 @@ void muffin::UpdateChecker::requestCatalog(QPointer<QObject> owner, bool manual,
   }
   QNetworkRequest request(sources_[source]);
   request.setHeader(QNetworkRequest::UserAgentHeader,
-                    QStringLiteral("Muffin/%1").arg(QApplication::applicationVersion()));
+                    QStringLiteral("Mufpen/%1").arg(QApplication::applicationVersion()));
   request.setRawHeader("Accept", "application/json");
   const auto cached = settings.value(key + QStringLiteral("/body")).toByteArray();
   const auto etag = settings.value(key + QStringLiteral("/etag")).toByteArray();

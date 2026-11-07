@@ -148,7 +148,7 @@ void muffin::HelpViewerDialog::renderCurrent() {
   if (auto* sb = browser_->verticalScrollBar()) {
     sb->setValue(0);
   }
-  setWindowTitle(tr("%1 — Muffin Help").arg(topicTitle(currentTopic_)));
+  setWindowTitle(tr("%1 — Mufpen Help").arg(topicTitle(currentTopic_)));
 }
 
 void muffin::HelpViewerDialog::updateNavButtons() {
@@ -160,7 +160,7 @@ void muffin::HelpViewerDialog::retranslateUi() {
   backButton_->setToolTip(tr("Go back"));
   forwardButton_->setToolTip(tr("Go forward"));
   homeButton_->setToolTip(tr("Scroll to top"));
-  setWindowTitle(tr("%1 — Muffin Help").arg(topicTitle(currentTopic_)));
+  setWindowTitle(tr("%1 — Mufpen Help").arg(topicTitle(currentTopic_)));
 }
 
 void muffin::HelpViewerDialog::changeEvent(QEvent* event) {

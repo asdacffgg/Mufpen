@@ -683,14 +683,14 @@ Skonfiguruj przesyłanie w Preferencje → Obrazy.</translation>
         <translation type="obsolete">O programie</translation>
     </message>
     <message>
-        <source>About Muffin</source>
-        <translation type="obsolete">O Muffin</translation>
+        <source>About Mufpen</source>
+        <translation type="obsolete">O Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="obsolete">Muffin %1
+        <translation type="obsolete">Mufpen %1
 
 Szybki, lekki natywny edytor Markdown zbudowany w C++ i Qt 6 Widgets.</translation>
     </message>
@@ -987,8 +987,8 @@ Szybki, lekki natywny edytor Markdown zbudowany w C++ i Qt 6 Widgets.</translati
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
-        <source>Cannot load the bundled ICU data. Please reinstall Muffin.</source>
-        <translation>Nie można wczytać dołączonych danych ICU. Zainstaluj ponownie Muffin.</translation>
+        <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
+        <translation>Nie można wczytać dołączonych danych ICU. Zainstaluj ponownie Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
@@ -1010,9 +1010,9 @@ Szybki, lekki natywny edytor Markdown zbudowany w C++ i Qt 6 Widgets.</translati
         <translation type="vanished">Domyślny edytor Markdown</translation>
     </message>
     <message>
-        <source>Muffin is registered as an editor for Markdown files.
+        <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Muffin jest zarejestrowany jako edytor plików Markdown.
+        <translation type="vanished">Mufpen jest zarejestrowany jako edytor plików Markdown.
 Ustawić go teraz jako domyślny edytor?</translation>
     </message>
     <message>
@@ -1163,8 +1163,8 @@ Ustawić go teraz jako domyślny edytor?</translation>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <location filename="../src/io/FileController.cpp" line="658"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
@@ -1193,8 +1193,8 @@ Ustawić go teraz jako domyślny edytor?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
-        <source>The file &quot;%1&quot; has been changed outside Muffin. Overwrite it?</source>
-        <translation>Plik „%1” został zmieniony poza Muffin. Nadpisać go?</translation>
+        <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
+        <translation>Plik „%1” został zmieniony poza Mufpen. Nadpisać go?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
@@ -1388,8 +1388,8 @@ Ustawić go teraz jako domyślny edytor?</translation>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
-        <source>%1 — Muffin Help</source>
-        <translation>%1 — Pomoc Muffin</translation>
+        <source>%1 — Mufpen Help</source>
+        <translation>%1 — Pomoc Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
@@ -1620,8 +1620,8 @@ Ustawić go teraz jako domyślny edytor?</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Licencja:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Witryna:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Licencja:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Witryna:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
@@ -2290,12 +2290,12 @@ Ustaw własne polecenie wysyłania w Preferencje → Obrazy.</translation>
         <translation>Wysłano obrazów: %1.</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 Szybki, lekki, natywny edytor Markdown zbudowany przy użyciu C++ i Qt 6.
 
@@ -2420,8 +2420,8 @@ Podgląd na żywo i edycja źródła; eksport do formatów PDF, HTML i wielu inn
         <translation>Przełącz okna</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Licencja:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Witryna:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Licencja:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Witryna:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
@@ -2936,14 +2936,14 @@ Skonfiguruj przesyłanie w Preferencje → Obrazy.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
-        <source>About Muffin</source>
-        <translation>O Muffin</translation>
+        <source>About Mufpen</source>
+        <translation>O Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 Szybki, lekki natywny edytor Markdown zbudowany w C++ i Qt 6 Widgets.</translation>
     </message>
@@ -3108,11 +3108,11 @@ Czas analizy: %6 ms</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
-        <source>Muffin found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
+        <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Muffin znalazł %n niezapisaną wersję roboczą z poprzedniej sesji. Przywróć ją w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
-            <numerusform>Muffin znalazł %n niezapisane wersje robocze z poprzedniej sesji. Przywróć jedną w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
-            <numerusform>Muffin znalazł %n niezapisanych wersji roboczych z poprzedniej sesji. Przywróć jedną w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
+            <numerusform>Mufpen znalazł %n niezapisaną wersję roboczą z poprzedniej sesji. Przywróć ją w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
+            <numerusform>Mufpen znalazł %n niezapisane wersje robocze z poprzedniej sesji. Przywróć jedną w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
+            <numerusform>Mufpen znalazł %n niezapisanych wersji roboczych z poprzedniej sesji. Przywróć jedną w tym oknie, odrzuć wszystkie lub zachowaj na później.</numerusform>
         </translation>
     </message>
     <message>
@@ -3615,8 +3615,8 @@ Lokalizacja: %3
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
@@ -3645,8 +3645,8 @@ Lokalizacja: %3
         <translation type="vanished">Zainstaluj i używaj Pandoc</translation>
     </message>
     <message>
-        <source>Use Images in Muffin</source>
-        <translation type="vanished">Używanie obrazów w Muffin</translation>
+        <source>Use Images in Mufpen</source>
+        <translation type="vanished">Używanie obrazów w Mufpen</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
@@ -3701,9 +3701,9 @@ Lokalizacja: %3
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
-        <source>The file &quot;%1&quot; has changed outside Muffin. Reload it?
+        <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>Plik „%1” został zmieniony poza Muffin. Wczytać go ponownie?
+        <translation>Plik „%1” został zmieniony poza Mufpen. Wczytać go ponownie?
 Niezapisane zmiany w edytorze zostaną utracone.</translation>
     </message>
     <message>
@@ -3714,17 +3714,17 @@ Niezapisane zmiany w edytorze zostaną utracone.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
-        <source>A new version of Muffin (%1) is available.
+        <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Dostępna jest nowa wersja Muffin (%1).
+        <translation>Dostępna jest nowa wersja Mufpen (%1).
 
 Czy chcesz otworzyć stronę pobierania?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
-        <source>Muffin %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Muffin %1 jest dostępny. Użyj Pomoc &gt; Sprawdź aktualizacje, aby pobrać.</translation>
+        <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
+        <translation>Mufpen %1 jest dostępny. Użyj Pomoc &gt; Sprawdź aktualizacje, aby pobrać.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
@@ -3733,8 +3733,8 @@ Czy chcesz otworzyć stronę pobierania?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Korzystasz z najnowszej wersji Muffin.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Korzystasz z najnowszej wersji Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
@@ -4716,8 +4716,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
-        <source>PDF, HTML and images use Muffin&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML i obrazy korzystają z silnika renderowania Muffin. Pozostałe formaty wymagają Pandoc.</translation>
+        <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
+        <translation>PDF, HTML i obrazy korzystają z silnika renderowania Mufpen. Pozostałe formaty wymagają Pandoc.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
@@ -4843,8 +4843,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
-        <source>Muffin adds no theme stylesheet to this format.</source>
-        <translation>Muffin nie dodaje arkusza stylów motywu do tego formatu.</translation>
+        <source>Mufpen adds no theme stylesheet to this format.</source>
+        <translation>Mufpen nie dodaje arkusza stylów motywu do tego formatu.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
@@ -4924,8 +4924,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
-        <source>Quote paths containing spaces. Muffin manages the input format, output format and output path.</source>
-        <translation>Ścieżki zawierające spacje ujmij w cudzysłowy. Muffin zarządza formatem wejściowym, formatem wyjściowym i ścieżką wyjściową.</translation>
+        <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
+        <translation>Ścieżki zawierające spacje ujmij w cudzysłowy. Mufpen zarządza formatem wejściowym, formatem wyjściowym i ścieżką wyjściową.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
@@ -5091,8 +5091,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
-        <source>Files opened from the file manager or command line use the existing Muffin window. Turn this off to open them in a new window.</source>
-        <translation>Pliki otwierane z menedżera plików lub wiersza poleceń korzystają z istniejącego okna Muffin. Wyłącz tę opcję, aby otwierać je w nowym oknie.</translation>
+        <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
+        <translation>Pliki otwierane z menedżera plików lub wiersza poleceń korzystają z istniejącego okna Mufpen. Wyłącz tę opcję, aby otwierać je w nowym oknie.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
@@ -5173,8 +5173,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
-        <source>Open in Muffin</source>
-        <translation>Otwórz w Muffin</translation>
+        <source>Open in Mufpen</source>
+        <translation>Otwórz w Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
@@ -5204,18 +5204,18 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
-        <source>Add &quot;Open with Muffin&quot; to File Explorer context menu for files and folders</source>
-        <translation>Dodaj „Otwórz za pomocą Muffin” do menu kontekstowego plików i folderów w Eksploratorze plików</translation>
+        <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
+        <translation>Dodaj „Otwórz za pomocą Mufpen” do menu kontekstowego plików i folderów w Eksploratorze plików</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
-        <source>Register Muffin as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Zarejestruj Muffin jako edytor plików Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
+        <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
+        <translation>Zarejestruj Mufpen jako edytor plików Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
-        <source>Set Muffin as Default…</source>
-        <translation>Ustaw Muffin jako domyślny…</translation>
+        <source>Set Mufpen as Default…</source>
+        <translation>Ustaw Mufpen jako domyślny…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
@@ -5237,8 +5237,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
-        <source>A new version of Muffin (%1) is available.</source>
-        <translation>Dostępna jest nowa wersja Muffin (%1).</translation>
+        <source>A new version of Mufpen (%1) is available.</source>
+        <translation>Dostępna jest nowa wersja Mufpen (%1).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
@@ -5247,8 +5247,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Korzystasz z najnowszej wersji Muffin.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Korzystasz z najnowszej wersji Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
@@ -6394,8 +6394,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
-        <source>Could not reach the update service. Please try again later or download Muffin from the official release page.</source>
-        <translation>Nie udało się połączyć z usługą aktualizacji. Spróbuj ponownie później lub pobierz Muffin z oficjalnej strony wydań.</translation>
+        <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
+        <translation>Nie udało się połączyć z usługą aktualizacji. Spróbuj ponownie później lub pobierz Mufpen z oficjalnej strony wydań.</translation>
     </message>
 </context>
 <context>
@@ -6445,13 +6445,13 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     <name>muffin::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
-        <source>Open with Muffin</source>
-        <translation>Otwórz za pomocą Muffin</translation>
+        <source>Open with Mufpen</source>
+        <translation>Otwórz za pomocą Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
-        <source>Muffin Markdown Document</source>
-        <translation>Dokument Markdown Muffin</translation>
+        <source>Mufpen Markdown Document</source>
+        <translation>Dokument Markdown Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
@@ -6465,8 +6465,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
-        <source>Update Muffin</source>
-        <translation>Aktualizacja Muffin</translation>
+        <source>Update Mufpen</source>
+        <translation>Aktualizacja Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
@@ -6480,13 +6480,13 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
-        <source>Downloading Muffin %1… You can continue writing.</source>
-        <translation>Pobieranie Muffin %1… Możesz kontynuować pisanie.</translation>
+        <source>Downloading Mufpen %1… You can continue writing.</source>
+        <translation>Pobieranie Mufpen %1… Możesz kontynuować pisanie.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
-        <source>Muffin %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Muffin %1 jest gotowy. Przed ponownym uruchomieniem dokumenty zostaną sprawdzone pod kątem niezapisanych zmian. Windows może poprosić o uprawnienia administratora.</translation>
+        <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
+        <translation>Mufpen %1 jest gotowy. Przed ponownym uruchomieniem dokumenty zostaną sprawdzone pod kątem niezapisanych zmian. Windows może poprosić o uprawnienia administratora.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
@@ -6495,8 +6495,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
-        <source>Muffin %1 is available. Download the update now?</source>
-        <translation>Muffin %1 jest dostępny. Pobrać aktualizację teraz?</translation>
+        <source>Mufpen %1 is available. Download the update now?</source>
+        <translation>Mufpen %1 jest dostępny. Pobrać aktualizację teraz?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
@@ -6554,8 +6554,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
-        <source>Close other running Muffin instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Przed aktualizacją zamknij inne uruchomione instancje Muffin. Z aplikacji można aktualizować tylko zainstalowane wersje.</translation>
+        <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
+        <translation>Przed aktualizacją zamknij inne uruchomione instancje Mufpen. Z aplikacji można aktualizować tylko zainstalowane wersje.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
@@ -6570,8 +6570,8 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
-        <source>The installer did not become ready. Muffin will stay open; please try again.</source>
-        <translation>Instalator nie osiągnął gotowości. Muffin pozostanie otwarty; spróbuj ponownie.</translation>
+        <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
+        <translation>Instalator nie osiągnął gotowości. Mufpen pozostanie otwarty; spróbuj ponownie.</translation>
     </message>
 </context>
 <context>

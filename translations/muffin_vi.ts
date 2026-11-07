@@ -683,14 +683,14 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
         <translation type="obsolete">Giới thiệu</translation>
     </message>
     <message>
-        <source>About Muffin</source>
-        <translation type="obsolete">Giới thiệu Muffin</translation>
+        <source>About Mufpen</source>
+        <translation type="obsolete">Giới thiệu Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="obsolete">Muffin %1
+        <translation type="obsolete">Mufpen %1
 
 Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằng C++ và Qt 6 Widgets.</translation>
     </message>
@@ -987,8 +987,8 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
-        <source>Cannot load the bundled ICU data. Please reinstall Muffin.</source>
-        <translation>Không thể tải dữ liệu ICU đi kèm. Vui lòng cài đặt lại Muffin.</translation>
+        <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
+        <translation>Không thể tải dữ liệu ICU đi kèm. Vui lòng cài đặt lại Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
@@ -1010,9 +1010,9 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
         <translation type="vanished">Trình soạn thảo Markdown mặc định</translation>
     </message>
     <message>
-        <source>Muffin is registered as an editor for Markdown files.
+        <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Muffin đã được đăng ký làm trình soạn thảo cho các tệp Markdown.
+        <translation type="vanished">Mufpen đã được đăng ký làm trình soạn thảo cho các tệp Markdown.
 Đặt làm trình soạn thảo mặc định ngay bây giờ?</translation>
     </message>
     <message>
@@ -1163,8 +1163,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <location filename="../src/io/FileController.cpp" line="658"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
@@ -1193,8 +1193,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
-        <source>The file &quot;%1&quot; has been changed outside Muffin. Overwrite it?</source>
-        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Muffin. Bạn có muốn ghi đè không?</translation>
+        <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
+        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Mufpen. Bạn có muốn ghi đè không?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
@@ -1388,8 +1388,8 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
-        <source>%1 — Muffin Help</source>
-        <translation>Trợ giúp Muffin — %1</translation>
+        <source>%1 — Mufpen Help</source>
+        <translation>Trợ giúp Mufpen — %1</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
@@ -1620,8 +1620,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
@@ -2290,7 +2290,7 @@ Hãy thiết lập lệnh tải lên tùy chỉnh trong Tùy chọn → Hình �
         <translation>Đã tải lên %1 hình ảnh.</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
@@ -2416,8 +2416,8 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <translation>Chuyển cửa sổ</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Muffin %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Muffin&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
@@ -2932,14 +2932,14 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
-        <source>About Muffin</source>
-        <translation>Giới thiệu Muffin</translation>
+        <source>About Mufpen</source>
+        <translation>Giới thiệu Mufpen</translation>
     </message>
     <message>
-        <source>Muffin %1
+        <source>Mufpen %1
 
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Muffin %1
+        <translation type="vanished">Mufpen %1
 
 Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằng C++ và Qt 6 Widgets.</translation>
     </message>
@@ -3104,9 +3104,9 @@ Thời gian phân tích: %6 ms</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
-        <source>Muffin found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
+        <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Muffin tìm thấy %n bản nháp chưa lưu từ phiên trước. Khôi phục một bản vào cửa sổ này, hủy tất cả, hoặc giữ lại để dùng sau.</numerusform>
+            <numerusform>Mufpen tìm thấy %n bản nháp chưa lưu từ phiên trước. Khôi phục một bản vào cửa sổ này, hủy tất cả, hoặc giữ lại để dùng sau.</numerusform>
         </translation>
     </message>
     <message>
@@ -3607,8 +3607,8 @@ Vị trí: %3
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
-        <source>Muffin</source>
-        <translation>Muffin</translation>
+        <source>Mufpen</source>
+        <translation>Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
@@ -3637,8 +3637,8 @@ Vị trí: %3
         <translation type="vanished">Cài đặt và sử dụng Pandoc</translation>
     </message>
     <message>
-        <source>Use Images in Muffin</source>
-        <translation type="vanished">Sử dụng hình ảnh trong Muffin</translation>
+        <source>Use Images in Mufpen</source>
+        <translation type="vanished">Sử dụng hình ảnh trong Mufpen</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
@@ -3693,9 +3693,9 @@ Vị trí: %3
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
-        <source>The file &quot;%1&quot; has changed outside Muffin. Reload it?
+        <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Muffin. Bạn có muốn tải lại không?
+        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Mufpen. Bạn có muốn tải lại không?
 Các thay đổi chưa lưu trong trình soạn thảo sẽ bị mất.</translation>
     </message>
     <message>
@@ -3706,17 +3706,17 @@ Các thay đổi chưa lưu trong trình soạn thảo sẽ bị mất.</transla
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
-        <source>A new version of Muffin (%1) is available.
+        <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Có phiên bản Muffin mới (%1).
+        <translation>Có phiên bản Mufpen mới (%1).
 
 Bạn có muốn mở trang tải xuống không?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
-        <source>Muffin %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Muffin %1 đã có sẵn. Sử dụng Trợ giúp &gt; Kiểm tra cập nhật để tải xuống.</translation>
+        <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
+        <translation>Mufpen %1 đã có sẵn. Sử dụng Trợ giúp &gt; Kiểm tra cập nhật để tải xuống.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
@@ -3725,8 +3725,8 @@ Bạn có muốn mở trang tải xuống không?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Bạn đang sử dụng phiên bản mới nhất của Muffin.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Bạn đang sử dụng phiên bản mới nhất của Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
@@ -4708,8 +4708,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
-        <source>PDF, HTML and images use Muffin&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML và hình ảnh sử dụng bộ kết xuất của Muffin. Các định dạng khác cần Pandoc.</translation>
+        <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
+        <translation>PDF, HTML và hình ảnh sử dụng bộ kết xuất của Mufpen. Các định dạng khác cần Pandoc.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
@@ -4835,8 +4835,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
-        <source>Muffin adds no theme stylesheet to this format.</source>
-        <translation>Muffin không thêm biểu định kiểu chủ đề vào định dạng này.</translation>
+        <source>Mufpen adds no theme stylesheet to this format.</source>
+        <translation>Mufpen không thêm biểu định kiểu chủ đề vào định dạng này.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
@@ -4916,8 +4916,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
-        <source>Quote paths containing spaces. Muffin manages the input format, output format and output path.</source>
-        <translation>Đặt đường dẫn chứa dấu cách trong dấu ngoặc kép. Muffin quản lý định dạng đầu vào, định dạng đầu ra và đường dẫn đầu ra.</translation>
+        <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
+        <translation>Đặt đường dẫn chứa dấu cách trong dấu ngoặc kép. Mufpen quản lý định dạng đầu vào, định dạng đầu ra và đường dẫn đầu ra.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
@@ -5083,8 +5083,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
-        <source>Files opened from the file manager or command line use the existing Muffin window. Turn this off to open them in a new window.</source>
-        <translation>Các tệp được mở từ trình quản lý tệp hoặc dòng lệnh sẽ dùng cửa sổ Muffin hiện có. Tắt tùy chọn này để mở tệp trong cửa sổ mới.</translation>
+        <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
+        <translation>Các tệp được mở từ trình quản lý tệp hoặc dòng lệnh sẽ dùng cửa sổ Mufpen hiện có. Tắt tùy chọn này để mở tệp trong cửa sổ mới.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
@@ -5165,8 +5165,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
-        <source>Open in Muffin</source>
-        <translation>Mở trong Muffin</translation>
+        <source>Open in Mufpen</source>
+        <translation>Mở trong Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
@@ -5196,18 +5196,18 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
-        <source>Add &quot;Open with Muffin&quot; to File Explorer context menu for files and folders</source>
-        <translation>Thêm &quot;Mở bằng Muffin&quot; vào menu chuột phải của tệp và thư mục trong File Explorer</translation>
+        <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
+        <translation>Thêm &quot;Mở bằng Mufpen&quot; vào menu chuột phải của tệp và thư mục trong File Explorer</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
-        <source>Register Muffin as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Đăng ký Muffin làm trình soạn thảo cho tệp Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
+        <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
+        <translation>Đăng ký Mufpen làm trình soạn thảo cho tệp Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
-        <source>Set Muffin as Default…</source>
-        <translation>Đặt Muffin làm ứng dụng mặc định…</translation>
+        <source>Set Mufpen as Default…</source>
+        <translation>Đặt Mufpen làm ứng dụng mặc định…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
@@ -5229,8 +5229,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
-        <source>A new version of Muffin (%1) is available.</source>
-        <translation>Có phiên bản Muffin mới (%1).</translation>
+        <source>A new version of Mufpen (%1) is available.</source>
+        <translation>Có phiên bản Mufpen mới (%1).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
@@ -5239,8 +5239,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
-        <source>You are running the latest version of Muffin.</source>
-        <translation>Bạn đang sử dụng phiên bản mới nhất của Muffin.</translation>
+        <source>You are running the latest version of Mufpen.</source>
+        <translation>Bạn đang sử dụng phiên bản mới nhất của Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
@@ -6386,8 +6386,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
-        <source>Could not reach the update service. Please try again later or download Muffin from the official release page.</source>
-        <translation>Không thể kết nối với dịch vụ cập nhật. Vui lòng thử lại sau hoặc tải Muffin từ trang phát hành chính thức.</translation>
+        <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
+        <translation>Không thể kết nối với dịch vụ cập nhật. Vui lòng thử lại sau hoặc tải Mufpen từ trang phát hành chính thức.</translation>
     </message>
 </context>
 <context>
@@ -6437,13 +6437,13 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     <name>muffin::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
-        <source>Open with Muffin</source>
-        <translation>Mở bằng Muffin</translation>
+        <source>Open with Mufpen</source>
+        <translation>Mở bằng Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
-        <source>Muffin Markdown Document</source>
-        <translation>Tài liệu Markdown Muffin</translation>
+        <source>Mufpen Markdown Document</source>
+        <translation>Tài liệu Markdown Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
@@ -6457,8 +6457,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
-        <source>Update Muffin</source>
-        <translation>Cập nhật Muffin</translation>
+        <source>Update Mufpen</source>
+        <translation>Cập nhật Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
@@ -6472,13 +6472,13 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
-        <source>Downloading Muffin %1… You can continue writing.</source>
-        <translation>Đang tải Muffin %1… Bạn có thể tiếp tục viết.</translation>
+        <source>Downloading Mufpen %1… You can continue writing.</source>
+        <translation>Đang tải Mufpen %1… Bạn có thể tiếp tục viết.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
-        <source>Muffin %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Muffin %1 đã sẵn sàng. Các tài liệu sẽ được kiểm tra thay đổi chưa lưu trước khi khởi động lại. Windows có thể yêu cầu quyền quản trị viên.</translation>
+        <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
+        <translation>Mufpen %1 đã sẵn sàng. Các tài liệu sẽ được kiểm tra thay đổi chưa lưu trước khi khởi động lại. Windows có thể yêu cầu quyền quản trị viên.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
@@ -6487,8 +6487,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
-        <source>Muffin %1 is available. Download the update now?</source>
-        <translation>Đã có Muffin %1. Tải bản cập nhật ngay bây giờ?</translation>
+        <source>Mufpen %1 is available. Download the update now?</source>
+        <translation>Đã có Mufpen %1. Tải bản cập nhật ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
@@ -6546,8 +6546,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
-        <source>Close other running Muffin instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Hãy đóng các phiên bản Muffin khác đang chạy trước khi cập nhật. Chỉ bản đã cài đặt mới có thể cập nhật trong ứng dụng.</translation>
+        <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
+        <translation>Hãy đóng các phiên bản Mufpen khác đang chạy trước khi cập nhật. Chỉ bản đã cài đặt mới có thể cập nhật trong ứng dụng.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
@@ -6562,8 +6562,8 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
-        <source>The installer did not become ready. Muffin will stay open; please try again.</source>
-        <translation>Trình cài đặt chưa sẵn sàng. Muffin sẽ tiếp tục mở; vui lòng thử lại.</translation>
+        <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
+        <translation>Trình cài đặt chưa sẵn sàng. Mufpen sẽ tiếp tục mở; vui lòng thử lại.</translation>
     </message>
 </context>
 <context>

@@ -116,7 +116,7 @@ int main(int argc, char** argv) {
 
   QCommandLineParser parser;
   parser.setApplicationDescription(
-      QStringLiteral("Render Mermaid diagrams with the native Muffin engine (mermaid 11.16 parity)."));
+      QStringLiteral("Render Mermaid diagrams with the native Mufpen engine (mermaid 11.16 parity)."));
   parser.addHelpOption();
   parser.addVersionOption();
   QCommandLineOption inputOption({QStringLiteral("i"), QStringLiteral("input")},

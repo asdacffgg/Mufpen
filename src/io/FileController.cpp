@@ -507,7 +507,7 @@ bool muffin::FileController::confirmDiscardIfModified(DocumentSession& session, 
   }
 
   const QMessageBox::StandardButton choice =
-      QMessageBox::warning(parent, tr("Muffin"), tr("The current document has unsaved changes."),
+      QMessageBox::warning(parent, tr("Mufpen"), tr("The current document has unsaved changes."),
                            QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Save);
 
   if (choice == QMessageBox::Cancel) {
@@ -536,7 +536,7 @@ bool muffin::FileController::confirmOverwriteIfChanged(DocumentSession& session,
   }
   const QMessageBox::StandardButton choice =
       QMessageBox::warning(parent, tr("File Changed on Disk"),
-                           tr("The file \"%1\" has been changed outside Muffin. Overwrite it?").arg(info.fileName()),
+                           tr("The file \"%1\" has been changed outside Mufpen. Overwrite it?").arg(info.fileName()),
                            QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
   return choice == QMessageBox::Yes;
 }
@@ -655,7 +655,7 @@ bool muffin::FileController::reopenWithEncoding(DocumentSession& session, QWidge
 
   if (session.document().isModified()) {
     const QMessageBox::StandardButton choice = QMessageBox::warning(
-        parent, tr("Muffin"), tr("The document has unsaved changes. Save before reopening with a new encoding?"),
+        parent, tr("Mufpen"), tr("The document has unsaved changes. Save before reopening with a new encoding?"),
         QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Save);
     if (choice == QMessageBox::Cancel) {
       return false;

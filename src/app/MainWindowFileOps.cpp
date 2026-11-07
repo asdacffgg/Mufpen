@@ -582,7 +582,7 @@ bool muffin::MainWindow::offerDraftRecovery() {
 
   auto* label = new QLabel(&dialog);
   label->setWordWrap(true);
-  label->setText(tr("Muffin found %n unsaved draft(s) from a previous session. "
+  label->setText(tr("Mufpen found %n unsaved draft(s) from a previous session. "
                     "Restore one into this window, discard all of them, or keep them for later.",
                     nullptr, drafts.size()));
   layout->addWidget(label);
@@ -935,7 +935,7 @@ void muffin::MainWindow::deleteFile() {
 
   if (tab_->session.document().isModified()) {
     const QMessageBox::StandardButton unsaved =
-        QMessageBox::warning(this, tr("Muffin"), tr("The current document has unsaved changes."),
+        QMessageBox::warning(this, tr("Mufpen"), tr("The current document has unsaved changes."),
                              QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Save);
     if (unsaved == QMessageBox::Cancel) {
       return;
@@ -1260,7 +1260,7 @@ bool muffin::MainWindow::maybeSaveChanges() {
   }
 
   const QMessageBox::StandardButton choice =
-      QMessageBox::warning(this, tr("Muffin"), tr("The current document has unsaved changes."),
+      QMessageBox::warning(this, tr("Mufpen"), tr("The current document has unsaved changes."),
                            QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Save);
 
   if (choice == QMessageBox::Cancel) {

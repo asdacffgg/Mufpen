@@ -71,10 +71,10 @@ QByteArray muffin::UpdatePackage::trustedPublicKey() {
 }
 
 QUrl muffin::UpdatePackage::githubFallbackUrl(const QUrl& url) {
-  const QString prefix = QStringLiteral("/jstzwj/Muffin/-/releases/download/");
+  const QString prefix = QStringLiteral("/asdacffgg/Mufpen/releases/download/");
   if (!url.path().startsWith(prefix) || !releaseUrl(url, QStringLiteral("cnb.cool"), url.path()))
     return {};
-  return QUrl(QStringLiteral("https://github.com/jstzwj/Muffin/releases/download/") + url.path().mid(prefix.size()));
+  return QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/download/") + url.path().mid(prefix.size()));
 }
 
 std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonObject& json,
@@ -91,10 +91,10 @@ std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonO
   const bool cnb = result.page.host() == QStringLiteral("cnb.cool");
   const QString host = cnb ? QStringLiteral("cnb.cool") : QStringLiteral("github.com");
   const QString repository =
-      cnb ? QStringLiteral("/jstzwj/Muffin/-/releases/") : QStringLiteral("/jstzwj/Muffin/releases/");
+      cnb ? QStringLiteral("/asdacffgg/Mufpen/releases/") : QStringLiteral("/asdacffgg/Mufpen/releases/");
   if (!releaseUrl(result.page, host, repository + QStringLiteral("tag/") + tag))
     return std::nullopt;
-  const auto stem = QStringLiteral("Muffin-Setup-%1-windows-%2").arg(version, architecture);
+  const auto stem = QStringLiteral("Mufpen-Setup-%1-windows-%2").arg(version, architecture);
   const QString prefix = repository + QStringLiteral("download/%1/").arg(tag);
   for (const auto& value : json.value(QStringLiteral("assets")).toArray()) {
     const auto asset = value.toObject();
@@ -143,7 +143,7 @@ std::optional<muffin::UpdatePackage> muffin::UpdatePackage::verify(const QByteAr
   if (metadata.value(QStringLiteral("schema")).toInt() != 1 || !validVersion(result.version) ||
       result.version != release.version || result.architecture != architecture || result.size != release.size ||
       result.size <= 0 || result.size > kMaxInstallerSize || hash.size() != 64 || result.sha256.toHex() != hash ||
-      result.fileName != QStringLiteral("Muffin-Setup-%1-windows-%2.exe").arg(result.version, architecture))
+      result.fileName != QStringLiteral("Mufpen-Setup-%1-windows-%2.exe").arg(result.version, architecture))
     return std::nullopt;
   return result;
 }

@@ -266,7 +266,7 @@ void muffin::PrefsExportPage::rebuildPage() {
     pandocStatus_ = makeMutedLabel(card);
     pandocStatus_->setWordWrap(true);
     form->addRow(pandocStatus_);
-    note(tr("PDF, HTML and images use Muffin's renderer. Other formats require Pandoc."));
+    note(tr("PDF, HTML and images use Mufpen's renderer. Other formats require Pandoc."));
     connect(pandocPathEdit_, &QLineEdit::editingFinished, this, &PrefsExportPage::refreshPandocStatus);
     refreshPandocStatus();
     return;
@@ -333,7 +333,7 @@ void muffin::PrefsExportPage::rebuildPage() {
     multiline(tr("Add to <head>"), p + "head", "ExportHtmlHead");
     multiline(tr("Add before document content"), p + "body", "ExportHtmlBody");
     if (format == ExportFormat::HtmlPlain)
-      note(tr("Muffin adds no theme stylesheet to this format."));
+      note(tr("Mufpen adds no theme stylesheet to this format."));
   } else if (format == ExportFormat::Image) {
     number(tr("Width (px)"), p + "width", 960, 320, 2400, "ExportImageWidth");
     combo(tr("Output Scale"), p + "scale", {"1×", "2×", "3×"}, {"1", "2", "3"}, "1", "ExportImageScale");
@@ -367,7 +367,7 @@ void muffin::PrefsExportPage::rebuildPage() {
       combo(tr("Line Wrapping"), p + "wrap", {tr("Do not wrap"), tr("Automatic"), tr("Preserve source wrapping")},
             {"none", "auto", "preserve"}, "none", "ExportWrap");
     edit(tr("Additional Pandoc Arguments"), p + "arguments", "ExportPandocArguments");
-    note(tr("Quote paths containing spaces. Muffin manages the input format, output format and output path."));
+    note(tr("Quote paths containing spaces. Mufpen manages the input format, output format and output path."));
   }
   auto* after = makeSectionLabel(card);
   after->setText(tr("After Export"));
