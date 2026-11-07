@@ -1692,7 +1692,11 @@ endif()
 if(MUFFIN_QT_CORE_LOCATION_RELEASE)
   get_filename_component(MUFFIN_QT_LIB_OR_BIN_DIR "${MUFFIN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
   get_filename_component(MUFFIN_QT_PACKAGE_DIR "${MUFFIN_QT_LIB_OR_BIN_DIR}" DIRECTORY)
-  foreach(MUFFIN_QT_PLUGIN_SUBDIR platforms styles imageformats tls networkinformation)
+  # platforminputcontexts carries the fcitx5/ibus Qt plugins. Without it a Linux bundle
+  # cannot talk to any input method, so no CJK/IME input works at all (qt.conf points
+  # Plugins at the bundle, which hides the system plugin directory).
+  foreach(MUFFIN_QT_PLUGIN_SUBDIR
+      platforms platforminputcontexts styles imageformats tls networkinformation)
     if(EXISTS "${MUFFIN_QT_PACKAGE_DIR}/plugins/${MUFFIN_QT_PLUGIN_SUBDIR}")
       list(APPEND MUFFIN_QT_PLUGIN_DIRS "${MUFFIN_QT_PACKAGE_DIR}/plugins/${MUFFIN_QT_PLUGIN_SUBDIR}")
     endif()
@@ -1701,6 +1705,38 @@ endif()
 
 string(JOIN "|" MUFFIN_QT_PLUGIN_DIRS_ARG ${MUFFIN_QT_PLUGIN_DIRS})
 
+# The Qt library directory, derived from whichever Qt config CMake found: Conan puts it at
+# "<package>/lib/cmake/Qt6", a distro Qt at "<libdir>/cmake/Qt6". The deploy script needs it
+# because GET_RUNTIME_DEPENDENCIES can resolve libQt6*.so to a distribution Qt that happens
+# to be installed next to ours, which then fails to load against the bundled plugins.
+set(MUFFIN_QT_LIB_DIR "")
+foreach(MUFFIN_QT_CONFIG_DIR "${Qt6_DIR}" ${CMAKE_PREFIX_PATH})
+  if(MUFFIN_QT_CONFIG_DIR MATCHES "^(.*)/cmake/Qt6$")
+    set(MUFFIN_QT_LIB_DIR "${CMAKE_MATCH_1}")
+    break()
+  endif()
+endforeach()
+
+# The bundle cannot use the distro's fcitx5/ibus Qt plugins: its own Qt rejects plugins built
+# for another minor version, and Qt 6.11 dropped the XIM fallback from the xcb platform
+# plugin. The fcitx5 plugin is therefore built against this build's Qt and shipped inside
+# platforminputcontexts/. See cmake/MuffinFcitx5Qt.cmake. Only Linux xcb builds need it.
+if(UNIX AND NOT APPLE)
+  option(MUFFIN_BUNDLE_FCITX5_PLUGIN "Bundle the fcitx5 Qt input-method plugin into dist" ON)
+else()
+  set(MUFFIN_BUNDLE_FCITX5_PLUGIN OFF)
+endif()
+
+set(MUFFIN_FCITX5_PLUGIN_FILE "")
+if(MUFFIN_BUNDLE_FCITX5_PLUGIN)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinFcitx5Qt.cmake)
+  muffin_add_fcitx5_qt_plugin(MUFFIN_FCITX5_PLUGIN_FILE)
+elseif(UNIX AND NOT APPLE)
+  message(WARNING
+    "MUFFIN_BUNDLE_FCITX5_PLUGIN is OFF: the dist bundle gets no input-method plugin, so "
+    "no CJK/IME input will work in it.")
+endif()
+
 add_custom_target(dist
   COMMAND
     ${CMAKE_COMMAND}
@@ -1708,6 +1744,8 @@ add_custom_target(dist
       "-DDIST_DIR=${MUFFIN_DIST_DIR}"
       "-DRUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:Muffin>,|>"
       "-DQT_PLUGIN_DIRS=${MUFFIN_QT_PLUGIN_DIRS_ARG}"
+      "-DQT_LIB_DIR=${MUFFIN_QT_LIB_DIR}"
+      "-DIME_PLUGIN_FILE=${MUFFIN_FCITX5_PLUGIN_FILE}"
       "-DMMDC_FILE=$<TARGET_FILE:muffin-mmdc>"
       "-DMMDC_RUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:muffin-mmdc>,|>"
       "-DICU_DATA_DIR=$<TARGET_FILE_DIR:MuffinUi>/resources/icu"
@@ -1719,6 +1757,10 @@ add_custom_target(dist
 
 if(APPLE)
   add_dependencies(dist muffin-quicklook-embed)
+endif()
+
+if(MUFFIN_BUNDLE_FCITX5_PLUGIN)
+  add_dependencies(dist muffin_fcitx5_qt)
 endif()
 
 # --- Windows MSI installer target ---

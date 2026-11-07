@@ -99,7 +99,7 @@ else()
     if(dll_name MATCHES "^Qt6.*\\.(dll|so)$")
       get_filename_component(qt_bin_dir "${dll}" DIRECTORY)
       get_filename_component(qt_root_dir "${qt_bin_dir}" DIRECTORY)
-      foreach(plugin_subdir platforms styles imageformats tls networkinformation)
+      foreach(plugin_subdir platforms platforminputcontexts styles imageformats tls networkinformation)
         if(EXISTS "${qt_root_dir}/plugins/${plugin_subdir}")
           list(APPEND plugin_dirs "${qt_root_dir}/plugins/${plugin_subdir}")
         endif()
@@ -173,7 +173,7 @@ else()
       if(dependency_name MATCHES "^libQt6.*\\.so")
         get_filename_component(qt_lib_dir "${dependency}" DIRECTORY)
         get_filename_component(qt_root_dir "${qt_lib_dir}" DIRECTORY)
-        foreach(plugin_subdir platforms styles imageformats tls networkinformation)
+        foreach(plugin_subdir platforms platforminputcontexts styles imageformats tls networkinformation)
           if(EXISTS "${qt_root_dir}/plugins/${plugin_subdir}")
             list(APPEND plugin_dirs "${qt_root_dir}/plugins/${plugin_subdir}")
           endif()
@@ -199,6 +199,21 @@ else()
     endif()
   endforeach()
 
+  # The input-method plugin is built against this bundle's Qt (see
+  # cmake/MuffinFcitx5Qt.cmake) and copied in by hand: it cannot come from the Qt plugin
+  # directory, because no Qt installation ships it. It must land before the ELF dependency
+  # pass below so its runtime libraries are resolved like any other bundled plugin.
+  if(DEFINED IME_PLUGIN_FILE AND NOT IME_PLUGIN_FILE STREQUAL "")
+    if(NOT EXISTS "${IME_PLUGIN_FILE}")
+      message(FATAL_ERROR
+        "The bundled input-method plugin is missing: ${IME_PLUGIN_FILE}.\n"
+        "Build the dist target again (it depends on the fcitx5-qt build), or disable "
+        "bundling with -DMUFFIN_BUNDLE_FCITX5_PLUGIN=OFF.")
+    endif()
+    file(MAKE_DIRECTORY "${DIST_DIR}/platforminputcontexts")
+    file(COPY "${IME_PLUGIN_FILE}" DESTINATION "${DIST_DIR}/platforminputcontexts")
+  endif()
+
   if(UNIX AND NOT APPLE)
     # TARGET_RUNTIME_DLLS is empty on ELF platforms. Resolve the executable and
     # plugin dependency graph directly, copy only non-system libraries, then
@@ -207,6 +222,23 @@ else()
     set(dist_executables "${DIST_DIR}/${APP_FILE_NAME}")
     if(EXISTS "${DIST_DIR}/muffin-mmdc")
       list(APPEND dist_executables "${DIST_DIR}/muffin-mmdc")
+    endif()
+    # A self-contained Qt (Conan) has to be copied wholesale. Dependency resolution can pick
+    # the distribution's libQt6*.so for a plugin that both Qts provide, because the plugin's
+    # DT_NEEDED carries no path -- and a system Qt 6.x minor version cannot load plugins built
+    # for the bundled one ("undefined symbol ... version Qt_6_PRIVATE_API"). The distro's own
+    # /usr/lib copies stay excluded below.
+    set(bundled_qt_libs "")
+    if(DEFINED QT_LIB_DIR AND NOT QT_LIB_DIR STREQUAL "" AND NOT QT_LIB_DIR MATCHES "^/(usr/)?lib")
+      file(GLOB qt_lib_files "${QT_LIB_DIR}/libQt6*.so" "${QT_LIB_DIR}/libQt6*.so.*")
+      if(qt_lib_files)
+        file(COPY ${qt_lib_files} DESTINATION "${DIST_DIR}" FOLLOW_SYMLINK_CHAIN)
+        foreach(qt_lib_file IN LISTS qt_lib_files)
+          get_filename_component(qt_lib_name "${qt_lib_file}" NAME)
+          list(APPEND bundled_qt_libs "${DIST_DIR}/${qt_lib_name}")
+        endforeach()
+        list(REMOVE_DUPLICATES bundled_qt_libs)
+      endif()
     endif()
     file(GET_RUNTIME_DEPENDENCIES
       EXECUTABLES ${dist_executables}
@@ -231,6 +263,7 @@ else()
       get_filename_component(dependency_name "${dependency}" NAME)
       list(APPEND bundled_dependencies "${DIST_DIR}/${dependency_name}")
     endforeach()
+    list(APPEND bundled_dependencies ${bundled_qt_libs})
     list(REMOVE_DUPLICATES bundled_dependencies)
 
     find_program(PATCHELF_EXECUTABLE NAMES patchelf REQUIRED)

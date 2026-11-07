@@ -137,6 +137,8 @@ jobs:
             libxcb-cursor-dev \
             libxcb-util-dev \
             uuid-dev \
+            patchelf \
+            extra-cmake-modules \
             xvfb
 
       - name: Install dependencies
@@ -185,6 +187,15 @@ jobs:
       # Stream flushed RUN markers while each process is alive, including before a hang.
       - name: Test
         run: ${{ matrix.test-command }}
+
+      # The Linux bundle ships a fcitx5 platforminputcontext plugin built against this build's
+      # Qt (cmake/MuffinFcitx5Qt.cmake). Without it the packaged app cannot do CJK input, so
+      # build the dist tree here instead of discovering the breakage during a release.
+      - name: Build Linux distribution
+        if: runner.os == 'Linux' && matrix.conan-arch == 'x86_64'
+        run: |
+          cmake --build --preset conan-release --target dist
+          test -f build/dist/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 
       - name: Diagnose macOS file-tree integration failures
         if: failure() && runner.os == 'macOS'

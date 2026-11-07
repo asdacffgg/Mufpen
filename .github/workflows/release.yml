@@ -179,6 +179,7 @@ jobs:
             libxcb-res0-dev \
             libxcb-cursor-dev \
             libxcb-util-dev \
+            extra-cmake-modules \
             patchelf \
             uuid-dev \
             xvfb

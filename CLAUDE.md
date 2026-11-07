@@ -16,6 +16,8 @@ cmake --build --preset conan-release
 
 Do not use plain `cmake --build build` for verification on this workspace. The generated Visual Studio project may default to Debug, while the Conan Qt environment is configured for Release, which can fail with missing Qt headers such as `QString`.
 
+On Linux, pass `-s compiler.cppstd=gnu20` (the Linux CI matrix already does) and configure with `--preset conan-release`: Conan generates a single-config preset there, and GCC 15 fails to build Qt in strict `-std=c++20` mode (`Qt needs to be compiled in a mode that enables INT128`).
+
 ## Test
 
 Run the full test suite with:
@@ -51,6 +53,12 @@ The packaged executable is:
 ```
 
 If `build\dist\Muffin.exe` is older than `build\Release\Muffin.exe`, run the dist target again before testing the packaged app.
+
+### Linux input methods (CJK input)
+
+The dist bundle carries its own Qt and `qt.conf` points `Plugins` at the bundle, so Qt never looks at the distribution's plugin directory. Qt also refuses plugins built against a different minor version (`uses incompatible Qt library`), and Qt 6.11 removed the XIM fallback from the xcb platform plugin. A Linux bundle without a `platforminputcontexts/` plugin therefore cannot talk to fcitx5/ibus at all — no Chinese/Japanese/Korean input, silently.
+
+`cmake/MuffinFcitx5Qt.cmake` closes that hole: the dist target builds fcitx5-qt (`5.1.13`, `BUILD_ONLY_PLUGIN=ON`, `BUILD_STATIC_PLUGIN=OFF`, so one self-contained `libfcitx5platforminputcontextplugin.so`) against the exact Qt this build links and copies it into `dist/platforminputcontexts/`. It needs `extra-cmake-modules` on the build machine (`sudo apt install extra-cmake-modules`) and a Qt built with DBus — `conanfile.py` therefore sets `qt/*:with_dbus=True` on Linux, because the plugin talks to fcitx5 over QtDBus. Pass `-DMUFFIN_BUNDLE_FCITX5_PLUGIN=OFF` to skip the plugin and ship a bundle without IME support.
 
 ## Application Icons
 
