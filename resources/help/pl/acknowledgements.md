@@ -1,6 +1,6 @@
 # Podziękowania
 
-Muffin wspiera się na doskonałych projektach open source.
+Mufpen wspiera się na doskonałych projektach open source.
 
 ## Biblioteki główne
 
@@ -29,6 +29,8 @@ Dołączone słowniki pochodzą z [LibreOffice dictionaries](https://github.com/
 
 ## Podziękowania
 
-Dziękujemy każdemu tłumaczowi, testerowi i współtwórcy, który pomaga udoskonalać Muffin. Zapraszamy z opiniami na [liście zgłoszeń](https://github.com/jstzwj/Muffin/issues).
+Dziękujemy każdemu tłumaczowi, testerowi i współtwórcy, który pomaga udoskonalać Mufpen. Zapraszamy z opiniami na [liście zgłoszeń](https://github.com/asdacffgg/Mufpen/issues).
 
-Odwiedź [stronę projektu](https://github.com/jstzwj/Muffin) lub wróć do [Szybkiego startu](help:quick-start).
+Odwiedź [stronę projektu](https://github.com/asdacffgg/Mufpen) lub wróć do [Szybkiego startu](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

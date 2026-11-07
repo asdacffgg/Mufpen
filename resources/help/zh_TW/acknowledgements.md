@@ -1,6 +1,6 @@
 # 致謝
 
-Muffin 站在眾多優秀開源專案的肩膀上。
+Mufpen 站在眾多優秀開源專案的肩膀上。
 
 ## 核心函式庫
 
@@ -29,6 +29,8 @@ Muffin 站在眾多優秀開源專案的肩膀上。
 
 ## 感謝
 
-感謝每一位協助 Muffin 持續進步的譯者、測試者與貢獻者。歡迎在 [問題追蹤器](https://github.com/jstzwj/Muffin/issues) 中提供您的意見回饋。
+感謝每一位協助 Mufpen 持續進步的譯者、測試者與貢獻者。歡迎在 [問題追蹤器](https://github.com/asdacffgg/Mufpen/issues) 中提供您的意見回饋。
 
-前往 [專案首頁](https://github.com/jstzwj/Muffin)，或返回 [快速入門](help:quick-start)。
+前往 [專案首頁](https://github.com/asdacffgg/Mufpen)，或返回 [快速入門](help:quick-start)。
+
+本專案是 [Muffin](https://github.com/jstzwj/Muffin)（MIT License，Copyright © 2026 Muffin Contributors）的個人衍生版本，上游原始程式碼的版權歸其作者所有。

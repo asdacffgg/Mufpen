@@ -1,6 +1,6 @@
 # Démarrage rapide
 
-Bienvenue dans **Muffin**, un éditeur Markdown natif et rapide, construit en C++ et Qt.
+Bienvenue dans **Mufpen**, un éditeur Markdown natif et rapide, construit en C++ et Qt.
 
 ## Créer ou ouvrir un document
 
@@ -24,14 +24,14 @@ Tapez du Markdown et il est mis en forme instantanément. Quelques notions essen
 | `` `code` `` | `code` en ligne |
 | `[lien](https://example.com)` | Un lien cliquable |
 
-Insérez des tableaux, des formules (`$E=mc^2$`), des notes de bas de page et des blocs de code délimités — Muffin prend en charge l'intégralité de GitHub‑Flavored Markdown.
+Insérez des tableaux, des formules (`$E=mc^2$`), des notes de bas de page et des blocs de code délimités — Mufpen prend en charge l'intégralité de GitHub‑Flavored Markdown.
 
 ## Astuces
 
 - Utilisez les entrées de formatage et de paragraphe dans les menus pour mettre en forme le texte sans avoir à mémoriser la syntaxe.
 - **Édition → Rechercher / Remplacer** effectue une recherche dans le document courant.
-- Choisissez une apparence sous **Thème** — Muffin est livré avec les thèmes clair, sombre et « Whitey ».
+- Choisissez une apparence sous **Thème** — Mufpen est livré avec les thèmes clair, sombre et « Whitey ».
 
 Pour la référence complète de la syntaxe, consultez la [Référence Markdown](help:markdown-reference).
 
-Pour découvrir qui rend Muffin possible, lisez les [Remerciements](help:acknowledgements).
+Pour découvrir qui rend Mufpen possible, lisez les [Remerciements](help:acknowledgements).

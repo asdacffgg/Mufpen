@@ -1,6 +1,6 @@
 # Markdown Reference
 
-Muffin renders **GitHub‑Flavored Markdown (GFM)**. This is a concise reference for what the editor supports.
+Mufpen renders **GitHub‑Flavored Markdown (GFM)**. This is a concise reference for what the editor supports.
 
 ## Headings
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Math
 

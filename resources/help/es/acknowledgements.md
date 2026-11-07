@@ -1,6 +1,6 @@
 # Agradecimientos
 
-Muffin se apoya en excelentes proyectos de código abierto.
+Mufpen se apoya en excelentes proyectos de código abierto.
 
 ## Bibliotecas principales
 
@@ -29,6 +29,8 @@ Los diccionarios incluidos provienen de [LibreOffice dictionaries](https://githu
 
 ## Gracias
 
-Gracias a cada traductor, tester y colaborador que ayuda a mejorar Muffin. Tus comentarios son bienvenidos en el [seguimiento de incidencias](https://github.com/jstzwj/Muffin/issues).
+Gracias a cada traductor, tester y colaborador que ayuda a mejorar Mufpen. Tus comentarios son bienvenidos en el [seguimiento de incidencias](https://github.com/asdacffgg/Mufpen/issues).
 
-Visita la [página principal del proyecto](https://github.com/jstzwj/Muffin) o vuelve al [Inicio rápido](help:quick-start).
+Visita la [página principal del proyecto](https://github.com/asdacffgg/Mufpen) o vuelve al [Inicio rápido](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

@@ -1,6 +1,6 @@
 # Quick Start
 
-Welcome to **Muffin**, a fast, native Markdown editor built with C++ and Qt.
+Welcome to **Mufpen**, a fast, native Markdown editor built with C++ and Qt.
 
 ## Create or open a document
 
@@ -31,7 +31,7 @@ Type Markdown and it is formatted instantly. A few essentials:
 | `` `code` `` | Inline `code` |
 | `[link](https://example.com)` | A clickable link |
 
-Insert tables, math (`$E=mc^2$`), footnotes, and fenced code blocks — Muffin renders all of GitHub‑Flavored Markdown.
+Insert tables, math (`$E=mc^2$`), footnotes, and fenced code blocks — Mufpen renders all of GitHub‑Flavored Markdown.
 
 ## Search scope
 
@@ -52,7 +52,7 @@ For a custom command, set the executable, arguments and output extension (withou
 | Variable | Value |
 | --- | --- |
 | `${inputPath}` | Temporary UTF-8 Markdown copy, including unsaved edits |
-| `${outputPath}` | Temporary output path; Muffin commits it to the chosen destination after success |
+| `${outputPath}` | Temporary output path; Mufpen commits it to the chosen destination after success |
 | `${currentPath}` | Current document path, empty for an unnamed document |
 | `${currentFolder}` | Document folder, or the home directory for an unnamed document |
 | `${fileName}` | Document name without its extension |
@@ -62,14 +62,14 @@ For example, with Pandoc selected as the executable: `"${inputPath}" -o "${outpu
 ## Tips
 
 - In live editing, paste browser or office HTML to keep headings, emphasis, lists, links and tables. Spreadsheet cells copied as tab-separated text become a Markdown table. Use **Edit → Paste as Plain Text** to keep only text; code blocks and source mode always paste literal text.
-- Copying in live editing provides HTML for rich editors and Markdown for Muffin. **Preferences → Editor** controls the plain-text representation sent to plain-text apps.
+- Copying in live editing provides HTML for rich editors and Markdown for Mufpen. **Preferences → Editor** controls the plain-text representation sent to plain-text apps.
 - Use **Preferences → Keyboard Shortcuts** to search commands, record a key combination, resolve conflicts or restore defaults. Changes apply immediately and are saved for future sessions.
 - Use **Edit → Lock Editing** (default `F12`) when reading or proofreading to prevent accidental changes. Selection, copying, finding and switching tabs remain available; run the command again to unlock. Choose per-tab or whole-window locking in **Preferences → Editor → Locked Editing**, and customize the shortcut in **Keyboard Shortcuts**.
 - In **Preferences → Export → PDF**, configure the header, footer, author and page numbers. Templates support `${title}`, `${author}`, `${fileName}`, `${date}`, `${pageNo}` and `${pageCount}`.
 - Press the formatting and paragraph entries in the menus to style text without remembering syntax.
 - **Edit → Find / Replace** searches the current document.
-- Pick a look under **Theme** — Muffin ships light, dark and "Whitey" themes.
+- Pick a look under **Theme** — Mufpen ships light, dark and "Whitey" themes.
 
 For the full syntax reference, see the [Markdown Reference](help:markdown-reference).
 
-To see who makes Muffin possible, read the [Acknowledgements](help:acknowledgements).
+To see who makes Mufpen possible, read the [Acknowledgements](help:acknowledgements).

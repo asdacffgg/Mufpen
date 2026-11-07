@@ -1,6 +1,6 @@
 # Lời cảm ơn
 
-Muffin đứng trên vai của những dự án mã nguồn mở tuyệt vời.
+Mufpen đứng trên vai của những dự án mã nguồn mở tuyệt vời.
 
 ## Thư viện cốt lõi
 
@@ -29,6 +29,8 @@ Các từ điển đi kèm được lấy từ [LibreOffice dictionaries](https:
 
 ## Lời cảm ơn
 
-Xin cảm ơn từng người dịch, người thử nghiệm, và người đóng góp giúp Muffin tốt hơn. Rất hoan nghênh phản hồi của bạn trên [theo dõi vấn đề](https://github.com/jstzwj/Muffin/issues).
+Xin cảm ơn từng người dịch, người thử nghiệm, và người đóng góp giúp Mufpen tốt hơn. Rất hoan nghênh phản hồi của bạn trên [theo dõi vấn đề](https://github.com/asdacffgg/Mufpen/issues).
 
-Ghé thăm [trang chủ dự án](https://github.com/jstzwj/Muffin) hoặc quay lại [Bắt đầu nhanh](help:quick-start).
+Ghé thăm [trang chủ dự án](https://github.com/asdacffgg/Mufpen) hoặc quay lại [Bắt đầu nhanh](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

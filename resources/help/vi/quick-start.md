@@ -1,6 +1,6 @@
 # Bắt đầu nhanh
 
-Chào mừng bạn đến với **Muffin**, trình soạn thảo Markdown gốc, nhanh chóng được xây dựng bằng C++ và Qt.
+Chào mừng bạn đến với **Mufpen**, trình soạn thảo Markdown gốc, nhanh chóng được xây dựng bằng C++ và Qt.
 
 ## Tạo hoặc mở tài liệu
 
@@ -24,14 +24,14 @@ Gõ Markdown và nội dung sẽ được định dạng ngay lập tức. Vài 
 | `` `mã` `` | `mã` nội dòng |
 | `[liên kết](https://example.com)` | Một liên kết có thể nhấp |
 
-Chèn bảng, công thức (`$E=mc^2$`), chú thích, và khối mã có viền — Muffin kết xuất toàn bộ GitHub‑Flavored Markdown.
+Chèn bảng, công thức (`$E=mc^2$`), chú thích, và khối mã có viền — Mufpen kết xuất toàn bộ GitHub‑Flavored Markdown.
 
 ## Mẹo
 
 - Nhấn các mục định dạng và đoạn văn trong menu để tạo kiểu văn bản mà không cần ghi nhớ cú pháp.
 - **Soạn thảo → Tìm / Thay thế** tìm kiếm trong tài liệu hiện tại.
-- Chọn giao diện dưới **Giao diện** — Muffin đi kèm với các giao diện sáng, tối và "Whitey".
+- Chọn giao diện dưới **Giao diện** — Mufpen đi kèm với các giao diện sáng, tối và "Whitey".
 
 Để xem tài liệu tham khảo cú pháp đầy đủ, hãy xem [Tham chiếu Markdown](help:markdown-reference).
 
-Để biết ai đã làm cho Muffin trở nên hiện thực, hãy đọc [Lời cảm ơn](help:acknowledgements).
+Để biết ai đã làm cho Mufpen trở nên hiện thực, hãy đọc [Lời cảm ơn](help:acknowledgements).

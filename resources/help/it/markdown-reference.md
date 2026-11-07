@@ -1,6 +1,6 @@
 # Guida di riferimento Markdown
 
-Muffin renderizza il **GitHub-Flavored Markdown (GFM)**. Questa è una guida sintetica a ciò che l'editor supporta.
+Mufpen renderizza il **GitHub-Flavored Markdown (GFM)**. Questa è una guida sintetica a ciò che l'editor supporta.
 
 ## Titoli
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Formule
 

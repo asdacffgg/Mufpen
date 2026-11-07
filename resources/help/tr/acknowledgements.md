@@ -1,6 +1,6 @@
 # Teşekkürler
 
-Muffin, mükemmel açık kaynak projelerinin omuzlarında yükselir.
+Mufpen, mükemmel açık kaynak projelerinin omuzlarında yükselir.
 
 ## Çekirdek kitaplıklar
 
@@ -29,6 +29,8 @@ Paketle gelen sözlükler [LibreOffice dictionaries](https://github.com/LibreOff
 
 ## Teşekkürler
 
-Muffin'i daha iyi hale getirmeye yardım eden her çevirmen, sınayıcı ve katkıda bulunana teşekkür ederiz. Geri bildirimleriniz [sorun izleyicide](https://github.com/jstzwj/Muffin/issues) beklenir.
+Mufpen'i daha iyi hale getirmeye yardım eden her çevirmen, sınayıcı ve katkıda bulunana teşekkür ederiz. Geri bildirimleriniz [sorun izleyicide](https://github.com/asdacffgg/Mufpen/issues) beklenir.
 
-[Proje ana sayfasını](https://github.com/jstzwj/Muffin) ziyaret edin veya [Hızlı Başlangıç](help:quick-start)'a dönün.
+[Proje ana sayfasını](https://github.com/asdacffgg/Mufpen) ziyaret edin veya [Hızlı Başlangıç](help:quick-start)'a dönün.
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

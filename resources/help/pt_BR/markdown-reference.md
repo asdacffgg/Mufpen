@@ -1,6 +1,6 @@
 # Referência de Markdown
 
-O Muffin renderiza o **GitHub‑Flavored Markdown (GFM)**. Esta é uma referência concisa do que o editor oferece.
+O Mufpen renderiza o **GitHub‑Flavored Markdown (GFM)**. Esta é uma referência concisa do que o editor oferece.
 
 ## Títulos
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Matemática
 

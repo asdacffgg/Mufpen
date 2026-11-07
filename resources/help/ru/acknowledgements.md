@@ -1,6 +1,6 @@
 # Благодарности
 
-Muffin стоит на плечах отличных проектов с открытым исходным кодом.
+Mufpen стоит на плечах отличных проектов с открытым исходным кодом.
 
 ## Основные библиотеки
 
@@ -29,6 +29,8 @@ Muffin стоит на плечах отличных проектов с отк�
 
 ## Спасибо
 
-Спасибо каждому переводчику, тестировщику и участнику, кто помогает делать Muffin лучше. Ваши отзывы ждут в [баг‑трекере](https://github.com/jstzwj/Muffin/issues).
+Спасибо каждому переводчику, тестировщику и участнику, кто помогает делать Mufpen лучше. Ваши отзывы ждут в [баг‑трекере](https://github.com/asdacffgg/Mufpen/issues).
 
-Загляните на [главную страницу проекта](https://github.com/jstzwj/Muffin) или вернитесь к [Быстрому старту](help:quick-start).
+Загляните на [главную страницу проекта](https://github.com/asdacffgg/Mufpen) или вернитесь к [Быстрому старту](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

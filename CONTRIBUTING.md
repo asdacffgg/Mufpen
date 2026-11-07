@@ -6,7 +6,7 @@ Thank you for your interest in contributing to Muffin! This document provides gu
 
 ### Reporting Issues
 
-- Use the [GitHub issue tracker](https://github.com/jstzwj/Muffin/issues)
+- Use the [GitHub issue tracker](https://github.com/asdacffgg/Mufpen/issues)
 - Describe the issue clearly with steps to reproduce
 - Include your environment (OS, Qt version, compiler, etc.)
 - Attach screenshots or screen recordings when relevant

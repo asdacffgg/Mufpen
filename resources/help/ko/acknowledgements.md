@@ -1,6 +1,6 @@
 # 감사의 글
 
-Muffin은 훌륭한 오픈 소스 프로젝트들의 어깨 위에 서 있습니다.
+Mufpen은 훌륭한 오픈 소스 프로젝트들의 어깨 위에 서 있습니다.
 
 ## 핵심 라이브러리
 
@@ -29,6 +29,8 @@ Muffin은 훌륭한 오픈 소스 프로젝트들의 어깨 위에 서 있습니
 
 ## 감사
 
-Muffin을 더 낫게 만들어 주시는 모든 번역자, 테스터, 기여자 분들께 감사드립니다. [이슈 트래커](https://github.com/jstzwj/Muffin/issues)에서 피드백을 환영합니다.
+Mufpen을 더 낫게 만들어 주시는 모든 번역자, 테스터, 기여자 분들께 감사드립니다. [이슈 트래커](https://github.com/asdacffgg/Mufpen/issues)에서 피드백을 환영합니다.
 
-[프로젝트 홈페이지](https://github.com/jstzwj/Muffin)를 방문하시거나 [빠른 시작](help:quick-start)으로 돌아가세요.
+[프로젝트 홈페이지](https://github.com/asdacffgg/Mufpen)를 방문하시거나 [빠른 시작](help:quick-start)으로 돌아가세요.
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

@@ -1,6 +1,6 @@
 # 謝辞
 
-Muffin は、優れたオープンソースプロジェクトの上に成り立っています。
+Mufpen は、優れたオープンソースプロジェクトの上に成り立っています。
 
 ## コアライブラリー
 
@@ -29,6 +29,8 @@ Muffin は、優れたオープンソースプロジェクトの上に成り立�
 
 ## 感謝
 
-Muffin の向上にご協力いただいているすべての翻訳者、テスター、コントリビューターの皆さんに感謝いたします。フィードバックは [イシュートラッカー](https://github.com/jstzwj/Muffin/issues) でお待ちしています。
+Mufpen の向上にご協力いただいているすべての翻訳者、テスター、コントリビューターの皆さんに感謝いたします。フィードバックは [イシュートラッカー](https://github.com/asdacffgg/Mufpen/issues) でお待ちしています。
 
-[プロジェクトホームページ](https://github.com/jstzwj/Muffin) を訪れるか、[クイックスタート](help:quick-start) に戻ってください。
+[プロジェクトホームページ](https://github.com/asdacffgg/Mufpen) を訪れるか、[クイックスタート](help:quick-start) に戻ってください。
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

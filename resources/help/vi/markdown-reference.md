@@ -1,6 +1,6 @@
 # Tham chiếu Markdown
 
-Muffin kết xuất **GitHub‑Flavored Markdown (GFM)**. Đây là tài liệu tham khảo ngắn gọn về những gì trình soạn thảo hỗ trợ.
+Mufpen kết xuất **GitHub‑Flavored Markdown (GFM)**. Đây là tài liệu tham khảo ngắn gọn về những gì trình soạn thảo hỗ trợ.
 
 ## Tiêu đề
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Toán học
 

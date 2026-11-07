@@ -1,6 +1,6 @@
 # Snel aan de slag
 
-Welkom bij **Muffin**, een snelle, native Markdown-editor, gebouwd met C++ en Qt.
+Welkom bij **Mufpen**, een snelle, native Markdown-editor, gebouwd met C++ en Qt.
 
 ## Een document maken of openen
 
@@ -24,14 +24,14 @@ Typ Markdown en het wordt direct opgemaakt. Enkele basisprincipes:
 | `` `code` `` | Inline `code` |
 | `[link](https://example.com)` | Een klikbare koppeling |
 
-Voeg tabellen, wiskunde (`$E=mc^2$`), voetnoten en afgesloten codeblokken in — Muffin geeft de volledige GitHub‑Flavored Markdown weer.
+Voeg tabellen, wiskunde (`$E=mc^2$`), voetnoten en afgesloten codeblokken in — Mufpen geeft de volledige GitHub‑Flavored Markdown weer.
 
 ## Tips
 
 - Gebruik de opmaak- en alinea-items in de menu's om tekst te stijlen zonder de syntaxis te hoeven onthouden.
 - **Bewerken → Zoeken / Vervangen** doorzoekt het huidige document.
-- Kies een uiterlijk onder **Thema** — Muffin wordt geleverd met de thema's licht, donker en "Whitey".
+- Kies een uiterlijk onder **Thema** — Mufpen wordt geleverd met de thema's licht, donker en "Whitey".
 
 Voor de volledige syntaxisverwijzing raadpleeg de [Markdown-verwijzing](help:markdown-reference).
 
-Lees de [Met dank aan](help:acknowledgements) om te zien wie Muffin mogelijk maakt.
+Lees de [Met dank aan](help:acknowledgements) om te zien wie Mufpen mogelijk maakt.

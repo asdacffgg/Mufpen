@@ -1,6 +1,6 @@
 # Справочник Markdown
 
-Muffin отображает **GitHub‑Flavored Markdown (GFM)**. Это краткий справочник по возможностям редактора.
+Mufpen отображает **GitHub‑Flavored Markdown (GFM)**. Это краткий справочник по возможностям редактора.
 
 ## Заголовки
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Математика
 

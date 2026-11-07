@@ -1,12 +1,16 @@
 <div align="center">
 
-<img src="logo.svg" alt="Muffin" width="220">
+<img src="logo.svg" alt="Mufpen" width="220">
 
-# Muffin
+# Mufpen
 
 **原生、轻量、所见即所得的 Markdown 编辑器。**
 
-Muffin 由 C++ 与 Qt 6 打造。它把你的 Markdown 渲染成一张可以直接编辑的页面——落笔即所见，源码在背后由编辑器自动维护。不必在源码与预览之间来回切换，输入也不会有延迟。
+> **Mufpen 是 [Muffin](https://github.com/jstzwj/Muffin) 的个人衍生版本**（MIT License，Copyright © 2026 Muffin Contributors）。
+> 上游 Muffin 由 [jstzwj](https://github.com/jstzwj) 开发；本仓库沿用同一 MIT 许可，改动见 [CHANGELOG.md](CHANGELOG.md)。
+> 目前这里不发布二进制包 —— 请按下方步骤从源码构建。
+
+Mufpen 由 C++ 与 Qt 6 打造。它把你的 Markdown 渲染成一张可以直接编辑的页面——落笔即所见，源码在背后由编辑器自动维护。不必在源码与预览之间来回切换，输入也不会有延迟。
 
 [下载](#下载) · [功能特性](#功能特性) · [从源码构建](#开发) · [架构](#架构)
 
@@ -14,7 +18,7 @@ Muffin 由 C++ 与 Qt 6 打造。它把你的 Markdown 渲染成一张可以直�
 ![Qt](https://img.shields.io/badge/Qt-6-41CD52?logo=qt&logoColor=white)
 ![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-2ea44f)
 ![UI Languages](https://img.shields.io/badge/UI_languages-15-blueviolet)
-[![Releases](https://img.shields.io/badge/releases-GitHub-181717?logo=github)](https://github.com/jstzwj/Muffin/releases)
+[![Releases](https://img.shields.io/badge/releases-GitHub-181717?logo=github)](https://github.com/asdacffgg/Mufpen/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <sup>其他语言：</sup>
@@ -22,7 +26,7 @@ Muffin 由 C++ 与 Qt 6 打造。它把你的 Markdown 渲染成一张可以直�
 
 </div>
 
-## 为什么选择 Muffin
+## 为什么选择 Mufpen
 
 - **原生应用，不是网页套壳** — 真正的 C++/Qt 桌面程序：不捆绑 Chromium，不依赖 Node 运行时，没有任何 Web 技术栈，因此启动飞快、内存占用极低。
 - **秒开超大文件** — 懒加载的视口感知布局只渲染屏幕上的块，百兆字节的文档也能瞬间打开、毫不卡顿。增量解析与文本增量编辑则保证任何篇幅下打字都跟手。
@@ -32,9 +36,9 @@ Muffin 由 C++ 与 Qt 6 打造。它把你的 Markdown 渲染成一张可以直�
 
 ### 横向对比
 
-Muffin 将原生 C++/Qt 编辑器与完整、可编辑的 Markdown 运行时结合起来。Velotype 和 Ferrite 也是优秀的原生 Rust 方案；Muffin 的差异在于文档引擎的完整度：懒加载与增量布局、贯穿文档和界面的 CSS 主题、原生 Mermaid 与数学公式，以及可直接编辑的 HTML、表格、代码和图表。下表依据各项目公开文档整理，不代表跨应用性能基准。
+Mufpen 将原生 C++/Qt 编辑器与完整、可编辑的 Markdown 运行时结合起来。Velotype 和 Ferrite 也是优秀的原生 Rust 方案；Mufpen 的差异在于文档引擎的完整度：懒加载与增量布局、贯穿文档和界面的 CSS 主题、原生 Mermaid 与数学公式，以及可直接编辑的 HTML、表格、代码和图表。下表依据各项目公开文档整理，不代表跨应用性能基准。
 
-| | Muffin | Velotype | Ferrite | Typora | MarkText | Obsidian |
+| | Mufpen | Velotype | Ferrite | Typora | MarkText | Obsidian |
 |:--|:--:|:--:|:--:|:--:|:--:|:--:|
 | 核心技术 | C++ / Qt 6 | Rust / GPUI | Rust / egui | Electron | Electron | Electron |
 | 开源 | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
@@ -47,13 +51,13 @@ Muffin 将原生 C++/Qt 编辑器与完整、可编辑的 Markdown 运行时结�
 | 导出 | PDF、HTML、PNG；更多格式通过 Pandoc | HTML、PDF | HTML、PDF | PDF、HTML、图片；更多格式通过 Pandoc | HTML、PDF | HTML、PDF |
 | 大文件 | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ |
 
-Muffin 和 Typora 导出 Word、OpenDocument、RTF、EPUB、LaTeX 等格式时，均需单独安装 Pandoc。参见 [Typora 官方导出文档](https://support.typora.io/Export/)。
+Mufpen 和 Typora 导出 Word、OpenDocument、RTF、EPUB、LaTeX 等格式时，均需单独安装 Pandoc。参见 [Typora 官方导出文档](https://support.typora.io/Export/)。
 
 ### 文档大小与打开耗时
 
 ```mermaid
 xychart-beta
-    title "Muffin Markdown 首屏排版耗时"
+    title "Mufpen Markdown 首屏排版耗时"
     x-axis "文档大小（MiB）" [25, 50, 75, 100]
     y-axis "打开到首屏显示（秒）" 0 --> 40
     line [7.60, 15.60, 35.00, 34.40]
@@ -144,13 +148,13 @@ xychart-beta
 
 |         | Windows | macOS | Linux |
 |:--------|:-------:|:-----:|:-----:|
-| 安装包 | [MSI](https://github.com/jstzwj/Muffin/releases) | [DMG](https://github.com/jstzwj/Muffin/releases) | [从源码构建](#开发) |
+| 安装包 | [MSI](https://github.com/asdacffgg/Mufpen/releases) | [DMG](https://github.com/asdacffgg/Mufpen/releases) | [从源码构建](#开发) |
 
-Windows 发布同时提供完整的 `.7z` 便携包，解压后运行 `Muffin.exe` 即可。字体、拼写字典和语言支持均随包提供，可离线使用。
+Windows 发布同时提供完整的 `.7z` 便携包，解压后运行 `Mufpen.exe` 即可。字体、拼写字典和语言支持均随包提供，可离线使用。
 
 ## 开发
 
-Muffin 使用 [Conan](https://conan.io/) 管理依赖，使用 CMake 构建。你需要 C++20 编译器（MSVC 2022+、GCC 12+ 或 Clang 15+）、Qt 6（通过 Conan 安装）、Conan 2.x 和 CMake 3.24+。
+Mufpen 使用 [Conan](https://conan.io/) 管理依赖，使用 CMake 构建。你需要 C++20 编译器（MSVC 2022+、GCC 12+ 或 Clang 15+）、Qt 6（通过 Conan 安装）、Conan 2.x 和 CMake 3.24+。
 
 ### 构建
 
@@ -182,8 +186,8 @@ ctest --preset conan-release --output-on-failure
 cmake --build --preset conan-release --target dist
 
 # 启动
-./build/dist/Muffin          # Linux / macOS
-.\build\dist\Muffin.exe      # Windows
+./build/dist/Mufpen          # Linux / macOS
+.\build\dist\Mufpen.exe      # Windows
 ```
 
 更多构建细节与常见问题请参见 [CLAUDE.md](CLAUDE.md)。
@@ -197,7 +201,7 @@ cmake --build --preset conan-release --target release_translations   # 编译 .q
 
 ## 架构
 
-Muffin 以原生 block tree 作为运行时模型。导入时，Markdown 被解析为结构化的可编辑块；保存时，block tree 会重新序列化为规范化 Markdown。双向的行内投影（inline projection）让渲染视图与原始源码始终保持映射。
+Mufpen 以原生 block tree 作为运行时模型。导入时，Markdown 被解析为结构化的可编辑块；保存时，block tree 会重新序列化为规范化 Markdown。双向的行内投影（inline projection）让渲染视图与原始源码始终保持映射。
 
 | 层级 | 职责 |
 | --- | --- |
@@ -238,7 +242,7 @@ Muffin 以原生 block tree 作为运行时模型。导入时，Markdown 被解�
 
 ## 路线图
 
-Muffin 已经支持几乎全部核心与扩展 Markdown 语法——标题、段落、列表、任务列表、引用、表格、代码块、行内格式、链接、reference-style 链接与图片、脚注、front matter、数学和 HTML——并已实现多格式导出与导入。仍在推进的工作包括：
+Mufpen 已经支持几乎全部核心与扩展 Markdown 语法——标题、段落、列表、任务列表、引用、表格、代码块、行内格式、链接、reference-style 链接与图片、脚注、front matter、数学和 HTML——并已实现多格式导出与导入。仍在推进的工作包括：
 
 - [x] 打磨渲染编辑面 — 选区（表格跨格高亮、主题化颜色、三击选段、拖拽阈值/扩展/自动滚动）、光标（闪烁、残影擦除修复）、IME（完整上下文查询、源码模式组合渲染、失焦重置）、局部刷新（BuiltStamp 旁路、光标脏矩形）。
 - [x] 加入原生 Mermaid 流程图、泳道、时序图、类图、状态图、ER、需求图、饼图、象限图、旅程图、雷达图、XY 图、时间线、报文图、看板、思维导图、Block、GitGraph、C4、TreeView、事件建模、石川图、维恩图、桑基图、树图、Cynefin、Wardley、架构图、甘特图和 Info 图。
@@ -253,7 +257,7 @@ Muffin 已经支持几乎全部核心与扩展 Markdown 语法——标题、段
 
 欢迎贡献！请阅读[贡献指南](CONTRIBUTING.md)开始参与。
 
-如果你发现了 bug 或有功能建议，欢迎[提交 Issue](https://github.com/jstzwj/Muffin/issues)。请附上操作系统、复现步骤和相关截图。
+如果你发现了 bug 或有功能建议，欢迎[提交 Issue](https://github.com/asdacffgg/Mufpen/issues)。请附上操作系统、复现步骤和相关截图。
 
 ## 许可证
 
@@ -261,4 +265,4 @@ Muffin 已经支持几乎全部核心与扩展 Markdown 语法——标题、段
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=jstzwj/Muffin&type=date)](https://star-history.com/#jstzwj/Muffin&type=date)
+[![Star History Chart](https://api.star-history.com/chart?repos=jstzwj/Mufpen&type=date)](https://star-history.com/#jstzwj/Mufpen&type=date)

@@ -1,6 +1,6 @@
 # Met dank aan
 
-Muffin staat op de schouders van uitstekende open-sourceprojecten.
+Mufpen staat op de schouders van uitstekende open-sourceprojecten.
 
 ## Kernbibliotheken
 
@@ -29,6 +29,8 @@ De meegeleverde woordenboeken zijn afkomstig van [LibreOffice dictionaries](http
 
 ## Dankwoord
 
-Dank aan elke vertaler, tester en bijdrager die helpt Muffin te verbeteren. Uw feedback is welkom in de [issue-tracker](https://github.com/jstzwj/Muffin/issues).
+Dank aan elke vertaler, tester en bijdrager die helpt Mufpen te verbeteren. Uw feedback is welkom in de [issue-tracker](https://github.com/asdacffgg/Mufpen/issues).
 
-Bezoek de [projectpagina](https://github.com/jstzwj/Muffin) of ga terug naar [Snel aan de slag](help:quick-start).
+Bezoek de [projectpagina](https://github.com/asdacffgg/Mufpen) of ga terug naar [Snel aan de slag](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

@@ -1,6 +1,6 @@
 # Markdown-verwijzing
 
-Muffin geeft **GitHub‑Flavored Markdown (GFM)** weer. Dit is een beknopte verwijzing van wat de editor ondersteunt.
+Mufpen geeft **GitHub‑Flavored Markdown (GFM)** weer. Dit is een beknopte verwijzing van wat de editor ondersteunt.
 
 ## Kopteksten
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Wiskunde
 

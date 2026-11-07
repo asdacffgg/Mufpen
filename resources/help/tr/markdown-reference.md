@@ -1,6 +1,6 @@
 # Markdown başvurusu
 
-Muffin, **GitHub‑Flavored Markdown (GFM)** oluşturur. Bu, düzenleyicinin destekledikleri için kısa bir başvurudur.
+Mufpen, **GitHub‑Flavored Markdown (GFM)** oluşturur. Bu, düzenleyicinin destekledikleri için kısa bir başvurudur.
 
 ## Başlıklar
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Matematik
 

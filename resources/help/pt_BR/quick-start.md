@@ -1,6 +1,6 @@
 # Início rápido
 
-Bem‑vindo ao **Muffin**, um editor de Markdown rápido e nativo, construído com C++ e Qt.
+Bem‑vindo ao **Mufpen**, um editor de Markdown rápido e nativo, construído com C++ e Qt.
 
 ## Criar ou abrir um documento
 
@@ -24,14 +24,14 @@ Digite Markdown e ele é formatado instantaneamente. Alguns fundamentos:
 | `` `code` `` | `code` embutido |
 | `[link](https://example.com)` | Um link clicável |
 
-Insira tabelas, fórmulas matemáticas (`$E=mc^2$`), notas de rodapé e blocos de código cercados — o Muffin renderiza todo o GitHub‑Flavored Markdown.
+Insira tabelas, fórmulas matemáticas (`$E=mc^2$`), notas de rodapé e blocos de código cercados — o Mufpen renderiza todo o GitHub‑Flavored Markdown.
 
 ## Dicas
 
 - Use as entradas de formatação e de parágrafo nos menus para estilizar o texto sem precisar lembrar da sintaxe.
 - **Editar → Localizar / Substituir** pesquisa no documento atual.
-- Escolha uma aparência em **Tema** — o Muffin traz os temas claro, escuro e "Whitey".
+- Escolha uma aparência em **Tema** — o Mufpen traz os temas claro, escuro e "Whitey".
 
 Para a referência completa da sintaxe, consulte a [Referência de Markdown](help:markdown-reference).
 
-Para saber quem torna o Muffin possível, leia os [Agradecimentos](help:acknowledgements).
+Para saber quem torna o Mufpen possível, leia os [Agradecimentos](help:acknowledgements).

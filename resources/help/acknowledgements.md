@@ -1,6 +1,6 @@
 # Acknowledgements
 
-Muffin stands on the shoulders of excellent open‑source projects.
+Mufpen stands on the shoulders of excellent open‑source projects.
 
 ## Core libraries
 
@@ -29,6 +29,8 @@ The bundled dictionaries draw on [LibreOffice dictionaries](https://github.com/L
 
 ## Thanks
 
-Thank you to every translator, tester, and contributor who helps make Muffin better. Your feedback is welcome on the [issue tracker](https://github.com/jstzwj/Muffin/issues).
+Thank you to every translator, tester, and contributor who helps make Mufpen better. Your feedback is welcome on the [issue tracker](https://github.com/asdacffgg/Mufpen/issues).
 
-Visit the [project home page](https://github.com/jstzwj/Muffin) or return to the [Quick Start](help:quick-start).
+Visit the [project home page](https://github.com/asdacffgg/Mufpen) or return to the [Quick Start](help:quick-start).
+
+This project is a personal fork of [Muffin](https://github.com/jstzwj/Muffin) (MIT License, Copyright © 2026 Muffin Contributors). The original code remains under its authors' copyright.

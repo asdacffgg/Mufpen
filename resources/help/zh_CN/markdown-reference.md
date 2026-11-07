@@ -1,6 +1,6 @@
 # Markdown 参考手册
 
-Muffin 渲染 **GitHub 风格 Markdown (GFM)**。以下是编辑器支持语法的简要参考。
+Mufpen 渲染 **GitHub 风格 Markdown (GFM)**。以下是编辑器支持语法的简要参考。
 
 ## 标题
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | 名称 | 角色 |
 | --- | --- |
-| Muffin | 编辑器 |
+| Mufpen | 编辑器 |
 
 ## 数学公式
 

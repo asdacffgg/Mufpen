@@ -1,12 +1,16 @@
 <div align="center">
 
-<img src="logo.svg" alt="Muffin" width="220">
+<img src="logo.svg" alt="Mufpen" width="220">
 
-# Muffin
+# Mufpen
 
 **A native, lightweight, WYSIWYG Markdown editor.**
 
-Muffin is a block-level WYSIWYG Markdown editor built from the ground up in C++ and Qt 6. Your Markdown file stays the single source of truth, rendered as a page you edit directly: no split panes, no preview pane, no typing lag.
+> **Mufpen is a personal fork of [Muffin](https://github.com/jstzwj/Muffin)** (MIT License, Copyright © 2026 Muffin Contributors).
+> Upstream Muffin is by [jstzwj](https://github.com/jstzwj); this fork keeps the same MIT license and adds the changes listed in [CHANGELOG.md](CHANGELOG.md).
+> Binaries are not published here yet — build from source with the steps below.
+
+Mufpen is a block-level WYSIWYG Markdown editor built from the ground up in C++ and Qt 6. Your Markdown file stays the single source of truth, rendered as a page you edit directly: no split panes, no preview pane, no typing lag.
 
 [Download](#download) · [Features](#features) · [Build from source](#development) · [Architecture](#architecture)
 
@@ -14,7 +18,7 @@ Muffin is a block-level WYSIWYG Markdown editor built from the ground up in C++ 
 ![Qt](https://img.shields.io/badge/Qt-6-41CD52?logo=qt&logoColor=white)
 ![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-2ea44f)
 ![UI Languages](https://img.shields.io/badge/UI_languages-15-blueviolet)
-[![Releases](https://img.shields.io/badge/releases-GitHub-181717?logo=github)](https://github.com/jstzwj/Muffin/releases)
+[![Releases](https://img.shields.io/badge/releases-GitHub-181717?logo=github)](https://github.com/asdacffgg/Mufpen/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <sup>Translations:</sup>
@@ -22,7 +26,7 @@ Muffin is a block-level WYSIWYG Markdown editor built from the ground up in C++ 
 
 </div>
 
-## Why Muffin
+## Why Mufpen
 
 - **Native, not a web app** — A real C++/Qt desktop application. No bundled Chromium, no Node runtime, no web stack — just a fast cold start and a small memory footprint.
 - **Opens huge files instantly** — A lazy, viewport-aware layout renders only the blocks on screen, so multi-megabyte documents open without freezing. Incremental parsing and text-delta editing keep typing responsive at any size.
@@ -32,9 +36,9 @@ Muffin is a block-level WYSIWYG Markdown editor built from the ground up in C++ 
 
 ### How it compares
 
-Muffin combines a native C++/Qt editor with a broad, fully editable Markdown runtime. Velotype and Ferrite are strong native Rust alternatives; Muffin's distinction is the depth of its document engine: lazy and incremental layout, end-to-end CSS themes, native Mermaid and math rendering, and direct editing of HTML, tables, code, and diagrams. The table compares the projects' documented capabilities; it is not a cross-app benchmark.
+Mufpen combines a native C++/Qt editor with a broad, fully editable Markdown runtime. Velotype and Ferrite are strong native Rust alternatives; Mufpen's distinction is the depth of its document engine: lazy and incremental layout, end-to-end CSS themes, native Mermaid and math rendering, and direct editing of HTML, tables, code, and diagrams. The table compares the projects' documented capabilities; it is not a cross-app benchmark.
 
-| | Muffin | Velotype | Ferrite | Typora | MarkText | Obsidian |
+| | Mufpen | Velotype | Ferrite | Typora | MarkText | Obsidian |
 |:--|:--:|:--:|:--:|:--:|:--:|:--:|
 | Core technology | C++ / Qt 6 | Rust / GPUI | Rust / egui | Electron | Electron | Electron |
 | Open source | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
@@ -47,13 +51,13 @@ Muffin combines a native C++/Qt editor with a broad, fully editable Markdown run
 | Export | PDF, HTML, PNG; more via Pandoc | HTML, PDF | HTML, PDF | PDF, HTML, images; more via Pandoc | HTML, PDF | HTML, PDF |
 | Large files | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ |
 
-Muffin and Typora both require a separate Pandoc installation for formats such as Word, OpenDocument, RTF, EPUB, and LaTeX. See [Typora's export documentation](https://support.typora.io/Export/).
+Mufpen and Typora both require a separate Pandoc installation for formats such as Word, OpenDocument, RTF, EPUB, and LaTeX. See [Typora's export documentation](https://support.typora.io/Export/).
 
 ### Document size and opening time
 
 ```mermaid
 xychart-beta
-    title "Muffin Markdown time to first rendered viewport"
+    title "Mufpen Markdown time to first rendered viewport"
     x-axis "Document size (MiB)" [25, 50, 75, 100]
     y-axis "Open to first rendered viewport (s)" 0 --> 40
     line [7.60, 15.60, 35.00, 34.40]
@@ -144,13 +148,13 @@ The curve measures the time from opening the Markdown file until the first viewp
 
 |         | Windows | macOS | Linux |
 |:--------|:-------:|:-----:|:-----:|
-| Install | [MSI](https://github.com/jstzwj/Muffin/releases) | [DMG](https://github.com/jstzwj/Muffin/releases) | [Build from source](#development) |
+| Install | Build from source | Build from source | [Build from source](#development) |
 
-Windows releases also include a complete `.7z` portable package. Extract it and run `Muffin.exe`; fonts, dictionaries, and language support are bundled for offline use.
+Windows releases also include a complete `.7z` portable package. Extract it and run `Mufpen.exe`; fonts, dictionaries, and language support are bundled for offline use.
 
 ## Development
 
-Muffin uses [Conan](https://conan.io/) for dependency management and CMake for building. You need a C++20 compiler (MSVC 2022+, GCC 12+, or Clang 15+), Qt 6 (installed via Conan), Conan 2.x, and CMake 3.24+.
+Mufpen uses [Conan](https://conan.io/) for dependency management and CMake for building. You need a C++20 compiler (MSVC 2022+, GCC 12+, or Clang 15+), Qt 6 (installed via Conan), Conan 2.x, and CMake 3.24+.
 
 ### Build
 
@@ -182,8 +186,8 @@ ctest --preset conan-release --output-on-failure
 cmake --build --preset conan-release --target dist
 
 # Launch
-./build/dist/Muffin          # Linux / macOS
-.\build\dist\Muffin.exe      # Windows
+./build/dist/Mufpen          # Linux / macOS
+.\build\dist\Mufpen.exe      # Windows
 ```
 
 See [CLAUDE.md](CLAUDE.md) for additional build details and common pitfalls.
@@ -197,7 +201,7 @@ cmake --build --preset conan-release --target release_translations   # Compile .
 
 ## Architecture
 
-Muffin uses a native block tree as its runtime model. On import, Markdown is parsed into structured, editable blocks; on save, the block tree is re-serialized into normalized Markdown. Bidirectional inline projection keeps the rendered view and the raw source mapped at all times.
+Mufpen uses a native block tree as its runtime model. On import, Markdown is parsed into structured, editable blocks; on save, the block tree is re-serialized into normalized Markdown. Bidirectional inline projection keeps the rendered view and the raw source mapped at all times.
 
 | Layer | Responsibility |
 | --- | --- |
@@ -238,7 +242,7 @@ Third-party sources live in `third_party/` and are built as part of the CMake pr
 
 ## Roadmap
 
-Muffin already covers nearly all of core and extended Markdown — headings, paragraphs, lists, task lists, blockquotes, tables, code blocks, inline formatting, links, reference-style links and images, footnotes, front matter, math, and HTML — plus multi-format export and import. Ongoing work includes:
+Mufpen already covers nearly all of core and extended Markdown — headings, paragraphs, lists, task lists, blockquotes, tables, code blocks, inline formatting, links, reference-style links and images, footnotes, front matter, math, and HTML — plus multi-format export and import. Ongoing work includes:
 
 - [x] Polish the rendered editor surface — selection (cross-cell table spans, themed color, triple-click, drag threshold/extend/auto-scroll), caret (blink, ghost-erase fixes), IME (full context queries, source-mode composition rendering, focus reset), and partial refresh (BuiltStamp bypass, caret dirty rects).
 - [x] Add native Mermaid flowchart, Swimlane, sequence, class, state, ER, requirement, pie, quadrant, journey, radar, XY, timeline, packet, Kanban, mindmap, Block, GitGraph, C4, TreeView, Event Modeling, Ishikawa, Venn, Sankey, Treemap, Cynefin, Wardley, Architecture, Gantt, and Info diagrams.
@@ -253,7 +257,7 @@ Muffin already covers nearly all of core and extended Markdown — headings, par
 
 Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) to get started.
 
-If you have a bug report or feature request, feel free to [open an issue](https://github.com/jstzwj/Muffin/issues). When doing so, please include your OS, steps to reproduce, and any relevant screenshots.
+If you have a bug report or feature request, feel free to [open an issue](https://github.com/asdacffgg/Mufpen/issues). When doing so, please include your OS, steps to reproduce, and any relevant screenshots.
 
 ## License
 

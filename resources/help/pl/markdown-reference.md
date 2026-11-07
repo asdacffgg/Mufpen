@@ -1,6 +1,6 @@
 # Dokumentacja Markdown
 
-Muffin renderuje **GitHub‑Flavored Markdown (GFM)**. To zwięzła dokumentacja tego, co obsługuje edytor.
+Mufpen renderuje **GitHub‑Flavored Markdown (GFM)**. To zwięzła dokumentacja tego, co obsługuje edytor.
 
 ## Nagłówki
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Matematyka
 

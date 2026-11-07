@@ -1,6 +1,6 @@
 # Référence Markdown
 
-Muffin prend en charge **GitHub‑Flavored Markdown (GFM)**. Ceci est une référence concise de ce que l'éditeur prend en charge.
+Mufpen prend en charge **GitHub‑Flavored Markdown (GFM)**. Ceci est une référence concise de ce que l'éditeur prend en charge.
 
 ## Titres
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## Mathématiques
 

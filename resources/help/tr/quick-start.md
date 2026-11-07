@@ -1,6 +1,6 @@
 # Hızlı başlangıç
 
-**Muffin**'e hoş geldiniz; C++ ve Qt ile oluşturulmuş hızlı, yerel bir Markdown düzenleyicisi.
+**Mufpen**'e hoş geldiniz; C++ ve Qt ile oluşturulmuş hızlı, yerel bir Markdown düzenleyicisi.
 
 ## Belge oluşturma veya açma
 
@@ -24,14 +24,14 @@ Markdown yazın; biçimlendirme anında uygulanır. Birkaç temel öğe:
 | `` `code` `` | Satır içi `code` |
 | `[link](https://example.com)` | Tıklanabilir bir bağlantı |
 
-Tablolar, matematik (`$E=mc^2$`), dipnotlar ve çitlenmiş kod blokları ekleyin — Muffin, GitHub‑Flavored Markdown'ın tamamını oluşturur.
+Tablolar, matematik (`$E=mc^2$`), dipnotlar ve çitlenmiş kod blokları ekleyin — Mufpen, GitHub‑Flavored Markdown'ın tamamını oluşturur.
 
 ## İpuçları
 
 - Sözdizimini ezberlemeden metni biçimlendirmek için menülerdeki biçimlendirme ve paragraf girişlerini kullanın.
 - **Düzenle → Bul / Değiştir**, geçerli belgede arama yapar.
-- **Tema** altından bir görünüm seçin — Muffin; açık, koyu ve "Whitey" temeleriyle birlikte gelir.
+- **Tema** altından bir görünüm seçin — Mufpen; açık, koyu ve "Whitey" temeleriyle birlikte gelir.
 
 Sözdiziminin tam başvurusu için [Markdown Başvurusu](help:markdown-reference)'na bakın.
 
-Muffin'i mümkün kılanları görmek için [Teşekkürler](help:acknowledgements)'i okuyun.
+Mufpen'i mümkün kılanları görmek için [Teşekkürler](help:acknowledgements)'i okuyun.

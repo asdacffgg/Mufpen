@@ -1,6 +1,6 @@
 # 致谢
 
-Muffin 站在众多优秀开源项目的肩膀上。
+Mufpen 站在众多优秀开源项目的肩膀上。
 
 ## 核心库
 
@@ -29,6 +29,8 @@ Muffin 站在众多优秀开源项目的肩膀上。
 
 ## 感谢
 
-感谢每一位帮助 Muffin 不断改进的译者、测试者和贡献者。欢迎在 [问题追踪器](https://github.com/jstzwj/Muffin/issues) 中提交您的反馈。
+感谢每一位帮助 Mufpen 不断改进的译者、测试者和贡献者。欢迎在 [问题追踪器](https://github.com/asdacffgg/Mufpen/issues) 中提交您的反馈。
 
-访问 [项目主页](https://github.com/jstzwj/Muffin)，或返回 [快速入门](help:quick-start)。
+访问 [项目主页](https://github.com/asdacffgg/Mufpen)，或返回 [快速入门](help:quick-start)。
+
+本项目是 [Muffin](https://github.com/jstzwj/Muffin)（MIT License，Copyright © 2026 Muffin Contributors）的个人衍生版本，上游原始代码的版权归其作者所有。

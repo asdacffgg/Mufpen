@@ -1,6 +1,6 @@
 # Markdown 참조
 
-Muffin은 **GitHub‑Flavored Markdown (GFM)**을 렌더링합니다. 이 문서는 편집기가 지원하는 기능에 대한 간결한 참조입니다.
+Mufpen은 **GitHub‑Flavored Markdown (GFM)**을 렌더링합니다. 이 문서는 편집기가 지원하는 기능에 대한 간결한 참조입니다.
 
 ## 제목
 
@@ -83,12 +83,12 @@ int main() { return 0; }
 ```
 | Name  | Role |
 | ----- | ---- |
-| Muffin | Editor |
+| Mufpen | Editor |
 ```
 
 | Name | Role |
 | --- | --- |
-| Muffin | Editor |
+| Mufpen | Editor |
 
 ## 수식
 

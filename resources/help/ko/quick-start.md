@@ -1,6 +1,6 @@
 # 빠른 시작
 
-C++와 Qt로 만든 빠르고 네이티브 Markdown 편집기 **Muffin**에 오신 것을 환영합니다.
+C++와 Qt로 만든 빠르고 네이티브 Markdown 편집기 **Mufpen**에 오신 것을 환영합니다.
 
 ## 문서 만들기 및 열기
 
@@ -24,14 +24,14 @@ Markdown을 입력하면 즉시 서식이 적용됩니다. 기본이 되는 몇 
 | `` `code` `` | 인라인 `code` |
 | `[link](https://example.com)` | 클릭 가능한 링크 |
 
-표, 수식(`$E=mc^2$`), 각주, 코드 블록도 삽입할 수 있습니다. Muffin은 GitHub‑Flavored Markdown 전체를 렌더링합니다.
+표, 수식(`$E=mc^2$`), 각주, 코드 블록도 삽입할 수 있습니다. Mufpen은 GitHub‑Flavored Markdown 전체를 렌더링합니다.
 
 ## 팁
 
 - 메뉴의 서식 및 단락 항목을 사용하면 문법을 외우지 않고도 텍스트 스타일을 지정할 수 있습니다.
 - **편집 → 찾기 / 바꾸기**로 현재 문서를 검색할 수 있습니다.
-- **테마**에서 모양을 선택하세요. Muffin에는 밝은 테마, 어두운 테마, "Whitey" 테마가 포함되어 있습니다.
+- **테마**에서 모양을 선택하세요. Mufpen에는 밝은 테마, 어두운 테마, "Whitey" 테마가 포함되어 있습니다.
 
 전체 문법 참조는 [Markdown 참조](help:markdown-reference)를 확인하세요.
 
-Muffin을 가능하게 해주는 분들은 [감사의 글](help:acknowledgements)에서 만나보세요.
+Mufpen을 가능하게 해주는 분들은 [감사의 글](help:acknowledgements)에서 만나보세요.
