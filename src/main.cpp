@@ -182,7 +182,12 @@ int main(int argc, char* argv[]) {
   parser.setApplicationDescription(
       QCoreApplication::translate("main", "A fast, lightweight, native Markdown editor built with C++ and Qt 6."));
   parser.addHelpOption();
-  parser.addVersionOption();
+  // Qt's built-in version option prints QCoreApplication::applicationName(), and that name
+  // stays "Muffin" so existing ~/.config/Muffin settings and draft snapshots keep working.
+  // Print the displayed product name instead.
+  const QCommandLineOption versionOption(QStringList{QStringLiteral("v"), QStringLiteral("version")},
+                                         QCoreApplication::translate("main", "Displays version information."));
+  parser.addOption(versionOption);
   // --folder <path> is the form used by the Explorer "Open with Muffin" verb
   // for directories and folder backgrounds (it passes %1 / %V). A positional
   // directory argument is treated the same way for ergonomic command-line use.
@@ -199,6 +204,11 @@ int main(int argc, char* argv[]) {
   parser.addPositionalArgument(QStringLiteral("file"),
                                QCoreApplication::translate("main", "Markdown or text file (or folder) to open."));
   parser.process(app);
+  if (parser.isSet(versionOption)) {
+    // Keep in sync with the product name used by the window title, About dialog and packaging.
+    QTextStream(stdout) << "Mufpen " << QCoreApplication::applicationVersion() << Qt::endl;
+    return 0;
+  }
 
   const QStringList positionalArguments = parser.positionalArguments();
   const QString folderArg = parser.value(folderOption);
