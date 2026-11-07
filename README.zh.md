@@ -259,10 +259,14 @@ Mufpen 已经支持几乎全部核心与扩展 Markdown 语法——标题、段
 
 如果你发现了 bug 或有功能建议，欢迎[提交 Issue](https://github.com/asdacffgg/Mufpen/issues)。请附上操作系统、复现步骤和相关截图。
 
-## 许可证
+## 许可证与归属
 
-[**MIT**](LICENSE)
+[**MIT**](LICENSE) —— 与上游 Muffin 采用同一许可。
 
-## Star History
+- 上游项目：[jstzwj/Muffin](https://github.com/jstzwj/Muffin)
+- 上游版权：Copyright © 2026 Muffin Contributors（[LICENSE](LICENSE) 中原样保留）
+- 本衍生版本：Mufpen，由 [asdacffgg](https://github.com/asdacffgg) 维护；改动见 [CHANGELOG.md](CHANGELOG.md) 与提交记录。
 
-[![Star History Chart](https://api.star-history.com/chart?repos=jstzwj/Mufpen&type=date)](https://star-history.com/#jstzwj/Mufpen&type=date)
+Mufpen 是一次**表层改名**：窗口标题、关于对话框、安装包产品名、macOS bundle 标识、图标与更新源都叫 Mufpen，而可执行文件与库名仍是 `Muffin`、`MuffinCore`、`MuffinUi`，配置仍写入 `~/.config/Muffin`，这样旧的设置和草稿快照不会丢失；C++ 命名空间 `muffin::` 未改，15 种语言的翻译因此继续有效。
+
+本仓库**不发布二进制**，请从源码构建；上游 Muffin 的发行版与本仓库的更新源不兼容。

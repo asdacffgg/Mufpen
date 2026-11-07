@@ -20,6 +20,7 @@ Mufpen is a block-level WYSIWYG Markdown editor built from the ground up in C++ 
 ![UI Languages](https://img.shields.io/badge/UI_languages-15-blueviolet)
 [![Releases](https://img.shields.io/badge/releases-GitHub-181717?logo=github)](https://github.com/asdacffgg/Mufpen/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Fork](https://img.shields.io/badge/fork%20of-Muffin-6c4cf1)
 
 <sup>Translations:</sup>
 <a href="README.zh.md">中文</a>
@@ -259,10 +260,18 @@ Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md)
 
 If you have a bug report or feature request, feel free to [open an issue](https://github.com/asdacffgg/Mufpen/issues). When doing so, please include your OS, steps to reproduce, and any relevant screenshots.
 
-## License
+## License and attribution
 
-[**MIT**](LICENSE)
+[**MIT**](LICENSE) — the same license as upstream Muffin.
+
+- Upstream project: [jstzwj/Muffin](https://github.com/jstzwj/Muffin)
+- Upstream copyright: Copyright © 2026 Muffin Contributors (kept verbatim in [LICENSE](LICENSE))
+- This fork: Mufpen, maintained by [asdacffgg](https://github.com/asdacffgg). Changes are listed in [CHANGELOG.md](CHANGELOG.md) and every commit.
+
+Mufpen is a **display-name fork**: the window title, About box, installer product, macOS bundle identifier, icon and update feed say Mufpen, while the executable and library names stay `Muffin`, `MuffinCore` and `MuffinUi`, and configuration still lives in `~/.config/Muffin` so existing settings and draft snapshots keep working. The internal `muffin::` C++ namespace is unchanged, which keeps the 15 translation catalogs valid.
+
+This repository publishes **no binaries**; build from source. Upstream releases of the original Muffin are not compatible with this fork's update feed.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=jstzwj/Muffin&type=date)](https://star-history.com/#jstzwj/Muffin&type=date)
+[![Star History Chart](https://api.star-history.com/chart?repos=asdacffgg/Mufpen&type=date)](https://star-history.com/#asdacffgg/Mufpen&type=date)
