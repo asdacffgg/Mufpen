@@ -446,18 +446,18 @@ jobs:
       - name: Install signature verifier
         run: python -m pip install -r requirements-release.txt
 
-      - name: Test publication contracts
-        run: python scripts/test_publish_cnb_release.py
+      - name: Test catalog builder
+        run: python scripts/test_prepare_update_catalog.py
 
       - name: Download distribution artifacts
         uses: actions/download-artifact@v4
         with:
           path: release-artifacts
 
-      - name: Prepare static update catalogs
+      - name: Prepare static update catalog
         env:
           RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
-        run: python scripts/publish_cnb_release.py --tag "$RELEASE_TAG" --assets release-artifacts --output update-metadata --prepare-only
+        run: python scripts/prepare_update_catalog.py --tag "$RELEASE_TAG" --assets release-artifacts --output update-metadata
 
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v2
