@@ -30,6 +30,6 @@
     <file alias="split-layout.svg">icons/ui/split-layout.svg</file>
   </qresource>
   <qresource prefix="/app">
-    <file alias="muffin.png">../resources/app-icons/muffin-256.png</file>
+    <file alias="app-icon.png">../resources/app-icons/mufpen-256.png</file>
   </qresource>
 </RCC>

@@ -3,7 +3,7 @@
 
 Outputs (written next to this repo's resources/app-icons/):
   muffin-{16,24,32,48,64,128,256,512,1024}.png   crisp per-size PNGs
-  muffin.ico                                        multi-resolution Windows icon
+  mufpen.ico                                        multi-resolution Windows icon
   muffin.icns                                        Apple icon set (from the 1024 PNG)
 
 Rendering uses PySide6's QSvgRenderer — the *same* Qt SVG engine the application
@@ -41,6 +41,8 @@ OUT_DIR = os.path.join(REPO_ROOT, "resources", "app-icons")
 PNG_SIZES = [16, 24, 32, 48, 64, 128, 256, 512, 1024]
 ICO_SIZES = [16, 24, 32, 48, 64, 128, 256]
 ICNS_SOURCE_SIZE = 1024
+# Base file name of the generated assets; the build refers to these names verbatim.
+ICON_BASENAME = "mufpen"
 
 
 def render_png(renderer: QSvgRenderer, size: int, path: str) -> None:
@@ -114,13 +116,13 @@ def main() -> int:
     png_by_size: dict[int, str] = {}
     print("Rendering PNGs:")
     for size in PNG_SIZES:
-        path = os.path.join(OUT_DIR, f"muffin-{size}.png")
+        path = os.path.join(OUT_DIR, f"{ICON_BASENAME}-{size}.png")
         render_png(renderer, size, path)
         png_by_size[size] = path
 
     print("Packaging containers:")
-    build_ico(png_by_size, os.path.join(OUT_DIR, "muffin.ico"))
-    build_icns(png_by_size, os.path.join(OUT_DIR, "muffin.icns"))
+    build_ico(png_by_size, os.path.join(OUT_DIR, f"{ICON_BASENAME}.ico"))
+    build_icns(png_by_size, os.path.join(OUT_DIR, f"{ICON_BASENAME}.icns"))
 
     app.quit()
     print("Done.")

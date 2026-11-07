@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
   // Application window/taskbar icon for every platform. This is the primary
   // mechanism on Linux; on Windows/macOS the .exe/.app icon is also embedded,
   // and this makes the decoration appear immediately at launch.
-  QApplication::setWindowIcon(QIcon(QStringLiteral(":/app/muffin.png")));
+  QApplication::setWindowIcon(QIcon(QStringLiteral(":/app/app-icon.png")));
 
   // Keep application chrome on the same screen-rasterization policy as the
   // document, source editor, and inline HTML text.

@@ -62,7 +62,7 @@ The dist bundle carries its own Qt and `qt.conf` points `Plugins` at the bundle,
 
 ## Application Icons
 
-The committed raster icons in `resources/app-icons/` (PNGs at 16–1024px, `muffin.ico`, `muffin.icns`) are embedded by CMake automatically — the `.ico` into the Windows `.exe` via `cmake/muffin.rc.in`, the `.icns` into the macOS `.app` bundle, and a 256px PNG as the runtime window icon (all platforms, primary on Linux). No GitHub Actions change is needed; the build picks them up on every platform.
+The committed raster icons in `resources/app-icons/` (PNGs at 16–1024px, `mufpen.ico`, `mufpen.icns`) are embedded by CMake automatically — the `.ico` into the Windows `.exe` via `cmake/muffin.rc.in`, the `.icns` into the macOS `.app` bundle, and a 256px PNG as the runtime window icon (all platforms, primary on Linux). No GitHub Actions change is needed; the build picks them up on every platform.
 
 They are generated from `logo.svg`. Regenerate after editing the logo:
 
