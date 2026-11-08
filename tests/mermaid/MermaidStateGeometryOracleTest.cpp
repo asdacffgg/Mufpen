@@ -1,10 +1,10 @@
-// State geometry parity oracle: compares Muffin's native state::StateScene
+// State geometry parity oracle: compares Mufpen's native state::StateScene
 // against real mermaid 11.16.0 stateDiagram-v2 geometry captured by
 // scripts/generate_mermaid_state_geometry_fixture.mjs (headless Chrome).
 //
 // ASSERTS (font-independent):
 //   - node count + edge count (topology)
-//   - the multiset of transition tuples (from, to). This proves Muffin reproduces
+//   - the multiset of transition tuples (from, to). This proves Mufpen reproduces
 //     mermaid's state machine exactly — the same transitions between the same
 //     states, including branching, fork/join fan-out and convergence, self-loops,
 //     and start/end ([*]) pseudo-states. (State edges carry no LS-/LE- class
@@ -36,7 +36,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -118,13 +118,13 @@ int main(int argc, char** argv) {
           << id + QStringLiteral(": edge count %1 != mermaid %2").arg(actualEdges.size()).arg(expectedEdges.size());
 
     // Transition multiset (font-independent state-machine parity). The fixture
-    // uses from/to; Muffin's StateScene uses start/end.
+    // uses from/to; Mufpen's StateScene uses start/end.
     const QStringList expectedTuples = sortedTuples(expectedEdges, "from", "to");
     const QStringList actualTuples = sortedTuples(actualEdges, "start", "end");
     if (actualTuples != expectedTuples) {
       assertErrors << id + QStringLiteral(": transition multiset diverged");
       assertErrors << QStringLiteral("  mermaid: %1").arg(expectedTuples.join(QStringLiteral(", ")));
-      assertErrors << QStringLiteral("  muffin : %1").arg(actualTuples.join(QStringLiteral(", ")));
+      assertErrors << QStringLiteral("  mufpen : %1").arg(actualTuples.join(QStringLiteral(", ")));
     }
 
     // Node geometry, matched by id. Height is font-independent (asserted); width

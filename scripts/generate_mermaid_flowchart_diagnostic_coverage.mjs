@@ -7,7 +7,7 @@ const fixturePath = path.resolve(
   process.argv[2] ?? path.join("tests", "fixtures", "mermaid", "flowchart-differential-fuzz.json"),
 );
 const nativeExecutable = path.resolve(
-  process.argv[3] ?? path.join("build", "Release", "MuffinMermaidFlowchartDifferentialFuzzTest.exe"),
+  process.argv[3] ?? path.join("build", "Release", "MufpenMermaidFlowchartDifferentialFuzzTest.exe"),
 );
 const conanRun = path.resolve("build", "generators", "conanrun.bat");
 
@@ -87,7 +87,7 @@ try {
   for (let index = 0; index < fixture.negativeCases.length; ++index) {
     const item = fixture.negativeCases[index];
     const native = results[index];
-    if (process.env.MUFFIN_DIAGNOSTIC_DEBUG === item.id)
+    if (process.env.MUFPEN_DIAGNOSTIC_DEBUG === item.id)
       console.log(item.id, native);
     if (native.ok) throw new Error(`Native unexpectedly accepted diagnostic case ${item.id}`);
     codeCounts.set(native.code, (codeCounts.get(native.code) ?? 0) + 1);

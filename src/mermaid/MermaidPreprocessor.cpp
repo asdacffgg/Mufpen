@@ -12,7 +12,7 @@
 #include <cmath>
 #include <stdexcept>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 namespace {
 
 // Defence-in-depth caps for the recursive JSON/YAML transforms (milestone H3).
@@ -581,4 +581,4 @@ QJsonObject mermaidRenderConfig(const QJsonObject& preprocessedConfig) {
   return value.toObject();
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

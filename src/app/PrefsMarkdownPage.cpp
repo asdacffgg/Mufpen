@@ -7,7 +7,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-muffin::PrefsMarkdownPage::PrefsMarkdownPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsMarkdownPage::PrefsMarkdownPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(14);
@@ -251,7 +251,7 @@ muffin::PrefsMarkdownPage::PrefsMarkdownPage(QWidget* parent) : PreferencesPage(
   }
 }
 
-void muffin::PrefsMarkdownPage::retranslateUi() {
+void mufpen::PrefsMarkdownPage::retranslateUi() {
   // Card 1: Syntax Preferences
   syntaxLabel_->setText(tr("Markdown Syntax Preferences"));
   strictModeCheck_->setText(tr("Strict Mode"));
@@ -318,7 +318,7 @@ void muffin::PrefsMarkdownPage::retranslateUi() {
   rebuildCombo(autoLangCombo_, {tr("When inserting code blocks via Markdown code"), tr("Always"), tr("Never")});
 }
 
-void muffin::PrefsMarkdownPage::loadSettings() {
+void mufpen::PrefsMarkdownPage::loadSettings() {
   loadCheck(strictModeCheck_, QStringLiteral("markdown/strictMode"), false);
   loadCheck(breakOnSingleNewlineCheck_, QStringLiteral("markdown/breakOnSingleNewline"), true);
   loadComboIndex(headingStyleCombo_, QStringLiteral("markdown/headingStyle"), 0);

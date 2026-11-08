@@ -4,7 +4,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 struct MermaidPreprocessResult {
   QString code;
@@ -31,4 +31,4 @@ MermaidPreprocessResult preprocessDiagram(const QString& source);
 // because Mermaid exposes that helper independently.
 QJsonObject mermaidRenderConfig(const QJsonObject& preprocessedConfig);
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

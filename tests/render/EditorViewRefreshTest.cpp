@@ -13,7 +13,7 @@
 #include "render/BlockLayout.h"
 #include "document/TopLevelRangeChange.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -152,7 +152,7 @@ int main(int argc, char** argv) {
   if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("EditorViewRefreshTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

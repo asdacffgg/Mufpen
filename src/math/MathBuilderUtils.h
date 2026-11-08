@@ -3,7 +3,7 @@
 // Geometry, font-classification, and atom-shape helpers shared by MathBuilder,
 // MathBuilderSpacing, and MathBuilderArray. These were previously copy-pasted into each
 // translation unit's anonymous namespace (14 functions, each duplicated 2–3×). Defined inline
-// here so unqualified calls from `namespace muffin::math { namespace { ... } }` resolve to these.
+// here so unqualified calls from `namespace mufpen::math { namespace { ... } }` resolve to these.
 
 #include "math/MathFontMetrics.h"
 #include "math/MathOptions.h"
@@ -18,7 +18,7 @@
 #include <memory>
 #include <optional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 inline qreal axisHeight(const MathOptions& options) {
   return options.fontPointSize() * MathFontMetrics::globalMetrics(options.style().size()).axisHeight;
@@ -182,4 +182,4 @@ inline std::unique_ptr<MathRenderNode> makeArrayCellWrapper(std::unique_ptr<Math
   return wrapper;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

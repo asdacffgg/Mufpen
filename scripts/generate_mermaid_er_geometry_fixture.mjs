@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 
 // Captures real mermaid 11.16.0 erDiagram geometry (entity table bounds +
 // relationship paths + cardinality) via headless Chrome, normalized to the
-// first source-order entity's centre (mirroring Muffin's
+// first source-order entity's centre (mirroring Mufpen's
 // FlowchartLayout origin subtraction). Output schema matches the fields of
 // er::ErScene::toJsonObject that are comparable against mermaid's DOM.
 //
@@ -35,7 +35,7 @@ const { default: puppeteer } = await import(
 // Corpus adapted from er-db.json. NOTE: mermaid 11.16's render-time ER grammar
 // REQUIRES a relationship label (`: name`) and REJECTS the per-end role syntax
 // (`A "role" }o--o{ "role" B`), so every relationship here carries a label and
-// the roles case is dropped. (Muffin's parser accepts unlabeled relationships —
+// the roles case is dropped. (Mufpen's parser accepts unlabeled relationships —
 // a leniency divergence; unlabeled sources have no real-mermaid reference.)
 const cases = [
   { id: "cardinality-types", source: "erDiagram\nA ||--|| B : r1\nC |o--o| D : r2\nE }|--|{ F : r3\nG }o--o{ H : r4" },
@@ -110,7 +110,7 @@ try {
       };
       // entity domId is `<svgId>-entity-<name>-<index>` where <name> may contain
       // dashes; <index> is the global source-order counter, so index 0 is the
-      // first source entity (matches Muffin's first-vertex origin).
+      // first source entity (matches Mufpen's first-vertex origin).
       const parseEntityId = (domId) => {
         const tail = domId.includes("-entity-") ? domId.split("-entity-")[1] : domId;
         const m = tail.match(/^(.*)-(\d+)$/);
@@ -120,7 +120,7 @@ try {
       const out = [];
       for (let index = 0; index < cases.length; ++index) {
         const fixture = cases[index];
-        // fontFamily matches Muffin's default theme stack (first family
+        // fontFamily matches Mufpen's default theme stack (first family
         // "trebuchet ms"); htmlLabels:false forces deterministic SVG <text>.
         mermaid.initialize({
           startOnLoad: false,
@@ -145,7 +145,7 @@ try {
           const box = absoluteBox(outline, rootInverse);
           return { id, entityIndex, centre, box };
         });
-        // Origin = first source-order entity (index 0), matching Muffin.
+        // Origin = first source-order entity (index 0), matching Mufpen.
         const originEntity = raw.find((r) => r.entityIndex === 0) ?? raw[0];
         const originX = originEntity ? originEntity.centre.x : 0;
         const originY = originEntity ? originEntity.centre.y : 0;
@@ -204,7 +204,7 @@ try {
       notes:
         "Real mermaid 11.16.0 erDiagram geometry captured via headless Chrome. " +
         "Entity bounds + relationship paths are normalized to the first source-order " +
-        "entity's centre (index 0), matching Muffin's FlowchartLayout origin subtraction. " +
+        "entity's centre (index 0), matching Mufpen's FlowchartLayout origin subtraction. " +
         "cardA/cardB recovered from crow's-foot markers (marker-end=cardA, marker-start=cardB). " +
         "Compare against er::ErScene::toJsonObject with entity matching by id.",
     },

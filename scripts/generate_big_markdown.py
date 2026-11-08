@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a large Markdown document for Muffin editor stress testing.
+"""Generate a large Markdown document for Mufpen editor stress testing.
 
 Size-targeted (--size-mb) and deterministic (--seed). Produces ASCII-rich content that mirrors
 the TypingPerfBench document model (inline-formatted paragraphs: **bold**, _em_, `code`,
@@ -58,7 +58,7 @@ def fibonacci(n: int) -> list[int]:
 ```""",
     """```json
 {
-  "editor": "Muffin",
+  "editor": "Mufpen",
   "stressTest": true,
   "features": ["heading", "table", "code", "math"]
 }
@@ -72,7 +72,7 @@ ctest --preset conan-release -R TypingPerfBench -V
 
 # Each generator returns one block (no trailing blank line); blocks are joined by "\n\n".
 FRONT_MATTER = """---
-title: Muffin ASCII stress-test document
+title: Mufpen ASCII stress-test document
 generator: scripts/generate_big_markdown.py
 purpose: size-targeted ASCII content matching the TypingPerfBench document model
 ---

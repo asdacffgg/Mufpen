@@ -1,6 +1,6 @@
 // RequirementScenePainter — paints requirementBox nodes + relationship edges.
 //
-// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace muffin {}`
+// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace mufpen {}`
 // block; helpers live in an anonymous namespace and the public function uses a
 // fully-qualified name. No tr() calls.
 
@@ -23,21 +23,21 @@
 #include <algorithm>
 #include <cmath>
 
-namespace flowchart = muffin::mermaid::flowchart;
-namespace scene = muffin::mermaid::scene;
+namespace flowchart = mufpen::mermaid::flowchart;
+namespace scene = mufpen::mermaid::scene;
 
 namespace {
 
 QColor resolveColor(const QString& value) {
-  return muffin::mermaid::color::toQColor(value);
+  return mufpen::mermaid::color::toQColor(value);
 }
 
 // Draws a row's text at its center (relative to the node center). Commit 3: the
 // per-node resolved font/color live on the row (font-size/family/line-height/color
 // fall back to the scene base when the node has no labelStyle for them); the
 // weight/style/spacing/decoration ride on row.document (FlowLabel Commit-2 fields).
-void paintRow(QPainter& painter, const muffin::mermaid::requirement::RequirementSceneRow& row,
-              const QPointF& nodeCenter, const muffin::mermaid::requirement::RequirementSceneStyle& style) {
+void paintRow(QPainter& painter, const mufpen::mermaid::requirement::RequirementSceneRow& row,
+              const QPointF& nodeCenter, const mufpen::mermaid::requirement::RequirementSceneStyle& style) {
   if (row.text.isEmpty() || row.size.width() <= 0.0)
     return;
   if (!row.visible)
@@ -92,17 +92,17 @@ void drawArrowMarker(QPainter& painter, const QPointF& endpoint, const QPointF& 
 }
 
 // Continuous polyline for marker tangent estimation (shared stitching).
-QVector<QPointF> edgePolyline(const muffin::mermaid::requirement::RequirementSceneEdge& edge) {
+QVector<QPointF> edgePolyline(const mufpen::mermaid::requirement::RequirementSceneEdge& edge) {
   return scene::stitchEdgePolyline(edge.points, edge.segments);
 }
 
-QPainterPath edgePath(const muffin::mermaid::requirement::RequirementSceneEdge& edge) {
+QPainterPath edgePath(const mufpen::mermaid::requirement::RequirementSceneEdge& edge) {
   return scene::edgePolylinePath(edge.path, edge.points, edge.segments);
 }
 
 } // namespace
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 void paintRequirementScene(const RequirementScene& scene, QPainter& painter, const MermaidPaintOptions& options) {
   painter.setRenderHint(QPainter::Antialiasing, true);
@@ -300,4 +300,4 @@ void RequirementScene::paint(QPainter& painter, const MermaidPaintOptions& optio
   paintRequirementScene(*this, painter, options);
 }
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

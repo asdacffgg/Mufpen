@@ -12,7 +12,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid::state;
+using namespace mufpen::mermaid::state;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -47,7 +47,7 @@ void requireNear(const QSizeF& actual, const QSizeF& expected, qreal tolerance, 
 int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
-  muffin::mermaid::MermaidFontRegistry::ensureLoaded();
+  mufpen::mermaid::MermaidFontRegistry::ensureLoaded();
   if (argc != 2)
     fail(QStringLiteral("Expected state layout fixture"));
   QFile file(QString::fromLocal8Bit(argv[1]));
@@ -62,15 +62,15 @@ int main(int argc, char** argv) {
     const QString id = fixture.value(QStringLiteral("id")).toString();
     // Preprocess like the render path: titled cases carry YAML frontmatter
     // the family parser must not see.
-    const muffin::mermaid::MermaidPreprocessResult pre =
-        muffin::mermaid::preprocessDiagram(fixture.value(QStringLiteral("source")).toString());
+    const mufpen::mermaid::MermaidPreprocessResult pre =
+        mufpen::mermaid::preprocessDiagram(fixture.value(QStringLiteral("source")).toString());
     const StateDiagram diagram = StateDiagram::parse(pre.code);
     const QString look = pre.config.value(QStringLiteral("look")).toString(QStringLiteral("classic"));
     const bool handDrawn = look == QLatin1String("handDrawn");
     const quint32 handDrawnSeed = static_cast<quint32>(pre.config.value(QStringLiteral("handDrawnSeed")).toInt());
     const StateLayoutInput input = buildStateLayoutInput(diagram.data(), look);
     const StateLayoutMeasurements measurements = measureStateLayoutInput(
-        input, muffin::mermaid::MermaidFontRegistry::cssFamilyStack(), 16.0, handDrawn, handDrawnSeed);
+        input, mufpen::mermaid::MermaidFontRegistry::cssFamilyStack(), 16.0, handDrawn, handDrawnSeed);
     const StatePlacementResult placed =
         layoutStateDiagramDagre(input, measurements, 50.0, 50.0, handDrawn, handDrawnSeed);
     const QJsonObject geometry = fixture.value(QStringLiteral("geometry")).toObject();

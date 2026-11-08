@@ -7,7 +7,7 @@
 
 #include <functional>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 enum class FlowTokenKind {
   Eof,
@@ -152,4 +152,4 @@ private:
   bool firstGraph_ = true;
 };
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

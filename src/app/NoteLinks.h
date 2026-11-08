@@ -2,7 +2,7 @@
 #include "app/WorkspaceReplace.h"
 #include "document/OutlineBuilder.h"
 
-namespace muffin {
+namespace mufpen {
 struct NoteLinkChange {
   WorkspaceChange file;
   bool unsaved = false;
@@ -13,7 +13,7 @@ struct NoteLinkPlan {
   QStringList skipped;
   bool complete = true;
 };
-class MUFFIN_UI_EXPORT NoteLinks final {
+class MUFPEN_UI_EXPORT NoteLinks final {
 public:
   static bool isMarkdownPath(const QString& path);
   static NodeId headingTarget(const QVector<OutlineEntry>& outline, const QString& fragment);

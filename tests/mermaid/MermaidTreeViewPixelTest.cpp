@@ -19,7 +19,7 @@
 #include <cstdlib>
 #include <memory>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -133,7 +133,7 @@ int main(int argc, char** argv) {
         editor::MermaidRenderCache::renderMermaidSourceToPng(fixture.value(QStringLiteral("source")).toString(), 1.0)
             .dataUrl);
     require(!reference.isNull() && !native.isNull(), id + QStringLiteral("/decode"));
-    if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE"))
+    if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE"))
       native.save(QStringLiteral("native-treeview-%1.png").arg(id));
     require(native.size() == reference.size(), QStringLiteral("%1: native %2x%3 != browser %4x%5")
                                                    .arg(id)
@@ -216,7 +216,7 @@ int main(int argc, char** argv) {
               id + QStringLiteral("/browser label mask hash"));
       const QImage browserLabels(labelMaskPath);
       const QImage nativeLabels = isolatedLabelImage(*scene);
-      if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE"))
+      if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE"))
         nativeLabels.save(QStringLiteral("native-treeview-built-in-icons-label-mask.png"));
       const qreal labelIou = alphaIou(nativeLabels, browserLabels);
       std::fprintf(stderr, "%s isolated labels IoU=%.6f\n", qPrintable(id), labelIou);

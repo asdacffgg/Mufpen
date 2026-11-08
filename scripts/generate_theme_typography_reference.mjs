@@ -21,8 +21,8 @@ const faces = fontReference.fonts.map(font => {
 const base = read('resources/themes/document-base.css');
 const markdown = '# Muffin Markdown Example 中文混排\n\nPlain **bold** *italic* `code` <kbd>Ctrl</kbd> + <kbd>S</kbd> office fi wrap.\n\n## Section 中文混排\n\nA longer paragraph with several words to exercise spacing and line wrapping.\n';
 const html = '<h1 class="md-heading">Muffin Markdown Example 中文混排</h1><p>Plain <strong>bold</strong> <em>italic</em> <code>code</code> <kbd>Ctrl</kbd> + <kbd>S</kbd> office fi wrap.</p><h2 class="md-heading">Section 中文混排</h2><p>A longer paragraph with several words to exercise spacing and line wrapping.</p>';
-const {chromium} = await import(process.env.MUFFIN_PLAYWRIGHT_MODULE ?
-  pathToFileURL(path.resolve(process.env.MUFFIN_PLAYWRIGHT_MODULE)).href : 'playwright');
+const {chromium} = await import(process.env.MUFPEN_PLAYWRIGHT_MODULE ?
+  pathToFileURL(path.resolve(process.env.MUFPEN_PLAYWRIGHT_MODULE)).href : 'playwright');
 const browser = await chromium.launch({headless: true,
   ...(process.env.CHROME_EXECUTABLE ? {executablePath: process.env.CHROME_EXECUTABLE} : {})});
 const cases = [];

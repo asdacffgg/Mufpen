@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::eventmodeling {
+namespace mufpen::mermaid::eventmodeling {
 
 enum class EventModelingErrorKind { Lexer, Parser };
 
@@ -69,4 +69,4 @@ public:
   static EventModelingData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::eventmodeling
+} // namespace mufpen::mermaid::eventmodeling

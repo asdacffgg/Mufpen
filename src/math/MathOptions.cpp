@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 constexpr qreal kPointsPerCssPixel = 72.0 / 96.0;
@@ -143,4 +143,4 @@ QFont MathOptions::fontForClass(const QString& fontClass) const {
   return font;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

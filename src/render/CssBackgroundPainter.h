@@ -4,7 +4,7 @@
 
 class QPainter;
 class QImage;
-namespace muffin {
+namespace mufpen {
 struct LayoutBox;
 struct ThemeElementPaintStyle;
 // Paint only the isolated background stack. Borders, shadows and content stay

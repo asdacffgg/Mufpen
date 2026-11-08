@@ -1,6 +1,6 @@
 #include "blocks/math/MathRenderer.h"
 
-namespace muffin {
+namespace mufpen {
 
 MathRenderPlaceholder MathRenderer::renderBlockPlaceholder(const QString& tex, const RenderTheme& theme) const {
   MathRenderPlaceholder placeholder;
@@ -10,4 +10,4 @@ MathRenderPlaceholder MathRenderer::renderBlockPlaceholder(const QString& tex, c
   return placeholder;
 }
 
-} // namespace muffin
+} // namespace mufpen

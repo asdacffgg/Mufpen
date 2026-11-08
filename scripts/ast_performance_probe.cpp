@@ -17,7 +17,7 @@
 namespace {
 QJsonArray adapterProfiles;
 void messages(QtMsgType type, const QMessageLogContext& context, const QString& message) {
-  if (qstrcmp(context.category, "muffin.adapter") == 0) {
+  if (qstrcmp(context.category, "mufpen.adapter") == 0) {
     adapterProfiles.append(QJsonDocument::fromJson(message.toUtf8()).object());
     return;
   }
@@ -26,20 +26,20 @@ void messages(QtMsgType type, const QMessageLogContext& context, const QString& 
   if (type == QtFatalMsg)
     std::abort();
 }
-void countInlines(const QVector<muffin::InlineNode>& nodes, qint64& total, qint64& shared) {
+void countInlines(const QVector<mufpen::InlineNode>& nodes, qint64& total, qint64& shared) {
   for (const auto& node : nodes) {
     ++total;
     shared += node.usesSharedText();
     countInlines(node.children(), total, shared);
   }
 }
-void countBlocks(const muffin::MarkdownNode& node, qint64& blocks, qint64& inlines, qint64& shared) {
+void countBlocks(const mufpen::MarkdownNode& node, qint64& blocks, qint64& inlines, qint64& shared) {
   ++blocks;
   countInlines(node.inlines(), inlines, shared);
   for (const auto& child : node.children())
     countBlocks(*child, blocks, inlines, shared);
 }
-void fingerprintInlines(QCryptographicHash& hash, const QVector<muffin::InlineNode>& nodes) {
+void fingerprintInlines(QCryptographicHash& hash, const QVector<mufpen::InlineNode>& nodes) {
   QByteArray bytes;
   QDataStream out(&bytes, QIODevice::WriteOnly);
   out.setVersion(QDataStream::Qt_6_0);
@@ -58,7 +58,7 @@ void fingerprintInlines(QCryptographicHash& hash, const QVector<muffin::InlineNo
   }
   hash.addData(bytes);
 }
-void fingerprintBlock(QCryptographicHash& hash, const muffin::MarkdownNode& node) {
+void fingerprintBlock(QCryptographicHash& hash, const mufpen::MarkdownNode& node) {
   QByteArray bytes;
   QDataStream out(&bytes, QIODevice::WriteOnly);
   out.setVersion(QDataStream::Qt_6_0);
@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
   const QString workload = QString::fromLocal8Bit(argv[2]);
   if (mib < 1 || mib > 100 || (workload != "ascii" && workload != "unicode" && workload != "escaped"))
     return 2;
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf*.debug=false"));
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf*.debug=false"));
   qInstallMessageHandler(messages);
   QString sentence =
       QStringLiteral("Plain text with **bold**, *italic*, ~~strike~~, `code`, and [Muffin](https://example.com). ");
@@ -92,7 +92,7 @@ int main(int argc, char** argv) {
   QString text;
   while (text.size() < qsizetype(mib) * 1024 * 1024)
     text += paragraph;
-  auto session = std::make_unique<muffin::DocumentSession>();
+  auto session = std::make_unique<mufpen::DocumentSession>();
   session->setFullParsePerformanceMetricsEnabled(true);
   adapterProfiles = {};
   QElapsedTimer timer;
@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
   countBlocks(session->document().root(), blocks, inlines, shared);
   QCryptographicHash hash(QCryptographicHash::Sha256);
   fingerprintBlock(hash, session->document().root());
-  const auto workingSet = muffin::diag::workingSetBytes();
+  const auto workingSet = mufpen::diag::workingSetBytes();
   timer.restart();
   session.reset();
   const QJsonObject result{{"MiB", mib},

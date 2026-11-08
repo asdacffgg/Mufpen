@@ -10,7 +10,7 @@
 
 #include <numeric>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 namespace {
 // Retain the existing logical nesting budget for heap usage and downstream
@@ -1645,4 +1645,4 @@ MathParseNode MathParser::errorNode(QString message, const MathToken* token) {
   return node;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 bool swimlaneBoolean(const QJsonObject& config, const char* key, bool fallback) {
@@ -183,4 +183,4 @@ const Diagram& swimlaneDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

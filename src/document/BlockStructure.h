@@ -6,7 +6,7 @@
 #include "Export.h"
 #include <QHash>
 
-namespace muffin {
+namespace mufpen {
 class MarkdownDocument;
 struct BlockTarget {
   NodeId id;
@@ -29,7 +29,7 @@ struct BlockSourcePlan {
 };
 // Revision-local structural units, borrowing no node pointers. Source ranges
 // include whole lists/quotes and paired HTML containers with their closing tags.
-class MUFFIN_CORE_EXPORT BlockStructure {
+class MUFPEN_CORE_EXPORT BlockStructure {
 public:
   explicit BlockStructure(const MarkdownDocument& document);
   quint64 revision() const { return revision_; }
@@ -66,5 +66,5 @@ private:
   QVector<BlockSourceUnit> units_;
   quint64 revision_ = 0;
 };
-} // namespace muffin
-Q_DECLARE_METATYPE(muffin::BlockTarget)
+} // namespace mufpen
+Q_DECLARE_METATYPE(mufpen::BlockTarget)

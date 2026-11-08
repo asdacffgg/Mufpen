@@ -13,7 +13,7 @@
 #include <QKeyEvent>
 #include <QLineEdit>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

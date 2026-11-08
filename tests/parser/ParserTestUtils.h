@@ -10,12 +10,12 @@
 #include <QCoreApplication>
 #include <QDebug>
 
-inline const muffin::MarkdownNode& childAt(const muffin::MarkdownNode& node, qsizetype index) {
+inline const mufpen::MarkdownNode& childAt(const mufpen::MarkdownNode& node, qsizetype index) {
   require(index >= 0 && index < node.children().size(), QStringLiteral("Missing child %1").arg(index));
   return *node.children()[index];
 }
 
-inline const muffin::MarkdownNode& definitionByLabel(const muffin::MarkdownNode& root, muffin::BlockType type,
+inline const mufpen::MarkdownNode& definitionByLabel(const mufpen::MarkdownNode& root, mufpen::BlockType type,
                                                      const QString& label) {
   for (const auto& child : root.children()) {
     if (child->type() == type && child->definition().label == label) {
@@ -28,10 +28,10 @@ inline const muffin::MarkdownNode& definitionByLabel(const muffin::MarkdownNode&
   return root;
 }
 
-inline int countInlineMath(const QVector<muffin::InlineNode>& inlines) {
+inline int countInlineMath(const QVector<mufpen::InlineNode>& inlines) {
   int count = 0;
-  for (const muffin::InlineNode& inlineNode : inlines) {
-    if (inlineNode.type() == muffin::InlineType::InlineMath) {
+  for (const mufpen::InlineNode& inlineNode : inlines) {
+    if (inlineNode.type() == mufpen::InlineType::InlineMath) {
       ++count;
     }
     count += countInlineMath(inlineNode.children());
@@ -39,7 +39,7 @@ inline int countInlineMath(const QVector<muffin::InlineNode>& inlines) {
   return count;
 }
 
-inline int countInlineMath(const muffin::MarkdownNode& node) {
+inline int countInlineMath(const mufpen::MarkdownNode& node) {
   int count = countInlineMath(node.inlines());
   for (const auto& child : node.children()) {
     count += countInlineMath(*child);
@@ -47,17 +47,17 @@ inline int countInlineMath(const muffin::MarkdownNode& node) {
   return count;
 }
 
-inline QString sourceTextForNode(const QString& markdown, const muffin::MarkdownNode& node) {
-  const muffin::SourceRange range = node.sourceRange();
+inline QString sourceTextForNode(const QString& markdown, const mufpen::MarkdownNode& node) {
+  const mufpen::SourceRange range = node.sourceRange();
   require(range.byteStart >= 0, QStringLiteral("node source range start is invalid"));
   require(range.byteEnd >= range.byteStart, QStringLiteral("node source range end is invalid"));
   require(range.byteEnd <= markdown.size(), QStringLiteral("node source range exceeds markdown size"));
   return markdown.mid(range.byteStart, range.byteEnd - range.byteStart);
 }
 
-inline bool containsInlineMathText(const QVector<muffin::InlineNode>& inlines, const QString& text) {
-  for (const muffin::InlineNode& inlineNode : inlines) {
-    if (inlineNode.type() == muffin::InlineType::InlineMath && inlineNode.text() == text) {
+inline bool containsInlineMathText(const QVector<mufpen::InlineNode>& inlines, const QString& text) {
+  for (const mufpen::InlineNode& inlineNode : inlines) {
+    if (inlineNode.type() == mufpen::InlineType::InlineMath && inlineNode.text() == text) {
       return true;
     }
     if (containsInlineMathText(inlineNode.children(), text)) {
@@ -67,7 +67,7 @@ inline bool containsInlineMathText(const QVector<muffin::InlineNode>& inlines, c
   return false;
 }
 
-inline bool containsInlineMathText(const muffin::MarkdownNode& node, const QString& text) {
+inline bool containsInlineMathText(const mufpen::MarkdownNode& node, const QString& text) {
   if (containsInlineMathText(node.inlines(), text)) {
     return true;
   }
@@ -79,8 +79,8 @@ inline bool containsInlineMathText(const muffin::MarkdownNode& node, const QStri
   return false;
 }
 
-inline int countMathBlocks(const muffin::MarkdownNode& node) {
-  int count = node.type() == muffin::BlockType::MathBlock ? 1 : 0;
+inline int countMathBlocks(const mufpen::MarkdownNode& node) {
+  int count = node.type() == mufpen::BlockType::MathBlock ? 1 : 0;
   for (const auto& child : node.children()) {
     count += countMathBlocks(*child);
   }

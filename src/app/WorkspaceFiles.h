@@ -5,9 +5,9 @@
 #include <atomic>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 using SearchCancellation = std::shared_ptr<std::atomic_bool>;
-struct MUFFIN_UI_EXPORT WorkspaceScanOptions {
+struct MUFPEN_UI_EXPORT WorkspaceScanOptions {
   QString ignorePatterns = defaultIgnorePatterns();
   bool includeHidden = false;
   bool readGitIgnore = true;
@@ -23,7 +23,7 @@ struct WorkspaceFiles {
   bool truncated = false;
 };
 // Metadata only, independent of file-tree expansion. Safe on a worker thread.
-class MUFFIN_UI_EXPORT WorkspaceFileIndex final {
+class MUFPEN_UI_EXPORT WorkspaceFileIndex final {
 public:
   static WorkspaceFiles scan(const QString& root, const QStringList& extensions, const SearchCancellation& cancel,
                              int limit = 200000);
@@ -33,9 +33,9 @@ public:
   static QString pathKey(const QString& path);
   static bool contains(const QString& root, const QString& path);
 };
-class MUFFIN_UI_EXPORT PathMatcher final {
+class MUFPEN_UI_EXPORT PathMatcher final {
 public:
   // Space-separated terms are ANDed; slash-separated segments match in order.
   static int score(const QString& query, const QString& relativePath);
 };
-} // namespace muffin
+} // namespace mufpen

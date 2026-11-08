@@ -5,7 +5,7 @@
 #include <QString>
 #include <array>
 
-namespace muffin {
+namespace mufpen {
 class CssComputedStyle;
 
 enum class CssIntrinsicSize { Auto, Length, MinContent, MaxContent, FitContent, None };
@@ -53,4 +53,4 @@ struct CssLayoutStyle {
   bool clipsY() const { return overflowY != QLatin1String("visible"); }
   static CssLayoutStyle fromComputed(const CssComputedStyle& style);
 };
-} // namespace muffin
+} // namespace mufpen

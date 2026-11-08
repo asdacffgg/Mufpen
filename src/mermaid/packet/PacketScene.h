@@ -12,7 +12,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::packet {
+namespace mufpen::mermaid::packet {
 
 // Raw values are intentional. Mermaid performs JavaScript arithmetic directly
 // on packet config, so strings, booleans, zero and fractional values have
@@ -112,4 +112,4 @@ PacketScene buildPacketScene(const PacketData& data, PacketConfig config, Packet
 // by the painter. The Adapter also uses this for the inherited root font-size.
 CssLengthContext packetCssLengthContext(const QString& cssFamilies, qreal emPx);
 
-} // namespace muffin::mermaid::packet
+} // namespace mufpen::mermaid::packet

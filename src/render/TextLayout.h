@@ -7,7 +7,7 @@
 #include <limits>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 // Immutable for the lifetime of a process: changing a font device underneath a
 // retained layout would invalidate its geometry and all dependent caches.
@@ -144,4 +144,4 @@ void drawDocumentText(QPainter& painter, QPointF baseline, const QString& text);
 void drawDocumentText(QPainter& painter, QRectF rect, const QString& text, const QTextOption& option);
 void drawDocumentText(QPainter& painter, QRectF rect, int flags, const QString& text);
 
-} // namespace muffin
+} // namespace mufpen

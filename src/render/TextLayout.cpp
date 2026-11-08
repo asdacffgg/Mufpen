@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QPaintDevice* shapingDevice(TextBackend backend) {
   if (backend == TextBackend::Native)
@@ -125,7 +125,7 @@ QRectF scaledRect(QRectF rect, qreal factor) {
 
 TextBackend documentTextBackend() {
   static const auto backend =
-      qgetenv("MUFFIN_TEXT_LAYOUT_BACKEND") == "fractional" ? TextBackend::Fractional : TextBackend::Native;
+      qgetenv("MUFPEN_TEXT_LAYOUT_BACKEND") == "fractional" ? TextBackend::Fractional : TextBackend::Native;
   return backend;
 }
 qreal textBackendScale(TextBackend backend) {
@@ -324,4 +324,4 @@ void drawDocumentText(QPainter& painter, QRectF rect, int flags, const QString& 
   option.setWrapMode(flags & Qt::TextWordWrap ? QTextOption::WordWrap : QTextOption::NoWrap);
   drawDocumentText(painter, rect, text, option);
 }
-} // namespace muffin
+} // namespace mufpen

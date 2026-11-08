@@ -6,7 +6,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 struct LayoutPositionToken {
   std::unique_ptr<LayoutPositionToken> left;
@@ -55,4 +55,4 @@ private:
   quint32 randomState_ = 0x85ebca6bU;
 };
 
-} // namespace muffin
+} // namespace mufpen

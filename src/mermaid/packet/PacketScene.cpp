@@ -11,7 +11,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::packet {
+namespace mufpen::mermaid::packet {
 
 void PacketScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintPacketScene(*this, painter, options);
@@ -321,4 +321,4 @@ QJsonObject PacketScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::packet
+} // namespace mufpen::mermaid::packet

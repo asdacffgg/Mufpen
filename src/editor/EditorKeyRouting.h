@@ -8,7 +8,7 @@
 //
 // Known QAction collision: Ctrl+Shift+Backspace is table.delete_row, so Backspace/Delete are
 // only owned without Shift.
-namespace muffin::editor_keys {
+namespace mufpen::editor_keys {
 
 inline bool isEditorOwnedCtrlKey(int key, bool shift) {
   switch (key) {
@@ -48,4 +48,4 @@ inline bool isCursorNavigationKey(int key) {
   }
 }
 
-} // namespace muffin::editor_keys
+} // namespace mufpen::editor_keys

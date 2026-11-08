@@ -6,7 +6,7 @@
 #include <QMarginsF>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 struct MathRenderPlaceholder {
   QString displayText;
@@ -19,4 +19,4 @@ public:
   MathRenderPlaceholder renderBlockPlaceholder(const QString& tex, const RenderTheme& theme) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

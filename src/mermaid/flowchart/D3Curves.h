@@ -26,7 +26,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::flowchart::d3curve {
+namespace mufpen::mermaid::flowchart::d3curve {
 
 // d3.path()-compatible accumulator. Emits `Mx,y`, `Lx,y`, `Cx1,y1,x2,y2,x,y`,
 // `Z` — the same command/coordinate layout d3.path produces, which the geometry
@@ -722,4 +722,4 @@ inline QString pathForCurve(const QVector<QPointF>& points, const QString& name)
   return c.out;
 }
 
-} // namespace muffin::mermaid::flowchart::d3curve
+} // namespace mufpen::mermaid::flowchart::d3curve

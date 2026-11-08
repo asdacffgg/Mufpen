@@ -4,9 +4,9 @@
 // relative path matching, independent of file-tree expansion.
 //
 // NOTE: the .cpp contains tr() calls and follows the lupdate rule in CLAUDE.md
-// (fully-qualified muffin::QuickOpenDialog::method() defs + anonymous-namespace
-// helpers, no namespace muffin {} wrapper) so translations land under the
-// muffin::QuickOpenDialog context.
+// (fully-qualified mufpen::QuickOpenDialog::method() defs + anonymous-namespace
+// helpers, no namespace mufpen {} wrapper) so translations land under the
+// mufpen::QuickOpenDialog context.
 
 #include <QDialog>
 #include <QString>
@@ -18,10 +18,10 @@ class QListWidget;
 class QLabel;
 class QTimer;
 
-namespace muffin {
+namespace mufpen {
 struct ThemeDefinition;
 
-class MUFFIN_UI_EXPORT QuickOpenDialog : public QDialog {
+class MUFPEN_UI_EXPORT QuickOpenDialog : public QDialog {
   Q_OBJECT
 
 public:
@@ -58,4 +58,4 @@ private:
   int unreadable_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

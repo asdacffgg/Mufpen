@@ -11,7 +11,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 
 struct StateLayoutNodeInput {
   QString id;
@@ -120,4 +120,4 @@ StatePlacementResult layoutStateDiagramDagre(const StateLayoutInput& input, cons
                                              qreal nodeSpacing = 50.0, qreal rankSpacing = 50.0, bool handDrawn = false,
                                              quint32 handDrawnSeed = 0);
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

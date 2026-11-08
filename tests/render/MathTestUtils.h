@@ -10,10 +10,10 @@
 
 // ---- test layout box factory ----
 
-inline std::unique_ptr<muffin::math::MathLayoutNode> makeTestLayoutBox(qreal width, qreal height, qreal depth) {
-  auto node = std::make_unique<muffin::math::MathLayoutNode>();
-  node->kind = muffin::math::MathLayoutKind::Span;
-  node->renderKind = muffin::math::MathRenderKind::Span;
+inline std::unique_ptr<mufpen::math::MathLayoutNode> makeTestLayoutBox(qreal width, qreal height, qreal depth) {
+  auto node = std::make_unique<mufpen::math::MathLayoutNode>();
+  node->kind = mufpen::math::MathLayoutKind::Span;
+  node->renderKind = mufpen::math::MathRenderKind::Span;
   node->width = width;
   node->height = height;
   node->depth = depth;
@@ -187,9 +187,9 @@ struct GlyphAuditItem {
 
 // ---- math native ink root ----
 
-inline const muffin::math::MathRenderNode& nativeInkRoot(const muffin::math::MathRenderNode& root) {
+inline const mufpen::math::MathRenderNode& nativeInkRoot(const mufpen::math::MathRenderNode& root) {
   if (root.text == QStringLiteral("katex") && !root.children.empty()) {
-    const muffin::math::MathRenderNode* html = root.children.front().get();
+    const mufpen::math::MathRenderNode* html = root.children.front().get();
     if (html != nullptr && html->text == QStringLiteral("katex-html") && !html->children.empty()) {
       return *html;
     }
@@ -199,7 +199,7 @@ inline const muffin::math::MathRenderNode& nativeInkRoot(const muffin::math::Mat
 
 // ---- glyph/bbox comparison helpers ----
 
-inline QRectF nativeGlyphInkRect(const muffin::math::MathRenderNode& node, QPointF origin, qreal em) {
+inline QRectF nativeGlyphInkRect(const mufpen::math::MathRenderNode& node, QPointF origin, qreal em) {
   constexpr int padding = 16;
   const QSize imageSize(qMax(1, qCeil(node.width) + padding * 2),
                         qMax(1, qCeil(node.height + node.depth) + padding * 2));
@@ -222,11 +222,11 @@ inline QRectF nativeGlyphInkRect(const muffin::math::MathRenderNode& node, QPoin
                 ink.width() / em, ink.height() / em);
 }
 
-inline void collectNativeGlyphItems(const muffin::math::MathRenderNode& node, QPointF origin, qreal em,
+inline void collectNativeGlyphItems(const mufpen::math::MathRenderNode& node, QPointF origin, qreal em,
                                     QVector<GlyphAuditItem>& out) {
   const QRectF domRect(origin.x() / em, (origin.y() - node.height) / em, node.width / em,
                        (node.height + node.depth) / em);
-  if (node.kind == muffin::math::MathRenderKind::Symbol || node.kind == muffin::math::MathRenderKind::Error) {
+  if (node.kind == mufpen::math::MathRenderKind::Symbol || node.kind == mufpen::math::MathRenderKind::Error) {
     GlyphAuditItem item;
     item.kind = QStringLiteral("glyph");
     item.text = node.text;
@@ -252,7 +252,7 @@ inline void collectNativeGlyphItems(const muffin::math::MathRenderNode& node, QP
   }
 
   switch (node.kind) {
-  case muffin::math::MathRenderKind::Span: {
+  case mufpen::math::MathRenderKind::Span: {
     qreal x = origin.x();
     for (const auto& child : node.children) {
       collectNativeGlyphItems(*child, QPointF(x + child->xOffset, origin.y() + child->yOffset + child->shift), em, out);
@@ -260,7 +260,7 @@ inline void collectNativeGlyphItems(const muffin::math::MathRenderNode& node, QP
     }
     return;
   }
-  case muffin::math::MathRenderKind::SupSub: {
+  case mufpen::math::MathRenderKind::SupSub: {
     if (!node.children.empty()) {
       const auto& base = node.children.at(0);
       collectNativeGlyphItems(*base, QPointF(origin.x() + base->xOffset, origin.y() + base->yOffset), em, out);
@@ -272,7 +272,7 @@ inline void collectNativeGlyphItems(const muffin::math::MathRenderNode& node, QP
     }
     return;
   }
-  case muffin::math::MathRenderKind::Fraction: {
+  case mufpen::math::MathRenderKind::Fraction: {
     if (node.children.size() == 2) {
       const auto& numerator = node.children.at(0);
       const auto& denominator = node.children.at(1);
@@ -304,14 +304,14 @@ inline void collectNativeGlyphItems(const muffin::math::MathRenderNode& node, QP
   }
 }
 
-inline QVector<GlyphAuditItem> nativeGlyphItems(const muffin::math::MathRenderNode& root, qreal em) {
-  const muffin::math::MathRenderNode& htmlRoot = nativeInkRoot(root);
+inline QVector<GlyphAuditItem> nativeGlyphItems(const mufpen::math::MathRenderNode& root, qreal em) {
+  const mufpen::math::MathRenderNode& htmlRoot = nativeInkRoot(root);
   QVector<GlyphAuditItem> out;
   collectNativeGlyphItems(htmlRoot, QPointF(0.0, htmlRoot.height), em, out);
   return out;
 }
 
-inline QVector<GlyphAuditItem> nativeVisibleGlyphItems(const muffin::math::MathRenderNode& root, qreal em) {
+inline QVector<GlyphAuditItem> nativeVisibleGlyphItems(const mufpen::math::MathRenderNode& root, qreal em) {
   const QVector<GlyphAuditItem> all = nativeGlyphItems(root, em);
   QVector<GlyphAuditItem> glyphs;
   for (const GlyphAuditItem& item : all) {
@@ -350,7 +350,7 @@ inline QVector<QJsonObject> katexVisibleGlyphItems(const QJsonObject& golden) {
   return visible;
 }
 
-inline void compareKatexGlyphs(const QString& id, const muffin::math::MathRenderNode& root, const QJsonObject& golden,
+inline void compareKatexGlyphs(const QString& id, const mufpen::math::MathRenderNode& root, const QJsonObject& golden,
                                qreal em, qreal xTolerance, qreal widthTolerance) {
   if (golden.value(QStringLiteral("error")).toBool()) {
     return;
@@ -393,7 +393,7 @@ inline void compareKatexGlyphs(const QString& id, const muffin::math::MathRender
   }
 }
 
-inline void dumpGlyphDiffs(const QString& id, const muffin::math::MathRenderNode& root, const QJsonObject& golden,
+inline void dumpGlyphDiffs(const QString& id, const mufpen::math::MathRenderNode& root, const QJsonObject& golden,
                            qreal em) {
   const QVector<GlyphAuditItem> nativeAll = nativeGlyphItems(root, em);
   QVector<GlyphAuditItem> nativeGlyphs;
@@ -502,7 +502,7 @@ inline void dumpGlyphDiffs(const QString& id, const muffin::math::MathRenderNode
   }
 }
 
-inline QRect nativeInkBounds(const muffin::math::MathRenderNode& root) {
+inline QRect nativeInkBounds(const mufpen::math::MathRenderNode& root) {
   constexpr int padding = 32;
   const QSize imageSize(qMax(1, qCeil(root.width) + padding * 2),
                         qMax(1, qCeil(root.height + root.depth) + padding * 2));
@@ -519,7 +519,7 @@ inline QRect nativeInkBounds(const muffin::math::MathRenderNode& root) {
   return imageInkBounds(image, background);
 }
 
-inline BBoxAuditEntry makeBBoxAuditEntry(const QString& id, const muffin::math::MathRenderNode& root,
+inline BBoxAuditEntry makeBBoxAuditEntry(const QString& id, const mufpen::math::MathRenderNode& root,
                                          const QJsonObject& golden, qreal nativeEm) {
   const qreal katexRootFontPx = golden.value(QStringLiteral("rootFontPx")).toDouble(19.36);
   require(katexRootFontPx > 0.0, QStringLiteral("KaTeX bbox for %1 should include rootFontPx").arg(id));
@@ -543,7 +543,7 @@ inline BBoxAuditEntry makeBBoxAuditEntry(const QString& id, const muffin::math::
   return entry;
 }
 
-inline void compareKatexBrowserBBox(const QString& id, const muffin::math::MathRenderNode& root,
+inline void compareKatexBrowserBBox(const QString& id, const mufpen::math::MathRenderNode& root,
                                     const QJsonObject& golden, qreal nativeEm, qreal widthTolerance,
                                     qreal heightTolerance) {
   if (golden.value(QStringLiteral("error")).toBool()) {
@@ -563,7 +563,7 @@ inline void compareKatexBrowserBBox(const QString& id, const muffin::math::MathR
           QStringLiteral("Native painted ink bbox for %1 should not be empty").arg(id));
 }
 
-inline void compareKatexInkBBox(const QString& id, const muffin::math::MathRenderNode& root, const QJsonObject& golden,
+inline void compareKatexInkBBox(const QString& id, const mufpen::math::MathRenderNode& root, const QJsonObject& golden,
                                 qreal nativeEm, qreal widthTolerance, qreal heightTolerance) {
   if (golden.value(QStringLiteral("error")).toBool()) {
     return;
@@ -581,7 +581,7 @@ inline void compareKatexInkBBox(const QString& id, const muffin::math::MathRende
                      QStringLiteral("KaTeX ink bbox height for %1").arg(id));
 }
 
-inline void compareKatexBuilderRootMetrics(const QString& id, const muffin::math::MathRenderNode& root,
+inline void compareKatexBuilderRootMetrics(const QString& id, const mufpen::math::MathRenderNode& root,
                                            const QJsonObject& nativeDump, const QJsonObject& golden, qreal em,
                                            qreal heightTolerance, qreal depthTolerance, qreal shiftTolerance) {
   const QJsonObject goldenRoot = golden.value(QStringLiteral("root")).toObject();

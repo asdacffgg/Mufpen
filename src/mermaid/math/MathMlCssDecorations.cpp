@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 QString basicAccentCharacter(const MathRenderNode* accent) {
   if (!accent || accent->kind != MathRenderKind::Accent || accent->children.size() < 2)
@@ -508,4 +508,4 @@ std::optional<MathCssPaintOperation> buildAccentOperation(const MathRenderNode* 
   return operation;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

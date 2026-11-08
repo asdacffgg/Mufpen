@@ -16,7 +16,7 @@
 
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 QPair<CssLengthPercentage, CssLengthPercentage> parseCssPosition(const QString& value,
                                                                  const CssLengthContext& context) {
@@ -65,7 +65,7 @@ QPair<CssLengthPercentage, CssLengthPercentage> parseCssPosition(const QString& 
   return {axis(parts[0]), axis(parts[1])};
 }
 
-Q_LOGGING_CATEGORY(themeWarn, "muffin.theme.warn", QtCriticalMsg)
+Q_LOGGING_CATEGORY(themeWarn, "mufpen.theme.warn", QtCriticalMsg)
 
 namespace {
 
@@ -535,7 +535,7 @@ QColor extractColor(const QString& value, const QHash<QString, QString>& vars) {
   // Non-empty input survived no parse strategy — a malformed/unresolved colour that would
   // otherwise silently become "no value" upstream (and, reaching a QPainter brush unguarded,
   // solid black). Surface it so the failure is observable during theme work — enable with
-  // QT_LOGGING_RULES="muffin.theme.warn=true".
+  // QT_LOGGING_RULES="mufpen.theme.warn=true".
   qCWarning(themeWarn).nospace() << "unresolved colour value \"" << resolved << "\"";
   return QColor();
 }
@@ -733,4 +733,4 @@ GradientSpec parseGradientSpec(const QString& raw, const QHash<QString, QString>
   return spec;
 }
 
-} // namespace muffin
+} // namespace mufpen

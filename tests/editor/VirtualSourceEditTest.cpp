@@ -28,7 +28,7 @@
 #include <QtTest/QTest>
 #include <QtMath>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 QFont fixtureSourceFont;
@@ -656,7 +656,7 @@ void testSelectedSourceInkOverridesSyntaxWithoutMovingText() {
 // The composition must render with an underline, NOT overlap the following text, and NOT be
 // blink-gated (the old code drew the preedit only while the caret blink was "on").
 void testSourcePreeditRendersWithoutOverlap() {
-  QApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QApplication::setApplicationName(QStringLiteral("VirtualSourceEditTest"));
 
   VirtualSourceEdit edit;
@@ -814,11 +814,11 @@ int main(int argc, char** argv) {
     runTest("testExternalSourceDropAndEdgeScroll", testExternalSourceDropAndEdgeScroll);
     return 0;
   }
-  QFile reference(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/real-theme-browser.json"));
+  QFile reference(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/real-theme-browser.json"));
   require(reference.open(QIODevice::ReadOnly), "source editor font reference");
   const auto latin =
       browserLayoutFont(QJsonDocument::fromJson(reference.readAll()).object()).value("muffinfixturesans");
-  const int id = QFontDatabase::addApplicationFont(QStringLiteral(MUFFIN_BINARY_DIR "/text-fixture-fonts/han.ttf"));
+  const int id = QFontDatabase::addApplicationFont(QStringLiteral(MUFPEN_BINARY_DIR "/text-fixture-fonts/han.ttf"));
   require(id >= 0, "source editor CJK fixture font");
   fixtureSourceFont.setFamilies({latin, QFontDatabase::applicationFontFamilies(id).value(0)});
   fixtureSourceFont.setPointSizeF(13);

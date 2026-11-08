@@ -18,7 +18,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -250,4 +250,4 @@ private:
   BlockLayoutBuilder builder_;
 };
 
-} // namespace muffin
+} // namespace mufpen

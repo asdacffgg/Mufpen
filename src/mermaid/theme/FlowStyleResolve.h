@@ -19,7 +19,7 @@
 
 #include <QString>
 
-namespace muffin::mermaid::flowstyle {
+namespace mufpen::mermaid::flowstyle {
 
 struct ResolvedNodeStyle {
   // The inline `style` attribute strings mermaid sets on the element
@@ -63,4 +63,4 @@ QStringList compiledClassStyles(const QStringList& classNames, const QVector<flo
 // Mirrors khroma/mermaid's isLabelStyle predicate (chunk-BNCO5QFQ.mjs:38).
 bool isLabelStyle(const QString& key);
 
-} // namespace muffin::mermaid::flowstyle
+} // namespace mufpen::mermaid::flowstyle

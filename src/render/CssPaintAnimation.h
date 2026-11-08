@@ -8,7 +8,7 @@
 #include <functional>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 struct CssPaintTransition {
   QString property, easing = QStringLiteral("ease");
@@ -69,4 +69,4 @@ private:
   qreal nextPruneMs_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -4,7 +4,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 enum class CodeHighlightRole {
   Plain,
@@ -29,4 +29,4 @@ struct CodeHighlightSpan {
   CodeHighlightRole role = CodeHighlightRole::Plain;
 };
 
-} // namespace muffin
+} // namespace mufpen

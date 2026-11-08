@@ -11,7 +11,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-muffin::FileOpenConfirmation::FileOpenConfirmation(QWidget* parent) : QWidget(parent) {
+mufpen::FileOpenConfirmation::FileOpenConfirmation(QWidget* parent) : QWidget(parent) {
   setObjectName(QStringLiteral("FileOpenConfirmation"));
   setAutoFillBackground(true);
   auto* layout = new QVBoxLayout(this);
@@ -52,7 +52,7 @@ muffin::FileOpenConfirmation::FileOpenConfirmation(QWidget* parent) : QWidget(pa
   retranslateUi();
 }
 
-void muffin::FileOpenConfirmation::setFile(const QString& path, file_open_protection::Warnings warnings) {
+void mufpen::FileOpenConfirmation::setFile(const QString& path, file_open_protection::Warnings warnings) {
   const QFileInfo info(path);
   file_->setText(QStringLiteral("%1\n%2").arg(
       info.fileName(), QLocale().formattedDataSize(info.size(), 2, QLocale::DataSizeTraditionalFormat)));
@@ -61,7 +61,7 @@ void muffin::FileOpenConfirmation::setFile(const QString& path, file_open_protec
   sizeWarning_->setVisible(warnings.size);
 }
 
-void muffin::FileOpenConfirmation::setTheme(const RenderTheme& theme) {
+void mufpen::FileOpenConfirmation::setTheme(const RenderTheme& theme) {
   QPalette colors = palette();
   colors.setColor(QPalette::Window, theme.viewportBackgroundColor());
   colors.setColor(QPalette::WindowText, theme.textColor());
@@ -80,7 +80,7 @@ void muffin::FileOpenConfirmation::setTheme(const RenderTheme& theme) {
                          theme.selectionColor().name(), theme.viewportBackgroundColor().name()));
 }
 
-void muffin::FileOpenConfirmation::retranslateUi() {
+void mufpen::FileOpenConfirmation::retranslateUi() {
   title_->setText(tr("Open this file?"));
   extensionWarning_->setText(tr("This file is not a Markdown or text file. Are you sure you want to open it?"));
   sizeWarning_->setText(

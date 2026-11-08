@@ -5,7 +5,7 @@
 #include <QRectF>
 #include <QString>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathSvgGeometry {
 public:
@@ -27,4 +27,4 @@ private:
   static void ensureLoaded();
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

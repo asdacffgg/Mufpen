@@ -21,7 +21,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::quadrant {
+namespace mufpen::mermaid::quadrant {
 
 // Default-theme fallback values (captured live from mermaid 11.16.0). The adapter
 // now populates EVERY field from the resolved FlowThemeVariables, so these
@@ -136,4 +136,4 @@ struct QuadrantScene : MermaidScene {
 
 QuadrantScene buildQuadrantScene(const QuadrantData& data, const QJsonObject& quadrantConfig, QuadrantSceneStyle style);
 
-} // namespace muffin::mermaid::quadrant
+} // namespace mufpen::mermaid::quadrant

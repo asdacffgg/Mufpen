@@ -7,7 +7,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 namespace {
 
 enum LineType {
@@ -798,4 +798,4 @@ SequenceParseError::SequenceParseError(SequenceDiagnostic diagnostic)
       diagnostic_(std::move(diagnostic)) {
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

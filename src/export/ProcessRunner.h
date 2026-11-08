@@ -3,7 +3,7 @@
 #include <QByteArray>
 #include <QStringList>
 class QWidget;
-namespace muffin {
+namespace mufpen {
 struct ProcessResult {
   bool ran = false;
   bool canceled = false;
@@ -19,7 +19,7 @@ struct ProcessRunOptions {
 };
 // Shared cancellable execution for Pandoc and user-configured exporters.
 // Arguments are passed directly, without an implicit command shell.
-class MUFFIN_UI_EXPORT ProcessRunner {
+class MUFPEN_UI_EXPORT ProcessRunner {
 public:
   static ProcessResult run(QWidget* parent, const QString& program, const QStringList& arguments,
                            const ProcessRunOptions& options = {});

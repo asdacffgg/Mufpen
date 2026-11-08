@@ -4,12 +4,12 @@
 #include <QRegularExpression>
 #include <QSettings>
 
-QString muffin::file_open_protection::defaultTextExtensions() {
+QString mufpen::file_open_protection::defaultTextExtensions() {
   return QStringLiteral("md, markdown, mdown, mkd, mkdn, mdx, txt, text, log, csv, tsv, "
                         "json, jsonl, xml, yaml, yml, toml, ini, cfg, conf, rst, adoc");
 }
 
-qint64 muffin::file_open_protection::sizeLimitBytes() {
+qint64 mufpen::file_open_protection::sizeLimitBytes() {
   QSettings settings;
   bool valid = false;
   const qint64 bytes = settings.value(QLatin1String(kSizeLimitBytes)).toLongLong(&valid);
@@ -21,7 +21,7 @@ qint64 muffin::file_open_protection::sizeLimitBytes() {
          1024 * 1024;
 }
 
-QStringList muffin::file_open_protection::normalizedTextExtensions(const QString& text) {
+QStringList mufpen::file_open_protection::normalizedTextExtensions(const QString& text) {
   QStringList result;
   const auto tokens = text.split(QRegularExpression(QStringLiteral("[\\s,;，；、]+")), Qt::SkipEmptyParts);
   for (QString extension : tokens) {
@@ -36,7 +36,7 @@ QStringList muffin::file_open_protection::normalizedTextExtensions(const QString
   return result;
 }
 
-muffin::file_open_protection::Warnings muffin::file_open_protection::warningsForFile(const QString& path) {
+mufpen::file_open_protection::Warnings mufpen::file_open_protection::warningsForFile(const QString& path) {
   const QFileInfo info(path);
   // Let the normal open path report missing/unreadable files without a misleading warning.
   if (!info.isFile() || !info.isReadable())

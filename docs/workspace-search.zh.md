@@ -1,6 +1,6 @@
 # 目录搜索实现与边界
 
-目录搜索在应用进程内运行，使用 Conan 管理的 PCRE2 10.49，不依赖外部 grep 程序或 Rust 工具链。Conan 根配方使用 `force=True`，使 Qt、GLib 和 Muffin 解析到同一个 PCRE2 版本；因此依赖升级后需要重新构建相关包。
+目录搜索在应用进程内运行，使用 Conan 管理的 PCRE2 10.49，不依赖外部 grep 程序或 Rust 工具链。Conan 根配方使用 `force=True`，使 Qt、GLib 和 Mufpen 解析到同一个 PCRE2 版本；因此依赖升级后需要重新构建相关包。
 
 ## 读取与匹配
 
@@ -31,12 +31,12 @@
 
 ## 验证与性能测量
 
-`MuffinWorkspaceSearchTest` 覆盖 Unicode 编码、解码/匹配边界、换行归一化、零宽与跨行正则、并行全局预算、未保存快照、预览过期校验、原格式替换与恢复，以及 100 MiB 文件搜索。
+`MufpenWorkspaceSearchTest` 覆盖 Unicode 编码、解码/匹配边界、换行归一化、零宽与跨行正则、并行全局预算、未保存快照、预览过期校验、原格式替换与恢复，以及 100 MiB 文件搜索。
 
 可在 Release 测试程序上对真实目录或单个文件分别测量一线程和四线程的首条结果时间、总耗时及保留上下文大小：
 
 ```powershell
-.\build\Release\MuffinWorkspaceSearchTest.exe --benchmark G:\github\Muffin\build\prose_100mb.md '第 11041 回'
+.\build\Release\MufpenWorkspaceSearchTest.exe --benchmark G:\github\Mufpen\build\prose_100mb.md '第 11041 回'
 ```
 
 性能依赖文件系统缓存、存储设备、表达式及结果数量，不能根据依赖库名称推断加速倍数。

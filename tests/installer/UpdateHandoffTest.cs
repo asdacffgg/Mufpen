@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Muffin.Setup;
+using Mufpen.Setup;
 using WixToolset.Mba.Core;
 
 internal static class UpdateHandoffTest
@@ -56,10 +56,10 @@ internal static class UpdateHandoffTest
     internal static void RunBundle(string bundle)
     {
         var directory = Path.Combine(Environment.GetEnvironmentVariable("RUNNER_TEMP") ?? Path.GetTempPath(),
-                                     "MuffinBundleCommandTest-" + Guid.NewGuid().ToString("N"));
+                                     "MufpenBundleCommandTest-" + Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(directory);
         var log = Path.Combine(directory, "bundle.log");
-        // Full display is deliberate: even an old BA that misses MuffinUpdate
+        // Full display is deliberate: even an old BA that misses MufpenUpdate
         // can only show its welcome/maintenance page. Never run a production
         // MSI in passive mode just to test a regression in its restart guard.
         using (var process = Process.Start(new ProcessStartInfo(Path.GetFullPath(bundle))
@@ -67,7 +67,7 @@ internal static class UpdateHandoffTest
             UseShellExecute = false,
             CreateNoWindow = true,
             WindowStyle = ProcessWindowStyle.Hidden,
-            Arguments = "/install /norestart /log \"" + log + "\" MuffinUpdate=invalid",
+            Arguments = "/install /norestart /log \"" + log + "\" MufpenUpdate=invalid",
         }))
         {
             if (!process.WaitForExit(60000))
@@ -111,17 +111,17 @@ internal static class UpdateHandoffTest
         Require(UpdateHandoff.FromCommand(Command(null)) == null &&
                 UpdateHandoff.FromCommand(Command("/norestart OtherVariable=value")) == null,
                 "ordinary installation has no editor handoff");
-        foreach (var invalid in new[] { "MuffinUpdate=", "MuffinUpdate", "/MuffinUpdate", "/MuffinUpdate=bad",
-                                        "--MuffinUpdate=bad", "MuffinUpdate=bad",
-                                        "MuffinUpdate=first MuffinUpdate=second", "MuffinUpdate=first muffinupdate=second" })
+        foreach (var invalid in new[] { "MufpenUpdate=", "MufpenUpdate", "/MufpenUpdate", "/MufpenUpdate=bad",
+                                        "--MufpenUpdate=bad", "MufpenUpdate=bad",
+                                        "MufpenUpdate=first MufpenUpdate=second", "MufpenUpdate=first mufpenupdate=second" })
             RejectCommand(invalid);
-        RejectCommand("MuffinUpdate=bad", LaunchAction.Repair);
-        RejectCommand("MuffinUpdate=bad", display: Display.Full);
-        RejectCommand("MuffinUpdate=bad", display: Display.None);
+        RejectCommand("MufpenUpdate=bad", LaunchAction.Repair);
+        RejectCommand("MufpenUpdate=bad", display: Display.Full);
+        RejectCommand("MufpenUpdate=bad", display: Display.None);
 
-        var directory = Path.Combine(Path.GetTempPath(), "MuffinHandoffTest-" + Guid.NewGuid().ToString("N") + " 中文路径");
+        var directory = Path.Combine(Path.GetTempPath(), "MufpenHandoffTest-" + Guid.NewGuid().ToString("N") + " 中文路径");
         Directory.CreateDirectory(directory);
-        var application = Path.Combine(directory, "Muffin.exe");
+        var application = Path.Combine(directory, "Mufpen.exe");
         File.Copy(Process.GetCurrentProcess().MainModule.FileName, application);
         try
         {
@@ -146,7 +146,7 @@ internal static class UpdateHandoffTest
                                 Convert.ToBase64String(Encoding.UTF8.GetBytes(ready));
                     // Exercise the same WiX command parser and BA entry as a
                     // real Burn invocation, not just the token decoder.
-                    using (var handoff = UpdateHandoff.FromCommand(Command("/norestart \"MuffinUpdate=" + token + "\"")))
+                    using (var handoff = UpdateHandoff.FromCommand(Command("/norestart \"MufpenUpdate=" + token + "\"")))
                     {
                         Task<bool> previous = null;
                         UpdateHandoff previousHandoff = null;
@@ -155,7 +155,7 @@ internal static class UpdateHandoffTest
                             var oldReady = Path.Combine(readyDirectory, "update-" + Guid.NewGuid().ToString("N") + ".ready");
                             var oldToken = child.Id + ":" + Convert.ToBase64String(Encoding.UTF8.GetBytes(application)) + ":" +
                                            Convert.ToBase64String(Encoding.UTF8.GetBytes(oldReady));
-                            previousHandoff = UpdateHandoff.FromCommand(Command("MuffinUpdate=" + oldToken));
+                            previousHandoff = UpdateHandoff.FromCommand(Command("MufpenUpdate=" + oldToken));
                             // A timed-out attempt can start after the retry.
                             // Its canceled decision must remain independent.
                             previousHandoff.Cancel();

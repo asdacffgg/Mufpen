@@ -11,7 +11,7 @@
 
 #include <cstdlib>
 
-using namespace muffin::mermaid::classdiagram;
+using namespace mufpen::mermaid::classdiagram;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

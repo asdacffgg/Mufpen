@@ -21,7 +21,7 @@
 //   src/layout.js, src/circleintersection.js, src/diagram.js
 //   build/venn.esm.js (bundled fmin 0.0.4 routines)
 
-namespace muffin::mermaid::venn::layout {
+namespace mufpen::mermaid::venn::layout {
 namespace {
 
 constexpr double kSmall = 1e-10;
@@ -848,4 +848,4 @@ Result compute(const QVector<VennSubset>& data, double width, double height, dou
   return compute(data, width, height, QJsonValue(padding));
 }
 
-} // namespace muffin::mermaid::venn::layout
+} // namespace mufpen::mermaid::venn::layout

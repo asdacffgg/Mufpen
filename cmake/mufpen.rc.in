@@ -5,4 +5,4 @@
 // relative ICON paths against its working directory, not the .rc file's
 // directory. An absolute path makes the embedded icon independent of the
 // build working directory.
-IDI_ICON1 ICON "@MUFFIN_APP_ICON_ICO@"
+IDI_ICON1 ICON "@MUFPEN_APP_ICON_ICO@"

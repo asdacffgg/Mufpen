@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 namespace {
 
 QColor color(const QString& value) {
@@ -410,4 +410,4 @@ void SequenceScene::paint(QPainter& painter, const MermaidPaintOptions& options)
   paintSequenceScene(*this, painter, options);
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

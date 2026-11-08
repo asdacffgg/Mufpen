@@ -9,7 +9,7 @@
 
 #include <cmath>
 
-namespace muffin::html {
+namespace mufpen::html {
 namespace {
 
 qreal resolvedLineHeight(const HtmlComputedStyle& style, const QFont& font) {
@@ -482,4 +482,4 @@ QString HtmlTextMeasurer::collectPlainText(const HtmlBox& box) const {
   return result;
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

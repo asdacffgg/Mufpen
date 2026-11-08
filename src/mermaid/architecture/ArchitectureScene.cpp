@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 namespace {
 
 qreal number(const QJsonValue& value, qreal fallback) {
@@ -542,4 +542,4 @@ QJsonObject ArchitectureScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

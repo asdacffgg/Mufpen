@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 static void require(bool condition, const char* message) {
   if (!condition) {
     std::cerr << message << '\n';
@@ -63,7 +63,7 @@ static void interactionAndHistory() {
   mouse(view, QEvent::MouseMove, point(second), Qt::NoButton, Qt::NoButton);
   require(view.blockHandleTarget().id == second.id && !view.blockHandleRect().isEmpty(),
           "hover must expose the complete block's handle");
-  if (const auto path = qgetenv("MUFFIN_BLOCK_HANDLE_SNAPSHOT"); !path.isEmpty())
+  if (const auto path = qgetenv("MUFPEN_BLOCK_HANDLE_SNAPSHOT"); !path.isEmpty())
     require(view.viewport()->grab().save(QString::fromLocal8Bit(path)), "block handle snapshot must save");
   int menus = 0;
   QObject::connect(&view, &EditorView::blockMenuRequested, &view, [&](BlockTarget target, QPoint) {
@@ -273,7 +273,7 @@ static void headingGutterOwnership() {
       controller.setCursorForSourceOffset(source.indexOf("A heading") + 1);
       const auto badge = snapshot();
       if (level == 3 && theme.id == themes.front().id) {
-        if (const auto path = qgetenv("MUFFIN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty())
+        if (const auto path = qgetenv("MUFPEN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty())
           require(view.viewport()->grab().save(QString::fromLocal8Bit(path) + "-badge.png"),
                   "badge snapshot must save");
       }
@@ -281,7 +281,7 @@ static void headingGutterOwnership() {
       const auto empty = snapshot();
       if ((level <= 2) != (badge == empty)) {
         std::cerr << "badge mismatch: theme=" << theme.id.toStdString() << " level=" << level << '\n';
-        if (const auto path = qgetenv("MUFFIN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty()) {
+        if (const auto path = qgetenv("MUFPEN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty()) {
           badge.save(QString::fromLocal8Bit(path) + "-badge-actual.png");
           empty.save(QString::fromLocal8Bit(path) + "-badge-empty.png");
         }
@@ -299,14 +299,14 @@ static void headingGutterOwnership() {
         std::cerr << "gutter mismatch: theme=" << theme.id.toStdString() << " level=" << level << " rect=" << gutter.x()
                   << ',' << gutter.y() << ',' << gutter.width() << ',' << gutter.height()
                   << " handle=" << view.blockHandleRect().x() << ',' << view.blockHandleRect().y() << '\n';
-        if (const auto path = qgetenv("MUFFIN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty()) {
+        if (const auto path = qgetenv("MUFPEN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty()) {
           activeHandle.save(QString::fromLocal8Bit(path) + "-actual.png");
           handleOnly.save(QString::fromLocal8Bit(path) + "-expected.png");
         }
       }
       require(activeHandle == handleOnly, "active heading badge must yield its gutter to the hovered handle");
       if (level == 3 && theme.id == themes.front().id) {
-        if (const auto path = qgetenv("MUFFIN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty())
+        if (const auto path = qgetenv("MUFPEN_HEADING_GUTTER_SNAPSHOT"); !path.isEmpty())
           require(view.viewport()->grab().save(QString::fromLocal8Bit(path) + "-handle.png"),
                   "handle snapshot must save");
       }
@@ -493,7 +493,7 @@ static void conversionContinuousHistory() {
 }
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName("MuffinTest");
+  QCoreApplication::setOrganizationName("MufpenTest");
   QCoreApplication::setApplicationName("BlockHandleTest");
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);

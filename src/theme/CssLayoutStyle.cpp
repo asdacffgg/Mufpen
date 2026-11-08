@@ -3,7 +3,7 @@
 #include <QRegularExpression>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 std::optional<CssAspectRatio> parseCssAspectRatio(const QString& raw) {
   QString text = raw.trimmed().toLower();
   CssAspectRatio result;
@@ -122,4 +122,4 @@ void CssLayoutStyle::scaleLengths(qreal scale) {
       }
   }
 }
-} // namespace muffin
+} // namespace mufpen

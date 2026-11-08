@@ -3,7 +3,7 @@
 // covers the plan in docs/mermaid-flowchart-remaining-plan.md section 6
 // ("里程碑 B：原生 compound 图模型").
 //
-// This test links MuffinCore only so it stays free of any Node/browser tooling.
+// This test links MufpenCore only so it stays free of any Node/browser tooling.
 
 #include "mermaid/graphlib/Graph.h"
 
@@ -15,9 +15,9 @@
 #include <cstdlib>
 #include <stdexcept>
 
-using muffin::mermaid::graphlib::Edge;
-using muffin::mermaid::graphlib::ancestorsOf;
-using muffin::mermaid::graphlib::lowestCommonAncestor;
+using mufpen::mermaid::graphlib::Edge;
+using mufpen::mermaid::graphlib::ancestorsOf;
+using mufpen::mermaid::graphlib::lowestCommonAncestor;
 
 namespace {
 
@@ -45,8 +45,8 @@ struct GraphLabel {
   qreal ranksep = 50.0;
 };
 
-using G = muffin::mermaid::graphlib::Graph<NodeLabel, EdgeLabel, GraphLabel>;
-using CG = muffin::mermaid::graphlib::Graph<NodeLabel, EdgeLabel, GraphLabel>;
+using G = mufpen::mermaid::graphlib::Graph<NodeLabel, EdgeLabel, GraphLabel>;
+using CG = mufpen::mermaid::graphlib::Graph<NodeLabel, EdgeLabel, GraphLabel>;
 
 [[noreturn]] void fail(const QString& message) {
   qCritical().noquote() << message;

@@ -6,7 +6,7 @@
 #include <QPair>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 // Per-code-fence horizontal scroll state, keyed by NodeId. Lives outside BlockLayout because
 // BlockLayout is rebuilt on every edit; this survives those rebuilds. The typing path uses
@@ -42,4 +42,4 @@ private:
   QHash<NodeId, Entry> entries_;
 };
 
-} // namespace muffin
+} // namespace mufpen

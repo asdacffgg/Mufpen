@@ -10,9 +10,9 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_UI_EXPORT CodeFenceController final : public QObject {
+class MUFPEN_UI_EXPORT CodeFenceController final : public QObject {
   Q_OBJECT
 
 public:
@@ -65,4 +65,4 @@ private:
   EditorContext ctx_;
 };
 
-} // namespace muffin
+} // namespace mufpen

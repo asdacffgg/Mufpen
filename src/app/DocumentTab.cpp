@@ -54,7 +54,7 @@ QColor headerBlend(const QColor& background, const QColor& ink, qreal amount) {
 }
 } // namespace
 
-muffin::DocumentTab::DocumentTab(QWidget* parent)
+mufpen::DocumentTab::DocumentTab(QWidget* parent)
     : QWidget(parent), renderCommands(editorController, [this] { return hasSourcePane(); }) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(0, 0, 0, 0);
@@ -216,7 +216,7 @@ muffin::DocumentTab::DocumentTab(QWidget* parent)
   connect(renderView, &EditorView::layoutReady, this, &DocumentTab::scheduleViewportSynchronization);
 }
 
-muffin::DocumentTab::~DocumentTab() {
+mufpen::DocumentTab::~DocumentTab() {
   commandTargetChanged = {};
   disconnect(qApp, nullptr, this, nullptr);
   if (findCancellation)
@@ -232,7 +232,7 @@ muffin::DocumentTab::~DocumentTab() {
   delete contentStack;
 }
 
-void muffin::DocumentTab::ensureRenderViewCurrent() {
+void mufpen::DocumentTab::ensureRenderViewCurrent() {
   if (!std::exchange(renderViewDirty, false))
     return;
   const QScopedValueRollback<bool> guard(synchronizing_, true);
@@ -247,7 +247,7 @@ void muffin::DocumentTab::ensureRenderViewCurrent() {
     renderView->restoreViewportPosition(position, editorController.cursorForSourceOffset(position.sourceOffset));
 }
 
-bool muffin::DocumentTab::refreshPreviewAfterLocalEdit() {
+bool mufpen::DocumentTab::refreshPreviewAfterLocalEdit() {
   if (viewMode_ != DocumentViewMode::Split || renderViewDirty || !session.lastParseWasLocalEdit() ||
       session.lastChangeWasBatch())
     return false;
@@ -262,7 +262,7 @@ bool muffin::DocumentTab::refreshPreviewAfterLocalEdit() {
   return true;
 }
 
-void muffin::DocumentTab::scheduleViewportSynchronization() {
+void mufpen::DocumentTab::scheduleViewportSynchronization() {
   if (synchronizing_ || synchronizationQueued_ || viewMode_ != DocumentViewMode::Split)
     return;
   synchronizationQueued_ = true;
@@ -272,7 +272,7 @@ void muffin::DocumentTab::scheduleViewportSynchronization() {
   });
 }
 
-void muffin::DocumentTab::updateCommandTarget(bool preview) {
+void mufpen::DocumentTab::updateCommandTarget(bool preview) {
   previewActive_ = viewMode_ == DocumentViewMode::Split && preview;
   scrollFromSource_ = !previewActive_;
   const bool source = hasSourcePane() && !previewActive_;
@@ -286,7 +286,7 @@ void muffin::DocumentTab::updateCommandTarget(bool preview) {
     commandTargetChanged();
 }
 
-void muffin::DocumentTab::setViewMode(DocumentViewMode mode) {
+void mufpen::DocumentTab::setViewMode(DocumentViewMode mode) {
   if (mode == viewMode_)
     return;
   const QScopedValueRollback<bool> guard(synchronizing_, true);
@@ -320,7 +320,7 @@ void muffin::DocumentTab::setViewMode(DocumentViewMode mode) {
   applyWritingModes();
 }
 
-void muffin::DocumentTab::restoreViewMode(const QVariantMap& state) {
+void mufpen::DocumentTab::restoreViewMode(const QVariantMap& state) {
   const auto mode = state.value(QStringLiteral("splitView")).toBool()    ? DocumentViewMode::Split
                     : state.value(QStringLiteral("sourceMode")).toBool() ? DocumentViewMode::Source
                                                                          : DocumentViewMode::Rendered;
@@ -337,21 +337,21 @@ void muffin::DocumentTab::restoreViewMode(const QVariantMap& state) {
   setSynchronizedScrolling(state.value(QStringLiteral("synchronizedScrolling"), true).toBool());
 }
 
-void muffin::DocumentTab::focusEditor() {
+void mufpen::DocumentTab::focusEditor() {
   updateCommandTarget(false);
   (hasSourcePane() ? static_cast<QWidget*>(editor) : static_cast<QWidget*>(renderView))->setFocus(Qt::OtherFocusReason);
 }
 
-bool muffin::DocumentTab::synchronizedScrolling() const {
+bool mufpen::DocumentTab::synchronizedScrolling() const {
   return synchronizeButton_->isChecked();
 }
 
-void muffin::DocumentTab::setFocusMode(bool enabled) {
+void mufpen::DocumentTab::setFocusMode(bool enabled) {
   focusMode_ = enabled;
   applyWritingModes();
 }
 
-void muffin::DocumentTab::setTypewriterMode(bool enabled, bool cursorMiddle) {
+void mufpen::DocumentTab::setTypewriterMode(bool enabled, bool cursorMiddle) {
   typewriterMode_ = enabled;
   typewriterCursorMiddle_ = cursorMiddle;
   applyWritingModes();
@@ -359,7 +359,7 @@ void muffin::DocumentTab::setTypewriterMode(bool enabled, bool cursorMiddle) {
     scheduleViewportSynchronization();
 }
 
-void muffin::DocumentTab::applyWritingModes() {
+void mufpen::DocumentTab::applyWritingModes() {
   // Writing aids belong to the editable pane. A split preview has no writing
   // caret: its reading position is controlled only by explicit navigation and
   // the synchronization policy, never by a stale rendered selection.
@@ -376,23 +376,23 @@ void muffin::DocumentTab::applyWritingModes() {
   }
 }
 
-void muffin::DocumentTab::setSynchronizedScrolling(bool enabled) {
+void mufpen::DocumentTab::setSynchronizedScrolling(bool enabled) {
   synchronizeButton_->setChecked(enabled);
 }
 
-QList<int> muffin::DocumentTab::splitSizes() const {
+QList<int> mufpen::DocumentTab::splitSizes() const {
   return viewMode_ == DocumentViewMode::Split ? viewSplitter->sizes() : splitSizes_;
 }
 
-Qt::Orientation muffin::DocumentTab::splitOrientation() const {
+Qt::Orientation mufpen::DocumentTab::splitOrientation() const {
   return viewSplitter->orientation();
 }
 
-bool muffin::DocumentTab::previewFirst() const {
+bool mufpen::DocumentTab::previewFirst() const {
   return viewSplitter->indexOf(previewPane_) == 0;
 }
 
-void muffin::DocumentTab::setSplitLayout(Qt::Orientation orientation, bool previewFirst) {
+void mufpen::DocumentTab::setSplitLayout(Qt::Orientation orientation, bool previewFirst) {
   if (orientation == splitOrientation() && previewFirst == this->previewFirst())
     return;
   const QScopedValueRollback<bool> guard(synchronizing_, true);
@@ -411,7 +411,7 @@ void muffin::DocumentTab::setSplitLayout(Qt::Orientation orientation, bool previ
   renderView->restoreViewportPosition(previewPosition, {});
 }
 
-void muffin::DocumentTab::synchronizeViewports(bool fromSource) {
+void mufpen::DocumentTab::synchronizeViewports(bool fromSource) {
   if (viewMode_ != DocumentViewMode::Split || !synchronizedScrolling() || synchronizing_ || !isVisible() ||
       session.isOpenInProgress() || renderViewDirty)
     return;
@@ -430,7 +430,7 @@ void muffin::DocumentTab::synchronizeViewports(bool fromSource) {
   }
 }
 
-bool muffin::DocumentTab::eventFilter(QObject* watched, QEvent* event) {
+bool mufpen::DocumentTab::eventFilter(QObject* watched, QEvent* event) {
   if (viewMode_ == DocumentViewMode::Split &&
       (event->type() == QEvent::Wheel || event->type() == QEvent::MouseButtonPress ||
        event->type() == QEvent::KeyPress)) {
@@ -440,7 +440,7 @@ bool muffin::DocumentTab::eventFilter(QObject* watched, QEvent* event) {
   return QWidget::eventFilter(watched, event);
 }
 
-void muffin::DocumentTab::retranslateSplitUi() {
+void mufpen::DocumentTab::retranslateSplitUi() {
   splitPage_->findChild<QLabel*>(QStringLiteral("SplitSourceLabel"))->setText(tr("Markdown source"));
   splitPage_->findChild<QLabel*>(QStringLiteral("SplitPreviewLabel"))->setText(tr("Read-only preview"));
   synchronizeButton_->setText(tr("Synchronized scrolling"));
@@ -454,13 +454,13 @@ void muffin::DocumentTab::retranslateSplitUi() {
   swapPanesAction_->setText(tr("Swap source and preview"));
 }
 
-void muffin::DocumentTab::changeEvent(QEvent* event) {
+void mufpen::DocumentTab::changeEvent(QEvent* event) {
   QWidget::changeEvent(event);
   if (event->type() == QEvent::LanguageChange)
     retranslateSplitUi();
 }
 
-void muffin::DocumentTab::setSplitTheme(const RenderTheme& theme) {
+void mufpen::DocumentTab::setSplitTheme(const RenderTheme& theme) {
   auto colors = splitPage_->palette();
   colors.setColor(QPalette::Window, theme.backgroundColor());
   colors.setColor(QPalette::WindowText, theme.mutedTextColor());

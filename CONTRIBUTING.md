@@ -1,6 +1,6 @@
-# Contributing to Muffin
+# Contributing to Mufpen
 
-Thank you for your interest in contributing to Muffin! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Mufpen! This document provides guidelines and information for contributors.
 
 ## How to Contribute
 
@@ -23,7 +23,7 @@ Thank you for your interest in contributing to Muffin! This document provides gu
 
 ## Development Setup
 
-Muffin uses [Conan](https://conan.io/) for dependency management and CMake for building. You need:
+Mufpen uses [Conan](https://conan.io/) for dependency management and CMake for building. You need:
 
 - **C++20** compiler (MSVC 2022+, GCC 12+, or Clang 15+)
 - **Qt 6** (installed via Conan)
@@ -54,7 +54,7 @@ ctest --preset conan-release --output-on-failure
 
 ```powershell
 cmake --build --preset conan-release --target dist
-.\build\dist\Muffin.exe
+.\build\dist\Mufpen.exe
 ```
 
 See [CLAUDE.md](CLAUDE.md) for additional build details and common pitfalls.
@@ -87,11 +87,11 @@ Configure your editor's clang-format integration to use the version pinned in
 
 ### Naming Conventions
 
-- **Namespaces**: `muffin::` for all application code
+- **Namespaces**: `mufpen::` for all application code
 - **Files**: `PascalCase.h` / `PascalCase.cpp` for class files
 - **Members**: Trailing underscore (e.g., `document_`, `renderView_`)
 - **Qt signals/slots**: `camelCase`
-- **CMake targets**: `muffin::` prefix for internal libraries
+- **CMake targets**: `mufpen::` prefix for internal libraries
 
 ### Commit Messages
 
@@ -118,7 +118,7 @@ All new features and bug fixes should include tests when applicable.
 ctest --preset conan-release --output-on-failure
 
 # Run a specific test
-ctest --preset conan-release -R MuffinDocumentTest --output-on-failure
+ctest --preset conan-release -R MufpenDocumentTest --output-on-failure
 ```
 
 Test executables are located in `build/Release/` after building. Tests use Qt Test framework (`QTest`).
@@ -127,7 +127,7 @@ Test executables are located in `build/Release/` after building. Tests use Qt Te
 
 - Place test files in the `tests/` directory
 - Use `QVERIFY`, `QCOMPARE`, and other QTest macros
-- Follow the naming convention `Muffin<Component>Test.cpp`
+- Follow the naming convention `Mufpen<Component>Test.cpp`
 - Register new tests in `tests/CMakeLists.txt`
 
 ## Project Architecture
@@ -205,7 +205,7 @@ cmake --build --preset conan-release --target update_translations
 cmake --build --preset conan-release --target release_translations
 ```
 
-If Qt Linguist tools are not on `PATH`, set `MUFFIN_QT_LINGUIST_BIN` to the directory containing `lupdate` and `lrelease`.
+If Qt Linguist tools are not on `PATH`, set `MUFPEN_QT_LINGUIST_BIN` to the directory containing `lupdate` and `lrelease`.
 
 ## Documentation
 

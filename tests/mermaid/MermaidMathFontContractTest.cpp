@@ -10,7 +10,7 @@
 #include <iostream>
 #include <stdexcept>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

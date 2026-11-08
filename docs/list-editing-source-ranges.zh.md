@@ -16,7 +16,7 @@ Backspace 与 Delete 合并相邻列表项时，统一调用 `buildMergeListItem
 
 撤销前为只有可见文字偏移的光标补齐源码位置；局部重解析后同步更新受影响顶层块的内部节点索引，使恢复的光标和选区可以立即命中布局。
 
-自动验收入口是 `MuffinListEditingSequenceTest`，配合已有的列表缩进、空项退格和鼠标定位测试，覆盖：
+自动验收入口是 `MufpenListEditingSequenceTest`，配合已有的列表缩进、空项退格和鼠标定位测试，覆盖：
 
 - 同行嵌套列表正文开头、中间和末尾的 Enter，以及撤销、重做。
 - Delete 合并相邻子项、删除空父项的内层标记，保留正文。

@@ -10,7 +10,7 @@
 #include <QKeyEvent>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Inside a code fence, Shift+Tab dedents by one codeIndent unit (default 4 spaces): every selected
 // line when there is a selection, otherwise just the caret's line. min-rule: never strip more
@@ -128,7 +128,7 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("InputShiftTabDedentTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

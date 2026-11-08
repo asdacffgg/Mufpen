@@ -4,7 +4,7 @@
 #include <QCoreApplication>
 #include "../TestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);

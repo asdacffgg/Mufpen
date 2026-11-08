@@ -1,6 +1,6 @@
 #pragma once
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathStyle {
 public:
@@ -40,4 +40,4 @@ private:
   bool cramped_ = false;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

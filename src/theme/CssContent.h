@@ -9,7 +9,7 @@
 #include <optional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 // Format a 1-based counter value per a CSS list-style-type / counter() style
 // (decimal, decimal-leading-zero, lower/upper-alpha & -latin, lower/upper-roman,
@@ -33,4 +33,4 @@ QString resolveContentTokens(const std::vector<ContentToken>& tokens, const std:
                              const std::function<QVector<int>(const QString&)>& chain,
                              const std::function<std::optional<QString>(const QString&)>& attribute = {});
 
-} // namespace muffin
+} // namespace mufpen

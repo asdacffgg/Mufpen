@@ -2,7 +2,7 @@
 
 #include <QScrollBar>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testEditorViewPlainInlineLayout() {
   DocumentSession session;

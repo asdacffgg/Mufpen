@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::xychart {
+namespace mufpen::mermaid::xychart {
 namespace {
 
 QColor withOpacity(QColor value, qreal opacity) {
@@ -140,4 +140,4 @@ void paintXYChartScene(const XYChartScene& scene, QPainter& painter, const Merma
   }
 }
 
-} // namespace muffin::mermaid::xychart
+} // namespace mufpen::mermaid::xychart

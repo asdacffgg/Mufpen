@@ -5,7 +5,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-namespace muffin::mermaid::error {
+namespace mufpen::mermaid::error {
 
 QStringList errorIconPathData() {
   return {
@@ -86,4 +86,4 @@ QJsonObject ErrorScene::toJsonObject() const {
   return object;
 }
 
-} // namespace muffin::mermaid::error
+} // namespace mufpen::mermaid::error

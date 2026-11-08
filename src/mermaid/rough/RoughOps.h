@@ -5,7 +5,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::rough {
+namespace mufpen::mermaid::rough {
 
 enum class OpType { Move, LineTo, BcurveTo };
 enum class OpSetType { Path, FillPath, FillSketch };
@@ -72,4 +72,4 @@ QRectF tightBounds(const Drawable& drawable);
 QString opTypeName(OpType type);
 QString opSetTypeName(OpSetType type);
 
-} // namespace muffin::mermaid::rough
+} // namespace mufpen::mermaid::rough

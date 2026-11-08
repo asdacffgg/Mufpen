@@ -15,7 +15,7 @@
 
 #include <vector>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // A captured intermediate-state snapshot of the layout graph at a named phase
 // boundary (milestone G2). `state` is an implementation-independent census
@@ -34,4 +34,4 @@ struct DagreSnapshot {
 // default → zero overhead for the production/editor path.
 void runDagreLayout(DagreGraph& g, std::vector<DagreSnapshot>* snapshots = nullptr);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

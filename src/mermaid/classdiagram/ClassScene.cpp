@@ -15,7 +15,7 @@
 #include <numbers>
 #include <tuple>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 namespace {
 
 QRectF pointsBounds(const QVector<QPointF>& points, const QVector<QVector<QPointF>>& segments = {}) {
@@ -719,4 +719,4 @@ SvgMarkerProjection ClassScene::svgMarkerProjection() const {
   return projection;
 }
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

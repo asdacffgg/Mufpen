@@ -38,28 +38,28 @@ void near(qreal actual, qreal expected, const char* message) {
     require(false, message);
   }
 }
-QVector<const muffin::LayoutBox*> boxesForTag(const muffin::InlineLayout& text, const QString& tag) {
-  QVector<const muffin::LayoutBox*> result;
+QVector<const mufpen::LayoutBox*> boxesForTag(const mufpen::InlineLayout& text, const QString& tag) {
+  QVector<const mufpen::LayoutBox*> result;
   for (const auto& box : text.inlineBoxes())
     if (box.hostKey == tag)
       result.append(&box);
   return result;
 }
 void testCascadeAndInheritance() {
-  const auto sheet = muffin::CssThemeParser::parse(
+  const auto sheet = mufpen::CssThemeParser::parse(
       QStringLiteral("html{font-size:16px} body{font-size:125%;color:#123456;line-height:1.5em}"
                      "h1{font-size:1.5em;margin:2em;padding-left:99px;padding:1em 2em;"
                      "border-bottom:1px solid;border-color:#c5c5c5}"
                      "h2{border-color:red;border-bottom:1px solid}"
                      "h3{padding:2px !important;padding-left:8px}"),
       {});
-  muffin::CssComputedStyleEngine engine(sheet);
-  muffin::CssElement html;
+  mufpen::CssComputedStyleEngine engine(sheet);
+  mufpen::CssElement html;
   html.tag = "html";
-  muffin::CssElement body;
+  mufpen::CssElement body;
   body.tag = "body";
   body.parent = &html;
-  muffin::CssElement h;
+  mufpen::CssElement h;
   h.tag = "h1";
   h.parent = &body;
   const auto style = engine.styleFor(h);
@@ -73,40 +73,40 @@ void testCascadeAndInheritance() {
   h.tag = "h3";
   require(engine.styleFor(h).resolvedValue("padding-left") == QStringLiteral("2px"),
           "important shorthand protects components");
-  const auto inlineStyle = engine.styleFor(h, {}, muffin::CssThemeParser::parseDeclarations("padding-left:12px"));
+  const auto inlineStyle = engine.styleFor(h, {}, mufpen::CssThemeParser::parseDeclarations("padding-left:12px"));
   require(inlineStyle.resolvedValue("padding-left") == QStringLiteral("2px"),
           "stylesheet important beats normal inline longhand");
 }
 void testConditionalVariables() {
-  const auto sheet = muffin::CssThemeParser::parse(
+  const auto sheet = mufpen::CssThemeParser::parse(
       QStringLiteral(":root{--ink:red}@media screen and (min-width:1400px){:root{--ink:blue}"
                      "@media (max-width:1600px){p{padding:2px}}}p{color:var(--ink)}"),
       {});
-  muffin::CssElement html;
+  mufpen::CssElement html;
   html.tag = "html";
-  muffin::CssElement p;
+  mufpen::CssElement p;
   p.tag = "p";
   p.parent = &html;
-  muffin::CssEnvironment env;
+  mufpen::CssEnvironment env;
   env.viewportWidth = 1399;
-  require(muffin::CssComputedStyleEngine(sheet, env).styleFor(p).resolvedValue("color") == QStringLiteral("red"),
+  require(mufpen::CssComputedStyleEngine(sheet, env).styleFor(p).resolvedValue("color") == QStringLiteral("red"),
           "inactive media variable cannot leak");
   env.viewportWidth = 1400;
-  const auto s = muffin::CssComputedStyleEngine(sheet, env).styleFor(p);
+  const auto s = mufpen::CssComputedStyleEngine(sheet, env).styleFor(p);
   require(s.resolvedValue("color") == QStringLiteral("blue") &&
               s.resolvedValue("padding-left") == QStringLiteral("2px"),
           "nested media AND and scoped root variable");
   env.viewportWidth = 1601;
-  require(!muffin::CssComputedStyleEngine(sheet, env).styleFor(p).hasProperty("padding-left"),
+  require(!mufpen::CssComputedStyleEngine(sheet, env).styleFor(p).hasProperty("padding-left"),
           "nested condition exits");
 }
 void testNewsprintGeometryAndFonts() {
-  auto theme = muffin::RenderTheme::newsprint();
-  muffin::DocumentSession session;
+  auto theme = mufpen::RenderTheme::newsprint();
+  mufpen::DocumentSession session;
   session.setMarkdownText("# Title\n\nparagraph\n\n## Section\n", false);
   for (const int width : {1399, 1400, 1914, 1399}) {
     theme.updateForViewport(width, 1030);
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(session.document(), theme, width);
     near(layout.pageWidth(), width < 1400 ? 580 : 854, "browser Newsprint content width at breakpoint");
   }
@@ -129,23 +129,23 @@ void testNewsprintGeometryAndFonts() {
 }
 void testImportedWebFonts() {
   for (const QString& path :
-       {QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes/newsprint/pt-serif-v11-latin-regular.woff2"),
-        QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes/pixyll/lato-v14-latin-300.woff")}) {
+       {QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes/newsprint/pt-serif-v11-latin-regular.woff2"),
+        QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes/pixyll/lato-v14-latin-300.woff")}) {
     QFile source(path);
     require(source.open(QIODevice::ReadOnly), "webfont fixture readable");
-    const QByteArray native = muffin::decodeThemeWebFont(source.readAll());
+    const QByteArray native = mufpen::decodeThemeWebFont(source.readAll());
     require(!native.isEmpty() && !native.startsWith("wOFF") && !native.startsWith("wOF2"),
             "webfont decoder reconstructs SFNT");
     require(QRawFont(native, 16).isValid(), "native backend loads reconstructed webfont");
   }
-  require(muffin::decodeThemeWebFont(QByteArray("wOF2broken")).isEmpty(), "invalid webfont fails without registration");
+  require(mufpen::decodeThemeWebFont(QByteArray("wOF2broken")).isEmpty(), "invalid webfont fails without registration");
 }
 void testHeadingBoxAndTextScale() {
-  auto theme = muffin::RenderTheme::newsprint();
+  auto theme = mufpen::RenderTheme::newsprint();
   theme.updateForViewport(1914, 1030);
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText("# Title\n\nText\n", false);
-  muffin::DocumentLayout layout;
+  mufpen::DocumentLayout layout;
   layout.rebuild(session.document(), theme, 1914);
   const auto& node = *session.document().root().children().front();
   const auto* block = layout.block(node.id());
@@ -166,18 +166,18 @@ void testHeadingBoxAndTextScale() {
   near(theme.pageWidth(), 1250, "explicit content width remains independent of text scale");
 }
 void testHtmlUsesDocumentCascade() {
-  auto theme = muffin::RenderTheme::newsprint();
+  auto theme = mufpen::RenderTheme::newsprint();
   theme.updateForViewport(1914, 1030);
-  muffin::html::HtmlColorPalette palette = muffin::html::HtmlColorPalette::defaultLight();
+  mufpen::html::HtmlColorPalette palette = mufpen::html::HtmlColorPalette::defaultLight();
   palette.documentStyleSheet = theme.documentStyleSheet();
   palette.fontAliases = theme.fontAliases();
   palette.cssEnvironment.viewportWidth = 1914;
-  muffin::html::HtmlRenderer renderer;
+  mufpen::html::HtmlRenderer renderer;
   const auto result = renderer.render(
       "<h1 style='padding-bottom:1em'>Title</h1><p style='font-size:20px'><span>Text</span></p>", 12, 854, {}, palette);
   require(result.valid(), "themed HTML block lays out");
-  std::function<const muffin::html::HtmlBox*(const muffin::html::HtmlBox&, muffin::html::HtmlTag)> find;
-  find = [&](const auto& box, auto tag) -> const muffin::html::HtmlBox* {
+  std::function<const mufpen::html::HtmlBox*(const mufpen::html::HtmlBox&, mufpen::html::HtmlTag)> find;
+  find = [&](const auto& box, auto tag) -> const mufpen::html::HtmlBox* {
     if (box.tag() == tag)
       return &box;
     for (const auto& child : box.children()) {
@@ -186,19 +186,19 @@ void testHtmlUsesDocumentCascade() {
     }
     return nullptr;
   };
-  const auto* heading = find(*result.root(), muffin::html::HtmlTag::Heading1);
+  const auto* heading = find(*result.root(), mufpen::html::HtmlTag::Heading1);
   require(heading != nullptr, "HTML heading exists");
   near(heading->style().fontSize, 22.5, "HTML heading uses document computed font");
   near(heading->style().padding.bottom(), 30, "HTML inline em uses computed heading size");
   require(heading->style().font.families().front() == theme.fontAliases().value("pt serif"),
           "HTML shares registered private document family");
   require(heading->style().fontWeight == QFont::Normal, "HTML text measurement respects normal heading weight");
-  const auto* span = find(*result.root(), muffin::html::HtmlTag::Span);
+  const auto* span = find(*result.root(), mufpen::html::HtmlTag::Span);
   require(span != nullptr, "HTML span exists");
   near(span->style().fontSize, 15, "HTML descendants inherit parent's inline font size");
 }
 void testCodeStylesRemainSeparate() {
-  const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "#write{font-size:16px}code{font-size:12px;font-family:Consolas}pre{font-size:20px;line-height:1.8;font-family:'Courier New'}",
       "code-styles", {}));
   near(theme.inlineCodeFont().pointSizeF(), 9, "inline code font follows code selector");
@@ -206,25 +206,25 @@ void testCodeStylesRemainSeparate() {
   near(theme.codeLineHeight(), 36, "code block measured and painted line height follows pre selector");
 }
 void testUsedBoxesAndBorderDefaults() {
-  muffin::CssElement p;
+  mufpen::CssElement p;
   p.tag = "p";
-  const auto sheet = muffin::CssThemeParser::parse(
+  const auto sheet = mufpen::CssThemeParser::parse(
       "p{margin:10%;padding:calc(5% + 2px);border-left-width:8px;box-sizing:border-box}", {});
-  const auto computed = muffin::CssComputedStyleEngine(sheet).styleFor(p);
-  const auto box = muffin::CssThemeMapper::projectComputedStyle("p", computed.withContainingWidth(600)).box;
+  const auto computed = mufpen::CssComputedStyleEngine(sheet).styleFor(p);
+  const auto box = mufpen::CssThemeMapper::projectComputedStyle("p", computed.withContainingWidth(600)).box;
   near(box.margin.left(), 60, "margin uses containing width rather than viewport or em");
   near(box.padding.top(), 32, "calc percentage combines with absolute part at used-value stage");
   near(box.borderLeftWidth, 0, "initial border style none suppresses specified border width");
   require(box.borderBox, "box-sizing survives projection");
   const auto theme =
-      muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss("h1{padding:10%}", "used-padding", {}));
+      mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss("h1{padding:10%}", "used-padding", {}));
   near(theme.elementBoxStyle(QStringLiteral("h%1").arg(1), nullptr, 600).padding.left(), 60,
        "Markdown heading resolves percentage at layout width");
   near(theme.elementBoxStyle(QStringLiteral("h%1").arg(1), nullptr, 300).padding.left(), 30,
        "same cached Markdown style responds to containing width");
   const auto border =
-      muffin::CssThemeMapper::projectComputedStyle(
-          "p", muffin::CssComputedStyleEngine(muffin::CssThemeParser::parse("p{color:red;border-style:solid}", {}))
+      mufpen::CssThemeMapper::projectComputedStyle(
+          "p", mufpen::CssComputedStyleEngine(mufpen::CssThemeParser::parse("p{color:red;border-style:solid}", {}))
                    .styleFor(p))
           .box;
   near(border.borderLeftWidth, 3, "border-style alone uses initial medium width");
@@ -232,9 +232,9 @@ void testUsedBoxesAndBorderDefaults() {
 }
 
 void testHtmlContainingBlockAndBoxSizing() {
-  auto palette = muffin::html::HtmlColorPalette::defaultLight();
-  palette.documentStyleSheet = std::make_shared<muffin::CssThemeSheet>(muffin::CssThemeParser::parse("", {}));
-  muffin::html::HtmlRenderer renderer;
+  auto palette = mufpen::html::HtmlColorPalette::defaultLight();
+  palette.documentStyleSheet = std::make_shared<mufpen::CssThemeSheet>(mufpen::CssThemeParser::parse("", {}));
+  mufpen::html::HtmlRenderer renderer;
   for (bool borderBox : {false, true}) {
     const auto result =
         renderer.render(QString("<div style='width:300px;padding:20px;border:2px solid;box-sizing:%1'>"
@@ -253,30 +253,30 @@ void testHtmlContainingBlockAndBoxSizing() {
 
 void testDuplicateNodeIdsDoNotAliasStyle() {
   const auto definition =
-      muffin::CssThemeMapper::fromCss("p{color:red}h1{color:blue}p:first-child{color:green}", "cache-identity", {});
-  const auto theme = muffin::RenderTheme::fromDefinition(definition);
-  const auto id = muffin::NodeId::create();
-  muffin::MarkdownNode p(muffin::BlockType::Paragraph, id);
-  muffin::MarkdownNode h(muffin::BlockType::Heading, id);
+      mufpen::CssThemeMapper::fromCss("p{color:red}h1{color:blue}p:first-child{color:green}", "cache-identity", {});
+  const auto theme = mufpen::RenderTheme::fromDefinition(definition);
+  const auto id = mufpen::NodeId::create();
+  mufpen::MarkdownNode p(mufpen::BlockType::Paragraph, id);
+  mufpen::MarkdownNode h(mufpen::BlockType::Heading, id);
   h.setHeadingLevel(1);
   require(theme.elementStyleForNode(p, "p")->paint.color != theme.elementStyleForNode(h, "h1")->paint.color,
           "different nodes sharing an ID must not alias computed styles");
 }
 
 void testPercentageFlowAndZeroFont() {
-  const auto definition = muffin::CssThemeMapper::fromCss(
+  const auto definition = mufpen::CssThemeMapper::fromCss(
       "#write{max-width:600px;margin:0;padding:0}p{margin:10% 0 5%;margin-left:10%}h1{font-size:0em}",
       "percentage-flow", {});
-  auto theme = muffin::RenderTheme::fromDefinition(definition);
+  auto theme = mufpen::RenderTheme::fromDefinition(definition);
   require(theme.elementStyle("h1")->text.fontSizeSet && theme.elementStyle("h1")->text.fontSizePx == 0,
           "projection distinguishes explicit font-size zero from missing font size");
   require(theme.textFontForElement("h1").pointSizeF() < .01,
           "native font-size zero must not select a large heading fallback");
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText("Text\n\nMore text\n", false);
   for (int width : {900, 450}) {
     theme.updateForViewport(width, 800);
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(session.document(), theme, width);
     const auto& children = session.document().root().children();
     const auto* first = layout.block(children[0]->id());
@@ -289,7 +289,7 @@ void testPercentageFlowAndZeroFont() {
 }
 
 void testUnifiedHeadingSnapshotAndLazyLayout() {
-  muffin::DocumentSession document;
+  mufpen::DocumentSession document;
   document.setMarkdownText(
       "# A heading long enough to wrap when the content width is narrow\n\n"
       "Text with **strong `code`**.\n\n```cpp\nint x;\n```\n\n| H | V |\n| --- | --- |\n| one | two |\n",
@@ -302,10 +302,10 @@ void testUnifiedHeadingSnapshotAndLazyLayout() {
                              "pre{width:260px;box-sizing:border-box;padding:9px 15px;border:4px solid green}"
                              "th{padding:12px 20px;font-size:18px}td{padding:3px 7px;font-size:12px}")
                          .arg(size);
-    const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(css, "snapshots", {}));
-    muffin::DocumentLayout eager, lazy;
+    const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(css, "snapshots", {}));
+    mufpen::DocumentLayout eager, lazy;
     eager.rebuild(document.document(), theme, 800);
-    lazy.rebuild(document.document(), theme, 800, {}, {}, muffin::DocumentLayout::BuildPolicy::Lazy);
+    lazy.rebuild(document.document(), theme, 800, {}, {}, mufpen::DocumentLayout::BuildPolicy::Lazy);
     lazy.buildAll(theme);
     near(eager.totalHeight(), lazy.totalHeight(), "lazy promotion converges to eager document height");
     for (const auto* block : eager.promotedBlocks()) {
@@ -354,12 +354,12 @@ void testUnifiedHeadingSnapshotAndLazyLayout() {
 }
 
 void testLegacyThemeUsesDocumentEngine() {
-  muffin::ThemeDefinition definition;
+  mufpen::ThemeDefinition definition;
   definition.colors.text = QColor("#112233");
   definition.typography.headingSizePt[0] = 24;
   definition.typography.bodyFont = "Georgia";
-  auto theme = muffin::RenderTheme::fromDefinition(definition);
-  muffin::MarkdownNode heading(muffin::BlockType::Heading);
+  auto theme = mufpen::RenderTheme::fromDefinition(definition);
+  mufpen::MarkdownNode heading(mufpen::BlockType::Heading);
   heading.setHeadingLevel(1);
   require(theme.documentStyleSheet() && theme.elementStyleForNode(heading, "h1"),
           "legacy themes enter the shared style engine");
@@ -369,11 +369,11 @@ void testLegacyThemeUsesDocumentEngine() {
 }
 
 void testInlineHtmlUsesActualBoxAndFont() {
-  muffin::DocumentSession document;
+  mufpen::DocumentSession document;
   document.setMarkdownText("Before <kbd style='padding:3px 7px;font-size:20px'><span>A</span>B</kbd> after", false);
-  const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "#write{padding:0}kbd{padding:1px;font-size:10px}p{letter-spacing:-.5px}", "inline-html-box", {}));
-  muffin::DocumentLayout layout;
+  mufpen::DocumentLayout layout;
   layout.rebuild(document.document(), theme, 800);
   const auto* paragraph = layout.block(document.document().root().children().front()->id());
   const auto* text = paragraph->inlineLayout();
@@ -389,21 +389,21 @@ void testInlineHtmlUsesActualBoxAndFont() {
     require(text->hitTestTextOffset(caret.center()) == offset,
             "HTML box spacers preserve visible-text caret round trips");
   }
-  auto palette = muffin::html::HtmlColorPalette::defaultLight();
+  auto palette = mufpen::html::HtmlColorPalette::defaultLight();
   palette.documentStyleSheet = theme.documentStyleSheet();
-  const auto html = muffin::html::HtmlRenderer().render(
+  const auto html = mufpen::html::HtmlRenderer().render(
       "<strong><span style='font-weight:normal'>Normal</span></strong>", 12, 800, {}, palette);
   const auto* span = html.root()->children().front()->children().front().get();
   require(span->style().font.weight() == QFont::Normal, "computed normal weight resets inherited strong styling");
 
-  muffin::DocumentSession nested;
+  mufpen::DocumentSession nested;
   nested.setMarkdownText(
       "**<kbd class='hot'>X</kbd>** and <strong style='font-weight:normal'>plain</strong> <u style='text-decoration:none'>clear</u>",
       false);
-  const auto nestedTheme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  const auto nestedTheme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "p > span[md-inline=strong] > strong > kbd{padding:4px 19px;font-size:23px}p:has(.hot){padding-top:5px}",
       "mixed-inline-tree", {}));
-  muffin::DocumentLayout nestedLayout;
+  mufpen::DocumentLayout nestedLayout;
   nestedLayout.rebuild(nested.document(), nestedTheme, 800);
   const auto* nestedText = nestedLayout.block(nested.document().root().children().front()->id())->inlineLayout();
   const auto nestedKeyboardBoxes = boxesForTag(*nestedText, "kbd");
@@ -428,21 +428,21 @@ void testInlineHtmlUsesActualBoxAndFont() {
 
 void testStructuralEditInvalidatesExistingLayout() {
   for (bool lazy : {false, true}) {
-    muffin::DocumentSession document;
+    mufpen::DocumentSession document;
     document.setMarkdownText("# Heading\n\nBody\n\nTail", false);
-    const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+    const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
         "#write{max-width:450px;padding:0;margin:0}body{color:black}p{margin:4px 0}h1 + "
         "p{padding:16px;border:2px solid red}p + p{font-size:28px;margin-top:40px}",
         "invalidation", {}));
-    muffin::DocumentLayout incremental;
+    mufpen::DocumentLayout incremental;
     incremental.rebuild(document.document(), theme, 800, {}, {},
-                        lazy ? muffin::DocumentLayout::BuildPolicy::Lazy : muffin::DocumentLayout::BuildPolicy::Eager);
+                        lazy ? mufpen::DocumentLayout::BuildPolicy::Lazy : mufpen::DocumentLayout::BuildPolicy::Eager);
     incremental.buildAll(theme);
     require(document.applyTextDelta(0, 2, QString(), true), "heading removal applies as local edit");
     const auto range = document.lastLocalTopLevelRangeChange();
     require(range.isValid() && incremental.rebuildTopLevelRange(range, document.document(), theme, {}).rebuilt,
             "structural edit rebuilds changed range");
-    muffin::DocumentLayout fresh;
+    mufpen::DocumentLayout fresh;
     fresh.rebuild(document.document(), theme, 800);
     for (const auto& node : document.document().root().children()) {
       const auto* updated = incremental.block(node->id());
@@ -457,20 +457,20 @@ void testStructuralEditInvalidatesExistingLayout() {
 }
 
 void testHtmlBlockUsesSharedBoxPainter() {
-  auto palette = muffin::html::HtmlColorPalette::defaultLight();
-  palette.documentStyleSheet = std::make_shared<muffin::CssThemeSheet>(
-      muffin::CssThemeParser::parse("p{margin:0;padding:7px 13px;border:3px solid red;line-height:40px}"
+  auto palette = mufpen::html::HtmlColorPalette::defaultLight();
+  palette.documentStyleSheet = std::make_shared<mufpen::CssThemeSheet>(
+      mufpen::CssThemeParser::parse("p{margin:0;padding:7px 13px;border:3px solid red;line-height:40px}"
                                     "kbd{padding:2px 9px 4px 5px;border:2px solid blue;font-size:20px;border-radius:0}",
                                     {}));
   const auto result =
-      muffin::html::HtmlRenderer().render("<p>Before <kbd><span>A</span>B</kbd> after</p>", 12, 500, {}, palette);
+      mufpen::html::HtmlRenderer().render("<p>Before <kbd><span>A</span>B</kbd> after</p>", 12, 500, {}, palette);
   require(result.valid(), "HTML block fixture lays out");
   const auto* paragraph = result.root()->children().front().get();
   const auto& box = paragraph->layoutBox;
   require(box.valid, "HTML saves the same box snapshot as Markdown");
   near(box.contentBox.left() - box.borderBox.left(), 16,
        "HTML content origin comes from shared padding and border geometry");
-  muffin::html::HtmlTextMeasurer measurer;
+  mufpen::html::HtmlTextMeasurer measurer;
   const auto text = measurer.buildInlineLayout(*paragraph, paragraph->style().fontSize, 450);
   require(text->inlineBoxes.size() == 1, "nested HTML keyboard spans share one inline box");
   near(text->inlineBoxes.front().usedBox.padding.left(), 5, "HTML inline layout uses contextual left padding");
@@ -488,7 +488,7 @@ void testHtmlBlockUsesSharedBoxPainter() {
 }
 
 void testBrowserBoxReference() {
-  QFile fixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/document-box-browser.json"));
+  QFile fixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/document-box-browser.json"));
   require(fixture.open(QIODevice::ReadOnly), "browser box reference is readable");
   const auto reference = QJsonDocument::fromJson(fixture.readAll()).object();
   const auto viewport = reference["viewport"].toObject();
@@ -497,11 +497,11 @@ void testBrowserBoxReference() {
   for (const auto& value : reference["cases"].toArray()) {
     const auto entry = value.toObject(), expected = entry["expected"].toObject();
     const auto tag = entry["tag"].toString();
-    const auto theme = muffin::RenderTheme::fromDefinition(
-        muffin::CssThemeMapper::fromCss(entry["css"].toString(), "browser-reference", {}));
-    muffin::DocumentSession document;
+    const auto theme = mufpen::RenderTheme::fromDefinition(
+        mufpen::CssThemeMapper::fromCss(entry["css"].toString(), "browser-reference", {}));
+    mufpen::DocumentSession document;
     document.setMarkdownText(tag == "h1" ? "# Text" : tag == "pre" ? "```\nText\n```" : "Text", false);
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(document.document(), theme, viewport["width"].toDouble());
     const auto& box = layout.block(document.document().root().children().front()->id())->cssBoxGeometry();
     near(box.borderBox.width(), expected["width"].toDouble(), "border width matches Chrome used box");
@@ -517,14 +517,14 @@ void testBrowserBoxReference() {
 }
 
 void testLazyPromotionUsesLiveMargins() {
-  muffin::DocumentSession document;
+  mufpen::DocumentSession document;
   document.setMarkdownText("First\n\nSecond\n\nThird", false);
-  const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "#write{padding:0;margin:0}p{margin:0}p:first-child{margin-top:37px}p + p{margin-top:23px}p:last-child{margin-bottom:51px}",
       "live-lazy-margins", {}));
-  muffin::DocumentLayout eager, lazy;
+  mufpen::DocumentLayout eager, lazy;
   eager.rebuild(document.document(), theme, 800);
-  lazy.rebuild(document.document(), theme, 800, {}, {}, muffin::DocumentLayout::BuildPolicy::Lazy);
+  lazy.rebuild(document.document(), theme, 800, {}, {}, mufpen::DocumentLayout::BuildPolicy::Lazy);
   lazy.buildAll(theme);
   for (const auto& node : document.document().root().children()) {
     require(eager.block(node->id())->rect() == lazy.block(node->id())->rect(),
@@ -534,13 +534,13 @@ void testLazyPromotionUsesLiveMargins() {
 }
 
 void testResponsiveProjectionReuse() {
-  const auto definition = muffin::CssThemeMapper::fromCss("#write{max-width:500px;padding:20px}p{font-size:16px}"
+  const auto definition = mufpen::CssThemeMapper::fromCss("#write{max-width:500px;padding:20px}p{font-size:16px}"
                                                           "@media(min-width:900px){p{font-size:24px}}"
                                                           "@media(orientation:portrait){h1{font-size:25px}}",
                                                           "resize", {});
-  auto theme = muffin::RenderTheme::fromDefinition(definition);
+  auto theme = mufpen::RenderTheme::fromDefinition(definition);
   require(theme.updateForViewport(700, 600), "first viewport projects the environment");
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText("paragraph with **bold**", false);
   const auto& paragraph = *session.document().root().children().front();
   const auto* snapshot = theme.elementStyleForNode(paragraph, "p");
@@ -557,8 +557,8 @@ void testResponsiveProjectionReuse() {
   near(theme.elementStyle("p")->text.fontSizePx, 24, "media font size updates");
   require(theme.updateForViewport(950, 1000), "height/orientation change invalidates projections");
   near(theme.elementStyle("h1")->text.fontSizePx, 25, "orientation media applies");
-  auto exportOnly = muffin::RenderTheme::fromDefinition(
-      muffin::CssThemeMapper::fromCss("#write{max-width:500px}p{font-size:16px}"
+  auto exportOnly = mufpen::RenderTheme::fromDefinition(
+      mufpen::CssThemeMapper::fromCss("#write{max-width:500px}p{font-size:16px}"
                                       ".typora-export #write{min-height:calc(100vh - 40px)}"
                                       ".typora-export-sidebar + #write{min-height:100vh}",
                                       "export-resize", {}));
@@ -567,11 +567,11 @@ void testResponsiveProjectionReuse() {
   for (const auto& css : {QString(":root{--size:2vw}#write{max-width:500px}p{font-size:var(--size)}"),
                           QString("#write{width:70%;padding:2% 3%;margin:1% auto}"),
                           QString("#write{max-width:calc(80% - 10px);padding:0}")}) {
-    const auto dynamicDefinition = muffin::CssThemeMapper::fromCss(css, "dynamic-resize", {});
-    auto dynamic = muffin::RenderTheme::fromDefinition(dynamicDefinition);
+    const auto dynamicDefinition = mufpen::CssThemeMapper::fromCss(css, "dynamic-resize", {});
+    auto dynamic = mufpen::RenderTheme::fromDefinition(dynamicDefinition);
     dynamic.updateForViewport(700, 600);
     require(dynamic.updateForViewport(850, 600), "viewport units and percentage page boxes recompute");
-    auto fresh = muffin::RenderTheme::fromDefinition(dynamicDefinition);
+    auto fresh = mufpen::RenderTheme::fromDefinition(dynamicDefinition);
     fresh.updateForViewport(850, 600);
     near(dynamic.pageWidth(), fresh.pageWidth(), "responsive width agrees with a fresh projection");
     require(dynamic.pagePadding() == fresh.pagePadding() && dynamic.pageMargin() == fresh.pageMargin(),
@@ -586,37 +586,37 @@ void testResponsiveProjectionReuse() {
 }
 
 void testProjectionPrototypeCacheLifetime() {
-  const auto source = muffin::CssThemeParser::parse("#write{--ink:red}p{color:var(--ink)}p:hover{color:blue}", {});
-  muffin::CssComputedStyleEngine engine(muffin::documentStyleSheet(source));
-  muffin::DocumentStylePrototypes live(true);
+  const auto source = mufpen::CssThemeParser::parse("#write{--ink:red}p{color:var(--ink)}p:hover{color:blue}", {});
+  mufpen::CssComputedStyleEngine engine(mufpen::documentStyleSheet(source));
+  mufpen::DocumentStylePrototypes live(true);
   const auto& paragraph = live.element("p");
   const auto before = engine.styleFor(paragraph);
-  const auto first = muffin::CssThemeMapper::fromSheet(source, "prototype-first", {}, &engine);
-  const auto second = muffin::CssThemeMapper::fromSheet(source, "prototype-second", {}, &engine);
-  muffin::enableThemePerformance(true);
-  muffin::resetThemePerformance();
+  const auto first = mufpen::CssThemeMapper::fromSheet(source, "prototype-first", {}, &engine);
+  const auto second = mufpen::CssThemeMapper::fromSheet(source, "prototype-second", {}, &engine);
+  mufpen::enableThemePerformance(true);
+  mufpen::resetThemePerformance();
   const auto after = engine.styleFor(paragraph);
-  const auto work = muffin::themePerformanceSamples()[size_t(muffin::ThemePerfStage::Css)].work;
-  muffin::enableThemePerformance(false);
+  const auto work = mufpen::themePerformanceSamples()[size_t(mufpen::ThemePerfStage::Css)].work;
+  mufpen::enableThemePerformance(false);
   require(before == after && work == 0, "temporary projection scopes preserve caller-owned cached styles");
-  const auto a = muffin::RenderTheme::fromDefinition(first), b = muffin::RenderTheme::fromDefinition(second);
+  const auto a = mufpen::RenderTheme::fromDefinition(first), b = mufpen::RenderTheme::fromDefinition(second);
   require(a.elementStyle("p")->paint.color == QColor(Qt::red) &&
               b.elementStyle("p:hover")->paint.color == QColor(Qt::blue),
           "short-lived prototype caches retain base and interaction projection semantics");
 }
 
 void testTextOnlyStyleRebinding() {
-  const auto definition = muffin::CssThemeMapper::fromCss(
+  const auto definition = mufpen::CssThemeMapper::fromCss(
       "#write{counter-reset:n;--ink:#123456;padding:0}h1::before{counter-increment:n;content:counter(n)}"
       "p{color:var(--ink)}strong:hover{color:red}kbd.hot{padding:3px}"
       "#write:has(kbd.cold){--ink:blue}#write:has(a[href='other']){--ink:green}"
       "p:has(strong)+p{margin-top:21px}",
       "text-rebinding", {});
-  auto theme = muffin::RenderTheme::fromDefinition(definition);
-  muffin::DocumentSession session;
+  auto theme = mufpen::RenderTheme::fromDefinition(definition);
+  mufpen::DocumentSession session;
   session.setMarkdownText("# Heading\n\nPlain **bold** and <kbd class='hot'>Ctrl</kbd> [link](url)\n\nUnchanged",
                           false);
-  muffin::DocumentLayout layout;
+  mufpen::DocumentLayout layout;
   layout.rebuild(session.document(), theme, 800);
   const auto* paragraph = session.document().root().children()[1].get();
   const auto* original = theme.elementStyleForNode(*paragraph, "p");
@@ -645,14 +645,14 @@ void testTextOnlyStyleRebinding() {
             "text-only edits retain other block layouts and numbering");
   }
   const auto compareFull = [&] {
-    auto fullTheme = muffin::RenderTheme::fromDefinition(definition);
-    muffin::DocumentLayout full;
+    auto fullTheme = mufpen::RenderTheme::fromDefinition(definition);
+    mufpen::DocumentLayout full;
     full.rebuild(session.document(), fullTheme, 800);
     if (qAbs(layout.totalHeight() - full.totalHeight()) > .01) {
       std::fprintf(stderr, "document: %s\n", qPrintable(session.document().markdownText().toString()));
       for (const auto& node : session.document().root().children()) {
         const auto a = layout.block(node->id())->rect(), b = full.block(node->id())->rect();
-        std::fprintf(stderr, "block %s: y=%.3f/%.3f h=%.3f/%.3f\n", qPrintable(muffin::cssTagForNode(*node)), a.y(),
+        std::fprintf(stderr, "block %s: y=%.3f/%.3f h=%.3f/%.3f\n", qPrintable(mufpen::cssTagForNode(*node)), a.y(),
                      b.y(), a.height(), b.height());
       }
     }
@@ -661,8 +661,8 @@ void testTextOnlyStyleRebinding() {
       const auto* actual = layout.block(node->id());
       const auto* expected = full.block(node->id());
       require(actual->rect() == expected->rect(), "local block geometry agrees with full recomputation");
-      require(theme.elementStyleForNode(*node, muffin::cssTagForNode(*node))->paint.color ==
-                  fullTheme.elementStyleForNode(*node, muffin::cssTagForNode(*node))->paint.color,
+      require(theme.elementStyleForNode(*node, mufpen::cssTagForNode(*node))->paint.color ==
+                  fullTheme.elementStyleForNode(*node, mufpen::cssTagForNode(*node))->paint.color,
               "local inherited styles agree with full recomputation");
       if (actual->inlineLayout())
         require(actual->inlineLayout()->visibleText() == expected->inlineLayout()->visibleText(),
@@ -685,15 +685,15 @@ void testTextOnlyStyleRebinding() {
 }
 
 void testTextRebindingWithoutCountersAndNestedNodes() {
-  const auto definition = muffin::CssThemeMapper::fromCss(
+  const auto definition = mufpen::CssThemeMapper::fromCss(
       "#write{padding:0}p{color:#123456}strong:hover{color:red}li p{font-size:17px}", "plain-rebinding", {});
   for (const auto& text : {QString("First **bold**\n\nOther"), QString("- First **bold**\n  - Nested text\n\nOther"),
                            QString("> First **bold**\n>\n> More text\n\nOther"),
                            QString("| A | B |\n| - | - |\n| First **bold** | Second |\n\nOther")}) {
-    auto theme = muffin::RenderTheme::fromDefinition(definition);
-    muffin::DocumentSession session;
+    auto theme = mufpen::RenderTheme::fromDefinition(definition);
+    mufpen::DocumentSession session;
     session.setMarkdownText(text, false);
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(session.document(), theme, 800);
     const auto start = session.document().markdownText().indexOf(QStringLiteral("First"));
     require(session.applyTextDelta(start + 2, 0, "added", true), "nested plain edit applies");
@@ -701,8 +701,8 @@ void testTextRebindingWithoutCountersAndNestedNodes() {
         layout.rebuildTopLevelRange(session.lastLocalTopLevelRangeChange(), session.document(), theme, {}).rebuilt &&
             theme.hasLocalStyleChange(),
         "counter-free and nested blocks use the semantic fast path");
-    auto fullTheme = muffin::RenderTheme::fromDefinition(definition);
-    muffin::DocumentLayout full;
+    auto fullTheme = mufpen::RenderTheme::fromDefinition(definition);
+    mufpen::DocumentLayout full;
     full.rebuild(session.document(), fullTheme, 800);
     near(layout.totalHeight(), full.totalHeight(), "nested rebinding agrees with full layout");
     for (const auto& node : session.document().root().children())
@@ -717,22 +717,22 @@ void testTextRebindingWithoutCountersAndNestedNodes() {
 }
 
 void testPendingRangeKeepsStyleSnapshot() {
-  auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "#write{counter-reset:n}h1::before{counter-increment:n;content:counter(n)}", "pending-range", {}));
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText("# Heading\n\nFirst\n\nUnchanged", false);
-  muffin::DocumentLayout layout;
+  mufpen::DocumentLayout layout;
   layout.rebuild(session.document(), theme, 800);
   const auto* unaffected = session.document().root().children().back().get();
   const auto* snapshot = theme.elementStyleForNode(*unaffected, "p");
   require(session.applyTextDelta(0, 0, "# Inserted\n\n", true), "pending structural edit applies");
-  muffin::enableThemePerformance(true);
-  muffin::resetThemePerformance();
+  mufpen::enableThemePerformance(true);
+  mufpen::resetThemePerformance();
   const auto stale = layout.rebuildBlock(unaffected->id(), session.document(), theme, {},
-                                         muffin::DocumentLayout::BlockUpdateReason::Selection);
-  const auto samples = muffin::themePerformanceSamples();
-  muffin::enableThemePerformance(false);
-  require(!stale.rebuilt && samples[size_t(muffin::ThemePerfStage::Counters)].calls == 0 &&
+                                         mufpen::DocumentLayout::BlockUpdateReason::Selection);
+  const auto samples = mufpen::themePerformanceSamples();
+  mufpen::enableThemePerformance(false);
+  require(!stale.rebuilt && samples[size_t(mufpen::ThemePerfStage::Counters)].calls == 0 &&
               theme.elementStyleForNode(*unaffected, "p") == snapshot,
           "caret requests before a pending range must not invalidate styles or traverse counters");
   require(layout.rebuildTopLevelRange(session.lastLocalTopLevelRangeChange(), session.document(), theme, {}).rebuilt,

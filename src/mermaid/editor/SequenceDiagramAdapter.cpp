@@ -23,7 +23,7 @@
 #include <algorithm>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 bool isSequenceFragment(int type) {
@@ -371,4 +371,4 @@ const Diagram& sequenceDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

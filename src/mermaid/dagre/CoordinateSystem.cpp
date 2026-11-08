@@ -2,7 +2,7 @@
 
 #include <QList>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -85,4 +85,4 @@ void undoCoordinateSystem(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

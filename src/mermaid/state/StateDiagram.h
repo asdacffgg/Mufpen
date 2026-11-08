@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 
 enum class StateErrorStage { Detector, Lexer, Parser, Semantic, Resource };
 enum class StateErrorCode {
@@ -109,4 +109,4 @@ QString stateErrorStageName(StateErrorStage stage);
 QString stateErrorCodeName(StateErrorCode code);
 QString formatStateDiagnostic(const StateDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

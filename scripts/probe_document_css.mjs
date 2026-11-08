@@ -1,11 +1,11 @@
 // Refresh browser reference data for DocumentStyleConformanceTest.
-// Requires Playwright; MUFFIN_PLAYWRIGHT_MODULE can point to an installed module.
+// Requires Playwright; MUFPEN_PLAYWRIGHT_MODULE can point to an installed module.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const moduleName = process.env.MUFFIN_PLAYWRIGHT_MODULE;
+const moduleName = process.env.MUFPEN_PLAYWRIGHT_MODULE;
 const { chromium } = await import(moduleName ? pathToFileURL(path.resolve(moduleName)).href : "playwright");
 const browser = await chromium.launch({
   headless: true,

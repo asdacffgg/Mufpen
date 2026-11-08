@@ -25,11 +25,11 @@
 #include <QTreeView>
 #include <QToolButton>
 
-#include "io/MuffinMime.h"
+#include "io/MufpenMime.h"
 
 #include <memory>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -278,7 +278,7 @@ void testToolbarCollapsesFoldersAndRestoresState() {
   collapse->click();
   QApplication::processEvents();
   require(f.sidebar.expandedFolders().isEmpty(), "collapse cancels recursive expansion");
-  if (const auto screenshot = qEnvironmentVariable("MUFFIN_SIDEBAR_SCREENSHOT"); !screenshot.isEmpty()) {
+  if (const auto screenshot = qEnvironmentVariable("MUFPEN_SIDEBAR_SCREENSHOT"); !screenshot.isEmpty()) {
     f.sidebar.restoreExpandedFolders(saved);
     QApplication::processEvents();
     require(f.sidebar.grab().save(screenshot), "capture explorer toolbar appearance");
@@ -493,7 +493,7 @@ void testSortMenuAndPersistence() {
   require(selected.isValid() && f.tree->currentIndex() == selected && f.model->fileName(selected) == "document.md",
           "sorting preserves the selected file");
   std::unique_ptr<QMimeData> mime(f.model->mimeData({selected}));
-  require(mime && mime->hasFormat(kMuffinFileTreeDragMime) && mime->hasUrls(),
+  require(mime && mime->hasFormat(kMufpenFileTreeDragMime) && mime->hasUrls(),
           "sorting preserves the in-app file drag marker and URL");
   SidebarWidget restored;
   auto* restoredTree = restored.findChild<QTreeView*>("FileTree");
@@ -561,9 +561,9 @@ int main(int argc, char** argv) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
   QApplication app(argc, argv);
-  installMuffinTestCrashHandler();
+  installMufpenTestCrashHandler();
   QTemporaryDir settings;
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("SidebarInteraction");
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());

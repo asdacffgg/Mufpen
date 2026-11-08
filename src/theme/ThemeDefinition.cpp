@@ -20,10 +20,10 @@
 #include <QtGlobal>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
-Q_LOGGING_CATEGORY(themeLoadPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(themeLoadPerf, "mufpen.perf.detail", QtWarningMsg)
 
 QColor parseColor(const QJsonObject& colors, const char* key) {
   const QJsonValue v = colors.value(QLatin1String(key));
@@ -152,7 +152,7 @@ QHash<QString, QString> registerThemeFonts(const CssThemeSheet& sheet) {
       digest.addData(it->value(key).source.digest);
       digest.addData(it->value(key).localFamily.toUtf8());
     }
-    const auto privateFamily = "MuffinTheme-" + QString::fromLatin1(digest.result().toHex().left(24));
+    const auto privateFamily = "MufpenTheme-" + QString::fromLatin1(digest.result().toHex().left(24));
     for (const auto& key : keys) {
       const auto& face = it->value(key);
       const auto registered =
@@ -218,7 +218,7 @@ ThemeDefinition ThemeDefinition::fromJson(const QJsonObject& json, const QString
   k.accent = parseColor(c, "accent");
   k.serifBody = c.value(QStringLiteral("serifBody")).toBool(false);
 
-  // Optional typography block (Muffin-native JSON themes; CSS themes go
+  // Optional typography block (Mufpen-native JSON themes; CSS themes go
   // through fromCss instead). Absent → all fields stay default/empty.
   const QJsonObject t = json.value(QStringLiteral("typography")).toObject();
   if (!t.isEmpty()) {
@@ -635,4 +635,4 @@ std::optional<ThemeDefinition> ThemeDefinition::builtIn(const QString& id) {
   return std::nullopt;
 }
 
-} // namespace muffin
+} // namespace mufpen

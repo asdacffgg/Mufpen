@@ -11,7 +11,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -294,4 +294,4 @@ private:
   quint8 siblingKind() const;
 };
 
-} // namespace muffin
+} // namespace mufpen

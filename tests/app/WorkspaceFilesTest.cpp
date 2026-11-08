@@ -20,7 +20,7 @@
 #include <QThread>
 #include <QSet>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void waitUntil(const std::function<bool()>& ready);
 void write(const QString& path, const QByteArray& bytes = "note") {
@@ -268,7 +268,7 @@ void pickerPresentation() {
             visibleInk = true;
         }
       require(visibleInk, "selected filename uses the foreground paired with its actual background");
-      if (const auto screenshots = qEnvironmentVariable("MUFFIN_SEARCH_SCREENSHOT_DIR"); !screenshots.isEmpty()) {
+      if (const auto screenshots = qEnvironmentVariable("MUFPEN_SEARCH_SCREENSHOT_DIR"); !screenshots.isEmpty()) {
         QDir().mkpath(screenshots);
         dialog.grab().save(QDir(screenshots).filePath("quick-open-" + style + '-' + theme + ".png"));
       }
@@ -279,7 +279,7 @@ void pickerPresentation() {
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
   QTemporaryDir settingsDirectory;
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("WorkspaceFiles");
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settingsDirectory.path());

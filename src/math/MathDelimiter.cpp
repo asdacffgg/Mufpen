@@ -8,7 +8,7 @@
 
 #include <cmath>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QString metricsNameForDelimiterFont(const QString& fontClass) {
@@ -506,4 +506,4 @@ void MathDelimiter::centerOnAxis(MathRenderNode& node, const MathOptions& option
   node.depth = qMax<qreal>(0.0, total - node.height);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

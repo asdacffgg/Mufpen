@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <limits>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -172,4 +172,4 @@ void removeEmptyRanks(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

@@ -7,8 +7,8 @@
 #include <QUrl>
 
 namespace {
-using muffin::html::HtmlBox;
-using muffin::html::HtmlTag;
+using mufpen::html::HtmlBox;
+using mufpen::html::HtmlTag;
 
 QString escape(QString text) {
   QString result;
@@ -99,8 +99,8 @@ void wrapInlineRuns(HtmlBox& box, const InlineWrapper& wrapper, int depth) {
 // emphasis wrapper or heading has content only when a descendant does; syntax
 // such as empty code ticks must never make an otherwise empty wrapper meaningful.
 bool normalize(HtmlBox& box, int depth, bool literal) {
-  QHash<QString, muffin::CssDeclaration> declarations;
-  for (const auto& declaration : muffin::CssThemeParser::parseDeclarations(box.cssInlineStyle)) {
+  QHash<QString, mufpen::CssDeclaration> declarations;
+  for (const auto& declaration : mufpen::CssThemeParser::parseDeclarations(box.cssInlineStyle)) {
     const auto previous = declarations.constFind(declaration.property);
     if (previous == declarations.cend() || !previous->important || declaration.important)
       declarations.insert(declaration.property, declaration);
@@ -359,7 +359,7 @@ MarkdownFragment convert(const HtmlBox& box, int depth) {
 }
 }
 
-QString muffin::importHtmlMarkdown(const QString& html) {
+QString mufpen::importHtmlMarkdown(const QString& html) {
   html::HtmlDocument document;
   if (!document.parse(HtmlSanitizer().sanitizedClipboard(html)))
     return {};

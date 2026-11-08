@@ -12,7 +12,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 namespace {
 
 QColor paintColor(const QString& value, const QColor& fallback = Qt::black) {
@@ -166,4 +166,4 @@ void paintGanttScene(const GanttScene& scene, QPainter& painter, const MermaidPa
   painter.restore();
 }
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

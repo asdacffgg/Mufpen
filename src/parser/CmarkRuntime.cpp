@@ -2,7 +2,7 @@
 
 #include <mutex>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 std::mutex& inlineParsingMutex() {
   static std::mutex mutex;
@@ -20,4 +20,4 @@ cmark_node* parseCmarkDocument(const char* bytes, size_t length, int options) {
   return cmark_parse_document(bytes, length, options);
 }
 
-} // namespace muffin
+} // namespace mufpen

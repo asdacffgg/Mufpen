@@ -4,7 +4,7 @@
 #include <QSizeF>
 #include <QVector>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 
 struct MindmapCoseNodeInput {
   int id = -1;
@@ -30,4 +30,4 @@ struct MindmapCoseResult {
 MindmapCoseResult layoutMindmapCoseFlatTree(const QVector<MindmapCoseNodeInput>& nodes,
                                             const QVector<MindmapCoseEdgeInput>& edges);
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

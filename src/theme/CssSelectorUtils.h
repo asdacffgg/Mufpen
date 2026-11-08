@@ -4,7 +4,7 @@
 #include <QRegularExpression>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 // Shared CSS-selector helpers used by BOTH the flat semantic mapper (CssThemeMapper) and the
 // computed-style engine (CssComputedStyleEngine). Previously each TU carried its own copy —
@@ -16,7 +16,7 @@ inline bool isIdentChar(QChar c) {
   return c.isLetterOrNumber() || c == QLatin1Char('-') || c == QLatin1Char('_');
 }
 
-// True when the selector targets an export/outline/sidebar shell that is absent from Muffin's
+// True when the selector targets an export/outline/sidebar shell that is absent from Mufpen's
 // live editor DOM (typora-export / -sidebar / -content). If these entered the semantic cascade
 // as plain `#write` or `h2` rules, their higher specificity would let export-only page sizing
 // and decorations override the live editor style (e.g. `width: 90%`). Such selectors are
@@ -178,4 +178,4 @@ template <typename Candidate> bool cascadeBeats(const Candidate& a, const Candid
   return a.order > b.order;
 }
 
-} // namespace muffin
+} // namespace mufpen

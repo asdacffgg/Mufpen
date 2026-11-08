@@ -12,7 +12,7 @@
 #include <QProcess>
 #include <QTemporaryDir>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 void write(const QString& path, const QByteArray& text) {
@@ -141,16 +141,16 @@ void realFixtureAndCli(const QString& fixture) {
   require(!finding(expected, "unsupported-selector").isEmpty(), "real VLOOK selector gaps are visible");
   const auto output = QDir(QCoreApplication::applicationDirPath()).filePath("vlook-fancy-dark-compatibility.json");
   QProcess cli;
-  cli.start(QStringLiteral(MUFFIN_THEME_REPORT_PATH),
+  cli.start(QStringLiteral(MUFPEN_THEME_REPORT_PATH),
             {"--dark", "--width", "960", "--height", "900", "--output", output, source});
   require(cli.waitForFinished(30000) && cli.exitStatus() == QProcess::NormalExit && cli.exitCode() == 0,
           "offline report CLI succeeds");
   QFile report(output);
   require(report.open(QIODevice::ReadOnly) && QJsonDocument::fromJson(report.readAll()).object() == expected,
           "CLI exports same fixed VLOOK report as shared audit API");
-  cli.start(QStringLiteral(MUFFIN_THEME_REPORT_PATH), {"--width", "nan", source});
+  cli.start(QStringLiteral(MUFPEN_THEME_REPORT_PATH), {"--width", "nan", source});
   require(cli.waitForFinished(10000) && cli.exitCode() == 2, "CLI rejects invalid environment");
-  cli.start(QStringLiteral(MUFFIN_THEME_REPORT_PATH), {source + ".missing"});
+  cli.start(QStringLiteral(MUFPEN_THEME_REPORT_PATH), {source + ".missing"});
   require(cli.waitForFinished(10000) && cli.exitCode() == 2, "CLI reports unreadable input as an error");
 }
 } // namespace

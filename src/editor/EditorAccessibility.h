@@ -5,7 +5,7 @@
 class QString;
 class QObject;
 
-namespace muffin {
+namespace mufpen {
 
 class EditorController;
 class EditorView;
@@ -28,4 +28,4 @@ EditorController* controllerFor(const EditorView* view);
 // factory only produces interfaces when something queries them.
 void installEditorAccessibility();
 
-} // namespace muffin
+} // namespace mufpen

@@ -7,7 +7,7 @@
 #include <QFile>
 #include <functional>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 HtmlStyleResolver::HtmlStyleResolver() = default;
 HtmlStyleResolver::~HtmlStyleResolver() = default;
@@ -32,7 +32,7 @@ void HtmlStyleResolver::resolve(HtmlBox& root, qreal baseFontSize, const HtmlCol
   }
   {
     const CssComputedStyleEngine engine(
-        muffin::documentStyleSheet(palette.documentStyleSheet ? *palette.documentStyleSheet : defaultSheet),
+        mufpen::documentStyleSheet(palette.documentStyleSheet ? *palette.documentStyleSheet : defaultSheet),
         palette.cssEnvironment);
     DocumentStyleHost host;
     CssElement fragment;
@@ -250,4 +250,4 @@ void HtmlStyleResolver::resolve(HtmlBox& root, qreal baseFontSize, const HtmlCol
   }
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

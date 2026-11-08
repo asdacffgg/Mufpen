@@ -11,7 +11,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::xychart {
+namespace mufpen::mermaid::xychart {
 
 struct XYChartAxisConfig {
   bool showLabel = true;
@@ -125,4 +125,4 @@ struct XYChartScene : MermaidScene {
 
 XYChartScene buildXYChartScene(const XYChartData& data, XYChartConfig config, XYChartSceneStyle style);
 
-} // namespace muffin::mermaid::xychart
+} // namespace mufpen::mermaid::xychart

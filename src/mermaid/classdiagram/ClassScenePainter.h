@@ -7,7 +7,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 
 enum class ClassPaintMode { Color, SemanticMask, TextMask };
 
@@ -23,4 +23,4 @@ void paintClassScene(const ClassScene& scene, QPainter& painter, ClassPaintMode 
 QImage renderClassSceneToImage(const ClassScene& scene, qreal dpr = 1.0, qreal padding = 8.0,
                                ClassPaintMode mode = ClassPaintMode::Color);
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

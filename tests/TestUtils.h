@@ -58,8 +58,8 @@ inline void runTest(const char* name, const std::function<void()>& test) {
 // Crash localizer for CI-only failures (the ARM64 SHARED-library teardown
 // segfault): prints the faulting module + offset and a small frame backtrace
 // straight to unbuffered stderr, where ctest reliably captures it. No symbol
-// resolution — module+offset is enough to say exe vs MuffinUi.dll vs a Qt DLL.
-inline void installMuffinTestCrashHandler() {
+// resolution — module+offset is enough to say exe vs MufpenUi.dll vs a Qt DLL.
+inline void installMufpenTestCrashHandler() {
   static auto handler = +[](EXCEPTION_POINTERS* info) -> LONG {
     std::fprintf(stderr, "CRASH code=0x%08lX addr=%p\n", info->ExceptionRecord->ExceptionCode,
                  info->ExceptionRecord->ExceptionAddress);
@@ -86,7 +86,7 @@ inline void installMuffinTestCrashHandler() {
   SetUnhandledExceptionFilter(handler);
 }
 #else
-inline void installMuffinTestCrashHandler() {
+inline void installMufpenTestCrashHandler() {
 }
 #endif
 

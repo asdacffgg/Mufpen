@@ -9,7 +9,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 
 // --- point generators (1:1 ports of mermaid's generateFullSineWavePoints,
@@ -654,4 +654,4 @@ FlowShapeGeometry flowShapeGeometry(const FlowVertex& vertex, const QSizeF& size
   return result;
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

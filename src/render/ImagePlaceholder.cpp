@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-namespace muffin::image_placeholder {
+namespace mufpen::image_placeholder {
 namespace {
 
 QImage renderSvg(const QString& resourcePath, QSizeF logicalSize) {
@@ -47,4 +47,4 @@ QImage broken(QSizeF logicalSize) {
   return renderSvg(QStringLiteral(":/icons/image/image-broken.svg"), logicalSize);
 }
 
-} // namespace muffin::image_placeholder
+} // namespace mufpen::image_placeholder

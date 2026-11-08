@@ -28,7 +28,7 @@ class QPropertyAnimation;
 class QTimer;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -38,7 +38,7 @@ class CodeLanguageEditor;
 class MarkdownDocument;
 class TableToolbar;
 
-class MUFFIN_UI_EXPORT EditorView final : public QAbstractScrollArea {
+class MUFPEN_UI_EXPORT EditorView final : public QAbstractScrollArea {
   friend struct diag::MemoryAccounting;
   Q_OBJECT
 
@@ -87,7 +87,7 @@ public:
   void setCodeFenceScroll(CodeFenceScrollController* controller);
   // The shared mermaid render cache (milestone I); print/PDF export reuses it in
   // sync mode so diagrams appear without a second render.
-  muffin::mermaid::editor::MermaidRenderCache* mermaidRenderCache() { return &mermaidCache_; }
+  mufpen::mermaid::editor::MermaidRenderCache* mermaidRenderCache() { return &mermaidCache_; }
   void clearCursor();
   void setCodeLanguageSuggestions(QStringList languages);
 
@@ -418,7 +418,7 @@ private:
   // Cached, async mermaid renderer (milestone I). Owned by the view; the layout
   // builder reads it. When a render finishes, the visible blocks are refreshed so
   // the diagram replaces its loading placeholder at the correct height.
-  muffin::mermaid::editor::MermaidRenderCache mermaidCache_;
+  mufpen::mermaid::editor::MermaidRenderCache mermaidCache_;
   NodeId codeFenceScrollDragId_; // block being horizontally dragged via its scrollbar (invalid when idle)
   HtmlBlockHoverController htmlHover_;
   CssPaintContext cssPaintContext_;
@@ -448,4 +448,4 @@ private:
   qreal loadingPhase_ = 0.0;          // 0..1 head position of the bright wave around the dot ring
 };
 
-} // namespace muffin
+} // namespace mufpen

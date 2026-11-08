@@ -4,7 +4,7 @@
 #include <QStringList>
 #include <QStringView>
 
-namespace muffin::image_syntax {
+namespace mufpen::image_syntax {
 
 /// Recognized image syntax forms for a single image source snippet.
 enum class Syntax { None, Markdown, Html };
@@ -78,4 +78,4 @@ struct ImgTagLocation {
 };
 ImgTagLocation findImgTag(QStringView source);
 
-} // namespace muffin::image_syntax
+} // namespace mufpen::image_syntax

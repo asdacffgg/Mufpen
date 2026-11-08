@@ -7,7 +7,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::gitgraph {
+namespace mufpen::mermaid::gitgraph {
 namespace {
 
 struct Token {
@@ -501,4 +501,4 @@ GitGraphData GitGraphDiagram::parse(const QString& source, const GitGraphParseCo
   return Parser(source, config).run();
 }
 
-} // namespace muffin::mermaid::gitgraph
+} // namespace mufpen::mermaid::gitgraph

@@ -13,7 +13,7 @@
 #include <memory>
 #include <variant>
 
-namespace muffin {
+namespace mufpen {
 
 struct DocumentSnapshot {
   QString markdownText;
@@ -281,4 +281,4 @@ private:
       storage_;
 };
 
-} // namespace muffin
+} // namespace mufpen

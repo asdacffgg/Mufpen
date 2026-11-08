@@ -6,7 +6,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 // Presentation metadata shared by every native Mermaid family. The semantic
 // scene remains diagram-specific; title and accessibility data travel beside
@@ -57,4 +57,4 @@ struct MermaidRenderMetadata {
 qreal measureMermaidTitleWidth(const MermaidRenderMetadata& metadata);
 void paintMermaidTitle(const MermaidRenderMetadata& metadata, QPainter& painter, const QRectF& titleRect);
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

@@ -5,7 +5,7 @@
 
 #include <utility>
 
-namespace muffin::mermaid::eventmodeling {
+namespace mufpen::mermaid::eventmodeling {
 namespace {
 
 enum class TokenKind {
@@ -364,4 +364,4 @@ EventModelingData EventModelingDiagram::parse(const QString& source) {
   return Parser(source).parse();
 }
 
-} // namespace muffin::mermaid::eventmodeling
+} // namespace mufpen::mermaid::eventmodeling

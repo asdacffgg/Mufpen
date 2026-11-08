@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::treeview {
+namespace mufpen::mermaid::treeview {
 namespace {
 
 color::SvgPaint rootFill(const QString& raw) {
@@ -141,4 +141,4 @@ void paintTreeViewScene(QPainter& painter, const TreeViewScene& scene, const Mer
   painter.restore();
 }
 
-} // namespace muffin::mermaid::treeview
+} // namespace mufpen::mermaid::treeview

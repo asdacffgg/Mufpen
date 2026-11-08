@@ -2,7 +2,7 @@
 
 #include <lexbor/html/html.h>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 HtmlDocument::HtmlDocument() {
   doc_ = lxb_html_document_create();
@@ -70,4 +70,4 @@ QString HtmlDocument::errorString() const {
   return error_;
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

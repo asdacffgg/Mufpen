@@ -19,11 +19,11 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
 class EditorView;
 
-class MUFFIN_UI_EXPORT EditorController final : public QObject {
+class MUFPEN_UI_EXPORT EditorController final : public QObject {
   Q_OBJECT
 
 public:
@@ -164,4 +164,4 @@ private:
   ClipboardController clipboardController_;
 };
 
-} // namespace muffin
+} // namespace mufpen

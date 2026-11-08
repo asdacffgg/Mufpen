@@ -10,7 +10,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::block {
+namespace mufpen::mermaid::block {
 
 BlockParseError::BlockParseError(BlockErrorKind errorKind, int errorLine, int errorColumn, QString errorToken,
                                  const QString& message)
@@ -727,4 +727,4 @@ BlockData BlockDiagram::parse(const QString& source) {
   return Parser(source).parse();
 }
 
-} // namespace muffin::mermaid::block
+} // namespace mufpen::mermaid::block

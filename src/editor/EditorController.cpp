@@ -23,10 +23,10 @@
 #include <QLoggingCategory>
 #include <QSignalBlocker>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(controllerPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(controllerPerf, "mufpen.perf", QtWarningMsg)
 
 struct PerfTimer : diag::ScopedPerfProbe {
   explicit PerfTimer(const char* label) : diag::ScopedPerfProbe(label, controllerPerf()) {}
@@ -1159,7 +1159,7 @@ LiteralBlockController* EditorController::literalForZone(HitTestResult::Zone zon
 
 bool EditorController::insertFrontMatter(FrontMatterFormat format) {
   const EditorContext ctx{session_, &selection_, &undoStack(), &brushQueue_};
-  return muffin::insertFrontMatter(ctx, frontMatterLiteral_, format);
+  return mufpen::insertFrontMatter(ctx, frontMatterLiteral_, format);
 }
 
 bool EditorController::enterHtmlEditMode() {
@@ -1205,7 +1205,7 @@ bool EditorController::exitHtmlEditMode() {
 }
 
 QString EditorController::sanitizedHtmlPreview() const {
-  return muffin::sanitizedHtmlPreview(htmlLiteral_);
+  return mufpen::sanitizedHtmlPreview(htmlLiteral_);
 }
 
 bool EditorController::isOnImage() const {
@@ -1429,4 +1429,4 @@ void EditorController::activateHit(HitTestResult hit) {
   selection_.setHitResult(hit);
 }
 
-} // namespace muffin
+} // namespace mufpen

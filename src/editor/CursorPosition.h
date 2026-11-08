@@ -4,7 +4,7 @@
 
 #include <QRectF>
 
-namespace muffin {
+namespace mufpen {
 
 struct HitTestResult {
   enum class DefinitionField { None, Label, Destination, Title, Note };
@@ -79,4 +79,4 @@ struct HitTestResult {
   }
 };
 
-} // namespace muffin
+} // namespace mufpen

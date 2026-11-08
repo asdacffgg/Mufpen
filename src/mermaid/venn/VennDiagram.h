@@ -7,7 +7,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 
 enum class VennErrorKind { Lexer, Parser, Runtime };
 
@@ -55,4 +55,4 @@ public:
   static VennData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

@@ -35,7 +35,7 @@
 
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 QPair<qreal, qreal> InlineLayout::intrinsicWidths() const {
   if (!textLayout_)
     return {};
@@ -43,8 +43,8 @@ QPair<qreal, qreal> InlineLayout::intrinsicWidths() const {
   return {intrinsic.minContent, intrinsic.maxContent};
 }
 namespace {
-Q_LOGGING_CATEGORY(inlineBuildPerf, "muffin.perf.detail", QtWarningMsg)
-Q_LOGGING_CATEGORY(inlinePaintPerf, "muffin.perf.paint", QtWarningMsg)
+Q_LOGGING_CATEGORY(inlineBuildPerf, "mufpen.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(inlinePaintPerf, "mufpen.perf.paint", QtWarningMsg)
 
 // Use the same object-replacement code point as HTML inline atoms.  Its format
 // range supplies the measured math advance while keeping the formula
@@ -2770,4 +2770,4 @@ QRectF InlineLayout::textLayoutCursorRectForDisplayOffset(qsizetype displayOffse
   return textLayout_->cursorRect(toLayoutOffset(int(qBound<qsizetype>(0, displayOffset, displayMap_.text().size()))));
 }
 
-} // namespace muffin
+} // namespace mufpen

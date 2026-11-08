@@ -4,11 +4,11 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 
 struct JourneyScene;
 
@@ -35,4 +35,4 @@ JourneyPaintState journeyLineStroke(const QString& value, const QColor& presenta
 
 void paintJourneyScene(const JourneyScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

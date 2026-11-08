@@ -9,7 +9,7 @@
 #include <QMap>
 #include <QRectF>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 
 struct ClassSceneStyle {
   QString classFill = QStringLiteral("#ECECFF");
@@ -163,4 +163,4 @@ ClassScene buildClassScene(const ClassLayoutInput& input, const QVector<ClassBox
                            const style::ThemeDefaults& themeDefaults = {}, bool handDrawn = false,
                            quint32 handDrawnSeed = 0);
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

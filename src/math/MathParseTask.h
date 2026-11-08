@@ -6,7 +6,7 @@
 #include <utility>
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 // Internal, synchronous parser continuation. Nested grammar calls suspend onto
 // a heap-backed work stack; only run() resumes them. In particular, neither
@@ -70,4 +70,4 @@ private:
   Handle handle_;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

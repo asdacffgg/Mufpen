@@ -12,7 +12,7 @@
 
 class QPainter;
 
-namespace muffin {
+namespace mufpen {
 
 struct CssPaintRecipe;
 class CssPaintContext;
@@ -142,4 +142,4 @@ private:
   QHash<QString, std::shared_ptr<const LayoutBox>> entries_;
 };
 
-} // namespace muffin
+} // namespace mufpen

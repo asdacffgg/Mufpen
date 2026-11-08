@@ -3,7 +3,7 @@
 #include <QString>
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 
 struct WordSegment {
   qsizetype start = 0;
@@ -20,9 +20,9 @@ struct WordSegment {
 // range and isWord is true if the segment is a word (letter, number, CJK).
 //
 // Declared only: the ICU implementation lives in WordBoundary.cpp inside
-// MuffinUi, so consumers in other binaries (Muffin.exe) link through the
+// MufpenUi, so consumers in other binaries (Mufpen.exe) link through the
 // library instead of instantiating ICU symbols themselves — under the SHARED
 // library build that keeps the ICU archives out of every consumer.
 WordSegment findWordSegment(const QString& text, qsizetype offset);
 
-} // namespace muffin
+} // namespace mufpen

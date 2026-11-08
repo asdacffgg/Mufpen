@@ -17,7 +17,7 @@
 #include <algorithm>
 #include <cstdlib>
 
-using namespace muffin::mermaid::sequence;
+using namespace mufpen::mermaid::sequence;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -207,11 +207,11 @@ int main(int argc, char** argv) {
         continue;
       auto marginLabel = parseSequenceLabel(message.message.toString(),
                                             message.type == 2 ? SequenceLabelKind::Note : SequenceLabelKind::Message);
-      marginLabel = wrapSequenceLabel(std::move(marginLabel), muffin::mermaid::MermaidFontRegistry::cssFamilyStack(),
+      marginLabel = wrapSequenceLabel(std::move(marginLabel), mufpen::mermaid::MermaidFontRegistry::cssFamilyStack(),
                                       16.0, marginWrapWidth);
       marginLabel = prepareSequenceLabel(std::move(marginLabel), 16.0);
       const QSizeF marginSize =
-          layoutSequenceLabel(marginLabel, muffin::mermaid::MermaidFontRegistry::cssFamilyStack(), 16.0, 22.0).size;
+          layoutSequenceLabel(marginLabel, mufpen::mermaid::MermaidFontRegistry::cssFamilyStack(), 16.0, 22.0).size;
       if (message.type == 2)
         measurements.marginNotesByIndex.insert(static_cast<int>(index), marginSize);
       else

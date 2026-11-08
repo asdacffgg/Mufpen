@@ -10,7 +10,7 @@ class QLineEdit;
 class QPushButton;
 class QDoubleSpinBox;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsFilesPage final : public PreferencesPage {
   Q_OBJECT
@@ -79,4 +79,4 @@ private:
   QPushButton* winSetDefaultButton_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

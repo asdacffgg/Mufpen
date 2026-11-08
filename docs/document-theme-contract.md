@@ -433,10 +433,10 @@ The same test includes a small timing probe without machine-dependent CI limits.
 For a longer local run, build the Release target, then use PowerShell:
 
 ```powershell
-$env:MUFFIN_LAYOUT_BENCH_BLOCKS = '1200'
-$env:MUFFIN_LAYOUT_BENCH_ITERS = '12'
-$env:MUFFIN_LAYOUT_BENCH_OUTPUT = "$PWD/build/theme-audit/resource-layout-performance.json"
-ctest --preset conan-release -R '^MuffinResourceIncrementalLayoutTest$' --output-on-failure
+$env:MUFPEN_LAYOUT_BENCH_BLOCKS = '1200'
+$env:MUFPEN_LAYOUT_BENCH_ITERS = '12'
+$env:MUFPEN_LAYOUT_BENCH_OUTPUT = "$PWD/build/theme-audit/resource-layout-performance.json"
+ctest --preset conan-release -R '^MufpenResourceIncrementalLayoutTest$' --output-on-failure
 ```
 
 The JSON reports median, p95 and maximum milliseconds for actual text edits,
@@ -504,11 +504,11 @@ original host-specific DOM and stylesheet. Unknown media grammar is skipped.
 ## Offline compatibility reports
 
 Build the developer tool with `cmake --build --preset conan-release --target
-muffin-theme-report`, then audit a CSS file without launching the GUI or
+mufpen-theme-report`, then audit a CSS file without launching the GUI or
 registering fonts:
 
 ```powershell
-.\build\Release\muffin-theme-report.exe --dark --width 960 --height 900 `
+.\build\Release\mufpen-theme-report.exe --dark --width 960 --height 900 `
   --output build\vlook-compatibility.json `
   tests\fixtures\theme\vlook-fancy-dark\vlook-fancy-dark.css
 ```
@@ -536,7 +536,7 @@ does not check all CSS grammar, keyframe property support or final document
 geometry, and a clean report does not imply pixel parity with browser references
 or the theme's original host application.
 
-`MuffinCssCompatibilityReportTest` tests provenance through imports and nested
+`MufpenCssCompatibilityReportTest` tests provenance through imports and nested
 conditions, bounded output, conservative classifications and the real CLI.
 It exports the fixed VLOOK audit beside the test executable as
 `vlook-fancy-dark-compatibility.json`.
@@ -592,7 +592,7 @@ Regenerate the browser oracle with `node scripts/probe_background_css.mjs`.
 samples for DPR 1, 1.25 and 2 without fonts/network. Samples within one pixel of
 sharp edges are excluded to avoid Qt/Skia edge-antialiasing dependence; flat
 interiors, smooth gradients, geometry and alpha/blend colors are compared with
-a four-channel-unit tolerance. `MuffinCssBackgroundCompatibilityTest` also
+a four-channel-unit tolerance. `MufpenCssBackgroundCompatibilityTest` also
 checks imported-variable resources, SVG decoding/raster reuse, negative cache
 invalidation, animation image selection and same-size/same-time asset updates
 through the production ThemeManager manifest.
@@ -873,7 +873,7 @@ subject and matched-selector pools to 512 metadata keys/buckets, and shared pain
 recipes to 512 entries. Variable-map fingerprint snapshots have 128 slots and
 are validated by shared Qt map storage; public map mutations detach from retained
 snapshots. These are count limits rather than byte-level process memory budgets.
-Diagnostic cache counts and optional `muffin.perf.css` timing separate selector
+Diagnostic cache counts and optional `mufpen.perf.css` timing separate selector
 matching, fingerprints and final lookups from actual computed-value work.
 
 ### Text paint overrides
@@ -892,14 +892,14 @@ with the other opt-in theme performance counters and are included as
 
 ### Projection and GUI queue diagnostics
 
-The optional `muffin.perf.detail` category separates projection construction and
+The optional `mufpen.perf.detail` category separates projection construction and
 state matching, edit-context/settings queries, formatting/theme signatures,
 inline shaping/boxes, block replacement, command predicates and recovery-draft
 materialization/encoding/commit. It is disabled by default; these probes do not
 change reuse, invalidation or persistence behavior. Projection constructor-body
 timing excludes initializer work. All scope timings are inclusive.
 
-The native GUI probe enables this category with `MUFFIN_GUI_TRACE=1` and records
+The native GUI probe enables this category with `MUFPEN_GUI_TRACE=1` and records
 input due/post/dispatch/end/paint clocks on a common phase-relative timeline.
 Scope rows >=0.1 ms reconstruct start from logged elapsed time; Timer, MetaCall,
 Paint and UpdateRequest handlers >=1 ms have directly sampled boundaries.
@@ -909,7 +909,7 @@ and Qt events must not be summed as exclusive work. Paint completion is QWidget
 dispatch completion, not display presentation, and unchanged inputs can share a
 later operation's paint. Input-state change is not currently recorded.
 
-`MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT=1` blocks only disposable benchmark tabs' draft
+`MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT=1` blocks only disposable benchmark tabs' draft
 timer signals for causal controls; `draft_snapshot_enabled` identifies that
 condition. Product draft recovery remains enabled. Do not mix traced/control
 runs into ordinary six-configuration performance baselines. The focused
@@ -990,7 +990,7 @@ selectors, inline HTML, generated content and nested reset/set/increment scopes.
 `DocumentCounterStats` exposes semantic builds and candidate walks for regression
 checks; these are not timing thresholds.
 
-Opt-in `muffin.perf.detail` scopes separate theme snapshot creation, viewport
+Opt-in `mufpen.perf.detail` scopes separate theme snapshot creation, viewport
 projection, counter compilation/evaluation, style invalidation and chrome updates.
 Their nested wall times are inclusive; `ThemePerfStage` totals remain exclusive.
 `scripts/summarize_theme_switch.py` validates paired native GUI traces and retains
@@ -1006,7 +1006,7 @@ palette and opacity flag, including responsive translucent backgrounds. This
 allows Qt to skip painting ancestors beneath an opaque editor update; transparent
 backgrounds retain normal parent composition.
 
-The opt-in `muffin.perf.queue` category records the actual viewport dirty request
+The opt-in `mufpen.perf.queue` category records the actual viewport dirty request
 before Qt coalesces updates. It preserves asynchronous `QWidget::update`
 semantics. The native GUI probe relates producer due/post, Qt operation dispatch,
 dirty requests, update/paint events and completed viewport paints on one steady

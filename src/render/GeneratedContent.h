@@ -9,7 +9,7 @@
 #include "theme/CssValueParser.h"
 #include "theme/RenderTheme.h"
 
-namespace muffin {
+namespace mufpen {
 
 inline quint64 generatedContentFingerprint(const std::optional<PseudoElementRule>& rule) {
   return rule && rule->computed ? qHashMulti(size_t(0), rule->computed->fingerprint(), rule->content) : 0;
@@ -195,4 +195,4 @@ inline QRectF generatedIconRect(const GeneratedContentStyle& value, QRectF box, 
   return image;
 }
 
-} // namespace muffin
+} // namespace mufpen

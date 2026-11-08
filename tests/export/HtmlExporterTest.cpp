@@ -23,7 +23,7 @@ void require(bool condition, const QString& message) {
 }
 
 void testStyledWrapsBodyAndEmbedsCss() {
-  const QString html = muffin::renderDocumentHtml(QStringLiteral("# Hello"), QStringLiteral("Notes"), true);
+  const QString html = mufpen::renderDocumentHtml(QStringLiteral("# Hello"), QStringLiteral("Notes"), true);
   require(html.startsWith(QStringLiteral("<!DOCTYPE html>")), QStringLiteral("Missing doctype"));
   require(html.contains(QStringLiteral("<html")), QStringLiteral("Missing <html>"));
   require(html.contains(QStringLiteral("<title>Notes</title>")), QStringLiteral("Missing/incorrect title"));
@@ -35,20 +35,20 @@ void testStyledWrapsBodyAndEmbedsCss() {
 }
 
 void testPlainOmitsStylesheet() {
-  const QString html = muffin::renderDocumentHtml(QStringLiteral("**bold**"), QStringLiteral("Doc"), false);
+  const QString html = mufpen::renderDocumentHtml(QStringLiteral("**bold**"), QStringLiteral("Doc"), false);
   require(!html.contains(QStringLiteral("<style>")), QStringLiteral("Plain export must not embed <style>"));
   require(html.contains(QStringLiteral("<strong>bold</strong>")),
           QStringLiteral("Body must contain rendered <strong>"));
 }
 
 void testTitleIsHtmlEscaped() {
-  const QString html = muffin::renderDocumentHtml(QStringLiteral("x"), QStringLiteral("a < b & c > d"), true);
+  const QString html = mufpen::renderDocumentHtml(QStringLiteral("x"), QStringLiteral("a < b & c > d"), true);
   require(html.contains(QStringLiteral("<title>a &lt; b &amp; c &gt; d</title>")),
           QStringLiteral("Title must be HTML-escaped"));
 }
 
 void testEmptyMarkdownStillWraps() {
-  const QString html = muffin::renderDocumentHtml(QString(), QStringLiteral("Empty"), true);
+  const QString html = mufpen::renderDocumentHtml(QString(), QStringLiteral("Empty"), true);
   require(html.contains(QStringLiteral("<body>")), QStringLiteral("Empty doc still needs a body wrapper"));
   require(html.contains(QStringLiteral("<title>Empty</title>")), QStringLiteral("Empty doc needs its title"));
 }
@@ -58,7 +58,7 @@ void testEmptyMarkdownStillWraps() {
 // themes rely on for layout. themeCss is ignored for the plain (unstyled) export.
 void testThemeCssEmbeddedAndWriteWrapped() {
   const QString themeCss = QStringLiteral("#write { max-width: 700px; margin: 0 auto; }\nbody { color: #123456; }");
-  const QString html = muffin::renderDocumentHtml(QStringLiteral("# Hi"), QStringLiteral("T"), true, themeCss);
+  const QString html = mufpen::renderDocumentHtml(QStringLiteral("# Hi"), QStringLiteral("T"), true, themeCss);
   require(html.contains(QStringLiteral("<style>")), QStringLiteral("Theme export must embed <style>"));
   require(html.contains(QStringLiteral("#123456")), QStringLiteral("Theme CSS must be embedded verbatim"));
   require(html.contains(QStringLiteral("<div id=\"write\">")), QStringLiteral("Theme export must wrap body in #write"));
@@ -66,18 +66,18 @@ void testThemeCssEmbeddedAndWriteWrapped() {
           QStringLiteral("Theme export must not include the fallback GitHub stylesheet"));
 
   // themeCss must be ignored when styled is false.
-  const QString plain = muffin::renderDocumentHtml(QStringLiteral("x"), QStringLiteral("T"), false, themeCss);
+  const QString plain = mufpen::renderDocumentHtml(QStringLiteral("x"), QStringLiteral("T"), false, themeCss);
   require(!plain.contains(QStringLiteral("<style>")), QStringLiteral("Plain export must not embed theme CSS"));
   require(!plain.contains(QStringLiteral("<div id=\"write\">")),
           QStringLiteral("Plain export must not wrap in #write"));
 }
 
 void testOutlineAndAdditionalContent() {
-  const auto html = muffin::renderDocumentHtml(
+  const auto html = mufpen::renderDocumentHtml(
       "# Same **title**\n\n## Same title\n\nText", "Doc", false, {},
       {.outline = true, .head = "<meta name=\"author\" content=\"Writer\">", .body = "<aside>Introduction</aside>"});
-  require(html.contains("href=\"#muffin-heading-1\"") && html.contains("id=\"muffin-heading-1\"") &&
-              html.contains("id=\"muffin-heading-2\""),
+  require(html.contains("href=\"#mufpen-heading-1\"") && html.contains("id=\"mufpen-heading-1\"") &&
+              html.contains("id=\"mufpen-heading-2\""),
           "TOC targets real unique heading anchors");
   require(html.indexOf("name=\"author\"") < html.indexOf("</head>") && html.indexOf("<aside>") > html.indexOf("<body>"),
           "head and body additions go into their intended locations");

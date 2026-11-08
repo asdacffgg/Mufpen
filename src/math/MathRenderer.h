@@ -6,11 +6,11 @@
 #include <QColor>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 class RenderTheme;
 }
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathRenderer {
 public:
@@ -25,4 +25,4 @@ public:
                           const MathSettings& settings, qreal maxWidth = 0.0) const;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

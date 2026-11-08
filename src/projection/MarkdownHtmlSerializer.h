@@ -4,7 +4,7 @@
 #include <QStringView>
 #include <QUrl>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -18,7 +18,7 @@ struct MarkdownHtmlOptions {
   QUrl documentUrl;
 };
 
-// Serializes a fully-annotated MarkdownNode tree to cmark-gfm-compatible HTML, INCLUDING Muffin's
+// Serializes a fully-annotated MarkdownNode tree to cmark-gfm-compatible HTML, INCLUDING Mufpen's
 // custom inline features (`==highlight==` / `~subscript~` / `^superscript^` / `~~strike~~` / GitHub
 // Alerts) that the editor renders but the old bare-cmark export path dropped. Driven by the editor's
 // own CmarkGfmParser so the export tree is identical to the editor's — single source of truth, no
@@ -38,4 +38,4 @@ public:
   static QString serializeTree(const MarkdownNode& root, const MarkdownHtmlOptions& options);
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -4,7 +4,7 @@
 #include <QRegularExpression>
 #include <QTextDocumentFragment>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -96,7 +96,7 @@ QString renderDocumentHtml(const QString& markdownSource, const QString& title, 
     int index = 0;
     while (matches.hasNext()) {
       const auto match = matches.next();
-      const auto id = QStringLiteral("muffin-heading-%1").arg(++index);
+      const auto id = QStringLiteral("mufpen-heading-%1").arg(++index);
       rewritten += body.mid(cursor, match.capturedStart() - cursor);
       rewritten += QStringLiteral("<h%1 id=\"%2\">%3</h%1>").arg(match.captured(1), id, match.captured(2));
       outline += QStringLiteral("<li data-level=\"%1\"><a href=\"#%2\">%3</a></li>\n")
@@ -142,4 +142,4 @@ QString renderDocumentHtml(const QString& markdownSource, const QString& title, 
   return html;
 }
 
-} // namespace muffin
+} // namespace mufpen

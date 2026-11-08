@@ -6,7 +6,7 @@
 #include <QStringList>
 #include <QVariantMap>
 
-namespace muffin {
+namespace mufpen {
 
 QString exportSettingsPrefix(ExportFormat format);
 
@@ -51,4 +51,4 @@ PandocExportOptions pandocExportOptions(const QVariantMap& values);
 bool pandocExportArguments(ExportFormat format, const QString& inputFormat, const QString& target,
                            const PandocExportOptions& options, QStringList* arguments);
 
-} // namespace muffin
+} // namespace mufpen

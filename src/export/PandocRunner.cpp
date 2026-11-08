@@ -7,7 +7,7 @@
 #include <QProcessEnvironment>
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -141,4 +141,4 @@ PandocResult PandocRunner::run(QWidget* parent, const QStringList& args, const P
   return ProcessRunner::run(parent, resolvedExecutable(), args, options);
 }
 
-} // namespace muffin
+} // namespace mufpen

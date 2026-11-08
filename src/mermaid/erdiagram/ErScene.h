@@ -13,7 +13,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::er {
+namespace mufpen::mermaid::er {
 
 // Default palette matches the mermaid "default" theme erDiagram styles
 // (entityFill #ECECFF, entityStroke #9370DB). See styles.d.ts / styles.js.
@@ -105,4 +105,4 @@ struct ErScene : MermaidScene {
 ErScene buildErScene(const ErLayoutInput& input, const ErPlacementResult& placement, ErSceneStyle style = {},
                      const QVector<style::ClassDef>& classDefs = {}, const style::ThemeDefaults& themeDefaults = {});
 
-} // namespace muffin::mermaid::er
+} // namespace mufpen::mermaid::er

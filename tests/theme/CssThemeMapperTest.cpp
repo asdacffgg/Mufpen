@@ -22,7 +22,7 @@
 
 #include "../TestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -88,11 +88,11 @@ const char* kSampleCss = R"(
   --accent: #ff7096;
   --code-bg: #fce4ec;
   --mark: rgba(255, 220, 128, 0.46);
-  --muffin-label: "Sample Test Theme";
-  --muffin-serif-body: 1;
-  --muffin-chrome-background: #fafafa;
-  --muffin-canvas: #f0f0f0;
-  --muffin-accent: #c2185b;
+  --mufpen-label: "Sample Test Theme";
+  --mufpen-serif-body: 1;
+  --mufpen-chrome-background: #fafafa;
+  --mufpen-canvas: #f0f0f0;
+  --mufpen-accent: #c2185b;
 }
 html, body {
   background: #fbfaf7;
@@ -158,13 +158,13 @@ void testSampleTheme() {
   require(qAbs(d.typography.bodySizePt - 12.0) < 0.01, QStringLiteral("16px body → 12pt"));
   require(qAbs(d.typography.lineHeight - 1.7) < 0.001, QStringLiteral("line-height multiplier"));
 
-  require(d.colors.serifBody == true, QStringLiteral("--muffin-serif-body should flip serif body"));
-  require(d.label == QStringLiteral("Sample Test Theme"), QStringLiteral("--muffin-label sets the display name"));
+  require(d.colors.serifBody == true, QStringLiteral("--mufpen-serif-body should flip serif body"));
+  require(d.label == QStringLiteral("Sample Test Theme"), QStringLiteral("--mufpen-label sets the display name"));
   require(d.colors.chromeBackground.name(QColor::HexRgb) == QStringLiteral("#fafafa"),
-          QStringLiteral("chrome background via --muffin-*"));
-  require(d.colors.canvas.name(QColor::HexRgb) == QStringLiteral("#f0f0f0"), QStringLiteral("canvas via --muffin-*"));
+          QStringLiteral("chrome background via --mufpen-*"));
+  require(d.colors.canvas.name(QColor::HexRgb) == QStringLiteral("#f0f0f0"), QStringLiteral("canvas via --mufpen-*"));
   require(d.colors.accent.name(QColor::HexRgb) == QStringLiteral("#c2185b"),
-          QStringLiteral("accent via --muffin-* overrides link-derived"));
+          QStringLiteral("accent via --mufpen-* overrides link-derived"));
   require(d.colors.isDark == false, QStringLiteral("light background → not dark"));
 }
 
@@ -393,7 +393,7 @@ void testTextOnlySynthesisesBackground() {
 }
 
 // Typora runs themes over a browser/host stylesheet, so a theme may paint only
-// #write and inherit the default text ink. Muffin must materialise that implicit
+// #write and inherit the default text ink. Mufpen must materialise that implicit
 // colour before validation instead of rejecting an otherwise valid CSS theme.
 void testBackgroundOnlySynthesisesText() {
   const char* lightCss = R"(
@@ -457,7 +457,7 @@ void testStaticScreenMediaQueries() {
           QStringLiteral("print and unresolved responsive rules must not override screen ink"));
   require(qAbs(d.page.pagePadding.left() - 18.0) < 0.01 && qAbs(d.page.pagePadding.top() - 12.0) < 0.01,
           QStringLiteral("only screen should apply its desktop padding"));
-  require(qAbs(d.page.pageBorderRadius - 7.0) < 0.01, QStringLiteral("not print should match Muffin's screen medium"));
+  require(qAbs(d.page.pageBorderRadius - 7.0) < 0.01, QStringLiteral("not print should match Mufpen's screen medium"));
   require(qAbs(d.page.pageMaxWidth - 700.0) < 0.01, QStringLiteral("a media list with a screen branch should match"));
 }
 
@@ -635,7 +635,7 @@ void testInteractiveStatesDoNotLeak() {
 }
 
 // Export-shell selectors describe a different DOM (`.typora-export #write`,
-// export sidebar, etc.). Muffin's live editor has no such ancestor, so these
+// export sidebar, etc.). Mufpen's live editor has no such ancestor, so these
 // rules must not enter the live semantic cascade as higher-specificity `#write`
 // or heading rules. This is the narrow-column root cause: an export
 // `width: 90%` rule beat the live `max-width: 950px` and collapsed the page.

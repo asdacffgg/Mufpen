@@ -24,11 +24,11 @@ class MermaidScene;
 
 #include <optional>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPreprocessResult;
 }
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 
 struct MermaidRenderEntry;
 
@@ -188,4 +188,4 @@ QRectF mermaidClientBox(const std::shared_ptr<const MermaidScene>& scene, const 
 // integer raster canvas / centered extent).
 QRectF mermaidClientBox(const MermaidRenderEntry& entry);
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

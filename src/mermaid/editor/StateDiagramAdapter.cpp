@@ -18,7 +18,7 @@
 #include <algorithm>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 // themeCSS resolution against the REAL 11.16 state DOM (render() emits
@@ -1210,4 +1210,4 @@ const Diagram& stateDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

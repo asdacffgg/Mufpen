@@ -6,7 +6,7 @@
 #include <climits>
 #include <functional>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -152,4 +152,4 @@ void parentDummyChains(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

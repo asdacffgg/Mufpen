@@ -44,7 +44,7 @@ const TSLanguage* tree_sitter_xml(void);
 const TSLanguage* tree_sitter_yaml(void);
 }
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 struct LanguageSpec {
@@ -525,4 +525,4 @@ bool TreeSitterHighlighter::supportsLanguage(const QString& language) const {
   return languageSpecs().contains(language.trimmed().toLower());
 }
 
-} // namespace muffin
+} // namespace mufpen

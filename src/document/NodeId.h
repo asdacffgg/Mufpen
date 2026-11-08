@@ -5,7 +5,7 @@
 
 #include <cstdint>
 
-namespace muffin {
+namespace mufpen {
 
 // Node identity: a compact 64-bit counter. Was a short QString "n<counter>" — a heap QStringData
 // per node (~50B × every block node). Now an inline quint64 (8B), saving ~97MB measured on a
@@ -33,4 +33,4 @@ private:
 
 uint qHash(const NodeId& id, uint seed = 0);
 
-} // namespace muffin
+} // namespace mufpen

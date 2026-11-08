@@ -4,7 +4,7 @@
 
 #include <utility>
 
-namespace muffin::mermaid::style {
+namespace mufpen::mermaid::style {
 namespace {
 
 // styles2Map (chunk-BNCO5QFQ.mjs:30): insertion-ordered, last-wins. Qt has no
@@ -169,4 +169,4 @@ ResolvedEdgeStyle resolveEdgeStyle(const QString& pattern, const QStringList& li
   return r;
 }
 
-} // namespace muffin::mermaid::style
+} // namespace mufpen::mermaid::style

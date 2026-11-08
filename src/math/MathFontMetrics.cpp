@@ -9,7 +9,7 @@ static void initKatexFontsResource() {
   Q_INIT_RESOURCE(katex_fonts);
 }
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 using FontMetricMap = QHash<int, CharacterMetrics>;
@@ -160,4 +160,4 @@ bool MathFontMetrics::loaded() {
   return !metricMap().isEmpty();
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

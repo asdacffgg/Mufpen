@@ -8,7 +8,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathLayoutKind { Span, Symbol, Rule, Strut, VList };
 
@@ -94,4 +94,4 @@ std::unique_ptr<MathLayoutNode> makeLayoutVListPositioned(std::vector<MathVListC
 MathVListEntry makeLayoutVListElem(MathVListChild child);
 MathVListEntry makeLayoutVListKern(qreal size);
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -7,7 +7,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::venn::layout {
+namespace mufpen::mermaid::venn::layout {
 
 struct Circle {
   QString set;
@@ -49,4 +49,4 @@ Result compute(const QVector<VennSubset>& data, double width, double height, con
 double intersectionArea(const QVector<Circle>& circles, QVector<Arc>* arcs = nullptr);
 QString intersectionPath(const QVector<Circle>& circles, int roundDigits = -1);
 
-} // namespace muffin::mermaid::venn::layout
+} // namespace mufpen::mermaid::venn::layout

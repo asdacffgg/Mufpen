@@ -16,7 +16,7 @@
 #include <cmath>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue journeyScalar(const QJsonObject& config, QLatin1String key, const QJsonValue& fallback) {
@@ -532,4 +532,4 @@ const Diagram& journeyDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

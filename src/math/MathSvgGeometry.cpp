@@ -9,7 +9,7 @@ static void initKatexFontsResource() {
   Q_INIT_RESOURCE(katex_fonts);
 }
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QHash<QString, QString>& paths() {
@@ -379,4 +379,4 @@ bool MathSvgGeometry::loaded() {
   return !paths().isEmpty();
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

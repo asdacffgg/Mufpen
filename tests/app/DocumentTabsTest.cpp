@@ -89,7 +89,7 @@
 #include <QTreeWidget>
 #include <QtTest/QTest>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -224,7 +224,7 @@ QList<QMessageBox*> reloadQuestions(MainWindow& window) {
 void externalWrite(DocumentTab* document, const QString& text) {
   const auto bytes = text.toUtf8();
   QString error;
-  const bool committed = muffin::test::writeFileAtomically(document->session.filePath(), bytes, &error);
+  const bool committed = mufpen::test::writeFileAtomically(document->session.filePath(), bytes, &error);
   require(committed, QStringLiteral("external atomic replacement of %1 (%2) succeeds: %3")
                          .arg(document->session.filePath(), text.left(40), error));
   // Exercise the real baseline/deduplication path without depending on when a
@@ -667,7 +667,7 @@ void exportPresetsAndRepeat() {
   preferences.findChild<QLineEdit*>("ExportCommandExtension")->setText("txt");
   require(exportPresets()[0].id == customIdBefore && exportPresets()[1].format == ExportFormat::Command,
           "custom command is a separate named format");
-  const auto captures = qEnvironmentVariable("MUFFIN_PRESET_SCREENSHOT_DIR");
+  const auto captures = qEnvironmentVariable("MUFPEN_PRESET_SCREENSHOT_DIR");
   if (!captures.isEmpty()) {
     QDir().mkpath(captures);
     for (const auto& language : {QStringLiteral("en"), QStringLiteral("zh_CN")}) {
@@ -807,7 +807,7 @@ void exportPreferencesAndOutputs() {
   formats->setCurrentRow(2);
   page->findChild<QCheckBox*>("ExportHtmlOutline")->setChecked(true);
   page->findChild<QComboBox*>("ExportTheme")->setCurrentIndex(1);
-  page->findChild<QPlainTextEdit*>("ExportHtmlHead")->setPlainText("<meta name=\"author\" content=\"Muffin\">");
+  page->findChild<QPlainTextEdit*>("ExportHtmlHead")->setPlainText("<meta name=\"author\" content=\"Mufpen\">");
   formats->setCurrentRow(3);
   require(!page->findChild<QCheckBox*>("ExportHtmlOutline")->isChecked() && !page->findChild<QComboBox*>("ExportTheme"),
           "unstyled HTML has independent settings and no theme picker");
@@ -825,7 +825,7 @@ void exportPreferencesAndOutputs() {
   require(page->findChild<QComboBox*>("ExportPdfPaper")->currentData() == "A5" &&
               page->findChild<QCheckBox*>("ExportPdfLandscape")->isChecked(),
           "switching formats retains independent settings");
-  const auto captures = qEnvironmentVariable("MUFFIN_EXPORT_SCREENSHOT_DIR");
+  const auto captures = qEnvironmentVariable("MUFPEN_EXPORT_SCREENSHOT_DIR");
   if (!captures.isEmpty()) {
     QDir().mkpath(captures);
     for (const auto& language : {QStringLiteral("en"), QStringLiteral("zh_CN")}) {
@@ -881,7 +881,7 @@ void exportPreferencesAndOutputs() {
   require(out.open(QIODevice::ReadOnly), "read menu-exported HTML");
   const auto contents = out.readAll();
   out.close();
-  require(contents.contains("muffin-heading-1") && contents.contains("name=\"author\""),
+  require(contents.contains("mufpen-heading-1") && contents.contains("name=\"author\""),
           "HTML menu consumes its saved options");
   require(contents.contains("--side-bar-bg-color"), "default light theme uses the bundled theme stylesheet");
   exportTo("PDF", f.directory.filePath("note.pdf"));
@@ -952,7 +952,7 @@ void searchPreferences() {
   require(QSettings().value("files/textExtensions").toString() == "cpp" &&
               QSettings().value("files/sizeLimitBytes").toLongLong() == 1024,
           "file protection preferences remain independent");
-  const auto screenshots = qEnvironmentVariable("MUFFIN_SEARCH_PREFS_SCREENSHOT_DIR");
+  const auto screenshots = qEnvironmentVariable("MUFPEN_SEARCH_PREFS_SCREENSHOT_DIR");
   for (const auto& theme : {QStringLiteral("github"), QStringLiteral("night")}) {
     const auto definition = ThemeDefinition::builtIn(theme).value();
     preferences.setThemeDefinition(definition);
@@ -978,7 +978,7 @@ void exportNumberControls() {
   QSettings().setValue("preferences/lastCategory", "export");
   QSettings().setValue("export/lastPage", 1);
   QSettings().setValue("export/pdf/paper", "A4");
-  const auto captures = qEnvironmentVariable("MUFFIN_EXPORT_NUMBER_SCREENSHOT_DIR");
+  const auto captures = qEnvironmentVariable("MUFPEN_EXPORT_NUMBER_SCREENSHOT_DIR");
   const auto originalLanguage = LanguageManager::instance().currentLanguageCode();
   const auto restoreLanguage = qScopeGuard([&] { LanguageManager::instance().setLanguage(originalLanguage); });
   if (!captures.isEmpty()) {
@@ -1048,7 +1048,7 @@ void exportPathRowsFitControls() {
     LanguageManager::instance().setLanguage(originalLanguage);
     refreshDeclarations();
   });
-  const auto captures = qEnvironmentVariable("MUFFIN_EXPORT_PATH_SCREENSHOT_DIR");
+  const auto captures = qEnvironmentVariable("MUFPEN_EXPORT_PATH_SCREENSHOT_DIR");
   if (!captures.isEmpty())
     QDir().mkpath(captures);
   for (const auto& language : {QStringLiteral("en"), QStringLiteral("zh_CN")}) {
@@ -1096,7 +1096,7 @@ void exportPathRowsFitControls() {
 }
 
 void noteLinkRewriting() {
-  const QString root = QDir::tempPath() + QStringLiteral("/muffin-notes");
+  const QString root = QDir::tempPath() + QStringLiteral("/mufpen-notes");
   const auto oldPath = root + QStringLiteral("/notes/方案.md");
   const auto newPath = root + QStringLiteral("/archive/new name.md");
   const auto source = root + QStringLiteral("/index.md");
@@ -1255,8 +1255,8 @@ void noteLinkRenamePreview() {
                 "preview lists affected note");
         require(!dialog->findChild<QPlainTextEdit*>("NoteLinkDiff")->toPlainText().isEmpty(),
                 "preview shows actual changed links");
-        if (qEnvironmentVariableIsSet("MUFFIN_NOTE_LINK_SCREENSHOT"))
-          dialog->grab().save(qEnvironmentVariable("MUFFIN_NOTE_LINK_SCREENSHOT"));
+        if (qEnvironmentVariableIsSet("MUFPEN_NOTE_LINK_SCREENSHOT"))
+          dialog->grab().save(qEnvironmentVariable("MUFPEN_NOTE_LINK_SCREENSHOT"));
         timer->stop();
         if (button.isEmpty())
           dialog->reject();
@@ -1379,7 +1379,7 @@ void shortcutPreferencesFollowThemeAndConfirmReset() {
   const auto restorePalette = qScopeGuard([&] { QApplication::setPalette(originalPalette); });
   auto& shortcuts = ShortcutSettings::instance();
   const auto custom = QKeySequence(QStringLiteral("Ctrl+Alt+F12"));
-  const QString captureDirectory = qEnvironmentVariable("MUFFIN_SHORTCUT_SCREENSHOT_DIR");
+  const QString captureDirectory = qEnvironmentVariable("MUFPEN_SHORTCUT_SCREENSHOT_DIR");
   const auto originalLanguage = LanguageManager::instance().currentLanguageCode();
   const auto restoreLanguage = qScopeGuard([&] {
     LanguageManager::instance().setLanguage(originalLanguage);
@@ -2339,7 +2339,7 @@ void restrictedFormattingActions() {
 
 void workspaceSearchAndReplace() {
   Fixture f;
-  const QString screenshotDirectory = qEnvironmentVariable("MUFFIN_SEARCH_SCREENSHOT_DIR");
+  const QString screenshotDirectory = qEnvironmentVariable("MUFPEN_SEARCH_SCREENSHOT_DIR");
   if (!screenshotDirectory.isEmpty())
     QDir().mkpath(screenshotDirectory);
   QDir(f.directory.path()).mkpath("04.Study/English");
@@ -3002,7 +3002,7 @@ void fileOpenProtectionSettingsAndBoundaries() {
               !reopened.findChild<QCheckBox*>("sizeProtection")->isChecked() &&
               reopened.findChild<QDoubleSpinBox*>("sizeLimitValue")->value() == 200,
           "guard settings persist");
-  if (const auto capture = qEnvironmentVariable("MUFFIN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
+  if (const auto capture = qEnvironmentVariable("MUFPEN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
     SettingsOverride captureExtensions{"files/extensionProtection", true};
     SettingsOverride captureSize{"files/sizeProtection", true};
     SettingsOverride captureLimit{"files/sizeLimitMb", 100};
@@ -3164,7 +3164,7 @@ void fileOpenConfirmationDefersReadingAndPreservesTabs() {
   require(pending->openConfirmation->findChild<QLabel*>("extensionWarning")->isVisible() &&
               !pending->openConfirmation->findChild<QLabel*>("sizeWarning")->isVisible(),
           "extension warning alone");
-  if (const auto capture = qEnvironmentVariable("MUFFIN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
+  if (const auto capture = qEnvironmentVariable("MUFPEN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
     require(f.window.grab().save(capture + ".extension.png"), "capture extension warning");
     LanguageManager::instance().setLanguage(QStringLiteral("zh_CN"));
     QApplication::processEvents();
@@ -3217,7 +3217,7 @@ void fileOpenSizeConfirmationAndStartupCancellation() {
   require(!startup->openConfirmation->findChild<QLabel*>("extensionWarning")->isVisible() &&
               startup->openConfirmation->findChild<QLabel*>("sizeWarning")->isVisible(),
           "size warning alone");
-  if (const auto capture = qEnvironmentVariable("MUFFIN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
+  if (const auto capture = qEnvironmentVariable("MUFPEN_OPEN_GUARD_SCREENSHOT"); !capture.isEmpty()) {
     require(f.window.grab().save(capture + ".size.png"), "capture size warning");
   }
   action(f.window, "Source Code Mode")->trigger();
@@ -3418,7 +3418,7 @@ void tabLockIndicatorPreservesControlsAndFollowsTheme() {
   const auto darkInk = indicator->palette().color(QPalette::WindowText);
   require(lightInk != darkInk && darkInk.lightness() > lightInk.lightness(),
           "lock ink follows the light and dark chrome palettes");
-  if (const auto capture = qEnvironmentVariable("MUFFIN_LOCK_TAB_SCREENSHOT"); !capture.isEmpty()) {
+  if (const auto capture = qEnvironmentVariable("MUFPEN_LOCK_TAB_SCREENSHOT"); !capture.isEmpty()) {
     require(f.window.grab().save(capture + ".night.png"), "capture dark lock indicator");
     action(f.window, "GitHub")->trigger();
     QApplication::processEvents();
@@ -3482,7 +3482,7 @@ void chromeAppearanceUsesSharedMetrics() {
     const QImage image = f.window.grab(QRect(button->mapTo(&f.window, QPoint()), button->size()))
                              .toImage()
                              .convertToFormat(QImage::Format_RGB32);
-    if (const auto capture = qEnvironmentVariable("MUFFIN_CHROME_SCREENSHOT"); !capture.isEmpty())
+    if (const auto capture = qEnvironmentVariable("MUFPEN_CHROME_SCREENSHOT"); !capture.isEmpty())
       image.save(capture + QLatin1Char('-') + button->objectName() +
                  (button->isDown() ? "-pressed.png" : "-normal.png"));
     const qreal dpr = image.devicePixelRatio();
@@ -3505,7 +3505,7 @@ void chromeAppearanceUsesSharedMetrics() {
   for (const char* theme : {"GitHub", "Night"}) {
     action(f.window, theme)->trigger();
     QApplication::processEvents();
-    if (const auto capture = qEnvironmentVariable("MUFFIN_CHROME_SCREENSHOT"); !capture.isEmpty())
+    if (const auto capture = qEnvironmentVariable("MUFPEN_CHROME_SCREENSHOT"); !capture.isEmpty())
       f.window.grab().save(capture + QLatin1Char('-') + QString::fromLatin1(theme) + "-initial.png");
     require(f.window.menuBar()->font().families() == font_rendering::uiFont().families() &&
                 status->font().families() == f.window.menuBar()->font().families() &&
@@ -3558,7 +3558,7 @@ void chromeAppearanceUsesSharedMetrics() {
           scroll->style()->subControlRect(QStyle::CC_ScrollBar, &option, QStyle::SC_ScrollBarSlider, scroll);
       require(handle.height() >= 54, "every scrollbar keeps a usable minimum thumb length");
     }
-    if (const auto capture = qEnvironmentVariable("MUFFIN_CHROME_SCREENSHOT"); !capture.isEmpty()) {
+    if (const auto capture = qEnvironmentVariable("MUFPEN_CHROME_SCREENSHOT"); !capture.isEmpty()) {
       LanguageManager::instance().setLanguage("zh_CN");
       QApplication::processEvents();
       require(f.window.grab().save(capture + QLatin1Char('-') + QString::fromLatin1(theme) + ".png"),
@@ -3713,7 +3713,7 @@ void pinnedTabsSurviveBulkCloseAndRestore() {
   require(pinned->pinned && f.tabs->widget(0) == pinned, "pin puts the tab at the front");
   require(tabControlButton(f.tabs->tabBar(), 0)->objectName() == "PinTabButton",
           "pin replaces accidental close button");
-  if (const auto capture = qEnvironmentVariable("MUFFIN_TAB_MENU_SCREENSHOT"); !capture.isEmpty()) {
+  if (const auto capture = qEnvironmentVariable("MUFPEN_TAB_MENU_SCREENSHOT"); !capture.isEmpty()) {
     LanguageManager::instance().setLanguage(QStringLiteral("zh_CN"));
     withTabMenu(f.window, b, [&](QMenu& menu) {
       require(menu.grab().save(capture + ".menu.png"), "capture translated tab menu");
@@ -3923,7 +3923,7 @@ void tabBarOnlyForMultipleDocuments() {
   DocumentTab* a = f.current();
   checkSingle();
   require(a->session.filePath() == first, "sidebar opens the first document");
-  if (const QString screenshot = qEnvironmentVariable("MUFFIN_TAB_SCREENSHOT"); !screenshot.isEmpty()) {
+  if (const QString screenshot = qEnvironmentVariable("MUFPEN_TAB_SCREENSHOT"); !screenshot.isEmpty()) {
     require(f.window.grab().save(screenshot + QStringLiteral(".single.png")),
             "save single-document appearance capture");
   }
@@ -3944,7 +3944,7 @@ void tabBarOnlyForMultipleDocuments() {
         "new-tab button settles beside the last tab after the strip layout changes");
     const auto last = bar->tabRect(bar->count() - 1);
     const QRect button(plus->mapTo(f.tabs, QPoint()) - bar->pos(), plus->size());
-    if (const QString screenshot = qEnvironmentVariable("MUFFIN_TAB_SCREENSHOT");
+    if (const QString screenshot = qEnvironmentVariable("MUFPEN_TAB_SCREENSHOT");
         !screenshot.isEmpty() && bar->count() == 2)
       require(f.window.grab().save(screenshot + QStringLiteral(".multiple.png")),
               "save trailing new-tab button capture");
@@ -3990,7 +3990,7 @@ void tabBarOnlyForMultipleDocuments() {
     auto* left = bar->findChild<QToolButton*>(QStringLiteral("ScrollLeftButton"));
     auto* right = bar->findChild<QToolButton*>(QStringLiteral("ScrollRightButton"));
     require(left && right && left->isVisible() && right->isVisible(), "overflow exposes both scroll arrows");
-    if (const QString capture = qEnvironmentVariable("MUFFIN_TAB_SCREENSHOT"); !capture.isEmpty())
+    if (const QString capture = qEnvironmentVariable("MUFPEN_TAB_SCREENSHOT"); !capture.isEmpty())
       require(f.window.grab().save(capture + QStringLiteral(".overflow.png")), "capture overflowing tabs");
     const int reserved = bar->style()->pixelMetric(QStyle::PM_TabBarScrollButtonWidth, nullptr, bar);
     require(left->width() == reserved && right->width() == reserved,
@@ -4201,7 +4201,7 @@ void sourceLayoutUsesAvailableWorkspace() {
             "source canvas must fill wide and narrow workspaces regardless of the rendered reading width");
     require(source->viewport()->width() > 0, "source text remains usable in a narrow workspace");
   }
-  if (const QString screenshot = qEnvironmentVariable("MUFFIN_SOURCE_SCREENSHOT"); !screenshot.isEmpty()) {
+  if (const QString screenshot = qEnvironmentVariable("MUFPEN_SOURCE_SCREENSHOT"); !screenshot.isEmpty()) {
     f.window.resize(1600, 900);
     QApplication::processEvents();
     require(f.window.grab().save(screenshot), "save source-mode appearance capture");
@@ -4455,7 +4455,7 @@ void renameFolderAndTranslateTabs() {
             "tab bar accessible name retranslates");
   }
   LanguageManager::instance().setLanguage(QStringLiteral("en"));
-  if (const QString screenshot = qEnvironmentVariable("MUFFIN_TAB_SCREENSHOT"); !screenshot.isEmpty()) {
+  if (const QString screenshot = qEnvironmentVariable("MUFPEN_TAB_SCREENSHOT"); !screenshot.isEmpty()) {
     f.tabs->setCurrentWidget(b);
     QApplication::processEvents();
     require(f.window.grab().save(screenshot), "save tab appearance capture");
@@ -5055,9 +5055,9 @@ int main(int argc, char** argv) {
   QApplication::setFont(uiFont);
   for (const char* widgetClass : {"QMenu", "QMenuBar", "QToolTip"})
     QApplication::setFont(uiFont, widgetClass);
-  installMuffinTestCrashHandler();
+  installMufpenTestCrashHandler();
   QStandardPaths::setTestModeEnabled(true);
-  QApplication::setOrganizationName(QStringLiteral("MuffinTests"));
+  QApplication::setOrganizationName(QStringLiteral("MufpenTests"));
   QTemporaryDir settings;
   // Failed/aborted runs must not leave drafts that change the next run's
   // recovery counts or file-watcher prompts. Each process owns its data root.
@@ -5137,11 +5137,11 @@ int main(int argc, char** argv) {
     return 0;
   }
   if (QCoreApplication::arguments().contains(QStringLiteral("--document-memory"))) {
-    muffin::diag::runDocumentMemoryBenchmark<Fixture>();
+    mufpen::diag::runDocumentMemoryBenchmark<Fixture>();
     return 0;
   }
   if (QCoreApplication::arguments().contains(QStringLiteral("--memory-audit"))) {
-    muffin::diag::runMemoryLifecycleAudit<Fixture>();
+    mufpen::diag::runMemoryLifecycleAudit<Fixture>();
     return 0;
   }
   const auto runSessionViewTests = [] {

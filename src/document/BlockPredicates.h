@@ -5,7 +5,7 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 // Literal blocks edit through dedicated controllers (code/math/HTML/front matter) rather than the
 // inline-text model, so the caret is anchored as an offset into the block literal. Shared by the
@@ -58,4 +58,4 @@ inline qsizetype definitionSelectableLength(const MarkdownNode& node) {
   return qMax<qsizetype>(0, end - definition.markerRange.start);
 }
 
-} // namespace muffin
+} // namespace mufpen

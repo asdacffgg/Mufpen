@@ -4,7 +4,7 @@
 #include "projection/InlineProjection.h"
 #include "document/MarkdownNode.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 enum class DeleteDirection { Backward, Forward };
@@ -299,4 +299,4 @@ std::optional<TableCellSourceEdit> buildTableCellDeleteForwardEdit(const Markdow
   return tableCellDeleteEdit(cell, content, sourceOffset, DeleteDirection::Forward);
 }
 
-} // namespace muffin
+} // namespace mufpen

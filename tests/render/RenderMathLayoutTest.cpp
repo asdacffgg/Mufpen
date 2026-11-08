@@ -12,7 +12,7 @@
 
 #include "MathTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

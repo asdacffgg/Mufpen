@@ -15,28 +15,28 @@
 #include <cstdlib>
 #include <iostream>
 
-inline muffin::EditTransaction requireTextDeltaCommand(muffin::UndoStack& stack, const char* message) {
+inline mufpen::EditTransaction requireTextDeltaCommand(mufpen::UndoStack& stack, const char* message) {
   require(stack.canUndo(), "expected undo command");
-  muffin::EditTransaction transaction = stack.takeUndo();
+  mufpen::EditTransaction transaction = stack.takeUndo();
   require(transaction.isTextDeltaCommand(), message);
   require(transaction.textDeltaCommand().isValid(), "text delta command should be valid");
   return transaction;
 }
 
-inline muffin::MarkdownNode* blockAt(const muffin::DocumentSession& session, qsizetype index) {
+inline mufpen::MarkdownNode* blockAt(const mufpen::DocumentSession& session, qsizetype index) {
   const auto& children = session.document().root().children();
   require(index >= 0 && index < static_cast<qsizetype>(children.size()), "block index out of range");
   return children.at(static_cast<size_t>(index)).get();
 }
 
 // Returns the node the selection cursor currently sits on, or nullptr if none/invalid.
-inline muffin::MarkdownNode* cursorBlock(const muffin::DocumentSession& session,
-                                         const muffin::SelectionController& selection) {
-  const muffin::NodeId id = selection.cursorPosition().blockId;
+inline mufpen::MarkdownNode* cursorBlock(const mufpen::DocumentSession& session,
+                                         const mufpen::SelectionController& selection) {
+  const mufpen::NodeId id = selection.cursorPosition().blockId;
   return id.isValid() ? session.document().node(id) : nullptr;
 }
 
-inline muffin::MarkdownNode* firstChildOfType(muffin::MarkdownNode* node, muffin::BlockType type) {
+inline mufpen::MarkdownNode* firstChildOfType(mufpen::MarkdownNode* node, mufpen::BlockType type) {
   require(node != nullptr, "parent node should exist");
   for (const auto& child : node->children()) {
     if (child->type() == type) {
@@ -47,17 +47,17 @@ inline muffin::MarkdownNode* firstChildOfType(muffin::MarkdownNode* node, muffin
   return nullptr;
 }
 
-inline void setCursor(muffin::SelectionController& selection, muffin::MarkdownNode* block, qsizetype offset) {
-  muffin::CursorPosition cursor;
+inline void setCursor(mufpen::SelectionController& selection, mufpen::MarkdownNode* block, qsizetype offset) {
+  mufpen::CursorPosition cursor;
   cursor.blockId = block->id();
   cursor.text.nodeId = block->id();
   cursor.text.textOffset = offset;
   selection.setCursorPosition(cursor);
 }
 
-inline void setSourceCursor(muffin::SelectionController& selection, muffin::MarkdownNode* block,
+inline void setSourceCursor(mufpen::SelectionController& selection, mufpen::MarkdownNode* block,
                             qsizetype visibleOffset, qsizetype sourceOffset) {
-  muffin::CursorPosition cursor;
+  mufpen::CursorPosition cursor;
   cursor.blockId = block->id();
   cursor.text.nodeId = block->id();
   cursor.text.textOffset = visibleOffset;
@@ -65,9 +65,9 @@ inline void setSourceCursor(muffin::SelectionController& selection, muffin::Mark
   selection.setCursorPosition(cursor);
 }
 
-inline void setSelection(muffin::SelectionController& selection, muffin::MarkdownNode* block, qsizetype anchor,
+inline void setSelection(mufpen::SelectionController& selection, mufpen::MarkdownNode* block, qsizetype anchor,
                          qsizetype focus) {
-  muffin::SelectionRange range;
+  mufpen::SelectionRange range;
   range.anchor.blockId = block->id();
   range.anchor.text.nodeId = block->id();
   range.anchor.text.textOffset = anchor;
@@ -77,10 +77,10 @@ inline void setSelection(muffin::SelectionController& selection, muffin::Markdow
   selection.setSelection(range);
 }
 
-inline void setSourceSelection(muffin::SelectionController& selection, muffin::MarkdownNode* block,
+inline void setSourceSelection(mufpen::SelectionController& selection, mufpen::MarkdownNode* block,
                                qsizetype anchorText, qsizetype anchorSource, qsizetype focusText,
                                qsizetype focusSource) {
-  muffin::SelectionRange range;
+  mufpen::SelectionRange range;
   range.anchor.blockId = block->id();
   range.anchor.text.nodeId = block->id();
   range.anchor.text.textOffset = anchorText;
@@ -92,10 +92,10 @@ inline void setSourceSelection(muffin::SelectionController& selection, muffin::M
   selection.setSelection(range);
 }
 
-inline void wireParagraph(muffin::ParagraphController& paragraph, muffin::DocumentSession& session,
-                          muffin::SelectionController& selection, muffin::UndoStack& undoStack,
-                          muffin::BrushQueue& brushQueue) {
-  muffin::EditorContext ctx;
+inline void wireParagraph(mufpen::ParagraphController& paragraph, mufpen::DocumentSession& session,
+                          mufpen::SelectionController& selection, mufpen::UndoStack& undoStack,
+                          mufpen::BrushQueue& brushQueue) {
+  mufpen::EditorContext ctx;
   ctx.session = &session;
   ctx.selection = &selection;
   ctx.undoStack = &undoStack;

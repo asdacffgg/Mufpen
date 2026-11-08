@@ -19,7 +19,7 @@
 #include <QtMath>
 #include <cstdio>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 int failures = 0;
 void check(bool ok, const QString& message) {
@@ -84,7 +84,7 @@ void sameLayout(const DocumentLayout& actual, const DocumentLayout& expected, co
   paint(expected, theme, width);
   const auto a = paint(actual, theme, width), b = paint(expected, theme, width);
   if (a != b) {
-    const auto output = qEnvironmentVariable("MUFFIN_THEME_AUDIT_DIR", QDir::currentPath());
+    const auto output = qEnvironmentVariable("MUFPEN_THEME_AUDIT_DIR", QDir::currentPath());
     a.save(output + '/' + id + "-mismatch-native.png");
     b.save(output + '/' + id + "-mismatch-fresh.png");
     const auto ar = actual.pageRect(theme, 1000), br = expected.pageRect(theme, 1000);
@@ -169,10 +169,10 @@ int main(int argc, char** argv) {
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("RealThemeRegression");
   QSettings().setValue("markdown/breakOnSingleNewline", false);
-  QFile example(QStringLiteral(MUFFIN_SOURCE_DIR "/example.md"));
+  QFile example(QStringLiteral(MUFPEN_SOURCE_DIR "/example.md"));
   check(example.open(QIODevice::ReadOnly), "open example.md");
   auto source = QString::fromUtf8(example.readAll());
   source.replace("\r\n", "\n");
@@ -180,17 +180,17 @@ int main(int argc, char** argv) {
   // math, code/kbd, all heading levels and nested quotes.
   source = source.left(source.indexOf("## Lists"));
   QJsonArray themes{
-      QJsonObject{{"id", "newsprint"}, {"css", QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes/newsprint.css")}},
-      QJsonObject{{"id", "night"}, {"css", QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes/night.css")}}};
+      QJsonObject{{"id", "newsprint"}, {"css", QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes/newsprint.css")}},
+      QJsonObject{{"id", "night"}, {"css", QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes/night.css")}}};
   const QString manifestPath =
-      argc > 1 ? QString::fromLocal8Bit(argv[1]) : qEnvironmentVariable("MUFFIN_THEME_AUDIT_MANIFEST");
+      argc > 1 ? QString::fromLocal8Bit(argv[1]) : qEnvironmentVariable("MUFPEN_THEME_AUDIT_MANIFEST");
   if (!manifestPath.isEmpty()) {
     QFile manifest(manifestPath);
     check(manifest.open(QIODevice::ReadOnly), "open external theme manifest");
     themes = QJsonDocument::fromJson(manifest.readAll()).array();
     check(!themes.isEmpty(), "external theme manifest is not empty");
   }
-  const QString output = qEnvironmentVariable("MUFFIN_THEME_AUDIT_DIR");
+  const QString output = qEnvironmentVariable("MUFPEN_THEME_AUDIT_DIR");
   if (!output.isEmpty())
     QDir().mkpath(output);
   QJsonArray cases;

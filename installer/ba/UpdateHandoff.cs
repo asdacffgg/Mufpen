@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using WixToolset.Mba.Core;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     // The downloaded, verified bundle is also the updater helper. It owns no
     // installed Qt DLLs and does not start MSI until the old process is gone.

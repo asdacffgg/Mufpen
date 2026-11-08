@@ -23,12 +23,12 @@ QString headingSlug(const QString& title) {
 QString movedHref(const QString& href, const QString& source, const QString& oldPath, const QString& newPath) {
   if (href.isEmpty() || href.startsWith('#'))
     return {};
-  auto url = muffin::resolvedUrlForDocumentResource(href, source);
+  auto url = mufpen::resolvedUrlForDocumentResource(href, source);
   if (!url.isLocalFile())
     return {};
   const auto target = QFileInfo(url.toLocalFile()).absoluteFilePath();
-  const auto movedTarget = muffin::FilePathOps::remapDescendant(target, oldPath, newPath);
-  const auto movedSource = muffin::FilePathOps::remapDescendant(source, oldPath, newPath);
+  const auto movedTarget = mufpen::FilePathOps::remapDescendant(target, oldPath, newPath);
+  const auto movedSource = mufpen::FilePathOps::remapDescendant(source, oldPath, newPath);
   const QUrl authored(href);
   const bool relative = authored.scheme().isEmpty() && !QFileInfo(authored.path()).isAbsolute();
   if (relative) {
@@ -59,11 +59,11 @@ struct Edit {
 // A label can contain code such as `[x](example.md)`. Validate the complete
 // destination suffix with the Markdown parser so bracket-like label text or
 // titles can never be mistaken for the address being rewritten.
-muffin::image_syntax::SourceLocation destinationLocation(const QString& snippet, const QString& href) {
+mufpen::image_syntax::SourceLocation destinationLocation(const QString& snippet, const QString& href) {
   qsizetype position = snippet.size();
   while ((position = snippet.lastIndexOf(QStringLiteral("]("), position - 1)) >= 0) {
     const QString candidate = QStringLiteral("![x]") + snippet.mid(position + 1);
-    muffin::CmarkGfmParser parser;
+    mufpen::CmarkGfmParser parser;
     const auto parsed = parser.parseDocument(candidate, {});
     if (!parsed.root || parsed.root->children().empty())
       continue;
@@ -71,10 +71,10 @@ muffin::image_syntax::SourceLocation destinationLocation(const QString& snippet,
     if (paragraph.inlines().size() != 1)
       continue;
     const auto& image = paragraph.inlines().first();
-    if (image.type() != muffin::InlineType::Image || image.href() != href ||
+    if (image.type() != mufpen::InlineType::Image || image.href() != href ||
         image.sourceRange().end + paragraph.inlineAbsoluteDelta() != candidate.size())
       continue;
-    const auto location = muffin::image_syntax::findSource(candidate);
+    const auto location = mufpen::image_syntax::findSource(candidate);
     if (location.found)
       return {true, position + 1 + location.start - 4, position + 1 + location.end - 4};
   }
@@ -82,12 +82,12 @@ muffin::image_syntax::SourceLocation destinationLocation(const QString& snippet,
 }
 }
 
-bool muffin::NoteLinks::isMarkdownPath(const QString& path) {
+bool mufpen::NoteLinks::isMarkdownPath(const QString& path) {
   static const QSet<QString> extensions{"md", "markdown", "mdown", "mkd", "mkdn", "mdwn"};
   return extensions.contains(QFileInfo(path).suffix().toLower());
 }
 
-muffin::NodeId muffin::NoteLinks::headingTarget(const QVector<OutlineEntry>& outline, const QString& fragment) {
+mufpen::NodeId mufpen::NoteLinks::headingTarget(const QVector<OutlineEntry>& outline, const QString& fragment) {
   QSet<QString> used;
   for (const auto& entry : outline) {
     const auto base = headingSlug(entry.title);
@@ -106,7 +106,7 @@ muffin::NodeId muffin::NoteLinks::headingTarget(const QVector<OutlineEntry>& out
   return {};
 }
 
-QString muffin::NoteLinks::rewrite(const QString& text, const QString& sourcePath, const QString& oldPath,
+QString mufpen::NoteLinks::rewrite(const QString& text, const QString& sourcePath, const QString& oldPath,
                                    const QString& newPath, int* count) {
   QVector<Edit> edits;
   CmarkGfmParser parser;
@@ -176,7 +176,7 @@ QString muffin::NoteLinks::rewrite(const QString& text, const QString& sourcePat
   return result;
 }
 
-muffin::NoteLinkPlan muffin::NoteLinks::prepare(const QString& root, const QString& oldPath, const QString& newPath,
+mufpen::NoteLinkPlan mufpen::NoteLinks::prepare(const QString& root, const QString& oldPath, const QString& newPath,
                                                 const OpenSearchBuffers& buffers, const SearchCancellation& cancel) {
   NoteLinkPlan plan;
   plan.root = root;

@@ -8,7 +8,7 @@
 #include <atomic>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 class PieceTable;
 
@@ -56,4 +56,4 @@ private:
   DocumentSearch() = delete;
 };
 
-} // namespace muffin
+} // namespace mufpen

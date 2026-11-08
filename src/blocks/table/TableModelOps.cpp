@@ -5,7 +5,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 int boundedIndex(int value, int minValue, int maxValue) {
@@ -252,4 +252,4 @@ std::unique_ptr<MarkdownNode> TableModelOps::makeCell() {
   return cell;
 }
 
-} // namespace muffin
+} // namespace mufpen

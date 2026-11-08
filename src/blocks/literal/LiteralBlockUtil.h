@@ -5,11 +5,11 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 class LiteralBlockController;
 
 QString sanitizedHtmlPreview(const LiteralBlockController& ctrl);
 bool insertFrontMatter(const EditorContext& ctx, LiteralBlockController& ctrl, FrontMatterFormat format);
 
-} // namespace muffin
+} // namespace mufpen

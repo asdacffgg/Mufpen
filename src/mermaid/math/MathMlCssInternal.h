@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 inline constexpr qreal kChromiumMathAxisOffsetPx = 6.0;
 inline constexpr qreal kMathTableRowHeightEm = 1.22265625;
@@ -317,4 +317,4 @@ std::optional<MathCssPaintOperation> buildPaintOperation(const MathRenderNode* o
                                                          MathMlStyleContext style = {}, bool topLevel = false,
                                                          bool rootRowChild = false);
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

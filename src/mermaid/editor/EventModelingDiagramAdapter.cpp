@@ -14,7 +14,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue eventModelingScalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -246,4 +246,4 @@ const Diagram& eventModelingDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

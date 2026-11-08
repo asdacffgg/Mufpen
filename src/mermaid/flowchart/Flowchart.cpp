@@ -11,7 +11,7 @@
 #include <functional>
 #include <optional>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 
 using Vertex = FlowVertex;
@@ -1457,7 +1457,7 @@ private:
       formatted += QLatin1Char('/');
     vertex.link = formatted;
     vertex.linkTarget = target;
-    vertex.linkUnsafe = !muffin::isSafeUrl(vertex.link, false);
+    vertex.linkUnsafe = !mufpen::isSafeUrl(vertex.link, false);
     markClickable(id);
   }
 
@@ -1903,4 +1903,4 @@ QJsonObject Flowchart::toJson() const {
   return result;
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

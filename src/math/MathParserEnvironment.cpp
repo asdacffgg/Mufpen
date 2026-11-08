@@ -9,7 +9,7 @@
 
 #include <numeric>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QVector<std::shared_ptr<MathParseNode>> toSharedNodes(QVector<MathParseNode> nodes) {
@@ -564,4 +564,4 @@ MathParseTask<MathParseNode> MathParser::parseCDEnvironment() {
   co_return result;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

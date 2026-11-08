@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 constexpr int kMaxExpandDepth = 200;
@@ -821,7 +821,7 @@ MathParseTask<bool> MathMacroExpander::expandOnce(TokenStream& stream) {
   // braket.sty braketHelper (KaTeX macros.ts:893-968):
   // \bra@ket and \bra@set replace | with \middle\vert and \| with
   // \middle\Vert inside the body. We do direct string replacement since
-  // Muffin's macro expansion works on text.
+  // Mufpen's macro expansion works on text.
   if (actualCommand == QStringLiteral("\\bra@ket") || actualCommand == QStringLiteral("\\bra@set")) {
     const QString left = stream.consumeArgText();
     const QString mid = stream.consumeArgText();
@@ -987,4 +987,4 @@ MathParseTask<bool> MathMacroExpander::expandOnce(TokenStream& stream) {
   co_return true;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

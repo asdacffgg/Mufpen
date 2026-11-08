@@ -35,11 +35,11 @@
 
 namespace {
 QString recoveryRoot() {
-  return QDir(muffin::ApplicationPaths::localDataDirectory()).filePath("directory-replacements");
+  return QDir(mufpen::ApplicationPaths::localDataDirectory()).filePath("directory-replacements");
 }
 
-bool renderedSearchRange(muffin::DocumentTab& document, qsizetype start, qsizetype length,
-                         muffin::SelectionRange& range) {
+bool renderedSearchRange(mufpen::DocumentTab& document, qsizetype start, qsizetype length,
+                         mufpen::SelectionRange& range) {
   if (start < 0 || length <= 0 || start > document.session.markdownText().size() - length)
     return false;
   const auto end = start + length;
@@ -54,14 +54,14 @@ bool renderedSearchRange(muffin::DocumentTab& document, qsizetype start, qsizety
     return false;
   // Ordinary fenced code is editable inside the live view. Diagram source and
   // other literal blocks may instead be displayed as rendered objects.
-  muffin::BlockEditContextResolver resolver(&document.session, nullptr);
-  if (node->type() == muffin::BlockType::CodeFence) {
+  mufpen::BlockEditContextResolver resolver(&document.session, nullptr);
+  if (node->type() == mufpen::BlockType::CodeFence) {
     const auto content = resolver.literalContentStartOffset(*node);
     return node->codeLanguage().compare(QLatin1String("mermaid"), Qt::CaseInsensitive) != 0 && start >= content &&
            end <= content + node->literal().size() &&
            document.session.markdownText().mid(start, length) == node->literal().mid(start - content, length);
   }
-  muffin::BlockEditContext context;
+  mufpen::BlockEditContext context;
   if (!resolver.forBlock(id, context) || !context.inlineProjection.isValid() ||
       start < context.contentRange.byteStart || end > context.contentRange.byteEnd)
     return false;
@@ -72,8 +72,8 @@ bool renderedSearchRange(muffin::DocumentTab& document, qsizetype start, qsizety
       continue;
     if (span.contentSourceStart > covered)
       return false;
-    if ((span.kind != muffin::InlineSpanKind::Text && span.kind != muffin::InlineSpanKind::HtmlContent) ||
-        span.type == muffin::InlineType::InlineMath || !span.editable ||
+    if ((span.kind != mufpen::InlineSpanKind::Text && span.kind != mufpen::InlineSpanKind::HtmlContent) ||
+        span.type == mufpen::InlineType::InlineMath || !span.editable ||
         span.visibleEnd - span.visibleStart != span.contentSourceEnd - span.contentSourceStart)
       return false;
     covered = qMin(localEnd, span.contentSourceEnd);
@@ -84,12 +84,12 @@ bool renderedSearchRange(muffin::DocumentTab& document, qsizetype start, qsizety
 }
 }
 
-void muffin::MainWindow::showWorkspaceSearch(bool replace, const QString& directory) {
+void mufpen::MainWindow::showWorkspaceSearch(bool replace, const QString& directory) {
   setSidebarPanel(SidebarWidget::Panel::Search);
   sidebar_->searchPanel()->setRoot(directory.isEmpty() ? sidebar_->folderRoot() : directory);
   sidebar_->searchPanel()->activate(replace);
 }
-muffin::OpenSearchBuffers muffin::MainWindow::openSearchBuffers() const {
+mufpen::OpenSearchBuffers mufpen::MainWindow::openSearchBuffers() const {
   OpenSearchBuffers buffers;
   for (auto* widget : QApplication::topLevelWidgets()) {
     const auto* window = qobject_cast<MainWindow*>(widget);
@@ -125,7 +125,7 @@ muffin::OpenSearchBuffers muffin::MainWindow::openSearchBuffers() const {
   }
   return buffers;
 }
-void muffin::MainWindow::navigateSearchResult(const QString& path, const QByteArray& fingerprint, qsizetype offset,
+void mufpen::MainWindow::navigateSearchResult(const QString& path, const QByteArray& fingerprint, qsizetype offset,
                                               qsizetype length) {
   // A dirty buffer in another window supplied this result; navigate to its
   // owner rather than opening an older disk copy in this window.
@@ -157,7 +157,7 @@ void muffin::MainWindow::navigateSearchResult(const QString& path, const QByteAr
   tab_->pendingSearchLength = length;
   applySearchNavigation(tab_);
 }
-void muffin::MainWindow::applySearchNavigation(DocumentTab* document) {
+void mufpen::MainWindow::applySearchNavigation(DocumentTab* document) {
   if (document != tab_ || !document->pendingSearchFingerprint || document->session.isOpenInProgress())
     return;
   const auto expected = std::move(*document->pendingSearchFingerprint);
@@ -219,7 +219,7 @@ void muffin::MainWindow::applySearchNavigation(DocumentTab* document) {
   scheduleSessionSave();
 }
 
-void muffin::MainWindow::previewWorkspaceReplace() {
+void mufpen::MainWindow::previewWorkspaceReplace() {
   auto* panel = sidebar_->searchPanel();
   const auto result = panel->result();
   const QString replacement = panel->replacement();
@@ -249,9 +249,9 @@ void muffin::MainWindow::previewWorkspaceReplace() {
   description->setWordWrap(true);
   layout->addWidget(description);
   auto* filters = new QLabel(QStringLiteral("%1: %2 · %3: %4")
-                                 .arg(muffin::SearchPanelWidget::tr("Match case"),
+                                 .arg(mufpen::SearchPanelWidget::tr("Match case"),
                                       result.query.options.caseSensitive ? tr("Yes") : tr("No"),
-                                      muffin::SearchPanelWidget::tr("Regular expression"),
+                                      mufpen::SearchPanelWidget::tr("Regular expression"),
                                       result.query.options.regularExpression ? tr("Yes") : tr("No")),
                              &dialog);
   filters->setTextFormat(Qt::PlainText);
@@ -347,7 +347,7 @@ void muffin::MainWindow::previewWorkspaceReplace() {
   panel->startSearch(openSearchBuffers());
 }
 
-void muffin::MainWindow::undoWorkspaceReplace() {
+void mufpen::MainWindow::undoWorkspaceReplace() {
   const QString directory = WorkspaceReplace::latestRecovery(recoveryRoot());
   if (directory.isEmpty()) {
     QMessageBox::information(this, tr("Undo Folder Replacement"), tr("No folder replacement is available to restore."));
@@ -382,9 +382,9 @@ void muffin::MainWindow::undoWorkspaceReplace() {
   sidebar_->searchPanel()->startSearch(openSearchBuffers());
 }
 
-muffin::WorkspaceReplaceReport muffin::MainWindow::runWorkspaceWrite(
+mufpen::WorkspaceReplaceReport mufpen::MainWindow::runWorkspaceWrite(
     const std::function<WorkspaceReplaceReport(const OpenSearchBuffers&, const SearchCancellation&)>& operation) {
-  // Freeze all Muffin windows while a worker writes. Modal cancellation stops
+  // Freeze all Mufpen windows while a worker writes. Modal cancellation stops
   // at a file boundary; it must not re-enable editing before the worker exits.
   struct Frozen {
     MainWindow* window;

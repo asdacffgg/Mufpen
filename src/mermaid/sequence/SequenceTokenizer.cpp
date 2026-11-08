@@ -2,7 +2,7 @@
 
 #include <QHash>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 namespace {
 
 const QHash<QString, SequenceTokenKind>& keywords() {
@@ -216,4 +216,4 @@ QString sequenceTokenName(SequenceTokenKind kind) {
   }
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

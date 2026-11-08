@@ -1,36 +1,36 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(Muffin
+project(Mufpen
   VERSION 0.7.11
   DESCRIPTION "A fast native Markdown WYSIWYG editor built with C++ and Qt 6 Widgets"
   LANGUAGES C CXX
 )
 
-# SHARED by default. Muffin.exe, muffin-mmdc and ~320 test executables all link
-# MuffinCore/MuffinUi; under STATIC every one of them embeds a full copy of the
-# code (the shipped Muffin.exe + muffin-mmdc pair alone duplicated ~100 MB on
+# SHARED by default. Mufpen.exe, mufpen-mmdc and ~320 test executables all link
+# MufpenCore/MufpenUi; under STATIC every one of them embeds a full copy of the
+# code (the shipped Mufpen.exe + mufpen-mmdc pair alone duplicated ~100 MB on
 # disk). One DLL/.so/.dylib pair shared by all binaries is also what keeps the
 # CI AddressSanitizer job's disk usage in check. STATIC remains selectable for
 # single-file experimentation, but the dist/installer layout assumes SHARED.
-set(MUFFIN_LIB_TYPE SHARED CACHE STRING "Link type of the MuffinCore/MuffinUi libraries")
+set(MUFPEN_LIB_TYPE SHARED CACHE STRING "Link type of the MufpenCore/MufpenUi libraries")
 
-if(MUFFIN_LIB_TYPE STREQUAL "SHARED")
+if(MUFPEN_LIB_TYPE STREQUAL "SHARED")
   # Windows interfaces are generated from project namespaces below; exporting
   # incidental Qt/STL instantiations can overflow MSVC's import-library limit.
   # Static archives folded into the .so/.dll (tree-sitter, nuspell, cmark, ...)
-  # must be PIC on ELF: libMuffinUi.so fails to link with
+  # must be PIC on ELF: libMufpenUi.so fails to link with
   # "relocation R_X86_64_PC32 ... recompile with -fPIC" otherwise. Harmless on
   # PE (MSVC ignores it) and Mach-O (always PIC).
   set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 endif()
 
-set(MUFFIN_VERSION_OVERRIDE "" CACHE STRING "Override Muffin application version")
-set(MUFFIN_EFFECTIVE_VERSION "${PROJECT_VERSION}")
-if(MUFFIN_VERSION_OVERRIDE)
-  if(NOT MUFFIN_VERSION_OVERRIDE MATCHES "^[0-9]+\\.[0-9]+\\.[0-9]+$")
-    message(FATAL_ERROR "MUFFIN_VERSION_OVERRIDE must use x.y.z format")
+set(MUFPEN_VERSION_OVERRIDE "" CACHE STRING "Override Mufpen application version")
+set(MUFPEN_EFFECTIVE_VERSION "${PROJECT_VERSION}")
+if(MUFPEN_VERSION_OVERRIDE)
+  if(NOT MUFPEN_VERSION_OVERRIDE MATCHES "^[0-9]+\\.[0-9]+\\.[0-9]+$")
+    message(FATAL_ERROR "MUFPEN_VERSION_OVERRIDE must use x.y.z format")
   endif()
-  set(MUFFIN_EFFECTIVE_VERSION "${MUFFIN_VERSION_OVERRIDE}")
+  set(MUFPEN_EFFECTIVE_VERSION "${MUFPEN_VERSION_OVERRIDE}")
 endif()
 
 set(CMAKE_CXX_STANDARD 20)
@@ -58,88 +58,88 @@ find_package(PNG REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(harfbuzz REQUIRED)
 find_package(Freetype REQUIRED)
-set(_muffin_harfbuzz_include_hints ${harfbuzz_INCLUDE_DIRS})
+set(_mufpen_harfbuzz_include_hints ${harfbuzz_INCLUDE_DIRS})
 if(DEFINED harfbuzz_PACKAGE_FOLDER_RELEASE)
-  list(APPEND _muffin_harfbuzz_include_hints
+  list(APPEND _mufpen_harfbuzz_include_hints
     "${harfbuzz_PACKAGE_FOLDER_RELEASE}/include/harfbuzz")
 endif()
-find_path(MUFFIN_HARFBUZZ_INCLUDE_DIR
+find_path(MUFPEN_HARFBUZZ_INCLUDE_DIR
   NAMES hb.h
-  HINTS ${_muffin_harfbuzz_include_hints}
+  HINTS ${_mufpen_harfbuzz_include_hints}
   PATH_SUFFIXES harfbuzz
   REQUIRED
 )
-unset(_muffin_harfbuzz_include_hints)
+unset(_mufpen_harfbuzz_include_hints)
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinThemeFonts.cmake)
-set(MUFFIN_QT_LINGUIST_BIN "" CACHE PATH "Optional Qt Linguist tool directory")
-set(MUFFIN_QT_TRANSLATION_SOURCE_DIR "" CACHE PATH "Optional directory containing Qt qtbase_*.qm translation files")
-set(MUFFIN_LOCAL_QT_LINGUIST_BIN "C:/Program Files/Qt Linguist/bin")
-if(NOT MUFFIN_QT_LINGUIST_BIN AND WIN32 AND EXISTS "${MUFFIN_LOCAL_QT_LINGUIST_BIN}/lupdate.exe")
-  set(MUFFIN_QT_LINGUIST_BIN "${MUFFIN_LOCAL_QT_LINGUIST_BIN}")
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenThemeFonts.cmake)
+set(MUFPEN_QT_LINGUIST_BIN "" CACHE PATH "Optional Qt Linguist tool directory")
+set(MUFPEN_QT_TRANSLATION_SOURCE_DIR "" CACHE PATH "Optional directory containing Qt qtbase_*.qm translation files")
+set(MUFPEN_LOCAL_QT_LINGUIST_BIN "C:/Program Files/Qt Linguist/bin")
+if(NOT MUFPEN_QT_LINGUIST_BIN AND WIN32 AND EXISTS "${MUFPEN_LOCAL_QT_LINGUIST_BIN}/lupdate.exe")
+  set(MUFPEN_QT_LINGUIST_BIN "${MUFPEN_LOCAL_QT_LINGUIST_BIN}")
 endif()
-if(MUFFIN_QT_LINGUIST_BIN)
-  find_program(MUFFIN_QT_LINGUIST_LUPDATE_EXECUTABLE NAMES lupdate lupdate6 HINTS "${MUFFIN_QT_LINGUIST_BIN}" NO_DEFAULT_PATH)
-  find_program(MUFFIN_QT_LINGUIST_LRELEASE_EXECUTABLE NAMES lrelease lrelease6 HINTS "${MUFFIN_QT_LINGUIST_BIN}" NO_DEFAULT_PATH)
+if(MUFPEN_QT_LINGUIST_BIN)
+  find_program(MUFPEN_QT_LINGUIST_LUPDATE_EXECUTABLE NAMES lupdate lupdate6 HINTS "${MUFPEN_QT_LINGUIST_BIN}" NO_DEFAULT_PATH)
+  find_program(MUFPEN_QT_LINGUIST_LRELEASE_EXECUTABLE NAMES lrelease lrelease6 HINTS "${MUFPEN_QT_LINGUIST_BIN}" NO_DEFAULT_PATH)
 endif()
-if(MUFFIN_QT_LINGUIST_LUPDATE_EXECUTABLE)
-  set(MUFFIN_LUPDATE_EXECUTABLE "${MUFFIN_QT_LINGUIST_LUPDATE_EXECUTABLE}")
+if(MUFPEN_QT_LINGUIST_LUPDATE_EXECUTABLE)
+  set(MUFPEN_LUPDATE_EXECUTABLE "${MUFPEN_QT_LINGUIST_LUPDATE_EXECUTABLE}")
 else()
-  find_program(MUFFIN_LUPDATE_EXECUTABLE NAMES pyside6-lupdate lupdate lupdate6)
+  find_program(MUFPEN_LUPDATE_EXECUTABLE NAMES pyside6-lupdate lupdate lupdate6)
 endif()
-if(MUFFIN_QT_LINGUIST_LRELEASE_EXECUTABLE)
-  set(MUFFIN_LRELEASE_EXECUTABLE "${MUFFIN_QT_LINGUIST_LRELEASE_EXECUTABLE}")
+if(MUFPEN_QT_LINGUIST_LRELEASE_EXECUTABLE)
+  set(MUFPEN_LRELEASE_EXECUTABLE "${MUFPEN_QT_LINGUIST_LRELEASE_EXECUTABLE}")
 else()
-  find_program(MUFFIN_LRELEASE_EXECUTABLE NAMES pyside6-lrelease lrelease lrelease6)
+  find_program(MUFPEN_LRELEASE_EXECUTABLE NAMES pyside6-lrelease lrelease lrelease6)
 endif()
 
-set(MUFFIN_TRANSLATION_SOURCES
-  translations/muffin_ja.ts
-  translations/muffin_zh_CN.ts
-  translations/muffin_vi.ts
-  translations/muffin_fr.ts
-  translations/muffin_es.ts
-  translations/muffin_ru.ts
-  translations/muffin_de.ts
-  translations/muffin_pt_BR.ts
-  translations/muffin_ko.ts
-  translations/muffin_it.ts
-  translations/muffin_zh_TW.ts
-  translations/muffin_tr.ts
-  translations/muffin_pl.ts
-  translations/muffin_nl.ts
+set(MUFPEN_TRANSLATION_SOURCES
+  translations/mufpen_ja.ts
+  translations/mufpen_zh_CN.ts
+  translations/mufpen_vi.ts
+  translations/mufpen_fr.ts
+  translations/mufpen_es.ts
+  translations/mufpen_ru.ts
+  translations/mufpen_de.ts
+  translations/mufpen_pt_BR.ts
+  translations/mufpen_ko.ts
+  translations/mufpen_it.ts
+  translations/mufpen_zh_TW.ts
+  translations/mufpen_tr.ts
+  translations/mufpen_pl.ts
+  translations/mufpen_nl.ts
 )
 
-set(MUFFIN_TRANSLATION_BINARY_SOURCES
-  translations/muffin_ja.qm
-  translations/muffin_zh_CN.qm
-  translations/muffin_vi.qm
-  translations/muffin_fr.qm
-  translations/muffin_es.qm
-  translations/muffin_ru.qm
-  translations/muffin_de.qm
-  translations/muffin_pt_BR.qm
-  translations/muffin_ko.qm
-  translations/muffin_it.qm
-  translations/muffin_zh_TW.qm
-  translations/muffin_tr.qm
-  translations/muffin_pl.qm
-  translations/muffin_nl.qm
+set(MUFPEN_TRANSLATION_BINARY_SOURCES
+  translations/mufpen_ja.qm
+  translations/mufpen_zh_CN.qm
+  translations/mufpen_vi.qm
+  translations/mufpen_fr.qm
+  translations/mufpen_es.qm
+  translations/mufpen_ru.qm
+  translations/mufpen_de.qm
+  translations/mufpen_pt_BR.qm
+  translations/mufpen_ko.qm
+  translations/mufpen_it.qm
+  translations/mufpen_zh_TW.qm
+  translations/mufpen_tr.qm
+  translations/mufpen_pl.qm
+  translations/mufpen_nl.qm
 )
 
 # Vietnamese supplements are maintained locally; keep them out of lupdate,
-# which extracts only Muffin's own strings.
-set(MUFFIN_LOCAL_TRANSLATION_SOURCES
-  ${MUFFIN_TRANSLATION_SOURCES}
+# which extracts only Mufpen's own strings.
+set(MUFPEN_LOCAL_TRANSLATION_SOURCES
+  ${MUFPEN_TRANSLATION_SOURCES}
   translations/qtbase_vi.ts
 )
-set(MUFFIN_LOCAL_TRANSLATION_BINARY_SOURCES
-  ${MUFFIN_TRANSLATION_BINARY_SOURCES}
+set(MUFPEN_LOCAL_TRANSLATION_BINARY_SOURCES
+  ${MUFPEN_TRANSLATION_BINARY_SOURCES}
   translations/qtbase_vi.qm
 )
 
 # Qt base translations for standard dialog buttons (Save, Discard, Cancel, etc.)
-set(MUFFIN_QT_TRANSLATION_BINARY_SOURCES
+set(MUFPEN_QT_TRANSLATION_BINARY_SOURCES
   translations/qtbase_ja.qm
   translations/qtbase_zh_CN.qm
   translations/qtbase_fr.qm
@@ -155,7 +155,7 @@ set(MUFFIN_QT_TRANSLATION_BINARY_SOURCES
   translations/qtbase_nl.qm
 )
 
-set(MUFFIN_TRANSLATABLE_SOURCES
+set(MUFPEN_TRANSLATABLE_SOURCES
   src/main.cpp
   src/app/LanguageManager.cpp
   src/app/MainWindow.cpp
@@ -210,110 +210,110 @@ set(MUFFIN_TRANSLATABLE_SOURCES
   src/image/CustomCommandUploader.cpp
 )
 
-if(MUFFIN_LUPDATE_EXECUTABLE)
+if(MUFPEN_LUPDATE_EXECUTABLE)
   add_custom_target(update_translations
     COMMAND
-      "${MUFFIN_LUPDATE_EXECUTABLE}"
-      ${MUFFIN_TRANSLATABLE_SOURCES}
-      -ts ${MUFFIN_TRANSLATION_SOURCES}
+      "${MUFPEN_LUPDATE_EXECUTABLE}"
+      ${MUFPEN_TRANSLATABLE_SOURCES}
+      -ts ${MUFPEN_TRANSLATION_SOURCES}
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
     COMMENT "Update Qt Linguist translation source files"
     VERBATIM
   )
 endif()
 
-if(MUFFIN_LRELEASE_EXECUTABLE)
+if(MUFPEN_LRELEASE_EXECUTABLE)
   add_custom_target(release_translations
     COMMAND
-      "${MUFFIN_LRELEASE_EXECUTABLE}"
-      ${MUFFIN_LOCAL_TRANSLATION_SOURCES}
+      "${MUFPEN_LRELEASE_EXECUTABLE}"
+      ${MUFPEN_LOCAL_TRANSLATION_SOURCES}
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
     COMMENT "Compile Qt Linguist translation files"
     VERBATIM
   )
 endif()
 
-foreach(MUFFIN_TRANSLATION_BINARY_SOURCE IN LISTS MUFFIN_LOCAL_TRANSLATION_BINARY_SOURCES)
-  if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${MUFFIN_TRANSLATION_BINARY_SOURCE}")
-    if(MUFFIN_LRELEASE_EXECUTABLE)
-      message(STATUS "Generating missing translation resource ${MUFFIN_TRANSLATION_BINARY_SOURCE}")
+foreach(MUFPEN_TRANSLATION_BINARY_SOURCE IN LISTS MUFPEN_LOCAL_TRANSLATION_BINARY_SOURCES)
+  if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${MUFPEN_TRANSLATION_BINARY_SOURCE}")
+    if(MUFPEN_LRELEASE_EXECUTABLE)
+      message(STATUS "Generating missing translation resource ${MUFPEN_TRANSLATION_BINARY_SOURCE}")
       execute_process(
         COMMAND
-          "${MUFFIN_LRELEASE_EXECUTABLE}"
-          ${MUFFIN_LOCAL_TRANSLATION_SOURCES}
+          "${MUFPEN_LRELEASE_EXECUTABLE}"
+          ${MUFPEN_LOCAL_TRANSLATION_SOURCES}
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
         COMMAND_ERROR_IS_FATAL ANY
       )
     else()
       message(FATAL_ERROR
-        "Missing ${MUFFIN_TRANSLATION_BINARY_SOURCE}. "
+        "Missing ${MUFPEN_TRANSLATION_BINARY_SOURCE}. "
         "Install Qt Linguist tools, provide lrelease on PATH, or commit the generated .qm file.")
     endif()
   endif()
 endforeach()
 
-set(MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS)
-if(MUFFIN_QT_TRANSLATION_SOURCE_DIR)
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFFIN_QT_TRANSLATION_SOURCE_DIR}")
+set(MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS)
+if(MUFPEN_QT_TRANSLATION_SOURCE_DIR)
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFPEN_QT_TRANSLATION_SOURCE_DIR}")
 endif()
 if(DEFINED QT6_INSTALL_PREFIX AND DEFINED QT6_INSTALL_TRANSLATIONS)
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "${QT6_INSTALL_PREFIX}/${QT6_INSTALL_TRANSLATIONS}")
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "${QT6_INSTALL_PREFIX}/${QT6_INSTALL_TRANSLATIONS}")
 endif()
 if(DEFINED QT_HOST_PATH)
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "${QT_HOST_PATH}/translations")
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "${QT_HOST_PATH}/translations")
 endif()
 if(DEFINED ENV{QT_HOST_PATH})
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "$ENV{QT_HOST_PATH}/translations")
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "$ENV{QT_HOST_PATH}/translations")
 endif()
 if(Qt6_DIR)
-  get_filename_component(MUFFIN_QT_PREFIX_FROM_QT6_DIR "${Qt6_DIR}/../../.." ABSOLUTE)
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFFIN_QT_PREFIX_FROM_QT6_DIR}/translations")
+  get_filename_component(MUFPEN_QT_PREFIX_FROM_QT6_DIR "${Qt6_DIR}/../../.." ABSOLUTE)
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFPEN_QT_PREFIX_FROM_QT6_DIR}/translations")
 endif()
 if(Qt6Core_DIR)
-  get_filename_component(MUFFIN_QT_PREFIX_FROM_QT6_CORE_DIR "${Qt6Core_DIR}/../../.." ABSOLUTE)
-  list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFFIN_QT_PREFIX_FROM_QT6_CORE_DIR}/translations")
+  get_filename_component(MUFPEN_QT_PREFIX_FROM_QT6_CORE_DIR "${Qt6Core_DIR}/../../.." ABSOLUTE)
+  list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS "${MUFPEN_QT_PREFIX_FROM_QT6_CORE_DIR}/translations")
 endif()
 if(Python3_Interpreter_FOUND)
   execute_process(
     COMMAND
       "${Python3_EXECUTABLE}"
       -c "from pathlib import Path; import PySide6; p = Path(PySide6.__file__).resolve().parent; print(p / 'translations'); print(p / 'Qt' / 'translations')"
-    RESULT_VARIABLE MUFFIN_PYSIDE6_TRANSLATIONS_RESULT
-    OUTPUT_VARIABLE MUFFIN_PYSIDE6_TRANSLATIONS_DIR
+    RESULT_VARIABLE MUFPEN_PYSIDE6_TRANSLATIONS_RESULT
+    OUTPUT_VARIABLE MUFPEN_PYSIDE6_TRANSLATIONS_DIR
     ERROR_QUIET
     OUTPUT_STRIP_TRAILING_WHITESPACE
   )
-  if(MUFFIN_PYSIDE6_TRANSLATIONS_RESULT EQUAL 0)
-    string(REPLACE "\n" ";" MUFFIN_PYSIDE6_TRANSLATIONS_DIRS "${MUFFIN_PYSIDE6_TRANSLATIONS_DIR}")
-    list(APPEND MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS ${MUFFIN_PYSIDE6_TRANSLATIONS_DIRS})
+  if(MUFPEN_PYSIDE6_TRANSLATIONS_RESULT EQUAL 0)
+    string(REPLACE "\n" ";" MUFPEN_PYSIDE6_TRANSLATIONS_DIRS "${MUFPEN_PYSIDE6_TRANSLATIONS_DIR}")
+    list(APPEND MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS ${MUFPEN_PYSIDE6_TRANSLATIONS_DIRS})
   endif()
 endif()
-list(REMOVE_DUPLICATES MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS)
+list(REMOVE_DUPLICATES MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS)
 
-foreach(MUFFIN_QT_TRANSLATION_BINARY_SOURCE IN LISTS MUFFIN_QT_TRANSLATION_BINARY_SOURCES)
-  if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${MUFFIN_QT_TRANSLATION_BINARY_SOURCE}")
-    set(MUFFIN_QT_TRANSLATION_COPIED FALSE)
-    get_filename_component(MUFFIN_QT_TRANSLATION_FILE_NAME "${MUFFIN_QT_TRANSLATION_BINARY_SOURCE}" NAME)
-    foreach(MUFFIN_QT_TRANSLATION_CANDIDATE_DIR IN LISTS MUFFIN_QT_TRANSLATION_CANDIDATE_DIRS)
-      if(EXISTS "${MUFFIN_QT_TRANSLATION_CANDIDATE_DIR}/${MUFFIN_QT_TRANSLATION_FILE_NAME}")
+foreach(MUFPEN_QT_TRANSLATION_BINARY_SOURCE IN LISTS MUFPEN_QT_TRANSLATION_BINARY_SOURCES)
+  if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${MUFPEN_QT_TRANSLATION_BINARY_SOURCE}")
+    set(MUFPEN_QT_TRANSLATION_COPIED FALSE)
+    get_filename_component(MUFPEN_QT_TRANSLATION_FILE_NAME "${MUFPEN_QT_TRANSLATION_BINARY_SOURCE}" NAME)
+    foreach(MUFPEN_QT_TRANSLATION_CANDIDATE_DIR IN LISTS MUFPEN_QT_TRANSLATION_CANDIDATE_DIRS)
+      if(EXISTS "${MUFPEN_QT_TRANSLATION_CANDIDATE_DIR}/${MUFPEN_QT_TRANSLATION_FILE_NAME}")
         message(STATUS
-          "Copying Qt translation ${MUFFIN_QT_TRANSLATION_FILE_NAME} "
-          "from ${MUFFIN_QT_TRANSLATION_CANDIDATE_DIR}")
+          "Copying Qt translation ${MUFPEN_QT_TRANSLATION_FILE_NAME} "
+          "from ${MUFPEN_QT_TRANSLATION_CANDIDATE_DIR}")
         file(COPY_FILE
-          "${MUFFIN_QT_TRANSLATION_CANDIDATE_DIR}/${MUFFIN_QT_TRANSLATION_FILE_NAME}"
-          "${CMAKE_CURRENT_SOURCE_DIR}/${MUFFIN_QT_TRANSLATION_BINARY_SOURCE}"
+          "${MUFPEN_QT_TRANSLATION_CANDIDATE_DIR}/${MUFPEN_QT_TRANSLATION_FILE_NAME}"
+          "${CMAKE_CURRENT_SOURCE_DIR}/${MUFPEN_QT_TRANSLATION_BINARY_SOURCE}"
           ONLY_IF_DIFFERENT
         )
-        set(MUFFIN_QT_TRANSLATION_COPIED TRUE)
+        set(MUFPEN_QT_TRANSLATION_COPIED TRUE)
         break()
       endif()
     endforeach()
-    if(NOT MUFFIN_QT_TRANSLATION_COPIED)
+    if(NOT MUFPEN_QT_TRANSLATION_COPIED)
       message(FATAL_ERROR
-        "Missing ${MUFFIN_QT_TRANSLATION_BINARY_SOURCE}, and no Qt translation source "
-        "directory contained ${MUFFIN_QT_TRANSLATION_FILE_NAME}. "
+        "Missing ${MUFPEN_QT_TRANSLATION_BINARY_SOURCE}, and no Qt translation source "
+        "directory contained ${MUFPEN_QT_TRANSLATION_FILE_NAME}. "
         "Install PySide6, provide a Qt installation with translations, or set "
-        "MUFFIN_QT_TRANSLATION_SOURCE_DIR.")
+        "MUFPEN_QT_TRANSLATION_SOURCE_DIR.")
     endif()
   endif()
 endforeach()
@@ -339,25 +339,25 @@ endif()
 # before that return (and pulls in getopt on MSVC), so it must be off. Built static
 # to match cmark-gfm and the other vendored static libs. ICU (uc + data, which
 # nuspell requires) is already provided by Conan and found transitively.
-set(_muffin_prev_build_shared_libs "${BUILD_SHARED_LIBS}")
+set(_mufpen_prev_build_shared_libs "${BUILD_SHARED_LIBS}")
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
 set(BUILD_TOOLS OFF CACHE BOOL "" FORCE)
 set(BUILD_DOCS OFF CACHE BOOL "" FORCE)
 add_subdirectory(third_party/nuspell EXCLUDE_FROM_ALL)
 # Treat nuspell's headers as system headers so /external:W0 (MSVC) / SYSTEM includes
-# silence its third-party warnings in Muffin's own translation units, and mute its own
+# silence its third-party warnings in Mufpen's own translation units, and mute its own
 # compile to match the other vendored libraries.
-get_target_property(_muffin_nuspell_includes nuspell INTERFACE_INCLUDE_DIRECTORIES)
-if(_muffin_nuspell_includes)
+get_target_property(_mufpen_nuspell_includes nuspell INTERFACE_INCLUDE_DIRECTORIES)
+if(_mufpen_nuspell_includes)
   set_target_properties(nuspell PROPERTIES
-      INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_muffin_nuspell_includes}")
+      INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_mufpen_nuspell_includes}")
 endif()
 if(MSVC)
   target_compile_options(nuspell PRIVATE /W0 /external:W0)
 endif()
-if(DEFINED _muffin_prev_build_shared_libs)
-  set(BUILD_SHARED_LIBS "${_muffin_prev_build_shared_libs}" CACHE BOOL "" FORCE)
+if(DEFINED _mufpen_prev_build_shared_libs)
+  set(BUILD_SHARED_LIBS "${_mufpen_prev_build_shared_libs}" CACHE BOOL "" FORCE)
 else()
   unset(BUILD_SHARED_LIBS CACHE)
 endif()
@@ -369,7 +369,7 @@ endif()
 # YUV->RGB), aom OFF, no apps/tests/examples. Static to match the other vendored libs. The
 # external static target is `avif_static` (the `avif`/`avif_internal` targets are not for
 # external use). See third_party/libavif/VENDORED.md.
-set(_muffin_prev_build_shared_libs_avif "${BUILD_SHARED_LIBS}")
+set(_mufpen_prev_build_shared_libs_avif "${BUILD_SHARED_LIBS}")
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(AVIF_CODEC_DAV1D  SYSTEM CACHE STRING "" FORCE)
 set(AVIF_CODEC_AOM    OFF     CACHE STRING "" FORCE)
@@ -379,14 +379,14 @@ set(AVIF_BUILD_APPS     OFF CACHE BOOL "" FORCE)
 set(AVIF_BUILD_TESTS    OFF CACHE BOOL "" FORCE)
 set(AVIF_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(third_party/libavif EXCLUDE_FROM_ALL)
-# Ensure the avif headers are visible as system includes for Muffin's own translation units
+# Ensure the avif headers are visible as system includes for Mufpen's own translation units
 # (ImageDecoder.cpp #includes <avif/avif.h>); merge_static_libs may not forward avif's includes.
 if(TARGET avif_static)
   target_include_directories(avif_static SYSTEM PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/third_party/libavif/include)
 endif()
-if(DEFINED _muffin_prev_build_shared_libs_avif)
-  set(BUILD_SHARED_LIBS "${_muffin_prev_build_shared_libs_avif}" CACHE BOOL "" FORCE)
+if(DEFINED _mufpen_prev_build_shared_libs_avif)
+  set(BUILD_SHARED_LIBS "${_mufpen_prev_build_shared_libs_avif}" CACHE BOOL "" FORCE)
 else()
   unset(BUILD_SHARED_LIBS CACHE)
 endif()
@@ -489,18 +489,18 @@ else()
 endif()
 
 # Font/qrc embedding for the libraries goes through qt_add_resources (compiled
-# as a regular .cpp), NOT AUTORCC: under MUFFIN_LIB_TYPE=SHARED on MSVC, the
+# as a regular .cpp), NOT AUTORCC: under MUFPEN_LIB_TYPE=SHARED on MSVC, the
 # pre-link "Auto build dll exports" pass (CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS)
 # looks for rcc objects at their plain obj paths, but AUTORCC compiles them
 # under <target>_autogen/<token>/ with a .cpp.obj suffix, and the symbol scan
 # aborts with "Couldn't open file ... qrc_katex_fonts.obj" (MSB3073). Regular
 # sources are enumerated correctly. Registration (:/... paths) is identical.
-qt_add_resources(MUFFIN_CORE_QRC_SOURCES
+qt_add_resources(MUFPEN_CORE_QRC_SOURCES
   src/katex_fonts.qrc
   src/mermaid_fonts.qrc
 )
 
-set(MUFFIN_CORE_SOURCES
+set(MUFPEN_CORE_SOURCES
   src/edit/EditTransaction.cpp
   src/edit/EditTransaction.h
   src/edit/UndoStack.cpp
@@ -508,7 +508,7 @@ set(MUFFIN_CORE_SOURCES
   src/render/TextLayout.cpp
   src/render/LayoutResources.cpp
   src/render/LayoutResources.h
-  ${MUFFIN_CORE_QRC_SOURCES}
+  ${MUFPEN_CORE_QRC_SOURCES}
   src/math/MathBuilder.cpp
   src/math/MathBuilderArray.cpp
   src/math/MathBuilderSpacing.cpp
@@ -970,11 +970,11 @@ set(MUFFIN_CORE_SOURCES
   src/app/DraftSnapshotWriter.h
 )
 
-add_library(MuffinCore ${MUFFIN_LIB_TYPE}
-  ${MUFFIN_CORE_SOURCES}
+add_library(MufpenCore ${MUFPEN_LIB_TYPE}
+  ${MUFPEN_CORE_SOURCES}
 )
 
-target_link_libraries(MuffinCore
+target_link_libraries(MufpenCore
   PUBLIC
     Qt6::Core
   PRIVATE
@@ -991,7 +991,7 @@ target_link_libraries(MuffinCore
     libcmark-gfm_static
 )
 
-target_include_directories(MuffinCore
+target_include_directories(MufpenCore
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
   PUBLIC SYSTEM
@@ -1000,61 +1000,61 @@ target_include_directories(MuffinCore
     ${CMAKE_CURRENT_BINARY_DIR}/third_party/cmark-gfm/src
 )
 
-target_include_directories(MuffinCore SYSTEM PRIVATE
+target_include_directories(MufpenCore SYSTEM PRIVATE
   ${FREETYPE_INCLUDE_DIRS}
-  ${MUFFIN_HARFBUZZ_INCLUDE_DIR}
+  ${MUFPEN_HARFBUZZ_INCLUDE_DIR}
 )
 
 # Help documentation: a set of GFM .md files per UI locale (English fallback at
 # the root), embedded as resources. A .qrc is generated at configure time from a
 # glob, so adding a locale or document needs no manual edits. CONFIGURE_DEPENDS
 # re-runs the glob (and regenerates the .qrc) whenever the file set changes.
-file(GLOB_RECURSE MUFFIN_HELP_DOCS CONFIGURE_DEPENDS
+file(GLOB_RECURSE MUFPEN_HELP_DOCS CONFIGURE_DEPENDS
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/help/*.md")
-file(RELATIVE_PATH MUFFIN_HELP_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
+file(RELATIVE_PATH MUFPEN_HELP_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/help")
-set(MUFFIN_HELP_QRC "${CMAKE_CURRENT_BINARY_DIR}/help.qrc")
-string(CONCAT MUFFIN_HELP_QRC_CONTENT
+set(MUFPEN_HELP_QRC "${CMAKE_CURRENT_BINARY_DIR}/help.qrc")
+string(CONCAT MUFPEN_HELP_QRC_CONTENT
   "<RCC>\n"
   "  <qresource prefix=\"/help\">\n")
-foreach(MUFFIN_HELP_DOC IN LISTS MUFFIN_HELP_DOCS)
-  file(RELATIVE_PATH MUFFIN_HELP_DOC_REL
-    "${CMAKE_CURRENT_SOURCE_DIR}/resources/help" "${MUFFIN_HELP_DOC}")
-  string(REPLACE "\\" "/" MUFFIN_HELP_DOC_REL "${MUFFIN_HELP_DOC_REL}")
-  string(CONCAT MUFFIN_HELP_QRC_CONTENT "${MUFFIN_HELP_QRC_CONTENT}"
-    "    <file alias=\"${MUFFIN_HELP_DOC_REL}\">${MUFFIN_HELP_QRC_REL}/${MUFFIN_HELP_DOC_REL}</file>\n")
+foreach(MUFPEN_HELP_DOC IN LISTS MUFPEN_HELP_DOCS)
+  file(RELATIVE_PATH MUFPEN_HELP_DOC_REL
+    "${CMAKE_CURRENT_SOURCE_DIR}/resources/help" "${MUFPEN_HELP_DOC}")
+  string(REPLACE "\\" "/" MUFPEN_HELP_DOC_REL "${MUFPEN_HELP_DOC_REL}")
+  string(CONCAT MUFPEN_HELP_QRC_CONTENT "${MUFPEN_HELP_QRC_CONTENT}"
+    "    <file alias=\"${MUFPEN_HELP_DOC_REL}\">${MUFPEN_HELP_QRC_REL}/${MUFPEN_HELP_DOC_REL}</file>\n")
 endforeach()
-string(CONCAT MUFFIN_HELP_QRC_CONTENT "${MUFFIN_HELP_QRC_CONTENT}"
+string(CONCAT MUFPEN_HELP_QRC_CONTENT "${MUFPEN_HELP_QRC_CONTENT}"
   "  </qresource>\n"
   "</RCC>\n")
-set(MUFFIN_HELP_QRC_EXISTING "")
-if(EXISTS "${MUFFIN_HELP_QRC}")
-  file(READ "${MUFFIN_HELP_QRC}" MUFFIN_HELP_QRC_EXISTING)
+set(MUFPEN_HELP_QRC_EXISTING "")
+if(EXISTS "${MUFPEN_HELP_QRC}")
+  file(READ "${MUFPEN_HELP_QRC}" MUFPEN_HELP_QRC_EXISTING)
 endif()
-if(NOT MUFFIN_HELP_QRC_EXISTING STREQUAL "${MUFFIN_HELP_QRC_CONTENT}")
-  file(WRITE "${MUFFIN_HELP_QRC}" "${MUFFIN_HELP_QRC_CONTENT}")
+if(NOT MUFPEN_HELP_QRC_EXISTING STREQUAL "${MUFPEN_HELP_QRC_CONTENT}")
+  file(WRITE "${MUFPEN_HELP_QRC}" "${MUFPEN_HELP_QRC_CONTENT}")
 endif()
 
 # Spell-check dictionaries: hunspell .aff/.dic per locale, embedded as zlib-compressed
 # resources (compress="9" shrinks the text dicts ~3-4x; Qt decompresses transparently on
 # read, so nuspell still receives the raw bytes via QFile). Globbed so adding a locale is
 # just dropping a file; en_US is the universal fallback. Mirrors the help-doc block above.
-file(GLOB MUFFIN_DICT_FILES CONFIGURE_DEPENDS
+file(GLOB MUFPEN_DICT_FILES CONFIGURE_DEPENDS
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/dicts/*.dic"
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/dicts/*.aff")
-file(RELATIVE_PATH MUFFIN_DICTS_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
+file(RELATIVE_PATH MUFPEN_DICTS_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/dicts")
-set(MUFFIN_DICTS_QRC "${CMAKE_CURRENT_BINARY_DIR}/dicts.qrc")
-string(CONCAT MUFFIN_DICTS_QRC_CONTENT
+set(MUFPEN_DICTS_QRC "${CMAKE_CURRENT_BINARY_DIR}/dicts.qrc")
+string(CONCAT MUFPEN_DICTS_QRC_CONTENT
   "<RCC>\n"
   "  <qresource prefix=\"/dicts\">\n")
-foreach(MUFFIN_DICT_FILE IN LISTS MUFFIN_DICT_FILES)
-  get_filename_component(MUFFIN_DICT_FILE_NAME "${MUFFIN_DICT_FILE}" NAME)
-  string(REPLACE "\\" "/" MUFFIN_DICT_FILE_NAME "${MUFFIN_DICT_FILE_NAME}")
-  string(CONCAT MUFFIN_DICTS_QRC_CONTENT "${MUFFIN_DICTS_QRC_CONTENT}"
-    "    <file alias=\"${MUFFIN_DICT_FILE_NAME}\" compress=\"9\">${MUFFIN_DICTS_QRC_REL}/${MUFFIN_DICT_FILE_NAME}</file>\n")
+foreach(MUFPEN_DICT_FILE IN LISTS MUFPEN_DICT_FILES)
+  get_filename_component(MUFPEN_DICT_FILE_NAME "${MUFPEN_DICT_FILE}" NAME)
+  string(REPLACE "\\" "/" MUFPEN_DICT_FILE_NAME "${MUFPEN_DICT_FILE_NAME}")
+  string(CONCAT MUFPEN_DICTS_QRC_CONTENT "${MUFPEN_DICTS_QRC_CONTENT}"
+    "    <file alias=\"${MUFPEN_DICT_FILE_NAME}\" compress=\"9\">${MUFPEN_DICTS_QRC_REL}/${MUFPEN_DICT_FILE_NAME}</file>\n")
 endforeach()
-string(CONCAT MUFFIN_DICTS_QRC_CONTENT "${MUFFIN_DICTS_QRC_CONTENT}"
+string(CONCAT MUFPEN_DICTS_QRC_CONTENT "${MUFPEN_DICTS_QRC_CONTENT}"
   "  </qresource>\n"
   "</RCC>\n")
 # Write only on content change: an unconditional file(WRITE) bumps the mtime on
@@ -1062,40 +1062,40 @@ string(CONCAT MUFFIN_DICTS_QRC_CONTENT "${MUFFIN_DICTS_QRC_CONTENT}"
 # .qrc files as source barriers for every binary that embeds them (the app and
 # the tests EXTRA_SOURCESing them), so a plain re-configure would turn all of
 # them spuriously "stale". Same guard for emoji.qrc and help.qrc below.
-set(MUFFIN_DICTS_QRC_EXISTING "")
-if(EXISTS "${MUFFIN_DICTS_QRC}")
-  file(READ "${MUFFIN_DICTS_QRC}" MUFFIN_DICTS_QRC_EXISTING)
+set(MUFPEN_DICTS_QRC_EXISTING "")
+if(EXISTS "${MUFPEN_DICTS_QRC}")
+  file(READ "${MUFPEN_DICTS_QRC}" MUFPEN_DICTS_QRC_EXISTING)
 endif()
-if(NOT MUFFIN_DICTS_QRC_EXISTING STREQUAL "${MUFFIN_DICTS_QRC_CONTENT}")
-  file(WRITE "${MUFFIN_DICTS_QRC}" "${MUFFIN_DICTS_QRC_CONTENT}")
+if(NOT MUFPEN_DICTS_QRC_EXISTING STREQUAL "${MUFPEN_DICTS_QRC_CONTENT}")
+  file(WRITE "${MUFPEN_DICTS_QRC}" "${MUFPEN_DICTS_QRC_CONTENT}")
 endif()
 
 # Emoji autocomplete dataset: a single shortcode->glyph table (one "shortcode<TAB>glyph" per line)
 # embedded as a zlib-compressed resource so the BundledEmojiProvider can load it without disk I/O.
-set(MUFFIN_EMOJI_QRC "${CMAKE_CURRENT_BINARY_DIR}/emoji.qrc")
-file(RELATIVE_PATH MUFFIN_EMOJI_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
+set(MUFPEN_EMOJI_QRC "${CMAKE_CURRENT_BINARY_DIR}/emoji.qrc")
+file(RELATIVE_PATH MUFPEN_EMOJI_QRC_REL "${CMAKE_CURRENT_BINARY_DIR}"
   "${CMAKE_CURRENT_SOURCE_DIR}/resources/emoji/emoji.txt")
-string(CONCAT MUFFIN_EMOJI_QRC_CONTENT
+string(CONCAT MUFPEN_EMOJI_QRC_CONTENT
   "<RCC>\n"
   "  <qresource prefix=\"/emoji\">\n"
-  "    <file alias=\"emoji.txt\" compress=\"9\">${MUFFIN_EMOJI_QRC_REL}</file>\n"
+  "    <file alias=\"emoji.txt\" compress=\"9\">${MUFPEN_EMOJI_QRC_REL}</file>\n"
   "  </qresource>\n"
   "</RCC>\n")
-set(MUFFIN_EMOJI_QRC_EXISTING "")
-if(EXISTS "${MUFFIN_EMOJI_QRC}")
-  file(READ "${MUFFIN_EMOJI_QRC}" MUFFIN_EMOJI_QRC_EXISTING)
+set(MUFPEN_EMOJI_QRC_EXISTING "")
+if(EXISTS "${MUFPEN_EMOJI_QRC}")
+  file(READ "${MUFPEN_EMOJI_QRC}" MUFPEN_EMOJI_QRC_EXISTING)
 endif()
-if(NOT MUFFIN_EMOJI_QRC_EXISTING STREQUAL "${MUFFIN_EMOJI_QRC_CONTENT}")
-  file(WRITE "${MUFFIN_EMOJI_QRC}" "${MUFFIN_EMOJI_QRC_CONTENT}")
+if(NOT MUFPEN_EMOJI_QRC_EXISTING STREQUAL "${MUFPEN_EMOJI_QRC_CONTENT}")
+  file(WRITE "${MUFPEN_EMOJI_QRC}" "${MUFPEN_EMOJI_QRC_CONTENT}")
 endif()
 
-add_executable(Muffin
+add_executable(Mufpen
   src/translations.qrc
   src/icons.qrc
-  ${MUFFIN_THEMES_QRC}
-  ${MUFFIN_HELP_QRC}
-  ${MUFFIN_DICTS_QRC}
-  ${MUFFIN_EMOJI_QRC}
+  ${MUFPEN_THEMES_QRC}
+  ${MUFPEN_HELP_QRC}
+  ${MUFPEN_DICTS_QRC}
+  ${MUFPEN_EMOJI_QRC}
   src/app/CommandRegistry.cpp
   src/app/CommandRegistry.h
   src/app/LanguageManager.cpp
@@ -1163,13 +1163,13 @@ add_executable(Muffin
   src/app/PrefsGeneralPage.h
 )
 
-# Same AUTORCC-vs-export-all workaround as MuffinCore above (qrc as a regular
+# Same AUTORCC-vs-export-all workaround as MufpenCore above (qrc as a regular
 # compiled source so the Windows symbol-scan pass finds the object file).
-qt_add_resources(MUFFIN_UI_QRC_SOURCES
+qt_add_resources(MUFPEN_UI_QRC_SOURCES
   src/tree_sitter_queries.qrc
 )
 
-set(MUFFIN_UI_SOURCES
+set(MUFPEN_UI_SOURCES
   src/document/TextSelection.h
   src/app/WorkspaceReplace.cpp
   src/app/WorkspaceReplace.h
@@ -1192,7 +1192,7 @@ set(MUFFIN_UI_SOURCES
   third_party/katex/src/fontMetricsData.js
   third_party/katex/src/svgGeometry.ts
   third_party/katex/src/symbols.ts
-  ${MUFFIN_UI_QRC_SOURCES}
+  ${MUFPEN_UI_QRC_SOURCES}
   src/io/FileController.cpp
   src/io/FileController.h
   src/unicode/WordBoundary.cpp
@@ -1338,7 +1338,7 @@ set(MUFFIN_UI_SOURCES
   src/io/ImageFileOps.h
   src/io/FilePathOps.cpp
   src/io/FilePathOps.h
-  src/io/MuffinMime.h
+  src/io/MufpenMime.h
   src/image/ImageInsertionPolicy.cpp
   src/image/ImageInsertionPolicy.h
   src/image/CustomCommandUploader.cpp
@@ -1449,45 +1449,45 @@ set(MUFFIN_UI_SOURCES
   src/theme/MarkdownAlertIcon.h
 )
 
-add_library(MuffinUi ${MUFFIN_LIB_TYPE}
-  ${MUFFIN_UI_SOURCES}
+add_library(MufpenUi ${MUFPEN_LIB_TYPE}
+  ${MUFPEN_UI_SOURCES}
   src/app/UpdatePackage.cpp
   src/app/UpdatePackage.h
 )
 
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/resources/update-public-key.txt")
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/resources/update-public-key.txt" MUFFIN_UPDATE_PUBLIC_KEY_HEX)
-string(STRIP "${MUFFIN_UPDATE_PUBLIC_KEY_HEX}" MUFFIN_UPDATE_PUBLIC_KEY_HEX)
-string(LENGTH "${MUFFIN_UPDATE_PUBLIC_KEY_HEX}" MUFFIN_UPDATE_PUBLIC_KEY_LENGTH)
-if(NOT MUFFIN_UPDATE_PUBLIC_KEY_LENGTH EQUAL 144 OR
-   NOT MUFFIN_UPDATE_PUBLIC_KEY_HEX MATCHES "^4543533120000000[0-9a-f]+$")
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/resources/update-public-key.txt" MUFPEN_UPDATE_PUBLIC_KEY_HEX)
+string(STRIP "${MUFPEN_UPDATE_PUBLIC_KEY_HEX}" MUFPEN_UPDATE_PUBLIC_KEY_HEX)
+string(LENGTH "${MUFPEN_UPDATE_PUBLIC_KEY_HEX}" MUFPEN_UPDATE_PUBLIC_KEY_LENGTH)
+if(NOT MUFPEN_UPDATE_PUBLIC_KEY_LENGTH EQUAL 144 OR
+   NOT MUFPEN_UPDATE_PUBLIC_KEY_HEX MATCHES "^4543533120000000[0-9a-f]+$")
   message(FATAL_ERROR "resources/update-public-key.txt must contain a 72-byte ECDSA P-256 public key blob in lowercase hex")
 endif()
 configure_file(cmake/UpdateTrust.h.in "${CMAKE_CURRENT_BINARY_DIR}/generated/UpdateTrust.h" @ONLY)
-target_include_directories(MuffinUi PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
+target_include_directories(MufpenUi PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
 if(WIN32)
-  target_link_libraries(MuffinUi PRIVATE bcrypt msi.lib)
-  target_link_libraries(Muffin PRIVATE msi.lib)
+  target_link_libraries(MufpenUi PRIVATE bcrypt msi.lib)
+  target_link_libraries(Mufpen PRIVATE msi.lib)
 endif()
 
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/resources/themes/document-base.css")
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/resources/themes/document-base.css" MUFFIN_DOCUMENT_BASE_CSS)
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/resources/themes/document-base.css" MUFPEN_DOCUMENT_BASE_CSS)
 configure_file(cmake/DocumentBaseStyle.h.in "${CMAKE_CURRENT_BINARY_DIR}/generated/DocumentBaseStyle.h" @ONLY)
-target_include_directories(MuffinUi PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
+target_include_directories(MufpenUi PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
-target_link_libraries(MuffinUi
+target_link_libraries(MufpenUi
   PUBLIC
     Qt6::Widgets
     Qt6::Network
-    MuffinCore
+    MufpenCore
   PRIVATE
     Qt6::Concurrent
     PCRE2::16BIT
     Qt6::PrintSupport
-    # Folded into MuffinUi alone. Under SHARED these are implementation
+    # Folded into MufpenUi alone. Under SHARED these are implementation
     # details of the DLL; listing them PUBLIC would statically relink the
     # whole tree-sitter grammar set + ICU into every consumer exe too
-    # (Muffin.exe ballooned to ~42 MB from tree-sitter-languages alone).
+    # (Mufpen.exe ballooned to ~42 MB from tree-sitter-languages alone).
     # Under STATIC, CMake turns PRIVATE deps of an archive into LINK_ONLY
     # interface requirements, so final-exe linking keeps working.
     tree-sitter-runtime
@@ -1500,16 +1500,16 @@ target_link_libraries(MuffinUi
     # AVIF_LOCAL deps; the SYSTEM dav1d from Conan is NOT merged into the archive and is NOT
     # forwarded by the archive target, so libavif's dav1d symbols (_dav1d_open, ...) would be
     # unresolved at every consumer's link step (macOS arm64 "Undefined symbols", and Linux too).
-    # Link dav1d explicitly here. MuffinUi is STATIC, so this PRIVATE dep still propagates to its
-    # consumers (Muffin.exe + every render/test exe) as a link requirement.
+    # Link dav1d explicitly here. MufpenUi is STATIC, so this PRIVATE dep still propagates to its
+    # consumers (Mufpen.exe + every render/test exe) as a link requirement.
     # See third_party/libavif/VENDORED.md.
     dav1d::dav1d
     Qt6::Svg
     lexbor::lexbor_static
     yoga::yoga
     # InlineProjection (a Ui source) calls cmark directly. Under the default
-    # STATIC build it resolves those symbols from MuffinCore's archives at the
-    # final-exe link; when MUFFIN_LIB_TYPE=SHARED (the CI ASan job) the Ui .so
+    # STATIC build it resolves those symbols from MufpenCore's archives at the
+    # final-exe link; when MUFPEN_LIB_TYPE=SHARED (the CI ASan job) the Ui .so
     # must resolve them at its own link, so list the archives here too. The
     # linker deduplicates them for STATIC consumers.
     libcmark-gfm-extensions_static
@@ -1519,200 +1519,200 @@ target_link_libraries(MuffinUi
     PNG::PNG
 )
 
-include(cmake/MuffinIcuData.cmake)
-muffin_externalize_icu_data(MuffinUi)
+include(cmake/MufpenIcuData.cmake)
+mufpen_externalize_icu_data(MufpenUi)
 
-target_include_directories(MuffinUi
+target_include_directories(MufpenUi
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 if(WIN32)
-  target_link_libraries(MuffinCore PRIVATE bcrypt)
+  target_link_libraries(MufpenCore PRIVATE bcrypt)
 endif()
 
-if(MUFFIN_LIB_TYPE STREQUAL "SHARED")
-  target_compile_definitions(MuffinCore PRIVATE MUFFIN_CORE_LIBRARY)
-  target_compile_definitions(MuffinUi PRIVATE MUFFIN_UI_LIBRARY)
-  # Every consumer (Muffin.exe, muffin-mmdc, the test executables) then sees
+if(MUFPEN_LIB_TYPE STREQUAL "SHARED")
+  target_compile_definitions(MufpenCore PRIVATE MUFPEN_CORE_LIBRARY)
+  target_compile_definitions(MufpenUi PRIVATE MUFPEN_UI_LIBRARY)
+  # Every consumer (Mufpen.exe, mufpen-mmdc, the test executables) then sees
   # Q_DECL_IMPORT through src/Export.h. Under STATIC nothing is defined and
   # the export macros expand to nothing.
-  target_compile_definitions(MuffinCore PUBLIC MUFFIN_SHARED_LIBS)
+  target_compile_definitions(MufpenCore PUBLIC MUFPEN_SHARED_LIBS)
 endif()
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinWindowsExports.cmake)
-muffin_windows_exports(MuffinCore)
-muffin_windows_exports(MuffinUi)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenWindowsExports.cmake)
+mufpen_windows_exports(MufpenCore)
+mufpen_windows_exports(MufpenUi)
 
 # --- SHARED-library runtime wiring -------------------------------------------
-# Under SHARED, MuffinCore/MuffinUi travel as DLLs/.so/.dylib beside their
+# Under SHARED, MufpenCore/MufpenUi travel as DLLs/.so/.dylib beside their
 # consumers. Windows and Linux need nothing extra here: the DLLs land next to
-# the exes in the build tree, and MuffinDeploy.cmake harvests them from
+# the exes in the build tree, and MufpenDeploy.cmake harvests them from
 # TARGET_RUNTIME_DLLS (Windows) or the resolved ELF dependency graph (Linux).
 # macOS moves the app into a bundle away from that flat layout, so the .app
 # carries its own copies and locates them via @executable_path.
-if(MUFFIN_LIB_TYPE STREQUAL "SHARED" AND APPLE)
-  # The dylibs reference each other (MuffinUi -> MuffinCore) through @rpath
+if(MUFPEN_LIB_TYPE STREQUAL "SHARED" AND APPLE)
+  # The dylibs reference each other (MufpenUi -> MufpenCore) through @rpath
   # install names; @loader_path keeps them co-resolved wherever they sit
-  # together — the build dir, Muffin.app/Contents/MacOS, or a dist bundle.
-  set_target_properties(MuffinCore MuffinUi PROPERTIES BUILD_RPATH "@loader_path")
+  # together — the build dir, Mufpen.app/Contents/MacOS, or a dist bundle.
+  set_target_properties(MufpenCore MufpenUi PROPERTIES BUILD_RPATH "@loader_path")
   # The bundled app finds the dylibs copied in by the POST_BUILD steps below.
-  # ($<TARGET_FILE_DIR:Muffin> is Muffin.app/Contents/MacOS for a bundle exe.)
-  set_target_properties(Muffin PROPERTIES BUILD_RPATH "@executable_path")
-  foreach(_muffin_shared_lib MuffinCore MuffinUi)
-    add_custom_command(TARGET Muffin POST_BUILD
+  # ($<TARGET_FILE_DIR:Mufpen> is Mufpen.app/Contents/MacOS for a bundle exe.)
+  set_target_properties(Mufpen PROPERTIES BUILD_RPATH "@executable_path")
+  foreach(_mufpen_shared_lib MufpenCore MufpenUi)
+    add_custom_command(TARGET Mufpen POST_BUILD
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "$<TARGET_FILE:${_muffin_shared_lib}>"
-        "$<TARGET_FILE_DIR:Muffin>/$<TARGET_FILE_NAME:${_muffin_shared_lib}>"
-      COMMENT "Bundling $<TARGET_FILE_NAME:${_muffin_shared_lib}> into Muffin.app"
+        "$<TARGET_FILE:${_mufpen_shared_lib}>"
+        "$<TARGET_FILE_DIR:Mufpen>/$<TARGET_FILE_NAME:${_mufpen_shared_lib}>"
+      COMMENT "Bundling $<TARGET_FILE_NAME:${_mufpen_shared_lib}> into Mufpen.app"
       VERBATIM)
   endforeach()
 endif()
 
-target_sources(Muffin
+target_sources(Mufpen
   PRIVATE
     src/main.cpp
 )
 
-target_link_libraries(Muffin
+target_link_libraries(Mufpen
   PRIVATE Qt6::Concurrent
   PRIVATE
     Qt6::Widgets
     Qt6::Svg
     Qt6::PrintSupport
-    MuffinCore
-    MuffinUi
+    MufpenCore
+    MufpenUi
 )
 
 # The exe links no ICU: its only ICU users (word segmentation, charset
-# conversion) live inside MuffinUi (WordBoundary.cpp / FileController.cpp).
+# conversion) live inside MufpenUi (WordBoundary.cpp / FileController.cpp).
 # Linking ICU here again would statically relink ~30 MB of ICU into the exe.
-target_include_directories(Muffin
+target_include_directories(Mufpen
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_compile_definitions(Muffin
+target_compile_definitions(Mufpen
   PRIVATE
-    MUFFIN_VERSION="${MUFFIN_EFFECTIVE_VERSION}"
+    MUFPEN_VERSION="${MUFPEN_EFFECTIVE_VERSION}"
 )
 
-# --- muffin-mmdc: headless mermaid CLI (mmdc-compatible flag subset) ---------
+# --- mufpen-mmdc: headless mermaid CLI (mmdc-compatible flag subset) ---------
 # Renders through the same native engine as the editor; no browser or JS
 # runtime. Console app on every platform (offscreen QPA is forced in main
 # unless the caller overrides QT_QPA_PLATFORM).
-add_executable(muffin-mmdc
+add_executable(mufpen-mmdc
   src/tools/mmdc_main.cpp
 )
 
-target_link_libraries(muffin-mmdc
+target_link_libraries(mufpen-mmdc
   PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Svg
-    MuffinCore
+    MufpenCore
 )
 
-target_include_directories(muffin-mmdc
+target_include_directories(mufpen-mmdc
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_compile_definitions(muffin-mmdc
+target_compile_definitions(mufpen-mmdc
   PRIVATE
-    MUFFIN_VERSION="${MUFFIN_EFFECTIVE_VERSION}"
+    MUFPEN_VERSION="${MUFPEN_EFFECTIVE_VERSION}"
 )
 
-set(MUFFIN_APP_ICONS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources/app-icons")
+set(MUFPEN_APP_ICONS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources/app-icons")
 
 # Opt-in offline developer diagnostic. Does not launch the editor or register
 # theme fonts, and is deliberately outside the distributable app bundle.
-add_executable(muffin-theme-report EXCLUDE_FROM_ALL src/tools/theme_report_main.cpp)
-target_link_libraries(muffin-theme-report PRIVATE MuffinCore Qt6::Core)
+add_executable(mufpen-theme-report EXCLUDE_FROM_ALL src/tools/theme_report_main.cpp)
+target_link_libraries(mufpen-theme-report PRIVATE MufpenCore Qt6::Core)
 
 if(WIN32)
-  set_target_properties(Muffin PROPERTIES WIN32_EXECUTABLE TRUE)
+  set_target_properties(Mufpen PROPERTIES WIN32_EXECUTABLE TRUE)
   # Explorer must localize names before the app has ever been launched. Reuse
   # the TS catalogs rather than maintaining separate installer translations.
-  set(MUFFIN_SHELL_TRANSLATIONS_RC "${CMAKE_CURRENT_BINARY_DIR}/generated/windows-shell-strings.rc")
-  add_custom_command(OUTPUT "${MUFFIN_SHELL_TRANSLATIONS_RC}"
+  set(MUFPEN_SHELL_TRANSLATIONS_RC "${CMAKE_CURRENT_BINARY_DIR}/generated/windows-shell-strings.rc")
+  add_custom_command(OUTPUT "${MUFPEN_SHELL_TRANSLATIONS_RC}"
     COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/scripts/generate_windows_shell_strings.py"
-      --output "${MUFFIN_SHELL_TRANSLATIONS_RC}"
-    DEPENDS scripts/generate_windows_shell_strings.py src/app/WindowsShellResources.h ${MUFFIN_TRANSLATION_SOURCES}
+      --output "${MUFPEN_SHELL_TRANSLATIONS_RC}"
+    DEPENDS scripts/generate_windows_shell_strings.py src/app/WindowsShellResources.h ${MUFPEN_TRANSLATION_SOURCES}
     VERBATIM)
-  add_custom_target(muffin-shell-translations DEPENDS "${MUFFIN_SHELL_TRANSLATIONS_RC}")
-  add_dependencies(Muffin muffin-shell-translations)
-  target_sources(Muffin PRIVATE "${MUFFIN_SHELL_TRANSLATIONS_RC}")
+  add_custom_target(mufpen-shell-translations DEPENDS "${MUFPEN_SHELL_TRANSLATIONS_RC}")
+  add_dependencies(Mufpen mufpen-shell-translations)
+  target_sources(Mufpen PRIVATE "${MUFPEN_SHELL_TRANSLATIONS_RC}")
   # Embed the application icon into the .exe so it shows in Explorer, the
   # taskbar, and Start Menu shortcuts. Use forward slashes in the RC file
   # because backslashes collide with C escapes (e.g. \r in \resources).
-  set(MUFFIN_APP_ICON_ICO "${MUFFIN_APP_ICONS_DIR}/mufpen.ico")
+  set(MUFPEN_APP_ICON_ICO "${MUFPEN_APP_ICONS_DIR}/mufpen.ico")
   configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/muffin.rc.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/muffin.rc"
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/mufpen.rc.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/mufpen.rc"
     @ONLY
   )
-  target_sources(Muffin PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/muffin.rc")
+  target_sources(Mufpen PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/mufpen.rc")
 endif()
 
 if(APPLE)
-  set_target_properties(Muffin PROPERTIES
+  set_target_properties(Mufpen PROPERTIES
     MACOSX_BUNDLE TRUE
     MACOSX_BUNDLE_ICON_FILE "mufpen"
     MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Info.plist.in"
   )
-  # Place the icon set in Muffin.app/Contents/Resources/ (CFBundleIconFile = muffin).
-  set(MUFFIN_APP_ICON_ICNS "${MUFFIN_APP_ICONS_DIR}/mufpen.icns")
-  set_source_files_properties("${MUFFIN_APP_ICON_ICNS}" PROPERTIES
+  # Place the icon set in Mufpen.app/Contents/Resources/ (CFBundleIconFile = mufpen).
+  set(MUFPEN_APP_ICON_ICNS "${MUFPEN_APP_ICONS_DIR}/mufpen.icns")
+  set_source_files_properties("${MUFPEN_APP_ICON_ICNS}" PROPERTIES
     MACOSX_PACKAGE_LOCATION "Resources"
   )
-  target_sources(Muffin PRIVATE "${MUFFIN_APP_ICON_ICNS}")
+  target_sources(Mufpen PRIVATE "${MUFPEN_APP_ICON_ICNS}")
   foreach(config RELEASE DEBUG RELWITHDEBINFO MINSIZEREL)
-    if(DEFINED MUFFIN_ICU_DATA_${config})
-      set_source_files_properties("${MUFFIN_ICU_DATA_${config}}" PROPERTIES
+    if(DEFINED MUFPEN_ICU_DATA_${config})
+      set_source_files_properties("${MUFPEN_ICU_DATA_${config}}" PROPERTIES
         GENERATED TRUE MACOSX_PACKAGE_LOCATION "Resources/icu")
-      target_sources(Muffin PRIVATE "$<$<CONFIG:${config}>:${MUFFIN_ICU_DATA_${config}}>")
+      target_sources(Mufpen PRIVATE "$<$<CONFIG:${config}>:${MUFPEN_ICU_DATA_${config}}>")
     endif()
   endforeach()
 endif()
 
 if(APPLE)
-  include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinQuickLook.cmake)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenQuickLook.cmake)
 endif()
 
-set(MUFFIN_DIST_DIR "${CMAKE_BINARY_DIR}/dist" CACHE PATH "Muffin distribution output directory")
+set(MUFPEN_DIST_DIR "${CMAKE_BINARY_DIR}/dist" CACHE PATH "Mufpen distribution output directory")
 
-set(MUFFIN_QT_PLUGIN_DIRS)
-get_target_property(MUFFIN_QT_CORE_LOCATION_RELEASE Qt6::Core IMPORTED_LOCATION_RELEASE)
-get_target_property(MUFFIN_QT_CORE_LOCATION Qt6::Core IMPORTED_LOCATION)
-if(NOT MUFFIN_QT_CORE_LOCATION_RELEASE)
-  set(MUFFIN_QT_CORE_LOCATION_RELEASE "${MUFFIN_QT_CORE_LOCATION}")
+set(MUFPEN_QT_PLUGIN_DIRS)
+get_target_property(MUFPEN_QT_CORE_LOCATION_RELEASE Qt6::Core IMPORTED_LOCATION_RELEASE)
+get_target_property(MUFPEN_QT_CORE_LOCATION Qt6::Core IMPORTED_LOCATION)
+if(NOT MUFPEN_QT_CORE_LOCATION_RELEASE)
+  set(MUFPEN_QT_CORE_LOCATION_RELEASE "${MUFPEN_QT_CORE_LOCATION}")
 endif()
 
-if(MUFFIN_QT_CORE_LOCATION_RELEASE)
-  get_filename_component(MUFFIN_QT_LIB_OR_BIN_DIR "${MUFFIN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
-  get_filename_component(MUFFIN_QT_PACKAGE_DIR "${MUFFIN_QT_LIB_OR_BIN_DIR}" DIRECTORY)
+if(MUFPEN_QT_CORE_LOCATION_RELEASE)
+  get_filename_component(MUFPEN_QT_LIB_OR_BIN_DIR "${MUFPEN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
+  get_filename_component(MUFPEN_QT_PACKAGE_DIR "${MUFPEN_QT_LIB_OR_BIN_DIR}" DIRECTORY)
   # platforminputcontexts carries the fcitx5/ibus Qt plugins. Without it a Linux bundle
   # cannot talk to any input method, so no CJK/IME input works at all (qt.conf points
   # Plugins at the bundle, which hides the system plugin directory).
-  foreach(MUFFIN_QT_PLUGIN_SUBDIR
+  foreach(MUFPEN_QT_PLUGIN_SUBDIR
       platforms platforminputcontexts styles imageformats tls networkinformation)
-    if(EXISTS "${MUFFIN_QT_PACKAGE_DIR}/plugins/${MUFFIN_QT_PLUGIN_SUBDIR}")
-      list(APPEND MUFFIN_QT_PLUGIN_DIRS "${MUFFIN_QT_PACKAGE_DIR}/plugins/${MUFFIN_QT_PLUGIN_SUBDIR}")
+    if(EXISTS "${MUFPEN_QT_PACKAGE_DIR}/plugins/${MUFPEN_QT_PLUGIN_SUBDIR}")
+      list(APPEND MUFPEN_QT_PLUGIN_DIRS "${MUFPEN_QT_PACKAGE_DIR}/plugins/${MUFPEN_QT_PLUGIN_SUBDIR}")
     endif()
   endforeach()
 endif()
 
-string(JOIN "|" MUFFIN_QT_PLUGIN_DIRS_ARG ${MUFFIN_QT_PLUGIN_DIRS})
+string(JOIN "|" MUFPEN_QT_PLUGIN_DIRS_ARG ${MUFPEN_QT_PLUGIN_DIRS})
 
 # The Qt library directory, derived from whichever Qt config CMake found: Conan puts it at
 # "<package>/lib/cmake/Qt6", a distro Qt at "<libdir>/cmake/Qt6". The deploy script needs it
 # because GET_RUNTIME_DEPENDENCIES can resolve libQt6*.so to a distribution Qt that happens
 # to be installed next to ours, which then fails to load against the bundled plugins.
-set(MUFFIN_QT_LIB_DIR "")
-foreach(MUFFIN_QT_CONFIG_DIR "${Qt6_DIR}" ${CMAKE_PREFIX_PATH})
-  if(MUFFIN_QT_CONFIG_DIR MATCHES "^(.*)/cmake/Qt6$")
-    set(MUFFIN_QT_LIB_DIR "${CMAKE_MATCH_1}")
+set(MUFPEN_QT_LIB_DIR "")
+foreach(MUFPEN_QT_CONFIG_DIR "${Qt6_DIR}" ${CMAKE_PREFIX_PATH})
+  if(MUFPEN_QT_CONFIG_DIR MATCHES "^(.*)/cmake/Qt6$")
+    set(MUFPEN_QT_LIB_DIR "${CMAKE_MATCH_1}")
     break()
   endif()
 endforeach()
@@ -1720,48 +1720,48 @@ endforeach()
 # The bundle cannot use the distro's fcitx5/ibus Qt plugins: its own Qt rejects plugins built
 # for another minor version, and Qt 6.11 dropped the XIM fallback from the xcb platform
 # plugin. The fcitx5 plugin is therefore built against this build's Qt and shipped inside
-# platforminputcontexts/. See cmake/MuffinFcitx5Qt.cmake. Only Linux xcb builds need it.
+# platforminputcontexts/. See cmake/MufpenFcitx5Qt.cmake. Only Linux xcb builds need it.
 if(UNIX AND NOT APPLE)
-  option(MUFFIN_BUNDLE_FCITX5_PLUGIN "Bundle the fcitx5 Qt input-method plugin into dist" ON)
+  option(MUFPEN_BUNDLE_FCITX5_PLUGIN "Bundle the fcitx5 Qt input-method plugin into dist" ON)
 else()
-  set(MUFFIN_BUNDLE_FCITX5_PLUGIN OFF)
+  set(MUFPEN_BUNDLE_FCITX5_PLUGIN OFF)
 endif()
 
-set(MUFFIN_FCITX5_PLUGIN_FILE "")
-if(MUFFIN_BUNDLE_FCITX5_PLUGIN)
-  include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinFcitx5Qt.cmake)
-  muffin_add_fcitx5_qt_plugin(MUFFIN_FCITX5_PLUGIN_FILE)
+set(MUFPEN_FCITX5_PLUGIN_FILE "")
+if(MUFPEN_BUNDLE_FCITX5_PLUGIN)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenFcitx5Qt.cmake)
+  mufpen_add_fcitx5_qt_plugin(MUFPEN_FCITX5_PLUGIN_FILE)
 elseif(UNIX AND NOT APPLE)
   message(WARNING
-    "MUFFIN_BUNDLE_FCITX5_PLUGIN is OFF: the dist bundle gets no input-method plugin, so "
+    "MUFPEN_BUNDLE_FCITX5_PLUGIN is OFF: the dist bundle gets no input-method plugin, so "
     "no CJK/IME input will work in it.")
 endif()
 
 add_custom_target(dist
   COMMAND
     ${CMAKE_COMMAND}
-      "-DAPP_FILE=$<TARGET_FILE:Muffin>"
-      "-DDIST_DIR=${MUFFIN_DIST_DIR}"
-      "-DRUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:Muffin>,|>"
-      "-DQT_PLUGIN_DIRS=${MUFFIN_QT_PLUGIN_DIRS_ARG}"
-      "-DQT_LIB_DIR=${MUFFIN_QT_LIB_DIR}"
-      "-DIME_PLUGIN_FILE=${MUFFIN_FCITX5_PLUGIN_FILE}"
-      "-DMMDC_FILE=$<TARGET_FILE:muffin-mmdc>"
-      "-DMMDC_RUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:muffin-mmdc>,|>"
-      "-DICU_DATA_DIR=$<TARGET_FILE_DIR:MuffinUi>/resources/icu"
+      "-DAPP_FILE=$<TARGET_FILE:Mufpen>"
+      "-DDIST_DIR=${MUFPEN_DIST_DIR}"
+      "-DRUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:Mufpen>,|>"
+      "-DQT_PLUGIN_DIRS=${MUFPEN_QT_PLUGIN_DIRS_ARG}"
+      "-DQT_LIB_DIR=${MUFPEN_QT_LIB_DIR}"
+      "-DIME_PLUGIN_FILE=${MUFPEN_FCITX5_PLUGIN_FILE}"
+      "-DMMDC_FILE=$<TARGET_FILE:mufpen-mmdc>"
+      "-DMMDC_RUNTIME_DLLS=$<JOIN:$<TARGET_RUNTIME_DLLS:mufpen-mmdc>,|>"
+      "-DICU_DATA_DIR=$<TARGET_FILE_DIR:MufpenUi>/resources/icu"
       "-DLICENSE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/LICENSE"
-      -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinDeploy.cmake"
-  DEPENDS Muffin muffin-mmdc
-  COMMENT "Create Muffin distribution directory"
+      -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenDeploy.cmake"
+  DEPENDS Mufpen mufpen-mmdc
+  COMMENT "Create Mufpen distribution directory"
   VERBATIM
 )
 
 if(APPLE)
-  add_dependencies(dist muffin-quicklook-embed)
+  add_dependencies(dist mufpen-quicklook-embed)
 endif()
 
-if(MUFFIN_BUNDLE_FCITX5_PLUGIN)
-  add_dependencies(dist muffin_fcitx5_qt)
+if(MUFPEN_BUNDLE_FCITX5_PLUGIN)
+  add_dependencies(dist mufpen_fcitx5_qt)
 endif()
 
 # --- Windows MSI installer target ---
@@ -1769,7 +1769,7 @@ if(WIN32)
   add_custom_target(portable
     COMMAND ${CMAKE_COMMAND}
       "-DBINARY_DIR=${CMAKE_BINARY_DIR}"
-      "-DDIST_DIR=${MUFFIN_DIST_DIR}"
+      "-DDIST_DIR=${MUFPEN_DIST_DIR}"
       "-DOUTPUT_DIR=${CMAKE_BINARY_DIR}/portable"
       -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/BuildPortable.cmake"
     DEPENDS dist
@@ -1783,21 +1783,21 @@ endif()
 # native build picks the right one. CMAKE_SYSTEM_PROCESSOR can surface as
 # AMD64, arm64, armv8, aarch64, ... depending on the generator/toolchain, so
 # fold every ARM spelling into WiX's arm64 rather than matching exact strings.
-set(MUFFIN_MSI_ARCH "" CACHE STRING "WiX target architecture for the MSI installer (x64, arm64, ...")
-if(NOT MUFFIN_MSI_ARCH)
+set(MUFPEN_MSI_ARCH "" CACHE STRING "WiX target architecture for the MSI installer (x64, arm64, ...")
+if(NOT MUFPEN_MSI_ARCH)
   if(DEFINED CMAKE_VS_PLATFORM_NAME AND CMAKE_VS_PLATFORM_NAME)
     string(TOLOWER "${CMAKE_VS_PLATFORM_NAME}" _msi_arch_candidate)
   elseif(DEFINED CMAKE_SYSTEM_PROCESSOR AND CMAKE_SYSTEM_PROCESSOR)
     string(TOLOWER "${CMAKE_SYSTEM_PROCESSOR}" _msi_arch_candidate)
   endif()
   if(_msi_arch_candidate MATCHES "^(amd64|x86_64|x64)$")
-    set(MUFFIN_MSI_ARCH "x64")
+    set(MUFPEN_MSI_ARCH "x64")
   elseif(_msi_arch_candidate MATCHES "(aarch|arm)")
-    set(MUFFIN_MSI_ARCH "arm64")
+    set(MUFPEN_MSI_ARCH "arm64")
   elseif(_msi_arch_candidate STREQUAL "x86")
-    set(MUFFIN_MSI_ARCH "x86")
+    set(MUFPEN_MSI_ARCH "x86")
   elseif(_msi_arch_candidate)
-    set(MUFFIN_MSI_ARCH "${_msi_arch_candidate}")
+    set(MUFPEN_MSI_ARCH "${_msi_arch_candidate}")
   endif()
   unset(_msi_arch_candidate)
 endif()
@@ -1806,14 +1806,14 @@ if(WIN32)
   if(WIX_COMMAND)
     add_custom_target(msi
       COMMAND ${CMAKE_COMMAND}
-        "-DDIST_DIR=${MUFFIN_DIST_DIR}"
+        "-DDIST_DIR=${MUFPEN_DIST_DIR}"
         "-DWIX_COMMAND=${WIX_COMMAND}"
-        "-DMUFFIN_VERSION=${MUFFIN_EFFECTIVE_VERSION}"
-        "-DMSI_ARCH=${MUFFIN_MSI_ARCH}"
+        "-DMUFPEN_VERSION=${MUFPEN_EFFECTIVE_VERSION}"
+        "-DMSI_ARCH=${MUFPEN_MSI_ARCH}"
         "-DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
         -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/BuildMSI.cmake"
       DEPENDS dist
-      COMMENT "Build Muffin MSI installer"
+      COMMENT "Build Mufpen MSI installer"
       VERBATIM
     )
 
@@ -1825,12 +1825,12 @@ if(WIN32)
         COMMAND ${CMAKE_COMMAND}
           "-DWIX_COMMAND=${WIX_COMMAND}"
           "-DDOTNET_COMMAND=${DOTNET_COMMAND}"
-          "-DMUFFIN_VERSION=${MUFFIN_EFFECTIVE_VERSION}"
-          "-DMSI_ARCH=${MUFFIN_MSI_ARCH}"
+          "-DMUFPEN_VERSION=${MUFPEN_EFFECTIVE_VERSION}"
+          "-DMSI_ARCH=${MUFPEN_MSI_ARCH}"
           "-DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
           -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/BuildBundle.cmake"
         DEPENDS msi
-        COMMENT "Build Muffin setup bundle"
+        COMMENT "Build Mufpen setup bundle"
         VERBATIM
       )
     endif()
@@ -1842,20 +1842,20 @@ if(APPLE)
   # Locate macdeployqt relative to Qt6::Core
   # On macOS frameworks, Qt6::Core is at <prefix>/lib/QtCore.framework/Versions/A/QtCore
   # and macdeployqt is at <prefix>/bin/macdeployqt or <prefix>/libexec/macdeployqt.
-  set(_muffin_macdeployqt "${MUFFIN_MACDEPLOYQT}" CACHE FILEPATH "Path to macdeployqt")
-  set(_muffin_qt_hints "")
-  if(NOT _muffin_macdeployqt AND MUFFIN_QT_CORE_LOCATION_RELEASE)
+  set(_mufpen_macdeployqt "${MUFPEN_MACDEPLOYQT}" CACHE FILEPATH "Path to macdeployqt")
+  set(_mufpen_qt_hints "")
+  if(NOT _mufpen_macdeployqt AND MUFPEN_QT_CORE_LOCATION_RELEASE)
     # Walk up from the library location to find the Qt prefix
-    get_filename_component(_qt_candidate "${MUFFIN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
-    while(_qt_candidate AND NOT _muffin_macdeployqt)
+    get_filename_component(_qt_candidate "${MUFPEN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
+    while(_qt_candidate AND NOT _mufpen_macdeployqt)
       foreach(_subdir bin libexec)
         if(EXISTS "${_qt_candidate}/${_subdir}/macdeployqt")
-          set(_muffin_macdeployqt "${_qt_candidate}/${_subdir}/macdeployqt")
+          set(_mufpen_macdeployqt "${_qt_candidate}/${_subdir}/macdeployqt")
           break()
         endif()
       endforeach()
-      if(NOT _muffin_macdeployqt)
-        list(APPEND _muffin_qt_hints "${_qt_candidate}/bin" "${_qt_candidate}/libexec")
+      if(NOT _mufpen_macdeployqt)
+        list(APPEND _mufpen_qt_hints "${_qt_candidate}/bin" "${_qt_candidate}/libexec")
       endif()
       get_filename_component(_qt_parent "${_qt_candidate}" DIRECTORY)
       if(_qt_parent STREQUAL _qt_candidate)
@@ -1864,7 +1864,7 @@ if(APPLE)
       set(_qt_candidate "${_qt_parent}")
     endwhile()
   endif()
-  if(NOT _muffin_macdeployqt)
+  if(NOT _mufpen_macdeployqt)
     # Also try from Qt6::qmake location
     if(TARGET Qt6::qmake)
       get_target_property(_qt_qmake_location Qt6::qmake IMPORTED_LOCATION)
@@ -1873,23 +1873,23 @@ if(APPLE)
       endif()
       if(_qt_qmake_location)
         get_filename_component(_qt_bin_dir "${_qt_qmake_location}" DIRECTORY)
-        list(APPEND _muffin_qt_hints "${_qt_bin_dir}")
+        list(APPEND _mufpen_qt_hints "${_qt_bin_dir}")
       endif()
     endif()
-    find_program(_muffin_macdeployqt macdeployqt HINTS ${_muffin_qt_hints})
+    find_program(_mufpen_macdeployqt macdeployqt HINTS ${_mufpen_qt_hints})
   endif()
 
-  if(_muffin_macdeployqt)
-    message(STATUS "Found macdeployqt: ${_muffin_macdeployqt}")
+  if(_mufpen_macdeployqt)
+    message(STATUS "Found macdeployqt: ${_mufpen_macdeployqt}")
     add_custom_target(dmg
       COMMAND ${CMAKE_COMMAND}
-        "-DDIST_DIR=${MUFFIN_DIST_DIR}"
-        "-DMUFFIN_VERSION=${MUFFIN_EFFECTIVE_VERSION}"
+        "-DDIST_DIR=${MUFPEN_DIST_DIR}"
+        "-DMUFPEN_VERSION=${MUFPEN_EFFECTIVE_VERSION}"
         "-DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
-        "-DMACDEPLOYQT=${_muffin_macdeployqt}"
+        "-DMACDEPLOYQT=${_mufpen_macdeployqt}"
         -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/BuildDMG.cmake"
       DEPENDS dist
-      COMMENT "Build Muffin DMG disk image"
+      COMMENT "Build Mufpen DMG disk image"
       VERBATIM
     )
   else()
@@ -1899,18 +1899,18 @@ endif()
 
 enable_testing()
 
-set(MUFFIN_TEST_ENVIRONMENT_MODIFICATIONS)
+set(MUFPEN_TEST_ENVIRONMENT_MODIFICATIONS)
 # Browser geometry and raster references use 96 CSS pixels per logical inch.
-list(APPEND MUFFIN_TEST_ENVIRONMENT_MODIFICATIONS "QT_FONT_DPI=set:96")
-if(MUFFIN_QT_CORE_LOCATION_RELEASE)
-  get_filename_component(MUFFIN_QT_RUNTIME_DIR "${MUFFIN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
-  list(APPEND MUFFIN_TEST_ENVIRONMENT_MODIFICATIONS "PATH=path_list_prepend:${MUFFIN_QT_RUNTIME_DIR}")
+list(APPEND MUFPEN_TEST_ENVIRONMENT_MODIFICATIONS "QT_FONT_DPI=set:96")
+if(MUFPEN_QT_CORE_LOCATION_RELEASE)
+  get_filename_component(MUFPEN_QT_RUNTIME_DIR "${MUFPEN_QT_CORE_LOCATION_RELEASE}" DIRECTORY)
+  list(APPEND MUFPEN_TEST_ENVIRONMENT_MODIFICATIONS "PATH=path_list_prepend:${MUFPEN_QT_RUNTIME_DIR}")
 endif()
-if(MUFFIN_QT_PLUGIN_DIRS_ARG)
-  list(APPEND MUFFIN_TEST_ENVIRONMENT_MODIFICATIONS "QT_PLUGIN_PATH=set:${MUFFIN_QT_PLUGIN_DIRS_ARG}")
+if(MUFPEN_QT_PLUGIN_DIRS_ARG)
+  list(APPEND MUFPEN_TEST_ENVIRONMENT_MODIFICATIONS "QT_PLUGIN_PATH=set:${MUFPEN_QT_PLUGIN_DIRS_ARG}")
 endif()
 if(APPLE)
-  list(APPEND MUFFIN_TEST_ENVIRONMENT_MODIFICATIONS "QT_QPA_PLATFORM=set:offscreen")
+  list(APPEND MUFPEN_TEST_ENVIRONMENT_MODIFICATIONS "QT_QPA_PLATFORM=set:offscreen")
 endif()
-muffin_use_theme_fonts(Muffin)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MuffinTests.cmake)
+mufpen_use_theme_fonts(Mufpen)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MufpenTests.cmake)

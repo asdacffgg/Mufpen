@@ -6,7 +6,7 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 struct ListLineInfo {
   bool valid = false;
@@ -165,4 +165,4 @@ QString listMarkerFor(const QString& line);
 // marker begins after another container's prefix (e.g. the inner item in "3. 4. text").
 ListLineInfo listLineInfoFor(const QString& line, qsizetype start = 0);
 
-} // namespace muffin
+} // namespace mufpen

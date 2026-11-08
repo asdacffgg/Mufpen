@@ -15,7 +15,7 @@ static void initMermaidFontsResource() {
   Q_INIT_RESOURCE(mermaid_fonts);
 }
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 namespace {
 
 QStringList& loadedFamilies() {
@@ -55,7 +55,7 @@ void MermaidFontRegistry::ensureLoaded() {
                                .replace("NotoSans", "Noto Sans");
       const auto family = registerPrivateFont(
           source,
-          logical + " Muffin-" +
+          logical + " Mufpen-" +
               QString::fromLatin1(QCryptographicHash::hash(source, QCryptographicHash::Sha256).toHex().left(16)));
       if (family.isEmpty()) {
         // Some Qt platform plugins (notably minimal) have no application-font
@@ -76,7 +76,7 @@ void MermaidFontRegistry::ensureLoaded() {
     // stack headed by Trebuchet MS. Conan Qt does not discover Windows system
     // fonts in the offscreen/runtime bundle, while Chromium does. Register the
     // installed faces so QFont's CSS fallback list resolves the same face. Do
-    // not add them to familyStack(): Noto remains Muffin's deterministic root
+    // not add them to familyStack(): Noto remains Mufpen's deterministic root
     // font and these faces are selected only when a diagram asks for them.
     const QString windowsFonts =
         qEnvironmentVariable("WINDIR", QStringLiteral("C:/Windows")) + QStringLiteral("/Fonts/");
@@ -153,4 +153,4 @@ void MermaidFontRegistry::configureFont(QFont& font, const QString& familyExpres
   }
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

@@ -19,7 +19,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::quadrant {
+namespace mufpen::mermaid::quadrant {
 
 namespace {
 
@@ -180,4 +180,4 @@ void paintQuadrantScene(const QuadrantScene& scene, QPainter& painter, const Mer
   }
 }
 
-} // namespace muffin::mermaid::quadrant
+} // namespace mufpen::mermaid::quadrant

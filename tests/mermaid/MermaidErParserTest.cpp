@@ -21,13 +21,13 @@
 // Parser-only: no Qt GUI, so QCoreApplication is enough and QT_QPA_PLATFORM
 // does not need to be set to offscreen.
 
-using muffin::mermaid::er::ErAttribute;
-using muffin::mermaid::er::ErAttributeKeyType;
-using muffin::mermaid::er::ErCardinality;
-using muffin::mermaid::er::ErDiagram;
-using muffin::mermaid::er::ErEntity;
-using muffin::mermaid::er::ErParseError;
-using muffin::mermaid::er::ErRelationship;
+using mufpen::mermaid::er::ErAttribute;
+using mufpen::mermaid::er::ErAttributeKeyType;
+using mufpen::mermaid::er::ErCardinality;
+using mufpen::mermaid::er::ErDiagram;
+using mufpen::mermaid::er::ErEntity;
+using mufpen::mermaid::er::ErParseError;
+using mufpen::mermaid::er::ErRelationship;
 
 namespace {
 

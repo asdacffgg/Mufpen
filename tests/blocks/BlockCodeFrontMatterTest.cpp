@@ -18,7 +18,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testFrontMatterEnterEditsContentAndBlockAfterCreatesParagraph (lines 89-156)
 void testFrontMatterEnterEditsContentAndBlockAfterCreatesParagraph() {

@@ -9,11 +9,11 @@
 #include <QPushButton>
 #include <QShowEvent>
 
-muffin::FindBarWidget::FindBarWidget(QWidget* parent) : QWidget(parent) {
+mufpen::FindBarWidget::FindBarWidget(QWidget* parent) : QWidget(parent) {
   setupUi();
 }
 
-void muffin::FindBarWidget::setupUi() {
+void mufpen::FindBarWidget::setupUi() {
   auto* mainLayout = new QVBoxLayout(this);
   mainLayout->setContentsMargins(6, 4, 6, 4);
   mainLayout->setSpacing(2);
@@ -100,7 +100,7 @@ void muffin::FindBarWidget::setupUi() {
   retranslateUi();
 }
 
-void muffin::FindBarWidget::retranslateUi() {
+void mufpen::FindBarWidget::retranslateUi() {
   findEdit_->setPlaceholderText(tr("Find"));
   prevButton_->setText(tr("Previous"));
   nextButton_->setText(tr("Next"));
@@ -112,43 +112,43 @@ void muffin::FindBarWidget::retranslateUi() {
   caseCheck_->setText(tr("Match Case"));
 }
 
-void muffin::FindBarWidget::setSearchText(const QString& text) {
+void mufpen::FindBarWidget::setSearchText(const QString& text) {
   findEdit_->setText(text);
   findEdit_->selectAll();
 }
 
-QString muffin::FindBarWidget::searchText() const {
+QString mufpen::FindBarWidget::searchText() const {
   return findEdit_->text();
 }
 
-bool muffin::FindBarWidget::regularExpressionEnabled() const {
+bool mufpen::FindBarWidget::regularExpressionEnabled() const {
   return regexCheck_ && regexCheck_->isChecked();
 }
 
-bool muffin::FindBarWidget::caseSensitiveEnabled() const {
+bool mufpen::FindBarWidget::caseSensitiveEnabled() const {
   return caseCheck_ && caseCheck_->isChecked();
 }
 
-void muffin::FindBarWidget::setReplaceVisible(bool visible) {
+void mufpen::FindBarWidget::setReplaceVisible(bool visible) {
   replaceRow_->setVisible(visible);
 }
 
-void muffin::FindBarWidget::activateFind() {
+void mufpen::FindBarWidget::activateFind() {
   findEdit_->setFocus();
   findEdit_->selectAll();
 }
 
-void muffin::FindBarWidget::activateReplace() {
+void mufpen::FindBarWidget::activateReplace() {
   replaceRow_->setVisible(true);
   findEdit_->setFocus();
   findEdit_->selectAll();
 }
 
-void muffin::FindBarWidget::setSearchBusy() {
+void mufpen::FindBarWidget::setSearchBusy() {
   resultLabel_->setText(QString(QChar(0x2026)));
 }
 
-void muffin::FindBarWidget::setResultInfo(qsizetype current, qsizetype total) {
+void mufpen::FindBarWidget::setResultInfo(qsizetype current, qsizetype total) {
   resultLabel_->setToolTip(QString());
   if (current < 0) {
     resultLabel_->setText(tr("Not found"));
@@ -159,12 +159,12 @@ void muffin::FindBarWidget::setResultInfo(qsizetype current, qsizetype total) {
   }
 }
 
-void muffin::FindBarWidget::setErrorText(const QString& error) {
+void mufpen::FindBarWidget::setErrorText(const QString& error) {
   resultLabel_->setText(error);
   resultLabel_->setToolTip(error);
 }
 
-void muffin::FindBarWidget::keyPressEvent(QKeyEvent* event) {
+void mufpen::FindBarWidget::keyPressEvent(QKeyEvent* event) {
   if (event->key() == Qt::Key_Escape) {
     emit closed();
     event->accept();
@@ -179,12 +179,12 @@ void muffin::FindBarWidget::keyPressEvent(QKeyEvent* event) {
   QWidget::keyPressEvent(event);
 }
 
-void muffin::FindBarWidget::showEvent(QShowEvent* event) {
+void mufpen::FindBarWidget::showEvent(QShowEvent* event) {
   QWidget::showEvent(event);
   activateFind();
 }
 
-void muffin::FindBarWidget::changeEvent(QEvent* event) {
+void mufpen::FindBarWidget::changeEvent(QEvent* event) {
   if (event->type() == QEvent::LanguageChange) {
     retranslateUi();
   }

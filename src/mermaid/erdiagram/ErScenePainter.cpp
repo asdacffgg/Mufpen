@@ -5,7 +5,7 @@
 // renderXToImage helper. Per IMPLEMENTATION_SPEC.md §5–§7 this module has no
 // tr() calls; to honour the project lupdate convention the file defines its
 // functions with fully-qualified names and keeps helpers in an anonymous
-// namespace at file scope rather than wrapping a `namespace muffin {}` block.
+// namespace at file scope rather than wrapping a `namespace mufpen {}` block.
 
 #include "mermaid/erdiagram/ErScenePainter.h"
 
@@ -30,14 +30,14 @@
 #include <algorithm>
 #include <cmath>
 
-namespace er = muffin::mermaid::er;
-namespace flowchart = muffin::mermaid::flowchart;
-namespace scene = muffin::mermaid::scene;
+namespace er = mufpen::mermaid::er;
+namespace flowchart = mufpen::mermaid::flowchart;
+namespace scene = mufpen::mermaid::scene;
 
 namespace {
 
 QColor resolveColor(const QString& value) {
-  return muffin::mermaid::color::toQColor(value);
+  return mufpen::mermaid::color::toQColor(value);
 }
 
 // Crow's-foot marker geometry (IMPLEMENTATION_SPEC.md §5). `refX`/`refY` is the
@@ -154,7 +154,7 @@ void paintRole(QPainter& painter, const QString& role, const QPointF& endpoint, 
 
 } // namespace
 
-void muffin::mermaid::er::paintErScene(const ErScene& scene, QPainter& painter, const MermaidPaintOptions& options) {
+void mufpen::mermaid::er::paintErScene(const ErScene& scene, QPainter& painter, const MermaidPaintOptions& options) {
   painter.setRenderHint(QPainter::Antialiasing, true);
   painter.setRenderHint(QPainter::TextAntialiasing, true);
 
@@ -252,7 +252,7 @@ void muffin::mermaid::er::paintErScene(const ErScene& scene, QPainter& painter, 
   }
 }
 
-QImage muffin::mermaid::er::renderErSceneToImage(const ErScene& scene, qreal dpr, qreal padding) {
+QImage mufpen::mermaid::er::renderErSceneToImage(const ErScene& scene, qreal dpr, qreal padding) {
   const qreal width = std::max(1.0, scene.bounds.width() + 2.0 * padding);
   const qreal height = std::max(1.0, scene.bounds.height() + 2.0 * padding);
   QImage image(qCeil(width * dpr), qCeil(height * dpr), QImage::Format_ARGB32_Premultiplied);
@@ -266,6 +266,6 @@ QImage muffin::mermaid::er::renderErSceneToImage(const ErScene& scene, qreal dpr
   return image;
 }
 
-void muffin::mermaid::er::ErScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
+void mufpen::mermaid::er::ErScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintErScene(*this, painter, options);
 }

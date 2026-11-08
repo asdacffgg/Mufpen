@@ -3,7 +3,7 @@
 #include <QHash>
 #include <QRegularExpression>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 namespace {
 
@@ -73,4 +73,4 @@ qreal dimensionToPoints(const QString& sizeText, qreal fontPointSize, qreal abso
   return 0.0;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

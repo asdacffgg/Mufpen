@@ -3,12 +3,12 @@
 #include <QLoggingCategory>
 #include <QWidget>
 
-namespace muffin::diag {
+namespace mufpen::diag {
 
 // Opt-in timestamp at the actual dirty request, before Qt coalesces updates.
 // Keep normal QWidget::update semantics; never force a synchronous repaint.
 inline void updateViewport(QWidget* viewport, const QRect& rect) {
-  static const QLoggingCategory category("muffin.perf.queue", QtWarningMsg);
+  static const QLoggingCategory category("mufpen.perf.queue", QtWarningMsg);
   if (category.isDebugEnabled() && viewport->isVisible() && viewport->updatesEnabled() &&
       rect.intersects(viewport->rect()))
     qCDebug(category).nospace() << "viewport.update " << quintptr(viewport) << ' ' << rect.x() << ' ' << rect.y() << ' '
@@ -20,4 +20,4 @@ inline void updateViewport(QWidget* viewport) {
   updateViewport(viewport, viewport->rect());
 }
 
-} // namespace muffin::diag
+} // namespace mufpen::diag

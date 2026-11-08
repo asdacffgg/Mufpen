@@ -11,7 +11,7 @@
 #include <QString>
 #include <QUrl>
 
-namespace muffin {
+namespace mufpen {
 
 namespace resource_url_detail {
 inline QUrl resolve(const QString& value, const QUrl& base) {
@@ -50,4 +50,4 @@ inline QUrl resolvedUrlForDirectoryResource(const QString& value, const QString&
   return resource_url_detail::resolve(value, base);
 }
 
-} // namespace muffin
+} // namespace mufpen

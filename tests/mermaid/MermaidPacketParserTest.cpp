@@ -20,7 +20,7 @@
 #include <cstdlib>
 #include <limits>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -187,7 +187,7 @@ int main(int argc, char** argv) {
                       .arg(QString::fromUtf8(error.what())));
       }
       if (data.title.isEmpty() && pre.hasTitle)
-        data.title = muffin::HtmlSanitizer().sanitizedMermaidText(pre.title);
+        data.title = mufpen::HtmlSanitizer().sanitizedMermaidText(pre.title);
       const QJsonObject expectedDb = fixture.value(QStringLiteral("expectedDb")).toObject();
       compareDb(data, expectedDb, id);
       require(effectiveBitsPerRow(rawBits) ==

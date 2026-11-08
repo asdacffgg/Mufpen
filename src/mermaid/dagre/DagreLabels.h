@@ -21,7 +21,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // Edge label: defined first because node labels reference it by value.
 struct DagreEdgeLabel {
@@ -99,4 +99,4 @@ struct DagreGraphLabel {
 
 using DagreGraph = graphlib::Graph<DagreNodeLabel, DagreEdgeLabel, DagreGraphLabel>;
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

@@ -11,7 +11,7 @@
 #include <array>
 #include <variant>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -165,4 +165,4 @@ private:
 
 void shiftInlineSourcePositions(QVector<InlineNode>& inlines, qsizetype delta);
 
-} // namespace muffin
+} // namespace mufpen

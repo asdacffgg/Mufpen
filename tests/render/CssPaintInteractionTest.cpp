@@ -16,7 +16,7 @@
 #include <QRawFont>
 #include <cmath>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 bool approximately(qreal a, qreal b, qreal tolerance = .01) {
   return qAbs(a - b) < tolerance;
@@ -898,13 +898,13 @@ void checkSparseTextShadowMatchesFullCanvas(bool outlined) {
   hidden.setForeground(Qt::transparent);
   hidden.setFontUnderline(false);
   const QList<TextLayout::FormatRange> overrides{{0, 5, hidden}};
-  const auto oldTrace = qgetenv("MUFFIN_SHADOW_RASTER_TRACE");
-  qputenv("MUFFIN_SHADOW_RASTER_TRACE", "1");
+  const auto oldTrace = qgetenv("MUFPEN_SHADOW_RASTER_TRACE");
+  qputenv("MUFPEN_SHADOW_RASTER_TRACE", "1");
   const auto overrideActual = render(false, 1, clips, shadow, overrides);
   if (oldTrace.isNull())
-    qunsetenv("MUFFIN_SHADOW_RASTER_TRACE");
+    qunsetenv("MUFPEN_SHADOW_RASTER_TRACE");
   else
-    qputenv("MUFFIN_SHADOW_RASTER_TRACE", oldTrace);
+    qputenv("MUFPEN_SHADOW_RASTER_TRACE", oldTrace);
   const auto overrideExpected = render(true, 1, clips, shadow, overrides);
   if (!equivalent(overrideActual, overrideExpected)) {
     const auto maxAlphaDifference = [](const QImage& a, const QImage& b) {

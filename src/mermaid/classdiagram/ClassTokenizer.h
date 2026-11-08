@@ -6,7 +6,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 
 enum class ClassTokenKind {
   Eof,
@@ -80,4 +80,4 @@ private:
 
 QString classTokenName(ClassTokenKind kind);
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

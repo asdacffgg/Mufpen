@@ -9,7 +9,7 @@
 #include <QString>
 #include <QStringList>
 
-using namespace muffin;
+using namespace mufpen;
 using image_syntax::Image;
 using image_syntax::Syntax;
 

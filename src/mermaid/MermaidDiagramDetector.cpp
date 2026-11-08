@@ -3,7 +3,7 @@
 #include <QJsonValue>
 #include <QRegularExpression>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 namespace {
 
 QString nestedString(const QJsonObject& config, const QString& section, const QString& key) {
@@ -146,4 +146,4 @@ QString detectDiagramType(const QString& source, QJsonObject config) {
       QStringLiteral("No diagram type detected matching given configuration for text: %1").arg(text));
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

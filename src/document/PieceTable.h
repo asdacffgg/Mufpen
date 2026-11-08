@@ -12,7 +12,7 @@
 #include <utility>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -135,4 +135,4 @@ private:
   qint64 totalWords_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -1,10 +1,10 @@
 #pragma once
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathFontRegistry {
 public:
   static void ensureLoaded();
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

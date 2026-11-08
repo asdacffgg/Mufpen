@@ -20,11 +20,11 @@
 #include <functional>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(layoutPerf, "muffin.perf", QtWarningMsg)
-Q_LOGGING_CATEGORY(layoutDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(layoutPerf, "mufpen.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(layoutDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 struct RebuildPerfStats {
   qint64 totalNs = 0;
@@ -1932,4 +1932,4 @@ void DocumentLayout::recomputeTotalHeight(const RenderTheme& theme) {
   totalHeight_ = totalHeightAfterBlock(cursorY, lastBlock, theme);
 }
 
-} // namespace muffin
+} // namespace mufpen

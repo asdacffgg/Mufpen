@@ -1,6 +1,6 @@
 #include "math/MathParseError.h"
 
-namespace muffin::math {
+namespace mufpen::math {
 
 MathParseError::MathParseError(QString message)
     : std::runtime_error(message.toStdString()), message_(std::move(message)) {
@@ -32,4 +32,4 @@ qsizetype MathParseError::endPosition() const {
   return endPosition_;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

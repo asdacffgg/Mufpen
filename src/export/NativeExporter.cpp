@@ -13,7 +13,7 @@
 #include <cmath>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 bool exportNativePdf(const QString& path, const MarkdownDocument& document, RenderTheme theme,
                      const QString& sourcePath, const PdfExportOptions& options,
@@ -197,4 +197,4 @@ bool exportNativeImage(const QString& path, const MarkdownDocument& document, Re
   return image.save(path, "PNG");
 }
 
-} // namespace muffin
+} // namespace mufpen

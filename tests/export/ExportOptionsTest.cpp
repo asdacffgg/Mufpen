@@ -11,7 +11,7 @@
 #include <QTemporaryDir>
 #include <QDir>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 QByteArray read(const QString& path) {
@@ -99,7 +99,7 @@ void pdfHeadersFootersAndPageNumbers() {
           "PDF decoration settings are loaded");
   options.breakOnHeading = true;
   QTemporaryDir temporary;
-  const auto output = qEnvironmentVariable("MUFFIN_PDF_QA_DIRECTORY", temporary.path());
+  const auto output = qEnvironmentVariable("MUFPEN_PDF_QA_DIRECTORY", temporary.path());
   require(QDir().mkpath(output), "PDF QA directory");
   for (int variant = 0; variant < 3; ++variant) {
     options.pageLayout =
@@ -214,7 +214,7 @@ int main(int argc, char** argv) {
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("ExportOptions");
   runTest("pdfPageSettingsAndHeadingBreaks", pdfPageSettingsAndHeadingBreaks);
   runTest("imageDimensionsAndContent", imageDimensionsAndContent);

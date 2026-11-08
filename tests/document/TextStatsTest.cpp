@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

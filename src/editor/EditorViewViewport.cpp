@@ -19,7 +19,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 // Pull the stateless geometry/hit-test helpers into scope so call sites read as
 // before (selectableLength, …). The moved logic lives in editor_geometry.
@@ -27,7 +27,7 @@ using namespace editor_geometry;
 
 namespace {
 
-Q_LOGGING_CATEGORY(viewPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(viewPerf, "mufpen.perf", QtWarningMsg)
 
 struct PerfTimer : diag::ScopedPerfProbe {
   explicit PerfTimer(const char* label) : diag::ScopedPerfProbe(label, viewPerf()) {}
@@ -665,4 +665,4 @@ void EditorView::ensureCodeFenceCursorVisible() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -6,7 +6,7 @@
 #include <cmath>
 #include <numbers>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 
 struct FloatConic {
@@ -204,4 +204,4 @@ void addBlinkSvgArcBounds(BlinkPathBounds& bounds, BlinkFloatPoint start, BlinkF
   }
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

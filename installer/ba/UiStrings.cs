@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     /// <summary>
     /// Installer strings, compiled into the BA assembly (no satellite

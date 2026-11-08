@@ -11,7 +11,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 namespace {
 flowchart::FlowLabelDocument prepareLabel(const QString& text, qreal fontSize) {
   auto document = flowchart::parseFlowLabel(text, QStringLiteral("markdown"), true);
@@ -475,4 +475,4 @@ SvgMarkerProjection StateScene::svgMarkerProjection() const {
   return projection;
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

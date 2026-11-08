@@ -5,7 +5,7 @@
 #include <QRegularExpression>
 #include <algorithm>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 namespace {
 
 QString htmlText(QString text) {
@@ -853,4 +853,4 @@ QString formatClassDiagnostic(const ClassDiagnostic& diagnostic) {
       .arg(classErrorStageName(diagnostic.stage));
 }
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

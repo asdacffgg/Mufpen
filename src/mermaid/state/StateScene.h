@@ -8,7 +8,7 @@
 
 #include <QRectF>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 
 // themeCSS projection for one DOM element (11.16 state DOM: shapes are
 // rects/circles (rect, rectWithTitle, stateStart) or rough double-path pairs
@@ -231,4 +231,4 @@ StateScene buildStateScene(const StateLayoutInput& input, const StatePlacementRe
                            const QHash<QString, StateMeasureCss>* labelCssFonts = nullptr,
                            const QHash<QString, StateMeasureCss>* edgeLabelCssFonts = nullptr);
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

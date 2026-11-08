@@ -2,7 +2,7 @@
 
 #include <QImage>
 
-namespace muffin {
+namespace mufpen {
 
 // In-place separable box blur on a Format_ARGB32_Premultiplied QImage. `radius`
 // is the half-window in px (full window = 2·radius+1). `passes` ≈ 3 approximates a
@@ -15,4 +15,4 @@ void boxBlur(QImage& image, int radius, int passes = 3);
 // Used by text-shadow and filter rendering.
 QImage blurred(const QImage& src, qreal radius);
 
-} // namespace muffin
+} // namespace mufpen

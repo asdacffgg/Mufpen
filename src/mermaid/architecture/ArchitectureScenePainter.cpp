@@ -12,7 +12,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 namespace {
 
 QStringList fontFamilies(const QString& expression) {
@@ -343,4 +343,4 @@ void paintArchitectureScene(const ArchitectureScene& scene, QPainter& painter, c
   painter.restore();
 }
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

@@ -7,9 +7,9 @@
 #include <QObject>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_UI_EXPORT BrushQueue final : public QObject {
+class MUFPEN_UI_EXPORT BrushQueue final : public QObject {
   Q_OBJECT
 
 public:
@@ -37,4 +37,4 @@ private:
   bool flushScheduled_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

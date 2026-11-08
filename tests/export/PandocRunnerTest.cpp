@@ -43,19 +43,19 @@ void require(bool condition, const QString& message) {
 // Expected auto-fallback result on this machine: a discovered install path, or
 // the bare "pandoc" if nothing was found.
 QString expectedAutoResolution() {
-  const QString searched = muffin::PandocRunner::searchSystem();
+  const QString searched = mufpen::PandocRunner::searchSystem();
   return searched.isEmpty() ? QStringLiteral("pandoc") : searched;
 }
 
 void testEmptySettingFallsBackToSystemSearchOrBarePandoc() {
   QSettings().remove(QStringLiteral("export/pandocPath"));
-  require(muffin::PandocRunner::resolvedExecutable() == expectedAutoResolution(),
+  require(mufpen::PandocRunner::resolvedExecutable() == expectedAutoResolution(),
           QStringLiteral("Empty/unset pandocPath should fall back to system search then bare 'pandoc'"));
 }
 
 void testNonExistentConfiguredPathFallsBack() {
   QSettings().setValue(QStringLiteral("export/pandocPath"), QStringLiteral("/no/such/pandoc-binary"));
-  require(muffin::PandocRunner::resolvedExecutable() == expectedAutoResolution(),
+  require(mufpen::PandocRunner::resolvedExecutable() == expectedAutoResolution(),
           QStringLiteral("A non-existent configured path should fall back to system search then bare 'pandoc'"));
   QSettings().remove(QStringLiteral("export/pandocPath"));
 }
@@ -64,7 +64,7 @@ void testRealExecutablePathIsHonored() {
   const QString self = QCoreApplication::applicationFilePath();
   require(QFileInfo(self).isExecutable(), QStringLiteral("The test binary itself must be executable"));
   QSettings().setValue(QStringLiteral("export/pandocPath"), self);
-  require(muffin::PandocRunner::resolvedExecutable() == self,
+  require(mufpen::PandocRunner::resolvedExecutable() == self,
           QStringLiteral("A real executable path should be honored verbatim"));
   QSettings().remove(QStringLiteral("export/pandocPath"));
 }
@@ -74,12 +74,12 @@ void testRealExecutablePathIsHonored() {
 // asserted here. The test binary stands in for a real executable.
 void testFindFirstExistingReturnsFirstExecutable() {
   const QString self = QCoreApplication::applicationFilePath();
-  const QString got = muffin::PandocRunner::findFirstExistingExecutable({QStringLiteral("/no/such/a"), self});
+  const QString got = mufpen::PandocRunner::findFirstExistingExecutable({QStringLiteral("/no/such/a"), self});
   require(got == self, QStringLiteral("findFirstExistingExecutable should return the first real executable"));
 }
 
 void testFindFirstExistingReturnsEmptyForGarbage() {
-  const QString got = muffin::PandocRunner::findFirstExistingExecutable(
+  const QString got = mufpen::PandocRunner::findFirstExistingExecutable(
       {QStringLiteral("/no/such/pandoc"), QStringLiteral("C:/definitely/not/here/pandoc.exe")});
   require(got.isEmpty(), QStringLiteral("findFirstExistingExecutable should return empty when nothing matches"));
 }
@@ -88,7 +88,7 @@ void testFindFirstExistingSkipsNonExecutables() {
   const QString self = QCoreApplication::applicationFilePath();
   // Empty entries and nonexistent paths are skipped; the real executable wins.
   const QString got =
-      muffin::PandocRunner::findFirstExistingExecutable({QString(), QStringLiteral("/no/such/b"), self});
+      mufpen::PandocRunner::findFirstExistingExecutable({QString(), QStringLiteral("/no/such/b"), self});
   require(got == self, QStringLiteral("findFirstExistingExecutable should skip bad entries and return the executable"));
 }
 
@@ -129,7 +129,7 @@ void checkWorkingDirectoryAndProgressLabel(const QString& workDir) {
       }
     }
   });
-  const auto result = muffin::PandocRunner::run(nullptr, {QStringLiteral("--fake-pandoc")},
+  const auto result = mufpen::PandocRunner::run(nullptr, {QStringLiteral("--fake-pandoc")},
                                                 {.workDir = workDir, .progressLabel = label});
   require(result.ran && result.exitCode == 0, QStringLiteral("Import process should start"));
   const QString actualDirectory = QString::fromUtf8(result.out);
@@ -156,11 +156,11 @@ void testWorkingDirectoryAndProgressLabelAreIndependent() {
 
 void testImportOutputIsCompleteAndExportDiagnosticsAreBounded() {
   const auto executable = QCoreApplication::applicationFilePath();
-  const auto imported = muffin::ProcessRunner::run(nullptr, executable, {"--fake-large-output"});
+  const auto imported = mufpen::ProcessRunner::run(nullptr, executable, {"--fake-large-output"});
   require(imported.ran && imported.exitCode == 0 && imported.out.size() == 2 * 1024 * 1024,
           "Imports retain complete converter output, including documents larger than the diagnostic limit");
   const auto diagnostic =
-      muffin::ProcessRunner::run(nullptr, executable, {"--fake-large-output"}, {.outputLimit = 4096});
+      mufpen::ProcessRunner::run(nullptr, executable, {"--fake-large-output"}, {.outputLimit = 4096});
   require(diagnostic.ran && diagnostic.exitCode == 0 && diagnostic.out.size() == 4096 && diagnostic.err.size() == 4096,
           "Export diagnostics are bounded while both channels continue draining");
 }
@@ -183,8 +183,8 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty())
     qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("Muffin"));
-  QCoreApplication::setApplicationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("Mufpen"));
+  QCoreApplication::setApplicationName(QStringLiteral("MufpenTests"));
   testDirectoryIdentityRejectsWrongTargets();
   testWorkingDirectoryAndProgressLabelAreIndependent();
   testImportOutputIsCompleteAndExportDiagnosticsAreBounded();

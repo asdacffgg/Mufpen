@@ -4,7 +4,7 @@
 #include <QtMath>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 CssFilterOperation identityCssFilter(CssFilterOperation::Kind kind) {
   using K = CssFilterOperation::Kind;
   CssFilterOperation op;
@@ -114,4 +114,4 @@ std::optional<std::vector<CssFilterOperation>> parseCssFilters(const QString& ra
   }
   return result.empty() ? std::nullopt : std::optional(result);
 }
-} // namespace muffin
+} // namespace mufpen

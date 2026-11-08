@@ -25,7 +25,7 @@ def main():
     root = Path(__file__).resolve().parent.parent
     destination = args.output.resolve()
     destination.mkdir(parents=True, exist_ok=False)
-    phycat = Path(os.environ['APPDATA']) / 'Muffin/Muffin/themes/phycat-abyss.css'
+    phycat = Path(os.environ['APPDATA']) / 'Mufpen/Mufpen/themes/phycat-abyss.css'
     themes = {
         'vlook': root / 'tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css',
         'phycat': phycat,
@@ -41,32 +41,32 @@ def main():
     pinned = digests()
     preset = json.loads((root / 'build/generators/CMakePresets.json').read_text(encoding='utf-8'))
     env = dict(os.environ)
-    env.update(QT_QPA_PLATFORM='offscreen', MUFFIN_FIRST_LAYOUT_ONLY='1',
+    env.update(QT_QPA_PLATFORM='offscreen', MUFPEN_FIRST_LAYOUT_ONLY='1',
                QT_PLUGIN_PATH=preset['testPresets'][0]['environment']['QT_PLUGIN_PATH'])
     env['PATH'] = preset['configurePresets'][0]['environment']['QT_HOST_PATH'] + '\\bin;' + env['PATH']
-    env.pop('MUFFIN_THEME_LAYOUT_DETAIL', None)
-    env.pop('MUFFIN_THEME_CSS_DETAIL', None)
-    env.pop('MUFFIN_THEME_PAINT_DETAIL', None)
-    env.pop('MUFFIN_THEME_PROBE_DOCUMENT', None)
-    env.pop('MUFFIN_THEME_REAL_SWITCH', None)
-    env.pop('MUFFIN_THEME_LIFECYCLE_ONLY', None)
-    env.pop('MUFFIN_THEME_MANAGER_DOCUMENT', None)
+    env.pop('MUFPEN_THEME_LAYOUT_DETAIL', None)
+    env.pop('MUFPEN_THEME_CSS_DETAIL', None)
+    env.pop('MUFPEN_THEME_PAINT_DETAIL', None)
+    env.pop('MUFPEN_THEME_PROBE_DOCUMENT', None)
+    env.pop('MUFPEN_THEME_REAL_SWITCH', None)
+    env.pop('MUFPEN_THEME_LIFECYCLE_ONLY', None)
+    env.pop('MUFPEN_THEME_MANAGER_DOCUMENT', None)
     if args.manager_document:
         if args.lifecycle:
             parser.error('--manager-document cannot be combined with --lifecycle')
-        env['MUFFIN_THEME_MANAGER_DOCUMENT'] = '1'
+        env['MUFPEN_THEME_MANAGER_DOCUMENT'] = '1'
     if args.lifecycle:
-        env['MUFFIN_THEME_LIFECYCLE_ONLY'] = '1'
+        env['MUFPEN_THEME_LIFECYCLE_ONLY'] = '1'
     if args.real_switch:
-        env['MUFFIN_THEME_REAL_SWITCH'] = '1'
+        env['MUFPEN_THEME_REAL_SWITCH'] = '1'
     if args.document:
-        env['MUFFIN_THEME_PROBE_DOCUMENT'] = str(args.document.resolve())
+        env['MUFPEN_THEME_PROBE_DOCUMENT'] = str(args.document.resolve())
     if args.detail:
-        env['MUFFIN_THEME_LAYOUT_DETAIL'] = '1'
+        env['MUFPEN_THEME_LAYOUT_DETAIL'] = '1'
     if args.css_detail:
-        env['MUFFIN_THEME_CSS_DETAIL'] = '1'
+        env['MUFPEN_THEME_CSS_DETAIL'] = '1'
     if args.paint_detail:
-        env['MUFFIN_THEME_PAINT_DETAIL'] = '1'
+        env['MUFPEN_THEME_PAINT_DETAIL'] = '1'
     runs = []
     result = {'method': 'Sequential fresh offscreen processes; same immutable local CSS/font dependencies. Two return-to-theme cycles per process. Stage timings are not GUI event/display latency; detailed scopes are inclusive and cannot be summed. Images and sampled geometry/cursor hits are retained for before/after comparison. Full counter reference checked separately after timed stages.',
               'lifecycle': args.lifecycle,
@@ -76,7 +76,7 @@ def main():
     def checkpoint():
         (destination / 'matrix.json').write_text(json.dumps(result, ensure_ascii=False, separators=(',', ':'))+'\n', encoding='utf-8')
     checkpoint()
-    binary = args.binary.resolve() if args.binary else root / 'build/Release/MuffinThemePerformanceProbe.exe'
+    binary = args.binary.resolve() if args.binary else root / 'build/Release/MufpenThemePerformanceProbe.exe'
     for repeat in range(1, args.repetitions + 1):
         for name, theme in themes.items():
             if name not in args.themes:

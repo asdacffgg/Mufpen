@@ -2,7 +2,7 @@
 
 #include <QStringView>
 
-namespace muffin {
+namespace mufpen {
 
 class PieceTable;
 
@@ -12,4 +12,4 @@ int countWords(QStringView text);
 int countWords(const PieceTable& text);
 
 } // namespace text_stats
-} // namespace muffin
+} // namespace mufpen

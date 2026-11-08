@@ -17,7 +17,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue nullishValue(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -172,4 +172,4 @@ const Diagram& mindmapDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

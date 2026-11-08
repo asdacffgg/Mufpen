@@ -12,7 +12,7 @@ class QPushButton;
 class QVBoxLayout;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class PreferencesPage : public QWidget {
   Q_OBJECT
@@ -49,4 +49,4 @@ protected:
   void polishComboBox(QComboBox* comboBox, int visibleItems = 8) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

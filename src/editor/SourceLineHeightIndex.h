@@ -6,7 +6,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 // Compressed implicit tree of logical source lines. Consecutive lines with the
 // same height share one run, so a newly-opened million-line document starts as
@@ -52,4 +52,4 @@ private:
   int estimatedHeight_ = 1;
 };
 
-} // namespace muffin
+} // namespace mufpen

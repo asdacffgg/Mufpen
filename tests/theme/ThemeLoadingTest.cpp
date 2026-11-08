@@ -17,7 +17,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void require(bool ok, const char* message) {
   if (!ok) {
@@ -170,7 +170,7 @@ void testSelectionReadScope() {
 void testLazyLoadingAndContentInvalidation() {
   QTemporaryDir dir;
   const auto path = dir.filePath("custom.css");
-  write(path, ":root{--muffin-label:'Authored label'}p{color:#123456}");
+  write(path, ":root{--mufpen-label:'Authored label'}p{color:#123456}");
   write(dir.filePath("invalid.json"), "not JSON");
   write(dir.filePath("github.css"), "p{color:red}");
   ThemeManager manager(dir.path());
@@ -206,7 +206,7 @@ void testLazyLoadingAndContentInvalidation() {
 
   QFile file(path);
   const auto timestamp = QFileInfo(file).lastModified();
-  write(path, ":root{--muffin-label:'Authored label'}p{color:#654321}");
+  write(path, ":root{--mufpen-label:'Authored label'}p{color:#654321}");
   require(file.open(QIODevice::ReadWrite), "open theme to restore timestamp");
   require(file.setFileTime(timestamp, QFileDevice::FileModificationTime), "preserve timestamp in regression fixture");
   file.close();
@@ -375,7 +375,7 @@ void testDeepDependenciesAndEviction() {
           "JSON content invalidates its cache");
 }
 void benchmarkInstalledThemes() {
-  const auto directory = qEnvironmentVariable("MUFFIN_THEME_STARTUP_BENCH");
+  const auto directory = qEnvironmentVariable("MUFPEN_THEME_STARTUP_BENCH");
   if (directory.isEmpty())
     return;
   QElapsedTimer timer;
@@ -393,7 +393,7 @@ void benchmarkInstalledThemes() {
 } // namespace
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("ThemeLoading");
   testResourceDigest();
   testSelectionReadScope();

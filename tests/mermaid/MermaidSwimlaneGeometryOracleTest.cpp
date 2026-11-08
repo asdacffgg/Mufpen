@@ -14,7 +14,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 constexpr qreal kGeometryTolerance = 0.02;

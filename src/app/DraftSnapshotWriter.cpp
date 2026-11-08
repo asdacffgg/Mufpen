@@ -11,9 +11,9 @@
 #include "diagnostics/ScopedPerfProbe.h"
 #include "document/DocumentSession.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(draftQueuePerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(draftQueuePerf, "mufpen.perf.detail", QtWarningMsg)
 }
 
 struct DraftSnapshotWriter::State {
@@ -186,4 +186,4 @@ DraftSnapshotWriter::QueueStats DraftSnapshotWriter::queueStats() const {
   }
   return stats;
 }
-} // namespace muffin
+} // namespace mufpen

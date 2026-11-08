@@ -1,4 +1,4 @@
-<Window x:Class="Muffin.Setup.MainWindow"
+<Window x:Class="Mufpen.Setup.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="{Binding WindowTitle, Mode=OneWay}"
@@ -26,7 +26,7 @@
 
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
             <local:InverseBoolToVisibilityConverter x:Key="InvBoolToVis"
-                xmlns:local="clr-namespace:Muffin.Setup.Ui" />
+                xmlns:local="clr-namespace:Mufpen.Setup.Ui" />
 
             <!-- ===== Detecting ===== -->
             <DataTemplate x:Key="DetectingTpl">
@@ -47,11 +47,11 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel VerticalAlignment="Center">
-                        <Image Source="/MuffinBootstrapperUI;component/Assets/muffin-128.png"
+                        <Image Source="/MufpenBootstrapperUI;component/Assets/mufpen-128.png"
                                Width="72" Height="72" HorizontalAlignment="Center"
                                RenderOptions.BitmapScalingMode="HighQuality" />
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,14,0,0">
-                            <TextBlock Style="{StaticResource HeroText}" Text="Muffin" />
+                            <TextBlock Style="{StaticResource HeroText}" Text="Mufpen" />
                             <TextBlock Style="{StaticResource HeroText}" Text="{Binding VersionText, StringFormat=' {0}'}"
                                        Foreground="{DynamicResource TextSecondaryBrush}" FontWeight="Normal" />
                         </StackPanel>
@@ -87,7 +87,7 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel VerticalAlignment="Center">
-                        <Image Source="/MuffinBootstrapperUI;component/Assets/muffin-128.png"
+                        <Image Source="/MufpenBootstrapperUI;component/Assets/mufpen-128.png"
                                Width="72" Height="72" HorizontalAlignment="Center"
                                RenderOptions.BitmapScalingMode="HighQuality" />
                         <TextBlock Style="{StaticResource HeadingText}" HorizontalAlignment="Center"
@@ -245,7 +245,7 @@
         <!-- Title bar -->
         <Grid Grid.Row="0" Background="Transparent">
             <StackPanel Orientation="Horizontal" Margin="14,0,0,0" VerticalAlignment="Center">
-                <Image Source="/MuffinBootstrapperUI;component/Assets/muffin-128.png"
+                <Image Source="/MufpenBootstrapperUI;component/Assets/mufpen-128.png"
                        Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
                        VerticalAlignment="Center" />
                 <TextBlock Text="{Binding WindowTitle}" Margin="10,0,0,0" VerticalAlignment="Center"

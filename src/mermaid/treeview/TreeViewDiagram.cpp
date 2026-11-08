@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::treeview {
+namespace mufpen::mermaid::treeview {
 namespace {
 
 constexpr QChar kThinHorizontal(0x2500);
@@ -486,4 +486,4 @@ TreeViewData TreeViewDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::treeview
+} // namespace mufpen::mermaid::treeview

@@ -18,7 +18,7 @@
 #include <QTimer>
 #include <QUrl>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -29,7 +29,7 @@ bool isNetworkSource(const QString& src) {
 
 // Read the chosen insert action, then honour a per-document upload directive: when
 // `image/allowYamlUpload` is on and the document's frontmatter contains
-// `muffin-image-upload: true`, force Upload regardless of the dropdown.
+// `mufpen-image-upload: true`, force Upload regardless of the dropdown.
 ImageInsertAction effectiveAction(QSettings& settings, const ImageInsertRequest& req) {
   const int raw = qBound(0, settings.value(QStringLiteral("image/insertAction"), 0).toInt(),
                          static_cast<int>(ImageInsertAction::CopyToCustomFolder));
@@ -52,7 +52,7 @@ ImageInsertAction effectiveAction(QSettings& settings, const ImageInsertRequest&
     if (line == QStringLiteral("---") || line == QStringLiteral("...")) {
       break; // end of frontmatter
     }
-    if (line.startsWith(QStringLiteral("muffin-image-upload"), Qt::CaseInsensitive) &&
+    if (line.startsWith(QStringLiteral("mufpen-image-upload"), Qt::CaseInsensitive) &&
         line.contains(QStringLiteral("true"), Qt::CaseInsensitive)) {
       return ImageInsertAction::Upload;
     }
@@ -141,7 +141,7 @@ QString downloadNetworkImage(const QString& url) {
   }
   const QString tempPath =
       ApplicationPaths::temporaryDirectory() +
-      QStringLiteral("/muffin_rehost_%1.%2").arg(QString::number(qint64(image.cacheKey())), suffix);
+      QStringLiteral("/mufpen_rehost_%1.%2").arg(QString::number(qint64(image.cacheKey())), suffix);
   if (!image.save(tempPath, suffix.toUtf8().constData())) {
     return {};
   }
@@ -163,7 +163,7 @@ ImageInsertResult ImageInsertionPolicy::resolveHref(const ImageInsertRequest& re
     // An untitled document has no folder yet, so docDir is empty. Don't refuse the
     // paste (that silently dropped it — the most common "Ctrl+V image does nothing"
     // report). Mirror Typora's fallback: park the image under the app's roaming data
-    // dir in a dedicated "muffin-user-images" folder until the document is saved
+    // dir in a dedicated "mufpen-user-images" folder until the document is saved
     // somewhere with a real folder. The href stays absolute in the meantime.
     QDir saveDir(docDir);
     if (docDir.isEmpty()) {
@@ -171,7 +171,7 @@ ImageInsertResult ImageInsertionPolicy::resolveHref(const ImageInsertRequest& re
       if (base.isEmpty()) { // headless/odd environments: fall back to the OS temp dir.
         base = ApplicationPaths::temporaryDirectory();
       }
-      saveDir = QDir(base + QStringLiteral("/muffin-user-images"));
+      saveDir = QDir(base + QStringLiteral("/mufpen-user-images"));
     }
     if (!saveDir.exists() && !saveDir.mkpath(QStringLiteral("."))) {
       result.error = QStringLiteral("no folder to save the pasted image into");
@@ -262,4 +262,4 @@ ImageInsertResult ImageInsertionPolicy::resolveHref(const ImageInsertRequest& re
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

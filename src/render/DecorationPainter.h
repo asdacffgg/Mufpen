@@ -9,7 +9,7 @@
 
 class QPainter;
 
-namespace muffin {
+namespace mufpen {
 
 // Paints captured CSS decorations (element background gradients, ::before/::after
 // rules, #write texture overlay) against the host layout's box geometry.
@@ -61,4 +61,4 @@ void paintBoxShadow(QPainter& painter, const QRectF& rect, qreal borderRadius, c
 
 } // namespace DecorationPainter
 
-} // namespace muffin
+} // namespace mufpen

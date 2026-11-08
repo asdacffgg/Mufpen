@@ -85,7 +85,7 @@ The curve measures the time from opening the Markdown file until the first viewp
 - **Editable tables** — Add, resize, align, and delete rows and columns inline. Insert tables via a configurable dialog.
 - **Editable code blocks** — Inline editing with syntax highlighting for 20+ languages via tree-sitter. Set the language from an autocomplete dropdown. Code Tools add line-by-line indent/dedent and a copy-block-content action.
 - **Editable math blocks** — Write LaTeX expressions rendered live by a full KaTeX-compatible engine written in C++, with a dual-pane edit/preview layout. Supports user-defined macros, braket notation, commutative diagrams, and a one-click "Refresh All" to re-render every formula.
-- **Native Mermaid diagrams** — Render all 38 Mermaid 11.16 diagram IDs, including flowchart/Flowchart ELK's bundled Dagre fallback, Swimlane, sequence, class, state, ER, requirement, pie, quadrant, journey, radar, XY, timeline, packet, Kanban, mindmap, Block, GitGraph, C4, TreeView, Event Modeling, Ishikawa, Venn, Sankey, Treemap, Cynefin, Wardley, Architecture, Gantt, Info, and the Railroad/EBNF/ABNF/PEG grammar family, live from ```` ```mermaid ```` fences through a pure C++/Qt engine with no JavaScript or browser runtime dependency. Invalid source stays editable with exact line/column diagnostics, an in-source error marker, and click-to-jump navigation. Shared title/accessibility metadata, rounded flow routes, safe links and tooltips, live animated edges, Sequence link menus, deterministic native SVG/HTML export, a per-diagram context-menu SVG/PNG save, a `muffin-mmdc` headless CLI for batch rendering, and a generated 533-row configuration-effect matrix keep editor and export behavior explicit.
+- **Native Mermaid diagrams** — Render all 38 Mermaid 11.16 diagram IDs, including flowchart/Flowchart ELK's bundled Dagre fallback, Swimlane, sequence, class, state, ER, requirement, pie, quadrant, journey, radar, XY, timeline, packet, Kanban, mindmap, Block, GitGraph, C4, TreeView, Event Modeling, Ishikawa, Venn, Sankey, Treemap, Cynefin, Wardley, Architecture, Gantt, Info, and the Railroad/EBNF/ABNF/PEG grammar family, live from ```` ```mermaid ```` fences through a pure C++/Qt engine with no JavaScript or browser runtime dependency. Invalid source stays editable with exact line/column diagnostics, an in-source error marker, and click-to-jump navigation. Shared title/accessibility metadata, rounded flow routes, safe links and tooltips, live animated edges, Sequence link menus, deterministic native SVG/HTML export, a per-diagram context-menu SVG/PNG save, a `mufpen-mmdc` headless CLI for batch rendering, and a generated 533-row configuration-effect matrix keep editor and export behavior explicit.
 - **Editable HTML blocks** — Edit raw HTML blocks inline with Lexbor-based parsing and Yoga-based flexbox layout, themed to match the active document.
 - **Footnotes & link definitions** — Full support for footnote (`[^id]: text`) and link reference definitions with rendering, editing, and insertion commands.
 - **Front matter** — Full YAML front matter support.
@@ -151,7 +151,7 @@ The curve measures the time from opening the Markdown file until the first viewp
 |:--------|:-------:|:-----:|:-----:|
 | Install | Build from source | Build from source | [Build from source](#development) |
 
-Windows releases also include a complete `.7z` portable package. Extract it and run `Mufpen.exe`; fonts, dictionaries, and language support are bundled for offline use.
+The `portable` build target produces a self-contained Windows folder. Extract it and run `Mufpen.exe`; fonts, dictionaries, and language support are bundled for offline use.
 
 ## Development
 
@@ -268,7 +268,7 @@ If you have a bug report or feature request, feel free to [open an issue](https:
 - Upstream copyright: Copyright © 2026 Muffin Contributors (kept verbatim in [LICENSE](LICENSE))
 - This fork: Mufpen, maintained by [asdacffgg](https://github.com/asdacffgg). Changes are listed in [CHANGELOG.md](CHANGELOG.md) and every commit.
 
-Mufpen is a **display-name fork**: the window title, About box, installer product, macOS bundle identifier, icon and update feed say Mufpen, while the executable and library names stay `Muffin`, `MuffinCore` and `MuffinUi`, and configuration still lives in `~/.config/Muffin` so existing settings and draft snapshots keep working. The internal `muffin::` C++ namespace is unchanged, which keeps the 15 translation catalogs valid.
+Mufpen is a **full fork rename**: the window title, About box, installer product, macOS bundle identifier, icon, update feed, executable and library names (`Mufpen`, `MufpenCore`, `MufpenUi`), configuration directory (`~/.config/Mufpen`), and the internal `mufpen::` C++ namespace all use Mufpen. Pre-rename settings (`~/.config/Muffin/Muffin.conf`) and draft snapshots (`~/.local/share/Muffin/Muffin/drafts`) are not migrated automatically.
 
 This repository publishes **no binaries**; build from source. Upstream releases of the original Muffin are not compatible with this fork's update feed.
 

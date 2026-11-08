@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Muffin's custom Burn bootstrapper application (BA).
+  <!-- Mufpen's custom Burn bootstrapper application (BA).
 
        The BA is a .NET Framework 4.8 WPF class library hosted in-proc by the
        bundle engine via the native mbanative.dll bridge. net48 is chosen over
@@ -12,17 +12,17 @@
        config below must come from the same WiX line as the burn engine that
        embeds them.
 
-       MuffinBaArch (win-x64 / win-arm64) selects the architecture-specific
+       MufpenBaArch (win-x64 / win-arm64) selects the architecture-specific
        mbanative.dll; it is set by the bundle project to match the burn stub. -->
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
-    <RootNamespace>Muffin.Setup</RootNamespace>
-    <AssemblyName>MuffinBootstrapperUI</AssemblyName>
+    <RootNamespace>Mufpen.Setup</RootNamespace>
+    <AssemblyName>MufpenBootstrapperUI</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <EnableDefaultItems>false</EnableDefaultItems>
-    <MuffinBaArch Condition="'$(MuffinBaArch)' == ''">win-x64</MuffinBaArch>
+    <MufpenBaArch Condition="'$(MufpenBaArch)' == ''">win-x64</MufpenBaArch>
     <!-- Work around the RID being purely a native-asset selector for net48;
          we copy mbanative.dll by explicit path below instead. -->
     <GenerateDependencyFile>false</GenerateDependencyFile>
@@ -44,8 +44,8 @@
     <Compile Include="IntegrationOptions.cs" />
     <Compile Include="PersonalSettingsCleanup.cs" />
     <Compile Include="UpdateHandoff.cs" />
-    <Compile Include="MuffinBaFactory.cs" />
-    <Compile Include="MuffinBa.cs" />
+    <Compile Include="MufpenBaFactory.cs" />
+    <Compile Include="MufpenBa.cs" />
     <Compile Include="Ui\MainWindow.xaml.cs" />
     <Compile Include="Ui\Win32Interop.cs" />
   </ItemGroup>
@@ -55,7 +55,7 @@
     <Page Include="Ui\Theme.xaml" />
     <Page Include="Ui\Palette.Light.xaml" />
     <Page Include="Ui\Palette.Dark.xaml" />
-    <Resource Include="Assets\muffin-128.png" />
+    <Resource Include="Assets\mufpen-128.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,7 +63,7 @@
          the CLR version to spin up; mbanative.dll is the native entry Burn
          calls first. Both must ship as payloads next to the BA dll. -->
     <None Include="WixToolset.Mba.Host.config" CopyToOutputDirectory="PreserveNewest" />
-    <None Include="$(PkgWixToolset_Mba_Core)\runtimes\$(MuffinBaArch)\native\mbanative.dll"
+    <None Include="$(PkgWixToolset_Mba_Core)\runtimes\$(MufpenBaArch)\native\mbanative.dll"
           CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 

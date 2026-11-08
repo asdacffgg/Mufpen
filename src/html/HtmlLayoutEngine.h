@@ -8,7 +8,7 @@
 
 struct YGNode;
 
-namespace muffin::html {
+namespace mufpen::html {
 
 struct YogaContext {
   HtmlBox* box;
@@ -53,4 +53,4 @@ private:
   HtmlTextMeasurer measurer_;
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

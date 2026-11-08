@@ -4,7 +4,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 namespace {
 
 QString stageLabel(const QString& stage) {
@@ -121,4 +121,4 @@ QJsonObject mermaidDiagnosticToJson(const MermaidDiagnostic& diagnostic) {
   return result;
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

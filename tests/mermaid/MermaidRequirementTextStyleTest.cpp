@@ -41,7 +41,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -200,7 +200,7 @@ int longestInkRun(const QImage& img, int y) {
 
 // Vertical extent of the text ink in an image (first/last row holding any ink).
 // Used to anchor a decoration's Y to the TEXT INK center: the same glyphs render
-// in both Muffin and the Chrome oracle, so the ink center is a common reference
+// in both Mufpen and the Chrome oracle, so the ink center is a common reference
 // that cancels per-renderer vertical centering. Only referenced by the Windows
 // Chrome-oracle section, hence [[maybe_unused]] (compiled out elsewhere).
 struct InkExtent {
@@ -238,7 +238,7 @@ int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
   MermaidFontRegistry::ensureLoaded();
-  muffin::math::MathFontRegistry::ensureLoaded(); // bundles KaTeX_Main (a serif
+  mufpen::math::MathFontRegistry::ensureLoaded(); // bundles KaTeX_Main (a serif
                                                   // face) used by the ex/ch
                                                   // font-coupling assertion below.
   editor::MermaidRenderCache cache;
@@ -770,10 +770,10 @@ int main(int argc, char** argv) {
   //     overline    thickness 1.00px, -11.50px from the text ink center
   //     line-through thickness 1.00px,  +0.50px from the text ink center
   //   Y is anchored to the TEXT INK center (identical glyphs in both renderers) so
-  //   vertical-centering differences cancel, making Muffin's image-px delta directly
+  //   vertical-centering differences cancel, making Mufpen's image-px delta directly
   //   comparable to Chrome's CSS-px delta.
   //
-  //   Platform scope: Muffin paints the decoration at QFontMetricsF positions, which
+  //   Platform scope: Mufpen paints the decoration at QFontMetricsF positions, which
   //   Qt derives per font backend (DirectWrite on Windows, FreeType on Linux,
   //   CoreText on macOS). The probe ran Chrome on Windows, so both renderers share
   //   the DirectWrite backend there and agree to <=0.5px. On Linux/macOS the font
@@ -818,7 +818,7 @@ int main(int argc, char** argv) {
       require(band.found, QStringLiteral("%1: Chrome-oracle decoration band present").arg(o.name));
       const qreal thickness = band.yMax - band.yMin + 1;
       const qreal delta = band.centerY() - inkCenter;
-      // Thickness: Chrome draws a 1px line; Muffin's dense band is 1 (exact) to 2
+      // Thickness: Chrome draws a 1px line; Mufpen's dense band is 1 (exact) to 2
       // (anti-aliasing fuzz) image-px at 1:1.
       require(thickness >= o.thickness && thickness <= o.thickness + 1.0,
               QStringLiteral("%1: thickness %2 ~ Chrome %3").arg(o.name).arg(thickness).arg(o.thickness));

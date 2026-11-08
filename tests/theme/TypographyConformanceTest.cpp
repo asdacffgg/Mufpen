@@ -32,17 +32,17 @@ void check(bool ok, const QString& context) {
 void near(qreal actual, qreal expected, qreal tolerance, const QString& context) {
   check(qAbs(actual - expected) <= tolerance, context + QString(" actual=%1 expected=%2").arg(actual).arg(expected));
 }
-const muffin::html::HtmlBox* paragraph(const muffin::html::HtmlBox& box) {
-  if (box.tag() == muffin::html::HtmlTag::Paragraph)
+const mufpen::html::HtmlBox* paragraph(const mufpen::html::HtmlBox& box) {
+  if (box.tag() == mufpen::html::HtmlTag::Paragraph)
     return &box;
   for (const auto& child : box.children())
     if (const auto* found = paragraph(*child))
       return found;
   return nullptr;
 }
-void saveLayout(const muffin::DocumentSession& document, const muffin::RenderTheme& theme,
-                const muffin::DocumentLayout& layout, qreal width, const QString& id) {
-  const auto directory = qEnvironmentVariable("MUFFIN_THEME_AUDIT_DIR");
+void saveLayout(const mufpen::DocumentSession& document, const mufpen::RenderTheme& theme,
+                const mufpen::DocumentLayout& layout, qreal width, const QString& id) {
+  const auto directory = qEnvironmentVariable("MUFPEN_THEME_AUDIT_DIR");
   if (directory.isEmpty())
     return;
   QDir().mkpath(directory);
@@ -57,10 +57,10 @@ void saveLayout(const muffin::DocumentSession& document, const muffin::RenderThe
   painter.end();
   check(image.save(directory + '/' + id + "-native.png"), id + " audit raster");
 }
-void compareLazy(const muffin::DocumentSession& document, const muffin::RenderTheme& theme,
-                 const muffin::DocumentLayout& eager, qreal width, const QString& id) {
-  muffin::DocumentLayout lazy;
-  lazy.rebuild(document.document(), theme, width, {}, {}, muffin::DocumentLayout::BuildPolicy::Lazy);
+void compareLazy(const mufpen::DocumentSession& document, const mufpen::RenderTheme& theme,
+                 const mufpen::DocumentLayout& eager, qreal width, const QString& id) {
+  mufpen::DocumentLayout lazy;
+  lazy.rebuild(document.document(), theme, width, {}, {}, mufpen::DocumentLayout::BuildPolicy::Lazy);
   lazy.buildAll(theme);
   for (const auto& node : document.document().root().children())
     check(lazy.block(node->id())->rect() == eager.block(node->id())->rect(), id + " eager/lazy box");
@@ -73,7 +73,7 @@ void headingFixtures(const QJsonObject& reference, const QString& family) {
     const auto id = entry["id"].toString();
     auto css = entry["css"].toString();
     css.replace("MuffinFixtureSans", family);
-    auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(css, id, {}));
+    auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(css, id, {}));
     theme.updateForViewport(width, 1600);
     QString markdown;
     for (const auto& node : entry["nodes"].toArray()) {
@@ -81,9 +81,9 @@ void headingFixtures(const QJsonObject& reference, const QString& family) {
       markdown += (tag.startsWith('h') ? QString(tag.mid(1).toInt(), '#') + ' ' : QString()) +
                   node.toObject()["text"].toString() + "\n\n";
     }
-    muffin::DocumentSession document;
+    mufpen::DocumentSession document;
     document.setMarkdownText(markdown.trimmed(), false);
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(document.document(), theme, width);
     const auto& nodes = document.document().root().children();
     const auto expected = entry["expected"].toArray();
@@ -112,11 +112,11 @@ void inlineFixtures(const QJsonObject& reference, const QString& family) {
     const auto id = entry["id"].toString();
     auto css = entry["css"].toString();
     css.replace("MuffinFixtureSans", family);
-    const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(css, id, {}));
-    muffin::DocumentSession document;
+    const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(css, id, {}));
+    mufpen::DocumentSession document;
     document.setMarkdownText(entry["markdown"].toString(), false);
     const qreal width = entry["width"].toDouble();
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(document.document(), theme, width);
     const auto* block = layout.block(document.document().root().children()[0]->id());
     const auto* text = block->inlineLayout();
@@ -156,10 +156,10 @@ void inlineFixtures(const QJsonObject& reference, const QString& family) {
       }
       check(text->selectionRects(0, text->visibleText().size()).size() == 2, id + " selection covers two lines");
     }
-    muffin::html::HtmlColorPalette palette = muffin::html::HtmlColorPalette::defaultLight();
+    mufpen::html::HtmlColorPalette palette = mufpen::html::HtmlColorPalette::defaultLight();
     palette.documentStyleSheet = theme.documentStyleSheet();
     palette.fontAliases = theme.fontAliases();
-    muffin::html::HtmlRenderer renderer;
+    mufpen::html::HtmlRenderer renderer;
     const auto html = renderer.render("<p>" + entry["html"].toString() + "</p>", 12, width, {}, palette);
     check(html.valid() && html.root(), id + " HTML layout");
     if (html.root()) {
@@ -176,16 +176,16 @@ void gradientFixtures(const QJsonObject& reference) {
   for (const auto& value : reference["gradients"].toArray()) {
     const auto entry = value.toObject();
     const auto id = entry["id"].toString();
-    muffin::CssLengthContext context;
+    mufpen::CssLengthContext context;
     if (entry.contains("fontSize"))
       context.emPx = entry["fontSize"].toDouble();
-    const auto spec = muffin::parseGradientSpec(entry["css"].toString(), {}, context);
-    check(muffin::GradientPainter::isGradient(spec), id + " parsed gradient");
+    const auto spec = mufpen::parseGradientSpec(entry["css"].toString(), {}, context);
+    check(mufpen::GradientPainter::isGradient(spec), id + " parsed gradient");
     const QImage expected = QImage::fromData(QByteArray::fromBase64(entry["png"].toString().toLatin1()));
     QImage actual(entry["width"].toInt(), entry["height"].toInt(), QImage::Format_ARGB32_Premultiplied);
     actual.fill(Qt::transparent);
     QPainter painter(&actual);
-    painter.fillRect(actual.rect(), muffin::GradientPainter::makeBrush(spec, actual.rect(), entry["zoom"].toDouble(1)));
+    painter.fillRect(actual.rect(), mufpen::GradientPainter::makeBrush(spec, actual.rect(), entry["zoom"].toDouble(1)));
     painter.end();
     check(!expected.isNull() && expected.size() == actual.size(), id + " browser raster");
     for (const auto& sample : entry["samples"].toArray()) {
@@ -210,12 +210,12 @@ void gradientFixtures(const QJsonObject& reference) {
   }
 }
 void wrappedMathBelongsToItsLine() {
-  const auto theme = muffin::RenderTheme::fromDefinition(muffin::CssThemeMapper::fromCss(
+  const auto theme = mufpen::RenderTheme::fromDefinition(mufpen::CssThemeMapper::fromCss(
       "#write{padding:0;margin:0;max-width:none}p{margin:0;font-size:16px;line-height:24px}", "wrapped-math", {}));
-  muffin::DocumentSession document;
+  mufpen::DocumentSession document;
   document.setMarkdownText("abcdefgh $E=mc^2$.", false);
   for (const qreal width : {80., 100., 120.}) {
-    muffin::DocumentLayout layout;
+    mufpen::DocumentLayout layout;
     layout.rebuild(document.document(), theme, width);
     const auto* text = layout.block(document.document().root().children()[0]->id())->inlineLayout();
     const auto rects = text->mathAtomRects({});
@@ -232,7 +232,7 @@ void wrappedMathBelongsToItsLine() {
 int main(int argc, char** argv) {
   qputenv("QT_FONT_DPI", "96");
   QApplication app(argc, argv);
-  QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/typography-browser.json"));
+  QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/typography-browser.json"));
   if (!file.open(QIODevice::ReadOnly))
     qFatal("Cannot open typography browser reference");
   const auto reference = QJsonDocument::fromJson(file.readAll()).object();

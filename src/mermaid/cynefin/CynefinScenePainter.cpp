@@ -13,7 +13,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 namespace {
 
 color::SvgPaint fillPaint(const QString& value) {
@@ -242,4 +242,4 @@ void paintCynefinScene(const CynefinScene& scene, QPainter& painter, const Merma
   painter.restore();
 }
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

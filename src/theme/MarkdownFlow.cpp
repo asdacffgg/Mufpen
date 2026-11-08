@@ -8,7 +8,7 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 struct Boundary {
   QString tag;
@@ -156,4 +156,4 @@ std::vector<const MarkdownNode*> MarkdownFlow::children(const MarkdownNode& node
     result.push_back(child.get());
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

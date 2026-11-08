@@ -7,7 +7,7 @@
 
 #include <cstdio>
 
-// Integration test for the muffin-mmdc CLI: runs the real binary (path baked
+// Integration test for the mufpen-mmdc CLI: runs the real binary (path baked
 // in by CMake) as a subprocess and checks the mmdc-compatible contract —
 // SVG/PNG emission, extension-driven format, -t theme override, stdin input,
 // and the invalid-source behavior (error-diagram output + exit 1 + stderr
@@ -40,16 +40,16 @@ struct RunResult {
 
 RunResult run(const QStringList& arguments, const QByteArray& stdinBytes = QByteArray()) {
   QProcess process;
-  process.start(QStringLiteral(MUFFIN_MMDC_PATH), arguments);
+  process.start(QStringLiteral(MUFPEN_MMDC_PATH), arguments);
   if (!process.waitForStarted(10000))
-    fail("could not start muffin-mmdc");
+    fail("could not start mufpen-mmdc");
   if (!stdinBytes.isEmpty()) {
     process.write(stdinBytes);
     process.closeWriteChannel();
   }
   if (!process.waitForFinished(60000)) {
     process.kill();
-    fail(QStringLiteral("muffin-mmdc timed out: %1").arg(arguments.join(QLatin1Char(' '))));
+    fail(QStringLiteral("mufpen-mmdc timed out: %1").arg(arguments.join(QLatin1Char(' '))));
   }
   return {process.exitCode(), process.readAllStandardOutput(), process.readAllStandardError()};
 }

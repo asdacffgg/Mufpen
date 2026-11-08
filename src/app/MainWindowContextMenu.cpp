@@ -25,14 +25,14 @@
 #include <initializer_list>
 #include <utility>
 
-// Rendered-mode right-click menu. Defined out-of-namespace (no `namespace muffin`
+// Rendered-mode right-click menu. Defined out-of-namespace (no `namespace mufpen`
 // wrapper) because this translation unit contains tr() calls — see the lupdate
 // namespace-context rule in CLAUDE.md. The menu reuses the already-registered
 // command actions from `commands_` (labels / shortcuts / handlers / enabled-
 // state for free), keyed off the click's HitTestResult zone. The pattern mirrors
 // MainWindowSignalBinder's tableMoreActionsRequested handler.
 
-void muffin::MainWindow::buildBlockContextMenu(DocumentTab* document, BlockTarget target, QPoint globalPos) {
+void mufpen::MainWindow::buildBlockContextMenu(DocumentTab* document, BlockTarget target, QPoint globalPos) {
   using Action = EditorController::BlockAction;
   if (!document || !document->editorController.canPerformBlockAction(target, Action::Copy))
     return;
@@ -71,7 +71,7 @@ void muffin::MainWindow::buildBlockContextMenu(DocumentTab* document, BlockTarge
   menu.exec(globalPos);
 }
 
-void muffin::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint globalPos) {
+void mufpen::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint globalPos) {
   // Refresh every command's enabled/checked predicate so the menu reflects the
   // current caret/selection/document state at exec time.
   updateAllActions();
@@ -101,7 +101,7 @@ void muffin::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint
   };
 
   // ---- [A] Spelling suggestions (word under the click is misspelled) ----------
-  // Strings stay in the muffin::EditorView context so the existing translations
+  // Strings stay in the mufpen::EditorView context so the existing translations
   // apply — the spell menu used to live in EditorView::contextMenuEvent.
   auto& checker = SpellChecker::instance();
   if (checker.isEnabled() && hit.zone == HitTestResult::Zone::Text && hit.sourceOffset >= 0) {
@@ -113,7 +113,7 @@ void muffin::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint
         const QStringList suggestions = checker.suggestions(word);
         if (suggestions.isEmpty()) {
           QAction* none =
-              menu.addAction(QCoreApplication::translate("muffin::EditorView", "(no spelling suggestions)"));
+              menu.addAction(QCoreApplication::translate("mufpen::EditorView", "(no spelling suggestions)"));
           none->setEnabled(false);
         } else {
           const qsizetype start = seg.start;
@@ -129,7 +129,7 @@ void muffin::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint
             });
           }
         }
-        QAction* ignore = menu.addAction(QCoreApplication::translate("muffin::EditorView", "Ignore \"%1\"").arg(word));
+        QAction* ignore = menu.addAction(QCoreApplication::translate("mufpen::EditorView", "Ignore \"%1\"").arg(word));
         connect(ignore, &QAction::triggered, this, [this, word]() {
           SpellChecker::instance().ignoreWord(word);
           tab_->renderView->refreshVisibleBlocks(tab_->session.document()); // clear the squiggle on screen
@@ -249,7 +249,7 @@ void muffin::MainWindow::buildEditorContextMenu(const HitTestResult& hit, QPoint
   menu.exec(globalPos);
 }
 
-void muffin::MainWindow::exportMermaidDiagram(NodeId blockId) {
+void mufpen::MainWindow::exportMermaidDiagram(NodeId blockId) {
   const MarkdownNode* node = tab_->session.document().node(blockId);
   if (!node || node->type() != BlockType::CodeFence || node->codeLanguage() != QLatin1String("mermaid")) {
     return;
@@ -284,7 +284,7 @@ void muffin::MainWindow::exportMermaidDiagram(NodeId blockId) {
   statusBar()->showMessage(tr("Exported to %1").arg(QDir::toNativeSeparators(path)), 5000);
 }
 
-void muffin::MainWindow::exportMermaidDiagramPng(NodeId blockId) {
+void mufpen::MainWindow::exportMermaidDiagramPng(NodeId blockId) {
   const MarkdownNode* node = tab_->session.document().node(blockId);
   if (!node || node->type() != BlockType::CodeFence || node->codeLanguage() != QLatin1String("mermaid")) {
     return;
@@ -327,7 +327,7 @@ void muffin::MainWindow::exportMermaidDiagramPng(NodeId blockId) {
 // document. The variant is decided from `onItem`/`isDir`: a file gets the full
 // set, a directory or empty space gets the reduced set (per spec). New File /
 // New Folder target the clicked directory, or the file's parent for a file.
-void muffin::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool onItem, QPoint globalPos) {
+void mufpen::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool onItem, QPoint globalPos) {
   QMenu menu(this);
   const QString targetDir = isDir ? path : QFileInfo(path).absolutePath();
 
@@ -367,9 +367,9 @@ void muffin::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool 
 
   if (!sidebar_->folderRoot().isEmpty()) {
     menu.addSeparator();
-    add(muffin::SidebarWidget::tr("Expand All Folders"), [this] { sidebar_->expandAllFolders(); });
-    add(muffin::SidebarWidget::tr("Collapse All Folders"), [this] { sidebar_->collapseAllFolders(); });
-    add(muffin::SidebarWidget::tr("Close Folder"), [this] { closeFolder(); });
+    add(mufpen::SidebarWidget::tr("Expand All Folders"), [this] { sidebar_->expandAllFolders(); });
+    add(mufpen::SidebarWidget::tr("Collapse All Folders"), [this] { sidebar_->collapseAllFolders(); });
+    add(mufpen::SidebarWidget::tr("Close Folder"), [this] { closeFolder(); });
   }
   menu.exec(globalPos);
 }

@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <vector>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testEditorViewHitTestActivatesInlineSourceEditing() {
   DocumentSession session;
@@ -746,9 +746,9 @@ void testInlinePreeditAtRightEdgeWraps() {
   require(layoutAfter->visualLineCount() >= 2, "a preedit at the right edge should wrap to a new line, not be clipped");
 }
 
-// A caret inside a link's revealed URL (`[Muffin](htt|s://…)`) has a granular SOURCE offset but a
+// A caret inside a link's revealed URL (`[Mufpen](htt|s://…)`) has a granular SOURCE offset but a
 // VISIBLE offset that collapses to the HiddenSyntax span boundary. The preedit must splice at the
-// caret's source position (inside the URL), not at the boundary (after "Muffin"). Verified by the
+// caret's source position (inside the URL), not at the boundary (after "Mufpen"). Verified by the
 // composition caret sitting at the caret's X (the preedit starts there), not far to its left.
 void testInlinePreeditSplicesInsideRevealedLinkUrl() {
   const QString md = QStringLiteral("[Muffin](https://example.com)");
@@ -783,7 +783,7 @@ void testInlinePreeditSplicesInsideRevealedLinkUrl() {
   const QRectF compCaret = layout->preeditCursorRect(blk->inlineTextOrigin()); // document space
   require(!compCaret.isEmpty(), "the composition caret rect should be resolved");
   // The composition caret (= splice point) must sit at the caret's URL position, not at the end of
-  // "Muffin" where a visible-offset anchor would wrongly place it (well to the left of the caret).
+  // "Mufpen" where a visible-offset anchor would wrongly place it (well to the left of the caret).
   const qreal caretX = view.effectiveCursorRect().x();
   require(compCaret.x() >= caretX - 2.0,
           "preedit should splice at the caret's source position inside the URL, not at the visible boundary");

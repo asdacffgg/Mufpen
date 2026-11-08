@@ -7,7 +7,7 @@
 #include <QStringListModel>
 #include <QTextStream>
 
-namespace muffin {
+namespace mufpen {
 
 QVector<EmojiEntry> BundledEmojiProvider::matches(const QString& prefix, int max) const {
   load();
@@ -186,4 +186,4 @@ void EmojiCompleter::acceptCurrent() {
   hide();
 }
 
-} // namespace muffin
+} // namespace mufpen

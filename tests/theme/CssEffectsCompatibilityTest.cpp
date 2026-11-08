@@ -20,7 +20,7 @@
 #include <cmath>
 #include "theme/CssThemeMapper.h"
 #include "theme/NodeCssElement.h"
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void pixels(const QJsonObject& root) {
   int failures = 0;

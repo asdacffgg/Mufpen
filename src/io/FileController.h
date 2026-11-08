@@ -8,7 +8,7 @@
 
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentSession;
 struct TextFileFormat;
@@ -18,7 +18,7 @@ struct TextFileFormat;
 // clobber it); callers may retry once the parse finishes.
 enum class SaveOutcome { Saved, SkippedBusy, Failed };
 
-class MUFFIN_UI_EXPORT FileController final : public QObject {
+class MUFPEN_UI_EXPORT FileController final : public QObject {
   Q_OBJECT
 
 public:
@@ -69,4 +69,4 @@ private:
   TextFileFormat formatForNewFile() const;
 };
 
-} // namespace muffin
+} // namespace mufpen

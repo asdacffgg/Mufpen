@@ -2,7 +2,7 @@
 
 #include <QHash>
 
-namespace muffin {
+namespace mufpen {
 
 class BlockEditContextResolver;
 class DocumentSession;
@@ -27,4 +27,4 @@ struct EditorContext {
   BlockEditContextResolver contextResolver() const;
 };
 
-} // namespace muffin
+} // namespace mufpen

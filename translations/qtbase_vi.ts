@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="vi_VN" sourcelanguage="en">
-<!-- Supplemental translations for common Qt widgets used by Muffin.
+<!-- Supplemental translations for common Qt widgets used by Mufpen.
      Contexts and source strings were checked against Qt 6.10 qtbase catalogs. -->
 <context>
     <name>QPlatformTheme</name>

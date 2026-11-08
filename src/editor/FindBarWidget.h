@@ -9,9 +9,9 @@ class QPushButton;
 class QLabel;
 class QCheckBox;
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_UI_EXPORT FindBarWidget final : public QWidget {
+class MUFPEN_UI_EXPORT FindBarWidget final : public QWidget {
   Q_OBJECT
 
 public:
@@ -59,4 +59,4 @@ private:
   QWidget* replaceRow_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

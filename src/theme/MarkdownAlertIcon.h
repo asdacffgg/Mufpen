@@ -3,7 +3,7 @@
 #include "document/MarkdownTypes.h"
 #include <QByteArray>
 
-namespace muffin {
+namespace mufpen {
 
 // Small, theme-independent semantic icons. Colour and geometry come from the
 // live SVG element's computed style, including the alert's inherited colour.
@@ -29,4 +29,4 @@ inline QByteArray markdownAlertIconSvg(AlertKind kind) {
          markdownAlertIconPath(kind) + "'/></svg>";
 }
 
-} // namespace muffin
+} // namespace mufpen

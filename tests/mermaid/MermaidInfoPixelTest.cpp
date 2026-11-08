@@ -15,7 +15,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
     const QImage native = decode(
         editor::MermaidRenderCache::renderMermaidSourceToPng(fixture.value(QStringLiteral("source")).toString(), 1.0)
             .dataUrl);
-    if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE")) {
       native.save(dir.filePath(id + QStringLiteral("-native.png")));
     }
     require(!reference.isNull() && !native.isNull(), id + QStringLiteral("/decode"));

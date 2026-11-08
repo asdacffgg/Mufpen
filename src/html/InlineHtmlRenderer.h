@@ -6,7 +6,7 @@
 #include <QStringView>
 #include <vector>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 struct InlineHtmlFormatResult {
   QString text;
@@ -24,4 +24,4 @@ public:
   static bool isRenderableTag(QStringView tagName);
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

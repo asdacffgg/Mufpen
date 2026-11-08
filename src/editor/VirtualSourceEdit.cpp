@@ -8,7 +8,7 @@
 #include "document/PendingBlockMarker.h"
 #include "editor/WordBoundary.h"
 #include "io/FilePathOps.h"
-#include "io/MuffinMime.h"
+#include "io/MufpenMime.h"
 #include "projection/SelectionSerializer.h"
 #include "spellcheck/SpellChecker.h"
 #include "theme/FontRendering.h"
@@ -50,7 +50,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 constexpr int kGutterWidth = 48;
@@ -307,8 +307,8 @@ VirtualSourceEdit::VirtualSourceEdit(QWidget* parent)
 }
 
 void VirtualSourceEdit::retranslateAccessibility() {
-  setAccessibleName(QCoreApplication::translate("muffin::VirtualSourceEdit", "Markdown source editor"));
-  setAccessibleDescription(QCoreApplication::translate("muffin::VirtualSourceEdit", "Plain-text Markdown source"));
+  setAccessibleName(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Markdown source editor"));
+  setAccessibleDescription(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Plain-text Markdown source"));
 }
 
 void VirtualSourceEdit::changeEvent(QEvent* event) {
@@ -1656,7 +1656,7 @@ void VirtualSourceEdit::contextMenuEvent(QContextMenuEvent* event) {
   if (checker.isEnabled() && !word.isEmpty() && !checker.isCorrect(word)) {
     const QStringList suggestions = checker.suggestions(word);
     if (suggestions.isEmpty()) {
-      QAction* none = menu.addAction(QCoreApplication::translate("muffin::EditorView", "(no spelling suggestions)"));
+      QAction* none = menu.addAction(QCoreApplication::translate("mufpen::EditorView", "(no spelling suggestions)"));
       none->setEnabled(false);
     } else {
       for (int i = 0; i < qMin(8, suggestions.size()); ++i) {
@@ -1667,7 +1667,7 @@ void VirtualSourceEdit::contextMenuEvent(QContextMenuEvent* event) {
         replacement->setEnabled(!isReadOnly());
       }
     }
-    menu.addAction(QCoreApplication::translate("muffin::EditorView", "Ignore \"%1\"").arg(word), this, [this, word] {
+    menu.addAction(QCoreApplication::translate("mufpen::EditorView", "Ignore \"%1\"").arg(word), this, [this, word] {
       SpellChecker::instance().ignoreWord(word);
       invalidateLayoutCache();
       viewport()->update();
@@ -1676,23 +1676,23 @@ void VirtualSourceEdit::contextMenuEvent(QContextMenuEvent* event) {
   }
 
   QAction* undoAction =
-      menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Undo"), this, &VirtualSourceEdit::undo);
+      menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Undo"), this, &VirtualSourceEdit::undo);
   QAction* redoAction =
-      menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Redo"), this, &VirtualSourceEdit::redo);
+      menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Redo"), this, &VirtualSourceEdit::redo);
   undoAction->setEnabled(canUndo());
   redoAction->setEnabled(canRedo());
   menu.addSeparator();
-  QAction* cutAction = menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Cut"), this, [this] {
+  QAction* cutAction = menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Cut"), this, [this] {
     if (hasSelection()) {
       QApplication::clipboard()->setText(selectedText());
       applyEdit(selectionStart(), selectionEnd(), {}, true);
     }
   });
-  QAction* copyAction = menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Copy"), this, [this] {
+  QAction* copyAction = menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Copy"), this, [this] {
     if (hasSelection())
       QApplication::clipboard()->setText(selectedText());
   });
-  QAction* pasteAction = menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Paste"), this,
+  QAction* pasteAction = menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Paste"), this,
                                         [this] { insertText(QApplication::clipboard()->text()); });
   cutAction->setEnabled(hasSelection());
   copyAction->setEnabled(hasSelection());
@@ -1703,7 +1703,7 @@ void VirtualSourceEdit::contextMenuEvent(QContextMenuEvent* event) {
     pasteAction->setEnabled(false);
   }
   menu.addSeparator();
-  menu.addAction(QCoreApplication::translate("muffin::VirtualSourceEdit", "Select All"), this,
+  menu.addAction(QCoreApplication::translate("mufpen::VirtualSourceEdit", "Select All"), this,
                  &VirtualSourceEdit::selectAll);
   menu.exec(event->globalPos());
 }
@@ -1760,7 +1760,7 @@ bool VirtualSourceEdit::canDrop(const QMimeData* mime, const QObject* dragSource
   // rather than MIME object identity, identifies a move within this editor.
   if (dragSource == this)
     return selectionDragIsCurrent();
-  if (mime->hasFormat(kMuffinFileTreeDragMime)) {
+  if (mime->hasFormat(kMufpenFileTreeDragMime)) {
     if (mime->urls().isEmpty())
       return false;
     const auto url = mime->urls().constFirst();
@@ -1875,7 +1875,7 @@ void VirtualSourceEdit::dropEvent(QDropEvent* event) {
     applied = dropSelection(position, event->proposedAction() != Qt::MoveAction);
     selectionDropHandled_ = applied;
   } else {
-    QString text = mime->hasFormat(kMuffinFileTreeDragMime)
+    QString text = mime->hasFormat(kMufpenFileTreeDragMime)
                        ? FilePathOps::markdownLinkForFile(mime->urls().constFirst().toLocalFile(), documentPath_)
                        : mime->text();
     text.replace(QStringLiteral("\r\n"), QStringLiteral("\n"));
@@ -1908,4 +1908,4 @@ void VirtualSourceEdit::scrollContentsBy(int dx, int dy) {
   viewport()->update();
 }
 
-} // namespace muffin
+} // namespace mufpen

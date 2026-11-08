@@ -1,8 +1,8 @@
 # Keep the DLL interface independent of the compiler's template emission policy.
 # MSVC 19.51 emits enough Qt/STL helpers for EXPORT_ALL_SYMBOLS to overflow the
 # import-library object limit on both x64 and ARM64.
-function(muffin_windows_exports target)
-  if(NOT MSVC OR NOT MUFFIN_LIB_TYPE STREQUAL "SHARED")
+function(mufpen_windows_exports target)
+  if(NOT MSVC OR NOT MUFPEN_LIB_TYPE STREQUAL "SHARED")
     return()
   endif()
   set_target_properties(${target} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS OFF)
@@ -13,10 +13,10 @@ function(muffin_windows_exports target)
     COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_FUNCTION_LIST_DIR}/filter_windows_exports.py"
       --cmake "${CMAKE_COMMAND}"
       --objects "${_export_dir}/export-objects.txt"
-      --output "${_export_dir}/muffin-exports.def"
+      --output "${_export_dir}/mufpen-exports.def"
     COMMENT "Generating ${target} namespace exports"
     VERBATIM)
-  target_link_options(${target} PRIVATE "/DEF:${_export_dir}/muffin-exports.def")
+  target_link_options(${target} PRIVATE "/DEF:${_export_dir}/mufpen-exports.def")
   set_property(TARGET ${target} APPEND PROPERTY LINK_DEPENDS
     "${CMAKE_CURRENT_FUNCTION_LIST_DIR}/filter_windows_exports.py")
 endfunction()

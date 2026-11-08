@@ -6,8 +6,8 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {browserLayoutFont, loadBrowserLayoutFont} from './browser_layout_font.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const {chromium} = await import(process.env.MUFFIN_PLAYWRIGHT_MODULE ?
-  pathToFileURL(path.resolve(process.env.MUFFIN_PLAYWRIGHT_MODULE)).href : 'playwright');
+const {chromium} = await import(process.env.MUFPEN_PLAYWRIGHT_MODULE ?
+  pathToFileURL(path.resolve(process.env.MUFPEN_PLAYWRIGHT_MODULE)).href : 'playwright');
 const browser = await chromium.launch({headless:true,
   ...(process.env.CHROME_EXECUTABLE ? {executablePath:process.env.CHROME_EXECUTABLE} : {})});
 const font = browserLayoutFont(root), sources = {}, cases = [];

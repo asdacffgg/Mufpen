@@ -19,7 +19,7 @@
 #include <limits>
 #include <string>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QString configString(const QJsonValue& value) {
@@ -830,4 +830,4 @@ void finalizeReadyEntry(MermaidRenderEntry& entry, MermaidRenderMetadata metadat
   entry.metadata = std::move(metadata);
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

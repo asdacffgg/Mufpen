@@ -12,7 +12,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 namespace {
 
 constexpr qreal kColumnGap = 5.0;
@@ -502,4 +502,4 @@ QJsonObject KanbanScene::toJsonObject() const {
           {QStringLiteral("items"), itemArray}};
 }
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

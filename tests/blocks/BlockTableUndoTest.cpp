@@ -18,7 +18,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testTableStructureUndoUsesTableCommand (lines 194-233)
 void testTableStructureUndoUsesTableCommand() {

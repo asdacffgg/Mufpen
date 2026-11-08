@@ -33,7 +33,7 @@
 #include <utility>
 #include <vector>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 void log(const QString& message) {
@@ -98,7 +98,7 @@ bool imagesIdentical(const QImage& a, const QImage& b) {
 int main(int argc, char** argv) {
   QGuiApplication app(argc, argv);
   MermaidFontRegistry::ensureLoaded();
-  muffin::math::MathFontRegistry::ensureLoaded();
+  mufpen::math::MathFontRegistry::ensureLoaded();
   const qreal size = 16.0;
   const qreal lineHeight = 22.0;
   const QString text = QStringLiteral("testing wrapping here");

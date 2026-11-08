@@ -23,7 +23,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -162,7 +162,7 @@ int main(int argc, char** argv) {
     const editor::MermaidPngRenderResult result = editor::MermaidRenderCache::renderMermaidSourceToPng(kSrc, 1.0);
     const QImage img = decodePng(result.dataUrl);
     require(!img.isNull(), "default border case must render a PNG");
-    const QColor expected = muffin::mermaid::color::toQColor(model.quadrantExternalBorderStrokeFill);
+    const QColor expected = mufpen::mermaid::color::toQColor(model.quadrantExternalBorderStrokeFill);
     require(expected != Qt::black, "default external border color is a real hsl, not black");
     // Exact pixel at the top-border midpoint (a 2px line; its center is solid).
     require(!s->borders.isEmpty(), "default quadrant has borders");

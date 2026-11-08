@@ -39,9 +39,9 @@ QString makeImage(const QDir& dir, const QString& name) {
   return path;
 }
 
-muffin::ImageInsertResult resolve(const muffin::ImageInsertRequest& req) {
+mufpen::ImageInsertResult resolve(const mufpen::ImageInsertRequest& req) {
   QSettings settings;
-  return muffin::ImageInsertionPolicy::resolveHref(req, settings, nullptr);
+  return mufpen::ImageInsertionPolicy::resolveHref(req, settings, nullptr);
 }
 
 void testCopyToAssets() {
@@ -51,9 +51,9 @@ void testCopyToAssets() {
   const QString img = makeImage(docDir, "pic.png");
   const QString docPath = docDir.filePath("note.md");
 
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::CopyToAssets));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::CopyToAssets));
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
@@ -71,9 +71,9 @@ void testCopyToFilenameAssets() {
   const QString docPath = docDir.filePath("My Note.md"); // completeBaseName == "My Note"
 
   QSettings().setValue(QStringLiteral("image/insertAction"),
-                       static_cast<int>(muffin::ImageInsertAction::CopyToFilenameAssets));
+                       static_cast<int>(mufpen::ImageInsertAction::CopyToFilenameAssets));
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
@@ -91,10 +91,10 @@ void testNonePreferRelative() {
   const QString img = makeImage(docDir, "inline.png");
   const QString docPath = docDir.filePath("doc.md");
 
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::None));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::None));
   QSettings().setValue(QStringLiteral("image/preferRelativePath"), true);
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
@@ -108,10 +108,10 @@ void testAddLeadingSlash() {
   const QString img = makeImage(docDir, "lead.png");
   const QString docPath = docDir.filePath("doc.md");
 
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::CopyToAssets));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::CopyToAssets));
   QSettings().setValue(QStringLiteral("image/addLeadingSlash"), true);
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
@@ -126,10 +126,10 @@ void testEscapeImageUrl() {
   const QString img = makeImage(docDir, "with space.png");
   const QString docPath = docDir.filePath("doc.md");
 
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::CopyToAssets));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::CopyToAssets));
   QSettings().setValue(QStringLiteral("image/escapeImageUrl"), true);
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
@@ -142,18 +142,18 @@ void testSpacedImageParsesWithoutEscapePreference() {
   const QDir docDir(dir.path());
   const QString img = makeImage(docDir, "my image (1).png");
   const QString docPath = docDir.filePath("doc.md");
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::None));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::None));
   QSettings().setValue(QStringLiteral("image/escapeImageUrl"), false);
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
   const auto res = resolve(req);
-  muffin::DocumentSession session;
-  session.setMarkdownText(muffin::image_syntax::markdownImage(QStringLiteral("literal ](alt)"), res.href), false);
-  const auto refs = muffin::ImageFileOps::collectImageRefs(session.document());
+  mufpen::DocumentSession session;
+  session.setMarkdownText(mufpen::image_syntax::markdownImage(QStringLiteral("literal ](alt)"), res.href), false);
+  const auto refs = mufpen::ImageFileOps::collectImageRefs(session.document());
   require(res.ok && refs.size() == 1,
           QStringLiteral("Insertion must produce a real image without URL-escape preference"));
-  require(muffin::ImageFileOps::resolveImagePath(refs.first().href, dir.path()) == img,
+  require(mufpen::ImageFileOps::resolveImagePath(refs.first().href, dir.path()) == img,
           QStringLiteral("Inserted image must resolve to the chosen file"));
 }
 
@@ -165,13 +165,13 @@ void testYamlDirectiveWithoutSettingDoesNotForceUpload() {
 
   // allowYamlUpload OFF even though the frontmatter asks for upload → the
   // dropdown action (CopyToAssets) must win.
-  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(muffin::ImageInsertAction::CopyToAssets));
+  QSettings().setValue(QStringLiteral("image/insertAction"), static_cast<int>(mufpen::ImageInsertAction::CopyToAssets));
   QSettings().setValue(QStringLiteral("image/allowYamlUpload"), false);
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = img;
   req.documentPath = docPath;
-  req.documentText = QStringLiteral("---\nmuffin-image-upload: true\n---\nbody");
+  req.documentText = QStringLiteral("---\nmufpen-image-upload: true\n---\nbody");
   const auto res = resolve(req);
   require(res.ok && res.href == QStringLiteral("assets/y.png"),
           QStringLiteral("Without allowYamlUpload the directive must be ignored, got '%1'").arg(res.href));
@@ -182,29 +182,29 @@ void testPastedImageIntoUntitledDocument() {
   // resolveHref return ok=false, so ClipboardController::paste() silently dropped the
   // image. It must now fall back to a writable cache dir and still produce an href.
   QSettings().setValue(QStringLiteral("image/insertAction"),
-                       static_cast<int>(muffin::ImageInsertAction::CopyToCurrentFolder));
+                       static_cast<int>(mufpen::ImageInsertAction::CopyToCurrentFolder));
 
   QImage pasted(1, 1, QImage::Format_RGB32);
   pasted.fill(Qt::blue);
 
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.pastedImage = pasted;
   req.documentPath = QString(); // untitled document
   const auto res = resolve(req);
   require(res.ok,
           QStringLiteral("pasting an image into an untitled document should succeed (error: %1)").arg(res.error));
   require(!res.href.isEmpty(), QStringLiteral("the pasted-image href must not be empty"));
-  // Untitled → parked under the app's "muffin-user-images" folder, Typora-style name.
-  require(res.href.contains(QStringLiteral("muffin-user-images")),
-          QStringLiteral("untitled-doc image should live under muffin-user-images, href='%1'").arg(res.href));
+  // Untitled → parked under the app's "mufpen-user-images" folder, Typora-style name.
+  require(res.href.contains(QStringLiteral("mufpen-user-images")),
+          QStringLiteral("untitled-doc image should live under mufpen-user-images, href='%1'").arg(res.href));
   require(QFileInfo(res.href).fileName().startsWith(QStringLiteral("image-")),
           QStringLiteral("pasted image should use the image-<timestamp> name, got '%1'")
               .arg(QFileInfo(res.href).fileName()));
   require(QFile::exists(res.href),
           QStringLiteral("the pasted image should have been saved and referenced by an existing file, href='%1'")
               .arg(res.href));
-  if (muffin::ApplicationPaths::isPortable())
-    require(QFileInfo(res.href).absoluteFilePath().startsWith(muffin::ApplicationPaths::dataDirectory() + "/"),
+  if (mufpen::ApplicationPaths::isPortable())
+    require(QFileInfo(res.href).absoluteFilePath().startsWith(mufpen::ApplicationPaths::dataDirectory() + "/"),
             QStringLiteral("unsaved portable images must not escape to the installed profile"));
 }
 
@@ -212,8 +212,8 @@ void testPastedImageIntoUntitledDocument() {
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("Muffin"));
-  QCoreApplication::setApplicationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("Mufpen"));
+  QCoreApplication::setApplicationName(QStringLiteral("MufpenTests"));
 
   // Start each case from a clean image-settings baseline.
   const QStringList imageKeys = {
@@ -258,11 +258,11 @@ int main(int argc, char** argv) {
   }
   QTemporaryDir portable;
   require(portable.isValid(), QStringLiteral("portable image fixture"));
-  QFile marker(portable.filePath("Muffin.portable"));
+  QFile marker(portable.filePath("Mufpen.portable"));
   require(marker.open(QIODevice::WriteOnly), QStringLiteral("portable image marker"));
   marker.close();
   QString error;
-  require(muffin::ApplicationPaths::initialize(portable.filePath("Muffin.exe"), &error), error);
+  require(mufpen::ApplicationPaths::initialize(portable.filePath("Mufpen.exe"), &error), error);
   testPastedImageIntoUntitledDocument();
   return 0;
 }

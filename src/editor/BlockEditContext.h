@@ -8,7 +8,7 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentSession;
 class MarkdownNode;
@@ -75,4 +75,4 @@ private:
   SelectionController* selection_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

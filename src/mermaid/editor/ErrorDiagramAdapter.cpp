@@ -13,7 +13,7 @@
 #include <cmath>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 // The shared getStyles base sheet that styling the error diagram reduces to:
@@ -224,4 +224,4 @@ const Diagram& dashDiagramAdapter() {
   return instance;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

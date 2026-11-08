@@ -18,7 +18,7 @@
 
 #include "MathTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -107,7 +107,7 @@ void testMathMetricsMacrosAndState() {
 
 void testRecursionGuards() {
   // Deeply nested groups must retain the parser's logical resource limit.
-  // MuffinMathParserStackTest also exercises this on a deliberately small stack.
+  // MufpenMathParserStackTest also exercises this on a deliberately small stack.
   {
     QString deep;
     for (int i = 0; i < 2000; ++i) {
@@ -157,7 +157,7 @@ void testMathFixtureRenderTreeDumps(const QString& fixturePath) {
   RenderTheme theme = RenderTheme::github();
   const qreal rootEm = math::MathRenderer::katexRootFontPixelSize(theme);
   QVector<BBoxAuditEntry> bboxAudit;
-  const bool auditKatexBBox = qEnvironmentVariableIntValue("MUFFIN_AUDIT_KATEX_BBOX") != 0;
+  const bool auditKatexBBox = qEnvironmentVariableIntValue("MUFPEN_AUDIT_KATEX_BBOX") != 0;
   for (const QJsonValue& value : fixtures) {
     require(value.isObject(), QStringLiteral("math fixture entry should be an object"));
     const QJsonObject fixture = value.toObject();
@@ -175,7 +175,7 @@ void testMathFixtureRenderTreeDumps(const QString& fixturePath) {
             QStringLiteral("math fixture %1 layout size should include root box").arg(id));
 
     const QJsonObject dump = rendered.root->toJson();
-    if (qEnvironmentVariable("MUFFIN_DUMP_MATH_FIXTURE") == id.toUtf8()) {
+    if (qEnvironmentVariable("MUFPEN_DUMP_MATH_FIXTURE") == id.toUtf8()) {
       qInfo().noquote() << QString::fromUtf8(QJsonDocument(dump).toJson(QJsonDocument::Indented));
     }
     require(dump.value(QStringLiteral("kind")).isString(),
@@ -193,7 +193,7 @@ void testMathFixtureRenderTreeDumps(const QString& fixturePath) {
     }
 
     const auto goldenIt = katexMetricsById.constFind(id);
-    if (qEnvironmentVariable("MUFFIN_DUMP_KATEX_METRIC_DIFF") == id.toUtf8() &&
+    if (qEnvironmentVariable("MUFPEN_DUMP_KATEX_METRIC_DIFF") == id.toUtf8() &&
         goldenIt != katexMetricsById.constEnd()) {
       QJsonObject nativeMetricsRoot = dump;
       QJsonObject katexHtml;
@@ -211,7 +211,7 @@ void testMathFixtureRenderTreeDumps(const QString& fixturePath) {
     }
 
     const auto glyphIt = katexGlyphsById.constFind(id);
-    if (qEnvironmentVariable("MUFFIN_DUMP_GLYPH_DIFF") == id.toUtf8() && glyphIt != katexGlyphsById.constEnd()) {
+    if (qEnvironmentVariable("MUFPEN_DUMP_GLYPH_DIFF") == id.toUtf8() && glyphIt != katexGlyphsById.constEnd()) {
       dumpGlyphDiffs(id, *rendered.root, glyphIt.value(), rootEm);
     }
     if (fixture.value(QStringLiteral("compareKatexGlyphs")).toBool() && glyphIt != katexGlyphsById.constEnd()) {
@@ -303,7 +303,7 @@ void testOfficialKatexScreenshotterAudit(const QString& fixturePath) {
     }
     ++renderedCount;
 
-    const QString dumpOfficial = qEnvironmentVariable("MUFFIN_DUMP_OFFICIAL_KATEX_FIXTURE");
+    const QString dumpOfficial = qEnvironmentVariable("MUFPEN_DUMP_OFFICIAL_KATEX_FIXTURE");
     if (dumpOfficial == id) {
       qInfo().noquote() << QStringLiteral("Official native dump for %1:").arg(id);
       qInfo().noquote() << QString::fromUtf8(QJsonDocument(rendered.root->toJson()).toJson(QJsonDocument::Indented));

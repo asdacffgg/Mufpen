@@ -18,7 +18,7 @@
 #include <limits>
 #include <optional>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 namespace {
 
 constexpr qreal kRepulsion = 4500.0;
@@ -1402,4 +1402,4 @@ ArchitectureFcoseResult layoutArchitectureFcose(const ArchitectureData& data, co
   return result;
 }
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

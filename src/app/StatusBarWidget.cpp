@@ -157,15 +157,15 @@ void drawChevron(QPainter& p, int cx, int cy, const QColor& color) {
 
 } // namespace
 
-muffin::StatusBarWidget::StatusBarWidget(QWidget* parent) : QStatusBar(parent) {
+mufpen::StatusBarWidget::StatusBarWidget(QWidget* parent) : QStatusBar(parent) {
   setSizeGripEnabled(false);
-  setFixedHeight(muffin::ui_metrics::kStatusBarHeight);
+  setFixedHeight(mufpen::ui_metrics::kStatusBarHeight);
   setMouseTracking(true);
   setAttribute(Qt::WA_StyledBackground, false);
 
   sidebarButton_ = new ChromeIconButton(this);
   sidebarButton_->setObjectName(QStringLiteral("statusSidebarToggle"));
-  sidebarButton_->setIconSize(QSize(muffin::ui_metrics::kStatusIconSize, muffin::ui_metrics::kStatusIconSize));
+  sidebarButton_->setIconSize(QSize(mufpen::ui_metrics::kStatusIconSize, mufpen::ui_metrics::kStatusIconSize));
   sidebarButton_->setCheckable(true);
   sidebarButton_->setAutoRaise(true);
   sidebarButton_->setFocusPolicy(Qt::NoFocus);
@@ -173,7 +173,7 @@ muffin::StatusBarWidget::StatusBarWidget(QWidget* parent) : QStatusBar(parent) {
 
   sourceModeButton_ = new ChromeIconButton(this);
   sourceModeButton_->setObjectName(QStringLiteral("statusSourceMode"));
-  sourceModeButton_->setIconSize(QSize(muffin::ui_metrics::kStatusIconSize, muffin::ui_metrics::kStatusIconSize));
+  sourceModeButton_->setIconSize(QSize(mufpen::ui_metrics::kStatusIconSize, mufpen::ui_metrics::kStatusIconSize));
   sourceModeButton_->setCheckable(true);
   sourceModeButton_->setAutoRaise(true);
   sourceModeButton_->setFocusPolicy(Qt::NoFocus);
@@ -211,24 +211,24 @@ muffin::StatusBarWidget::StatusBarWidget(QWidget* parent) : QStatusBar(parent) {
   retranslateUi();
 }
 
-QToolButton* muffin::StatusBarWidget::sidebarButton() const {
+QToolButton* mufpen::StatusBarWidget::sidebarButton() const {
   return sidebarButton_;
 }
-QToolButton* muffin::StatusBarWidget::sourceModeButton() const {
+QToolButton* mufpen::StatusBarWidget::sourceModeButton() const {
   return sourceModeButton_;
 }
-QToolButton* muffin::StatusBarWidget::splitViewButton() const {
+QToolButton* mufpen::StatusBarWidget::splitViewButton() const {
   return splitViewButton_;
 }
 
-void muffin::StatusBarWidget::setCursorStatus(const QString& text) {
+void mufpen::StatusBarWidget::setCursorStatus(const QString& text) {
   if (cursorStatus_ != text) {
     cursorStatus_ = text;
     update();
   }
 }
 
-void muffin::StatusBarWidget::setWordCount(int words) {
+void mufpen::StatusBarWidget::setWordCount(int words) {
   wordCount_ = words;
   const QString t = tr("%1 words").arg(words);
   if (wordCountText_ != t) {
@@ -237,21 +237,21 @@ void muffin::StatusBarWidget::setWordCount(int words) {
   }
 }
 
-void muffin::StatusBarWidget::setBlockSource(const QString& text, const QString& toolTip) {
+void mufpen::StatusBarWidget::setBlockSource(const QString& text, const QString& toolTip) {
   blockSource_ = text;
   blockSourceToolTip_ = toolTip;
   setToolTip(blockSource_.isEmpty() ? QString() : blockSourceToolTip_);
   update();
 }
 
-void muffin::StatusBarWidget::setEncodingLineEnding(const QString& text) {
+void mufpen::StatusBarWidget::setEncodingLineEnding(const QString& text) {
   if (encodingLineEnding_ != text) {
     encodingLineEnding_ = text;
     update();
   }
 }
 
-void muffin::StatusBarWidget::setSpellLanguage(const QString& localeCode, bool enabled) {
+void mufpen::StatusBarWidget::setSpellLanguage(const QString& localeCode, bool enabled) {
   spellLocaleCode_ = localeCode;
   spellEnabled_ = enabled;
   // Compact label: show the language subtag (e.g. "en_US" -> "EN"); falls back to the code.
@@ -266,22 +266,22 @@ void muffin::StatusBarWidget::setSpellLanguage(const QString& localeCode, bool e
   update();
 }
 
-void muffin::StatusBarWidget::setSidebarChecked(bool checked) {
+void mufpen::StatusBarWidget::setSidebarChecked(bool checked) {
   if (sidebarButton_) {
     sidebarButton_->setChecked(checked);
     updateSidebarIcon();
   }
 }
 
-void muffin::StatusBarWidget::setSourceModeChecked(bool checked) {
+void mufpen::StatusBarWidget::setSourceModeChecked(bool checked) {
   if (sourceModeButton_)
     sourceModeButton_->setChecked(checked);
 }
-void muffin::StatusBarWidget::setSplitViewChecked(bool checked) {
+void mufpen::StatusBarWidget::setSplitViewChecked(bool checked) {
   splitViewButton_->setChecked(checked);
 }
 
-void muffin::StatusBarWidget::updateSidebarIcon() {
+void mufpen::StatusBarWidget::updateSidebarIcon() {
   if (!sidebarButton_) {
     return;
   }
@@ -289,7 +289,7 @@ void muffin::StatusBarWidget::updateSidebarIcon() {
   sidebarButton_->setIcon(makeStatusIcon(kind, muted_, text_));
 }
 
-void muffin::StatusBarWidget::applyThemeColors(const QColor& bg, const QColor& text, const QColor& muted,
+void mufpen::StatusBarWidget::applyThemeColors(const QColor& bg, const QColor& text, const QColor& muted,
                                                const QColor& border) {
   bg_ = bg;
   text_ = text;
@@ -320,11 +320,11 @@ void muffin::StatusBarWidget::applyThemeColors(const QColor& bg, const QColor& t
   update();
 }
 
-muffin::StatusBarWidget::SegmentRects muffin::StatusBarWidget::layoutSegments() const {
+mufpen::StatusBarWidget::SegmentRects mufpen::StatusBarWidget::layoutSegments() const {
   SegmentRects r;
   const QFontMetrics fm(font());
   const int h = height();
-  const int gap = muffin::ui_metrics::kStatusGap;
+  const int gap = mufpen::ui_metrics::kStatusGap;
   const int rightPad = 12;
   const int chev = 14;
 
@@ -356,7 +356,7 @@ muffin::StatusBarWidget::SegmentRects muffin::StatusBarWidget::layoutSegments() 
   return r;
 }
 
-void muffin::StatusBarWidget::relayoutButtons() {
+void mufpen::StatusBarWidget::relayoutButtons() {
   if (!sidebarButton_ || !sourceModeButton_) {
     return;
   }
@@ -367,18 +367,18 @@ void muffin::StatusBarWidget::relayoutButtons() {
   splitViewButton_->setGeometry(2 + 2 * (size + 6), y, size, size);
 }
 
-void muffin::StatusBarWidget::resizeEvent(QResizeEvent* event) {
+void mufpen::StatusBarWidget::resizeEvent(QResizeEvent* event) {
   QStatusBar::resizeEvent(event);
   relayoutButtons();
 }
 
-void muffin::StatusBarWidget::drawSegmentText(QPainter& p, const QString& text, const QRect& rect, const QColor& color,
+void mufpen::StatusBarWidget::drawSegmentText(QPainter& p, const QString& text, const QRect& rect, const QColor& color,
                                               int flags) const {
   p.setPen(color);
   p.drawText(rect, flags, text);
 }
 
-bool muffin::StatusBarWidget::event(QEvent* event) {
+bool mufpen::StatusBarWidget::event(QEvent* event) {
   if (event->type() == QEvent::LanguageChange) {
     retranslateUi();
   }
@@ -418,7 +418,7 @@ bool muffin::StatusBarWidget::event(QEvent* event) {
   return QStatusBar::event(event);
 }
 
-void muffin::StatusBarWidget::paintEvent(QPaintEvent*) {
+void mufpen::StatusBarWidget::paintEvent(QPaintEvent*) {
   QPainter p(this);
   p.setRenderHint(QPainter::Antialiasing, true);
   p.setRenderHint(QPainter::TextAntialiasing, true);
@@ -471,7 +471,7 @@ void muffin::StatusBarWidget::paintEvent(QPaintEvent*) {
   }
 }
 
-void muffin::StatusBarWidget::mouseMoveEvent(QMouseEvent* event) {
+void mufpen::StatusBarWidget::mouseMoveEvent(QMouseEvent* event) {
   if (!currentMessage().isEmpty()) {
     QStatusBar::mouseMoveEvent(event);
     return;
@@ -492,7 +492,7 @@ void muffin::StatusBarWidget::mouseMoveEvent(QMouseEvent* event) {
   QStatusBar::mouseMoveEvent(event);
 }
 
-void muffin::StatusBarWidget::leaveEvent(QEvent* event) {
+void mufpen::StatusBarWidget::leaveEvent(QEvent* event) {
   if (hover_ != Hover::None) {
     hover_ = Hover::None;
     setCursor(Qt::ArrowCursor);
@@ -501,7 +501,7 @@ void muffin::StatusBarWidget::leaveEvent(QEvent* event) {
   QStatusBar::leaveEvent(event);
 }
 
-void muffin::StatusBarWidget::mousePressEvent(QMouseEvent* event) {
+void mufpen::StatusBarWidget::mousePressEvent(QMouseEvent* event) {
   if (event->button() != Qt::LeftButton || !currentMessage().isEmpty()) {
     QStatusBar::mousePressEvent(event);
     return;
@@ -523,14 +523,14 @@ void muffin::StatusBarWidget::mousePressEvent(QMouseEvent* event) {
   QStatusBar::mousePressEvent(event);
 }
 
-void muffin::StatusBarWidget::ensureSpellMenu() {
+void mufpen::StatusBarWidget::ensureSpellMenu() {
   if (!spellMenu_) {
     spellMenu_ = new QMenu(this);
     rebuildSpellMenu();
   }
 }
 
-void muffin::StatusBarWidget::rebuildSpellMenu() {
+void mufpen::StatusBarWidget::rebuildSpellMenu() {
   if (!spellMenu_) {
     return;
   }
@@ -553,7 +553,7 @@ void muffin::StatusBarWidget::rebuildSpellMenu() {
   }
 }
 
-void muffin::StatusBarWidget::showStatsPopup(const StatusBarStats& stats) {
+void mufpen::StatusBarWidget::showStatsPopup(const StatusBarStats& stats) {
   QVector<StatsPopup::Row> rows;
   rows.append({tr("Words"), QString::number(stats.words)});
   rows.append({tr("Characters"), QString::number(stats.characters)});
@@ -585,7 +585,7 @@ void muffin::StatusBarWidget::showStatsPopup(const StatusBarStats& stats) {
   popup->show();
 }
 
-void muffin::StatusBarWidget::retranslateUi() {
+void mufpen::StatusBarWidget::retranslateUi() {
   updateButtonToolTips();
   wordCountText_ = tr("%1 words").arg(wordCount_);
   if (spellMenu_) {
@@ -594,7 +594,7 @@ void muffin::StatusBarWidget::retranslateUi() {
   update();
 }
 
-void muffin::StatusBarWidget::updateButtonToolTips() {
+void mufpen::StatusBarWidget::updateButtonToolTips() {
   const QString sidebarHint = sidebarButton_->isChecked() ? tr("Hide sidebar") : tr("Show sidebar");
   const QString sourceHint =
       sourceModeButton_->isChecked() ? tr("Switch to rendered mode") : tr("Switch to source mode");

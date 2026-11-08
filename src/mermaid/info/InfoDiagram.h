@@ -4,7 +4,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 
 enum class InfoErrorKind { Lexer, Parser };
 
@@ -28,4 +28,4 @@ public:
   static InfoData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

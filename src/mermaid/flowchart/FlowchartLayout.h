@@ -10,11 +10,11 @@
 
 #include <vector>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 struct DagreSnapshot; // defined in mermaid/dagre/Layout.h
 }
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 enum class FlowLook { Classic, Neo, HandDrawn };
 
@@ -189,4 +189,4 @@ FlowLayoutResult layoutFlowchartNodesDagre(const FlowchartData& data, const QMap
                                            FlowLayoutOptions options = {},
                                            std::vector<dagre::DagreSnapshot>* dagreSnapshots = nullptr);
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

@@ -9,7 +9,7 @@
 #include "render/TextLayout.h"
 #include <QDataStream>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 thread_local std::vector<CssMeasurementTrace*> measurementTraces;
 void observeMeasurement(const CssFormattingItem& item, const CssMeasureRequest& request,
@@ -510,4 +510,4 @@ CssFormattingResult layoutFlexItems(const ThemeElementStyle& container, const st
   YGNodeFreeRecursive(root);
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

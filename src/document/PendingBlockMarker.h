@@ -6,7 +6,7 @@
 #include <QStringView>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -67,4 +67,4 @@ qsizetype pendingBlockMarkerOffset(QStringView markdown, qsizetype offset);
 QVector<qsizetype> shiftPendingMarkerOffsets(const QVector<qsizetype>& preEditOffsets, qsizetype sourceStart,
                                              qsizetype removedLength, qsizetype insertedLength);
 
-} // namespace muffin
+} // namespace mufpen

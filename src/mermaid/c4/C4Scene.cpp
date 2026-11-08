@@ -12,7 +12,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::mermaid::c4 {
+namespace mufpen::mermaid::c4 {
 namespace {
 
 struct TextBox {
@@ -781,4 +781,4 @@ QJsonObject C4Scene::toJsonObject() const {
           {QStringLiteral("primitives"), values}};
 }
 
-} // namespace muffin::mermaid::c4
+} // namespace mufpen::mermaid::c4

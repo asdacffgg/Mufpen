@@ -4,10 +4,10 @@
 
 class QPainter;
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 
 struct InfoScene;
 
 void paintInfoScene(QPainter& painter, const InfoScene& scene, const MermaidPaintOptions& options = {});
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

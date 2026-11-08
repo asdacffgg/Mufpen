@@ -4,7 +4,7 @@
 
 #include <QMetaType>
 
-namespace muffin {
+namespace mufpen {
 
 // Committed UTF-16 edits, ordered in the coordinates of the previous document.
 // Reading anchors do not depend on the editor or on the lifetime of AST nodes.
@@ -81,6 +81,6 @@ struct SourceTextChange {
     return {{{prefix, before.size() - prefix - suffix, after.size() - prefix - suffix}}};
   }
 };
-} // namespace muffin
+} // namespace mufpen
 
-Q_DECLARE_METATYPE(muffin::SourceTextChange)
+Q_DECLARE_METATYPE(mufpen::SourceTextChange)

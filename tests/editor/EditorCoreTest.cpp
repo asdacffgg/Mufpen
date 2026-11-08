@@ -12,7 +12,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testSelectionController (lines 61-76)
 void testSelectionController() {

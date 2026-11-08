@@ -27,13 +27,13 @@
 #include <QVBoxLayout>
 #include <QtConcurrent/QtConcurrentRun>
 
-void muffin::MainWindow::movePath(QString path) {
+void mufpen::MainWindow::movePath(QString path) {
   const auto directory = QFileDialog::getExistingDirectory(this, tr("Move To"), QFileInfo(path).absolutePath());
   if (!directory.isEmpty())
     renameOrMoveWithLinks(path, QDir(directory).filePath(QFileInfo(path).fileName()));
 }
 
-bool muffin::MainWindow::renameOrMoveWithLinks(const QString& oldPath, const QString& newPath) {
+bool mufpen::MainWindow::renameOrMoveWithLinks(const QString& oldPath, const QString& newPath) {
   if (oldPath == newPath)
     return true;
   if (workspaceWriteInProgress_ || pendingNavigation_)

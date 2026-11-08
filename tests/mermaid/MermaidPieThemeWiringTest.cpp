@@ -32,7 +32,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
   // --- numeric helpers match the probed browser CSS semantics ---
   // (scripts/probe_mermaid_pie_scalars.mjs + probe_mermaid_css_units.mjs). A REAL
   // CssLengthContext (800x600 viewport + pie-font ex/ch), not the placeholder.
-  const muffin::CssLengthContext ctx = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 16.0);
+  const mufpen::CssLengthContext ctx = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 16.0);
   const qreal diag = 500.0; // test SVG diagonal for stroke-width %
   // Shared Noto Sans @16 metrics for independently re-deriving ex/ch expectations
   // (sub-px root, capped root). Hoisted so the per-section blocks don't shadow it.
@@ -151,7 +151,7 @@ int main(int argc, char** argv) {
   // ctx.emPx cascade (P1 #2): with a neo-like 14px context the invalid/bare/
   // negative/empty fallback is ctx.emPx (14), and %/em are relative to 14 -- NOT
   // a hardcoded 16. Probed vs 11.16.0 (scripts/probe_mermaid_pie_fontsize_cascade.mjs).
-  const muffin::CssLengthContext ctx14 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 14.0);
+  const mufpen::CssLengthContext ctx14 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 14.0);
   require(approx(editor::cssFontSizePx(QStringLiteral("abc"), ctx14), 14.0), "fs14 invalid -> ctx.emPx 14");
   require(approx(editor::cssFontSizePx(QStringLiteral("25"), ctx14), 14.0), "fs14 bare -> ctx.emPx 14");
   require(approx(editor::cssFontSizePx(QStringLiteral("-2px"), ctx14), 14.0), "fs14 negative -> ctx.emPx 14");
@@ -161,7 +161,7 @@ int main(int argc, char** argv) {
   require(approx(editor::cssFontSizePx(QStringLiteral("25px"), ctx14), 25.0), "fs14 valid 25px -> 25");
   // ctx.emPx == 0 is a VALID zero (root fontSize "0px"), NOT coerced to 16: em/%
   // collapse to 0 and ex/ch are 0 (no 0px QFont built). Probed vs 11.16.0.
-  const muffin::CssLengthContext ctx0 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 0.0);
+  const mufpen::CssLengthContext ctx0 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 0.0);
   require(approx(ctx0.emPx, 0.0) && approx(ctx0.exPx, 0.0) && approx(ctx0.chPx, 0.0),
           "ctx0 preserves zero em/ex/ch (no 16 coercion, no 0px QFont)");
   require(approx(editor::cssFontSizePx(QStringLiteral("200%"), ctx0), 0.0), "fs0 200% -> 0");
@@ -175,7 +175,7 @@ int main(int argc, char** argv) {
   // at the ACTUAL 0.4px size -- font metrics scale linearly, so exPx =
   // xHeight(16)*0.4/16 (independently re-derived here from a fresh 16px QFont).
   // Probed vs 11.16.0: root 0.4px + pieStrokeWidth 10ex -> 2.0918px = 10 * exPx.
-  const muffin::CssLengthContext ctx04 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 0.4);
+  const mufpen::CssLengthContext ctx04 = editor::pieCssLengthContext(QStringLiteral("Noto Sans"), 0.4);
   const qreal scale04 = 0.4 / 16.0;
   require(approx(ctx04.emPx, 0.4), "ctx04 preserves sub-px emPx 0.4");
   require(approx(ctx04.exPx, refM.xHeight() * scale04), "ctx04 exPx = xHeight(16)*0.4/16 (linear, not zeroed)");

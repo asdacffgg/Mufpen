@@ -11,9 +11,9 @@
 #include <algorithm>
 #include <cstdlib>
 
-using muffin::mermaid::flowchart::Flowchart;
-using muffin::mermaid::flowchart::FlowchartParseError;
-using muffin::mermaid::flowchart::FlowchartParseOptions;
+using mufpen::mermaid::flowchart::Flowchart;
+using mufpen::mermaid::flowchart::FlowchartParseError;
+using mufpen::mermaid::flowchart::FlowchartParseOptions;
 
 namespace {
 
@@ -71,21 +71,21 @@ int main(int argc, char** argv) {
     const QString id = item.value(QStringLiteral("id")).toString();
     const QJsonObject expected = item.value(QStringLiteral("expected")).toObject();
     const QString source = item.value(QStringLiteral("source")).toString();
-    QVector<muffin::mermaid::flowchart::FlowToken> tokens;
+    QVector<mufpen::mermaid::flowchart::FlowToken> tokens;
     try {
-      tokens = muffin::mermaid::flowchart::FlowchartTokenizer(source).tokenize();
+      tokens = mufpen::mermaid::flowchart::FlowchartTokenizer(source).tokenize();
     } catch (const std::exception& error) {
       fail(QStringLiteral("Tokenizer failed for %1: %2").arg(id, QString::fromUtf8(error.what())));
     }
     const auto firstSignificant = std::find_if(tokens.cbegin(), tokens.cend(), [](const auto& token) {
-      return token.kind != muffin::mermaid::flowchart::FlowTokenKind::Space &&
-             token.kind != muffin::mermaid::flowchart::FlowTokenKind::Newline;
+      return token.kind != mufpen::mermaid::flowchart::FlowTokenKind::Space &&
+             token.kind != mufpen::mermaid::flowchart::FlowTokenKind::Newline;
     });
     require(firstSignificant != tokens.cend() &&
-                firstSignificant->kind == muffin::mermaid::flowchart::FlowTokenKind::Graph,
+                firstSignificant->kind == mufpen::mermaid::flowchart::FlowTokenKind::Graph,
             QStringLiteral("Tokenizer did not start %1 with GRAPH").arg(id));
     for (const auto& token : tokens) {
-      require(token.kind != muffin::mermaid::flowchart::FlowTokenKind::Unknown,
+      require(token.kind != mufpen::mermaid::flowchart::FlowTokenKind::Unknown,
               QStringLiteral("Unknown token in %1 at %2:%3: '%4'")
                   .arg(id)
                   .arg(token.line)

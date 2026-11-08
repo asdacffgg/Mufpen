@@ -12,7 +12,7 @@
 #include <cmath>
 #include <algorithm>
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 namespace {
 
 QStringList cssFontFamilies(const QString& expression) {
@@ -178,4 +178,4 @@ void paintIshikawaScene(const IshikawaScene& scene, QPainter& painter, const Mer
   }
 }
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

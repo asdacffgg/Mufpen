@@ -10,7 +10,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

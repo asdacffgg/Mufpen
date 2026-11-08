@@ -9,7 +9,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 // editor/matchBrackets (default on) and editor/matchMarkdown (default off) gate the auto-pair
@@ -158,4 +158,4 @@ bool InputController::tryAutoPairOrWrap(QChar ch) {
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

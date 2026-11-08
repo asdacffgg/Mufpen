@@ -12,7 +12,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 
 struct KanbanConfig {
   // Raw JS values are load-bearing: sectionWidth uses `|| 200`, padding uses
@@ -165,4 +165,4 @@ struct KanbanScene : MermaidScene {
 KanbanScene buildKanbanScene(const KanbanData& data, KanbanConfig config, KanbanSceneStyle style,
                              const KanbanCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

@@ -73,7 +73,7 @@
 
 namespace {
 
-Q_LOGGING_CATEGORY(mainWindowPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(mainWindowPerf, "mufpen.perf", QtWarningMsg)
 
 // Reserve the unused part of the strip so the button follows the tabs. When
 // tabs overflow, keep only the button's minimum width; Qt retains its native
@@ -97,27 +97,27 @@ private:
   QTabBar* bar_;
 };
 
-QString zoneName(muffin::HitTestResult::Zone zone) {
+QString zoneName(mufpen::HitTestResult::Zone zone) {
   switch (zone) {
-  case muffin::HitTestResult::Zone::Text:
+  case mufpen::HitTestResult::Zone::Text:
     return QStringLiteral("text");
-  case muffin::HitTestResult::Zone::Marker:
+  case mufpen::HitTestResult::Zone::Marker:
     return QStringLiteral("marker");
-  case muffin::HitTestResult::Zone::TableCell:
+  case mufpen::HitTestResult::Zone::TableCell:
     return QStringLiteral("table");
-  case muffin::HitTestResult::Zone::Code:
+  case mufpen::HitTestResult::Zone::Code:
     return QStringLiteral("code");
-  case muffin::HitTestResult::Zone::Math:
+  case mufpen::HitTestResult::Zone::Math:
     return QStringLiteral("math");
-  case muffin::HitTestResult::Zone::Html:
+  case mufpen::HitTestResult::Zone::Html:
     return QStringLiteral("html");
-  case muffin::HitTestResult::Zone::FrontMatter:
+  case mufpen::HitTestResult::Zone::FrontMatter:
     return QStringLiteral("front matter");
-  case muffin::HitTestResult::Zone::Block:
+  case mufpen::HitTestResult::Zone::Block:
     return QStringLiteral("block");
-  case muffin::HitTestResult::Zone::BlockAfter:
+  case mufpen::HitTestResult::Zone::BlockAfter:
     return QStringLiteral("block after");
-  case muffin::HitTestResult::Zone::None:
+  case mufpen::HitTestResult::Zone::None:
   default:
     return QStringLiteral("none");
   }
@@ -125,7 +125,7 @@ QString zoneName(muffin::HitTestResult::Zone zone) {
 
 } // namespace
 
-muffin::MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
+mufpen::MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
   lockEditingEnabled_ = QSettings().value(QStringLiteral("editor/lockEditingEnabled"), true).toBool();
   lockEditingPerTab_ = QSettings().value(QStringLiteral("editor/lockEditingScope"), 0).toInt() == 0;
   setupUi();
@@ -155,11 +155,11 @@ muffin::MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
   // real parse. parseOptions_ defaults to all-on, so this is a no-op re-parse unless the user has
   // disabled an extension.
   tab_->session.setParseOptions(markdownParseOptions());
-  muffin::UpdateChecker::instance().maybeAutoCheck();
+  mufpen::UpdateChecker::instance().maybeAutoCheck();
   sessionUpdatesPaused_ = false;
 }
 
-muffin::MainWindow::~MainWindow() {
+mufpen::MainWindow::~MainWindow() {
   for (auto* document : documentTabs())
     if (!document->session.document().isModified())
       draftWriter_.markClean(document->session.filePath(), document->draftKey);
@@ -170,7 +170,7 @@ muffin::MainWindow::~MainWindow() {
   delete centralSplitter_;
 }
 
-void muffin::MainWindow::closeEvent(QCloseEvent* event) {
+void mufpen::MainWindow::closeEvent(QCloseEvent* event) {
   if (!updateCloseApproved_ && WindowsUpdater::instance().restartPending()) {
     event->ignore();
     return;
@@ -190,7 +190,7 @@ void muffin::MainWindow::closeEvent(QCloseEvent* event) {
   event->accept();
 }
 
-bool muffin::MainWindow::confirmWindowClose() {
+bool mufpen::MainWindow::confirmWindowClose() {
   if (workspaceWriteInProgress_) {
     return false;
   }
@@ -212,7 +212,7 @@ bool muffin::MainWindow::confirmWindowClose() {
   return true;
 }
 
-bool muffin::MainWindow::prepareUpdateClose() {
+bool mufpen::MainWindow::prepareUpdateClose() {
   for (const auto* document : documentTabs()) {
     // An asynchronous file load/confirmation cannot be faithfully snapshotted.
     if (!document->pendingOpenPath.isEmpty() || document->session.isOpenInProgress())
@@ -224,7 +224,7 @@ bool muffin::MainWindow::prepareUpdateClose() {
   return true;
 }
 
-void muffin::MainWindow::finishUpdateClose(bool approved) {
+void mufpen::MainWindow::finishUpdateClose(bool approved) {
   const bool wasPrepared = updateClosePrepared_;
   updateClosePrepared_ = approved;
   updateCloseApproved_ = approved;
@@ -237,14 +237,14 @@ void muffin::MainWindow::finishUpdateClose(bool approved) {
   }
 }
 
-void muffin::MainWindow::quitApplication() {
+void mufpen::MainWindow::quitApplication() {
   // Single quit path behind File → Quit and macOS Cmd+Q. Closing every top-level
   // window lets each one run its closeEvent (auto-save + unsaved-changes prompt);
   // Qt leaves the event loop once the last window closes.
   QApplication::closeAllWindows();
 }
 
-void muffin::MainWindow::cycleFocus(bool forward) {
+void mufpen::MainWindow::cycleFocus(bool forward) {
   if (!tab_->viewStack || !sidebar_) {
     return;
   }
@@ -283,7 +283,7 @@ void muffin::MainWindow::cycleFocus(bool forward) {
   targets[0]->setFocus();
 }
 
-void muffin::MainWindow::changeEvent(QEvent* event) {
+void mufpen::MainWindow::changeEvent(QEvent* event) {
   QMainWindow::changeEvent(event);
   // Retranslation on a language change is handled by the LanguageManager::
   // languageChanged signal (connected in MainWindowSignalBinder), which fires
@@ -293,7 +293,7 @@ void muffin::MainWindow::changeEvent(QEvent* event) {
   // it mid-delivery is unnecessary and best avoided).
 }
 
-void muffin::MainWindow::showEvent(QShowEvent* event) {
+void mufpen::MainWindow::showEvent(QShowEvent* event) {
   QMainWindow::showEvent(event);
   // DWM dark-mode often only takes hold once the window is actually shown, so
   // re-apply on reveal (cheap; one Win32 call) to cover the startup path.
@@ -301,7 +301,7 @@ void muffin::MainWindow::showEvent(QShowEvent* event) {
   QTimer::singleShot(0, this, [this] { restoreTabViewState(tab_); });
 }
 
-void muffin::MainWindow::applyNativeTitleBarDarkMode(bool dark) {
+void mufpen::MainWindow::applyNativeTitleBarDarkMode(bool dark) {
 #if defined(Q_OS_WIN)
   if (HWND hwnd = reinterpret_cast<HWND>(winId())) {
     const BOOL value = dark ? TRUE : FALSE;
@@ -312,7 +312,7 @@ void muffin::MainWindow::applyNativeTitleBarDarkMode(bool dark) {
 #endif
 }
 
-void muffin::MainWindow::setupUi() {
+void mufpen::MainWindow::setupUi() {
   centralSplitter_ = new QSplitter(Qt::Horizontal, this);
   centralSplitter_->setChildrenCollapsible(false);
   centralSplitter_->setHandleWidth(1);
@@ -394,7 +394,7 @@ void muffin::MainWindow::setupUi() {
   });
 }
 
-void muffin::MainWindow::setupMenuBar() {
+void mufpen::MainWindow::setupMenuBar() {
   commands_.clearActions();
   menuBar()->clear();
   qDeleteAll(actionGroups_);
@@ -402,7 +402,7 @@ void muffin::MainWindow::setupMenuBar() {
   buildMenus();
 }
 
-void muffin::MainWindow::setupStatusBar() {
+void mufpen::MainWindow::setupStatusBar() {
   statusBar_ = new StatusBarWidget(this);
   setStatusBar(statusBar_);
   // Reuse the widget's internal buttons so every existing reference (icon/checked/
@@ -417,44 +417,44 @@ void muffin::MainWindow::setupStatusBar() {
   wordCountTimer_ = new QTimer(this);
   wordCountTimer_->setSingleShot(true);
   wordCountTimer_->setInterval(250);
-  connect(wordCountTimer_, &QTimer::timeout, this, &muffin::MainWindow::updateWordCountNow);
+  connect(wordCountTimer_, &QTimer::timeout, this, &mufpen::MainWindow::updateWordCountNow);
 
   // Only heading-index revisions schedule this debounce; paragraph typing does no outline work.
   // Full parses refresh immediately.
   outlineTimer_ = new QTimer(this);
   outlineTimer_->setSingleShot(true);
   outlineTimer_->setInterval(200);
-  connect(outlineTimer_, &QTimer::timeout, this, &muffin::MainWindow::refreshSidebarOutline);
+  connect(outlineTimer_, &QTimer::timeout, this, &mufpen::MainWindow::refreshSidebarOutline);
 }
 
-void muffin::MainWindow::updateTitle() {
+void mufpen::MainWindow::updateTitle() {
   updateTabLabel(tab_);
   const QString marker = tab_->session.document().isModified() ? QStringLiteral(" *") : QString();
   const QString name =
       tab_->pendingOpenPath.isEmpty() ? tab_->session.displayName() : QFileInfo(tab_->pendingOpenPath).fileName();
-  // 锁定编辑时，状态标记紧跟标题栏的 “Muffin”。
+  // 锁定编辑时，状态标记紧跟标题栏的 “Mufpen”。
   const QString lockMarker = editingLocked() ? tr(" (Editing Locked)") : QString();
   setWindowTitle(QStringLiteral("%1%2 - Mufpen%3").arg(name, marker, lockMarker));
 }
 
 // 生效状态：功能在偏好里关掉时永远是「未锁定」；「独立标签页」读当前页签自己的状态，
 // 「全局窗口」读窗口状态。
-bool muffin::MainWindow::editingLocked() const {
+bool mufpen::MainWindow::editingLocked() const {
   return editingLocked(tab_);
 }
 
-bool muffin::MainWindow::editingLocked(const DocumentTab* document) const {
+bool mufpen::MainWindow::editingLocked(const DocumentTab* document) const {
   if (!lockEditingEnabled_) {
     return false;
   }
   return lockEditingPerTab_ ? (document != nullptr && document->editingLocked) : editingLocked_;
 }
 
-void muffin::MainWindow::setEditingLocked(bool locked) {
+void mufpen::MainWindow::setEditingLocked(bool locked) {
   setEditingLocked(tab_, locked);
 }
 
-void muffin::MainWindow::setEditingLocked(DocumentTab* document, bool locked) {
+void mufpen::MainWindow::setEditingLocked(DocumentTab* document, bool locked) {
   if (!lockEditingEnabled_ || document == nullptr || tabs_->indexOf(document) < 0) {
     return;
   }
@@ -478,11 +478,11 @@ void muffin::MainWindow::setEditingLocked(DocumentTab* document, bool locked) {
   updateTitle();
 }
 
-void muffin::MainWindow::toggleEditingLocked() {
+void mufpen::MainWindow::toggleEditingLocked() {
   setEditingLocked(!editingLocked());
 }
 
-void muffin::MainWindow::syncLockEditingAction() {
+void mufpen::MainWindow::syncLockEditingAction() {
   QAction* action = commands_.action(QStringLiteral("edit.lock_editing"));
   if (action == nullptr) {
     return;
@@ -493,7 +493,7 @@ void muffin::MainWindow::syncLockEditingAction() {
   action->setText(locked ? tr("Unlock Editing") : tr("Lock Editing"));
 }
 
-QString muffin::MainWindow::commandEditingDisabledReason() const {
+QString mufpen::MainWindow::commandEditingDisabledReason() const {
   if (tab_->previewActive())
     return tr("This pane is a read-only preview. Edit the Markdown source on the left.");
   if (editingLocked())
@@ -506,7 +506,7 @@ QString muffin::MainWindow::commandEditingDisabledReason() const {
 // 偏好变更后重新读取 editor/lockEditing*，并把状态重新落到每个页签上。
 // 切换作用范围时保持用户当前看到的状态：窗口 → 独立标签页时把窗口状态下发到各页签；
 // 独立标签页 → 窗口时以当前页签的状态作为新的窗口状态。
-void muffin::MainWindow::applyLockEditingSettings() {
+void mufpen::MainWindow::applyLockEditingSettings() {
   const bool wasPerTab = lockEditingPerTab_;
   lockEditingEnabled_ = QSettings().value(QStringLiteral("editor/lockEditingEnabled"), true).toBool();
   lockEditingPerTab_ = QSettings().value(QStringLiteral("editor/lockEditingScope"), 0).toInt() == 0;
@@ -533,7 +533,7 @@ void muffin::MainWindow::applyLockEditingSettings() {
 // Push the effective lock onto one tab: the rendered view hides its caret and
 // inline popups, the source view goes read-only, and the session rejects every
 // incremental edit (typing, paste, format, undo).
-void muffin::MainWindow::applyEditingLockedTo(DocumentTab* document) {
+void mufpen::MainWindow::applyEditingLockedTo(DocumentTab* document) {
   if (document == nullptr) {
     return;
   }
@@ -545,7 +545,7 @@ void muffin::MainWindow::applyEditingLockedTo(DocumentTab* document) {
   updateTabLabel(document);
 }
 
-void muffin::MainWindow::updateStatus() {
+void mufpen::MainWindow::updateStatus() {
   if (!statusBar_) {
     return;
   }
@@ -581,13 +581,13 @@ void muffin::MainWindow::updateStatus() {
   }
 }
 
-void muffin::MainWindow::updateCursorStatus(int line, int column) {
+void mufpen::MainWindow::updateCursorStatus(int line, int column) {
   tab_->cursorLine = line;
   tab_->cursorColumn = column;
   scheduleEditorStateRefresh();
 }
 
-void muffin::MainWindow::updateSidebarMode() {
+void mufpen::MainWindow::updateSidebarMode() {
   if (!sidebar_ || !sidebarButton_) {
     return;
   }
@@ -629,11 +629,11 @@ void muffin::MainWindow::updateSidebarMode() {
   }
 }
 
-bool muffin::MainWindow::reducedMotion() const {
+bool mufpen::MainWindow::reducedMotion() const {
   return QSettings().value(QStringLiteral("appearance/reducedMotion"), false).toBool();
 }
 
-void muffin::MainWindow::animateSidebarWidth(int from, int to) {
+void mufpen::MainWindow::animateSidebarWidth(int from, int to) {
   if (!sidebarAnimation_) {
     return;
   }
@@ -643,7 +643,7 @@ void muffin::MainWindow::animateSidebarWidth(int from, int to) {
   sidebarAnimation_->start();
 }
 
-void muffin::MainWindow::setSidebarPanel(SidebarWidget::Panel panel) {
+void mufpen::MainWindow::setSidebarPanel(SidebarWidget::Panel panel) {
   if (!sidebar_) {
     return;
   }
@@ -663,7 +663,7 @@ void muffin::MainWindow::setSidebarPanel(SidebarWidget::Panel panel) {
   }
 }
 
-void muffin::MainWindow::refreshSidebarDocumentInfo() {
+void mufpen::MainWindow::refreshSidebarDocumentInfo() {
   // Restoration selects its final document before restoring folder expansion.
   // Save/close prompts also visit tabs temporarily; neither should reveal files
   // or change the user's folder state during those intermediate activations.
@@ -674,9 +674,9 @@ void muffin::MainWindow::refreshSidebarDocumentInfo() {
                                tab_->session.document().isModified());
 }
 
-void muffin::MainWindow::refreshSidebarOutline() {
-  static const QLoggingCategory category("muffin.perf.detail", QtWarningMsg);
-  muffin::diag::ScopedPerfProbe perf("main.outline", category);
+void mufpen::MainWindow::refreshSidebarOutline() {
+  static const QLoggingCategory category("mufpen.perf.detail", QtWarningMsg);
+  mufpen::diag::ScopedPerfProbe perf("main.outline", category);
   const QAction* sidebarAction = commands_.action(QStringLiteral("view.sidebar"));
   if (!sidebar_ || !tab_->outlineDirty || !sidebarAction || !sidebarAction->isChecked() ||
       sidebar_->panel() != SidebarWidget::Panel::Outline) {
@@ -687,7 +687,7 @@ void muffin::MainWindow::refreshSidebarOutline() {
   tab_->outlineDirty = false;
 }
 
-void muffin::MainWindow::openFolder() {
+void mufpen::MainWindow::openFolder() {
   const QString initialPath =
       sidebarFolderRoot_.isEmpty() ? QFileInfo(tab_->session.filePath()).absolutePath() : sidebarFolderRoot_;
   const QString path = QFileDialog::getExistingDirectory(this, tr("Open Folder"), initialPath);
@@ -697,13 +697,13 @@ void muffin::MainWindow::openFolder() {
   openFolderAtPath(path);
 }
 
-void muffin::MainWindow::openNewWindow() {
+void mufpen::MainWindow::openNewWindow() {
   auto* window = new MainWindow();
   window->setAttribute(Qt::WA_DeleteOnClose);
   window->show();
 }
 
-void muffin::MainWindow::activateOutlineNode(NodeId nodeId, SourceRange sourceRange) {
+void mufpen::MainWindow::activateOutlineNode(NodeId nodeId, SourceRange sourceRange) {
   if (tab_->backend->isSourceMode()) {
     syncSourceEditorIfNeeded();
     tab_->editor->setCursorPosition(sourceRange.byteStart);
@@ -715,7 +715,7 @@ void muffin::MainWindow::activateOutlineNode(NodeId nodeId, SourceRange sourceRa
   tab_->renderView->setFocus(Qt::OtherFocusReason);
 }
 
-void muffin::MainWindow::updateViewMode() {
+void mufpen::MainWindow::updateViewMode() {
   if (!tab_->viewStack || !tab_->renderView || !tab_->editor) {
     return;
   }
@@ -796,7 +796,7 @@ void muffin::MainWindow::updateViewMode() {
   updateStatus();
 }
 
-void muffin::MainWindow::showViewSwitchOverlay(const QPixmap& snapshot) {
+void mufpen::MainWindow::showViewSwitchOverlay(const QPixmap& snapshot) {
   if (!tab_->viewStack || snapshot.isNull()) {
     return;
   }
@@ -825,7 +825,7 @@ void muffin::MainWindow::showViewSwitchOverlay(const QPixmap& snapshot) {
   tab_->overlayOpacityAnimation->start();
 }
 
-void muffin::MainWindow::printDocument() {
+void mufpen::MainWindow::printDocument() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -837,7 +837,7 @@ void muffin::MainWindow::printDocument() {
   paintDocumentToPrinter(dialog.printer());
 }
 
-bool muffin::MainWindow::paintDocumentToPrinter(QPrinter* printer) {
+bool mufpen::MainWindow::paintDocumentToPrinter(QPrinter* printer) {
   if (!printer) {
     return false;
   }
@@ -895,11 +895,11 @@ bool muffin::MainWindow::paintDocumentToPrinter(QPrinter* printer) {
   return true;
 }
 
-int muffin::MainWindow::zoomPercent() const {
+int mufpen::MainWindow::zoomPercent() const {
   return zoomPercent_;
 }
 
-void muffin::MainWindow::setZoomPercent(int percent) {
+void mufpen::MainWindow::setZoomPercent(int percent) {
   zoomPercent_ = qBound(60, percent, 200);
   for (DocumentTab* document : documentTabs()) {
     document->editor->setZoomPercent(zoomPercent_);
@@ -908,11 +908,11 @@ void muffin::MainWindow::setZoomPercent(int percent) {
   updateStatus();
 }
 
-int muffin::MainWindow::fontSizePx() const {
+int mufpen::MainWindow::fontSizePx() const {
   return fontSizePx_;
 }
 
-void muffin::MainWindow::setFontSizePx(int px) {
+void mufpen::MainWindow::setFontSizePx(int px) {
   fontSizePx_ = qBound(12, px, 24);
   for (DocumentTab* document : documentTabs()) {
     document->editor->setFontSizePx(fontSizePx_);
@@ -921,11 +921,11 @@ void muffin::MainWindow::setFontSizePx(int px) {
   updateStatus();
 }
 
-int muffin::MainWindow::contentWidthPx() const {
+int mufpen::MainWindow::contentWidthPx() const {
   return contentWidthPx_;
 }
 
-void muffin::MainWindow::setContentWidthPx(int px) {
+void mufpen::MainWindow::setContentWidthPx(int px) {
   if (px == -1) {
     contentWidthPx_ = -1;
   } else if (px > 0) {
@@ -938,14 +938,14 @@ void muffin::MainWindow::setContentWidthPx(int px) {
   }
 }
 
-void muffin::MainWindow::setStatusBarVisible(bool visible) {
+void mufpen::MainWindow::setStatusBarVisible(bool visible) {
   if (QAction* action = commands_.action(QStringLiteral("view.status_bar"))) {
     action->setChecked(visible);
   }
   statusBar()->setVisible(visible);
 }
 
-void muffin::MainWindow::setFocusMode(bool enabled) {
+void mufpen::MainWindow::setFocusMode(bool enabled) {
   focusMode_ = enabled;
 
   for (DocumentTab* document : documentTabs()) {
@@ -957,7 +957,7 @@ void muffin::MainWindow::setFocusMode(bool enabled) {
   }
 }
 
-void muffin::MainWindow::setTypewriterMode(bool enabled) {
+void mufpen::MainWindow::setTypewriterMode(bool enabled) {
   typewriterMode_ = enabled;
 
   for (DocumentTab* document : documentTabs()) {
@@ -970,7 +970,7 @@ void muffin::MainWindow::setTypewriterMode(bool enabled) {
   }
 }
 
-void muffin::MainWindow::loadAppearanceSettings() {
+void mufpen::MainWindow::loadAppearanceSettings() {
   QSettings settings;
 
   // Restore window geometry (never fullscreen)
@@ -1023,46 +1023,46 @@ void muffin::MainWindow::loadAppearanceSettings() {
   }
 }
 
-void muffin::MainWindow::saveAppearanceTheme(const QString& name) const {
+void mufpen::MainWindow::saveAppearanceTheme(const QString& name) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/themeName"), name);
 }
 
-void muffin::MainWindow::saveAppearanceStatusBarVisible(bool visible) const {
+void mufpen::MainWindow::saveAppearanceStatusBarVisible(bool visible) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/showStatusBar"), visible);
 }
 
-void muffin::MainWindow::saveAppearanceZoomPercent(int percent) const {
+void mufpen::MainWindow::saveAppearanceZoomPercent(int percent) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/zoomPercent"), qBound(60, percent, 200));
 }
 
-void muffin::MainWindow::saveAppearanceFontSizePx(int px) const {
+void mufpen::MainWindow::saveAppearanceFontSizePx(int px) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/fontSizePx"), qBound(12, px, 24));
 }
 
-void muffin::MainWindow::saveAppearanceContentWidthPx(int px) const {
+void mufpen::MainWindow::saveAppearanceContentWidthPx(int px) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/contentWidthPx"), px);
 }
 
-void muffin::MainWindow::saveAppearanceFocusMode(bool enabled) const {
+void mufpen::MainWindow::saveAppearanceFocusMode(bool enabled) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/focusMode"), enabled);
 }
 
-void muffin::MainWindow::saveAppearanceTypewriterMode(bool enabled) const {
+void mufpen::MainWindow::saveAppearanceTypewriterMode(bool enabled) const {
   QSettings settings;
   settings.setValue(QStringLiteral("appearance/typewriterMode"), enabled);
 }
 
-void muffin::MainWindow::applyTheme(QString name) {
-  static const QLoggingCategory themePerf("muffin.perf.detail", QtWarningMsg);
-  muffin::diag::ScopedPerfProbe perf("theme.apply", themePerf);
+void mufpen::MainWindow::applyTheme(QString name) {
+  static const QLoggingCategory themePerf("mufpen.perf.detail", QtWarningMsg);
+  mufpen::diag::ScopedPerfProbe perf("theme.apply", themePerf);
   const RenderTheme theme = [&] {
-    muffin::diag::ScopedPerfProbe snapshotPerf("theme.snapshot", themePerf);
+    mufpen::diag::ScopedPerfProbe snapshotPerf("theme.snapshot", themePerf);
     return themeManager_.currentTheme(zoomPercent_, fontSizePx_);
   }();
   const ThemeDefinition def = themeManager_.definition(name);
@@ -1073,12 +1073,12 @@ void muffin::MainWindow::applyTheme(QString name) {
       continue;
     }
     document->pendingTheme.reset();
-    muffin::diag::ScopedPerfProbe viewsPerf("theme.activeViews", themePerf);
+    mufpen::diag::ScopedPerfProbe viewsPerf("theme.activeViews", themePerf);
     document->renderView->setTheme(theme);
     document->editor->setTheme(theme);
     document->setSplitTheme(theme);
   }
-  muffin::diag::ScopedPerfProbe chromePerf("theme.chrome", themePerf);
+  mufpen::diag::ScopedPerfProbe chromePerf("theme.chrome", themePerf);
   if (sidebar_) {
     sidebar_->applyTheme(def);
   }

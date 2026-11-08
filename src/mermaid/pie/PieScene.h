@@ -25,7 +25,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 struct PieSceneStyle {
   // 12-color cyclic palette = theme pie1..pie12 (scaleOrdinal range). Cycled by
@@ -161,4 +161,4 @@ PieScene buildPieScene(const PieData& data, const PieConfig& config, PieSceneSty
 // zeros, "-0" -> "0". Exposed for unit tests.
 QString formatPieCoord(qreal v);
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

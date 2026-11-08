@@ -8,7 +8,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::c4 {
+namespace mufpen::mermaid::c4 {
 namespace {
 
 struct Attribute {
@@ -653,4 +653,4 @@ C4Data C4Diagram::parse(const QString& source, bool wrap) {
   return data;
 }
 
-} // namespace muffin::mermaid::c4
+} // namespace mufpen::mermaid::c4

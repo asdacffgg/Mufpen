@@ -9,7 +9,7 @@
 #include <algorithm> // std::min/std::max for vmin/vmax
 #include <cmath>     // std::isfinite (overflow guard)
 
-namespace muffin {
+namespace mufpen {
 
 qreal absoluteCssLengthToPx(qreal value, const QString& unit, bool* recognised) {
   qreal scale = 0.0;
@@ -259,4 +259,4 @@ qreal evalCalcPx(const QString& expression, qreal emPx, qreal rootPx, qreal cont
   return value.status == CssLengthStatus::Valid ? value.used(containingPx >= 0 ? containingPx : emPx) : 0;
 }
 
-} // namespace muffin
+} // namespace mufpen

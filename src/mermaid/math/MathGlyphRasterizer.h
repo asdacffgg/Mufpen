@@ -8,7 +8,7 @@
 class QColor;
 class QPainter;
 
-namespace muffin::mermaid::math {
+namespace mufpen::mermaid::math {
 
 class MathGlyphRasterizer final {
 public:
@@ -22,4 +22,4 @@ public:
                              QPointF baselineOrigin, qreal fontScale, QRectF clip, const QColor& color);
 };
 
-} // namespace muffin::mermaid::math
+} // namespace mufpen::mermaid::math

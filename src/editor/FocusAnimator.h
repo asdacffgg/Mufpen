@@ -10,7 +10,7 @@
 
 class QTimer;
 
-namespace muffin {
+namespace mufpen {
 
 // Animates a single block's :focus phase 0..1, idle-gated (timer runs only while
 // a fade is in flight). Mirrors HoverAnimator: phase 1 = fully focused, 0 = not.
@@ -22,7 +22,7 @@ namespace muffin {
 // Focus is "sticky": the caret block stays at phase 1 until the caret moves to a
 // different top-level block, at which point the old block fades out and the new
 // one fades in.
-class MUFFIN_UI_EXPORT FocusAnimator : public QObject {
+class MUFPEN_UI_EXPORT FocusAnimator : public QObject {
   Q_OBJECT
 public:
   explicit FocusAnimator(QObject* parent = nullptr);
@@ -51,4 +51,4 @@ private:
   qint64 lastTickMs_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

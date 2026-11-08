@@ -12,7 +12,7 @@
 
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 struct InfoDiagramImpl final : Diagram {
@@ -121,4 +121,4 @@ const Diagram& infoDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

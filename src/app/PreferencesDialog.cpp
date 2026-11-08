@@ -35,7 +35,7 @@ const QStringList kCategoryKeys = {
 const QString kLastCategorySetting = QStringLiteral("preferences/lastCategory");
 } // namespace
 
-muffin::PreferencesDialog::PreferencesDialog(QWidget* parent) : QDialog(parent) {
+mufpen::PreferencesDialog::PreferencesDialog(QWidget* parent) : QDialog(parent) {
   setModal(true);
   setMinimumSize(880, 620);
   resize(1040, 720);
@@ -170,56 +170,56 @@ muffin::PreferencesDialog::PreferencesDialog(QWidget* parent) : QDialog(parent) 
   retranslateUi();
 }
 
-void muffin::PreferencesDialog::setAvailableThemes(const QVector<QPair<QString, QString>>& themes) {
+void mufpen::PreferencesDialog::setAvailableThemes(const QVector<QPair<QString, QString>>& themes) {
   if (appearancePage_) {
     appearancePage_->setAvailableThemes(themes);
   }
 }
 
-void muffin::PreferencesDialog::setCurrentThemeName(const QString& name) {
+void mufpen::PreferencesDialog::setCurrentThemeName(const QString& name) {
   if (appearancePage_) {
     appearancePage_->setCurrentThemeName(name);
   }
 }
 
-void muffin::PreferencesDialog::setThemeDefinition(const ThemeDefinition& definition) {
+void mufpen::PreferencesDialog::setThemeDefinition(const ThemeDefinition& definition) {
   themeDefinition_ = definition;
   setPalette(dialogPalette(themeDefinition_));
   setStyleSheet(dialogStyleSheet(themeDefinition_));
 }
 
-void muffin::PreferencesDialog::setStatusBarVisible(bool visible) {
+void mufpen::PreferencesDialog::setStatusBarVisible(bool visible) {
   if (appearancePage_) {
     appearancePage_->setStatusBarVisible(visible);
   }
 }
 
-void muffin::PreferencesDialog::setZoomPercent(int percent) {
+void mufpen::PreferencesDialog::setZoomPercent(int percent) {
   if (appearancePage_) {
     appearancePage_->setZoomPercent(percent);
   }
 }
 
-void muffin::PreferencesDialog::setFontSizePx(int px) {
+void mufpen::PreferencesDialog::setFontSizePx(int px) {
   if (appearancePage_) {
     appearancePage_->setFontSizePx(px);
   }
 }
 
-void muffin::PreferencesDialog::setContentWidthPx(int px) {
+void mufpen::PreferencesDialog::setContentWidthPx(int px) {
   if (appearancePage_) {
     appearancePage_->setContentWidthPx(px);
   }
 }
 
-void muffin::PreferencesDialog::changeEvent(QEvent* event) {
+void mufpen::PreferencesDialog::changeEvent(QEvent* event) {
   if (event->type() == QEvent::LanguageChange) {
     retranslateUi();
   }
   QDialog::changeEvent(event);
 }
 
-void muffin::PreferencesDialog::retranslateUi() {
+void mufpen::PreferencesDialog::retranslateUi() {
   setWindowTitle(tr("Preferences"));
   if (sidebarTitleLabel_) {
     sidebarTitleLabel_->setText(tr("Preferences"));
@@ -284,7 +284,7 @@ void muffin::PreferencesDialog::retranslateUi() {
   // General page handles its own retranslation via LanguageManager
 }
 
-QScrollArea* muffin::PreferencesDialog::makeScrollArea() {
+QScrollArea* mufpen::PreferencesDialog::makeScrollArea() {
   auto* scroll = new QScrollArea(contentStack_);
   scroll->setWidgetResizable(true);
   scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -293,7 +293,7 @@ QScrollArea* muffin::PreferencesDialog::makeScrollArea() {
   return scroll;
 }
 
-QWidget* muffin::PreferencesDialog::makePage(QWidget* parent) {
+QWidget* mufpen::PreferencesDialog::makePage(QWidget* parent) {
   auto* scroll = new QScrollArea(parent);
   scroll->setWidgetResizable(true);
   scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -315,7 +315,7 @@ QWidget* muffin::PreferencesDialog::makePage(QWidget* parent) {
   return page;
 }
 
-void muffin::PreferencesDialog::addPlaceholderPage() {
+void mufpen::PreferencesDialog::addPlaceholderPage() {
   auto* page = makePage(contentStack_);
   auto* layout = qobject_cast<QVBoxLayout*>(page->layout());
   auto* label = new QLabel(page);

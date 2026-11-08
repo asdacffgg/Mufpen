@@ -6,7 +6,7 @@
 #include <optional>
 #include <stdexcept>
 
-namespace muffin::mermaid::c4 {
+namespace mufpen::mermaid::c4 {
 
 enum class C4ErrorKind { Lexer, Parser, Runtime };
 
@@ -75,4 +75,4 @@ public:
   static C4Data parse(const QString& source, bool wrap = false);
 };
 
-} // namespace muffin::mermaid::c4
+} // namespace mufpen::mermaid::c4

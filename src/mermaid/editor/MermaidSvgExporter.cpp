@@ -22,7 +22,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 constexpr auto kSvgNamespace = "http://www.w3.org/2000/svg";
@@ -412,7 +412,7 @@ QByteArray normalizeSvg(const QByteArray& generated, const MermaidRenderEntry& e
       if (root) {
         writer.writeAttribute(QStringLiteral("id"), rootId);
         // Families whose upstream svg carries no class (the error diagram)
-        // keep only the Muffin embedding marker.
+        // keep only the Mufpen embedding marker.
         writer.writeAttribute(QStringLiteral("class"), entry.metadata.cssClass.isEmpty()
                                                            ? QStringLiteral("mfn-mermaid")
                                                            : QStringLiteral("mfn-mermaid ") + entry.metadata.cssClass);
@@ -543,4 +543,4 @@ QByteArray renderMermaidEntryToSvg(const MermaidRenderEntry& entry, const Mermai
   return normalizeSvg(generated, entry, canvas, options);
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

@@ -11,7 +11,7 @@
 #include <QSpinBox>
 #include <QVBoxLayout>
 
-muffin::PrefsSearchPage::PrefsSearchPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsSearchPage::PrefsSearchPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(16);
@@ -116,7 +116,7 @@ muffin::PrefsSearchPage::PrefsSearchPage(QWidget* parent) : PreferencesPage(pare
   retranslateUi();
 }
 
-void muffin::PrefsSearchPage::retranslateUi() {
+void mufpen::PrefsSearchPage::retranslateUi() {
   scopeTitle_->setText(tr("Search scope"));
   scopeHint_->setText(tr("Applies to folder search and Quick Open. Changes take effect on the next search."));
   extensionsLabel_->setText(tr("File extensions to search"));

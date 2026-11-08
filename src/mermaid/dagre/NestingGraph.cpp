@@ -9,7 +9,7 @@
 #include <functional>
 #include <limits>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -134,4 +134,4 @@ void cleanupNestingGraph(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

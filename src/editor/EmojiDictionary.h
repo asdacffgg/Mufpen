@@ -4,7 +4,7 @@
 #include <QString>
 #include <QStringView>
 
-namespace muffin {
+namespace mufpen {
 
 // Process-wide, lazily-loaded map of GitHub-style emoji shortcodes (without the
 // surrounding colons, e.g. "smile") to their glyphs, built once from the
@@ -23,4 +23,4 @@ const QHash<QString, QString>& emojiShortcodeMap();
 // never scans far. Returns the whole token length (both colons + name) on a hit.
 qsizetype emojiShortcodeLengthAt(QStringView source, qsizetype i);
 
-} // namespace muffin
+} // namespace mufpen

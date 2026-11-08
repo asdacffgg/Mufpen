@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {browserLayoutFont, loadBrowserLayoutFont} from './browser_layout_font.mjs';
-const {chromium} = await import(process.env.MUFFIN_PLAYWRIGHT_MODULE ? pathToFileURL(path.resolve(process.env.MUFFIN_PLAYWRIGHT_MODULE)).href : 'playwright');
+const {chromium} = await import(process.env.MUFPEN_PLAYWRIGHT_MODULE ? pathToFileURL(path.resolve(process.env.MUFPEN_PLAYWRIGHT_MODULE)).href : 'playwright');
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const font = browserLayoutFont(root);
 const iconSource = fs.readFileSync(path.join(root, 'src/theme/MarkdownAlertIcon.h'), 'utf8').replace(/\r\n/g,'\n');

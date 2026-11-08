@@ -1,4 +1,4 @@
-// Class geometry parity oracle: compares Muffin's native
+// Class geometry parity oracle: compares Mufpen's native
 // classdiagram::ClassScene against real mermaid 11.16.0 classDiagram geometry
 // captured by scripts/generate_mermaid_class_geometry_fixture.mjs (headless
 // Chrome via the sibling mermaid-cli checkout).
@@ -10,7 +10,7 @@
 //     across Qt/Chrome — like the ER oracle's entity-height parity)
 //   - per-node compartment DIVIDER count (exact — both sides reserve the same
 //     header|members|methods structure, even for bare classes).
-// The edge-tuple multiset proves Muffin draws exactly mermaid's arrows for every
+// The edge-tuple multiset proves Mufpen draws exactly mermaid's arrows for every
 // class relationship type (inheritance/realization/composition/aggregation/
 // association/dependency, solid/dashed, start/end/both) — the class analogue of
 // the ER oracle's cardinality assertion.
@@ -20,7 +20,7 @@
 // milder form of the same font-coupling that limits the pixel goldens). Positions
 // (cx/cy) are doubly font-coupled via dagre and are not captured.
 //
-// Marker normalization: Muffin emits markerStart="none" for marker-less ends;
+// Marker normalization: Mufpen emits markerStart="none" for marker-less ends;
 // mermaid emits null. Both normalize to empty for the tuple comparison.
 //
 // editor::MermaidRenderCache::getSync -> entry.scene -> dynamic_cast to ClassScene -> toJsonObject().
@@ -40,7 +40,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -59,7 +59,7 @@ void require(bool condition, const QString& message) {
     fail(message);
 }
 
-// Normalize a marker field to a canonical token: Muffin's "none" and mermaid's
+// Normalize a marker field to a canonical token: Mufpen's "none" and mermaid's
 // null both mean "no marker at this end".
 QString normMarker(const QJsonValue& v) {
   const QString s = v.toString();
@@ -131,7 +131,7 @@ int main(int argc, char** argv) {
     if (actualTuples != expectedTuples) {
       assertErrors << id + QStringLiteral(": edge-tuple multiset diverged");
       assertErrors << QStringLiteral("  mermaid: %1").arg(expectedTuples.join(QStringLiteral(", ")));
-      assertErrors << QStringLiteral("  muffin : %1").arg(actualTuples.join(QStringLiteral(", ")));
+      assertErrors << QStringLiteral("  mufpen : %1").arg(actualTuples.join(QStringLiteral(", ")));
     }
 
     // Node geometry + compartment structure (font-coupled / model-dependent) —
@@ -158,7 +158,7 @@ int main(int argc, char** argv) {
       const int actualDiv = static_cast<int>(node.value(QStringLiteral("dividers")).toDouble());
       const int expectedDiv = static_cast<int>(exp.value(QStringLiteral("dividers")).toDouble());
       if (actualDiv != expectedDiv)
-        assertErrors << prefix + QStringLiteral("/dividers: muffin=%1 mermaid=%2").arg(actualDiv).arg(expectedDiv);
+        assertErrors << prefix + QStringLiteral("/dividers: mufpen=%1 mermaid=%2").arg(actualDiv).arg(expectedDiv);
       // Width is font-coupled (reported only).
       reportNotes +=
           parity::compareNumber(node.value(QStringLiteral("width")).toDouble(),

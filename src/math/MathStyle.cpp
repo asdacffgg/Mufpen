@@ -3,7 +3,7 @@
 #include <array>
 #include <cstddef>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 constexpr std::array<MathStyle, 8> styles{
@@ -82,4 +82,4 @@ MathStyle MathStyle::scriptScript() {
   return styles.at(ScriptScript);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

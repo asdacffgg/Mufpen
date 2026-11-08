@@ -22,7 +22,7 @@
 
 #include "RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -250,7 +250,7 @@ void testFrontMatterLayoutPreservesTrailingLiteralNewline() {
   RenderTheme theme = RenderTheme::github();
 
   DocumentSession withoutTrailingNewline;
-  withoutTrailingNewline.setMarkdownText(QStringLiteral("---\ntitle: Muffin\n---"), false);
+  withoutTrailingNewline.setMarkdownText(QStringLiteral("---\ntitle: Mufpen\n---"), false);
   DocumentLayout compactLayout;
   compactLayout.rebuild(withoutTrailingNewline.document(), theme, 800.0);
   const MarkdownNode* compactFrontMatter =
@@ -260,7 +260,7 @@ void testFrontMatterLayoutPreservesTrailingLiteralNewline() {
   require(compactBlock != nullptr, QStringLiteral("compact front matter should layout"));
 
   DocumentSession withTrailingNewline;
-  withTrailingNewline.setMarkdownText(QStringLiteral("---\ntitle: Muffin\n\n---"), false);
+  withTrailingNewline.setMarkdownText(QStringLiteral("---\ntitle: Mufpen\n\n---"), false);
   DocumentLayout expandedLayout;
   expandedLayout.rebuild(withTrailingNewline.document(), theme, 800.0);
   const MarkdownNode* expandedFrontMatter =
@@ -603,7 +603,7 @@ int main(int argc, char** argv) {
   // A well-defined QSettings scope is required for SettingsOverride to be seen by the layout
   // builder's QSettings reads — with empty org/app names the default-constructed QSettings can
   // resolve to an inconsistent path between the write and the read.
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("RenderHtmlLayoutTest"));
 #define RUN_TEST(test) runTest(#test, test)
   RUN_TEST(testLiteralBlockWrappedEditingGeometry);

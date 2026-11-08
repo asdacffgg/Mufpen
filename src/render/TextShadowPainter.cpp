@@ -12,9 +12,9 @@
 #include "render/Blur.h"
 #include "render/Filter.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(shadowPerf, "muffin.perf.paint", QtWarningMsg)
+Q_LOGGING_CATEGORY(shadowPerf, "mufpen.perf.paint", QtWarningMsg)
 constexpr int cacheBudget = 16 * 1024 * 1024;
 constexpr int maxEntries = 512;
 constexpr int blurPasses = 3;
@@ -256,7 +256,7 @@ void TextShadowPainter::paint(QPainter& painter, const TextLayout& text, QPointF
           coverage.drawImage(QPointF(), raster);
         }
       }
-      const bool traceRaster = !formats.isEmpty() && qEnvironmentVariableIsSet("MUFFIN_SHADOW_RASTER_TRACE");
+      const bool traceRaster = !formats.isEmpty() && qEnvironmentVariableIsSet("MUFPEN_SHADOW_RASTER_TRACE");
       if (traceRaster) {
         const auto name = QString("resource-pixels-sparse-%1-%2").arg(area.x()).arg(area.y());
         mask.save(name + "-mask.png");
@@ -290,4 +290,4 @@ void TextShadowPainter::paint(QPainter& painter, const TextLayout& text, QPointF
     painter.drawImage(anchor + QPointF(area.topLeft()) / dpr, raster);
   }
 }
-} // namespace muffin
+} // namespace mufpen

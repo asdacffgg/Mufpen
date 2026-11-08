@@ -10,11 +10,11 @@
 #include <QHash>
 #include <QString>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // Assigns an `x` coordinate to every node (TB orientation; LR/RL handled by
 // the coordinate-system swap). Returns the final balanced x map and also writes
 // node->x on the graph.
 QHash<QString, qreal> positionX(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

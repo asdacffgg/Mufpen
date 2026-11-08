@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 namespace {
 
 QColor color(const QString& value) {
@@ -269,4 +269,4 @@ void ClassScene::paint(QPainter& painter, const MermaidPaintOptions& options) co
   paintClassScene(*this, painter, ClassPaintMode::Color, options);
 }
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

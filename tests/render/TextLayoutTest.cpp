@@ -22,7 +22,7 @@
 #include "theme/CssThemeMapper.h"
 #include "theme/FontRendering.h"
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 QHash<QString, QString> families;
 QJsonObject reference;
@@ -30,22 +30,22 @@ void requireNear(qreal a, qreal b, const QString& context, qreal tolerance = .00
   require(qAbs(a - b) <= tolerance, context + QString(" actual=%1 expected=%2").arg(a).arg(b));
 }
 void loadFonts() {
-  QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/text-backend-browser.json"));
+  QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/text-backend-browser.json"));
   require(file.open(QIODevice::ReadOnly), "text backend browser fixture");
   reference = QJsonDocument::fromJson(file.readAll()).object();
   for (auto item : reference["fonts"].toArray()) {
     const auto entry = item.toObject();
     const auto path = entry["file"].toString();
-    QFile original(QStringLiteral(MUFFIN_SOURCE_DIR "/") + path);
+    QFile original(QStringLiteral(MUFPEN_SOURCE_DIR "/") + path);
     require(original.open(QIODevice::ReadOnly), "fixture webfont");
     require(QString::fromLatin1(QCryptographicHash::hash(original.readAll(), QCryptographicHash::Sha256).toHex()) ==
                 entry["sha256"].toString(),
             "font bytes differ from browser reference");
     QString native;
     if (path.startsWith("resources/themes/"))
-      native = QStringLiteral(MUFFIN_BINARY_DIR "/theme-fonts/") + path.mid(17);
+      native = QStringLiteral(MUFPEN_BINARY_DIR "/theme-fonts/") + path.mid(17);
     else
-      native = QStringLiteral(MUFFIN_BINARY_DIR "/text-fixture-fonts/") + QFileInfo(path).fileName();
+      native = QStringLiteral(MUFPEN_BINARY_DIR "/text-fixture-fonts/") + QFileInfo(path).fileName();
     native.replace(".woff2", ".ttf");
     const int id = QFontDatabase::addApplicationFont(native);
     require(id >= 0, "load generated fixture font " + native);
@@ -204,7 +204,7 @@ void testFractionalBrowserGeometry() {
       require(!layout.selectionRects(0, text.size()).isEmpty(), id + " selection");
     }
   }
-  QFile output(QStringLiteral(MUFFIN_BINARY_DIR "/text-backend-comparison-") +
+  QFile output(QStringLiteral(MUFPEN_BINARY_DIR "/text-backend-comparison-") +
                (documentTextBackend() == TextBackend::Native ? "native.json" : "fractional.json"));
   require(output.open(QIODevice::WriteOnly), "backend diagnostic output");
   output.write(QJsonDocument(diagnostics).toJson());
@@ -421,8 +421,8 @@ void testEditingAndCaches() {
         incremental.block(node->id())->paint(painter, theme, 0);
     }
   const auto stack =
-      font_rendering::cssFamilyList("MuffinAlias\nMuffinFixtureHan\nsans-serif", font_rendering::sansFamily(),
-                                    {{"muffinalias", families.value("MuffinFixtureSans")}});
+      font_rendering::cssFamilyList("MufpenAlias\nMuffinFixtureHan\nsans-serif", font_rendering::sansFamily(),
+                                    {{"mufpenalias", families.value("MuffinFixtureSans")}});
   require(stack[0] == families.value("MuffinFixtureSans") && stack[1] == families.value("MuffinFixtureHan"),
           "CSS fallback order/alias");
 }
@@ -475,7 +475,7 @@ void testSharedDocumentFallbackStack() {
 }
 void testThemeTypography() {
   const auto read = [](const QString& path) {
-    QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/") + path);
+    QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/") + path);
     require(file.open(QIODevice::ReadOnly), "theme typography fixture " + path);
     auto text = QString::fromUtf8(file.readAll());
     return text.replace("\r\n", "\n");
@@ -616,9 +616,9 @@ void testThemeTypography() {
   }
 }
 void benchmark() {
-  if (!qEnvironmentVariableIsSet("MUFFIN_TEXT_BENCH"))
+  if (!qEnvironmentVariableIsSet("MUFPEN_TEXT_BENCH"))
     return;
-  const bool cjkDense = qEnvironmentVariable("MUFFIN_TEXT_BENCH_WORKLOAD") == "cjk";
+  const bool cjkDense = qEnvironmentVariable("MUFPEN_TEXT_BENCH_WORKLOAD") == "cjk";
   const char* workload = cjkDense ? "cjk" : "mixed";
   const auto before = diag::workingSetBytes();
   const auto primaryFamily = families.value(cjkDense ? "MuffinFixtureSans" : "MuffinFixtureAbyss");
@@ -745,7 +745,7 @@ int main(int argc, char** argv) {
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
-  QSettings("Muffin", "Muffin").setValue("editor/breakOnSingleNewline", false);
+  QSettings("Mufpen", "Mufpen").setValue("editor/breakOnSingleNewline", false);
   loadFonts();
   runTest("nativeCompatibility", testNativeCompatibility);
   runTest("fractionalBrowserGeometry", testFractionalBrowserGeometry);

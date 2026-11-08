@@ -7,9 +7,9 @@
 
 #include "mermaid/dagre/DagreLabels.h"
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 void runNormalize(DagreGraph& g);
 void undoNormalize(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

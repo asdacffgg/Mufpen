@@ -11,7 +11,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::packet {
+namespace mufpen::mermaid::packet {
 namespace {
 
 QStringList cssFontFamilies(const QString& expression) {
@@ -132,4 +132,4 @@ void paintPacketScene(const PacketScene& scene, QPainter& painter, const Mermaid
   painter.restore();
 }
 
-} // namespace muffin::mermaid::packet
+} // namespace mufpen::mermaid::packet

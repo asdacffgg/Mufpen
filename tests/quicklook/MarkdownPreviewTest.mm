@@ -31,7 +31,7 @@ int main() {
                           "```cpp\nint main() {}\n```\n\n<script>do_not_execute()</script>\n";
     NSError* error = nil;
     NSAttributedString* text =
-        muffin::quicklook::renderMarkdown([markdown dataUsingEncoding:NSUTF8StringEncoding], &error);
+        mufpen::quicklook::renderMarkdown([markdown dataUsingEncoding:NSUTF8StringEncoding], &error);
     require(text && !error, "native Markdown preview renders a mixed document");
     NSFont* heading = attribute(text, @"中文标题", NSFontAttributeName);
     NSFont* body = attribute(text, @"正文", NSFontAttributeName);
@@ -54,22 +54,22 @@ int main() {
 
     const unsigned char invalid[] = {0xff, 0xff, 0xff};
     error = nil;
-    require(!muffin::quicklook::renderMarkdown([NSData dataWithBytes:invalid length:sizeof(invalid)], &error) && error,
+    require(!mufpen::quicklook::renderMarkdown([NSData dataWithBytes:invalid length:sizeof(invalid)], &error) && error,
             "invalid text produces a recoverable preview error");
-    NSMutableData* large = [NSMutableData dataWithLength:muffin::quicklook::kMaximumPreviewBytes + 1];
+    NSMutableData* large = [NSMutableData dataWithLength:mufpen::quicklook::kMaximumPreviewBytes + 1];
     error = nil;
-    require(!muffin::quicklook::renderMarkdown(large, &error) && error.code == NSFileReadTooLargeError,
+    require(!mufpen::quicklook::renderMarkdown(large, &error) && error.code == NSFileReadTooLargeError,
             "large input is bounded before parsing");
     NSAttributedString* utf16 =
-        muffin::quicklook::renderMarkdown([@"# 中文" dataUsingEncoding:NSUTF16StringEncoding], nullptr);
+        mufpen::quicklook::renderMarkdown([@"# 中文" dataUsingEncoding:NSUTF16StringEncoding], nullptr);
     require([utf16.string containsString:@"中文"], "UTF-16 BOM text is supported");
-    require(muffin::quicklook::renderMarkdown([NSData data], nullptr) != nil, "empty files are valid previews");
+    require(mufpen::quicklook::renderMarkdown([NSData data], nullptr) != nil, "empty files are valid previews");
 
     NSURL* file = [[NSURL fileURLWithPath:NSTemporaryDirectory()
                               isDirectory:YES] URLByAppendingPathComponent:NSUUID.UUID.UUIDString];
     require([large writeToURL:file atomically:YES], "create oversized preview fixture");
     error = nil;
-    require(!muffin::quicklook::readPreviewFile(file, &error) && error.code == NSFileReadTooLargeError,
+    require(!mufpen::quicklook::readPreviewFile(file, &error) && error.code == NSFileReadTooLargeError,
             "file loading is bounded as well as parsing");
     auto* longSource = [NSMutableString string];
     for (NSUInteger line = 0; line < 10000; ++line)
@@ -77,11 +77,11 @@ int main() {
     NSData* sourceBytes = [longSource dataUsingEncoding:NSUTF8StringEncoding];
     require([sourceBytes writeToURL:file atomically:YES], "create multi-chunk UTF-8 preview fixture");
     error = nil;
-    require([muffin::quicklook::readPreviewFile(file, &error) isEqualToData:sourceBytes] && !error,
+    require([mufpen::quicklook::readPreviewFile(file, &error) isEqualToData:sourceBytes] && !error,
             "file loading preserves all bytes through EOF");
     [[NSFileManager defaultManager] removeItemAtURL:file error:nullptr];
 
-    auto* controller = [[MuffinPreviewController alloc] init];
+    auto* controller = [[MufpenPreviewController alloc] init];
     require([controller conformsToProtocol:@protocol(QLPreviewingController)],
             "extension principal implements Quick Look");
     NSScrollView* scroll = (NSScrollView*)controller.view;

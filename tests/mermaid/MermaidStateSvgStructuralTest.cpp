@@ -15,7 +15,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
     // 2 0 86 352) — locking only width/height left the origin unchecked.
     const QStringList viewBoxParts =
         browserRoot.value(QStringLiteral("viewBox")).toString().split(QLatin1Char(' '), Qt::SkipEmptyParts);
-    if (qEnvironmentVariableIsSet("MUFFIN_DEBUG_STATE_BOX") && viewBoxParts.size() == 4) {
+    if (qEnvironmentVariableIsSet("MUFPEN_DEBUG_STATE_BOX") && viewBoxParts.size() == 4) {
       std::fprintf(stderr, "[%s] browser=%s native-bounds=%g,%g %gx%g\n", qPrintable(id),
                    qPrintable(browserRoot.value(QStringLiteral("viewBox")).toString()), scene.bounds.x(),
                    scene.bounds.y(), scene.bounds.width(), scene.bounds.height());

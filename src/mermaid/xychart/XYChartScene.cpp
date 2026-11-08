@@ -14,7 +14,7 @@
 #include <limits>
 #include <stdexcept>
 
-namespace muffin::mermaid::xychart {
+namespace mufpen::mermaid::xychart {
 namespace {
 
 constexpr qreal kBarWidthToTickWidthRatio = 0.7;
@@ -678,4 +678,4 @@ QJsonObject XYChartScene::toJsonObject() const {
           {QStringLiteral("rects"), rectJson}};
 }
 
-} // namespace muffin::mermaid::xychart
+} // namespace mufpen::mermaid::xychart

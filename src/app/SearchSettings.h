@@ -2,11 +2,11 @@
 
 #include "app/WorkspaceFiles.h"
 
-namespace muffin {
+namespace mufpen {
 
 // A value snapshot, captured before starting a background search. Search scope
 // deliberately does not share the preferences that protect opening a file.
-struct MUFFIN_UI_EXPORT SearchSettings {
+struct MUFPEN_UI_EXPORT SearchSettings {
   WorkspaceScanOptions scan;
   QStringList extensions;
   qint64 maxFileBytes = 100 * 1024 * 1024;
@@ -17,4 +17,4 @@ struct MUFFIN_UI_EXPORT SearchSettings {
   static constexpr qint64 maximumFileBytes = 512 * 1024 * 1024;
 };
 
-} // namespace muffin
+} // namespace mufpen

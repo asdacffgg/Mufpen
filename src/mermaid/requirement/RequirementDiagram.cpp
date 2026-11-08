@@ -1,9 +1,9 @@
 // Native recursive-descent parser for requirementDiagram.
 //
 // Per CLAUDE.md / the lupdate namespace convention, this .cpp contains NO
-// `namespace muffin { }` block — file-local helpers live in an anonymous
+// `namespace mufpen { }` block — file-local helpers live in an anonymous
 // namespace and public functions use fully-qualified
-// `muffin::mermaid::requirement::` names. The module has no tr() calls.
+// `mufpen::mermaid::requirement::` names. The module has no tr() calls.
 
 #include "mermaid/requirement/RequirementDiagram.h"
 
@@ -51,7 +51,7 @@ const QSet<QString>& relationshipKeywords() {
 
 } // namespace
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 QString requirementTypeDisplay(const QString& keyword) {
   return typeKeywordMap().value(keyword);
@@ -888,4 +888,4 @@ RequirementDiagram RequirementDiagram::parse(const QString& source) {
   return diagram;
 }
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

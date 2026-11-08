@@ -26,7 +26,7 @@
 #include <QImage>
 #include <QString>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 
 struct ViewBox {
   qreal x = 0.0, y = 0.0, width = 0.0, height = 0.0;
@@ -76,4 +76,4 @@ CompareReport compareLevel3(const FlowScene& scene, const QImage& golden, const 
                             const CompareThresholds& thresholds = {}, const QString& failureDir = QString(),
                             bool enforceInterior = true, qreal dpr = 1.0);
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

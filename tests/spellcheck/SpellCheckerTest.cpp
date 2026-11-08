@@ -19,17 +19,17 @@ void require(bool condition, const char* message) {
 
 int main(int argc, char** argv) {
   // Use an INI-format settings store under a throwaway org/app name so the test never
-  // touches the real Muffin QSettings (e.g. the Windows registry).
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  // touches the real Mufpen QSettings (e.g. the Windows registry).
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("SpellCheckerTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QCoreApplication app(argc, argv);
 
   // The en_US dictionary must be bundled.
-  const QStringList langs = muffin::SpellChecker::availableLanguages();
+  const QStringList langs = mufpen::SpellChecker::availableLanguages();
   require(langs.contains(QStringLiteral("en_US")), "en_US dictionary must be bundled");
 
-  auto& sc = muffin::SpellChecker::instance();
+  auto& sc = mufpen::SpellChecker::instance();
   sc.setLanguage(QStringLiteral("en_US"));
   sc.setEnabled(true);
 

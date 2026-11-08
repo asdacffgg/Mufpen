@@ -28,13 +28,13 @@ constexpr int kRequestTimeoutMs = 5000;
 
 QString serverName(const QString& identity) {
   // Leave room for macOS's long per-user temporary directory in sockaddr_un.
-  return QStringLiteral("muffin-open-%1")
+  return QStringLiteral("mufpen-open-%1")
       .arg(QString::fromLatin1(
           QCryptographicHash::hash(identity.toUtf8(), QCryptographicHash::Sha256).toHex().left(24)));
 }
 } // namespace
 
-muffin::ApplicationInstance::ApplicationInstance(const QString& identity, QObject* parent)
+mufpen::ApplicationInstance::ApplicationInstance(const QString& identity, QObject* parent)
     : QObject(parent), serverName_(serverName(identity)),
       lock_(QDir(ApplicationPaths::temporaryDirectory()).filePath(serverName_ + QStringLiteral(".lock"))) {
   // A responsive process can legitimately own this lock for weeks.
@@ -92,11 +92,11 @@ muffin::ApplicationInstance::ApplicationInstance(const QString& identity, QObjec
   });
 }
 
-QString muffin::ApplicationInstance::profileIdentity() {
+QString mufpen::ApplicationInstance::profileIdentity() {
   return ApplicationPaths::localDataDirectory() + QLatin1Char('\n') + QSettings().fileName();
 }
 
-bool muffin::ApplicationInstance::listen() {
+bool mufpen::ApplicationInstance::listen() {
   if (server_.isListening())
     return true;
   if (!lock_.tryLock())
@@ -108,7 +108,7 @@ bool muffin::ApplicationInstance::listen() {
   return false;
 }
 
-bool muffin::ApplicationInstance::forwardFiles(const QStringList& absolutePaths) const {
+bool mufpen::ApplicationInstance::forwardFiles(const QStringList& absolutePaths) const {
   if (absolutePaths.isEmpty())
     return false;
   QJsonArray files;

@@ -7,7 +7,7 @@
 class QDialogButtonBox;
 class QLabel;
 
-namespace muffin {
+namespace mufpen {
 
 class RenderTheme;
 
@@ -31,4 +31,4 @@ private:
   QDialogButtonBox* buttons_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -17,7 +17,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::error {
+namespace mufpen::mermaid::error {
 namespace {
 
 QStringList fontFamilies(const QString& expression) {
@@ -184,4 +184,4 @@ void ErrorScene::paint(QPainter& painter, const MermaidPaintOptions&) const {
   paintErrorScene(*this, painter);
 }
 
-} // namespace muffin::mermaid::error
+} // namespace mufpen::mermaid::error

@@ -8,9 +8,9 @@ class QTreeWidget;
 class QPushButton;
 class QToolButton;
 class QTimer;
-namespace muffin {
+namespace mufpen {
 struct ThemeDefinition;
-class MUFFIN_UI_EXPORT SearchPanelWidget final : public QWidget {
+class MUFPEN_UI_EXPORT SearchPanelWidget final : public QWidget {
   Q_OBJECT
 public:
   explicit SearchPanelWidget(QWidget* parent = nullptr);
@@ -53,4 +53,4 @@ private:
   WorkspaceSearchResult result_;
   bool running_ = false;
 };
-} // namespace muffin
+} // namespace mufpen

@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 
 qsizetype SourcePositionIndex::nodeSize(const std::unique_ptr<SourcePositionToken>& node) {
   return node ? node->subtreeSize : 0;
@@ -192,4 +192,4 @@ void SourcePositionIndex::replace(qsizetype first, qsizetype count, std::unique_
   root_ = merge(merge(std::move(prefix), std::move(replacements)), std::move(suffix));
 }
 
-} // namespace muffin
+} // namespace mufpen

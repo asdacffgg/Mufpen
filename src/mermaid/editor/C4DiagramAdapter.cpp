@@ -17,7 +17,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue valueOr(const QJsonObject& object, const QString& key, const QJsonValue& fallback) {
@@ -525,4 +525,4 @@ const Diagram& c4DiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

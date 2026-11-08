@@ -13,7 +13,7 @@
 
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 bool hasBlockQuoteAncestor(const MarkdownNode* node) {
@@ -1539,4 +1539,4 @@ CursorPosition TextBlockCommandBuilder::cursorFor(NodeId blockId, qsizetype offs
   return cursor;
 }
 
-} // namespace muffin
+} // namespace mufpen

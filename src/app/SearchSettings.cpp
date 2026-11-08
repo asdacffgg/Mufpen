@@ -2,11 +2,11 @@
 #include "app/FileOpenProtection.h"
 #include <QSettings>
 
-QString muffin::SearchSettings::defaultExtensions() {
+QString mufpen::SearchSettings::defaultExtensions() {
   return file_open_protection::defaultTextExtensions();
 }
 
-muffin::SearchSettings muffin::SearchSettings::load() {
+mufpen::SearchSettings mufpen::SearchSettings::load() {
   QSettings settings;
   SearchSettings result;
   result.extensions = file_open_protection::normalizedTextExtensions(

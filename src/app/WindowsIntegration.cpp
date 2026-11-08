@@ -13,23 +13,23 @@
 
 namespace {
 
-const wchar_t* const kProgId = L"Muffin.md";
-const wchar_t* const kAppName = L"Muffin";
+const wchar_t* const kProgId = L"Mufpen.md";
+const wchar_t* const kAppName = L"Mufpen";
 
 QString contextMenuLabel() {
-  return QCoreApplication::translate("muffin::WindowsIntegration", "Open with Mufpen");
+  return QCoreApplication::translate("mufpen::WindowsIntegration", "Open with Mufpen");
 }
 
 QString documentTypeLabel() {
-  return QCoreApplication::translate("muffin::WindowsIntegration", "Mufpen Markdown Document");
+  return QCoreApplication::translate("mufpen::WindowsIntegration", "Mufpen Markdown Document");
 }
 
 QString openLabel() {
-  return QCoreApplication::translate("muffin::WindowsIntegration", "Open");
+  return QCoreApplication::translate("mufpen::WindowsIntegration", "Open");
 }
 
 // Marker subkey name under the verb; its (Default) value carries the icon
-// path so the context-menu entry shows the Muffin icon.
+// path so the context-menu entry shows the Mufpen icon.
 const wchar_t* const kIconSubKey = L"Icon";
 const wchar_t* const kCommandSubKey = L"command";
 
@@ -129,7 +129,7 @@ void notifyShellAssocChanged() {
 
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 
 const QStringList& WindowsIntegration::markdownExtensions() {
   static const QStringList kExtensions = {QStringLiteral(".md"), QStringLiteral(".markdown"), QStringLiteral(".mdx"),
@@ -147,20 +147,20 @@ void WindowsIntegration::applyIntegration(bool contextMenu, bool associate) {
 
   // --- Context-menu verbs (files + folder + folder background) ---
   for (const QString& ext : markdownExtensions()) {
-    const std::wstring verbPath = classesKey(ext.toStdWString() + L"\\shell\\Muffin");
+    const std::wstring verbPath = classesKey(ext.toStdWString() + L"\\shell\\Mufpen");
     if (contextMenu) {
       writeStringValue(HKEY_CURRENT_USER, verbPath, nullptr, verbLabel);
       writeStringValue(HKEY_CURRENT_USER, verbPath, L"MUIVerb", verbLabel);
       writeStringValue(HKEY_CURRENT_USER, verbPath + L'\\' + kIconSubKey, nullptr, iconValue);
       writeStringValue(HKEY_CURRENT_USER, verbPath + L'\\' + kCommandSubKey, nullptr, exe + L" \"%1\"");
     } else {
-      // Remove only Muffin's verb subtree; leave the rest of the extension's
+      // Remove only Mufpen's verb subtree; leave the rest of the extension's
       // shell key (other apps' verbs) and the extension key itself intact.
       deleteKeyTree(HKEY_CURRENT_USER, verbPath);
     }
   }
 
-  const std::wstring dirVerb = classesKey(L"Directory\\shell\\Muffin");
+  const std::wstring dirVerb = classesKey(L"Directory\\shell\\Mufpen");
   if (contextMenu) {
     writeStringValue(HKEY_CURRENT_USER, dirVerb, nullptr, verbLabel);
     writeStringValue(HKEY_CURRENT_USER, dirVerb, L"MUIVerb", verbLabel);
@@ -172,7 +172,7 @@ void WindowsIntegration::applyIntegration(bool contextMenu, bool associate) {
 
   // Directory\Background covers the right-click menu on the empty area of an
   // open folder window; it passes the current folder via %V (not %1).
-  const std::wstring bgVerb = classesKey(L"Directory\\Background\\shell\\Muffin");
+  const std::wstring bgVerb = classesKey(L"Directory\\Background\\shell\\Mufpen");
   if (contextMenu) {
     writeStringValue(HKEY_CURRENT_USER, bgVerb, nullptr, verbLabel);
     writeStringValue(HKEY_CURRENT_USER, bgVerb, L"MUIVerb", verbLabel);
@@ -227,9 +227,9 @@ void WindowsIntegration::refreshLocalizedLabels() {
     changed |= updateExistingString(key, L"MUIVerb", label);
   };
   for (const auto& extension : markdownExtensions())
-    updateVerb(classesKey(extension.toStdWString() + L"\\shell\\Muffin"), verb);
-  updateVerb(classesKey(L"Directory\\shell\\Muffin"), verb);
-  updateVerb(classesKey(L"Directory\\Background\\shell\\Muffin"), verb);
+    updateVerb(classesKey(extension.toStdWString() + L"\\shell\\Mufpen"), verb);
+  updateVerb(classesKey(L"Directory\\shell\\Mufpen"), verb);
+  updateVerb(classesKey(L"Directory\\Background\\shell\\Mufpen"), verb);
   const auto progId = classesKey(kProgId);
   const auto description = documentTypeLabel().toStdWString();
   changed |= updateExistingString(progId, nullptr, description);
@@ -246,7 +246,7 @@ bool WindowsIntegration::isContextMenuEnabled() {
 #ifdef Q_OS_WIN
   // The folder verb is the canonical marker that the context-menu set was
   // applied (it is always written whenever contextMenu is on).
-  return keyExists(HKEY_CURRENT_USER, classesKey(L"Directory\\shell\\Muffin"));
+  return keyExists(HKEY_CURRENT_USER, classesKey(L"Directory\\shell\\Mufpen"));
 #else
   return false;
 #endif
@@ -272,4 +272,4 @@ void WindowsIntegration::openDefaultAppsSettings() {
 #endif
 }
 
-} // namespace muffin
+} // namespace mufpen

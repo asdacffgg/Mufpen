@@ -38,8 +38,8 @@ QStringList placeholders(const QString& text) {
 }
 
 void verifyCatalogs() {
-  const QDir dir(QString::fromUtf8(MUFFIN_TRANSLATIONS_DIR));
-  const auto files = dir.entryList({QStringLiteral("muffin_*.ts")}, QDir::Files);
+  const QDir dir(QString::fromUtf8(MUFPEN_TRANSLATIONS_DIR));
+  const auto files = dir.entryList({QStringLiteral("mufpen_*.ts")}, QDir::Files);
   require(files.size() == 14, "All supported language catalogs must be checked");
   QSet<QString> referenceKeys;
   for (const QString& name : files) {
@@ -123,13 +123,13 @@ void verifyCatalogs() {
 
 void verifyTranslationResource(const QString& code, const QString& expectedFile, const QString& expectedPreferences) {
   QTranslator translator;
-  require(translator.load(QStringLiteral(":/i18n/muffin_%1.qm").arg(code)),
+  require(translator.load(QStringLiteral(":/i18n/mufpen_%1.qm").arg(code)),
           QStringLiteral("%1 translation resource should load").arg(code).toStdString().c_str());
   require(QCoreApplication::installTranslator(&translator),
           QStringLiteral("%1 translator should install").arg(code).toStdString().c_str());
 
-  requireTranslation("muffin::MainWindow", "File", expectedFile);
-  requireTranslation("muffin::PreferencesDialog", "Preferences", expectedPreferences);
+  requireTranslation("mufpen::MainWindow", "File", expectedFile);
+  requireTranslation("mufpen::PreferencesDialog", "Preferences", expectedPreferences);
 
   QCoreApplication::removeTranslator(&translator);
 }
@@ -149,18 +149,18 @@ int main(int argc, char** argv) {
                             QStringLiteral("\u8A2D\u5B9A"));
 
   QTranslator translator;
-  require(translator.load(QStringLiteral(":/i18n/muffin_zh_CN.qm")), "zh_CN translation resource should load");
+  require(translator.load(QStringLiteral(":/i18n/mufpen_zh_CN.qm")), "zh_CN translation resource should load");
   require(QCoreApplication::installTranslator(&translator), "zh_CN translator should install");
-  requireTranslation("muffin::MainWindow", "File", QStringLiteral("\u6587\u4EF6(&F)"));
-  requireTranslation("muffin::PreferencesDialog", "Preferences", QStringLiteral("\u504F\u597D\u8BBE\u7F6E"));
-  requireTranslation("muffin::SourceEditorWidget", "Start writing...", QStringLiteral("\u5F00\u59CB\u5199\u4F5C..."));
-  requireTranslation("muffin::BlockLayoutBuilder", "Start writing...", QStringLiteral("\u5F00\u59CB\u5199\u4F5C..."));
-  requireTranslation("muffin::FileController", "Open", QStringLiteral("\u6253\u5F00"));
-  requireTranslation("muffin::MainWindow", "Export Mermaid as SVG...",
+  requireTranslation("mufpen::MainWindow", "File", QStringLiteral("\u6587\u4EF6(&F)"));
+  requireTranslation("mufpen::PreferencesDialog", "Preferences", QStringLiteral("\u504F\u597D\u8BBE\u7F6E"));
+  requireTranslation("mufpen::SourceEditorWidget", "Start writing...", QStringLiteral("\u5F00\u59CB\u5199\u4F5C..."));
+  requireTranslation("mufpen::BlockLayoutBuilder", "Start writing...", QStringLiteral("\u5F00\u59CB\u5199\u4F5C..."));
+  requireTranslation("mufpen::FileController", "Open", QStringLiteral("\u6253\u5F00"));
+  requireTranslation("mufpen::MainWindow", "Export Mermaid as SVG...",
                      QStringLiteral("\u5C06 Mermaid \u5BFC\u51FA\u4E3A SVG..."));
-  requireTranslation("muffin::MainWindow", "Chinese Simplified (GB2312)", QStringLiteral("简体中文 (GB2312)"));
-  requireTranslation("muffin::EditorView", "Markdown editor", QStringLiteral("Markdown 编辑器"));
-  requireTranslation("muffin::VirtualSourceEdit", "Markdown source editor", QStringLiteral("Markdown 源码编辑器"));
+  requireTranslation("mufpen::MainWindow", "Chinese Simplified (GB2312)", QStringLiteral("简体中文 (GB2312)"));
+  requireTranslation("mufpen::EditorView", "Markdown editor", QStringLiteral("Markdown 编辑器"));
+  requireTranslation("mufpen::VirtualSourceEdit", "Markdown source editor", QStringLiteral("Markdown 源码编辑器"));
   QCoreApplication::removeTranslator(&translator);
 
   verifyTranslationResource(QStringLiteral("vi"), QStringLiteral("T\u1EC7p"), QStringLiteral("T\u00F9y ch\u1EC9nh"));

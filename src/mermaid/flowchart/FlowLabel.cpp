@@ -43,13 +43,13 @@
 #include <utility>
 #include <vector>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct FlowLabelPreparedMath {
   qreal fontPixelSize = 0.0;
   qreal operationScale = 1.0;
-  muffin::math::MathCssBox box;
-  muffin::math::MathCssPaintOperation operation;
+  mufpen::math::MathCssBox box;
+  mufpen::math::MathCssPaintOperation operation;
 };
 
 namespace {
@@ -200,7 +200,7 @@ struct MathMlInlineMetrics {
 
 constexpr qreal kMathMlCanonicalCssPixelSize = 16.0;
 
-void scaleMathCssBox(muffin::math::MathCssBox& box, qreal scale) {
+void scaleMathCssBox(mufpen::math::MathCssBox& box, qreal scale) {
   box.width *= scale;
   box.height *= scale;
   box.advance *= scale;
@@ -211,9 +211,9 @@ void scaleMathCssBox(muffin::math::MathCssBox& box, qreal scale) {
     scaleMathCssBox(child, scale);
 }
 
-qreal mathMlInlineInkRight(const muffin::math::MathCssPaintOperation& operation, qreal borderBoxWidth,
+qreal mathMlInlineInkRight(const mufpen::math::MathCssPaintOperation& operation, qreal borderBoxWidth,
                            qreal inlineAdvance) {
-  const auto* fraction = std::get_if<muffin::math::MathCssFractionPaint>(&operation.payload);
+  const auto* fraction = std::get_if<mufpen::math::MathCssFractionPaint>(&operation.payload);
   if (!fraction)
     return inlineAdvance;
   qreal right = 0.0;
@@ -224,28 +224,28 @@ qreal mathMlInlineInkRight(const muffin::math::MathCssPaintOperation& operation,
   return right > 0.0 ? std::min(borderBoxWidth, right) : borderBoxWidth;
 }
 
-FlowLabelMathStructure flowMathStructure(muffin::math::MathSemanticKind kind) {
+FlowLabelMathStructure flowMathStructure(mufpen::math::MathSemanticKind kind) {
   switch (kind) {
-  case muffin::math::MathSemanticKind::Fraction:
+  case mufpen::math::MathSemanticKind::Fraction:
     return FlowLabelMathStructure::Fraction;
-  case muffin::math::MathSemanticKind::Radical:
+  case mufpen::math::MathSemanticKind::Radical:
     return FlowLabelMathStructure::Radical;
-  case muffin::math::MathSemanticKind::SupSub:
+  case mufpen::math::MathSemanticKind::SupSub:
     return FlowLabelMathStructure::SupSub;
-  case muffin::math::MathSemanticKind::Array:
+  case mufpen::math::MathSemanticKind::Array:
     return FlowLabelMathStructure::Array;
-  case muffin::math::MathSemanticKind::None:
+  case mufpen::math::MathSemanticKind::None:
     return FlowLabelMathStructure::Plain;
   }
   return FlowLabelMathStructure::Plain;
 }
 
-MathMlInlineMetrics sequenceMathMlMetrics(const muffin::math::MathLayoutResult& layout, qreal renderFontPixelSize,
+MathMlInlineMetrics sequenceMathMlMetrics(const mufpen::math::MathLayoutResult& layout, qreal renderFontPixelSize,
                                           qreal outputScale) {
-  const muffin::math::MathCssBox box =
-      muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+  const mufpen::math::MathCssBox box =
+      mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
   const auto operation =
-      muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+      mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
   const qreal inkRight =
       operation.operation ? mathMlInlineInkRight(*operation.operation, box.width, box.advance) : box.advance;
   return {box.width * outputScale,  box.advance * outputScale,           inkRight * outputScale,
@@ -1468,7 +1468,7 @@ qsizetype prepareFlowLabelMath(FlowLabelDocument& label, qreal fontPixelSize) {
     return 0;
   const qreal renderFontPixelSize = kMathMlCanonicalCssPixelSize * 1.21;
   const qreal operationScale = fontPixelSize / kMathMlCanonicalCssPixelSize;
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   qsizetype preparedCount = 0;
   for (FlowLabelMathSpan& span : label.math) {
     if (span.prepared && qFuzzyCompare(span.prepared->fontPixelSize, fontPixelSize))
@@ -1478,13 +1478,13 @@ qsizetype prepareFlowLabelMath(FlowLabelDocument& label, qreal fontPixelSize) {
       span.prepared.reset();
       continue;
     }
-    auto build = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+    auto build = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
     if (!build.succeeded())
-      throw muffin::math::MathMlPaintError(std::move(*build.failure));
+      throw mufpen::math::MathMlPaintError(std::move(*build.failure));
     auto prepared = std::make_shared<FlowLabelPreparedMath>();
     prepared->fontPixelSize = fontPixelSize;
     prepared->operationScale = operationScale;
-    prepared->box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+    prepared->box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
     scaleMathCssBox(prepared->box, operationScale);
     prepared->operation = std::move(*build.operation);
     span.prepared = std::move(prepared);
@@ -1667,7 +1667,7 @@ struct ChromiumGlyphBounds {
 class BundledNotoDWriteFace {
 public:
   BundledNotoDWriteFace()
-      : temporary_(muffin::ApplicationPaths::temporaryDirectory() + QStringLiteral("/muffin-noto-XXXXXX.ttf")) {
+      : temporary_(mufpen::ApplicationPaths::temporaryDirectory() + QStringLiteral("/mufpen-noto-XXXXXX.ttf")) {
     QFile resource(QStringLiteral(":/mermaid/fonts/NotoSans-Regular.ttf"));
     if (!resource.open(QIODevice::ReadOnly) || !temporary_.open())
       return;
@@ -2108,7 +2108,7 @@ QRectF measureFlowSvgTextBounds(const FlowLabelDocument& label, const QString& f
     });
     const bool hasFallbackRun =
         std::any_of(shaped.runs.cbegin(), shaped.runs.cend(), [](const FlowLabelVisualRun& run) {
-          return !run.fontFamily.startsWith(QStringLiteral("Noto Sans Muffin-"), Qt::CaseInsensitive) &&
+          return !run.fontFamily.startsWith(QStringLiteral("Noto Sans Mufpen-"), Qt::CaseInsensitive) &&
                  run.fontFamily.compare(QStringLiteral("Noto Sans"), Qt::CaseInsensitive) != 0;
         });
     const bool hasRtlRun = std::any_of(shaped.runs.cbegin(), shaped.runs.cend(),
@@ -2242,7 +2242,7 @@ FlowLabelLayoutMetrics layoutFlowLabel(const FlowLabelDocument& label, const QSt
       const bool mathOnlyLine = !sequenceMathMl && !collapsedMathFlexLine && allMathPrepared && onlyMathPlaceholders;
       qreal actualLineHeight = mathOnlyLine ? 0.0 : lineHeight;
       qsizetype cursor = offset;
-      muffin::math::MathRenderer renderer;
+      mufpen::math::MathRenderer renderer;
       auto shapeMathTextRange = [&](qsizetype start, qsizetype length) {
         return shapeDomTextRange(label, start, length, font);
       };
@@ -2276,19 +2276,19 @@ FlowLabelLayoutMetrics layoutFlowLabel(const FlowLabelDocument& label, const QSt
         }
         const qreal operationScale = fontPixelSize / kMathMlCanonicalCssPixelSize;
         const qreal renderFontPixelSize = kMathMlCanonicalCssPixelSize * 1.21;
-        const muffin::math::MathLayoutResult layout =
+        const mufpen::math::MathLayoutResult layout =
             renderer.render(math.source, renderFontPixelSize, Qt::black, true);
         if (layout.valid()) {
           if (sequenceMathMl) {
             auto paintBuild =
-                muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+                mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
             if (!paintBuild.succeeded())
-              throw muffin::math::MathMlPaintError(std::move(*paintBuild.failure));
+              throw mufpen::math::MathMlPaintError(std::move(*paintBuild.failure));
           }
           const MathMlInlineMetrics mathMetrics =
               sequenceMathMl ? sequenceMathMlMetrics(layout, renderFontPixelSize, operationScale) : [&] {
-                muffin::math::MathCssBox box =
-                    muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
+                mufpen::math::MathCssBox box =
+                    mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, kMathMlCanonicalCssPixelSize);
                 scaleMathCssBox(box, operationScale);
                 return MathMlInlineMetrics{
                     box.width,    box.width,  box.width,    box.height, flowMathStructure(box.semanticKind),
@@ -2472,7 +2472,7 @@ void paintFlowLabel(QPainter& painter, const FlowLabelDocument& label, const QRe
             painter.translate(mathX, lineTop + (measuredLine.blockHeight - prepared.box.height) / 2.0);
           }
           painter.scale(prepared.operationScale, prepared.operationScale);
-          muffin::math::paintMathMlOperation(painter, prepared.operation, color);
+          mufpen::math::paintMathMlOperation(painter, prepared.operation, color);
           painter.restore();
           continue;
         }
@@ -2509,4 +2509,4 @@ void paintFlowLabel(QPainter& painter, const FlowLabelDocument& label, const QRe
   }
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

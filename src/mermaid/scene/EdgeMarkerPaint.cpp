@@ -2,7 +2,7 @@
 
 #include "mermaid/scene/SvgPathParse.h"
 
-namespace muffin::mermaid::scene {
+namespace mufpen::mermaid::scene {
 
 QVector<QPointF> stitchEdgePolyline(const QVector<QPointF>& points, const QVector<QVector<QPointF>>& segments) {
   if (!points.isEmpty()) {
@@ -42,4 +42,4 @@ QPainterPath edgePolylinePath(const QString& path, const QVector<QPointF>& point
   return stroke;
 }
 
-} // namespace muffin::mermaid::scene
+} // namespace mufpen::mermaid::scene

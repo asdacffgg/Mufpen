@@ -7,14 +7,14 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 struct RequirementScene;
 
 void paintRequirementScene(const RequirementScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

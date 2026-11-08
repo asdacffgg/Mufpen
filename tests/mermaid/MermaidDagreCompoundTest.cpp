@@ -17,8 +17,8 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid::dagre;
-using muffin::mermaid::graphlib::Edge;
+using namespace mufpen::mermaid::dagre;
+using mufpen::mermaid::graphlib::Edge;
 
 namespace {
 

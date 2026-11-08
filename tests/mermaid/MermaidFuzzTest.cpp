@@ -33,7 +33,7 @@
 #include <sys/resource.h>
 #endif
 
-using namespace muffin::mermaid::flowchart;
+using namespace mufpen::mermaid::flowchart;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -170,7 +170,7 @@ int main() {
     require(rejected, QStringLiteral("Simple-vertex preflight did not enforce the limit"));
   }
 
-  const uint64_t seedEnv = qgetenv("MUFFIN_FUZZ_SEED").toULongLong();
+  const uint64_t seedEnv = qgetenv("MUFPEN_FUZZ_SEED").toULongLong();
   const uint64_t seed = seedEnv ? seedEnv : 0xC0FFEEuLL;
   std::mt19937_64 rng(seed);
 
@@ -179,7 +179,7 @@ int main() {
   quint64 processPeakBytes = residentSetBytes();
 
   for (const Generator& gen : kGenerators) {
-    const QByteArray only = qgetenv("MUFFIN_FUZZ_ONLY");
+    const QByteArray only = qgetenv("MUFPEN_FUZZ_ONLY");
     if (!only.isEmpty() && only != gen.name)
       continue;
     int parsed = 0, threw = 0, limit = 0;
@@ -189,7 +189,7 @@ int main() {
     for (int i = 0; i < itersPerCategory; ++i) {
       const QString source = gen.fn(rng);
       maximumInputBytes = std::max(maximumInputBytes, source.size() * 2);
-      if (qgetenv("MUFFIN_FUZZ_TRACE").size()) {
+      if (qgetenv("MUFPEN_FUZZ_TRACE").size()) {
         fprintf(stderr, "[%s #%d] %s\n", gen.name, i,
                 QString(source).replace(QLatin1Char('\n'), QStringLiteral("\\n")).toUtf8().constData());
         fflush(stderr);
@@ -199,7 +199,7 @@ int main() {
       FlowchartErrorCategory cat = FlowchartErrorCategory::Syntax;
       bool threwError = false;
       try {
-        Flowchart::parse(source); // default limits = Muffin safety boundary
+        Flowchart::parse(source); // default limits = Mufpen safety boundary
         ++parsed;
       } catch (const FlowchartParseError& error) {
         threwError = true;

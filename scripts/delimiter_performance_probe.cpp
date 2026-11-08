@@ -1,6 +1,6 @@
 // Manual headless phase benchmark. Times parsing with coarse phase metrics,
 // independently of GUI delivery. Arguments: MiB, repetitions per paragraph,
-// iterations. MUFFIN_DELIMITER_PROFILE adds aggregate token diagnostics.
+// iterations. MUFPEN_DELIMITER_PROFILE adds aggregate token diagnostics.
 #include <QCoreApplication>
 #include <QElapsedTimer>
 #include <QJsonArray>
@@ -15,11 +15,11 @@ namespace {
 QJsonArray delimiterProfiles;
 QJsonArray adapterProfiles;
 void messages(QtMsgType type, const QMessageLogContext& context, const QString& message) {
-  if (qstrcmp(context.category, "muffin.adapter") == 0) {
+  if (qstrcmp(context.category, "mufpen.adapter") == 0) {
     adapterProfiles.append(QJsonDocument::fromJson(message.toUtf8()).object());
     return;
   }
-  if (qstrcmp(context.category, "muffin.delimiter") == 0) {
+  if (qstrcmp(context.category, "mufpen.delimiter") == 0) {
     delimiterProfiles.append(QJsonDocument::fromJson(message.toUtf8()).object());
     return;
   }
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
   const int iterations = QString::fromLocal8Bit(argv[3]).toInt();
   if (mib < 1 || mib > 100 || repetitions < 1 || repetitions > 10000 || iterations < 1 || iterations > 20)
     return 2;
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf*.debug=false"));
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf*.debug=false"));
   qInstallMessageHandler(messages);
   const auto paragraph =
       QStringLiteral("Plain text with **bold**, *italic*, ~~strike~~, `code`, and [Muffin](https://example.com). ")
@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     adapterProfiles = {};
     QElapsedTimer timer;
     timer.start();
-    auto parsed = muffin::CmarkGfmParser().parseDocumentProfiled(text, {});
+    auto parsed = mufpen::CmarkGfmParser().parseDocumentProfiled(text, {});
     const double wallMs = timer.nsecsElapsed() / 1e6;
     if (!parsed.root)
       return 3;

@@ -37,10 +37,10 @@ namespace {
 QFile perfLogFile;
 QMutex perfLogMutex;
 
-void muffinMessageHandler(QtMsgType type, const QMessageLogContext& context, const QString& message) {
+void mufpenMessageHandler(QtMsgType type, const QMessageLogContext& context, const QString& message) {
   Q_UNUSED(type);
 
-  if (!perfLogFile.isOpen() || QStringView(QString::fromUtf8(context.category)) != QStringLiteral("muffin.perf")) {
+  if (!perfLogFile.isOpen() || QStringView(QString::fromUtf8(context.category)) != QStringLiteral("mufpen.perf")) {
     return;
   }
 
@@ -51,17 +51,17 @@ void muffinMessageHandler(QtMsgType type, const QMessageLogContext& context, con
 }
 
 void installPerfFileLogger() {
-  const QByteArray logPath = qgetenv("MUFFIN_PERF_LOG");
+  const QByteArray logPath = qgetenv("MUFPEN_PERF_LOG");
   if (logPath.isEmpty()) {
     return;
   }
 
   QString path = QString::fromLocal8Bit(logPath);
-  // A relative path (e.g. MUFFIN_PERF_LOG=perf.log) resolves against the process working
+  // A relative path (e.g. MUFPEN_PERF_LOG=perf.log) resolves against the process working
   // directory, which during development is typically the repo root — silently littering
   // perf traces into the source tree. Anchor relative paths under the OS temp dir instead.
   if (QFileInfo(path).isRelative()) {
-    path = QDir(muffin::ApplicationPaths::temporaryDirectory()).filePath(QStringLiteral("muffin/%1").arg(path));
+    path = QDir(mufpen::ApplicationPaths::temporaryDirectory()).filePath(QStringLiteral("mufpen/%1").arg(path));
     QDir().mkpath(QFileInfo(path).absolutePath());
   }
 
@@ -70,7 +70,7 @@ void installPerfFileLogger() {
     return;
   }
 
-  qInstallMessageHandler(muffinMessageHandler);
+  qInstallMessageHandler(mufpenMessageHandler);
 }
 
 #if defined(Q_OS_LINUX)
@@ -123,22 +123,22 @@ int main(int argc, char* argv[]) {
   QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
 
   QApplication app(argc, argv);
-  QApplication::setApplicationName("Muffin");
-  QApplication::setOrganizationName("Muffin");
-  QApplication::setApplicationVersion(QStringLiteral(MUFFIN_VERSION));
+  QApplication::setApplicationName("Mufpen");
+  QApplication::setOrganizationName("Mufpen");
+  QApplication::setApplicationVersion(QStringLiteral(MUFPEN_VERSION));
   QString storageError;
-  if (!muffin::ApplicationPaths::initialize(QCoreApplication::applicationFilePath(), &storageError)) {
+  if (!mufpen::ApplicationPaths::initialize(QCoreApplication::applicationFilePath(), &storageError)) {
     QTranslator translator;
-    if (translator.load(QLocale::system(), QStringLiteral("muffin"), QStringLiteral("_"), QStringLiteral(":/i18n")))
+    if (translator.load(QLocale::system(), QStringLiteral("mufpen"), QStringLiteral("_"), QStringLiteral(":/i18n")))
       app.installTranslator(&translator);
     QMessageBox::critical(nullptr, QStringLiteral("Mufpen"),
                           QCoreApplication::translate("main", "Cannot write to the portable data folder.") +
                               QLatin1Char('\n') + storageError);
     return 1;
   }
-  if (!muffin::initializeIcuData(&storageError)) {
+  if (!mufpen::initializeIcuData(&storageError)) {
     QTranslator translator;
-    if (translator.load(QLocale::system(), QStringLiteral("muffin"), QStringLiteral("_"), QStringLiteral(":/i18n")))
+    if (translator.load(QLocale::system(), QStringLiteral("mufpen"), QStringLiteral("_"), QStringLiteral(":/i18n")))
       app.installTranslator(&translator);
     QMessageBox::critical(
         nullptr, QStringLiteral("Mufpen"),
@@ -154,7 +154,7 @@ int main(int argc, char* argv[]) {
 
   // Keep application chrome on the same screen-rasterization policy as the
   // document, source editor, and inline HTML text.
-  const QFont uiFont = muffin::font_rendering::uiFont();
+  const QFont uiFont = mufpen::font_rendering::uiFont();
   QApplication::setFont(uiFont);
   // Menu/tooltip class fonts otherwise keep the platform's separate defaults.
   for (const char* widgetClass : {"QMenu", "QMenuBar", "QToolTip"})
@@ -163,32 +163,31 @@ int main(int argc, char* argv[]) {
   // Windows 11 strokes a dark DWM border around Qt::Popup top-levels (menus,
   // combo dropdowns) on top of the theme's own QSS hairline; clear it so
   // popups show only the themed border. No-op on other platforms.
-  muffin::DwmPopupBorderFilter::install(app);
+  mufpen::DwmPopupBorderFilter::install(app);
 
-  muffin::LanguageManager::instance().initialize();
-  muffin::WindowsIntegration::refreshLocalizedLabels();
-  QObject::connect(&muffin::LanguageManager::instance(), &muffin::LanguageManager::languageChanged, &app,
-                   [] { muffin::WindowsIntegration::refreshLocalizedLabels(); });
+  mufpen::LanguageManager::instance().initialize();
+  mufpen::WindowsIntegration::refreshLocalizedLabels();
+  QObject::connect(&mufpen::LanguageManager::instance(), &mufpen::LanguageManager::languageChanged, &app,
+                   [] { mufpen::WindowsIntegration::refreshLocalizedLabels(); });
 
   // Screen-reader adapters for the two editor canvases (rendered + source mode). Installed
   // before any editor widget exists; inert until something queries accessibility.
-  muffin::installEditorAccessibility();
+  mufpen::installEditorAccessibility();
 
   // Must be installed before the window exists: the odoc event for a
   // double-clicked file can arrive as early as the first event-loop iteration.
-  muffin::FileOpenDispatcher fileOpenDispatcher(&app);
+  mufpen::FileOpenDispatcher fileOpenDispatcher(&app);
 
   QCommandLineParser parser;
   parser.setApplicationDescription(
       QCoreApplication::translate("main", "A fast, lightweight, native Markdown editor built with C++ and Qt 6."));
   parser.addHelpOption();
-  // Qt's built-in version option prints QCoreApplication::applicationName(), and that name
-  // stays "Muffin" so existing ~/.config/Muffin settings and draft snapshots keep working.
-  // Print the displayed product name instead.
+  // Qt's built-in version option prints QCoreApplication::applicationName(); print the
+  // displayed product name explicitly so the flag stays independent of that setting.
   const QCommandLineOption versionOption(QStringList{QStringLiteral("v"), QStringLiteral("version")},
                                          QCoreApplication::translate("main", "Displays version information."));
   parser.addOption(versionOption);
-  // --folder <path> is the form used by the Explorer "Open with Muffin" verb
+  // --folder <path> is the form used by the Explorer "Open with Mufpen" verb
   // for directories and folder backgrounds (it passes %1 / %V). A positional
   // directory argument is treated the same way for ergonomic command-line use.
   const QCommandLineOption folderOption(
@@ -196,7 +195,7 @@ int main(int argc, char* argv[]) {
       QStringLiteral("folder"));
   parser.addOption(folderOption);
   const QCommandLineOption newWindowOption(QStringLiteral("new-window"),
-                                           QCoreApplication::translate("muffin::MainWindow", "Open in New Window"));
+                                           QCoreApplication::translate("mufpen::MainWindow", "Open in New Window"));
   parser.addOption(newWindowOption);
   const QCommandLineOption updateResultOption(QStringLiteral("update-result"),
                                               QStringLiteral("Internal update result."), QStringLiteral("code"));
@@ -219,18 +218,18 @@ int main(int argc, char* argv[]) {
     files.append(info.absoluteFilePath());
     hasFolder = hasFolder || info.isDir();
   }
-  muffin::ApplicationInstance instance(muffin::ApplicationInstance::profileIdentity(), &app);
-  auto& updater = muffin::WindowsUpdater::instance();
-  QObject::connect(&instance, &muffin::ApplicationInstance::acceptingFileRequest, &updater,
-                   &muffin::WindowsUpdater::interruptRestart);
-  QObject::connect(&updater, &muffin::WindowsUpdater::preparingRestart, &instance, [&instance, &updater] {
+  mufpen::ApplicationInstance instance(mufpen::ApplicationInstance::profileIdentity(), &app);
+  auto& updater = mufpen::WindowsUpdater::instance();
+  QObject::connect(&instance, &mufpen::ApplicationInstance::acceptingFileRequest, &updater,
+                   &mufpen::WindowsUpdater::interruptRestart);
+  QObject::connect(&updater, &mufpen::WindowsUpdater::preparingRestart, &instance, [&instance, &updater] {
     if (instance.hasPendingFileRequests())
       updater.interruptRestart();
   });
   // Folder launches still create an independent workspace. Starting without
   // arguments also keeps the familiar ability to create another blank window.
   const bool reuseWindow =
-      muffin::file_open_preferences::openInTabs() && !parser.isSet(newWindowOption) && !hasFolder && !files.isEmpty();
+      mufpen::file_open_preferences::openInTabs() && !parser.isSet(newWindowOption) && !hasFolder && !files.isEmpty();
   if (!instance.listen() && reuseWindow) {
     if (instance.forwardFiles(files))
       return 0;
@@ -238,8 +237,8 @@ int main(int argc, char* argv[]) {
     // listener if possible; otherwise open locally rather than lose the files.
     instance.listen();
   }
-  QObject::connect(&instance, &muffin::ApplicationInstance::filesRequested, &fileOpenDispatcher,
-                   &muffin::FileOpenDispatcher::openFiles);
+  QObject::connect(&instance, &mufpen::ApplicationInstance::filesRequested, &fileOpenDispatcher,
+                   &mufpen::FileOpenDispatcher::openFiles);
 
   if (parser.isSet(updateResultOption)) {
     bool valid = false;
@@ -247,22 +246,22 @@ int main(int argc, char* argv[]) {
     if (valid && code != 0 && code != 3010 && code != 1641) {
       QTimer::singleShot(0, &app, [code] {
         QMessageBox::warning(
-            QApplication::activeWindow(), QCoreApplication::translate("muffin::WindowsUpdater", "Update Muffin"),
+            QApplication::activeWindow(), QCoreApplication::translate("mufpen::WindowsUpdater", "Update Mufpen"),
             QCoreApplication::translate(
-                "muffin::WindowsUpdater",
+                "mufpen::WindowsUpdater",
                 "The update was canceled or could not be installed (code %1). Your session has been restored. You can try again from Help > Check for Updates.")
                 .arg(code));
       });
     }
   }
   if (positionalArguments.isEmpty() && folderArg.isEmpty()) {
-    if (auto* restored = muffin::WindowsUpdater::restoreAfterUpdate()) {
+    if (auto* restored = mufpen::WindowsUpdater::restoreAfterUpdate()) {
       fileOpenDispatcher.setInitialWindow(restored);
       return QApplication::exec();
     }
   }
 
-  muffin::MainWindow window;
+  mufpen::MainWindow window;
   bool openedSomething = fileOpenDispatcher.setInitialWindow(&window);
   if (!folderArg.isEmpty()) {
     window.openFolderAtPath(QFileInfo(folderArg).absoluteFilePath());

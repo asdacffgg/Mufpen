@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::treeview {
+namespace mufpen::mermaid::treeview {
 
 enum class TreeViewErrorKind { Lexer, Parser, Preprocess };
 
@@ -43,4 +43,4 @@ public:
   static TreeViewData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::treeview
+} // namespace mufpen::mermaid::treeview

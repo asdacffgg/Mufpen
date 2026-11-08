@@ -6,8 +6,8 @@ if(NOT DEFINED DIST_DIR OR DIST_DIR STREQUAL "")
   message(FATAL_ERROR "DIST_DIR is required")
 endif()
 
-if(EXISTS "${DIST_DIR}/Data" OR EXISTS "${DIST_DIR}/Muffin.portable")
-  message(FATAL_ERROR "Distribution contains a portable profile. Preserve it and choose a clean MUFFIN_DIST_DIR: ${DIST_DIR}")
+if(EXISTS "${DIST_DIR}/Data" OR EXISTS "${DIST_DIR}/Mufpen.portable")
+  message(FATAL_ERROR "Distribution contains a portable profile. Preserve it and choose a clean MUFPEN_DIST_DIR: ${DIST_DIR}")
 endif()
 file(REMOVE_RECURSE "${DIST_DIR}")
 file(MAKE_DIRECTORY "${DIST_DIR}")
@@ -24,11 +24,11 @@ endif()
 
 if(APPLE)
   # --- macOS: copy the entire .app bundle ---
-  # When MACOSX_BUNDLE is set, APP_FILE points to Muffin.app/Contents/MacOS/Muffin.
+  # When MACOSX_BUNDLE is set, APP_FILE points to Mufpen.app/Contents/MacOS/Mufpen.
   # Walk up to find the .app bundle root and copy it wholesale.
   get_filename_component(APP_MACOS_DIR "${APP_FILE}" DIRECTORY)       # Contents/MacOS
   get_filename_component(APP_CONTENTS_DIR "${APP_MACOS_DIR}" DIRECTORY) # Contents
-  get_filename_component(APP_BUNDLE_DIR "${APP_CONTENTS_DIR}" DIRECTORY) # Muffin.app
+  get_filename_component(APP_BUNDLE_DIR "${APP_CONTENTS_DIR}" DIRECTORY) # Mufpen.app
 
   if(NOT EXISTS "${APP_BUNDLE_DIR}" OR NOT IS_DIRECTORY "${APP_BUNDLE_DIR}")
     message(FATAL_ERROR
@@ -37,7 +37,7 @@ if(APPLE)
   endif()
 
   file(COPY "${APP_BUNDLE_DIR}" DESTINATION "${DIST_DIR}")
-  message(STATUS "Mufpen macOS dist written to ${DIST_DIR}/Muffin.app")
+  message(STATUS "Mufpen macOS dist written to ${DIST_DIR}/Mufpen.app")
 
   # MIT: the notice ships with every distributed copy. A DMG consumer only ever sees the
   # .app, so put it where they can read it.
@@ -60,14 +60,14 @@ if(APPLE)
       # macdeployqt parks the Qt dylibs in Contents/Frameworks (with some
       # plugins' deps in Contents/MacOS); point the sibling CLI at both.
       execute_process(
-        COMMAND "${INSTALL_NAME_TOOL}" -add_rpath "@executable_path/Muffin.app/Contents/Frameworks"
-                "${DIST_DIR}/muffin-mmdc"
+        COMMAND "${INSTALL_NAME_TOOL}" -add_rpath "@executable_path/Mufpen.app/Contents/Frameworks"
+                "${DIST_DIR}/mufpen-mmdc"
         RESULT_VARIABLE rpath_frameworks_result
         ERROR_QUIET
       )
       execute_process(
-        COMMAND "${INSTALL_NAME_TOOL}" -add_rpath "@executable_path/Muffin.app/Contents/MacOS"
-                "${DIST_DIR}/muffin-mmdc"
+        COMMAND "${INSTALL_NAME_TOOL}" -add_rpath "@executable_path/Mufpen.app/Contents/MacOS"
+                "${DIST_DIR}/mufpen-mmdc"
         RESULT_VARIABLE rpath_macos_result
         ERROR_QUIET
       )
@@ -220,7 +220,7 @@ else()
   endforeach()
 
   # The input-method plugin is built against this bundle's Qt (see
-  # cmake/MuffinFcitx5Qt.cmake) and copied in by hand: it cannot come from the Qt plugin
+  # cmake/MufpenFcitx5Qt.cmake) and copied in by hand: it cannot come from the Qt plugin
   # directory, because no Qt installation ships it. It must land before the ELF dependency
   # pass below so its runtime libraries are resolved like any other bundled plugin.
   if(DEFINED IME_PLUGIN_FILE AND NOT IME_PLUGIN_FILE STREQUAL "")
@@ -228,7 +228,7 @@ else()
       message(FATAL_ERROR
         "The bundled input-method plugin is missing: ${IME_PLUGIN_FILE}.\n"
         "Build the dist target again (it depends on the fcitx5-qt build), or disable "
-        "bundling with -DMUFFIN_BUNDLE_FCITX5_PLUGIN=OFF.")
+        "bundling with -DMUFPEN_BUNDLE_FCITX5_PLUGIN=OFF.")
     endif()
     file(MAKE_DIRECTORY "${DIST_DIR}/platforminputcontexts")
     file(COPY "${IME_PLUGIN_FILE}" DESTINATION "${DIST_DIR}/platforminputcontexts")
@@ -240,8 +240,8 @@ else()
     # make every binary find the flat bundle without Conan's cache paths.
     file(GLOB_RECURSE bundled_plugins "${DIST_DIR}/*.so")
     set(dist_executables "${DIST_DIR}/${APP_FILE_NAME}")
-    if(EXISTS "${DIST_DIR}/muffin-mmdc")
-      list(APPEND dist_executables "${DIST_DIR}/muffin-mmdc")
+    if(EXISTS "${DIST_DIR}/mufpen-mmdc")
+      list(APPEND dist_executables "${DIST_DIR}/mufpen-mmdc")
     endif()
     # A self-contained Qt (Conan) has to be copied wholesale. Dependency resolution can pick
     # the distribution's libQt6*.so for a plugin that both Qts provide, because the plugin's
@@ -287,7 +287,7 @@ else()
     list(REMOVE_DUPLICATES bundled_dependencies)
 
     find_program(PATCHELF_EXECUTABLE NAMES patchelf REQUIRED)
-    function(muffin_set_bundle_rpath binary new_rpath)
+    function(mufpen_set_bundle_rpath binary new_rpath)
       execute_process(
         COMMAND "${PATCHELF_EXECUTABLE}" --set-rpath "${new_rpath}" "${binary}"
         RESULT_VARIABLE patchelf_result
@@ -298,15 +298,15 @@ else()
       endif()
     endfunction()
 
-    muffin_set_bundle_rpath("${DIST_DIR}/${APP_FILE_NAME}" "$ORIGIN")
-    if(EXISTS "${DIST_DIR}/muffin-mmdc")
-      muffin_set_bundle_rpath("${DIST_DIR}/muffin-mmdc" "$ORIGIN")
+    mufpen_set_bundle_rpath("${DIST_DIR}/${APP_FILE_NAME}" "$ORIGIN")
+    if(EXISTS "${DIST_DIR}/mufpen-mmdc")
+      mufpen_set_bundle_rpath("${DIST_DIR}/mufpen-mmdc" "$ORIGIN")
     endif()
     foreach(plugin IN LISTS bundled_plugins)
-      muffin_set_bundle_rpath("${plugin}" "$ORIGIN/..")
+      mufpen_set_bundle_rpath("${plugin}" "$ORIGIN/..")
     endforeach()
     foreach(dependency IN LISTS bundled_dependencies)
-      muffin_set_bundle_rpath("${dependency}" "$ORIGIN")
+      mufpen_set_bundle_rpath("${dependency}" "$ORIGIN")
     endforeach()
   endif()
 
@@ -326,5 +326,5 @@ else()
   endif()
 
   file(WRITE "${DIST_DIR}/qt.conf" "[Paths]\nPlugins = .\n")
-  message(STATUS "Muffin dist written to ${DIST_DIR}")
+  message(STATUS "Mufpen dist written to ${DIST_DIR}")
 endif()

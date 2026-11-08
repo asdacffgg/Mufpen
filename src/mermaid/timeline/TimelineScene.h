@@ -13,7 +13,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 
 struct TimelineConfig {
   bool useMaxWidth = true;
@@ -187,4 +187,4 @@ TimelineScene buildTimelineScene(const TimelineData& data, TimelineConfig config
 // by the builder (ink bounds) and the adapter's cascade tree.
 qreal timelineTitleFontSizePx(const TimelineSceneStyle& style);
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

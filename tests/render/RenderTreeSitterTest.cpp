@@ -9,7 +9,7 @@
 
 #include "RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -55,7 +55,7 @@ void testTreeSitterCodeHighlighting() {
        QStringLiteral("#include <stdio.h>\nint main(void) { return 0; }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::Function}},
       {QStringLiteral("csharp"),
-       QStringLiteral("public class App { string Name => \"muffin\"; }\n"),
+       QStringLiteral("public class App { string Name => \"mufpen\"; }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::String}},
       {QStringLiteral("css"),
        QStringLiteral(".note { color: red; margin: 1px; }\n"),
@@ -66,18 +66,18 @@ void testTreeSitterCodeHighlighting() {
       {QStringLiteral("html"),
        QStringLiteral("<section class=\"note\">hello</section>\n"),
        {CodeHighlightRole::Type, CodeHighlightRole::String}},
-      {QStringLiteral("ini"), QStringLiteral("[core]\nname=muffin\n"), {CodeHighlightRole::Property}},
+      {QStringLiteral("ini"), QStringLiteral("[core]\nname=mufpen\n"), {CodeHighlightRole::Property}},
       {QStringLiteral("java"),
-       QStringLiteral("class App { String name() { return \"muffin\"; } }\n"),
+       QStringLiteral("class App { String name() { return \"mufpen\"; } }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::String}},
       {QStringLiteral("javascript"),
        QStringLiteral("function greet(name) { return `hi ${name}`; }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::Function, CodeHighlightRole::String}},
       {QStringLiteral("json"),
-       QStringLiteral("{\"name\": \"muffin\", \"count\": 2}\n"),
+       QStringLiteral("{\"name\": \"mufpen\", \"count\": 2}\n"),
        {CodeHighlightRole::String, CodeHighlightRole::Number}},
       {QStringLiteral("lua"),
-       QStringLiteral("local name = \"muffin\"\nfunction greet() return name end\n"),
+       QStringLiteral("local name = \"mufpen\"\nfunction greet() return name end\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::String}},
       {QStringLiteral("markdown"),
        QStringLiteral("# Title\n\n- `code` [link](https://example.com)\n"),
@@ -92,19 +92,19 @@ void testTreeSitterCodeHighlighting() {
        QStringLiteral("function Test { Write-Host \"hi\" }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::String}},
       {QStringLiteral("qml"),
-       QStringLiteral("Item { property string title: \"Muffin\" }\n"),
+       QStringLiteral("Item { property string title: \"Mufpen\" }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::Property}},
       {QStringLiteral("r"),
-       QStringLiteral("name <- \"muffin\"\nprint(name)\n"),
+       QStringLiteral("name <- \"mufpen\"\nprint(name)\n"),
        {CodeHighlightRole::String, CodeHighlightRole::Function}},
       {QStringLiteral("ruby"),
        QStringLiteral("def greet(name)\n  \"hi #{name}\"\nend\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::String}},
       {QStringLiteral("rust"),
-       QStringLiteral("fn main() { let name = \"muffin\"; println!(\"{}\", name); }\n"),
+       QStringLiteral("fn main() { let name = \"mufpen\"; println!(\"{}\", name); }\n"),
        {CodeHighlightRole::Keyword, CodeHighlightRole::Function, CodeHighlightRole::String}},
       {QStringLiteral("toml"),
-       QStringLiteral("name = \"muffin\"\ncount = 2\n"),
+       QStringLiteral("name = \"mufpen\"\ncount = 2\n"),
        {CodeHighlightRole::String, CodeHighlightRole::Number}},
       {QStringLiteral("typescript"),
        QStringLiteral("function greet(name: string): string { return `hi ${name}`; }\n"),
@@ -116,7 +116,7 @@ void testTreeSitterCodeHighlighting() {
        QStringLiteral("<note priority=\"1\">hello</note>\n"),
        {CodeHighlightRole::Type, CodeHighlightRole::String}},
       {QStringLiteral("yaml"),
-       QStringLiteral("name: muffin\ncount: 2\n"),
+       QStringLiteral("name: mufpen\ncount: 2\n"),
        {CodeHighlightRole::String, CodeHighlightRole::Number}},
   };
   for (const HighlightFixture& fixture : fixtures) {

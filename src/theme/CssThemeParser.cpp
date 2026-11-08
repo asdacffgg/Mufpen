@@ -19,9 +19,9 @@
 #include <functional>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(parserLoadPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(parserLoadPerf, "mufpen.perf.detail", QtWarningMsg)
 
 struct SourceMap {
   QString file;
@@ -1296,4 +1296,4 @@ CssThemeSheet CssThemeSheet::evaluated(const CssEnvironment& env) const {
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

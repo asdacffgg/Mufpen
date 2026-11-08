@@ -11,7 +11,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {} // namespace
 
 // ============================================================================
@@ -1109,4 +1109,4 @@ CursorPosition StylizeController::cursorForSourceOffset(qsizetype sourceOffset) 
   return cursor;
 }
 
-} // namespace muffin
+} // namespace mufpen

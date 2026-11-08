@@ -2,7 +2,7 @@ from conan import ConanFile
 from conan.tools.cmake import cmake_layout
 
 
-class MuffinDependencies(ConanFile):
+class MufpenDependencies(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps", "CMakeToolchain"
     default_options = {
@@ -23,7 +23,7 @@ class MuffinDependencies(ConanFile):
             # also redirect Apple's incompatible system ICU.
             self.options["icu/*"].data_packaging = "static"
         if self.settings.os == "Linux":
-            # The bundled fcitx5 input-method plugin (cmake/MuffinFcitx5Qt.cmake) talks to
+            # The bundled fcitx5 input-method plugin (cmake/MufpenFcitx5Qt.cmake) talks to
             # fcitx5 over QtDBus, and the recipe ships Qt without DBus by default. Without
             # this the plugin cannot be built at all (Qt6::DBus target missing).
             self.options["qt/*"].with_dbus = True
@@ -31,7 +31,7 @@ class MuffinDependencies(ConanFile):
     def requirements(self):
         self.requires("qt/6.11.1")
         # Qt's recipe pins 10.42. Use one PCRE2 version throughout the graph,
-        # including Qt/GLib and Muffin's native workspace matcher.
+        # including Qt/GLib and Mufpen's native workspace matcher.
         self.requires("pcre2/10.49", force=True)
         # qt/6.11.1 pins brotli/1.1.0 while freetype/2.13.2 requires brotli >= 1.1.1, so the
         # graph is unsatisfiable as soon as conancenter bumps either recipe. Brotli keeps its

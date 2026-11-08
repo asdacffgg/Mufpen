@@ -9,7 +9,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathParser {
 public:
@@ -123,4 +123,4 @@ private:
   int depth_ = 0;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -11,7 +11,7 @@
 #include <QClipboard>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // markdown/* smart punctuation, driven through InputController::insertText (the prose typing path).
 // Quotes become curly and "--"/"---" collapse to en/em dashes, gated by markdown/convertOnInput.
@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("InputMarkdownDefaultsTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

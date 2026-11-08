@@ -6,7 +6,7 @@
 #include <QStringView>
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 class PieceTable;
 struct OpenSearchBuffer {
   QString text;
@@ -70,7 +70,7 @@ struct WorkspaceSearchResult {
   int searchedFiles = 0;
   bool resultLimitReached = false;
 };
-class MUFFIN_UI_EXPORT WorkspaceSearch final {
+class MUFPEN_UI_EXPORT WorkspaceSearch final {
 public:
   static WorkspaceSearchResult run(const WorkspaceQuery& query, const OpenSearchBuffers& buffers,
                                    const SearchCancellation& cancel,
@@ -79,4 +79,4 @@ public:
   static QByteArray fingerprint(const PieceTable& text);
   static bool bufferMatches(const OpenSearchBuffer& buffer, QStringView text);
 };
-} // namespace muffin
+} // namespace mufpen

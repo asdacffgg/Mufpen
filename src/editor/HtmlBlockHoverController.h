@@ -19,7 +19,7 @@
 class QPainter;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentLayout;
 class RenderTheme;
@@ -65,4 +65,4 @@ private:
   NodeId visibleHtmlHoverBlockId_;
 };
 
-} // namespace muffin
+} // namespace mufpen

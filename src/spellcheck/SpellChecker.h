@@ -18,13 +18,13 @@ class Dictionary;
 }
 }
 
-namespace muffin {
+namespace mufpen {
 
 // Process-wide spell checker built on nuspell. Loads the Hunspell dictionary for the
 // configured locale from the bundled ":/dicts/" resources (falling back to en_US) and
 // answers fast spell/suggest queries used by both the virtual source editor
 // and the rendered-mode squiggle overlay. GUI-thread only.
-class MUFFIN_UI_EXPORT SpellChecker : public QObject {
+class MUFPEN_UI_EXPORT SpellChecker : public QObject {
   Q_OBJECT
 
 public:
@@ -78,4 +78,4 @@ private:
   bool enabled_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

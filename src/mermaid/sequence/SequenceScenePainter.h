@@ -7,7 +7,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 struct SequenceViewportOptions {
   qreal diagramMarginX = 50.0;
@@ -22,4 +22,4 @@ QRectF sequenceViewportRect(const SequenceScene& scene, SequenceViewportOptions 
 QImage renderSequenceSceneToImage(const SequenceScene& scene, qreal dpr = 1.0, qreal padding = 8.0);
 QImage renderSequenceSceneToImage(const SequenceScene& scene, qreal dpr, SequenceViewportOptions options);
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

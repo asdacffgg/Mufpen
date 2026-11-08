@@ -2,7 +2,7 @@
 
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 InlineComposition composeInlineText(QString text, QVector<QTextLayout::FormatRange> formats, int insertAt,
                                     const QString& preeditText, const QVector<QTextLayout::FormatRange>& preeditFormats,
@@ -47,4 +47,4 @@ InlineComposition composeInlineText(QString text, QVector<QTextLayout::FormatRan
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -11,7 +11,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 
 struct JourneyConfig {
   bool useMaxWidth = true;
@@ -195,4 +195,4 @@ QStringList wrapJourneyActorLabel(const QString& actor, qreal maxLabelWidth, qre
 // back to when the theme emits no fillType rules.
 QString journeySectionPresentationFill(int colorIndex);
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

@@ -1,6 +1,6 @@
 #include "edit/UndoStack.h"
 
-namespace muffin {
+namespace mufpen {
 
 UndoStack::UndoStack(QObject* parent) : QObject(parent) {
   lastPushTime_.start();
@@ -172,4 +172,4 @@ bool UndoStack::tryMergeWithLast(EditTransaction& next) {
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -6,7 +6,7 @@
 
 class QString;
 
-namespace muffin {
+namespace mufpen {
 
 // Stylesheet generators: turn a ThemeDefinition into the QSS for a given surface.
 // These replace the old hard-coded per-theme (and two-state night/light) QSS
@@ -36,4 +36,4 @@ QString dialogStyleSheet(const ThemeDefinition& theme);
 QPalette dialogPalette(const ThemeDefinition& theme);
 QString quickOpenStyleSheet(const ThemeDefinition& theme);
 
-} // namespace muffin
+} // namespace mufpen

@@ -20,22 +20,22 @@ namespace {
 
 // Generic error used when the platform API gives no detail (e.g. moveToTrash).
 QString unsupportedError() {
-  return QCoreApplication::translate("muffin::FilePathOps", "operation failed");
+  return QCoreApplication::translate("mufpen::FilePathOps", "operation failed");
 }
 
 } // namespace
 
-bool muffin::FilePathOps::createFile(const QString& path, QString* error) {
+bool mufpen::FilePathOps::createFile(const QString& path, QString* error) {
   if (QFileInfo::exists(path)) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "file already exists");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "file already exists");
     }
     return false;
   }
   const QDir parentDir = QFileInfo(path).dir();
   if (!parentDir.exists() && !parentDir.mkpath(QStringLiteral("."))) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "could not create parent directory");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "could not create parent directory");
     }
     return false;
   }
@@ -50,23 +50,23 @@ bool muffin::FilePathOps::createFile(const QString& path, QString* error) {
   return true;
 }
 
-bool muffin::FilePathOps::createFolder(const QString& path, QString* error) {
+bool mufpen::FilePathOps::createFolder(const QString& path, QString* error) {
   if (QFileInfo::exists(path)) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "path already exists");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "path already exists");
     }
     return false;
   }
   if (!QDir().mkpath(path)) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "could not create folder");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "could not create folder");
     }
     return false;
   }
   return true;
 }
 
-bool muffin::FilePathOps::renamePath(const QString& oldPath, const QString& newPath, QString* error) {
+bool mufpen::FilePathOps::renamePath(const QString& oldPath, const QString& newPath, QString* error) {
   if (QFile::rename(oldPath, newPath)) {
     return true;
   }
@@ -81,7 +81,7 @@ bool muffin::FilePathOps::renamePath(const QString& oldPath, const QString& newP
       !oldCanonical.isEmpty() && oldPath != newPath && oldCanonical == QFileInfo(newPath).canonicalFilePath();
   if (!caseOnly) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps",
+      *error = QCoreApplication::translate("mufpen::FilePathOps",
                                            "could not rename (target may exist or the move crosses volumes)");
     }
     return false;
@@ -90,7 +90,7 @@ bool muffin::FilePathOps::renamePath(const QString& oldPath, const QString& newP
   if (!QFile::rename(oldPath, tempPath)) {
     if (error) {
       *error =
-          QCoreApplication::translate("muffin::FilePathOps", "could not rename (case-change intermediate step failed)");
+          QCoreApplication::translate("mufpen::FilePathOps", "could not rename (case-change intermediate step failed)");
     }
     return false;
   }
@@ -100,12 +100,12 @@ bool muffin::FilePathOps::renamePath(const QString& oldPath, const QString& newP
   // Best-effort revert so the file is not left stranded under the temp name.
   QFile::rename(tempPath, oldPath);
   if (error) {
-    *error = QCoreApplication::translate("muffin::FilePathOps", "could not rename (case-change final step failed)");
+    *error = QCoreApplication::translate("mufpen::FilePathOps", "could not rename (case-change final step failed)");
   }
   return false;
 }
 
-bool muffin::FilePathOps::targetNameCollides(const QString& oldPath, const QString& newDir, const QString& newName) {
+bool mufpen::FilePathOps::targetNameCollides(const QString& oldPath, const QString& newDir, const QString& newName) {
   if (newName.isEmpty()) {
     return false; // an empty name is invalid, not a collision (the caller rejects it separately)
   }
@@ -130,24 +130,24 @@ bool muffin::FilePathOps::targetNameCollides(const QString& oldPath, const QStri
   return false;
 }
 
-bool muffin::FilePathOps::copyFile(const QString& srcPath, const QString& destPath, QString* error) {
+bool mufpen::FilePathOps::copyFile(const QString& srcPath, const QString& destPath, QString* error) {
   const QDir destDir = QFileInfo(destPath).dir();
   if (!destDir.exists() && !destDir.mkpath(QStringLiteral("."))) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "could not create destination directory");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "could not create destination directory");
     }
     return false;
   }
   if (!QFile::copy(srcPath, destPath)) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "could not copy (destination may already exist)");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "could not copy (destination may already exist)");
     }
     return false;
   }
   return true;
 }
 
-bool muffin::FilePathOps::moveToTrash(const QString& path, QString* error) {
+bool mufpen::FilePathOps::moveToTrash(const QString& path, QString* error) {
   if (!QFile::moveToTrash(path)) {
     if (error) {
       *error = unsupportedError();
@@ -157,7 +157,7 @@ bool muffin::FilePathOps::moveToTrash(const QString& path, QString* error) {
   return true;
 }
 
-bool muffin::FilePathOps::removePermanently(const QString& path, QString* error) {
+bool mufpen::FilePathOps::removePermanently(const QString& path, QString* error) {
   if (QFileInfo(path).isDir()) {
     if (!QDir(path).removeRecursively()) {
       if (error) {
@@ -176,10 +176,10 @@ bool muffin::FilePathOps::removePermanently(const QString& path, QString* error)
   return true;
 }
 
-bool muffin::FilePathOps::revealPathInManager(const QString& path, QString* error) {
+bool mufpen::FilePathOps::revealPathInManager(const QString& path, QString* error) {
   if (path.isEmpty() || !QFileInfo::exists(path)) {
     if (error) {
-      *error = QCoreApplication::translate("muffin::FilePathOps", "path does not exist");
+      *error = QCoreApplication::translate("mufpen::FilePathOps", "path does not exist");
     }
     return false;
   }
@@ -216,7 +216,7 @@ bool muffin::FilePathOps::revealPathInManager(const QString& path, QString* erro
 #endif
 }
 
-QString muffin::FilePathOps::uniqueDuplicatePath(const QString& srcPath) {
+QString mufpen::FilePathOps::uniqueDuplicatePath(const QString& srcPath) {
   const QFileInfo info(srcPath);
   const QDir dir = info.dir();
   const QString base = info.completeBaseName();
@@ -232,7 +232,7 @@ QString muffin::FilePathOps::uniqueDuplicatePath(const QString& srcPath) {
   return srcPath;
 }
 
-QString muffin::FilePathOps::normalizeMarkdownFileName(const QString& name) {
+QString mufpen::FilePathOps::normalizeMarkdownFileName(const QString& name) {
   // Only the file-segment is inspected, so a name with a path is handled too.
   const int lastSlash = qMax(name.lastIndexOf(QLatin1Char('/')), name.lastIndexOf(QLatin1Char('\\')));
   const QString fileSegment = name.mid(lastSlash + 1);
@@ -242,7 +242,7 @@ QString muffin::FilePathOps::normalizeMarkdownFileName(const QString& name) {
   return name + QStringLiteral(".md");
 }
 
-QString muffin::FilePathOps::linkTargetForPath(const QString& filePath, const QString& documentDir) {
+QString mufpen::FilePathOps::linkTargetForPath(const QString& filePath, const QString& documentDir) {
   QString target;
   if (!documentDir.isEmpty()) {
     // relativeFilePath normalizes to forward slashes and returns an absolute path when the
@@ -260,13 +260,13 @@ QString muffin::FilePathOps::linkTargetForPath(const QString& filePath, const QS
   return QDir::toNativeSeparators(target);
 }
 
-QString muffin::FilePathOps::markdownLinkForFile(const QString& filePath, const QString& documentDir) {
+QString mufpen::FilePathOps::markdownLinkForFile(const QString& filePath, const QString& documentDir) {
   const QString label = link_syntax::escapedLabel(QFileInfo(filePath).fileName());
   const QString href = link_syntax::localPathHref(linkTargetForPath(filePath, documentDir));
   return QStringLiteral("[%1](%2)").arg(label, link_syntax::destination(href));
 }
 
-bool muffin::FilePathOps::isSameOrDescendant(const QString& candidate, const QString& root) {
+bool mufpen::FilePathOps::isSameOrDescendant(const QString& candidate, const QString& root) {
   if (candidate.isEmpty() || root.isEmpty()) {
     return false;
   }
@@ -280,7 +280,7 @@ bool muffin::FilePathOps::isSameOrDescendant(const QString& candidate, const QSt
          !QFileInfo(relative).isAbsolute();
 }
 
-QString muffin::FilePathOps::remapDescendant(const QString& candidate, const QString& oldRoot, const QString& newRoot) {
+QString mufpen::FilePathOps::remapDescendant(const QString& candidate, const QString& oldRoot, const QString& newRoot) {
   if (!isSameOrDescendant(candidate, oldRoot)) {
     return candidate;
   }

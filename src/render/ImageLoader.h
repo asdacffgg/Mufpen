@@ -13,14 +13,14 @@
 
 #include "Export.h"
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
 
 /// Shared image cache with asynchronous remote loading and local file watching.
 /// Publishes paint/geometry versions and notifies via imageReady().
-class MUFFIN_UI_EXPORT ImageLoader : public QObject {
+class MUFPEN_UI_EXPORT ImageLoader : public QObject {
   friend struct diag::MemoryAccounting;
   Q_OBJECT
 
@@ -76,4 +76,4 @@ private:
   QHash<QString, QByteArray> fileIdentities_;
 };
 
-} // namespace muffin
+} // namespace mufpen

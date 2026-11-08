@@ -7,7 +7,7 @@
 #include <functional>
 #include <optional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 struct MathToken;
 
@@ -46,4 +46,4 @@ struct MathSettings {
   bool isTrusted(const MathTrustContext& context) const;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

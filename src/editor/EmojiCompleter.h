@@ -12,7 +12,7 @@ class QListView;
 class QStringListModel;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 // GitHub-style ":shortcode:" emoji completion popup. A floating list positioned at the caret that
 // filters the provider's dataset by the shortcode prefix typed so far. Keyboard navigation
@@ -21,7 +21,7 @@ namespace muffin {
 // The controller (InputController) owns the trigger state — the source offset of the leading ':' —
 // so this widget is purely presentational: it shows filtered candidates and emits `accepted` with
 // the chosen glyph when the user picks one.
-class MUFFIN_UI_EXPORT EmojiCompleter : public QObject {
+class MUFPEN_UI_EXPORT EmojiCompleter : public QObject {
   Q_OBJECT
 
 public:
@@ -49,4 +49,4 @@ private:
   bool active_ = false;         // whether a candidate list is currently presented (owned, not Qt-visibility)
 };
 
-} // namespace muffin
+} // namespace mufpen

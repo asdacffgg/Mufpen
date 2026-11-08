@@ -1,6 +1,6 @@
 using Microsoft.Win32;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     // This deliberately has no filesystem deletion. Notes, recovery drafts,
     // installed themes and replacement backups are user data, not preferences.

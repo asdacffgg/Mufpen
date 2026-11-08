@@ -8,7 +8,7 @@ extern "C" {
 #include "cmark-gfm.h"
 }
 
-namespace muffin {
+namespace mufpen {
 
 class LineStartOffsetCache;
 
@@ -22,7 +22,7 @@ public:
   InlineNode convertInline(cmark_node* node);
 
   // Aggregate convertBlock breakdown (QString copies vs inline-source annotation), reported via
-  // muffin.perf. No-op unless enabled.
+  // mufpen.perf. No-op unless enabled.
   static void setPerfEnabled(bool enabled);
   static void resetPerfCounters();
   static void dumpConvertBreakdown();
@@ -35,8 +35,8 @@ private:
   void annotateInlineSource(cmark_node* cmarkNode, InlineNode& inlineNode) const;
   bool trySharedLiteral(cmark_node* node, InlineNode& result) const;
   qsizetype sourceOffset(int line, int byteColumn) const;
-  void readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& muffinNode);
-  void readTableMetadata(cmark_node* cmarkNode, MarkdownNode& muffinNode);
+  void readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& mufpenNode);
+  void readTableMetadata(cmark_node* cmarkNode, MarkdownNode& mufpenNode);
 
   const LineStartOffsetCache* lineOffsets_ = nullptr;
   QStringView markdown_;
@@ -53,4 +53,4 @@ private:
   mutable QVector<ByteCheckpoint> byteCheckpoints_;
 };
 
-} // namespace muffin
+} // namespace mufpen

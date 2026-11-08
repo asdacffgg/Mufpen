@@ -22,13 +22,13 @@ void replacementAndErrors() {
   require(directory.isValid(), "atomic writer fixture directory");
   const auto path = directory.filePath(QString::fromUtf8("中文 note.md"));
   QString error;
-  require(muffin::test::writeFileAtomically(path, "original", &error), error);
-  require(muffin::test::writeFileAtomically(path, "replacement", &error), error);
+  require(mufpen::test::writeFileAtomically(path, "original", &error), error);
+  require(mufpen::test::writeFileAtomically(path, "replacement", &error), error);
   require(error.isEmpty() && readBytes(path) == "replacement", "replacement installs the complete byte stream");
-  require(muffin::test::writeFileAtomically(path, {}, &error), error);
+  require(mufpen::test::writeFileAtomically(path, {}, &error), error);
   require(readBytes(path).isEmpty(), "empty replacement truncates through an atomic commit");
   const auto missing = directory.filePath(QStringLiteral("missing/target.md"));
-  require(!muffin::test::writeFileAtomically(missing, "data", &error) && error.startsWith(QStringLiteral("open:")),
+  require(!mufpen::test::writeFileAtomically(missing, "data", &error) && error.startsWith(QStringLiteral("open:")),
           "an invalid destination reports its actual failing operation");
   require(!QFile::exists(missing), "failed writes never manufacture a missing destination");
 }
@@ -49,10 +49,10 @@ void windowsReplacementContention() {
   require(directory.isValid(), "Windows sharing fixture directory");
   const auto path = directory.filePath(QStringLiteral("contended.md"));
   QString error;
-  require(muffin::test::writeFileAtomically(path, "original", &error), error);
+  require(mufpen::test::writeFileAtomically(path, "original", &error), error);
 
   HANDLE held = blockReplacement(path);
-  require(!muffin::test::writeFileAtomically(path, "never installed", &error, 0) &&
+  require(!mufpen::test::writeFileAtomically(path, "never installed", &error, 0) &&
               error.startsWith(QStringLiteral("commit:")),
           "the non-shared reader reproduces a denied atomic commit");
   require(readBytes(path) == "original", "a denied commit leaves the previous file intact");
@@ -67,7 +67,7 @@ void windowsReplacementContention() {
   // in the middle of fixture generation. The writer must wait without doing so.
   bool eventDispatched = false;
   QTimer::singleShot(0, [&] { eventDispatched = true; });
-  const bool committed = muffin::test::writeFileAtomically(path, "replacement after release", &error);
+  const bool committed = mufpen::test::writeFileAtomically(path, "replacement after release", &error);
   release.join();
   require(committed && error.isEmpty() && readBytes(path) == "replacement after release",
           "a briefly blocked replacement succeeds after the reader releases it");
@@ -78,7 +78,7 @@ void windowsReplacementContention() {
   held = blockReplacement(path);
   QElapsedTimer elapsed;
   elapsed.start();
-  const bool blocked = muffin::test::writeFileAtomically(path, "must stay uncommitted", &error, 60);
+  const bool blocked = mufpen::test::writeFileAtomically(path, "must stay uncommitted", &error, 60);
   const qint64 duration = elapsed.elapsed();
   CloseHandle(held);
   require(!blocked && error.startsWith(QStringLiteral("commit:")) && duration >= 60,

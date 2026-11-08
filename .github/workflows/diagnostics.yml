@@ -29,21 +29,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          probe="$RUNNER_TEMP/muffin-dmg-probe"
-          mkdir -p "$probe/dist/Muffin.app/Contents/Frameworks"
+          probe="$RUNNER_TEMP/mufpen-dmg-probe"
+          mkdir -p "$probe/dist/Mufpen.app/Contents/Frameworks"
           # Logical size, rather than allocated disk blocks, must determine
           # the image capacity. This also exercises a framework alias.
-          mkfile -n 128m "$probe/dist/Muffin.app/Contents/Frameworks/payload.dylib"
-          ln -s payload.dylib "$probe/dist/Muffin.app/Contents/Frameworks/alias.dylib"
+          mkfile -n 128m "$probe/dist/Mufpen.app/Contents/Frameworks/payload.dylib"
+          ln -s payload.dylib "$probe/dist/Mufpen.app/Contents/Frameworks/alias.dylib"
           cd "$probe"
-          cmake -DDIST_DIR="$probe/dist" -DMUFFIN_VERSION=0.0.1 \
+          cmake -DDIST_DIR="$probe/dist" -DMUFPEN_VERSION=0.0.1 \
             -DMACDEPLOYQT=/usr/bin/true -P "$GITHUB_WORKSPACE/cmake/BuildDMG.cmake"
-          hdiutil verify Muffin-0.0.1-macos-arm64.dmg
+          hdiutil verify Mufpen-0.0.1-macos-arm64.dmg
           mkdir mounted
-          hdiutil attach -readonly -nobrowse -mountpoint "$probe/mounted" Muffin-0.0.1-macos-arm64.dmg
-          cmp dist/Muffin.app/Contents/Frameworks/payload.dylib mounted/Muffin.app/Contents/Frameworks/payload.dylib
+          hdiutil attach -readonly -nobrowse -mountpoint "$probe/mounted" Mufpen-0.0.1-macos-arm64.dmg
+          cmp dist/Mufpen.app/Contents/Frameworks/payload.dylib mounted/Mufpen.app/Contents/Frameworks/payload.dylib
           test "$(readlink mounted/Applications)" = /Applications
-          test "$(readlink mounted/Muffin.app/Contents/Frameworks/alias.dylib)" = payload.dylib
+          test "$(readlink mounted/Mufpen.app/Contents/Frameworks/alias.dylib)" = payload.dylib
           hdiutil detach "$probe/mounted"
 
   update-bundle:
@@ -72,29 +72,29 @@ jobs:
           PROBE_ARCH: ${{ matrix.arch }}
         run: |
           $sourceRoot = $PWD.Path
-          $probeRoot = Join-Path $env:RUNNER_TEMP 'muffin-bundle-probe'
+          $probeRoot = Join-Path $env:RUNNER_TEMP 'mufpen-bundle-probe'
           $probeDist = Join-Path $probeRoot 'dist'
           New-Item -ItemType Directory -Force -Path $probeRoot | Out-Null
           dotnet build tests/installer/IntegrationOptionsTest.csproj -c Release -o "$probeRoot/test" "-p:BaseIntermediateOutputPath=$probeRoot/obj/"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           # The invalid update request must exit before Detect/Plan/Apply.
           # Inert payloads keep this probe small and cannot run the editor.
-          [xml]$msiSource = Get-Content cmake/Muffin.wxs -Raw
+          [xml]$msiSource = Get-Content cmake/Mufpen.wxs -Raw
           foreach ($file in $msiSource.SelectNodes('//*[local-name()="File"]')) {
             $relative = $file.Source.Replace('$(var.DistDir)/', '')
             $path = Join-Path $probeDist $relative
             New-Item -ItemType Directory -Force -Path (Split-Path $path) | Out-Null
-            [IO.File]::WriteAllText($path, 'Muffin installer probe; never installed.')
+            [IO.File]::WriteAllText($path, 'Mufpen installer probe; never installed.')
           }
           $wixPath = (Get-Command wix).Source
           $dotnetPath = (Get-Command dotnet).Source
           Push-Location $probeRoot
           try {
-            cmake "-DSOURCE_DIR=$sourceRoot" "-DDIST_DIR=$probeDist" "-DWIX_COMMAND=$wixPath" "-DMSI_ARCH=$env:PROBE_ARCH" "-DMUFFIN_VERSION=0.0.1" -P "$sourceRoot/cmake/BuildMSI.cmake"
+            cmake "-DSOURCE_DIR=$sourceRoot" "-DDIST_DIR=$probeDist" "-DWIX_COMMAND=$wixPath" "-DMSI_ARCH=$env:PROBE_ARCH" "-DMUFPEN_VERSION=0.0.1" -P "$sourceRoot/cmake/BuildMSI.cmake"
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-            cmake "-DSOURCE_DIR=$sourceRoot" "-DDIST_DIR=$probeDist" "-DWIX_COMMAND=$wixPath" "-DDOTNET_COMMAND=$dotnetPath" "-DMSI_ARCH=$env:PROBE_ARCH" "-DMUFFIN_VERSION=0.0.1" -P "$sourceRoot/cmake/BuildBundle.cmake"
+            cmake "-DSOURCE_DIR=$sourceRoot" "-DDIST_DIR=$probeDist" "-DWIX_COMMAND=$wixPath" "-DDOTNET_COMMAND=$dotnetPath" "-DMSI_ARCH=$env:PROBE_ARCH" "-DMUFPEN_VERSION=0.0.1" -P "$sourceRoot/cmake/BuildBundle.cmake"
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-            & "$probeRoot/test/IntegrationOptionsTest.exe" --update-bundle "$probeRoot/Muffin-Setup-0.0.1-windows-$env:PROBE_ARCH.exe"
+            & "$probeRoot/test/IntegrationOptionsTest.exe" --update-bundle "$probeRoot/Mufpen-Setup-0.0.1-windows-$env:PROBE_ARCH.exe"
             exit $LASTEXITCODE
           } finally { Pop-Location }
       - name: Upload bundle probe logs
@@ -102,7 +102,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: update-bundle-probe-${{ matrix.arch }}
-          path: ${{ runner.temp }}/MuffinBundleCommandTest-*/*.log
+          path: ${{ runner.temp }}/MufpenBundleCommandTest-*/*.log
           if-no-files-found: ignore
 
   wix-extension:

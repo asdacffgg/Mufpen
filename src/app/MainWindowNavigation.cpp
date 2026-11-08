@@ -14,11 +14,11 @@
 #include <QTimer>
 #include <QToolButton>
 
-muffin::MainWindow::NavigationEntry muffin::MainWindow::navigationEntry() const {
+mufpen::MainWindow::NavigationEntry mufpen::MainWindow::navigationEntry() const {
   return {tab_, tab_->session.filePath(), tabViewState(tab_)};
 }
 
-void muffin::MainWindow::navigateToLink(const QString& href) {
+void mufpen::MainWindow::navigateToLink(const QString& href) {
   if (href.isEmpty() || workspaceWriteInProgress_ || tab_->session.isOpenInProgress())
     return;
   const auto url = resolvedUrlForDocumentResource(href, tab_->session.filePath());
@@ -44,7 +44,7 @@ void muffin::MainWindow::navigateToLink(const QString& href) {
   });
 }
 
-void muffin::MainWindow::navigateHistory(bool forward) {
+void mufpen::MainWindow::navigateHistory(bool forward) {
   if (pendingNavigation_ || workspaceWriteInProgress_ || tab_->session.isOpenInProgress())
     return;
   auto& history = forward ? forwardHistory_ : backHistory_;
@@ -70,7 +70,7 @@ void muffin::MainWindow::navigateHistory(bool forward) {
   updateAllActions();
 }
 
-void muffin::MainWindow::applyLinkNavigation(DocumentTab* document) {
+void mufpen::MainWindow::applyLinkNavigation(DocumentTab* document) {
   if (!pendingNavigation_ || pendingNavigation_->destination != document || document != tab_ ||
       document->session.isOpenInProgress() || !document->isVisible() || sessionUpdatesPaused_)
     return;
@@ -139,7 +139,7 @@ void muffin::MainWindow::applyLinkNavigation(DocumentTab* document) {
   scheduleSessionSave();
 }
 
-void muffin::MainWindow::remapNavigationPaths(const QString& oldPath, const QString& newPath) {
+void mufpen::MainWindow::remapNavigationPaths(const QString& oldPath, const QString& newPath) {
   const auto remap = [&](NavigationEntry& entry) {
     entry.path = FilePathOps::remapDescendant(entry.path, oldPath, newPath);
   };

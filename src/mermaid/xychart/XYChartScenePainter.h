@@ -2,7 +2,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 namespace xychart {
 struct XYChartScene;
@@ -10,4 +10,4 @@ struct XYChartScene;
 void paintXYChartScene(const XYChartScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
 } // namespace xychart
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

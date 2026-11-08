@@ -23,13 +23,13 @@ def main():
     root = Path(__file__).resolve().parent.parent
     args.output.mkdir(parents=True, exist_ok=False)
     programs = {
-        f'{version}_{variant}': directory / f'MuffinCmark{target}Probe.exe'
+        f'{version}_{variant}': directory / f'MufpenCmark{target}Probe.exe'
         for version, directory in [('baseline', args.baseline.resolve()), ('candidate', root / 'build/Release')]
         for variant, target in [('archive', 'Archive'), ('stages', 'Performance')]
     }
     baseline_pins = json.loads((args.baseline / 'pins.json').read_text(encoding='utf-8'))
     for variant, target in [('archive', 'Archive'), ('stages', 'Performance')]:
-        assert digest(programs[f'baseline_{variant}']) == baseline_pins[f'build/Release/MuffinCmark{target}Probe.exe']
+        assert digest(programs[f'baseline_{variant}']) == baseline_pins[f'build/Release/MufpenCmark{target}Probe.exe']
     sources = [root / 'scripts/cmark_performance_probe.cpp', root / 'scripts/cmark_stage_profile.c',
                root / 'scripts/cmark_stage_profile.h', root / 'build/cmark-profiled-blocks.inc',
                root / 'third_party/cmark-gfm/src/parser.h']
@@ -37,7 +37,7 @@ def main():
     sources += list((root / 'third_party/cmark-gfm/extensions').glob('*.c'))
     pins = {str(path): digest(path) for path in [*programs.values(), *sources]}
     preset = json.loads((root / 'build/generators/CMakePresets.json').read_text(encoding='utf-8'))
-    env = {k: v for k, v in os.environ.items() if not k.startswith('MUFFIN_')}
+    env = {k: v for k, v in os.environ.items() if not k.startswith('MUFPEN_')}
     env['PATH'] = preset['configurePresets'][0]['environment']['QT_HOST_PATH'] + '/bin;' + env.get('PATH', '')
     cases = [(size, 'gui') for size in (1, 10, 30)]
     cases += [(30, 'plain'), (1, 'extensions'), (1, 'gui-footnote'), (1, 'gui-undefined')]

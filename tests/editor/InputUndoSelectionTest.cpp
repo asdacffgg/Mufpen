@@ -16,7 +16,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testInputUndoRedoSnapshots (lines 786-813)
 void testInputUndoRedoSnapshots() {

@@ -10,7 +10,7 @@
 
 #include <cstdlib>
 
-using namespace muffin::mermaid::state;
+using namespace mufpen::mermaid::state;
 namespace {
 [[noreturn]] void fail(const QString& message) {
   qCritical().noquote() << message;

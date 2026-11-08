@@ -55,7 +55,7 @@ void cancelHandoff(const QString& ready) {
 
 #ifdef Q_OS_WIN
 void cleanupCompletedDownloads(QSettings& settings) {
-  const QDir temporary(muffin::ApplicationPaths::temporaryDirectory());
+  const QDir temporary(mufpen::ApplicationPaths::temporaryDirectory());
   QStringList pending;
   for (const auto& path : settings.value(QStringLiteral("update/stagingFolders")).toStringList()) {
     const QFileInfo folder(path);
@@ -63,7 +63,7 @@ void cleanupCompletedDownloads(QSettings& settings) {
       continue;
     // Only remove our known files from direct, non-linked children of Temp.
     // Never recursively delete a directory supplied by settings.
-    if (folder.isSymLink() || !folder.isDir() || !folder.fileName().startsWith(QStringLiteral("Muffin-update-")) ||
+    if (folder.isSymLink() || !folder.isDir() || !folder.fileName().startsWith(QStringLiteral("Mufpen-update-")) ||
         folder.dir().canonicalPath() != temporary.canonicalPath())
       continue;
     const QDir directory(path);
@@ -109,10 +109,10 @@ private:
 };
 }
 
-muffin::WindowsUpdater::WindowsUpdater() : QObject(qApp) {
+mufpen::WindowsUpdater::WindowsUpdater() : QObject(qApp) {
 }
 
-muffin::WindowsUpdater::~WindowsUpdater() {
+mufpen::WindowsUpdater::~WindowsUpdater() {
   if (reply_) {
     disconnect(reply_, nullptr, this, nullptr);
     reply_->abort();
@@ -120,14 +120,14 @@ muffin::WindowsUpdater::~WindowsUpdater() {
   delete dialog_.data();
 }
 
-muffin::WindowsUpdater& muffin::WindowsUpdater::instance() {
+mufpen::WindowsUpdater& mufpen::WindowsUpdater::instance() {
   static QPointer<WindowsUpdater> updater;
   if (!updater)
     updater = new WindowsUpdater;
   return *updater;
 }
 
-bool muffin::WindowsUpdater::installedCopy() {
+bool mufpen::WindowsUpdater::installedCopy() {
   if (ApplicationPaths::isPortable())
     return false;
 #ifdef Q_OS_WIN
@@ -144,7 +144,7 @@ bool muffin::WindowsUpdater::installedCopy() {
 #endif
 }
 
-bool muffin::WindowsUpdater::anotherProcessRunning() {
+bool mufpen::WindowsUpdater::anotherProcessRunning() {
 #ifdef Q_OS_WIN
   const HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
   if (snapshot == INVALID_HANDLE_VALUE)
@@ -155,7 +155,7 @@ bool muffin::WindowsUpdater::anotherProcessRunning() {
   if (Process32FirstW(snapshot, &entry)) {
     found = false;
     do {
-      if (entry.th32ProcessID == GetCurrentProcessId() || _wcsicmp(entry.szExeFile, L"Muffin.exe") != 0)
+      if (entry.th32ProcessID == GetCurrentProcessId() || _wcsicmp(entry.szExeFile, L"Mufpen.exe") != 0)
         continue;
       const HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, entry.th32ProcessID);
       if (!process) {
@@ -182,7 +182,7 @@ bool muffin::WindowsUpdater::anotherProcessRunning() {
 #endif
 }
 
-void muffin::WindowsUpdater::showUpdate(const UpdateRelease& release, QWidget* parent) {
+void mufpen::WindowsUpdater::showUpdate(const UpdateRelease& release, QWidget* parent) {
   if (dialog_) {
     showExisting();
     return;
@@ -229,7 +229,7 @@ void muffin::WindowsUpdater::showUpdate(const UpdateRelease& release, QWidget* p
   dialog_->show();
 }
 
-bool muffin::WindowsUpdater::showExisting() {
+bool mufpen::WindowsUpdater::showExisting() {
   if (state_ != State::Downloading && state_ != State::Ready && !restartPending() && !dialog_)
     return false;
   if (!dialog_)
@@ -240,7 +240,7 @@ bool muffin::WindowsUpdater::showExisting() {
   return true;
 }
 
-void muffin::WindowsUpdater::refresh() {
+void mufpen::WindowsUpdater::refresh() {
   if (!dialog_)
     return;
   const bool downloading = state_ == State::Downloading;
@@ -268,7 +268,7 @@ void muffin::WindowsUpdater::refresh() {
   cancel_->setText(downloading ? tr("Cancel Download") : tr("Later"));
 }
 
-void muffin::WindowsUpdater::get(const QUrl& url, qint64 limit,
+void mufpen::WindowsUpdater::get(const QUrl& url, qint64 limit,
                                  const std::function<void(const QByteArray&)>& completed) {
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
@@ -324,7 +324,7 @@ void muffin::WindowsUpdater::get(const QUrl& url, qint64 limit,
   });
 }
 
-void muffin::WindowsUpdater::download() {
+void mufpen::WindowsUpdater::download() {
   if (state_ != State::Available && state_ != State::Failed)
     return;
   state_ = State::Downloading;
@@ -343,9 +343,9 @@ void muffin::WindowsUpdater::download() {
   });
 }
 
-void muffin::WindowsUpdater::downloadInstaller() {
+void mufpen::WindowsUpdater::downloadInstaller() {
   staging_ = std::make_unique<QTemporaryDir>(
-      QDir(ApplicationPaths::temporaryDirectory()).filePath(QStringLiteral("Muffin-update-XXXXXX")));
+      QDir(ApplicationPaths::temporaryDirectory()).filePath(QStringLiteral("Mufpen-update-XXXXXX")));
   if (!staging_->isValid()) {
     fail(tr("Could not create the update download folder."));
     return;
@@ -371,7 +371,7 @@ void muffin::WindowsUpdater::downloadInstaller() {
   });
 }
 
-void muffin::WindowsUpdater::cancel() {
+void mufpen::WindowsUpdater::cancel() {
   if (restartPending())
     return;
   if (state_ == State::Downloading) {
@@ -389,7 +389,7 @@ void muffin::WindowsUpdater::cancel() {
   }
 }
 
-void muffin::WindowsUpdater::fail(const QString& message) {
+void mufpen::WindowsUpdater::fail(const QString& message) {
   if (reply_) {
     auto* reply = reply_.data();
     reply_ = nullptr;
@@ -401,7 +401,7 @@ void muffin::WindowsUpdater::fail(const QString& message) {
   refresh();
 }
 
-void muffin::WindowsUpdater::failRestart(const QString& message) {
+void mufpen::WindowsUpdater::failRestart(const QString& message) {
   // The verified download is still usable. Retry the handoff, and recheck its
   // size/hash under the same file lock, without downloading it again.
   state_ = State::Ready;
@@ -409,12 +409,12 @@ void muffin::WindowsUpdater::failRestart(const QString& message) {
   refresh();
 }
 
-void muffin::WindowsUpdater::interruptRestart() {
+void mufpen::WindowsUpdater::interruptRestart() {
   if (restartPending())
     restartInterrupted_ = true;
 }
 
-void muffin::WindowsUpdater::restart() {
+void mufpen::WindowsUpdater::restart() {
   if (state_ != State::Ready || !staging_ || !package_)
     return;
   if (auto* modal = QApplication::activeModalWidget(); modal && modal != dialog_) {
@@ -523,7 +523,7 @@ void muffin::WindowsUpdater::restart() {
   QProcess process;
   process.setProgram(installerPath(*staging_));
   process.setArguments({QStringLiteral("/install"), QStringLiteral("/passive"), QStringLiteral("/norestart"),
-                        QStringLiteral("MuffinUpdate=") + token});
+                        QStringLiteral("MufpenUpdate=") + token});
   if (!process.startDetached()) {
     settings.remove(QStringLiteral("update/resumeWindows"));
     for (const auto& window : windows)
@@ -538,7 +538,7 @@ void muffin::WindowsUpdater::restart() {
   awaitInstaller(ready, windows, std::move(packageLock));
 }
 
-void muffin::WindowsUpdater::awaitInstaller(const QString& ready, const QList<QPointer<MainWindow>>& windows,
+void mufpen::WindowsUpdater::awaitInstaller(const QString& ready, const QList<QPointer<MainWindow>>& windows,
                                             std::shared_ptr<void> packageLock) {
   state_ = State::Installing;
   refresh();
@@ -593,7 +593,7 @@ void muffin::WindowsUpdater::awaitInstaller(const QString& ready, const QList<QP
   timer->start(100);
 }
 
-muffin::MainWindow* muffin::WindowsUpdater::restoreAfterUpdate() {
+mufpen::MainWindow* mufpen::WindowsUpdater::restoreAfterUpdate() {
 #ifndef Q_OS_WIN
   return nullptr;
 #else

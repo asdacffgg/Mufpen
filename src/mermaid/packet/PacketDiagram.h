@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::packet {
+namespace mufpen::mermaid::packet {
 
 enum class PacketErrorKind { Lexer, Parser, Runtime };
 
@@ -46,4 +46,4 @@ public:
   static PacketData parse(const QString& source, const QJsonValue& bitsPerRow = QJsonValue(32.0));
 };
 
-} // namespace muffin::mermaid::packet
+} // namespace mufpen::mermaid::packet

@@ -10,7 +10,7 @@
 #include "blocks/code/CodeFenceController.h"
 #include "blocks/literal/LiteralBlockController.h"
 
-namespace muffin {
+namespace mufpen {
 
 bool InputController::computeStandardRemovalRange(qsizetype blockStart, qsizetype blockEnd, int nodeIndex,
                                                   qsizetype& deleteStart, qsizetype& deleteEnd) const {
@@ -378,4 +378,4 @@ bool InputController::collapseTrailingCaretToEndOfLastBlock() {
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

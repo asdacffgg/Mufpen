@@ -6,9 +6,9 @@
 
 #include "mermaid/dagre/DagreLabels.h"
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 void adjustCoordinateSystem(DagreGraph& g);
 void undoCoordinateSystem(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

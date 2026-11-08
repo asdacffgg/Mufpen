@@ -15,7 +15,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::sankey {
+namespace mufpen::mermaid::sankey {
 namespace {
 
 QColor paintColor(const QString& value, const QColor& fallback = Qt::black) {
@@ -121,4 +121,4 @@ void paintSankeyScene(const SankeyScene& scene, QPainter& painter, const Mermaid
   painter.restore();
 }
 
-} // namespace muffin::mermaid::sankey
+} // namespace mufpen::mermaid::sankey

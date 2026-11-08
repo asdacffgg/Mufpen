@@ -10,7 +10,7 @@
 
 #include <memory>
 
-namespace muffin::image_syntax {
+namespace mufpen::image_syntax {
 namespace {
 
 qsizetype markdownLabelEnd(QStringView source) {
@@ -396,4 +396,4 @@ ImgTagLocation findImgTag(QStringView source) {
   return {true, m.capturedStart(), m.capturedEnd()};
 }
 
-} // namespace muffin::image_syntax
+} // namespace mufpen::image_syntax

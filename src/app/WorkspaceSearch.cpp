@@ -20,7 +20,7 @@
 #include <vector>
 
 namespace {
-using namespace muffin;
+using namespace mufpen;
 void hashText(QCryptographicHash& hash, QStringView text) {
   hash.addData(QByteArrayView(reinterpret_cast<const char*>(text.utf16()), text.size() * 2));
 }
@@ -350,21 +350,21 @@ FileResult searchFile(const QString& path, const WorkspaceQuery& query, const Op
 }
 }
 
-QByteArray muffin::WorkspaceSearch::fingerprint(QStringView text) {
+QByteArray mufpen::WorkspaceSearch::fingerprint(QStringView text) {
   QCryptographicHash hash(QCryptographicHash::Sha256);
   hashText(hash, text);
   return hash.result();
 }
-QByteArray muffin::WorkspaceSearch::fingerprint(const PieceTable& text) {
+QByteArray mufpen::WorkspaceSearch::fingerprint(const PieceTable& text) {
   QCryptographicHash hash(QCryptographicHash::Sha256);
   text.forEachChunk([&](QStringView chunk) { hashText(hash, chunk); });
   return hash.result();
 }
-bool muffin::WorkspaceSearch::bufferMatches(const OpenSearchBuffer& buffer, QStringView text) {
+bool mufpen::WorkspaceSearch::bufferMatches(const OpenSearchBuffer& buffer, QStringView text) {
   return buffer.snapshot ? fingerprint(*buffer.snapshot) == fingerprint(text) : QStringView(buffer.text) == text;
 }
-muffin::WorkspaceSearchResult
-muffin::WorkspaceSearch::run(const WorkspaceQuery& query, const OpenSearchBuffers& buffers,
+mufpen::WorkspaceSearchResult
+mufpen::WorkspaceSearch::run(const WorkspaceQuery& query, const OpenSearchBuffers& buffers,
                              const SearchCancellation& cancel,
                              const std::function<void(const WorkspaceSearchFile&)>& progress) {
   WorkspaceSearchResult result;
@@ -378,7 +378,7 @@ muffin::WorkspaceSearch::run(const WorkspaceQuery& query, const OpenSearchBuffer
     return result;
   }
   if (!QFileInfo(query.root).isDir()) {
-    result.error = QCoreApplication::translate("muffin::WorkspaceSearch", "Folder is unavailable");
+    result.error = QCoreApplication::translate("mufpen::WorkspaceSearch", "Folder is unavailable");
     result.complete = false;
     return result;
   }

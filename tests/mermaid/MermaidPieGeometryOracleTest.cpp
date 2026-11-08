@@ -1,4 +1,4 @@
-// pieDiagram geometry parity oracle: compares Muffin's native pie::PieScene
+// pieDiagram geometry parity oracle: compares Mufpen's native pie::PieScene
 // against real mermaid 11.16.0 pieDiagram geometry captured by
 // scripts/generate_mermaid_pie_geometry_fixture.mjs (headless Chrome). The arc
 // path `d` strings are the BYTE-PARITY target (reproduces d3 exactly); angles,
@@ -25,7 +25,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

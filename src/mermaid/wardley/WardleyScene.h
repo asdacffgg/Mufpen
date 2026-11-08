@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::wardley {
+namespace mufpen::mermaid::wardley {
 
 struct WardleyConfig {
   qreal width = 900.0;
@@ -88,4 +88,4 @@ struct WardleyScene final : MermaidScene {
 
 WardleyScene buildWardleyScene(const WardleyData& data, WardleyConfig config, WardleySceneStyle style);
 
-} // namespace muffin::mermaid::wardley
+} // namespace mufpen::mermaid::wardley

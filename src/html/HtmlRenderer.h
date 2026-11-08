@@ -4,7 +4,7 @@
 
 #include <QString>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 class HtmlRenderer {
 public:
@@ -18,4 +18,4 @@ public:
                           const HtmlColorPalette& palette = HtmlColorPalette::defaultLight());
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

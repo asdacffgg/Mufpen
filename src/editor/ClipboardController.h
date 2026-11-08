@@ -6,11 +6,11 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
 class InputController;
 
-class MUFFIN_UI_EXPORT ClipboardController final : public QObject, private EditorContextHolder {
+class MUFPEN_UI_EXPORT ClipboardController final : public QObject, private EditorContextHolder {
   Q_OBJECT
 
 public:
@@ -32,4 +32,4 @@ private:
   SelectionSerializer selectionSerializer_;
 };
 
-} // namespace muffin
+} // namespace mufpen

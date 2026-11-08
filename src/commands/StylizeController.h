@@ -11,11 +11,11 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
-class MUFFIN_UI_EXPORT StylizeController final : public QObject, private EditorContextHolder {
+class MUFPEN_UI_EXPORT StylizeController final : public QObject, private EditorContextHolder {
   Q_OBJECT
 
 public:
@@ -110,4 +110,4 @@ private:
   CursorPosition cursorForSourceOffset(qsizetype sourceOffset) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

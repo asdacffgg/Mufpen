@@ -17,7 +17,7 @@ static void initKatexFontsResource() {
   Q_INIT_RESOURCE(katex_fonts);
 }
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 constexpr qreal kCssMathPixelSize = 16.0;
@@ -710,4 +710,4 @@ QRectF OpenTypeMathFont::textInkBounds(const QString& text) const {
   return QRectF(bounds.x() * scale, bounds.y() * scale, bounds.width() * scale, bounds.height() * scale);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -7,11 +7,11 @@
 
 class QKeyEvent;
 
-namespace muffin {
+namespace mufpen {
 
 // Shared by window actions and the source editor's standalone key handling.
 // An explicitly empty override disables a shortcut; an absent key uses defaults.
-class MUFFIN_UI_EXPORT ShortcutSettings final : public QObject {
+class MUFPEN_UI_EXPORT ShortcutSettings final : public QObject {
   Q_OBJECT
 public:
   static ShortcutSettings& instance();
@@ -32,4 +32,4 @@ private:
   QHash<QString, QKeySequence> overrides_;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -5,7 +5,7 @@
 #include <QRegularExpression>
 #include <QStringList>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QHash<QString, MathSymbolInfo> buildSymbols() {
@@ -584,4 +584,4 @@ MathSymbolInfo lookupSymbol(const QString& token) {
   return {token, MathNodeType::Error, QStringLiteral("main"), false};
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

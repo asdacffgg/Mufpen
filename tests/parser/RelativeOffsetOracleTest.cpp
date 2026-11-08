@@ -12,7 +12,7 @@
 
 #include <QString>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

@@ -1,6 +1,6 @@
 #include "html/HtmlBox.h"
 
-namespace muffin::html {
+namespace mufpen::html {
 
 HtmlBox::HtmlBox(HtmlTag tag) : tag_(tag) {
 }
@@ -255,4 +255,4 @@ bool isVoidTag(HtmlTag tag) {
   }
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

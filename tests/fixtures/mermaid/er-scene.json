@@ -679,9 +679,9 @@
     ],
     "fontMode": "bundled-noto-2.13b171",
     "mermaidVersion": "11.16.0",
-    "oracle": "ErScene::toJsonObject (Muffin self-snapshot, not real-mermaid)",
+    "oracle": "ErScene::toJsonObject (Mufpen self-snapshot, not real-mermaid)",
     "upstream": {
-        "notes": "REGRESSION GUARD ONLY. Generated from Muffin's own er::ErScene::toJsonObject(); NOT a real-mermaid reference. Real puppeteer/mermaid 11.16.0 parity deferred until the G:/github/mermaid-cli checkout is restored (docs/mermaid-architecture.md step 5).",
+        "notes": "REGRESSION GUARD ONLY. Generated from Mufpen's own er::ErScene::toJsonObject(); NOT a real-mermaid reference. Real puppeteer/mermaid 11.16.0 parity deferred until the G:/github/mermaid-cli checkout is restored (docs/mermaid-architecture.md step 5).",
         "package": "mermaid",
         "version": "11.16.0"
     }

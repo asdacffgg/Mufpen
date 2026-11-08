@@ -18,7 +18,7 @@
 #include <cstdint>
 #include <limits>
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 namespace {
 
 struct Layout {
@@ -638,4 +638,4 @@ CynefinScene buildCynefinScene(const CynefinData& data, CynefinConfig config, Cy
   return scene;
 }
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

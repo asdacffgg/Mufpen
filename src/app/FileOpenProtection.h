@@ -3,7 +3,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::file_open_protection {
+namespace mufpen::file_open_protection {
 
 inline constexpr auto kExtensionEnabled = "files/extensionProtection";
 inline constexpr auto kTextExtensions = "files/textExtensions";
@@ -29,4 +29,4 @@ struct Warnings {
 // Inspect metadata only: confirmation must precede reading or decoding the file.
 Warnings warningsForFile(const QString& path);
 
-} // namespace muffin::file_open_protection
+} // namespace mufpen::file_open_protection

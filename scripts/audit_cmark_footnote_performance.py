@@ -75,7 +75,7 @@ def main():
     generated = (root / 'build/cmark-profiled-blocks.inc').read_text(encoding='utf-8')
     for stage, call in enumerate(('process_inlines(parser, parser->refmap, parser->options);',
                                   'process_footnotes(parser);')):
-        hook = f'{{ muffin_probe_stage_begin({stage}); {call} muffin_probe_stage_end({stage}); }}'
+        hook = f'{{ mufpen_probe_stage_begin({stage}); {call} mufpen_probe_stage_end({stage}); }}'
         assert generated.count(hook) == 1
         generated = generated.replace(hook, call)
     assert generated == vendor

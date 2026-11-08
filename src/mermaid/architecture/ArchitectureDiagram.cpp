@@ -8,7 +8,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 
 ArchitectureParseError::ArchitectureParseError(ArchitectureErrorKind kind, int line, int column, QString token,
                                                const QString& message)
@@ -586,4 +586,4 @@ ArchitectureData ArchitectureDiagram::parse(const QString& source) {
   return Parser(source).run();
 }
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

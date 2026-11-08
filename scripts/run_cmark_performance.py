@@ -21,14 +21,14 @@ def main():
         parser.error('repeats must be 1..10')
     root = Path(__file__).resolve().parent.parent
     args.output.mkdir(parents=True, exist_ok=False)
-    programs = {name: root / f'build/Release/MuffinCmark{name}Probe.exe'
+    programs = {name: root / f'build/Release/MufpenCmark{name}Probe.exe'
                 for name in ('Performance', 'Archive')}
     sources = [root / 'build/cmark-profiled-blocks.inc', root / 'scripts/cmark_performance_probe.cpp', root / 'scripts/cmark_stage_profile.c',
                root / 'scripts/cmark_stage_profile.h']
     sources += list((root / 'third_party/cmark-gfm/src').glob('*.c'))
     sources += list((root / 'third_party/cmark-gfm/extensions').glob('*.c'))
     pins = {str(path): digest(path) for path in [*programs.values(), *sources]}
-    env = {k: v for k, v in os.environ.items() if not k.startswith('MUFFIN_')}
+    env = {k: v for k, v in os.environ.items() if not k.startswith('MUFPEN_')}
     preset = json.loads((root / 'build/generators/CMakePresets.json').read_text(encoding='utf-8'))
     env['PATH'] = preset['configurePresets'][0]['environment']['QT_HOST_PATH'] + '/bin;' + env.get('PATH', '')
     cases = [(size, 'gui', mode) for size in (1, 10, 30) for mode in ('full', 'no-autolink')]

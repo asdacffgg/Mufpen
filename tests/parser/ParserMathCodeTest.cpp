@@ -7,7 +7,7 @@
 
 #include <QCoreApplication>
 
-using namespace muffin;
+using namespace mufpen;
 
 QString serializeMarkdown(QString markdown) {
   CmarkGfmParser parser;
@@ -434,7 +434,7 @@ void testYamlFrontMatter() {
   CmarkGfmParser parser;
   ParseOptions options;
   const QString markdown = QStringLiteral("---\n"
-                                          "title: Muffin\n"
+                                          "title: Mufpen\n"
                                           "tags:\n"
                                           "  - markdown\n"
                                           "---\n"
@@ -448,7 +448,7 @@ void testYamlFrontMatter() {
   require(frontMatter.type() == BlockType::FrontMatter, QStringLiteral("Expected YAML front matter block"));
   require(frontMatter.frontMatterFormat() == FrontMatterFormat::Yaml,
           QStringLiteral("YAML front matter format mismatch"));
-  require(frontMatter.literal().contains(QStringLiteral("title: Muffin")),
+  require(frontMatter.literal().contains(QStringLiteral("title: Mufpen")),
           QStringLiteral("YAML front matter literal missing title"));
   require(frontMatter.sourceRange().byteStart == 0, QStringLiteral("YAML front matter source should start at zero"));
   require(sourceTextForNode(markdown, frontMatter).startsWith(QStringLiteral("---\n")),
@@ -461,7 +461,7 @@ void testTomlFrontMatter() {
   CmarkGfmParser parser;
   ParseOptions options;
   const QString markdown = QStringLiteral("+++\n"
-                                          "title = \"Muffin\"\n"
+                                          "title = \"Mufpen\"\n"
                                           "draft = false\n"
                                           "+++\n"
                                           "Body\n");
@@ -484,7 +484,7 @@ void testJsonFrontMatter() {
   CmarkGfmParser parser;
   ParseOptions options;
   const QString markdown = QStringLiteral("{\n"
-                                          "  \"title\": \"Muffin\",\n"
+                                          "  \"title\": \"Mufpen\",\n"
                                           "  \"nested\": { \"ok\": true },\n"
                                           "  \"text\": \"brace } in string\"\n"
                                           "}\n"
@@ -561,10 +561,10 @@ void testCodeFenceEmptySerializationIsIdempotent() {
 }
 
 void testFrontMatterSerializationDoesNotGrowTrailingBlankLines() {
-  const QVector<QString> samples{QStringLiteral("---\ntitle: Muffin\n---"), QStringLiteral("---\ntitle: Muffin\n\n---"),
-                                 QStringLiteral("+++\ntitle = \"Muffin\"\n+++"),
-                                 QStringLiteral("+++\ntitle = \"Muffin\"\n\n+++"),
-                                 QStringLiteral("{\n  \"title\": \"Muffin\"\n}")};
+  const QVector<QString> samples{QStringLiteral("---\ntitle: Mufpen\n---"), QStringLiteral("---\ntitle: Mufpen\n\n---"),
+                                 QStringLiteral("+++\ntitle = \"Mufpen\"\n+++"),
+                                 QStringLiteral("+++\ntitle = \"Mufpen\"\n\n+++"),
+                                 QStringLiteral("{\n  \"title\": \"Mufpen\"\n}")};
   for (const QString& sample : samples) {
     const QString once = serializeMarkdown(sample);
     const QString twice = serializeMarkdown(once);

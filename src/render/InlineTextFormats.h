@@ -9,7 +9,7 @@
 #include <memory>
 #include <QTextLayout>
 
-namespace muffin {
+namespace mufpen {
 
 struct InlineHtmlFormatSpan {
   QStringList fontFamilies;
@@ -64,4 +64,4 @@ struct InlineFormatInput {
 
 QVector<QTextLayout::FormatRange> buildInlineTextFormats(const InlineFormatInput& input);
 
-} // namespace muffin
+} // namespace mufpen

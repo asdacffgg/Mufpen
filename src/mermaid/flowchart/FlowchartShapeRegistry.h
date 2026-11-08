@@ -22,7 +22,7 @@
 #include <QStringList>
 #include <QHash>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 // Canonical shape keys. The 13 legacy names are reused as canonical; the rest
 // are the expanded-shape canonicals.
@@ -284,4 +284,4 @@ inline QStringList nativeShapeCanonicalNames() {
   };
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

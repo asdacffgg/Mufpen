@@ -5,7 +5,7 @@
 #include "document/SourceTextChange.h"
 #include "parser/MarkdownParser.h"
 
-namespace muffin {
+namespace mufpen {
 class MarkdownNode;
 struct InlineBlockFormat {
   enum Kind { Paragraph, Heading, BulletList, OrderedList, TaskList, Quote, Code } kind = Paragraph;
@@ -22,6 +22,6 @@ struct InlineBlockConversion {
 // Convert an inline-bearing block without serializing its inlines: reference
 // links, escapes and authored formatting retain their exact source spelling.
 // Both explicit block targets and caret-based commands use this operation.
-MUFFIN_CORE_EXPORT InlineBlockConversion convertInlineBlock(const PieceTable& text, const MarkdownNode& node,
+MUFPEN_CORE_EXPORT InlineBlockConversion convertInlineBlock(const PieceTable& text, const MarkdownNode& node,
                                                             InlineBlockFormat format, const ParseOptions& options);
 }

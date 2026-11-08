@@ -27,8 +27,8 @@
 #include <cstdlib>
 #include <memory>
 
-using namespace muffin::mermaid;
-using namespace muffin::mermaid::editor;
+using namespace mufpen::mermaid;
+using namespace mufpen::mermaid::editor;
 namespace {
 [[noreturn]] void fail(const QString& message) {
   std::fprintf(stderr, "FAIL: %s\n", qPrintable(message));
@@ -266,7 +266,7 @@ int main(int argc, char** argv) {
     // suppressErrorRendering is stripped by the secure-source sanitizer in
     // both renderers (see the config matrix row) — through the Markdown API
     // the fallback is unconditional; the fixture's suppressed case is the
-    // initialize()-only behavior, outside Muffin's source API.
+    // initialize()-only behavior, outside Mufpen's source API.
   }
 
   // ---- themeCSS cascade: user sheet competes with the base rules ----
@@ -428,8 +428,8 @@ int main(int argc, char** argv) {
         error::paintErrorIcon(*scene, painter, index);
       }
       const MaskAlignment alignment = bestRawAlphaAlignment(iconActual, iconExpected);
-      if (qEnvironmentVariableIsSet("MUFFIN_ERROR_ICON_DUMP"))
-        iconActual.save(QDir::temp().filePath(QStringLiteral("muffin-error-icon-%1.png").arg(index)));
+      if (qEnvironmentVariableIsSet("MUFPEN_ERROR_ICON_DUMP"))
+        iconActual.save(QDir::temp().filePath(QStringLiteral("mufpen-error-icon-%1.png").arg(index)));
       QImage aligned(iconExpected.size(), QImage::Format_RGBA8888);
       aligned.fill(Qt::transparent);
       QPainter alignPainter(&aligned);

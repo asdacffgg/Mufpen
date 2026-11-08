@@ -1,10 +1,10 @@
 // Open-memory bench: parses a real on-disk file headless and prints, in emission order, every
-// muffin.perf probe together with its working-set snapshot. This shows EXACTLY which parse phase
+// mufpen.perf probe together with its working-set snapshot. This shows EXACTLY which parse phase
 // eats memory on a large file, and (run on 30MB then 50MB) reveals any super-linear step without
 // having to crash on the 100MB file.
 //
-// Links MuffinCore only (pure Qt Core, no GUI lock). Usage:
-//   set MUFFIN_BENCH_FILE=build/stress_50mb.md   (or pass the path as argv[1])
+// Links MufpenCore only (pure Qt Core, no GUI lock). Usage:
+//   set MUFPEN_BENCH_FILE=build/stress_50mb.md   (or pass the path as argv[1])
 //   ctest -R OpenMemBench --output-on-failure
 #include "document/DocumentSession.h"
 #include "document/MarkdownNode.h"
@@ -19,15 +19,15 @@
 namespace {
 
 void printPerf(QtMsgType, const QMessageLogContext& ctx, const QString& msg) {
-  // Every perf category in the codebase is "muffin.perf". Print verbatim — the ws=<MB> suffix
+  // Every perf category in the codebase is "mufpen.perf". Print verbatim — the ws=<MB> suffix
   // appended by ParsePerfTimer / PerfTimer destructors rides along on each line.
-  if (QLatin1String(ctx.category) == QLatin1String("muffin.perf")) {
+  if (QLatin1String(ctx.category) == QLatin1String("mufpen.perf")) {
     std::fprintf(stdout, "[perf] %s\n", msg.toUtf8().constData());
     std::fflush(stdout);
   }
 }
 
-void countTree(const muffin::MarkdownNode& node, long long& blocks, long long& inlines) {
+void countTree(const mufpen::MarkdownNode& node, long long& blocks, long long& inlines) {
   ++blocks;
   inlines += static_cast<long long>(node.inlines().size());
   for (const auto& child : node.children()) {
@@ -41,10 +41,10 @@ void countTree(const muffin::MarkdownNode& node, long long& blocks, long long& i
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf.debug=true"));
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf.debug=true"));
   qInstallMessageHandler(printPerf);
 
-  QString path = QString::fromLocal8Bit(qgetenv("MUFFIN_BENCH_FILE"));
+  QString path = QString::fromLocal8Bit(qgetenv("MUFPEN_BENCH_FILE"));
   if (path.isEmpty() && argc > 1) {
     path = QString::fromLocal8Bit(argv[1]);
   }
@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
   QString text;
   if (path.isEmpty()) {
     // Smoke default so the registered ctest passes with no args (just verifies the harness
-    // compiles+runs). Override MUFFIN_BENCH_FILE (or pass argv[1]) for a real measurement.
+    // compiles+runs). Override MUFPEN_BENCH_FILE (or pass argv[1]) for a real measurement.
     path = QStringLiteral("(smoke)");
     text = QStringLiteral("# Smoke\n\nA **bold** and _em_ and `code` and [link](http://x) line.\n\n$$E=mc^2$$\n");
   } else {
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
   std::fprintf(stdout, "file: %s  (%lld chars)\n", path.toUtf8().constData(), static_cast<long long>(text.size()));
   std::fflush(stdout);
 
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText(text, false);
 
   long long blocks = 0;

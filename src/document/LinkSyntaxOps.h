@@ -3,7 +3,7 @@
 #include <QDir>
 #include <QString>
 
-namespace muffin::link_syntax {
+namespace mufpen::link_syntax {
 
 // A filesystem name is not a URL: literal %, # and ? must survive URL parsing.
 inline QString localPathHref(QString path) {
@@ -43,4 +43,4 @@ inline QString destination(QString href, bool bracketed = false) {
   return bracketed ? QLatin1Char('<') + href + QLatin1Char('>') : href;
 }
 
-} // namespace muffin::link_syntax
+} // namespace mufpen::link_syntax

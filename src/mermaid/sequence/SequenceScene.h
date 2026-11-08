@@ -6,7 +6,7 @@
 
 #include <QFont>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 struct SequenceSceneStyle {
   QString actorFill = QStringLiteral("#ECECFF");
@@ -143,4 +143,4 @@ struct SequenceScene : MermaidScene {
 SequenceScene buildSequenceScene(const SequenceLayoutResult& layout, SequenceSceneStyle style = {},
                                  const SequencePreparedLabels& prepared = {}, bool requirePrepared = false);
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

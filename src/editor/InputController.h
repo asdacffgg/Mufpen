@@ -15,7 +15,7 @@
 class QKeyEvent;
 class QInputMethodEvent;
 
-namespace muffin {
+namespace mufpen {
 
 class BlockLayout;
 struct BlockEditContext;
@@ -28,7 +28,7 @@ class MarkdownNode;
 class SelectionController;
 class TableController;
 
-class MUFFIN_UI_EXPORT InputController final : public QObject {
+class MUFPEN_UI_EXPORT InputController final : public QObject {
   Q_OBJECT
 
 public:
@@ -178,7 +178,7 @@ private:
   // grapheme-aware caret stepping.
   QString selectableTextOf(const MarkdownNode& node) const;
   bool moveCursorHorizontal(int direction, bool extendSelection);
-  // Ctrl+Left/Right: caret by programmer word (shared muffin::words semantics), crossing to the
+  // Ctrl+Left/Right: caret by programmer word (shared mufpen::words semantics), crossing to the
   // neighbouring block when the caret is already at the word-less edge of this one.
   bool moveCursorWord(int direction, bool extendSelection);
   // Ctrl+Backspace / Ctrl+Delete: delete to the previous/next word boundary within the current
@@ -234,4 +234,4 @@ private:
   qsizetype emojiColonStart_ = -1; // source offset of the leading ':' of the active shortcode
 };
 
-} // namespace muffin
+} // namespace mufpen

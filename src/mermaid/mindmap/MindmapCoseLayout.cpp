@@ -12,7 +12,7 @@
 #include <limits>
 #include <numbers>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 namespace {
 
 constexpr qreal kIdealEdgeLength = 50.0;
@@ -706,4 +706,4 @@ MindmapCoseResult layoutMindmapCoseFlatTree(const QVector<MindmapCoseNodeInput>&
   return result;
 }
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

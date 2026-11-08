@@ -1,10 +1,10 @@
-# Muffin Architecture and Reliability Review
+# Mufpen Architecture and Reliability Review
 
 Date: 2026-07-10
 
 ## Executive Summary
 
-Muffin's parser, document model, projection, editing, and rendering layers are unusually well tested for a desktop Markdown editor. The main weaknesses are at application workflow boundaries: document switching, crash recovery, filesystem side effects, file-format preservation, and distributable packaging.
+Mufpen's parser, document model, projection, editing, and rendering layers are unusually well tested for a desktop Markdown editor. The main weaknesses are at application workflow boundaries: document switching, crash recovery, filesystem side effects, file-format preservation, and distributable packaging.
 
 The findings below are ordered by risk. High-risk items can lose recovery data, break document resources, miss external changes, or publish unusable artifacts. Medium-risk items violate user-visible contracts or leave application state inconsistent.
 
@@ -20,7 +20,7 @@ Root fix: retain every complete draft until the user restores or explicitly disc
 
 ### 2. Untitled drafts collide across windows
 
-Every untitled document uses the fixed key `untitled`, while Muffin supports multiple windows. A snapshot or cleanup in one window can overwrite or remove another window's recovery state.
+Every untitled document uses the fixed key `untitled`, while Mufpen supports multiple windows. A snapshot or cleanup in one window can overwrite or remove another window's recovery state.
 
 Impact: unsaved content from one window can silently replace another window's draft.
 

@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testInputInsertAndBackspace (lines 216-235)
 void testInputInsertAndBackspace() {

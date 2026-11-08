@@ -15,7 +15,7 @@
 //       lands on the wrong line. Combined with the endLine gap logic in insertVirtualEmptyParagraphs,
 //       this keeps the VEP count stable across the isolated-slice re-parse (no "content jumps up").
 //
-//   cmake --build . --config Release --target MuffinThematicBreakRangeProbe
+//   cmake --build . --config Release --target MufpenThematicBreakRangeProbe
 //   ctest -C Release -R ThematicBreakRangeProbe --output-on-failure
 #include "../editor/EditorTestUtils.h"
 
@@ -30,28 +30,28 @@ int main(int argc, char** argv) {
   }
   QApplication app(argc, argv);
 
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   // `---` on line 3 with 5 trailing blank lines (lines 4..8) before "After" on line 9.
   // 5 blank lines ⇒ blankLines/2 = 2 virtual empty paragraphs after the rule.
   session.setMarkdownText(QStringLiteral("Intro\n\n---\n\n\n\n\n\nAfter\n\nEnd\n"), false);
 
   // Locate the rule.
-  muffin::MarkdownNode* rule = nullptr;
+  mufpen::MarkdownNode* rule = nullptr;
   for (const auto& c : session.document().root().children()) {
-    if (c->type() == muffin::BlockType::ThematicBreak) {
+    if (c->type() == mufpen::BlockType::ThematicBreak) {
       rule = c.get();
       break;
     }
   }
   require(rule != nullptr, "expected a thematic break in the document");
 
-  const muffin::SourceRange ruleRange = rule->sourceRange();
+  const mufpen::SourceRange ruleRange = rule->sourceRange();
 
   // (a) Count the virtual empty paragraphs between the rule and the first real paragraph after it.
   //     5 blank lines ⇒ exactly 2 VEPs (the normal blankLines/2 rule, not suppressed).
   bool afterRule = false;
   int vepCount = 0;
-  muffin::MarkdownNode* afterBlock = nullptr;
+  mufpen::MarkdownNode* afterBlock = nullptr;
   for (const auto& c : session.document().root().children()) {
     if (c.get() == rule) {
       afterRule = true;
@@ -59,12 +59,12 @@ int main(int argc, char** argv) {
     }
     if (!afterRule)
       continue;
-    const muffin::SourceRange r = c->sourceRange();
-    if (c->type() == muffin::BlockType::Paragraph && r.byteEnd > r.byteStart) {
+    const mufpen::SourceRange r = c->sourceRange();
+    if (c->type() == mufpen::BlockType::Paragraph && r.byteEnd > r.byteStart) {
       afterBlock = c.get(); // the first real (non-empty) paragraph after the rule = "After"
       break;
     }
-    if (c->type() == muffin::BlockType::Paragraph && r.byteStart == r.byteEnd) {
+    if (c->type() == mufpen::BlockType::Paragraph && r.byteStart == r.byteEnd) {
       ++vepCount;
     }
   }
@@ -80,12 +80,12 @@ int main(int argc, char** argv) {
   // content to the first child, not the historical last-block fallback (a source caret in the
   // leading blanks used to scroll/render the document END). Leading VEPs are zero-width
   // (byteStart == byteEnd), so the offsets BETWEEN them exercise the fallback path.
-  muffin::DocumentSession leading;
+  mufpen::DocumentSession leading;
   leading.setMarkdownText(QStringLiteral("\n\n\n\nFirst\n\nSecond\n"), false);
   const auto& leadingChildren = leading.document().root().children();
   require(leadingChildren.size() >= 4, "leading fixture should have VEPs plus two blocks");
   for (const qsizetype offset : {qsizetype(1), qsizetype(3)}) {
-    muffin::MarkdownNode* resolved = leading.document().topLevelBlockAtOffset(offset);
+    mufpen::MarkdownNode* resolved = leading.document().topLevelBlockAtOffset(offset);
     require(resolved == leadingChildren.front().get(),
             "offset in the leading blank region must resolve to the first child, not the last block");
   }

@@ -7,13 +7,13 @@
 #include "Export.h"
 #include "document/PieceTable.h"
 
-namespace muffin {
+namespace mufpen {
 class DocumentSession;
 
 // One serial I/O queue per window. Requests own independent piece tables;
 // workers never read a live session. Cleanup is a barrier after an in-flight
 // write and before any newer request for that key. Destruction drains barriers.
-class MUFFIN_CORE_EXPORT DraftSnapshotWriter final : public QObject {
+class MUFPEN_CORE_EXPORT DraftSnapshotWriter final : public QObject {
   Q_OBJECT
 public:
   using Write = std::function<bool(const PieceTable&, const QString&, const QString&)>;
@@ -34,4 +34,4 @@ private:
   struct State;
   std::unique_ptr<State> state_;
 };
-} // namespace muffin
+} // namespace mufpen

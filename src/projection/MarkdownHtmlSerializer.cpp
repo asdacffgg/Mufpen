@@ -20,7 +20,7 @@
 
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 // HTML-escape text content: `&` `<` `>`. Mirrors HtmlExporter.cpp's escapeHtmlText and cmark's text
@@ -115,7 +115,7 @@ QString escapeAttr(QStringView text) {
   return out;
 }
 
-// URL safety is shared with the on-screen HtmlSanitizer via HtmlUrlSafety.h (muffin::isSafeUrl),
+// URL safety is shared with the on-screen HtmlSanitizer via HtmlUrlSafety.h (mufpen::isSafeUrl),
 // so the export path and the preview can't drift — one used to block vectors the other let through.
 
 // Decode `:shortcode:` runs to glyphs (mirrors InlineProjection's third decode-span). Called before
@@ -631,4 +631,4 @@ QString MarkdownHtmlSerializer::serializeTree(const MarkdownNode& root, const Ma
   return s.out;
 }
 
-} // namespace muffin
+} // namespace mufpen

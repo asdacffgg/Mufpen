@@ -2,7 +2,7 @@
 #include <QRegularExpression>
 #include <QSet>
 
-namespace muffin {
+namespace mufpen {
 std::optional<HtmlContainerBoundary> htmlContainerBoundary(const MarkdownNode& node) {
   if (node.type() != BlockType::HtmlBlock)
     return std::nullopt;
@@ -48,4 +48,4 @@ CooperativeTask htmlContainerPairSteps(const MarkdownNode& owner, QHash<size_t, 
     co_yield nullptr;
   }
 }
-} // namespace muffin
+} // namespace mufpen

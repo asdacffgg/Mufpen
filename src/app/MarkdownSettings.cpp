@@ -2,7 +2,7 @@
 
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 ParseOptions markdownParseOptions() {
   ParseOptions options; // defaults match the parser: all GFM extensions + front matter on
@@ -27,4 +27,4 @@ ParseOptions markdownParseOptions() {
   return options;
 }
 
-} // namespace muffin
+} // namespace mufpen

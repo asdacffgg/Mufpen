@@ -20,7 +20,7 @@
 #include <cmath>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QFont::Style requirementCssFontStyle(const QString& value) {
@@ -695,4 +695,4 @@ const Diagram& requirementDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

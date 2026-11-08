@@ -11,7 +11,7 @@
 #include "document/DocumentSession.h"
 #include "document/MarkdownNode.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 // openDocumentAsync runs a worker-owned parser on a QtConcurrent thread and finishes
 // (setMarkdownText + relativize + emit parsed) on the GUI thread via QFutureWatcher. These tests
@@ -352,7 +352,7 @@ void testApplyTextDeltaRejectedWhileAsyncInFlight() {
 } // namespace
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("DocumentSessionAsyncParseTest"));
   QCoreApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

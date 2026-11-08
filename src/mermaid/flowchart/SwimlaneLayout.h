@@ -2,7 +2,7 @@
 
 #include "mermaid/flowchart/FlowchartLayout.h"
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct SwimlaneLayoutOptions {
   qreal nodeSpacing = 50.0;
@@ -32,4 +32,4 @@ QMap<QString, QSizeF> measureSwimlaneHandDrawnNodes(const FlowchartData& data,
 FlowLayoutResult layoutSwimlaneNodes(const FlowchartData& data, const QMap<QString, QSizeF>& measuredNodes,
                                      SwimlaneLayoutOptions options = {});
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

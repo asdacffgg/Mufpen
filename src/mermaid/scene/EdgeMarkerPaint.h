@@ -8,7 +8,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::scene {
+namespace mufpen::mermaid::scene {
 
 // Shared edge-marker painting primitives. Four families (flowchart, classdiagram, erdiagram,
 // requirement) replay an SVG `<marker>` definition at an edge endpoint with the same transform
@@ -42,4 +42,4 @@ QVector<QPointF> stitchEdgePolyline(const QVector<QPointF>& points, const QVecto
 QPainterPath edgePolylinePath(const QString& path, const QVector<QPointF>& points,
                               const QVector<QVector<QPointF>>& segments);
 
-} // namespace muffin::mermaid::scene
+} // namespace mufpen::mermaid::scene

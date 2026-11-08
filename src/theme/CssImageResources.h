@@ -7,7 +7,7 @@
 #include <QString>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -50,4 +50,4 @@ private:
   std::shared_ptr<CssSvgRasterCache> rasters_;
 };
 
-} // namespace muffin
+} // namespace mufpen

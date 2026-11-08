@@ -9,7 +9,7 @@
 #include <QSettings>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 // markdown/* smart-punctuation settings. Read raw at call time so toggling takes effect on the next
@@ -141,4 +141,4 @@ QString InputController::maybeConvertSmartPunctuation(QString text) {
   return out;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -11,7 +11,7 @@
 
 class QPainter;
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathRenderKind {
   Span,
@@ -117,4 +117,4 @@ struct MathLayoutResult {
 
 std::unique_ptr<MathRenderNode> cloneNode(const MathRenderNode& node);
 
-} // namespace muffin::math
+} // namespace mufpen::math

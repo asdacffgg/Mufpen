@@ -16,7 +16,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::treeview {
+namespace mufpen::mermaid::treeview {
 namespace {
 
 struct JsPrimitive {
@@ -487,4 +487,4 @@ TreeViewScene buildTreeViewScene(const TreeViewData& data, TreeViewConfig config
   return scene;
 }
 
-} // namespace muffin::mermaid::treeview
+} // namespace mufpen::mermaid::treeview

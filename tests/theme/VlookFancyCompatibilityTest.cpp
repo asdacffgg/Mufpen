@@ -15,7 +15,7 @@
 
 #include "../render/RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 const MarkdownNode* firstInlineParagraph(const MarkdownNode& root) {

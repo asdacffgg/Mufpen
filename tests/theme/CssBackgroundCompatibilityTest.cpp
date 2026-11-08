@@ -19,7 +19,7 @@
 #include <QTemporaryDir>
 #include <QUrl>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void write(const QString& path, const QByteArray& bytes) {
   QFile file(path);

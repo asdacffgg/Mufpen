@@ -7,7 +7,7 @@
 
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 
 // Per-document formatting reuse. Signatures, resource generations, measurements
 // and observed solver inputs share one pass lifecycle and one invalidation policy.
@@ -57,4 +57,4 @@ private:
   quint64 signatureRevision_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

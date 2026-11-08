@@ -15,7 +15,7 @@
 #include <cmath>
 #include <optional>
 
-namespace muffin::mermaid::gitgraph {
+namespace mufpen::mermaid::gitgraph {
 namespace {
 
 constexpr qreal kLayoutOffset = 10.0;
@@ -986,4 +986,4 @@ QJsonObject GitGraphScene::toJsonObject() const {
           {QStringLiteral("primitives"), values}};
 }
 
-} // namespace muffin::mermaid::gitgraph
+} // namespace mufpen::mermaid::gitgraph

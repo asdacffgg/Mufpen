@@ -13,7 +13,7 @@
 #include <limits>
 #include <optional>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -509,4 +509,4 @@ void order(DagreGraph& g) {
   assignOrder(g, best);
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

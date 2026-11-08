@@ -21,7 +21,7 @@ def check(host, extension, entitlements):
     assert extension["CFBundlePackageType"] == "XPC!"
     point = extension["NSExtension"]
     assert point["NSExtensionPointIdentifier"] == "com.apple.quicklook.preview"
-    assert point["NSExtensionPrincipalClass"] == "MuffinPreviewController"
+    assert point["NSExtensionPrincipalClass"] == "MufpenPreviewController"
     attributes = point["NSExtensionAttributes"]
     assert attributes["QLSupportedContentTypes"] == [MARKDOWN]
     assert attributes["QLIsDataBasedPreview"] is False
@@ -43,7 +43,7 @@ def main():
     entitlements = read_plist(args.source / "cmake/QuickLook.entitlements")
     if args.bundle:
         contents = args.bundle / "Contents"
-        extension = contents / "PlugIns/MuffinQuickLook.appex"
+        extension = contents / "PlugIns/MufpenQuickLook.appex"
         check(read_plist(contents / "Info.plist"), read_plist(extension / "Contents/Info.plist"), entitlements)
         subprocess.run(["/usr/bin/codesign", "--verify", "--strict", str(extension)], check=True)
         # Without --xml codesign includes its binary entitlement blob header,
@@ -52,8 +52,8 @@ def main():
             ["/usr/bin/codesign", "--display", "--entitlements", "-", "--xml", str(extension)], stderr=subprocess.DEVNULL)
         check(read_plist(contents / "Info.plist"), read_plist(extension / "Contents/Info.plist"), plistlib.loads(signed))
         dependencies = subprocess.check_output(
-            ["/usr/bin/otool", "-L", str(extension / "Contents/MacOS/MuffinQuickLook")], text=True)
-        assert "Qt" not in dependencies and "MuffinCore" not in dependencies and "MuffinUi" not in dependencies
+            ["/usr/bin/otool", "-L", str(extension / "Contents/MacOS/MufpenQuickLook")], text=True)
+        assert "Qt" not in dependencies and "MufpenCore" not in dependencies and "MufpenUi" not in dependencies
     else:
         check(read_plist(args.source / "cmake/Info.plist.in"),
               read_plist(args.source / "cmake/QuickLook-Info.plist.in"), entitlements)

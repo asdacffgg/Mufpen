@@ -7,7 +7,7 @@
 
 class QDir;
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownDocument;
 
@@ -65,4 +65,4 @@ private:
   ImageFileOps() = delete;
 };
 
-} // namespace muffin
+} // namespace mufpen

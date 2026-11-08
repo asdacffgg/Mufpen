@@ -18,7 +18,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue gitGraphValue(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -620,4 +620,4 @@ const Diagram& gitGraphDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

@@ -9,7 +9,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 SequenceLabelDocument parseSequenceLabel(const QString& source, SequenceLabelKind kind) {
   static const QRegularExpression breaks(QStringLiteral("<br\\s*/?>"), QRegularExpression::CaseInsensitiveOption);
@@ -149,4 +149,4 @@ void paintSequenceLabel(QPainter& painter, const SequenceLabelDocument& label, c
                             centerVertically, align, alignMargin);
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

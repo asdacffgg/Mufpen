@@ -11,7 +11,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::sankey {
+namespace mufpen::mermaid::sankey {
 
 struct SankeyConfig {
   QJsonValue width = 600.0;
@@ -116,4 +116,4 @@ struct SankeyScene final : MermaidScene {
 SankeyScene buildSankeyScene(const SankeyData& data, SankeyConfig config, SankeySceneStyle style);
 void refreshSankeyBounds(SankeyScene& scene);
 
-} // namespace muffin::mermaid::sankey
+} // namespace mufpen::mermaid::sankey

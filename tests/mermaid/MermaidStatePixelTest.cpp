@@ -14,7 +14,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -120,9 +120,9 @@ int main(int argc, char** argv) {
       native = state::renderStateSceneToImage(*stateScene, dpr, 0.0);
     }
     // Pixel triage hook (mirrors the requirement suite): dump the native
-    // raster next to the browser PNG when MUFFIN_SAVE_NATIVE points at a
+    // raster next to the browser PNG when MUFPEN_SAVE_NATIVE points at a
     // directory.
-    if (const QString saveDir = QString::fromLocal8Bit(qgetenv("MUFFIN_SAVE_NATIVE")); !saveDir.isEmpty()) {
+    if (const QString saveDir = QString::fromLocal8Bit(qgetenv("MUFPEN_SAVE_NATIVE")); !saveDir.isEmpty()) {
       QDir().mkpath(saveDir);
       native.save(QDir(saveDir).filePath(id + QStringLiteral("-native.png")));
     }

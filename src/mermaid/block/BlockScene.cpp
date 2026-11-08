@@ -16,7 +16,7 @@
 #include <cmath>
 #include <functional>
 
-namespace muffin::mermaid::block {
+namespace mufpen::mermaid::block {
 namespace {
 
 struct JsScalar {
@@ -636,4 +636,4 @@ QJsonObject BlockScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::block
+} // namespace mufpen::mermaid::block

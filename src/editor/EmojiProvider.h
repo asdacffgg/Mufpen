@@ -3,7 +3,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 // A single emoji mapping: a GitHub-style shortcode (without colons, e.g. "smile") and its glyph.
 struct EmojiEntry {
@@ -33,4 +33,4 @@ private:
   mutable bool loaded_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

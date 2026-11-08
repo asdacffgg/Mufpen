@@ -2,7 +2,7 @@
 // header for the full contract. Pure: identical inputs -> identical output, so it
 // is called from BOTH RequirementLayout (measure) and RequirementScene (build).
 //
-// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace muffin {}`
+// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace mufpen {}`
 // block; helpers live in an anonymous namespace and the public functions use
 // fully-qualified names.
 
@@ -24,13 +24,13 @@
 #include <algorithm>
 #include <cmath>
 
-namespace flowchart = muffin::mermaid::flowchart;
-using muffin::CssLengthContext;
-using muffin::CssLengthResult;
-using muffin::CssLengthStatus;
-using muffin::resolveCssLengthToPx;
+namespace flowchart = mufpen::mermaid::flowchart;
+using mufpen::CssLengthContext;
+using mufpen::CssLengthResult;
+using mufpen::CssLengthStatus;
+using mufpen::resolveCssLengthToPx;
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 namespace {
 
 // mmdc default raster profile (same value as RequirementScene.cpp's
@@ -402,8 +402,8 @@ RequirementTextStyle resolveRequirementTextStyle(const QStringList& cssStyles, c
   }
   if (map.contains(QStringLiteral("color"))) {
     const QString v = map.value(QStringLiteral("color"));
-    if (muffin::mermaid::color::isParsableColor(v))
-      s.color = muffin::mermaid::color::toQColor(v);
+    if (mufpen::mermaid::color::isParsableColor(v))
+      s.color = mufpen::mermaid::color::toQColor(v);
     // invalid/inherit -> stays invalid; paint uses theme textColor.
   }
   return s;
@@ -419,4 +419,4 @@ QString applyRequirementTextTransform(QString source, RequirementTextTransform t
   return capitalizeWithMathPreserved(source);
 }
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

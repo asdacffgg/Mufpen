@@ -22,7 +22,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

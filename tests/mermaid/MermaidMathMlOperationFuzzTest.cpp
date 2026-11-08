@@ -95,18 +95,18 @@ int main(int argc, char** argv) {
   constexpr qreal kRenderFontPixelSize = 16.0 * 1.21;
   constexpr int kCaseCount = 400;
   std::mt19937_64 random(0x4D4154484D4CULL);
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   QSet<int> rootKinds;
   QElapsedTimer timer;
   timer.start();
 
   for (int index = 0; index < kCaseCount; ++index) {
     const QString source = expression(random, 1 + index % 3);
-    const muffin::math::MathLayoutResult layout = renderer.render(source, kRenderFontPixelSize, Qt::black, true);
+    const mufpen::math::MathLayoutResult layout = renderer.render(source, kRenderFontPixelSize, Qt::black, true);
     require(layout.valid(),
             QStringLiteral("Math operation fuzz render failed at #%1: %2 (%3)").arg(index).arg(source, layout.error));
-    const muffin::math::MathMlPaintOperationBuildResult build =
-        muffin::math::buildMathMlPaintOperations(layout, kRenderFontPixelSize);
+    const mufpen::math::MathMlPaintOperationBuildResult build =
+        mufpen::math::buildMathMlPaintOperations(layout, kRenderFontPixelSize);
     require(build.operation.has_value() && !build.failure.has_value(),
             QStringLiteral("Math operation fuzz fallback at #%1: %2 (%3)")
                 .arg(index)

@@ -4,7 +4,7 @@
 #include <QMutexLocker>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 struct LayoutResourceState {
   quint64 paint = 0, geometry = 0;
   QByteArray metrics;
@@ -96,4 +96,4 @@ LayoutResourceScope::LayoutResourceScope() {
 LayoutResourceScope::~LayoutResourceScope() {
   scopes.pop_back();
 }
-} // namespace muffin
+} // namespace mufpen

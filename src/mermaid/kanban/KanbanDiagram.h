@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 
 enum class KanbanErrorKind { Lexer, Parser, Yaml, Runtime };
 
@@ -70,4 +70,4 @@ public:
   static KanbanData parse(const QString& source, const KanbanParseConfig& config = {});
 };
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

@@ -8,7 +8,7 @@
 #include "document/NodeId.h"
 #include "theme/CssContent.h"
 
-namespace muffin {
+namespace mufpen {
 
 struct DocumentCounterStats {
   qsizetype blocks = 0, semanticShapes = 0, semanticBytes = 0, unsharedSemanticBytes = 0;
@@ -72,4 +72,4 @@ private:
   QHash<QByteArray, qsizetype> semanticReferences_;
   QHash<quint64, std::vector<std::weak_ptr<const Snapshot>>> statePool_;
 };
-} // namespace muffin
+} // namespace mufpen

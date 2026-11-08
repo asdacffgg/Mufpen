@@ -3,7 +3,7 @@
 #include "export/ExportOptions.h"
 #include "theme/RenderTheme.h"
 
-namespace muffin {
+namespace mufpen {
 class MarkdownDocument;
 namespace mermaid::editor {
 class MermaidRenderCache;
@@ -18,4 +18,4 @@ bool exportNativePdf(const QString& path, const MarkdownDocument& document, Rend
 bool exportNativeImage(const QString& path, const MarkdownDocument& document, RenderTheme theme,
                        const QString& sourcePath, const ImageExportOptions& options,
                        mermaid::editor::MermaidRenderCache* cache = nullptr);
-} // namespace muffin
+} // namespace mufpen

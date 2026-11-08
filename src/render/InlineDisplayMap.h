@@ -2,7 +2,7 @@
 
 #include "projection/InlineProjection.h"
 
-namespace muffin {
+namespace mufpen {
 
 // The display stream and its mappings are one value. All rewrites update both
 // maps together; layout/paint code never edits an offset table independently.
@@ -47,4 +47,4 @@ private:
   QVector<DisplayOffsetMapEntry> displayOffsetMap_;
 };
 
-} // namespace muffin
+} // namespace mufpen

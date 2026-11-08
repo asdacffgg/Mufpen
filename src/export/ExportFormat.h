@@ -6,7 +6,7 @@
 // external Pandoc process (see PandocRunner). Image uses the native renderer;
 // Command delegates to a user-configured executable.
 
-namespace muffin {
+namespace mufpen {
 
 enum class ExportFormat {
   Pdf,
@@ -25,4 +25,4 @@ enum class ExportFormat {
   Command,
 };
 
-} // namespace muffin
+} // namespace mufpen

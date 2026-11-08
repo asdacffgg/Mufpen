@@ -5,7 +5,7 @@
 
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 // Outcome of a custom-command upload. `ran` distinguishes "the command executed
 // and returned" from "we never started it" (unconfigured / failed to launch).
@@ -18,11 +18,11 @@ struct CustomCommandResult {
 
 // Drives a user-configured external image uploader (PicGo, PicList, uPic, a shell
 // script, …) via a single command line stored under `image/uploadCommand`. This is
-// Muffin's second QProcess subsystem after PandocRunner and mirrors its shape: it
+// Mufpen's second QProcess subsystem after PandocRunner and mirrors its shape: it
 // resolves the command, runs synchronously behind a cancellable modal progress
 // dialog, and returns the captured output. tr()-free on purpose — callers own all
 // user-facing messages, so this translation unit stays out of
-// MUFFIN_TRANSLATABLE_SOURCES and may use a `namespace muffin { }` wrapper freely.
+// MUFPEN_TRANSLATABLE_SOURCES and may use a `namespace mufpen { }` wrapper freely.
 class CustomCommandUploader {
 public:
   // image/uploadCommand verbatim (trimmed). Empty when unconfigured.
@@ -44,4 +44,4 @@ public:
   static CustomCommandResult upload(QWidget* parent, const QStringList& paths, const QString& commandOverride = {});
 };
 
-} // namespace muffin
+} // namespace mufpen

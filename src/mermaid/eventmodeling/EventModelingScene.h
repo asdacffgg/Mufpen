@@ -12,7 +12,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::eventmodeling {
+namespace mufpen::mermaid::eventmodeling {
 
 struct EventModelingConfig {
   QJsonValue useMaxWidth = true;
@@ -143,4 +143,4 @@ EventModelingScene buildEventModelingScene(const EventModelingData& data, EventM
 // DOM model so the adapter can stamp the same presentation attributes.
 QPair<QString, QString> eventModelingBoxPaint(const EventModelingFrame& frame, const EventModelingSceneStyle& style);
 
-} // namespace muffin::mermaid::eventmodeling
+} // namespace mufpen::mermaid::eventmodeling

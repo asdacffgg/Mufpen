@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 enum class SequenceErrorStage { Detector, Lexer, Parser, Semantic, Resource };
 enum class SequenceErrorCode {
@@ -120,4 +120,4 @@ QString sequenceErrorStageName(SequenceErrorStage stage);
 QString sequenceErrorCodeName(SequenceErrorCode code);
 QString formatSequenceDiagnostic(const SequenceDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

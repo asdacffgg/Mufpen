@@ -8,7 +8,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::railroad {
+namespace mufpen::mermaid::railroad {
 namespace {
 
 [[noreturn]] void fail(RailroadErrorKind kind, int line, int column, const QString& token, const QString& message) {
@@ -856,4 +856,4 @@ RailroadData RailroadDiagram::parse(const QString& source, RailroadDialect diale
   return Parser(source, dialect).parse();
 }
 
-} // namespace muffin::mermaid::railroad
+} // namespace mufpen::mermaid::railroad

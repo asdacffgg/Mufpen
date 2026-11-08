@@ -6,7 +6,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 namespace {
 
 StateSourceSpan spanOf(const StateToken& token) {
@@ -660,4 +660,4 @@ QString formatStateDiagnostic(const StateDiagnostic& diagnostic) {
       .arg(stateErrorCodeName(diagnostic.code), diagnostic.actual);
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

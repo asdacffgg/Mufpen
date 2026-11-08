@@ -84,7 +84,7 @@ xychart-beta
 - **可编辑表格** — 直接在渲染视图中添加、调整大小、对齐和删除行列，支持通过对话框插入表格。
 - **可编辑代码块** — 内联编辑并通过 tree-sitter 支持 20+ 种语言的语法高亮，支持从自动补全下拉框设置语言。代码工具提供逐行缩进/减少缩进与复制代码块内容。
 - **可编辑数学块** — 通过 C++ 实现的完整 KaTeX 兼容引擎实时渲染 LaTeX 公式，提供编辑/预览双面板布局。支持自定义宏、braket 记号、交换图，以及一键"全部刷新"重新渲染所有公式。
-- **原生 Mermaid 图表** — 通过纯 C++/Qt 引擎实时渲染 Mermaid 11.16 全部 38 个图族 ID，包括流程图/Flowchart ELK 内置的 Dagre 回退、泳道、时序图、类图、状态图、ER、需求图、饼图、象限图、旅程图、雷达图、XY 图、时间线、报文图、看板、思维导图、Block、GitGraph、C4、TreeView、事件建模、石川图、维恩图、桑基图、树图、Cynefin、Wardley、架构图、甘特图、Info 以及 Railroad/EBNF/ABNF/PEG 语法图家族，全部经 ```` ```mermaid ```` 代码围栏驱动，无 JavaScript 或浏览器运行时依赖。无效源码会保持可编辑，并显示精确的行列诊断、源码错误标记和点击跳转定位。共享标题/可访问性元数据、圆角流程、受控链接与提示、实时边动画、Sequence 链接菜单、确定性的原生 SVG/HTML 导出、逐图右键 SVG/PNG 保存、`muffin-mmdc` 无头批量渲染 CLI，以及自动生成的 533 行配置生效矩阵明确约束编辑器和导出行为。
+- **原生 Mermaid 图表** — 通过纯 C++/Qt 引擎实时渲染 Mermaid 11.16 全部 38 个图族 ID，包括流程图/Flowchart ELK 内置的 Dagre 回退、泳道、时序图、类图、状态图、ER、需求图、饼图、象限图、旅程图、雷达图、XY 图、时间线、报文图、看板、思维导图、Block、GitGraph、C4、TreeView、事件建模、石川图、维恩图、桑基图、树图、Cynefin、Wardley、架构图、甘特图、Info 以及 Railroad/EBNF/ABNF/PEG 语法图家族，全部经 ```` ```mermaid ```` 代码围栏驱动，无 JavaScript 或浏览器运行时依赖。无效源码会保持可编辑，并显示精确的行列诊断、源码错误标记和点击跳转定位。共享标题/可访问性元数据、圆角流程、受控链接与提示、实时边动画、Sequence 链接菜单、确定性的原生 SVG/HTML 导出、逐图右键 SVG/PNG 保存、`mufpen-mmdc` 无头批量渲染 CLI，以及自动生成的 533 行配置生效矩阵明确约束编辑器和导出行为。
 - **可编辑 HTML 块** — 内联编辑原始 HTML 块，使用 Lexbor 解析和 Yoga 弹性盒子布局，并跟随当前主题配色。
 - **脚注与链接定义** — 完整支持脚注（`[^id]: text`）和链接引用定义的渲染、编辑和插入命令。
 - **Front Matter** — 完整的 YAML front matter 支持。
@@ -148,9 +148,9 @@ xychart-beta
 
 |         | Windows | macOS | Linux |
 |:--------|:-------:|:-----:|:-----:|
-| 安装包 | [MSI](https://github.com/asdacffgg/Mufpen/releases) | [DMG](https://github.com/asdacffgg/Mufpen/releases) | [从源码构建](#开发) |
+| 安装 | 从源码构建 | 从源码构建 | [从源码构建](#开发) |
 
-Windows 发布同时提供完整的 `.7z` 便携包，解压后运行 `Mufpen.exe` 即可。字体、拼写字典和语言支持均随包提供，可离线使用。
+`portable` 构建目标可生成完整的便携目录，解压后运行 `Mufpen.exe`；字体、拼写字典和语言支持均随包提供，可离线使用。
 
 ## 开发
 
@@ -267,6 +267,6 @@ Mufpen 已经支持几乎全部核心与扩展 Markdown 语法——标题、段
 - 上游版权：Copyright © 2026 Muffin Contributors（[LICENSE](LICENSE) 中原样保留）
 - 本衍生版本：Mufpen，由 [asdacffgg](https://github.com/asdacffgg) 维护；改动见 [CHANGELOG.md](CHANGELOG.md) 与提交记录。
 
-Mufpen 是一次**表层改名**：窗口标题、关于对话框、安装包产品名、macOS bundle 标识、图标与更新源都叫 Mufpen，而可执行文件与库名仍是 `Muffin`、`MuffinCore`、`MuffinUi`，配置仍写入 `~/.config/Muffin`，这样旧的设置和草稿快照不会丢失；C++ 命名空间 `muffin::` 未改，15 种语言的翻译因此继续有效。
+Mufpen 是一次**完整改名**：窗口标题、关于对话框、安装包产品名、macOS bundle 标识、图标、更新源、可执行文件与库名（`Mufpen`、`MufpenCore`、`MufpenUi`）、配置目录（`~/.config/Mufpen`）以及内部 C++ 命名空间 `mufpen::` 全部使用 Mufpen。旧版设置（`~/.config/Muffin/Muffin.conf`）与草稿快照（`~/.local/share/Muffin/Muffin/drafts`）不会自动迁移。
 
 本仓库**不发布二进制**，请从源码构建；上游 Muffin 的发行版与本仓库的更新源不兼容。

@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 // Author sheets stay unchanged. Each document backend composes the same host
 // defaults below them, without accumulating copies across viewport changes.
@@ -174,4 +174,4 @@ private:
   QHash<QString, std::shared_ptr<CssElement>> wrappers_;
 };
 
-} // namespace muffin
+} // namespace mufpen

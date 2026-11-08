@@ -3,7 +3,7 @@
 # Required variables:
 #   DIST_DIR       - Path to the dist directory (populated by the 'dist' target)
 #   WIX_COMMAND    - Path to the wix executable
-#   MUFFIN_VERSION - Version string (e.g. "0.1.0")
+#   MUFPEN_VERSION - Version string (e.g. "0.1.0")
 #   SOURCE_DIR     - Project source root
 
 if(NOT DEFINED DIST_DIR OR DIST_DIR STREQUAL "")
@@ -12,8 +12,8 @@ endif()
 if(NOT DEFINED WIX_COMMAND OR WIX_COMMAND STREQUAL "")
   message(FATAL_ERROR "WIX_COMMAND is required")
 endif()
-if(NOT DEFINED MUFFIN_VERSION OR MUFFIN_VERSION STREQUAL "")
-  message(FATAL_ERROR "MUFFIN_VERSION is required")
+if(NOT DEFINED MUFPEN_VERSION OR MUFPEN_VERSION STREQUAL "")
+  message(FATAL_ERROR "MUFPEN_VERSION is required")
 endif()
 
 # MSI_ARCH selects the WiX package architecture (x64, arm64, ...). It defaults
@@ -27,7 +27,7 @@ if(NOT EXISTS "${DIST_DIR}")
 endif()
 
 # WiX requires a four-part version (x.x.x.x). Pad if needed.
-set(_msi_version "${MUFFIN_VERSION}")
+set(_msi_version "${MUFPEN_VERSION}")
 string(REPLACE "." ";" _version_parts "${_msi_version}")
 list(LENGTH _version_parts _part_count)
 while(_part_count LESS 4)
@@ -35,7 +35,7 @@ while(_part_count LESS 4)
   math(EXPR _part_count "${_part_count} + 1")
 endwhile()
 
-set(MSI_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFFIN_VERSION}-windows-${MSI_ARCH}.msi")
+set(MSI_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFPEN_VERSION}-windows-${MSI_ARCH}.msi")
 
 message(STATUS "Building MSI installer...")
 message(STATUS "  WiX:      ${WIX_COMMAND}")
@@ -56,11 +56,11 @@ execute_process(
   COMMAND "${WIX_COMMAND}" build
     -arch ${MSI_ARCH}
     -ext WixToolset.UI.wixext
-    -d MuffinVersion=${_msi_version}
+    -d MufpenVersion=${_msi_version}
     -d DistDir=${DIST_DIR}
     -d IcuDataName=${icu_data_name}
     -out "${MSI_OUTPUT}"
-    "${SOURCE_DIR}/cmake/Muffin.wxs"
+    "${SOURCE_DIR}/cmake/Mufpen.wxs"
   RESULT_VARIABLE wix_result
   OUTPUT_VARIABLE wix_output
   ERROR_VARIABLE wix_error

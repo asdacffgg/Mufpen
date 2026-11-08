@@ -32,7 +32,7 @@
 #include <cstdlib>
 #include <vector>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
   const QJsonArray computed = computeAll(cases);
 
   QFile snapshotFile(snapshotPath);
-  const bool updateGolden = qEnvironmentVariableIntValue("MUFFIN_UPDATE_GOLDENS") == 1;
+  const bool updateGolden = qEnvironmentVariableIntValue("MUFPEN_UPDATE_GOLDENS") == 1;
   if (updateGolden || !snapshotFile.exists()) {
     QJsonObject root;
     root.insert(QStringLiteral("upstream"), geometryRoot.value(QStringLiteral("upstream")).toObject());

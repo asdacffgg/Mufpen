@@ -7,7 +7,7 @@
 
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 struct LanguageInfo {
   QString code;
@@ -45,4 +45,4 @@ private:
   std::unique_ptr<QTranslator> qtTranslator_;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -1,6 +1,6 @@
 #include "mermaid/scene/FlowMarkers.h"
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 
 // Edge type -> marker type (chunk-4F4KDU6L.mjs arrowTypesMap + addEdgeMarker).
 //   arrow_point      -> pointEnd
@@ -70,4 +70,4 @@ MarkerGeometry markerGeometry(const QString& type) {
   return g;
 }
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

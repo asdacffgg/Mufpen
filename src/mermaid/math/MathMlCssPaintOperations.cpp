@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 bool hasPaintOperation(MathSemanticKind kind) {
   return kind == MathSemanticKind::Fraction || kind == MathSemanticKind::Radical || kind == MathSemanticKind::SupSub ||
@@ -195,9 +195,9 @@ std::optional<MathCssPaintOperation> buildPaintOperation(const MathRenderNode* o
   return result;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml
 
-namespace muffin::math {
+namespace mufpen::math {
 using namespace mathml;
 
 MathMlPaintOperationBuildResult buildMathMlPaintOperations(const MathLayoutResult& layout, qreal renderFontPixelSize,
@@ -373,4 +373,4 @@ std::optional<MathCssFractionBox> layoutMathMlFractionBox(const MathLayoutResult
   return fraction ? std::optional<MathCssFractionBox>{fraction->box} : std::nullopt;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

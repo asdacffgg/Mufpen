@@ -7,7 +7,7 @@
 #include <QPainter>
 #include <QPainterPath>
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 namespace {
 
 color::SvgPaint rootFill(const QString& value) {
@@ -45,4 +45,4 @@ void paintInfoScene(QPainter& painter, const InfoScene& scene, const MermaidPain
   painter.restore();
 }
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

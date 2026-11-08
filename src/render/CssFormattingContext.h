@@ -10,7 +10,7 @@
 #include <vector>
 
 struct YGNode;
-namespace muffin {
+namespace mufpen {
 struct CssIntrinsicMetrics {
   qreal minContent = 0;
   qreal maxContent = 0;
@@ -107,4 +107,4 @@ CssFormattingResult layoutFormattingItems(const ThemeElementStyle& container,
 CssGridInheritance contentGridInheritance(CssGridInheritance inherited, QMarginsF insets);
 CssIntrinsicMetrics intrinsicGridWidths(const ThemeElementStyle& style, const std::vector<CssFormattingItem>& items);
 CssIntrinsicMetrics intrinsicFlexWidths(const ThemeElementStyle& style, const std::vector<CssFormattingItem>& items);
-} // namespace muffin
+} // namespace mufpen

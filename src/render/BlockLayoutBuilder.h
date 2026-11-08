@@ -20,7 +20,7 @@
 #include "render/TextLayout.h"
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 class CodeFenceScrollController;
 namespace mermaid::editor {
@@ -72,7 +72,7 @@ public:
 
   // Emits aggregate per-bucket timings for the build() work accumulated across one
   // rebuild (inline text shaping / code highlight / math render / html render / literal
-  // text height). No-op when muffin.perf debug is disabled.
+  // text height). No-op when mufpen.perf debug is disabled.
   void dumpBuildBreakdown() const;
 
   // Cheap height estimate WITHOUT TextLayout / tree-sitter / math / html rendering.
@@ -223,4 +223,4 @@ private:
   const PieceTable* markdownText_ = &emptyText_; // non-owning; refreshed by configureBuilder before each build
 };
 
-} // namespace muffin
+} // namespace mufpen

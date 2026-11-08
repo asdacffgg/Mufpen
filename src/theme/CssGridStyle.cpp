@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QStringList split(const QString& value, QChar separator = {}) {
   QStringList parts;
@@ -329,4 +329,4 @@ std::optional<CssGridAreas> parseCssGridAreas(const QString& value) {
       return {};
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

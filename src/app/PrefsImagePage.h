@@ -9,7 +9,7 @@ class QLineEdit;
 class QPushButton;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsImagePage final : public PreferencesPage {
   Q_OBJECT
@@ -50,4 +50,4 @@ private:
   QPushButton* testButton_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -8,7 +8,7 @@
 #include "editor/SelectionController.h"
 #include "parser/MarkdownSerializer.h"
 
-namespace muffin {
+namespace mufpen {
 
 LiteralBlockController::LiteralBlockController(LiteralBlockSpec spec) : spec_(std::move(spec)) {
 }
@@ -440,4 +440,4 @@ void LiteralBlockController::clearPendingTrailingNewline() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

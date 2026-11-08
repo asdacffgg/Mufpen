@@ -2,7 +2,7 @@
 
 #include "document/MarkdownDocument.h"
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownSerializer {
 public:
@@ -24,4 +24,4 @@ private:
   QString tableDelimiter(TableAlignment alignment) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

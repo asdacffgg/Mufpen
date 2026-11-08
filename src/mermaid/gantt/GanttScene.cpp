@@ -14,7 +14,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 namespace {
 
 qreal roundedScale(const QDateTime& value, const QDateTime& start, const QDateTime& end, qreal width) {
@@ -754,4 +754,4 @@ GanttScene buildGanttScene(const GanttData& data, GanttConfig config, GanttScene
   return scene;
 }
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

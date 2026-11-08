@@ -11,7 +11,7 @@
 
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 enum class MathAtomClass {
@@ -551,4 +551,4 @@ qreal MathBuilder::spacingAfter(int previous, int current, bool tight, qreal glu
   return 0.0;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

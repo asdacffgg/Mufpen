@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::block {
+namespace mufpen::mermaid::block {
 
 enum class BlockErrorKind { Lexer, Parser, Runtime };
 
@@ -69,4 +69,4 @@ public:
   static BlockData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::block
+} // namespace mufpen::mermaid::block

@@ -2,7 +2,7 @@
 
 #include "parser/MarkdownParser.h"
 
-namespace muffin {
+namespace mufpen {
 
 // Reads the markdown/* preferences that gate PARSING and maps them to ParseOptions. This is the
 // single funnel used at MainWindow startup and after the PreferencesDialog closes. Parse-side
@@ -10,4 +10,4 @@ namespace muffin {
 // cosmetic / insertion-side markdown/* settings are instead read inline at their use sites.
 ParseOptions markdownParseOptions();
 
-} // namespace muffin
+} // namespace mufpen

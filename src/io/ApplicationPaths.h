@@ -3,11 +3,11 @@
 #include "Export.h"
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 // Initialize before creating any application settings/services. A marker beside
 // the executable opts this copy into an independent, relocatable user profile.
-class MUFFIN_CORE_EXPORT ApplicationPaths {
+class MUFPEN_CORE_EXPORT ApplicationPaths {
 public:
   static bool initialize(const QString& executablePath, QString* error);
   static bool isPortable();
@@ -16,4 +16,4 @@ public:
   static QString temporaryDirectory();
 };
 
-} // namespace muffin
+} // namespace mufpen

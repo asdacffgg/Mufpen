@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 MathMlStyleContext fractionRowStyle(const MathRenderNode* fraction, MathMlStyleContext parentStyle) {
   if (!fraction)
@@ -684,4 +684,4 @@ std::optional<MathCssPaintOperation> buildFractionOperation(const MathRenderNode
   return operation;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

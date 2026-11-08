@@ -4,10 +4,10 @@
 
 class QPainter;
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 
 struct CynefinScene;
 
 void paintCynefinScene(const CynefinScene& scene, QPainter& painter, const MermaidPaintOptions& options = {});
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

@@ -4,7 +4,7 @@
 
 ## 实验方法
 
-`MuffinFontBackendProbe` 使用应用共同的 `configureCssFont()`，对同一个字体文件测试 16、18.4、28.8、29、32.4px，普通／粗体、正体／斜体，以及可选连字开关。以 96、768、6144 DPI 的排版设备分别提供 1、8、64 倍精度；文字塑形、换行、光标和命中测试均来自同一个 `QTextLayout`，绘制时按相同倍率还原，避免只缩放绘制而保留旧光标坐标。
+`MufpenFontBackendProbe` 使用应用共同的 `configureCssFont()`，对同一个字体文件测试 16、18.4、28.8、29、32.4px，普通／粗体、正体／斜体，以及可选连字开关。以 96、768、6144 DPI 的排版设备分别提供 1、8、64 倍精度；文字塑形、换行、光标和命中测试均来自同一个 `QTextLayout`，绘制时按相同倍率还原，避免只缩放绘制而保留旧光标坐标。
 
 输出包括字体文件 SHA-256、Qt 版本、平台插件、实际 glyph run 的字体／字号／样式、每行范围、光标坐标、命中结果和 PNG。浏览器脚本验证相同字体 SHA，测量同一段中英文混排文本；数据与图片只写入 `build`。
 
@@ -29,16 +29,16 @@ Windows 原生平台插件、Qt 6.11.1、Chromium 148，LXGW WenKai Regular 原�
 先按仓库 Release preset 构建并刷新 `dist`，再构建诊断目标：
 
 ```powershell
-cmake --build --preset conan-release --target MuffinFontBackendProbe
+cmake --build --preset conan-release --target MufpenFontBackendProbe
 $env:PATH = "$PWD/build/dist;$env:PATH"
 $env:QT_PLUGIN_PATH = "$PWD/build/dist"
 $fontPath = 'C:/path/to/LXGWWenKai-Regular.ttf'
-./build/Release/MuffinFontBackendProbe.exe $fontPath build/theme-audit/font-backend/lxgw
+./build/Release/MufpenFontBackendProbe.exe $fontPath build/theme-audit/font-backend/lxgw
 $env:CHROME_EXECUTABLE = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 node scripts/probe_font_backend.mjs $fontPath build/theme-audit/font-backend/lxgw
 ```
 
-脚本需要 Playwright；也可用 `MUFFIN_PLAYWRIGHT_MODULE` 指向现有安装。诊断程序默认 `offscreen`，可在启动前设置 `QT_QPA_PLATFORM=windows` 对照应用平台，Linux/macOS 同理。再用 `build/theme-fonts/github/open-sans-v17-latin-ext_latin-regular.ttf` 复测中英文混排，以检查真实回退字体；回退结果还依赖系统安装的字体。
+脚本需要 Playwright；也可用 `MUFPEN_PLAYWRIGHT_MODULE` 指向现有安装。诊断程序默认 `offscreen`，可在启动前设置 `QT_QPA_PLATFORM=windows` 对照应用平台，Linux/macOS 同理。再用 `build/theme-fonts/github/open-sans-v17-latin-ext_latin-regular.ttf` 复测中英文混排，以检查真实回退字体；回退结果还依赖系统安装的字体。
 
 ## 统一接口与实验开关
 
@@ -53,13 +53,13 @@ node scripts/probe_font_backend.mjs $fontPath build/theme-audit/font-backend/lxg
 保留，默认行为仍可直接与 `QTextLayout` 逐行及逐像素对照。
 
 ```powershell
-$env:MUFFIN_TEXT_LAYOUT_BACKEND = 'fractional'
-./build/dist/Muffin.exe
+$env:MUFPEN_TEXT_LAYOUT_BACKEND = 'fractional'
+./build/dist/Mufpen.exe
 ```
 
 关闭实验时删除此环境变量并重新启动应用。该开关不修改用户设置。
 
-`MuffinTextLayoutTest` 与 `MuffinFractionalTextLayoutTest` 分别验证两种配置。
+`MufpenTextLayoutTest` 与 `MufpenFractionalTextLayoutTest` 分别验证两种配置。
 浏览器夹具固定 Open Sans、PT Serif、Latin Modern Roman、文楷及 Noto Sans SC 子集的实际字节，
 检查字号、中文实际 glyph run、光标坐标、行范围与内在尺寸，同时验证窄窗口、
 缩放、生成内容、HTML、代码块，以及编辑后完整／惰性布局的几何一致性。
@@ -112,15 +112,15 @@ LaTeX 场景使用主题首选的 Latin Modern Roman 10 的四个真实字形，
 运行可选性能测量：
 
 ```powershell
-$env:MUFFIN_TEXT_BENCH = '1'
-ctest --preset conan-release -R '^(MuffinTextLayoutTest|MuffinFractionalTextLayoutTest|MuffinMermaidTextBackendTest|MuffinMermaidFractionalTextBackendTest)$' -V
+$env:MUFPEN_TEXT_BENCH = '1'
+ctest --preset conan-release -R '^(MufpenTextLayoutTest|MufpenFractionalTextLayoutTest|MufpenMermaidTextBackendTest|MufpenMermaidFractionalTextBackendTest)$' -V
 ```
 
 输出分别记录 1500 个保留布局的排版、冷／热绘制、进程内存，以及 3000 块
 文档的首次布局、12 次输入、两轮各 24 帧惰性窗口缩放；Mermaid 记录 300 个
 长标签的布局、冷／热绘制、两轮各 24 帧缩放和 6000 次场景缓存访问。
 性能采样通过环境变量启用，不以容易抖动的毫秒值阻断 CI。
-默认工作负载是中英混排；设置 `MUFFIN_TEXT_BENCH_WORKLOAD=cjk` 后，在独立进程
+默认工作负载是中英混排；设置 `MUFPEN_TEXT_BENCH_WORKLOAD=cjk` 后，在独立进程
 重复相同规模的中文密集段落和 Mermaid 长标签测试。中文正文使用固定 Open Sans
 加打包的 Noto 回退；两种后端使用同一批字体字节。普通与中文场景需分别启动进程，
 避免上一个场景的布局、字体缓存和工作集影响下一个场景。
@@ -217,7 +217,7 @@ CI 消费提交的数值参考，无需下载浏览器。原始四主题和原�
 
 ## Mermaid 接入
 
-`TextLayout.cpp` 归入 `MuffinCore`，文档和 Mermaid 复用同一实现。FlowLabel 的换行、
+`TextLayout.cpp` 归入 `MufpenCore`，文档和 Mermaid 复用同一实现。FlowLabel 的换行、
 格式范围、基线、装饰线和字形读取，以及普通图形标签的测量／绘制，都经过公共入口。
 `TextLine::glyphRuns()` 保留字形索引、源文字索引和方向，并将位置、边界及 `QRawFont`
 字号转换为逻辑像素；`QRawFont::setPixelSize(qreal)` 保留分数尺寸，准备好的字形可以
@@ -228,7 +228,7 @@ CI 消费提交的数值参考，无需下载浏览器。原始四主题和原�
 OpenType 专用计算继续使用原后端，只通过公共外层布局交付坐标。`FlowSceneCompare`
 的整数墨迹边界属于像素对照工具，不是文档排版；普通 UI 的文字绘制也无需替换。
 
-`MuffinMermaidTextBackendTest`／`MuffinMermaidFractionalTextBackendTest` 在两个独立进程
+`MufpenMermaidTextBackendTest`／`MufpenMermaidFractionalTextBackendTest` 在两个独立进程
 检查原生兼容性、字形坐标、固定 Noto 中英／阿拉伯文字体回退、长标签、合成粗体／斜体、
 数学外层尺寸、80%／100%／125%／200% 缩放，以及 Flowchart、Gantt、C4、Journey、Venn、
 Mindmap 在窄／宽视口下的缓存复用和完整／惰性排版。既有 Mermaid 浏览器几何／像素

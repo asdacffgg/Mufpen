@@ -1,198 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>EditorView</name>
     <message>
         <source>Markdown editor</source>
-        <translation type="vanished">Editor de Markdown</translation>
+        <translation type="vanished">Редактор Markdown</translation>
     </message>
     <message>
         <source>Rendered Markdown document</source>
-        <translation type="vanished">Documento Markdown renderizado</translation>
+        <translation type="vanished">Отрендеренный документ Markdown</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>New</source>
-        <translation type="obsolete">Nuevo</translation>
+        <translation type="obsolete">Новый</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="obsolete">Nueva ventana</translation>
+        <translation type="obsolete">Новое окно</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="obsolete">Abrir carpeta...</translation>
+        <translation type="obsolete">Открыть папку...</translation>
     </message>
     <message>
         <source>Open...</source>
-        <translation type="obsolete">Abrir...</translation>
+        <translation type="obsolete">Открыть...</translation>
     </message>
     <message>
         <source>Quick Open...</source>
-        <translation type="obsolete">Apertura rápida...</translation>
+        <translation type="obsolete">Быстро открыть...</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="obsolete">Guardar</translation>
+        <translation type="obsolete">Сохранить</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation type="obsolete">Guardar como...</translation>
+        <translation type="obsolete">Сохранить как...</translation>
     </message>
     <message>
         <source>Move To...</source>
-        <translation type="obsolete">Mover a...</translation>
+        <translation type="obsolete">Переместить в...</translation>
     </message>
     <message>
         <source>Save All Open Files...</source>
-        <translation type="obsolete">Guardar todos los archivos abiertos...</translation>
+        <translation type="obsolete">Сохранить все открытые файлы...</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="obsolete">Propiedades</translation>
+        <translation type="obsolete">Свойства</translation>
     </message>
     <message>
         <source>Show in File Manager...</source>
-        <translation type="obsolete">Mostrar en el gestor de archivos...</translation>
+        <translation type="obsolete">Показать в файловом менеджере...</translation>
     </message>
     <message>
         <source>Show in Sidebar</source>
-        <translation type="obsolete">Mostrar en la barra lateral</translation>
+        <translation type="obsolete">Показать на боковой панели</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation type="obsolete">Eliminar...</translation>
+        <translation type="obsolete">Удалить...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="obsolete">Importar...</translation>
+        <translation type="obsolete">Импорт...</translation>
     </message>
     <message>
         <source>Print...</source>
-        <translation type="obsolete">Imprimir...</translation>
+        <translation type="obsolete">Печать...</translation>
     </message>
     <message>
         <source>Preferences...</source>
-        <translation type="obsolete">Preferencias...</translation>
+        <translation type="obsolete">Настройки...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">Cerrar</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="obsolete">Deshacer</translation>
+        <translation type="obsolete">Отменить</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="obsolete">Rehacer</translation>
+        <translation type="obsolete">Повторить</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="obsolete">Cortar</translation>
+        <translation type="obsolete">Вырезать</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="obsolete">Copiar</translation>
+        <translation type="obsolete">Копировать</translation>
     </message>
     <message>
         <source>Copy Image</source>
-        <translation type="obsolete">Copiar imagen</translation>
+        <translation type="obsolete">Копировать изображение</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="obsolete">Pegar</translation>
+        <translation type="obsolete">Вставить</translation>
     </message>
     <message>
         <source>Copy as Plain Text</source>
-        <translation type="obsolete">Copiar como texto sin formato</translation>
+        <translation type="obsolete">Копировать как обычный текст</translation>
     </message>
     <message>
         <source>Copy as Markdown</source>
-        <translation type="obsolete">Copiar como Markdown</translation>
+        <translation type="obsolete">Копировать как Markdown</translation>
     </message>
     <message>
         <source>Copy as HTML</source>
-        <translation type="obsolete">Copiar como HTML</translation>
+        <translation type="obsolete">Копировать как HTML</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
-        <translation type="obsolete">Pegar como texto sin formato</translation>
+        <translation type="obsolete">Вставить как обычный текст</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="obsolete">Seleccionar todo</translation>
+        <translation type="obsolete">Выделить всё</translation>
     </message>
     <message>
         <source>Select Paragraph or Block</source>
-        <translation type="obsolete">Seleccionar párrafo o bloque</translation>
+        <translation type="obsolete">Выделить абзац или блок</translation>
     </message>
     <message>
         <source>Select Current Line or Sentence</source>
-        <translation type="obsolete">Seleccionar línea o frase actual</translation>
+        <translation type="obsolete">Выделить текущую строку или предложение</translation>
     </message>
     <message>
         <source>Select Current Format Text</source>
-        <translation type="obsolete">Seleccionar texto con formato actual</translation>
+        <translation type="obsolete">Выделить текст текущего формата</translation>
     </message>
     <message>
         <source>Select Current Word</source>
-        <translation type="obsolete">Seleccionar palabra actual</translation>
+        <translation type="obsolete">Выделить текущее слово</translation>
     </message>
     <message>
         <source>Jump to Start of Document</source>
-        <translation type="obsolete">Ir al inicio del documento</translation>
+        <translation type="obsolete">Перейти в начало документа</translation>
     </message>
     <message>
         <source>Jump to Selection</source>
-        <translation type="obsolete">Ir a la selección</translation>
+        <translation type="obsolete">Перейти к выделению</translation>
     </message>
     <message>
         <source>Jump to End of Document</source>
-        <translation type="obsolete">Ir al final del documento</translation>
+        <translation type="obsolete">Перейти в конец документа</translation>
     </message>
     <message>
         <source>Jump to Start of Line</source>
-        <translation type="obsolete">Ir al inicio de línea</translation>
+        <translation type="obsolete">Перейти в начало строки</translation>
     </message>
     <message>
         <source>Jump to End of Line</source>
-        <translation type="obsolete">Ir al final de línea</translation>
+        <translation type="obsolete">Перейти в конец строки</translation>
     </message>
     <message>
         <source>Move Line Up</source>
-        <translation type="obsolete">Mover línea arriba</translation>
+        <translation type="obsolete">Переместить строку вверх</translation>
     </message>
     <message>
         <source>Move Line Down</source>
-        <translation type="obsolete">Mover línea abajo</translation>
+        <translation type="obsolete">Переместить строку вниз</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="obsolete">Eliminar</translation>
+        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <source>Delete Block</source>
-        <translation type="obsolete">Eliminar bloque</translation>
+        <translation type="obsolete">Удалить блок</translation>
     </message>
     <message>
         <source>Delete Current Line</source>
-        <translation type="obsolete">Eliminar línea actual</translation>
+        <translation type="obsolete">Удалить текущую строку</translation>
     </message>
     <message>
         <source>Delete Current Format Text</source>
-        <translation type="obsolete">Eliminar texto con formato actual</translation>
+        <translation type="obsolete">Удалить текущий форматированный текст</translation>
     </message>
     <message>
         <source>Delete Current Word</source>
-        <translation type="obsolete">Eliminar palabra actual</translation>
+        <translation type="obsolete">Удалить текущее слово</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="obsolete">Revisión ortográfica...</translation>
+        <translation type="obsolete">Проверка орфографии...</translation>
     </message>
     <message>
         <source>Windows (CRLF)</source>
@@ -204,83 +204,83 @@
     </message>
     <message>
         <source>Ensure Trailing Newline on Save</source>
-        <translation type="obsolete">Asegurar salto de línea final al guardar</translation>
+        <translation type="obsolete">Добавлять пустую строку в конец при сохранении</translation>
     </message>
     <message>
         <source>Find...</source>
-        <translation type="obsolete">Buscar...</translation>
+        <translation type="obsolete">Найти...</translation>
     </message>
     <message>
         <source>Replace...</source>
-        <translation type="obsolete">Reemplazar...</translation>
+        <translation type="obsolete">Заменить...</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation type="obsolete">Buscar siguiente</translation>
+        <translation type="obsolete">Найти далее</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation type="obsolete">Buscar anterior</translation>
+        <translation type="obsolete">Найти ранее</translation>
     </message>
     <message>
         <source>Paragraph</source>
-        <translation type="obsolete">Párrafo</translation>
+        <translation type="obsolete">Абзац</translation>
     </message>
     <message>
         <source>Promote Heading</source>
-        <translation type="obsolete">Subir nivel del encabezado</translation>
+        <translation type="obsolete">Повысить уровень заголовка</translation>
     </message>
     <message>
         <source>Demote Heading</source>
-        <translation type="obsolete">Bajar nivel del encabezado</translation>
+        <translation type="obsolete">Понизить уровень заголовка</translation>
     </message>
     <message>
         <source>Formula Block</source>
-        <translation type="obsolete">Bloque de fórmula</translation>
+        <translation type="obsolete">Блок формулы</translation>
     </message>
     <message>
         <source>Code Block</source>
-        <translation type="obsolete">Bloque de código</translation>
+        <translation type="obsolete">Блок кода</translation>
     </message>
     <message>
         <source>Quote</source>
-        <translation type="obsolete">Cita</translation>
+        <translation type="obsolete">Цитата</translation>
     </message>
     <message>
         <source>Ordered List</source>
-        <translation type="obsolete">Lista ordenada</translation>
+        <translation type="obsolete">Нумерованный список</translation>
     </message>
     <message>
         <source>Unordered List</source>
-        <translation type="obsolete">Lista sin ordenar</translation>
+        <translation type="obsolete">Маркированный список</translation>
     </message>
     <message>
         <source>Task List</source>
-        <translation type="obsolete">Lista de tareas</translation>
+        <translation type="obsolete">Список задач</translation>
     </message>
     <message>
         <source>Insert Paragraph Before</source>
-        <translation type="obsolete">Insertar párrafo antes</translation>
+        <translation type="obsolete">Вставить абзац перед</translation>
     </message>
     <message>
         <source>Insert Paragraph After</source>
-        <translation type="obsolete">Insertar párrafo después</translation>
+        <translation type="obsolete">Вставить абзац после</translation>
     </message>
     <message>
         <source>Link Reference</source>
-        <translation type="obsolete">Referencia de enlace</translation>
+        <translation type="obsolete">Ссылочная метка</translation>
     </message>
     <message>
         <source>Footnote</source>
-        <translation type="obsolete">Nota al pie</translation>
+        <translation type="obsolete">Сноска</translation>
     </message>
     <message>
         <source>Horizontal Rule</source>
-        <translation type="obsolete">Línea horizontal</translation>
+        <translation type="obsolete">Горизонтальная линия</translation>
     </message>
     <message>
         <source>Table of Contents</source>
-        <translation type="obsolete">Tabla de contenido</translation>
+        <translation type="obsolete">Оглавление</translation>
     </message>
     <message>
         <source>YAML</source>
@@ -296,99 +296,99 @@
     </message>
     <message>
         <source>Insert Row Above</source>
-        <translation type="obsolete">Insertar fila arriba</translation>
+        <translation type="obsolete">Вставить строку выше</translation>
     </message>
     <message>
         <source>Insert Row Below</source>
-        <translation type="obsolete">Insertar fila abajo</translation>
+        <translation type="obsolete">Вставить строку ниже</translation>
     </message>
     <message>
         <source>Insert Column Left</source>
-        <translation type="obsolete">Insertar columna a la izquierda</translation>
+        <translation type="obsolete">Вставить столбец слева</translation>
     </message>
     <message>
         <source>Insert Column Right</source>
-        <translation type="obsolete">Insertar columna a la derecha</translation>
+        <translation type="obsolete">Вставить столбец справа</translation>
     </message>
     <message>
         <source>Move Row Up</source>
-        <translation type="obsolete">Mover fila arriba</translation>
+        <translation type="obsolete">Переместить строку вверх</translation>
     </message>
     <message>
         <source>Move Row Down</source>
-        <translation type="obsolete">Mover fila abajo</translation>
+        <translation type="obsolete">Переместить строку вниз</translation>
     </message>
     <message>
         <source>Move Column Left</source>
-        <translation type="obsolete">Mover columna a la izquierda</translation>
+        <translation type="obsolete">Переместить столбец влево</translation>
     </message>
     <message>
         <source>Move Column Right</source>
-        <translation type="obsolete">Mover columna a la derecha</translation>
+        <translation type="obsolete">Переместить столбец вправо</translation>
     </message>
     <message>
         <source>Delete Row</source>
-        <translation type="obsolete">Eliminar fila</translation>
+        <translation type="obsolete">Удалить строку</translation>
     </message>
     <message>
         <source>Delete Column</source>
-        <translation type="obsolete">Eliminar columna</translation>
+        <translation type="obsolete">Удалить столбец</translation>
     </message>
     <message>
         <source>Copy Table</source>
-        <translation type="obsolete">Copiar tabla</translation>
+        <translation type="obsolete">Копировать таблицу</translation>
     </message>
     <message>
         <source>Format Table Source</source>
-        <translation type="obsolete">Formatear fuente de tabla</translation>
+        <translation type="obsolete">Форматировать исходный код таблицы</translation>
     </message>
     <message>
         <source>Delete Table</source>
-        <translation type="obsolete">Eliminar tabla</translation>
+        <translation type="obsolete">Удалить таблицу</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="obsolete">Alinear a la izquierda</translation>
+        <translation type="obsolete">Выровнять по левому краю</translation>
     </message>
     <message>
         <source>Align Center</source>
-        <translation type="obsolete">Centrar</translation>
+        <translation type="obsolete">Выровнять по центру</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="obsolete">Alinear a la derecha</translation>
+        <translation type="obsolete">Выровнять по правому краю</translation>
     </message>
     <message>
         <source>Clear Alignment</source>
-        <translation type="obsolete">Borrar alineación</translation>
+        <translation type="obsolete">Очистить выравнивание</translation>
     </message>
     <message>
         <source>Enter Edit</source>
-        <translation type="obsolete">Entrar en edición</translation>
+        <translation type="obsolete">Начать редактирование</translation>
     </message>
     <message>
         <source>Exit Edit</source>
-        <translation type="obsolete">Salir de edición</translation>
+        <translation type="obsolete">Завершить редактирование</translation>
     </message>
     <message>
         <source>Set Language...</source>
-        <translation type="obsolete">Establecer idioma...</translation>
+        <translation type="obsolete">Задать язык...</translation>
     </message>
     <message>
         <source>Code Language</source>
-        <translation type="obsolete">Lenguaje de código</translation>
+        <translation type="obsolete">Язык кода</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="obsolete">Idioma:</translation>
+        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <source>Set HTML...</source>
-        <translation type="obsolete">Establecer HTML...</translation>
+        <translation type="obsolete">Задать HTML...</translation>
     </message>
     <message>
         <source>HTML Source</source>
-        <translation type="obsolete">Código HTML</translation>
+        <translation type="obsolete">Исходный код HTML</translation>
     </message>
     <message>
         <source>HTML:</source>
@@ -396,11 +396,11 @@
     </message>
     <message>
         <source>Set TeX...</source>
-        <translation type="obsolete">Establecer TeX...</translation>
+        <translation type="obsolete">Задать TeX...</translation>
     </message>
     <message>
         <source>Math TeX</source>
-        <translation type="obsolete">TeX matemático</translation>
+        <translation type="obsolete">Формула TeX</translation>
     </message>
     <message>
         <source>TeX:</source>
@@ -408,103 +408,103 @@
     </message>
     <message>
         <source>Bold</source>
-        <translation type="obsolete">Negrita</translation>
+        <translation type="obsolete">Полужирный</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="obsolete">Cursiva</translation>
+        <translation type="obsolete">Курсив</translation>
     </message>
     <message>
         <source>Underline</source>
-        <translation type="obsolete">Subrayado</translation>
+        <translation type="obsolete">Подчёркивание</translation>
     </message>
     <message>
         <source>Inline Code</source>
-        <translation type="obsolete">Código en línea</translation>
+        <translation type="obsolete">Встроенный код</translation>
     </message>
     <message>
         <source>Inline Formula</source>
-        <translation type="obsolete">Fórmula en línea</translation>
+        <translation type="obsolete">Встроенная формула</translation>
     </message>
     <message>
         <source>Strikethrough</source>
-        <translation type="obsolete">Tachado</translation>
+        <translation type="obsolete">Зачёркивание</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation type="obsolete">Comentario</translation>
+        <translation type="obsolete">Комментарий</translation>
     </message>
     <message>
         <source>Hyperlink</source>
-        <translation type="obsolete">Hipervínculo</translation>
+        <translation type="obsolete">Гиперссылка</translation>
     </message>
     <message>
         <source>Clear Style</source>
-        <translation type="obsolete">Borrar estilo</translation>
+        <translation type="obsolete">Очистить стиль</translation>
     </message>
     <message>
         <source>Insert Image...</source>
-        <translation type="obsolete">Insertar imagen...</translation>
+        <translation type="obsolete">Вставить изображение...</translation>
     </message>
     <message>
         <source>Insert Local Image...</source>
-        <translation type="obsolete">Insertar imagen local...</translation>
+        <translation type="obsolete">Вставить локальное изображение...</translation>
     </message>
     <message>
         <source>Open Image Location...</source>
-        <translation type="obsolete">Abrir ubicación de la imagen...</translation>
+        <translation type="obsolete">Открыть расположение изображения...</translation>
     </message>
     <message>
         <source>Delete Image File</source>
-        <translation type="obsolete">Eliminar archivo de imagen</translation>
+        <translation type="obsolete">Удалить файл изображения</translation>
     </message>
     <message>
         <source>Delete Image</source>
-        <translation type="obsolete">Eliminar imagen</translation>
+        <translation type="obsolete">Удалить изображение</translation>
     </message>
     <message>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation type="obsolete">¿Eliminar el archivo de imagen «%1»?
-Esta acción no se puede deshacer.</translation>
+        <translation type="obsolete">Удалить файл изображения &quot;%1&quot;?
+Это действие нельзя отменить.</translation>
     </message>
     <message>
         <source>Copy Image To...</source>
-        <translation type="obsolete">Copiar imagen a...</translation>
+        <translation type="obsolete">Копировать изображение в...</translation>
     </message>
     <message>
         <source>Copy Image To</source>
-        <translation type="obsolete">Copiar imagen a</translation>
+        <translation type="obsolete">Копировать изображение в</translation>
     </message>
     <message>
         <source>Rename / Move Image To...</source>
-        <translation type="obsolete">Renombrar / Mover imagen a...</translation>
+        <translation type="obsolete">Переименовать / Переместить изображение в...</translation>
     </message>
     <message>
         <source>Move Image To</source>
-        <translation type="obsolete">Mover imagen a</translation>
+        <translation type="obsolete">Переместить изображение в</translation>
     </message>
     <message>
         <source>Upload Image</source>
-        <translation type="obsolete">Subir imagen</translation>
+        <translation type="obsolete">Загрузить изображение</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="obsolete">La subida de imágenes aún no está configurada.
-Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
+        <translation type="obsolete">Загрузка изображений ещё не настроена.
+Настройте загрузчик в Настройки → Изображения.</translation>
     </message>
     <message>
         <source>Upload All Local Images</source>
-        <translation type="obsolete">Subir todas las imágenes locales</translation>
+        <translation type="obsolete">Загрузить все локальные изображения</translation>
     </message>
     <message>
         <source>Upload All Images</source>
-        <translation type="obsolete">Subir todas las imágenes</translation>
+        <translation type="obsolete">Загрузить все изображения</translation>
     </message>
     <message>
         <source>Reload All Images</source>
-        <translation type="obsolete">Recargar todas las imágenes</translation>
+        <translation type="obsolete">Перезагрузить все изображения</translation>
     </message>
     <message>
         <source>25%</source>
@@ -528,7 +528,7 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     </message>
     <message>
         <source>Standard Markdown ![](url)</source>
-        <translation type="obsolete">Markdown estándar ![](url)</translation>
+        <translation type="obsolete">Стандартный Markdown ![](url)</translation>
     </message>
     <message>
         <source>HTML &lt;img&gt;</source>
@@ -536,151 +536,151 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="obsolete">Insertar ruta relativa</translation>
+        <translation type="obsolete">Вставить относительный путь</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="obsolete">Insertar ruta absoluta</translation>
+        <translation type="obsolete">Вставить абсолютный путь</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="obsolete">Copiar a carpeta personalizada</translation>
+        <translation type="obsolete">Копировать в пользовательскую папку</translation>
     </message>
     <message>
         <source>Copy All Images To...</source>
-        <translation type="obsolete">Copiar todas las imágenes a...</translation>
+        <translation type="obsolete">Копировать все изображения в...</translation>
     </message>
     <message>
         <source>Copy All Images To</source>
-        <translation type="obsolete">Copiar todas las imágenes a</translation>
+        <translation type="obsolete">Копировать все изображения в</translation>
     </message>
     <message>
         <source>Copy All Images</source>
-        <translation type="obsolete">Copiar todas las imágenes</translation>
+        <translation type="obsolete">Копировать все изображения</translation>
     </message>
     <message>
         <source>Copied %1 of %2 image(s).</source>
-        <translation type="obsolete">Se copiaron %1 de %2 imagen(es).</translation>
+        <translation type="obsolete">Скопировано %1 из %2 изображений.</translation>
     </message>
     <message>
         <source>Move All Images To...</source>
-        <translation type="obsolete">Mover todas las imágenes a...</translation>
+        <translation type="obsolete">Переместить все изображения в...</translation>
     </message>
     <message>
         <source>Move All Images To</source>
-        <translation type="obsolete">Mover todas las imágenes a</translation>
+        <translation type="obsolete">Переместить все изображения в</translation>
     </message>
     <message>
         <source>Move All Images</source>
-        <translation type="obsolete">Mover todas las imágenes</translation>
+        <translation type="obsolete">Переместить все изображения</translation>
     </message>
     <message>
         <source>Moved %1 image(s).</source>
-        <translation type="obsolete">Se movieron %1 imagen(es).</translation>
+        <translation type="obsolete">Перемещено %1 изображений.</translation>
     </message>
     <message>
         <source>Global Image Settings...</source>
-        <translation type="obsolete">Configuración global de imágenes...</translation>
+        <translation type="obsolete">Глобальные настройки изображений...</translation>
     </message>
     <message>
         <source>Show / Hide Sidebar</source>
-        <translation type="vanished">Mostrar / ocultar barra lateral</translation>
+        <translation type="vanished">Показать / скрыть боковую панель</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation type="obsolete">Esquema</translation>
+        <translation type="obsolete">Структура</translation>
     </message>
     <message>
         <source>File Tree</source>
-        <translation type="obsolete">Árbol de archivos</translation>
+        <translation type="obsolete">Дерево файлов</translation>
     </message>
     <message>
         <source>Source Code Mode</source>
-        <translation type="obsolete">Modo código fuente</translation>
+        <translation type="obsolete">Режим исходного кода</translation>
     </message>
     <message>
         <source>Word Wrap</source>
-        <translation type="obsolete">Ajuste de línea</translation>
+        <translation type="obsolete">Перенос строк</translation>
     </message>
     <message>
         <source>Focus Mode</source>
-        <translation type="obsolete">Modo enfoque</translation>
+        <translation type="obsolete">Режим фокусировки</translation>
     </message>
     <message>
         <source>Typewriter Mode</source>
-        <translation type="obsolete">Modo máquina de escribir</translation>
+        <translation type="obsolete">Режим пишущей машинки</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="obsolete">Mostrar barra de estado</translation>
+        <translation type="obsolete">Показать строку состояния</translation>
     </message>
     <message>
         <source>Word Count Window</source>
-        <translation type="obsolete">Ventana de recuento de palabras</translation>
+        <translation type="obsolete">Окно подсчёта слов</translation>
     </message>
     <message>
         <source>Toggle Full Screen</source>
-        <translation type="obsolete">Alternar pantalla completa</translation>
+        <translation type="obsolete">Переключить полноэкранный режим</translation>
     </message>
     <message>
         <source>Always on Top</source>
-        <translation type="obsolete">Siempre visible</translation>
+        <translation type="obsolete">Поверх всех окон</translation>
     </message>
     <message>
         <source>Actual Size</source>
-        <translation type="obsolete">Tamaño real</translation>
+        <translation type="obsolete">Фактический размер</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="obsolete">Acercar</translation>
+        <translation type="obsolete">Увеличить</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="obsolete">Alejar</translation>
+        <translation type="obsolete">Уменьшить</translation>
     </message>
     <message>
         <source>Switch Windows</source>
-        <translation type="obsolete">Cambiar ventanas</translation>
+        <translation type="obsolete">Переключить окна</translation>
     </message>
     <message>
         <source>Quick Start</source>
-        <translation type="obsolete">Inicio rápido</translation>
+        <translation type="obsolete">Быстрый старт</translation>
     </message>
     <message>
         <source>Markdown Reference</source>
-        <translation type="obsolete">Referencia de Markdown</translation>
+        <translation type="obsolete">Справочник Markdown</translation>
     </message>
     <message>
         <source>Custom Themes</source>
-        <translation type="obsolete">Temas personalizados</translation>
+        <translation type="obsolete">Пользовательские темы</translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="obsolete">Agradecimientos</translation>
+        <translation type="obsolete">Благодарности</translation>
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="obsolete">Registro de cambios</translation>
+        <translation type="obsolete">Журнал изменений</translation>
     </message>
     <message>
         <source>Official Website</source>
-        <translation type="obsolete">Sitio web oficial</translation>
+        <translation type="obsolete">Официальный сайт</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="obsolete">Comentarios</translation>
+        <translation type="obsolete">Обратная связь</translation>
     </message>
     <message>
         <source>Check for Updates...</source>
-        <translation type="obsolete">Buscar actualizaciones...</translation>
+        <translation type="obsolete">Проверить обновления...</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="obsolete">Acerca de</translation>
+        <translation type="obsolete">О программе</translation>
     </message>
     <message>
         <source>About Mufpen</source>
-        <translation type="obsolete">Acerca de Mufpen</translation>
+        <translation type="obsolete">О Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -688,135 +688,135 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="obsolete">Mufpen %1
 
-Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.</translation>
+Быстрый, лёгкий нативный редактор Markdown, созданный на C++ и Qt 6 Widgets.</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="obsolete">Archivo</translation>
+        <translation type="obsolete">Файл</translation>
     </message>
     <message>
         <source>Open Recent</source>
-        <translation type="obsolete">Abrir recientes</translation>
+        <translation type="obsolete">Недавние файлы</translation>
     </message>
     <message>
         <source>Reopen with Encoding</source>
-        <translation type="obsolete">Reabrir con codificación</translation>
+        <translation type="obsolete">Открыть заново в кодировке</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="obsolete">Exportar</translation>
+        <translation type="obsolete">Экспорт</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="obsolete">Editar</translation>
+        <translation type="obsolete">Правка</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="obsolete">Seleccionar</translation>
+        <translation type="obsolete">Выделить</translation>
     </message>
     <message>
         <source>Delete Range</source>
-        <translation type="obsolete">Eliminar rango</translation>
+        <translation type="obsolete">Удалить диапазон</translation>
     </message>
     <message>
         <source>Math Tools</source>
-        <translation type="obsolete">Herramientas matemáticas</translation>
+        <translation type="obsolete">Математические инструменты</translation>
     </message>
     <message>
         <source>Smart Punctuation</source>
-        <translation type="obsolete">Puntuación inteligente</translation>
+        <translation type="obsolete">Умная пунктуация</translation>
     </message>
     <message>
         <source>Line Breaks</source>
-        <translation type="obsolete">Saltos de línea</translation>
+        <translation type="obsolete">Переносы строк</translation>
     </message>
     <message>
         <source>Find and Replace</source>
-        <translation type="obsolete">Buscar y reemplazar</translation>
+        <translation type="obsolete">Найти и заменить</translation>
     </message>
     <message>
         <source>Table</source>
-        <translation type="obsolete">Tabla</translation>
+        <translation type="obsolete">Таблица</translation>
     </message>
     <message>
         <source>Code Tools</source>
-        <translation type="obsolete">Herramientas de código</translation>
+        <translation type="obsolete">Инструменты кода</translation>
     </message>
     <message>
         <source>Alert</source>
-        <translation type="obsolete">Alerta</translation>
+        <translation type="obsolete">Предупреждение</translation>
     </message>
     <message>
         <source>Task Status</source>
-        <translation type="obsolete">Estado de la tarea</translation>
+        <translation type="obsolete">Статус задачи</translation>
     </message>
     <message>
         <source>List Indent</source>
-        <translation type="obsolete">Sangría de lista</translation>
+        <translation type="obsolete">Отступ списка</translation>
     </message>
     <message>
         <source>Front Matter</source>
-        <translation type="obsolete">Front Matter</translation>
+        <translation type="obsolete">Метаданные</translation>
     </message>
     <message>
         <source>Code</source>
-        <translation type="obsolete">Código</translation>
+        <translation type="obsolete">Код</translation>
     </message>
     <message>
         <source>Math</source>
-        <translation type="obsolete">Matemáticas</translation>
+        <translation type="obsolete">Математика</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="obsolete">Formato</translation>
+        <translation type="obsolete">Формат</translation>
     </message>
     <message>
         <source>Link Actions</source>
-        <translation type="obsolete">Acciones de enlace</translation>
+        <translation type="obsolete">Действия со ссылкой</translation>
     </message>
     <message>
         <source>Image</source>
-        <translation type="obsolete">Imagen</translation>
+        <translation type="obsolete">Изображение</translation>
     </message>
     <message>
         <source>Resize Image</source>
-        <translation type="obsolete">Redimensionar imagen</translation>
+        <translation type="obsolete">Изменить размер изображения</translation>
     </message>
     <message>
         <source>Convert Image Syntax</source>
-        <translation type="obsolete">Convertir sintaxis de imagen</translation>
+        <translation type="obsolete">Преобразовать синтаксис изображения</translation>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="obsolete">Al insertar imagen local</translation>
+        <translation type="obsolete">При вставке локального изображения</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="obsolete">Ver</translation>
+        <translation type="obsolete">Вид</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="obsolete">Tema</translation>
+        <translation type="obsolete">Тема</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="obsolete">Ayuda</translation>
+        <translation type="obsolete">Справка</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="obsolete">tabla %1:%2 desplazamiento %3</translation>
+        <translation type="obsolete">таблица %1:%2 смещение %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="obsolete">%1 palabras</translation>
+        <translation type="obsolete">%1 слов</translation>
     </message>
     <message>
         <source>Insert Table</source>
-        <translation type="obsolete">Insertar tabla</translation>
+        <translation type="obsolete">Вставить таблицу</translation>
     </message>
     <message>
         <source>Unicode</source>
-        <translation type="vanished">Unicode</translation>
+        <translation type="vanished">Юникод</translation>
     </message>
     <message>
         <source>UTF-8</source>
@@ -832,329 +832,329 @@ Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.<
     </message>
     <message>
         <source>Western</source>
-        <translation type="vanished">Occidental</translation>
+        <translation type="vanished">Западноевропейская</translation>
     </message>
     <message>
         <source>Western (Windows-1252)</source>
-        <translation type="vanished">Occidental (Windows-1252)</translation>
+        <translation type="vanished">Западноевропейская (Windows-1252)</translation>
     </message>
     <message>
         <source>Cyrillic</source>
-        <translation type="vanished">Cirílico</translation>
+        <translation type="vanished">Кириллица</translation>
     </message>
     <message>
         <source>Cyrillic (Windows-1251)</source>
-        <translation type="vanished">Cirílico (Windows-1251)</translation>
+        <translation type="vanished">Кириллица (Windows-1251)</translation>
     </message>
     <message>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation type="vanished">Cirílico (ISO-8859-5)</translation>
+        <translation type="vanished">Кириллица (ISO-8859-5)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM866)</source>
-        <translation type="vanished">Cirílico (IBM866)</translation>
+        <translation type="vanished">Кириллица (IBM866)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM855)</source>
-        <translation type="vanished">Cirílico (IBM855)</translation>
+        <translation type="vanished">Кириллица (IBM855)</translation>
     </message>
     <message>
         <source>Cyrillic (KOI8-R)</source>
-        <translation type="vanished">Cirílico (KOI8-R)</translation>
+        <translation type="vanished">Кириллица (KOI8-R)</translation>
     </message>
     <message>
         <source>Cyrillic (Mac)</source>
-        <translation type="vanished">Cirílico (Mac)</translation>
+        <translation type="vanished">Кириллица (Mac)</translation>
     </message>
     <message>
         <source>Central European</source>
-        <translation type="vanished">Centroeuropeo</translation>
+        <translation type="vanished">Центральноевропейская</translation>
     </message>
     <message>
         <source>Central European (Windows-1250)</source>
-        <translation type="vanished">Centroeuropeo (Windows-1250)</translation>
+        <translation type="vanished">Центральноевропейская (Windows-1250)</translation>
     </message>
     <message>
         <source>Central European (ISO-8859-2)</source>
-        <translation type="vanished">Centroeuropeo (ISO-8859-2)</translation>
+        <translation type="vanished">Центральноевропейская (ISO-8859-2)</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="vanished">Griego</translation>
+        <translation type="vanished">Греческая</translation>
     </message>
     <message>
         <source>Greek (Windows-1253)</source>
-        <translation type="vanished">Griego (Windows-1253)</translation>
+        <translation type="vanished">Греческая (Windows-1253)</translation>
     </message>
     <message>
         <source>Greek (ISO-8859-7)</source>
-        <translation type="vanished">Griego (ISO-8859-7)</translation>
+        <translation type="vanished">Греческая (ISO-8859-7)</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="vanished">Hebreo</translation>
+        <translation type="vanished">Иврит</translation>
     </message>
     <message>
         <source>Hebrew (Windows-1255)</source>
-        <translation type="vanished">Hebreo (Windows-1255)</translation>
+        <translation type="vanished">Иврит (Windows-1255)</translation>
     </message>
     <message>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation type="vanished">Hebreo (ISO-8859-8)</translation>
+        <translation type="vanished">Иврит (ISO-8859-8)</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="vanished">Chino simplificado</translation>
+        <translation type="vanished">Китайская упрощённая</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB2312)</source>
-        <translation type="vanished">Chino simplificado (GB2312)</translation>
+        <translation type="vanished">Китайская упрощённая (GB2312)</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB18030)</source>
-        <translation type="vanished">Chino simplificado (GB18030)</translation>
+        <translation type="vanished">Китайская упрощённая (GB18030)</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="vanished">Chino tradicional</translation>
+        <translation type="vanished">Китайская традиционная</translation>
     </message>
     <message>
         <source>Chinese Traditional (Big5)</source>
-        <translation type="vanished">Chino tradicional (Big5)</translation>
+        <translation type="vanished">Китайская традиционная (Big5)</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="vanished">Japonés</translation>
+        <translation type="vanished">Японская</translation>
     </message>
     <message>
         <source>Japanese (Shift_JIS)</source>
-        <translation type="vanished">Japonés (Shift_JIS)</translation>
+        <translation type="vanished">Японская (Shift_JIS)</translation>
     </message>
     <message>
         <source>Japanese (EUC-JP)</source>
-        <translation type="vanished">Japonés (EUC-JP)</translation>
+        <translation type="vanished">Японская (EUC-JP)</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="vanished">Coreano</translation>
+        <translation type="vanished">Корейская</translation>
     </message>
     <message>
         <source>Korean (EUC-KR)</source>
-        <translation type="vanished">Coreano (EUC-KR)</translation>
+        <translation type="vanished">Корейская (EUC-KR)</translation>
     </message>
     <message>
         <source>Thai</source>
-        <translation type="vanished">Tailandés</translation>
+        <translation type="vanished">Тайская</translation>
     </message>
     <message>
         <source>Thai (TIS-620)</source>
-        <translation type="vanished">Tailandés (TIS-620)</translation>
+        <translation type="vanished">Тайская (TIS-620)</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Alternar modo fuente / renderizado</translation>
+        <translation type="vanished">Переключить режим исходного кода / просмотра</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="obsolete">Reemplazar</translation>
+        <translation type="obsolete">Заменить</translation>
     </message>
 </context>
 <context>
     <name>VirtualSourceEdit</name>
     <message>
         <source>Markdown source editor</source>
-        <translation type="vanished">Editor de código fuente Markdown</translation>
+        <translation type="vanished">Редактор исходного кода Markdown</translation>
     </message>
     <message>
         <source>Plain-text Markdown source</source>
-        <translation type="vanished">Código fuente Markdown en texto plano</translation>
+        <translation type="vanished">Исходный код Markdown в виде простого текста</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>A fast native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Un editor Markdown nativo rápido creado con C++ y Qt 6 Widgets.</translation>
+        <translation type="vanished">Быстрый нативный редактор Markdown, созданный на C++ и Qt 6 Widgets.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
         <source>Cannot write to the portable data folder.</source>
-        <translation>No se puede escribir en la carpeta de datos de la versión portátil.</translation>
+        <translation>Не удалось записать данные в папку переносной версии.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
         <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
-        <translation>No se pueden cargar los datos ICU incluidos. Vuelve a instalar Mufpen.</translation>
+        <translation>Не удалось загрузить данные ICU из комплекта поставки. Переустановите Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
         <source>A fast, lightweight, native Markdown editor built with C++ and Qt 6.</source>
-        <translation>Un editor Markdown rápido, ligero y nativo, creado con C++ y Qt 6.</translation>
+        <translation>Быстрый, лёгкий, нативный редактор Markdown, созданный на C++ и Qt 6.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="149"/>
         <source>Open &lt;folder&gt; in the sidebar file browser.</source>
-        <translation>Abrir &lt;folder&gt; en el explorador de archivos de la barra lateral.</translation>
+        <translation>Открыть &lt;folder&gt; в файловом браузере боковой панели.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="159"/>
         <source>Markdown or text file (or folder) to open.</source>
-        <translation>Archivo Markdown, archivo de texto o carpeta que se abrirá.</translation>
+        <translation>Файл Markdown, текстовый файл или папка для открытия.</translation>
     </message>
     <message>
         <source>Default Markdown editor</source>
-        <translation type="vanished">Editor de Markdown predeterminado</translation>
+        <translation type="vanished">Редактор Markdown по умолчанию</translation>
     </message>
     <message>
         <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Mufpen está registrado como editor de archivos Markdown.
-¿Desea convertirlo en su editor predeterminado ahora?</translation>
+        <translation type="vanished">Mufpen зарегистрирован как редактор файлов Markdown.
+Сделать его редактором по умолчанию?</translation>
     </message>
     <message>
         <source>Markdown or text file to open.</source>
-        <translation type="vanished">Archivo Markdown o de texto para abrir.</translation>
+        <translation type="vanished">Файл Markdown или текстовый файл для открытия.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::BlockLayoutBuilder</name>
+    <name>mufpen::BlockLayoutBuilder</name>
     <message>
         <location filename="../src/render/BlockLayoutBuilder.cpp" line="504"/>
         <source>Start writing...</source>
-        <translation>Empiece a escribir...</translation>
+        <translation>Начните писать...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::CustomCommandUploader</name>
+    <name>mufpen::CustomCommandUploader</name>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="25"/>
         <source>no upload command configured</source>
-        <translation>no se ha configurado ningún comando de subida</translation>
+        <translation>команда загрузки не настроена</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="34"/>
         <source>empty upload command</source>
-        <translation>el comando de subida está vacío</translation>
+        <translation>пустая команда загрузки</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="92"/>
         <source>uploader exited with code %1</source>
-        <translation>el programa de subida terminó con el código %1</translation>
+        <translation>программа загрузки завершилась с кодом %1</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="109"/>
         <source>uploader produced no URLs</source>
-        <translation>el programa de subida no devolvió ninguna URL</translation>
+        <translation>программа загрузки не вернула ни одного URL</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentSession</name>
+    <name>mufpen::DocumentSession</name>
     <message>
         <location filename="../src/document/DocumentSession.cpp" line="872"/>
         <source>Untitled</source>
-        <translation>Sin título</translation>
+        <translation>Без названия</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentTab</name>
+    <name>mufpen::DocumentTab</name>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="116"/>
         <location filename="../src/app/DocumentTab.cpp" line="444"/>
         <source>Markdown source</source>
-        <translation>Código Markdown</translation>
+        <translation>Исходный код Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="119"/>
         <location filename="../src/app/DocumentTab.cpp" line="445"/>
         <source>Read-only preview</source>
-        <translation>Vista previa de solo lectura</translation>
+        <translation>Предпросмотр только для чтения</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="123"/>
         <location filename="../src/app/DocumentTab.cpp" line="446"/>
         <source>Synchronized scrolling</source>
-        <translation>Desplazamiento sincronizado</translation>
+        <translation>Синхронная прокрутка</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="147"/>
         <location filename="../src/app/DocumentTab.cpp" line="452"/>
         <source>Side by side</source>
-        <translation>Lado a lado</translation>
+        <translation>Рядом</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="148"/>
         <location filename="../src/app/DocumentTab.cpp" line="453"/>
         <source>Top and bottom</source>
-        <translation>Arriba y abajo</translation>
+        <translation>Сверху и снизу</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="157"/>
         <location filename="../src/app/DocumentTab.cpp" line="454"/>
         <source>Swap source and preview</source>
-        <translation>Intercambiar código y vista previa</translation>
+        <translation>Поменять местами исходный код и предпросмотр</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="449"/>
         <source>Split layout</source>
-        <translation>Disposición de paneles</translation>
+        <translation>Расположение панелей</translation>
     </message>
 </context>
 <context>
-    <name>muffin::EditorView</name>
+    <name>mufpen::EditorView</name>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="115"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1659"/>
         <source>(no spelling suggestions)</source>
-        <translation>(sin sugerencias ortográficas)</translation>
+        <translation>(нет вариантов исправления)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="131"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1670"/>
         <source>Ignore &quot;%1&quot;</source>
-        <translation>Ignorar &quot;%1&quot;</translation>
+        <translation>Игнорировать «%1»</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorViewPaint.cpp" line="56"/>
         <source>Loading…</source>
-        <translation>Cargando…</translation>
+        <translation>Загрузка…</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="818"/>
         <source>Markdown editor</source>
-        <translation>Editor de Markdown</translation>
+        <translation>Редактор Markdown</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="819"/>
         <source>Rendered Markdown document</source>
-        <translation>Documento Markdown renderizado</translation>
+        <translation>Отрендеренный документ Markdown</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileController</name>
+    <name>mufpen::FileController</name>
     <message>
         <location filename="../src/io/FileController.cpp" line="367"/>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="368"/>
         <source>Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)</source>
-        <translation>Archivos Markdown y de texto (*.md *.markdown *.mdown *.txt);;Todos los archivos (*.*)</translation>
+        <translation>Файлы Markdown и текстовые файлы (*.md *.markdown *.mdown *.txt);;Все файлы (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Save As</source>
-        <translation>Guardar como</translation>
+        <translation>Сохранить как</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="603"/>
         <source>The document cannot be encoded as %1.</source>
-        <translation>El documento no se puede codificar como %1.</translation>
+        <translation>Документ невозможно закодировать в %1.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Markdown files (*.md);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Archivos Markdown (*.md);;Archivos de texto (*.txt);;Todos los archivos (*.*)</translation>
+        <translation>Файлы Markdown (*.md);;Текстовые файлы (*.txt);;Все файлы (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
@@ -1165,213 +1165,213 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Markdown files (*.md *.markdown);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Archivos Markdown (*.md *.markdown);;Archivos de texto (*.txt);;Todos los archivos (*.*)</translation>
+        <translation>Файлы Markdown (*.md *.markdown);;Текстовые файлы (*.txt);;Все файлы (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <source>The current document has unsaved changes.</source>
-        <translation>El documento actual tiene cambios sin guardar.</translation>
+        <translation>В текущем документе есть несохранённые изменения.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="529"/>
         <source>File Missing</source>
-        <translation>Archivo no encontrado</translation>
+        <translation>Файл отсутствует</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="530"/>
         <source>The file &quot;%1&quot; no longer exists on disk. Use Save As to write it to a new location.</source>
-        <translation>El archivo «%1» ya no existe en el disco. Use Guardar como para guardarlo en otra ubicación.</translation>
+        <translation>Файл «%1» больше не существует на диске. Используйте «Сохранить как», чтобы записать его в другое место.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="538"/>
         <source>File Changed on Disk</source>
-        <translation>Archivo modificado en el disco</translation>
+        <translation>Файл изменён на диске</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
         <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
-        <translation>El archivo «%1» se ha modificado fuera de Mufpen. ¿Desea sobrescribirlo?</translation>
+        <translation>Файл «%1» был изменён вне Mufpen. Перезаписать его?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
         <location filename="../src/io/FileController.cpp" line="636"/>
         <source>Open Failed</source>
-        <translation>Error al abrir</translation>
+        <translation>Не удалось открыть</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <source>Could not detect a lossless text encoding for this file.</source>
-        <translation>No se pudo detectar una codificación de texto sin pérdida para este archivo.</translation>
+        <translation>Не удалось определить кодировку текста для этого файла без потери данных.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="574"/>
         <location filename="../src/io/FileController.cpp" line="611"/>
         <location filename="../src/io/FileController.cpp" line="616"/>
         <source>Save Failed</source>
-        <translation>Error al guardar</translation>
+        <translation>Не удалось сохранить</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <location filename="../src/io/FileController.cpp" line="602"/>
         <location filename="../src/io/FileController.cpp" line="642"/>
         <source>Encoding Error</source>
-        <translation>Error de codificación</translation>
+        <translation>Ошибка кодировки</translation>
     </message>
     <message>
         <source>Unsupported encoding: %1</source>
-        <translation type="vanished">Codificación no compatible: %1</translation>
+        <translation type="vanished">Неподдерживаемая кодировка: %1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="643"/>
         <source>Failed to decode file with encoding: %1</source>
-        <translation>Error al decodificar el archivo con la codificación: %1</translation>
+        <translation>Не удалось декодировать файл с кодировкой: %1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="658"/>
         <source>The document has unsaved changes. Save before reopening with a new encoding?</source>
-        <translation>El documento tiene cambios sin guardar. ¿Guardar antes de reabrir con una nueva codificación?</translation>
+        <translation>Документ содержит несохранённые изменения. Сохранить перед повторным открытием с новой кодировкой?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Move To</source>
-        <translation>Mover a</translation>
+        <translation>Переместить в</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Move Failed</source>
-        <translation>Error al mover</translation>
+        <translation>Ошибка перемещения</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Could not move file to:
 %1</source>
-        <translation>No se pudo mover el archivo a:
+        <translation>Не удалось переместить файл в:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileOpenConfirmation</name>
+    <name>mufpen::FileOpenConfirmation</name>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="84"/>
         <source>Open this file?</source>
-        <translation>¿Abrir este archivo?</translation>
+        <translation>Открыть этот файл?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="85"/>
         <source>This file is not a Markdown or text file. Are you sure you want to open it?</source>
-        <translation>Este archivo no es un archivo Markdown ni de texto. ¿Seguro que quieres abrirlo?</translation>
+        <translation>Этот файл не является файлом Markdown или текстовым файлом. Вы уверены, что хотите его открыть?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="87"/>
         <source>Opening this large file may take a long time and use a lot of memory. Are you sure you want to open it?</source>
-        <translation>Abrir este archivo grande puede tardar mucho tiempo y consumir mucha memoria. ¿Seguro que quieres abrirlo?</translation>
+        <translation>Открытие этого большого файла может занять много времени и потребовать много памяти. Вы уверены, что хотите его открыть?</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FilePathOps</name>
+    <name>mufpen::FilePathOps</name>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="182"/>
         <source>path does not exist</source>
-        <translation>la ruta no existe</translation>
+        <translation>путь не существует</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="23"/>
         <source>operation failed</source>
-        <translation>la operación falló</translation>
+        <translation>операция не выполнена</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="31"/>
         <source>file already exists</source>
-        <translation>el archivo ya existe</translation>
+        <translation>файл уже существует</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="38"/>
         <source>could not create parent directory</source>
-        <translation>no se pudo crear la carpeta superior</translation>
+        <translation>не удалось создать родительский каталог</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="56"/>
         <source>path already exists</source>
-        <translation>la ruta ya existe</translation>
+        <translation>путь уже существует</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="62"/>
         <source>could not create folder</source>
-        <translation>no se pudo crear la carpeta</translation>
+        <translation>не удалось создать папку</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="84"/>
         <source>could not rename (target may exist or the move crosses volumes)</source>
-        <translation>no se pudo cambiar el nombre (el destino puede existir o el traslado puede ser entre volúmenes)</translation>
+        <translation>не удалось переименовать (целевой путь может уже существовать или перемещение выполняется между томами)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="93"/>
         <source>could not rename (case-change intermediate step failed)</source>
-        <translation>no se pudo cambiar el nombre (falló el paso intermedio del cambio de mayúsculas y minúsculas)</translation>
+        <translation>не удалось переименовать (сбой промежуточного этапа изменения регистра)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="103"/>
         <source>could not rename (case-change final step failed)</source>
-        <translation>no se pudo cambiar el nombre (falló el paso final del cambio de mayúsculas y minúsculas)</translation>
+        <translation>не удалось переименовать (сбой заключительного этапа изменения регистра)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="137"/>
         <source>could not create destination directory</source>
-        <translation>no se pudo crear la carpeta de destino</translation>
+        <translation>не удалось создать целевой каталог</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="143"/>
         <source>could not copy (destination may already exist)</source>
-        <translation>no se pudo copiar (el destino puede existir)</translation>
+        <translation>не удалось скопировать (целевой путь может уже существовать)</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FindBarWidget</name>
+    <name>mufpen::FindBarWidget</name>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="104"/>
         <source>Find</source>
-        <translation>Buscar</translation>
+        <translation>Найти</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="105"/>
         <source>Previous</source>
-        <translation>Anterior</translation>
+        <translation>Предыдущий</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="106"/>
         <source>Next</source>
-        <translation>Siguiente</translation>
+        <translation>Следующий</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="108"/>
         <location filename="../src/editor/FindBarWidget.cpp" line="109"/>
         <source>Replace</source>
-        <translation>Reemplazar</translation>
+        <translation>Заменить</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="110"/>
         <source>Replace All</source>
-        <translation>Reemplazar todo</translation>
+        <translation>Заменить все</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="111"/>
         <source>Regex</source>
-        <translation>Expresión regular</translation>
+        <translation>Регулярное выражение</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="112"/>
         <source>Match Case</source>
-        <translation>Distinguir mayúsculas y minúsculas</translation>
+        <translation>Учитывать регистр</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="154"/>
         <source>Not found</source>
-        <translation>No encontrado</translation>
+        <translation>Не найдено</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="156"/>
@@ -1380,199 +1380,199 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::HelpViewerDialog</name>
+    <name>mufpen::HelpViewerDialog</name>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
         <source>%1 — Mufpen Help</source>
-        <translation>%1 — Ayuda de Mufpen</translation>
+        <translation>%1 — Справка Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
         <source>Go back</source>
-        <translation>Atrás</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="161"/>
         <source>Go forward</source>
-        <translation>Adelante</translation>
+        <translation>Вперёд</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="162"/>
         <source>Scroll to top</source>
-        <translation>Ir arriba</translation>
+        <translation>В начало</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="190"/>
         <source>Quick Start</source>
-        <translation>Inicio rápido</translation>
+        <translation>Быстрый старт</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="192"/>
         <source>Markdown Reference</source>
-        <translation>Referencia de Markdown</translation>
+        <translation>Справочник Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="194"/>
         <source>Acknowledgements</source>
-        <translation>Agradecimientos</translation>
+        <translation>Благодарности</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="211"/>
         <source>This page is not available.</source>
-        <translation>Esta página no está disponible.</translation>
+        <translation>Эта страница недоступна.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::ImageFileOps</name>
+    <name>mufpen::ImageFileOps</name>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="216"/>
         <source>source or destination directory is unavailable</source>
-        <translation>la carpeta de origen o de destino no está disponible</translation>
+        <translation>исходный или целевой каталог недоступен</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="250"/>
         <source>could not locate an image destination in the document source</source>
-        <translation>no se pudo encontrar la ruta de una imagen en el código fuente del documento</translation>
+        <translation>не удалось найти путь изображения в исходном коде документа</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="269"/>
         <source>could not move %1</source>
-        <translation>no se pudo mover %1</translation>
+        <translation>не удалось переместить %1</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="271"/>
         <source>; rollback failed for %1</source>
-        <translation>; no se pudo devolver %1 a su ubicación original</translation>
+        <translation>; не удалось отменить изменения для %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::LanguageManager</name>
+    <name>mufpen::LanguageManager</name>
     <message>
         <location filename="../src/app/LanguageManager.cpp" line="17"/>
         <source>System Default</source>
-        <translation>Predeterminado del sistema</translation>
+        <translation>Системный язык</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MainWindow</name>
+    <name>mufpen::MainWindow</name>
     <message>
         <source>Parse %1 ms</source>
-        <translation type="vanished">Análisis %1 ms</translation>
+        <translation type="vanished">Разбор %1 мс</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="431"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="933"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="937"/>
         <source> (Editing Locked)</source>
-        <translation> (Edición bloqueada)</translation>
+        <translation> (Редактирование заблокировано)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Unlock Editing</source>
-        <translation>Desbloquear edición</translation>
+        <translation>Разблокировать редактирование</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="647"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Lock Editing</source>
-        <translation>Bloquear edición</translation>
+        <translation>Заблокировать редактирование</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="493"/>
         <source>This pane is a read-only preview. Edit the Markdown source on the left.</source>
-        <translation>Este panel es una vista previa de solo lectura. Edite el código Markdown a la izquierda.</translation>
+        <translation>Эта панель предназначена для предпросмотра только для чтения. Редактируйте исходный код Markdown слева.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="495"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="932"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="936"/>
         <source>Editing is locked. Unlock editing to change this document.</source>
-        <translation>La edición está bloqueada. Desbloquéala para modificar este documento.</translation>
+        <translation>Редактирование заблокировано. Разблокируйте его, чтобы изменить этот документ.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="497"/>
         <source>The document is still loading.</source>
-        <translation>El documento aún se está cargando.</translation>
+        <translation>Документ ещё загружается.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="688"/>
         <source>Open Folder</source>
-        <translation>Abrir carpeta</translation>
+        <translation>Открыть папку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1933"/>
         <source>Show / Hide Sidebar</source>
-        <translation>Mostrar / ocultar barra lateral</translation>
+        <translation>Показать / скрыть боковую панель</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Alternar modo fuente / renderizado</translation>
+        <translation type="vanished">Переключить режим исходного кода / просмотра</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2170"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>File</source>
-        <translation>Archivo</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="114"/>
         <source>New</source>
-        <translation>Nuevo</translation>
+        <translation>Новый</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="119"/>
         <source>New Window</source>
-        <translation>Nueva ventana</translation>
+        <translation>Новое окно</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="128"/>
         <source>Open...</source>
-        <translation>Abrir...</translation>
+        <translation>Открыть...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="124"/>
         <source>Open Folder...</source>
-        <translation>Abrir carpeta...</translation>
+        <translation>Открыть папку...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="133"/>
         <source>Quick Open...</source>
-        <translation>Apertura rápida...</translation>
+        <translation>Быстро открыть...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="144"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2178"/>
         <source>Open Recent</source>
-        <translation>Abrir recientes</translation>
+        <translation>Недавние файлы</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2182"/>
         <source>Reopen with Encoding</source>
-        <translation>Reabrir con codificación</translation>
+        <translation>Открыть заново в кодировке</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="162"/>
         <source>Save</source>
-        <translation>Guardar</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="176"/>
         <source>Save As...</source>
-        <translation>Guardar como...</translation>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="187"/>
         <source>Move To...</source>
-        <translation>Mover a...</translation>
+        <translation>Переместить в...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="193"/>
         <source>Save All Open Files...</source>
-        <translation>Guardar todos los archivos abiertos...</translation>
+        <translation>Сохранить все открытые файлы...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="199"/>
@@ -1580,199 +1580,199 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="402"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1223"/>
         <source>Properties</source>
-        <translation>Propiedades</translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="204"/>
         <source>Show in File Manager...</source>
-        <translation>Mostrar en el gestor de archivos...</translation>
+        <translation>Показать в файловом менеджере...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="209"/>
         <source>Show in Sidebar</source>
-        <translation>Mostrar en la barra lateral</translation>
+        <translation>Показать на боковой панели</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="215"/>
         <source>Delete...</source>
-        <translation>Eliminar...</translation>
+        <translation>Удалить...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="221"/>
         <source>Import...</source>
-        <translation>Importar...</translation>
+        <translation>Импорт...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1914"/>
         <source>Could not move images:
 %1</source>
-        <translation>No se pudieron mover las imágenes:
+        <translation>Не удалось переместить изображения:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1968"/>
         <source>Source and Preview</source>
-        <translation>Código y vista previa</translation>
+        <translation>Исходный код и предпросмотр</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Plataforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Licencia:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Sitio web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Платформа:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Автор:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Лицензия:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Сайт:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
         <source>Export</source>
-        <translation>Exportar</translation>
+        <translation>Экспорт</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="227"/>
         <source>Print...</source>
-        <translation>Imprimir...</translation>
+        <translation>Печать...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="324"/>
         <source>Preferences...</source>
-        <translation>Preferencias...</translation>
+        <translation>Настройки...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Cerrar</translation>
+        <translation type="vanished">Закрыть</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2233"/>
         <source>Edit</source>
-        <translation>Editar</translation>
+        <translation>Правка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="366"/>
         <source>Undo</source>
-        <translation>Deshacer</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="372"/>
         <source>Redo</source>
-        <translation>Rehacer</translation>
+        <translation>Повторить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="378"/>
         <source>Cut</source>
-        <translation>Cortar</translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="383"/>
         <source>Copy</source>
-        <translation>Copiar</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1559"/>
         <source>Copy Image</source>
-        <translation>Copiar imagen</translation>
+        <translation>Копировать изображение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="420"/>
         <source>Paste</source>
-        <translation>Pegar</translation>
+        <translation>Вставить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="425"/>
         <source>Copy as Plain Text</source>
-        <translation>Copiar como texto sin formato</translation>
+        <translation>Копировать как обычный текст</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="431"/>
         <source>Copy as Markdown</source>
-        <translation>Copiar como Markdown</translation>
+        <translation>Копировать как Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="438"/>
         <source>Copy as HTML</source>
-        <translation>Copiar como HTML</translation>
+        <translation>Копировать как HTML</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="445"/>
         <source>Paste as Plain Text</source>
-        <translation>Pegar como texto sin formato</translation>
+        <translation>Вставить как обычный текст</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2250"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="232"/>
         <source>Select</source>
-        <translation>Seleccionar</translation>
+        <translation>Выделить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="450"/>
         <source>Select All</source>
-        <translation>Seleccionar todo</translation>
+        <translation>Выделить всё</translation>
     </message>
     <message>
         <source>Select Current Line</source>
-        <translation type="vanished">Seleccionar línea actual</translation>
+        <translation type="vanished">Выделить текущую строку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="469"/>
         <source>Select Current Format Text</source>
-        <translation>Seleccionar texto con formato actual</translation>
+        <translation>Выделить текст текущего формата</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="518"/>
         <source>Move Line Up</source>
-        <translation>Mover línea arriba</translation>
+        <translation>Переместить строку вверх</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="526"/>
         <source>Move Line Down</source>
-        <translation>Mover línea abajo</translation>
+        <translation>Переместить строку вниз</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="546"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="349"/>
         <source>Delete</source>
-        <translation>Eliminar</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2272"/>
         <source>Delete Range</source>
-        <translation>Eliminar rango</translation>
+        <translation>Удалить диапазон</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="553"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="56"/>
         <source>Delete Block</source>
-        <translation>Eliminar bloque</translation>
+        <translation>Удалить блок</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="560"/>
         <source>Delete Current Line</source>
-        <translation>Eliminar línea actual</translation>
+        <translation>Удалить текущую строку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="567"/>
         <source>Delete Current Format Text</source>
-        <translation>Eliminar texto con formato actual</translation>
+        <translation>Удалить текущий форматированный текст</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="574"/>
         <source>Delete Current Word</source>
-        <translation>Eliminar palabra actual</translation>
+        <translation>Удалить текущее слово</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2281"/>
         <source>Math Tools</source>
-        <translation>Herramientas matemáticas</translation>
+        <translation>Математические инструменты</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2287"/>
         <source>Smart Punctuation</source>
-        <translation>Puntuación inteligente</translation>
+        <translation>Умная пунктуация</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2301"/>
         <source>Line Breaks</source>
-        <translation>Saltos de línea</translation>
+        <translation>Переносы строк</translation>
     </message>
     <message>
         <source>Spaces and Line Breaks</source>
-        <translation type="vanished">Espacios y saltos de línea</translation>
+        <translation type="vanished">Пробелы и переносы строк</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="592"/>
@@ -1787,16 +1787,16 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="614"/>
         <source>Ensure Trailing Newline on Save</source>
-        <translation>Asegurar salto de línea final al guardar</translation>
+        <translation>Обеспечивать перевод строки в конце файла при сохранении</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="vanished">Revisión ortográfica...</translation>
+        <translation type="vanished">Проверка орфографии...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2311"/>
         <source>Find and Replace</source>
-        <translation>Buscar y reemplazar</translation>
+        <translation>Найти и заменить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="739"/>
@@ -1804,117 +1804,117 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="59"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="214"/>
         <source>Paragraph</source>
-        <translation>Párrafo</translation>
+        <translation>Абзац</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="61"/>
         <source>Heading %1</source>
-        <translation>Encabezado %1</translation>
+        <translation>Заголовок %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="749"/>
         <source>Promote Heading</source>
-        <translation>Subir nivel del encabezado</translation>
+        <translation>Повысить уровень заголовка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="761"/>
         <source>Demote Heading</source>
-        <translation>Bajar nivel del encabezado</translation>
+        <translation>Понизить уровень заголовка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2367"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2448"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="171"/>
         <source>Table</source>
-        <translation>Tabla</translation>
+        <translation>Таблица</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="773"/>
         <source>Formula Block</source>
-        <translation>Bloque de fórmula</translation>
+        <translation>Блок формулы</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="785"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="66"/>
         <source>Code Block</source>
-        <translation>Bloque de código</translation>
+        <translation>Блок кода</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2394"/>
         <source>Code Tools</source>
-        <translation>Herramientas de código</translation>
+        <translation>Инструменты кода</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2407"/>
         <source>Alert</source>
-        <translation>Alerta</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="797"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="65"/>
         <source>Quote</source>
-        <translation>Cita</translation>
+        <translation>Цитата</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="805"/>
         <source>Ordered List</source>
-        <translation>Lista ordenada</translation>
+        <translation>Нумерованный список</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="813"/>
         <source>Unordered List</source>
-        <translation>Lista sin ordenar</translation>
+        <translation>Маркированный список</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="821"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="64"/>
         <source>Task List</source>
-        <translation>Lista de tareas</translation>
+        <translation>Список задач</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2349"/>
         <source>Task Status</source>
-        <translation>Estado de la tarea</translation>
+        <translation>Статус задачи</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2355"/>
         <source>List Indent</source>
-        <translation>Sangría de lista</translation>
+        <translation>Отступ списка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="877"/>
         <source>Insert Paragraph Before</source>
-        <translation>Insertar párrafo antes</translation>
+        <translation>Вставить абзац перед</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="888"/>
         <source>Insert Paragraph After</source>
-        <translation>Insertar párrafo después</translation>
+        <translation>Вставить абзац после</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="899"/>
         <source>Link Reference</source>
-        <translation>Referencia de enlace</translation>
+        <translation>Ссылочная метка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="906"/>
         <source>Footnote</source>
-        <translation>Nota al pie</translation>
+        <translation>Сноска</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="913"/>
         <source>Horizontal Rule</source>
-        <translation>Línea horizontal</translation>
+        <translation>Горизонтальная линия</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="921"/>
         <source>Table of Contents</source>
-        <translation>Tabla de contenido</translation>
+        <translation>Оглавление</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2420"/>
         <source>Front Matter</source>
-        <translation>Front Matter</translation>
+        <translation>Метаданные</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="928"/>
@@ -1934,113 +1934,113 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2485"/>
         <source>Format</source>
-        <translation>Formato</translation>
+        <translation>Формат</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1297"/>
         <source>Bold</source>
-        <translation>Negrita</translation>
+        <translation>Полужирный</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1309"/>
         <source>Italic</source>
-        <translation>Cursiva</translation>
+        <translation>Курсив</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1321"/>
         <source>Underline</source>
-        <translation>Subrayado</translation>
+        <translation>Подчёркивание</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1343"/>
         <source>Inline Code</source>
-        <translation>Código en línea</translation>
+        <translation>Встроенный код</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1355"/>
         <source>Inline Formula</source>
-        <translation>Fórmula en línea</translation>
+        <translation>Встроенная формула</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1368"/>
         <source>Strikethrough</source>
-        <translation>Tachado</translation>
+        <translation>Зачёркивание</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1381"/>
         <source>Comment</source>
-        <translation>Comentario</translation>
+        <translation>Комментарий</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1386"/>
         <source>Hyperlink</source>
-        <translation>Hipervínculo</translation>
+        <translation>Гиперссылка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2217"/>
         <source>Export Presets</source>
-        <translation>Preajustes de exportación</translation>
+        <translation>Профили экспорта</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2435"/>
         <source>Paragraph Alignment</source>
-        <translation>Alineación del párrafo</translation>
+        <translation>Выравнивание абзаца</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2497"/>
         <source>Link Actions</source>
-        <translation>Acciones de enlace</translation>
+        <translation>Действия со ссылкой</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2504"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="155"/>
         <source>Image</source>
-        <translation>Imagen</translation>
+        <translation>Изображение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1533"/>
         <source>Insert Image...</source>
-        <translation>Insertar imagen...</translation>
+        <translation>Вставить изображение...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1540"/>
         <source>Insert Local Image...</source>
-        <translation>Insertar imagen local...</translation>
+        <translation>Вставить локальное изображение...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1545"/>
         <source>Open Image Location...</source>
-        <translation>Abrir ubicación de la imagen...</translation>
+        <translation>Открыть расположение изображения...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1579"/>
         <source>Delete Image File</source>
-        <translation>Eliminar archivo de imagen</translation>
+        <translation>Удалить файл изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1605"/>
         <source>Copy Image To...</source>
-        <translation>Copiar imagen a...</translation>
+        <translation>Копировать изображение в...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1639"/>
         <source>Rename / Move Image To...</source>
-        <translation>Renombrar / Mover imagen a...</translation>
+        <translation>Переименовать / Переместить изображение в...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1713"/>
         <source>Upload All Local Images</source>
-        <translation>Subir todas las imágenes locales</translation>
+        <translation>Загрузить все локальные изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1772"/>
         <source>Reload All Images</source>
-        <translation>Recargar todas las imágenes</translation>
+        <translation>Перезагрузить все изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2521"/>
         <source>Resize Image</source>
-        <translation>Redimensionar imagen</translation>
+        <translation>Изменить размер изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1783"/>
@@ -2070,17 +2070,17 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1834"/>
         <source>Custom...</source>
-        <translation>Personalizado...</translation>
+        <translation>Другой...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2533"/>
         <source>Convert Image Syntax</source>
-        <translation>Convertir sintaxis de imagen</translation>
+        <translation>Преобразовать синтаксис изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1856"/>
         <source>Standard Markdown ![](url)</source>
-        <translation>Markdown estándar ![](url)</translation>
+        <translation>Стандартный Markdown ![](url)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1863"/>
@@ -2089,201 +2089,201 @@ Make it your default editor now?</source>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="vanished">Al insertar imagen local</translation>
+        <translation type="vanished">При вставке локального изображения</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="vanished">Insertar ruta relativa</translation>
+        <translation type="vanished">Вставить относительный путь</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="vanished">Insertar ruta absoluta</translation>
+        <translation type="vanished">Вставить абсолютный путь</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="vanished">Copiar a carpeta personalizada</translation>
+        <translation type="vanished">Копировать в пользовательскую папку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1870"/>
         <source>Copy All Images To...</source>
-        <translation>Copiar todas las imágenes a...</translation>
+        <translation>Копировать все изображения в...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1897"/>
         <source>Move All Images To...</source>
-        <translation>Mover todas las imágenes a...</translation>
+        <translation>Переместить все изображения в...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1927"/>
         <source>Global Image Settings...</source>
-        <translation>Configuración global de imágenes...</translation>
+        <translation>Глобальные настройки изображений...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1412"/>
         <source>Clear Style</source>
-        <translation>Borrar estilo</translation>
+        <translation>Очистить стиль</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1017"/>
         <location filename="../src/app/MainWindowActions.cpp" line="165"/>
         <source>Insert Table</source>
-        <translation>Insertar tabla</translation>
+        <translation>Вставить таблицу</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1024"/>
         <source>Insert Row Above</source>
-        <translation>Insertar fila arriba</translation>
+        <translation>Вставить строку выше</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1030"/>
         <source>Insert Row Below</source>
-        <translation>Insertar fila abajo</translation>
+        <translation>Вставить строку ниже</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1076"/>
         <source>Delete Row</source>
-        <translation>Eliminar fila</translation>
+        <translation>Удалить строку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1050"/>
         <source>Move Row Up</source>
-        <translation>Mover fila arriba</translation>
+        <translation>Переместить строку вверх</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1056"/>
         <source>Move Row Down</source>
-        <translation>Mover fila abajo</translation>
+        <translation>Переместить строку вниз</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1038"/>
         <source>Insert Column Left</source>
-        <translation>Insertar columna a la izquierda</translation>
+        <translation>Вставить столбец слева</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1044"/>
         <source>Insert Column Right</source>
-        <translation>Insertar columna a la derecha</translation>
+        <translation>Вставить столбец справа</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1084"/>
         <source>Delete Column</source>
-        <translation>Eliminar columna</translation>
+        <translation>Удалить столбец</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1062"/>
         <source>Move Column Left</source>
-        <translation>Mover columna a la izquierda</translation>
+        <translation>Переместить столбец влево</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1069"/>
         <source>Move Column Right</source>
-        <translation>Mover columna a la derecha</translation>
+        <translation>Переместить столбец вправо</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1107"/>
         <source>Align Left</source>
-        <translation>Alinear a la izquierda</translation>
+        <translation>Выровнять по левому краю</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1113"/>
         <source>Align Center</source>
-        <translation>Centrar</translation>
+        <translation>Выровнять по центру</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1119"/>
         <source>Align Right</source>
-        <translation>Alinear a la derecha</translation>
+        <translation>Выровнять по правому краю</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1125"/>
         <source>Clear Alignment</source>
-        <translation>Borrar alineación</translation>
+        <translation>Очистить выравнивание</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1101"/>
         <source>Delete Table</source>
-        <translation>Eliminar tabla</translation>
+        <translation>Удалить таблицу</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="455"/>
         <source>Select Paragraph or Block</source>
-        <translation>Seleccionar párrafo o bloque</translation>
+        <translation>Выделить абзац или блок</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="462"/>
         <source>Select Current Line or Sentence</source>
-        <translation>Seleccionar línea o frase actual</translation>
+        <translation>Выделить текущую строку или предложение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="476"/>
         <source>Select Current Word</source>
-        <translation>Seleccionar palabra actual</translation>
+        <translation>Выделить текущее слово</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="483"/>
         <source>Jump to Start of Document</source>
-        <translation>Ir al inicio del documento</translation>
+        <translation>Перейти в начало документа</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="490"/>
         <source>Jump to Selection</source>
-        <translation>Ir a la selección</translation>
+        <translation>Перейти к выделению</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="496"/>
         <source>Jump to End of Document</source>
-        <translation>Ir al final del documento</translation>
+        <translation>Перейти в конец документа</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="503"/>
         <source>Jump to Start of Line</source>
-        <translation>Ir al inicio de línea</translation>
+        <translation>Перейти в начало строки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="510"/>
         <source>Jump to End of Line</source>
-        <translation>Ir al final de línea</translation>
+        <translation>Перейти в конец строки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1089"/>
         <source>Copy Table</source>
-        <translation>Copiar tabla</translation>
+        <translation>Копировать таблицу</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1095"/>
         <source>Format Table Source</source>
-        <translation>Formatear fuente de tabla</translation>
+        <translation>Форматировать исходный код таблицы</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1679"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1719"/>
         <source>No upload command is configured.
 Set up a custom upload command in Preferences → Images.</source>
-        <translation>No hay configurado ningún comando de subida.
-Configure un comando de subida personalizado en Preferencias → Imágenes.</translation>
+        <translation>Команда загрузки не настроена.
+Настройте собственную команду загрузки в разделе Настройки → Изображения.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1695"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1751"/>
         <source>Upload failed:
 %1</source>
-        <translation>Error de subida:
+        <translation>Сбой загрузки:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1741"/>
         <source>There are no local images to upload.</source>
-        <translation>No hay imágenes locales para subir.</translation>
+        <translation>Нет локальных изображений для загрузки.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1753"/>
         <source>the uploader did not return one URL per image</source>
-        <translation>el programa de subida no devolvió una URL por imagen</translation>
+        <translation>программа загрузки не вернула по одному URL для каждого изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1767"/>
         <source>Uploaded %1 image(s).</source>
-        <translation>Se subieron %1 imagen(es).</translation>
+        <translation>Загружено изображений: %1.</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2293,216 +2293,216 @@ A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
         <translation type="vanished">Mufpen %1
 
-Un editor Markdown rápido, ligero y nativo, creado con C++ y Qt 6.
+Быстрый, лёгкий, нативный редактор Markdown, созданный на C++ и Qt 6.
 
-Vista previa en vivo y edición de código fuente; exportación a PDF, HTML y muchos más formatos mediante Pandoc; inserción de imágenes con copia a carpeta y subida por comando personalizado; corrector ortográfico; temas; buscar y reemplazar; esquema; apertura rápida; y recuperación de borradores a prueba de fallos.</translation>
+Живой предпросмотр и редактирование исходного кода; экспорт в PDF, HTML и множество других форматов через Pandoc; вставка изображений с копированием в папку и загрузкой через пользовательскую команду; проверка орфографии; темы; поиск и замена; структура; быстрое открытие; и восстановление черновиков, устойчивое к сбоям.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2458"/>
         <source>Code</source>
-        <translation>Código</translation>
+        <translation>Код</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1133"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1223"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1260"/>
         <source>Enter Edit</source>
-        <translation>Entrar en edición</translation>
+        <translation>Начать редактирование</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1141"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1231"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1268"/>
         <source>Exit Edit</source>
-        <translation>Salir de edición</translation>
+        <translation>Завершить редактирование</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1150"/>
         <source>Set Language...</source>
-        <translation>Establecer idioma...</translation>
+        <translation>Задать язык...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2476"/>
         <source>Math</source>
-        <translation>Matemáticas</translation>
+        <translation>Математика</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1277"/>
         <source>Set TeX...</source>
-        <translation>Establecer TeX...</translation>
+        <translation>Задать TeX...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1240"/>
         <source>Set HTML...</source>
-        <translation>Establecer HTML...</translation>
+        <translation>Задать HTML...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2548"/>
         <source>View</source>
-        <translation>Ver</translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1944"/>
         <source>Outline</source>
-        <translation>Esquema</translation>
+        <translation>Структура</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1949"/>
         <source>File Tree</source>
-        <translation>Árbol de archivos</translation>
+        <translation>Дерево файлов</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="vanished">Buscar</translation>
+        <translation type="vanished">Поиск</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1954"/>
         <source>Source Code Mode</source>
-        <translation>Modo código fuente</translation>
+        <translation>Режим исходного кода</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1981"/>
         <source>Word Wrap</source>
-        <translation>Ajuste de línea</translation>
+        <translation>Перенос строк</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1994"/>
         <source>Focus Mode</source>
-        <translation>Modo enfoque</translation>
+        <translation>Режим фокусировки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2005"/>
         <source>Typewriter Mode</source>
-        <translation>Modo máquina de escribir</translation>
+        <translation>Режим пишущей машинки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2016"/>
         <source>Show Status Bar</source>
-        <translation>Mostrar barra de estado</translation>
+        <translation>Показать строку состояния</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2027"/>
         <source>Word Count Window</source>
-        <translation>Ventana de recuento de palabras</translation>
+        <translation>Окно подсчёта слов</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2031"/>
         <source>Toggle Full Screen</source>
-        <translation>Alternar pantalla completa</translation>
+        <translation>Переключить полноэкранный режим</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2036"/>
         <source>Always on Top</source>
-        <translation>Siempre visible</translation>
+        <translation>Поверх всех окон</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2047"/>
         <source>Actual Size</source>
-        <translation>Tamaño real</translation>
+        <translation>Фактический размер</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2056"/>
         <source>Zoom In</source>
-        <translation>Acercar</translation>
+        <translation>Увеличить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2065"/>
         <source>Zoom Out</source>
-        <translation>Alejar</translation>
+        <translation>Уменьшить</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2074"/>
         <source>Switch Windows</source>
-        <translation>Cambiar ventanas</translation>
+        <translation>Переключить окна</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Plataforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Licencia:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Sitio web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Платформа:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Автор:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Лицензия:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Сайт:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
         <source>Insert</source>
-        <translation>Insertar</translation>
+        <translation>Вставка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2578"/>
         <source>Theme</source>
-        <translation>Tema</translation>
+        <translation>Тема</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2580"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>Справка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2086"/>
         <source>Quick Start</source>
-        <translation>Inicio rápido</translation>
+        <translation>Быстрый старт</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2090"/>
         <source>Markdown Reference</source>
-        <translation>Referencia de Markdown</translation>
+        <translation>Справочник Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2094"/>
         <source>Custom Themes</source>
-        <translation>Temas personalizados</translation>
+        <translation>Пользовательские темы</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2098"/>
         <source>Acknowledgements</source>
-        <translation>Agradecimientos</translation>
+        <translation>Благодарности</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2102"/>
         <source>Changelog</source>
-        <translation>Registro de cambios</translation>
+        <translation>Журнал изменений</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2110"/>
         <source>Official Website</source>
-        <translation>Sitio web oficial</translation>
+        <translation>Официальный сайт</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2115"/>
         <source>Feedback</source>
-        <translation>Comentarios</translation>
+        <translation>Обратная связь</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2122"/>
         <source>Check for Updates...</source>
-        <translation>Buscar actualizaciones...</translation>
+        <translation>Проверить обновления...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2130"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1589"/>
         <source>Delete Image</source>
-        <translation>Eliminar imagen</translation>
+        <translation>Удалить изображение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="155"/>
         <source>Reopen Closed File</source>
-        <translation>Reabrir archivo cerrado</translation>
+        <translation>Открыть закрытый файл снова</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="171"/>
         <source>Document is still loading…</source>
-        <translation>El documento aún se está cargando…</translation>
+        <translation>Документ ещё загружается…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="234"/>
         <source>Export with Previous Settings...</source>
-        <translation>Exportar con la configuración anterior...</translation>
+        <translation>Экспортировать с предыдущими настройками...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="240"/>
         <source>Export and Overwrite Previous</source>
-        <translation>Exportar y sobrescribir el archivo anterior</translation>
+        <translation>Экспортировать и перезаписать предыдущий файл</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="246"/>
@@ -2518,12 +2518,12 @@ Vista previa en vivo y edición de código fuente; exportación a PDF, HTML y mu
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="258"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (sin estilos)</translation>
+        <translation>HTML (без стилей)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="264"/>
         <source>Image (PNG)</source>
-        <translation>Imagen (PNG)</translation>
+        <translation>Изображение (PNG)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="270"/>
@@ -2576,98 +2576,98 @@ Vista previa en vivo y edición de código fuente; exportación a PDF, HTML y mu
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="554"/>
         <source>Close Tab</source>
-        <translation>Cerrar pestaña</translation>
+        <translation>Закрыть вкладку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="334"/>
         <source>Quit</source>
-        <translation>Salir</translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="341"/>
         <source>Next Tab</source>
-        <translation>Pestaña siguiente</translation>
+        <translation>Следующая вкладка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="346"/>
         <source>Previous Tab</source>
-        <translation>Pestaña anterior</translation>
+        <translation>Предыдущая вкладка</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="353"/>
         <source>Back</source>
-        <translation>Atrás</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="359"/>
         <source>Forward</source>
-        <translation>Adelante</translation>
+        <translation>Вперёд</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="388"/>
         <source>Open Link</source>
-        <translation>Abrir enlace</translation>
+        <translation>Открыть ссылку</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="404"/>
         <source>Copy Link Address</source>
-        <translation>Copiar dirección del enlace</translation>
+        <translation>Копировать адрес ссылки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="534"/>
         <source>Skip Closing Symbol</source>
-        <translation>Saltar símbolo de cierre</translation>
+        <translation>Пропустить закрывающий символ</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="580"/>
         <source>Spell Check</source>
-        <translation>Corrector ortográfico</translation>
+        <translation>Проверка орфографии</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="634"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="357"/>
         <source>Find in Folder…</source>
-        <translation>Buscar en la carpeta…</translation>
+        <translation>Найти в папке…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="639"/>
         <source>Replace in Folder…</source>
-        <translation>Reemplazar en la carpeta…</translation>
+        <translation>Заменить в папке…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="685"/>
         <source>Heading 1</source>
-        <translation>Encabezado 1</translation>
+        <translation>Заголовок 1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="694"/>
         <source>Heading 2</source>
-        <translation>Encabezado 2</translation>
+        <translation>Заголовок 2</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="703"/>
         <source>Heading 3</source>
-        <translation>Encabezado 3</translation>
+        <translation>Заголовок 3</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="712"/>
         <source>Heading 4</source>
-        <translation>Encabezado 4</translation>
+        <translation>Заголовок 4</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="721"/>
         <source>Heading 5</source>
-        <translation>Encabezado 5</translation>
+        <translation>Заголовок 5</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="730"/>
         <source>Heading 6</source>
-        <translation>Encabezado 6</translation>
+        <translation>Заголовок 6</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="829"/>
         <source>Align Paragraph Left</source>
-        <translation>Alinear párrafo a la izquierda</translation>
+        <translation>Выровнять абзац по левому краю</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="835"/>
@@ -2675,179 +2675,179 @@ Vista previa en vivo y edición de código fuente; exportación a PDF, HTML y mu
         <location filename="../src/app/CommandDeclarations.cpp" line="859"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="871"/>
         <source>Place the caret in a top-level paragraph or heading in live editing mode.</source>
-        <translation>Coloca el cursor en un párrafo o encabezado de nivel superior en el modo de edición en vivo.</translation>
+        <translation>В режиме визуального редактирования поместите курсор в абзац или заголовок верхнего уровня.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="841"/>
         <source>Center Paragraph</source>
-        <translation>Centrar párrafo</translation>
+        <translation>Выровнять абзац по центру</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="853"/>
         <source>Align Paragraph Right</source>
-        <translation>Alinear párrafo a la derecha</translation>
+        <translation>Выровнять абзац по правому краю</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="865"/>
         <source>Justify Paragraph</source>
-        <translation>Justificar párrafo</translation>
+        <translation>Выровнять абзац по ширине</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="945"/>
         <source>Note</source>
-        <translation>Nota</translation>
+        <translation>Примечание</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="952"/>
         <source>Tip</source>
-        <translation>Consejo</translation>
+        <translation>Совет</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="959"/>
         <source>Important</source>
-        <translation>Importante</translation>
+        <translation>Важно</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="966"/>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="973"/>
         <source>Caution</source>
-        <translation>Precaución</translation>
+        <translation>Осторожно</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="983"/>
         <source>Toggle Task Status</source>
-        <translation>Cambiar estado de la tarea</translation>
+        <translation>Переключить статус задачи</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="995"/>
         <source>Indent</source>
-        <translation>Aumentar sangría</translation>
+        <translation>Увеличить отступ</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1005"/>
         <source>Outdent</source>
-        <translation>Disminuir sangría</translation>
+        <translation>Уменьшить отступ</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1168"/>
         <source>Copy Code Block Content</source>
-        <translation>Copiar contenido del bloque de código</translation>
+        <translation>Копировать содержимое блока кода</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1183"/>
         <source>Indent Selection</source>
-        <translation>Aumentar sangría de la selección</translation>
+        <translation>Увеличить отступ выделенного фрагмента</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1193"/>
         <source>Dedent Selection</source>
-        <translation>Disminuir sangría de la selección</translation>
+        <translation>Уменьшить отступ выделенного фрагмента</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1203"/>
         <source>Indent Whole Block</source>
-        <translation>Aumentar sangría de todo el bloque</translation>
+        <translation>Увеличить отступ всего блока</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1212"/>
         <source>Dedent Whole Block</source>
-        <translation>Disminuir sangría de todo el bloque</translation>
+        <translation>Уменьшить отступ всего блока</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1336"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1425"/>
         <source>Switch to live editing to use this formatting command.</source>
-        <translation>Cambie a la edición en vivo para usar este comando de formato.</translation>
+        <translation>Переключитесь в режим редактирования с предпросмотром, чтобы использовать эту команду форматирования.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1337"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1406"/>
         <source>Select text within a single paragraph or table cell, or place the caret in editable text.</source>
-        <translation>Seleccione texto dentro de un solo párrafo o una sola celda de tabla, o coloque el cursor en texto editable.</translation>
+        <translation>Выделите текст в пределах одного абзаца или одной ячейки таблицы либо поместите курсор в редактируемый текст.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1402"/>
         <source>Wait for the document to finish loading.</source>
-        <translation>Espere a que el documento termine de cargarse.</translation>
+        <translation>Дождитесь завершения загрузки документа.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1404"/>
         <source>Select text within one line, or place the caret where you want to insert the link.</source>
-        <translation>Seleccione texto dentro de una sola línea, o coloque el cursor donde quiera insertar el enlace.</translation>
+        <translation>Выделите текст в пределах одной строки либо поместите курсор туда, где хотите вставить ссылку.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1426"/>
         <source>Place the caret in the paragraph or table cell whose formatting you want to clear.</source>
-        <translation>Coloque el cursor en el párrafo o la celda de tabla cuyo formato quiera borrar.</translation>
+        <translation>Поместите курсор в абзац или ячейку таблицы, форматирование которых хотите удалить.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1433"/>
         <source>Refresh All Math</source>
-        <translation>Actualizar todas las fórmulas</translation>
+        <translation>Обновить все формулы</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1442"/>
         <source>Convert on Input</source>
-        <translation>Convertir al escribir</translation>
+        <translation>Преобразовывать при вводе</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1463"/>
         <source>Convert on Rendering</source>
-        <translation>Convertir al renderizar</translation>
+        <translation>Преобразовывать при отрисовке</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1484"/>
         <source>Smart Quotes</source>
-        <translation>Comillas inteligentes</translation>
+        <translation>Умные кавычки</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1498"/>
         <source>Smart Dashes</source>
-        <translation>Guiones inteligentes</translation>
+        <translation>Умные тире</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1512"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Reasignar puntuación Unicode al analizar</translation>
+        <translation>Переназначать юникод-пунктуацию при разборе</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1526"/>
         <source>More Options...</source>
-        <translation>Más opciones...</translation>
+        <translation>Дополнительные параметры...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1590"/>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation>¿Eliminar el archivo de imagen «%1»?
-Esta acción no se puede deshacer.</translation>
+        <translation>Удалить файл изображения &quot;%1&quot;?
+Это действие нельзя отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1616"/>
         <source>Copy Image To</source>
-        <translation>Copiar imagen a</translation>
+        <translation>Копировать изображение в</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1650"/>
         <source>Move Image To</source>
-        <translation>Mover imagen a</translation>
+        <translation>Переместить изображение в</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1672"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1678"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1694"/>
         <source>Upload Image</source>
-        <translation>Subir imagen</translation>
+        <translation>Загрузить изображение</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="vanished">La subida de imágenes aún no está configurada.
-Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
+        <translation type="vanished">Загрузка изображений ещё не настроена.
+Настройте загрузчик в Настройки → Изображения.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1718"/>
@@ -2856,64 +2856,64 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
         <location filename="../src/app/CommandDeclarations.cpp" line="1765"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1766"/>
         <source>Upload All Images</source>
-        <translation>Subir todas las imágenes</translation>
+        <translation>Загрузить все изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Image Size</source>
-        <translation>Tamaño de imagen</translation>
+        <translation>Размер изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Zoom percent:</source>
-        <translation>Porcentaje de zoom:</translation>
+        <translation>Процент масштаба:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1878"/>
         <source>Copy All Images To</source>
-        <translation>Copiar todas las imágenes a</translation>
+        <translation>Копировать все изображения в</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1890"/>
         <source>Copy All Images</source>
-        <translation>Copiar todas las imágenes</translation>
+        <translation>Копировать все изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1891"/>
         <source>Copied %1 of %2 image(s).</source>
-        <translation>Se copiaron %1 de %2 imagen(es).</translation>
+        <translation>Скопировано %1 из %2 изображений.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1905"/>
         <source>Move All Images To</source>
-        <translation>Mover todas las imágenes a</translation>
+        <translation>Переместить все изображения в</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1913"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1919"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1921"/>
         <source>Move All Images</source>
-        <translation>Mover todas las imágenes</translation>
+        <translation>Переместить все изображения</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1922"/>
         <source>Moved %1 image(s).</source>
-        <translation>Se movieron %1 imagen(es).</translation>
+        <translation>Перемещено %1 изображений.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1155"/>
         <source>Code Language</source>
-        <translation>Lenguaje de código</translation>
+        <translation>Язык кода</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1156"/>
         <source>Language:</source>
-        <translation>Idioma:</translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1244"/>
         <source>HTML Source</source>
-        <translation>Código HTML</translation>
+        <translation>Исходный код HTML</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1245"/>
@@ -2923,7 +2923,7 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1281"/>
         <source>Math TeX</source>
-        <translation>TeX matemático</translation>
+        <translation>Формула TeX</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1282"/>
@@ -2933,7 +2933,7 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
         <source>About Mufpen</source>
-        <translation>Acerca de Mufpen</translation>
+        <translation>О Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2941,43 +2941,43 @@ Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="vanished">Mufpen %1
 
-Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.</translation>
+Быстрый, лёгкий нативный редактор Markdown, созданный на C++ и Qt 6 Widgets.</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="vanished">tabla %1:%2 desplazamiento %3</translation>
+        <translation type="vanished">таблица %1:%2 смещение %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="vanished">%1 palabras</translation>
+        <translation type="vanished">%1 слов</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="181"/>
         <source>Rows:</source>
-        <translation>Filas:</translation>
+        <translation>Строки:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="182"/>
         <source>Columns:</source>
-        <translation>Columnas:</translation>
+        <translation>Столбцы:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="185"/>
         <location filename="../src/app/MainWindowActions.cpp" line="227"/>
         <source>OK</source>
-        <translation>Aceptar</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="186"/>
         <location filename="../src/app/MainWindowActions.cpp" line="228"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="207"/>
         <source>Insert Image</source>
-        <translation>Insertar imagen</translation>
+        <translation>Вставить изображение</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="214"/>
@@ -2987,12 +2987,12 @@ Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.<
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="217"/>
         <source>Alternative text</source>
-        <translation>Texto alternativo</translation>
+        <translation>Альтернативный текст</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="220"/>
         <source>Title (optional)</source>
-        <translation>Título (opcional)</translation>
+        <translation>Заголовок (необязательно)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="222"/>
@@ -3002,37 +3002,37 @@ Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.<
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="223"/>
         <source>Alt Text:</source>
-        <translation>Texto alternativo:</translation>
+        <translation>Альт. текст:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="224"/>
         <source>Title:</source>
-        <translation>Título:</translation>
+        <translation>Заголовок:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="258"/>
         <source>Images (%1)</source>
-        <translation>Imágenes (%1)</translation>
+        <translation>Изображения (%1)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="259"/>
         <source>Select Image</source>
-        <translation>Seleccionar imagen</translation>
+        <translation>Выбрать изображение</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="89"/>
         <source>Clear Recent Files</source>
-        <translation>Borrar archivos recientes</translation>
+        <translation>Очистить недавние файлы</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="145"/>
         <source>Import Theme...</source>
-        <translation>Importar tema…</translation>
+        <translation>Импортировать тему…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="147"/>
         <source>Open Themes Folder</source>
-        <translation>Abrir carpeta de temas</translation>
+        <translation>Открыть папку тем</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
@@ -3043,43 +3043,43 @@ Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.<
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Import Theme</source>
-        <translation>Importar tema</translation>
+        <translation>Импорт темы</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
         <source>Theme Files (*.css *.json)</source>
-        <translation>Archivos de tema (*.css *.json)</translation>
+        <translation>Файлы тем (*.css *.json)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="196"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <source>Could not read the selected file.</source>
-        <translation>No se pudo leer el archivo seleccionado.</translation>
+        <translation>Не удалось прочитать выбранный файл.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="202"/>
         <source>The selected file is not a valid theme.</source>
-        <translation>El archivo seleccionado no es un tema válido.</translation>
+        <translation>Выбранный файл не является допустимой темой.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="184"/>
         <source>A built-in theme named &quot;%1&quot; already exists; choose a different file name.</source>
-        <translation>Ya existe un tema integrado llamado «%1»; elija otro nombre de archivo.</translation>
+        <translation>Встроенная тема с именем «%1» уже существует; выберите другое имя файла.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="119"/>
         <source>Clear Recent Folders</source>
-        <translation>Borrar carpetas recientes</translation>
+        <translation>Очистить список недавних папок</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="209"/>
         <source>The theme file is missing required colours (background and text).</source>
-        <translation>Al archivo de tema le faltan los colores necesarios (fondo y texto).</translation>
+        <translation>В файле темы отсутствуют обязательные цвета (фон и текст).</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Could not copy the theme into the themes folder.</source>
-        <translation>No se pudo copiar el tema en la carpeta de temas.</translation>
+        <translation>Не удалось скопировать тему в папку тем.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="392"/>
@@ -3089,123 +3089,125 @@ Size: %3 bytes
 Modified: %4
 Words: %5
 Parse time: %6 ms</source>
-        <translation>Nombre: %1
-Ubicación: %2
-Tamaño: %3 bytes
-Modificado: %4
-Palabras: %5
-Tiempo de análisis: %6 ms</translation>
+        <translation>Имя: %1
+Расположение: %2
+Размер: %3 байт
+Изменено: %4
+Слов: %5
+Время разбора: %6 мс</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="580"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="591"/>
         <source>Unsaved Drafts Found</source>
-        <translation>Borradores sin guardar encontrados</translation>
+        <translation>Найдены несохранённые черновики</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
         <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Mufpen encontró %n borrador sin guardar de una sesión anterior. Restáurelo en esta ventana, descártelo o consérvelo para más tarde.</numerusform>
-            <numerusform>Mufpen encontró %n borradores sin guardar de una sesión anterior. Restaure uno en esta ventana, descártelos todos o consérvelos para más tarde.</numerusform>
+            <numerusform>Mufpen обнаружил %n несохранённый черновик после предыдущего сеанса. Восстановите один в этом окне, удалите все или оставьте на потом.</numerusform>
+            <numerusform>Mufpen обнаружил %n несохранённых черновика после предыдущего сеанса. Восстановите один в этом окне, удалите все или оставьте на потом.</numerusform>
+            <numerusform>Mufpen обнаружил %n несохранённых черновиков после предыдущего сеанса. Восстановите один в этом окне, удалите все или оставьте на потом.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="597"/>
         <location filename="../src/app/MainWindowExport.cpp" line="94"/>
         <source>Untitled</source>
-        <translation>Sin título</translation>
+        <translation>Без названия</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="598"/>
         <source>%1  —  %2  (%n char(s))</source>
         <translation>
-            <numerusform>%1  —  %2  (%n carácter)</numerusform>
-            <numerusform>%1  —  %2  (%n caracteres)</numerusform>
+            <numerusform>%1  —  %2  (%n символ)</numerusform>
+            <numerusform>%1  —  %2  (%n символа)</numerusform>
+            <numerusform>%1  —  %2  (%n символов)</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="606"/>
         <source>Restore</source>
-        <translation>Restaurar</translation>
+        <translation>Восстановить</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="607"/>
         <source>Discard All</source>
-        <translation>Descartar todo</translation>
+        <translation>Удалить все</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="608"/>
         <source>Later</source>
-        <translation>Más tarde</translation>
+        <translation>Позже</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="689"/>
         <source>No files to open</source>
-        <translation>No hay archivos para abrir</translation>
+        <translation>Нет файлов для открытия</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="711"/>
         <source>Import</source>
-        <translation>Importar</translation>
+        <translation>Импорт</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="712"/>
         <source>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;All files (*)</source>
-        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Todos los archivos (*)</translation>
+        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Все файлы (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="729"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="746"/>
         <source>Import Failed</source>
-        <translation>Error de importación</translation>
+        <translation>Ошибка импорта</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="730"/>
         <location filename="../src/app/MainWindowExport.cpp" line="184"/>
         <source>Pandoc was not found. Install Pandoc or set its path in Preferences → Export.</source>
-        <translation>No se encontró Pandoc. Instale Pandoc o defina su ruta en Preferencias → Exportar.</translation>
+        <translation>Pandoc не найден. Установите Pandoc или укажите путь в Настройки → Экспорт.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="734"/>
         <source>Importing %1…</source>
-        <translation>Importando %1…</translation>
+        <translation>Импорт %1…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="747"/>
         <source>Pandoc could not convert the file.</source>
-        <translation>Pandoc no pudo convertir el archivo.</translation>
+        <translation>Pandoc не смог преобразовать файл.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="756"/>
         <source>Imported %1</source>
-        <translation>%1 importado</translation>
+        <translation>Импортировано %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="119"/>
         <source>Nothing to export</source>
-        <translation>Nada que exportar</translation>
+        <translation>Нечего экспортировать</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="264"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="299"/>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>Export As</source>
-        <translation>Exportar como</translation>
+        <translation>Экспортировать как</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>%1 files (*%2)</source>
-        <translation>Archivos %1 (*%2)</translation>
+        <translation>Файлы %1 (*%2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="164"/>
         <source>Exporting %1…</source>
-        <translation>Exportando %1…</translation>
+        <translation>Экспорт %1…</translation>
     </message>
     <message>
         <source>Pandoc failed:</source>
-        <translation type="vanished">Pandoc falló:</translation>
+        <translation type="vanished">Сбой Pandoc:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="280"/>
@@ -3216,31 +3218,31 @@ Tiempo de análisis: %6 ms</translation>
         <location filename="../src/app/MainWindowExport.cpp" line="168"/>
         <location filename="../src/app/MainWindowExport.cpp" line="236"/>
         <source>Export Failed</source>
-        <translation>Error de exportación</translation>
+        <translation>Ошибка экспорта</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="283"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="321"/>
         <location filename="../src/app/MainWindowExport.cpp" line="243"/>
         <source>Exported to %1</source>
-        <translation>Exportado a %1</translation>
+        <translation>Экспортировано в %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="895"/>
         <source>Save All</source>
-        <translation>Guardar todo</translation>
+        <translation>Сохранить все</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="896"/>
         <source>Saved %1 file(s). %2 file(s) could not be saved.</source>
-        <translation>Se guardaron %1 archivo(s). %2 archivo(s) no se pudieron guardar.</translation>
+        <translation>Сохранено файлов: %1. Не удалось сохранить: %2.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="926"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="952"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete File</source>
-        <translation>Eliminar archivo</translation>
+        <translation>Удалить файл</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="927"/>
@@ -3248,9 +3250,9 @@ Tiempo de análisis: %6 ms</translation>
         <source>Are you sure you want to move &quot;%1&quot; to the trash?
 
 This action cannot be undone.</source>
-        <translation>¿Está seguro de que desea mover «%1» a la papelera?
+        <translation>Вы уверены, что хотите переместить &quot;%1&quot; в корзину?
 
-Esta acción no se puede deshacer.</translation>
+Это действие нельзя отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="953"/>
@@ -3258,37 +3260,37 @@ Esta acción no se puede deshacer.</translation>
         <source>Could not move to trash. Permanently delete &quot;%1&quot;?
 
 This action cannot be undone.</source>
-        <translation>No se pudo mover a la papelera. ¿Eliminar permanentemente «%1»?
+        <translation>Не удалось переместить в корзину. Удалить &quot;%1&quot; безвозвратно?
 
-Esta acción no se puede deshacer.</translation>
+Это действие нельзя отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Delete Failed</source>
-        <translation>Error al eliminar</translation>
+        <translation>Ошибка удаления</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <source>Could not delete file:
 %1</source>
-        <translation>No se pudo eliminar el archivo:
+        <translation>Не удалось удалить файл:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1073"/>
         <source>Name cannot be empty.</source>
-        <translation>El nombre no puede estar vacío.</translation>
+        <translation>Имя не может быть пустым.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1087"/>
         <source>An item named &quot;%1&quot; already exists.</source>
-        <translation>Ya existe un elemento llamado «%1».</translation>
+        <translation>Элемент с именем «%1» уже существует.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1109"/>
         <source>Could not rename: %1</source>
-        <translation>No se pudo cambiar el nombre: %1</translation>
+        <translation>Не удалось переименовать: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1026"/>
@@ -3296,7 +3298,7 @@ Esta acción no se puede deshacer.</translation>
 %1
 
 %2</source>
-        <translation>No se pudo crear el archivo:
+        <translation>Не удалось создать файл:
 %1
 
 %2</translation>
@@ -3304,58 +3306,58 @@ Esta acción no se puede deshacer.</translation>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="53"/>
         <source>Manage Export Presets...</source>
-        <translation>Administrar preajustes de exportación...</translation>
+        <translation>Управление профилями экспорта...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="90"/>
         <source>Enter a valid output extension in the export preset.</source>
-        <translation>Introduzca una extensión de salida válida en el preajuste de exportación.</translation>
+        <translation>Укажите допустимое расширение выходного файла в профиле экспорта.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="114"/>
         <location filename="../src/app/MainWindowExport.cpp" line="211"/>
         <source>The export destination is an open document. Choose another file.</source>
-        <translation>El destino de exportación es un documento abierto. Elija otro archivo.</translation>
+        <translation>Файл назначения экспорта сейчас открыт как документ. Выберите другой файл.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="136"/>
         <source>Could not create a temporary export file.</source>
-        <translation>No se pudo crear un archivo temporal de exportación.</translation>
+        <translation>Не удалось создать временный файл для экспорта.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="147"/>
         <source>PDF export failed: the printer device could not be opened.</source>
-        <translation>Error al exportar a PDF: no se pudo abrir el dispositivo de impresión.</translation>
+        <translation>Ошибка экспорта в PDF: не удалось открыть устройство принтера.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="152"/>
         <source>Image export failed. The image must fit within 64 million pixels and 32,767 pixels in height. Try a smaller width or scale, or export as PDF.</source>
-        <translation>No se pudo exportar la imagen. La imagen no puede superar los 64 millones de píxeles ni los 32,767 píxeles de altura. Pruebe con una anchura o escala menor, o exporte como PDF.</translation>
+        <translation>Не удалось экспортировать изображение. Изображение должно содержать не более 64 миллионов пикселей, а его высота не должна превышать 32 767 пикселей. Уменьшите ширину или масштаб либо экспортируйте в PDF.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="179"/>
         <source>Configure an executable and arguments containing ${outputPath}. Supported variables: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Configure un ejecutable y argumentos que contengan ${outputPath}. Variables admitidas: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Укажите исполняемый файл и аргументы, содержащие ${outputPath}. Поддерживаемые переменные: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="188"/>
         <source>Export resource was not found: %1</source>
-        <translation>No se encontró el recurso de exportación: %1</translation>
+        <translation>Ресурс для экспорта не найден: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="192"/>
         <source>Additional arguments cannot override the input format, output format, output path, or defaults file.</source>
-        <translation>Los argumentos adicionales no pueden sustituir el formato de entrada, el formato de salida, la ruta de salida ni el archivo de opciones predeterminadas.</translation>
+        <translation>Дополнительные аргументы не могут переопределять входной формат, выходной формат, путь вывода или файл настроек по умолчанию.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="205"/>
         <source>Export command failed:</source>
-        <translation>El comando de exportación falló:</translation>
+        <translation>Ошибка команды экспорта:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="778"/>
         <source>Unicode</source>
-        <translation>Unicode</translation>
+        <translation>Юникод</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="780"/>
@@ -3375,157 +3377,157 @@ Esta acción no se puede deshacer.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="784"/>
         <source>Western</source>
-        <translation>Occidental</translation>
+        <translation>Западноевропейская</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="786"/>
         <source>Western (Windows-1252)</source>
-        <translation>Occidental (Windows-1252)</translation>
+        <translation>Западноевропейская (Windows-1252)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="788"/>
         <source>Cyrillic</source>
-        <translation>Cirílico</translation>
+        <translation>Кириллица</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="790"/>
         <source>Cyrillic (Windows-1251)</source>
-        <translation>Cirílico (Windows-1251)</translation>
+        <translation>Кириллица (Windows-1251)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="791"/>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation>Cirílico (ISO-8859-5)</translation>
+        <translation>Кириллица (ISO-8859-5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="792"/>
         <source>Cyrillic (IBM866)</source>
-        <translation>Cirílico (IBM866)</translation>
+        <translation>Кириллица (IBM866)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="793"/>
         <source>Cyrillic (IBM855)</source>
-        <translation>Cirílico (IBM855)</translation>
+        <translation>Кириллица (IBM855)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="794"/>
         <source>Cyrillic (KOI8-R)</source>
-        <translation>Cirílico (KOI8-R)</translation>
+        <translation>Кириллица (KOI8-R)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="795"/>
         <source>Cyrillic (Mac)</source>
-        <translation>Cirílico (Mac)</translation>
+        <translation>Кириллица (Mac)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="797"/>
         <source>Central European</source>
-        <translation>Centroeuropeo</translation>
+        <translation>Центральноевропейская</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="799"/>
         <source>Central European (Windows-1250)</source>
-        <translation>Centroeuropeo (Windows-1250)</translation>
+        <translation>Центральноевропейская (Windows-1250)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="800"/>
         <source>Central European (ISO-8859-2)</source>
-        <translation>Centroeuropeo (ISO-8859-2)</translation>
+        <translation>Центральноевропейская (ISO-8859-2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="802"/>
         <source>Greek</source>
-        <translation>Griego</translation>
+        <translation>Греческая</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="804"/>
         <source>Greek (Windows-1253)</source>
-        <translation>Griego (Windows-1253)</translation>
+        <translation>Греческая (Windows-1253)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="805"/>
         <source>Greek (ISO-8859-7)</source>
-        <translation>Griego (ISO-8859-7)</translation>
+        <translation>Греческая (ISO-8859-7)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="807"/>
         <source>Hebrew</source>
-        <translation>Hebreo</translation>
+        <translation>Иврит</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="809"/>
         <source>Hebrew (Windows-1255)</source>
-        <translation>Hebreo (Windows-1255)</translation>
+        <translation>Иврит (Windows-1255)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="810"/>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation>Hebreo (ISO-8859-8)</translation>
+        <translation>Иврит (ISO-8859-8)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="812"/>
         <source>Chinese Simplified</source>
-        <translation>Chino simplificado</translation>
+        <translation>Китайская упрощённая</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="814"/>
         <source>Chinese Simplified (GB2312)</source>
-        <translation>Chino simplificado (GB2312)</translation>
+        <translation>Китайская упрощённая (GB2312)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="815"/>
         <source>Chinese Simplified (GB18030)</source>
-        <translation>Chino simplificado (GB18030)</translation>
+        <translation>Китайская упрощённая (GB18030)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="817"/>
         <source>Chinese Traditional</source>
-        <translation>Chino tradicional</translation>
+        <translation>Китайская традиционная</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="819"/>
         <source>Chinese Traditional (Big5)</source>
-        <translation>Chino tradicional (Big5)</translation>
+        <translation>Китайская традиционная (Big5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="821"/>
         <source>Japanese</source>
-        <translation>Japonés</translation>
+        <translation>Японская</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="823"/>
         <source>Japanese (Shift_JIS)</source>
-        <translation>Japonés (Shift_JIS)</translation>
+        <translation>Японская (Shift_JIS)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="824"/>
         <source>Japanese (EUC-JP)</source>
-        <translation>Japonés (EUC-JP)</translation>
+        <translation>Японская (EUC-JP)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="826"/>
         <source>Korean</source>
-        <translation>Coreano</translation>
+        <translation>Корейская</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="828"/>
         <source>Korean (EUC-KR)</source>
-        <translation>Coreano (EUC-KR)</translation>
+        <translation>Корейская (EUC-KR)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="830"/>
         <source>Thai</source>
-        <translation>Tailandés</translation>
+        <translation>Тайская</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="832"/>
         <source>Thai (TIS-620)</source>
-        <translation>Tailandés (TIS-620)</translation>
+        <translation>Тайская (TIS-620)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <source>Markdown Files (*.md *.markdown);;All Files (*)</source>
-        <translation>Archivos Markdown (*.md *.markdown);;Todos los archivos (*)</translation>
+        <translation>Файлы Markdown (*.md *.markdown);;Все файлы (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1045"/>
@@ -3533,7 +3535,7 @@ Esta acción no se puede deshacer.</translation>
 %1
 
 %2</source>
-        <translation>No se pudo crear la carpeta:
+        <translation>Не удалось создать папку:
 %1
 
 %2</translation>
@@ -3544,7 +3546,7 @@ Esta acción no se puede deshacer.</translation>
 %1
 
 %2</source>
-        <translation>No se pudo crear una copia:
+        <translation>Не удалось создать копию:
 %1
 
 %2</translation>
@@ -3552,40 +3554,40 @@ Esta acción no se puede deshacer.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete Folder</source>
-        <translation>Eliminar carpeta</translation>
+        <translation>Удалить папку</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1157"/>
         <source>Are you sure you want to move &quot;%1&quot; and all its contents to the trash?
 
 This action cannot be undone.</source>
-        <translation>¿Seguro que desea mover «%1» y todo su contenido a la papelera?
+        <translation>Переместить «%1» и всё его содержимое в корзину?
 
-Esta acción no se puede deshacer.</translation>
+Это действие нельзя отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Could not delete:
 %1</source>
-        <translation>No se pudo eliminar:
+        <translation>Не удалось удалить:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>Folder</source>
-        <translation>Carpeta</translation>
+        <translation>Папка</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>File</source>
         <comment>properties: entry type</comment>
-        <translation>Archivo</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1219"/>
         <source>Size: %1 bytes
 </source>
-        <translation>Tamaño: %1 bytes
+        <translation>Размер: %1 байт
 </translation>
     </message>
     <message>
@@ -3594,16 +3596,16 @@ Esta acción no se puede deshacer.</translation>
 Type: %2
 Location: %3
 %4Modified: %5</source>
-        <translation>Nombre: %1
-Tipo: %2
-Ubicación: %3
-%4Modificado: %5</translation>
+        <translation>Имя: %1
+Тип: %2
+Расположение: %3
+%4Изменён: %5</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1240"/>
         <source>Could not reveal:
 %1</source>
-        <translation>No se pudo mostrar la ubicación:
+        <translation>Не удалось показать в файловом менеджере:
 %1</translation>
     </message>
     <message>
@@ -3616,225 +3618,225 @@ Ubicación: %3
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
         <source>The current document has unsaved changes.</source>
-        <translation>El documento actual tiene cambios sin guardar.</translation>
+        <translation>В текущем документе есть несохранённые изменения.</translation>
     </message>
     <message>
         <source>Open Failed</source>
-        <translation type="vanished">Error al abrir</translation>
+        <translation type="vanished">Не удалось открыть</translation>
     </message>
     <message>
         <source>Render Diagnostics</source>
-        <translation type="vanished">Diagnóstico de renderizado</translation>
+        <translation type="vanished">Диагностика рендеринга</translation>
     </message>
     <message>
         <source>Developer Tools</source>
-        <translation type="vanished">Herramientas de desarrollo</translation>
+        <translation type="vanished">Инструменты разработчика</translation>
     </message>
     <message>
         <source>What&apos;s New...</source>
-        <translation type="vanished">Novedades...</translation>
+        <translation type="vanished">Что нового...</translation>
     </message>
     <message>
         <source>Install and Use Pandoc</source>
-        <translation type="vanished">Instalar y usar Pandoc</translation>
+        <translation type="vanished">Установка и использование Pandoc</translation>
     </message>
     <message>
         <source>Use Images in Mufpen</source>
-        <translation type="vanished">Usar imágenes en Mufpen</translation>
+        <translation type="vanished">Использование изображений в Mufpen</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
-        <translation type="vanished">Recuperación de datos y control de versiones</translation>
+        <translation type="vanished">Восстановление данных и контроль версий</translation>
     </message>
     <message>
         <source>More Themes...</source>
-        <translation type="vanished">Más temas...</translation>
+        <translation type="vanished">Больше тем...</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="vanished">Política de privacidad</translation>
+        <translation type="vanished">Политика конфиденциальности</translation>
     </message>
     <message>
         <source>My License...</source>
-        <translation type="vanished">Mi licencia...</translation>
+        <translation type="vanished">Моя лицензия...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="624"/>
         <source>Find...</source>
-        <translation>Buscar...</translation>
+        <translation>Найти...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="629"/>
         <source>Replace...</source>
-        <translation>Reemplazar...</translation>
+        <translation>Заменить...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="660"/>
         <source>Find Next</source>
-        <translation>Buscar siguiente</translation>
+        <translation>Найти далее</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="671"/>
         <source>Find Previous</source>
-        <translation>Buscar anterior</translation>
+        <translation>Найти ранее</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="254"/>
         <source>File Already Open</source>
-        <translation>Archivo ya abierto</translation>
+        <translation>Файл уже открыт</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="255"/>
         <source>This file is already open in another tab. Switch to that tab to edit or save it.</source>
-        <translation>Este archivo ya está abierto en otra pestaña. Cambie a esa pestaña para editarlo o guardarlo.</translation>
+        <translation>Этот файл уже открыт в другой вкладке. Перейдите на неё, чтобы изменить или сохранить файл.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="406"/>
         <source>File Changed on Disk</source>
-        <translation>Archivo modificado en el disco</translation>
+        <translation>Файл изменён на диске</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
         <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>El archivo «%1» se ha modificado fuera de Mufpen. ¿Desea volver a cargarlo?
-Se perderán los cambios sin guardar en el editor.</translation>
+        <translation>Файл «%1» был изменён вне Mufpen. Загрузить его заново?
+Несохранённые изменения в редакторе будут потеряны.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="491"/>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="503"/>
         <source>Update Available</source>
-        <translation>Actualización disponible</translation>
+        <translation>Доступно обновление</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
         <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Una nueva versión de Mufpen (%1) está disponible.
+        <translation>Доступна новая версия Mufpen (%1).
 
-¿Desea abrir la página de descarga?</translation>
+Хотите открыть страницу загрузки?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
         <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Mufpen %1 está disponible. Use Ayuda &gt; Buscar actualizaciones para descargar.</translation>
+        <translation>Доступен Mufpen %1. Используйте Справка &gt; Проверить обновления для загрузки.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
         <source>Up to Date</source>
-        <translation>Actualizado</translation>
+        <translation>Обновлений нет</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Está utilizando la última versión de Mufpen.</translation>
+        <translation>Вы используете последнюю версию Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
         <source>Update Check Failed</source>
-        <translation>Error al buscar actualizaciones</translation>
+        <translation>Не удалось проверить обновления</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="529"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>No se pudieron buscar actualizaciones:
+        <translation>Не удалось проверить обновления:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="143"/>
         <source>Export Mermaid as SVG...</source>
-        <translation>Exportar Mermaid como SVG...</translation>
+        <translation>Экспортировать Mermaid в SVG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="145"/>
         <source>Export Mermaid as PNG...</source>
-        <translation>Exportar Mermaid como PNG...</translation>
+        <translation>Экспортировать Mermaid в PNG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="158"/>
         <source>Resize</source>
-        <translation>Cambiar tamaño</translation>
+        <translation>Изменить размер</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="162"/>
         <source>Convert</source>
-        <translation>Convertir</translation>
+        <translation>Преобразовать</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="196"/>
         <source>Copy as</source>
-        <translation>Copiar como</translation>
+        <translation>Копировать как</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="340"/>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="153"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="341"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="358"/>
         <source>Open in New Window</source>
-        <translation>Abrir en una ventana nueva</translation>
+        <translation>Открыть в новом окне</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="50"/>
         <source>Insert Block Above</source>
-        <translation>Insertar bloque encima</translation>
+        <translation>Вставить блок выше</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="51"/>
         <source>Insert Block Below</source>
-        <translation>Insertar bloque debajo</translation>
+        <translation>Вставить блок ниже</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="53"/>
         <source>Copy Block</source>
-        <translation>Copiar bloque</translation>
+        <translation>Копировать блок</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="54"/>
         <source>Cut Block</source>
-        <translation>Cortar bloque</translation>
+        <translation>Вырезать блок</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="55"/>
         <source>Duplicate Block</source>
-        <translation>Duplicar bloque</translation>
+        <translation>Дублировать блок</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="57"/>
         <source>Turn Into</source>
-        <translation>Convertir en</translation>
+        <translation>Преобразовать в</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="62"/>
         <source>Bulleted List</source>
-        <translation>Lista con viñetas</translation>
+        <translation>Маркированный список</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="63"/>
         <source>Numbered List</source>
-        <translation>Lista numerada</translation>
+        <translation>Нумерованный список</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="68"/>
         <source>Move Block Up</source>
-        <translation>Mover bloque arriba</translation>
+        <translation>Переместить блок вверх</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="69"/>
         <source>Move Block Down</source>
-        <translation>Mover bloque abajo</translation>
+        <translation>Переместить блок вниз</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="343"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="360"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1025"/>
         <source>New File</source>
-        <translation>Archivo nuevo</translation>
+        <translation>Новый файл</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="344"/>
@@ -3842,32 +3844,32 @@ Would you like to open the download page?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1038"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1044"/>
         <source>New Folder</source>
-        <translation>Nueva carpeta</translation>
+        <translation>Новая папка</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="346"/>
         <source>Rename</source>
-        <translation>Cambiar nombre</translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="347"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="31"/>
         <source>Move To</source>
-        <translation>Mover a</translation>
+        <translation>Переместить в</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="348"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1140"/>
         <source>Duplicate</source>
-        <translation>Duplicar</translation>
+        <translation>Создать копию</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="353"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="363"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="596"/>
         <source>Copy Path</source>
-        <translation>Copiar ruta</translation>
+        <translation>Копировать путь</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="354"/>
@@ -3875,253 +3877,253 @@ Would you like to open the download page?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1239"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="602"/>
         <source>Reveal in File Manager</source>
-        <translation>Mostrar en el administrador de archivos</translation>
+        <translation>Показать в файловом менеджере</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="149"/>
         <location filename="../src/app/MainWindowFind.cpp" line="193"/>
         <location filename="../src/app/MainWindowFind.cpp" line="242"/>
         <source>Invalid regular expression: %1</source>
-        <translation>Expresión regular no válida: %1</translation>
+        <translation>Недопустимое регулярное выражение: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="208"/>
         <source>Replace</source>
-        <translation>Reemplazar</translation>
+        <translation>Заменить</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="258"/>
         <source>Replace All</source>
-        <translation>Reemplazar todo</translation>
+        <translation>Заменить все</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="240"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Unpin Tab</source>
-        <translation>Desfijar pestaña</translation>
+        <translation>Открепить вкладку</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="263"/>
         <source>Open Documents</source>
-        <translation>Documentos abiertos</translation>
+        <translation>Открытые документы</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="267"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="270"/>
         <source>New Tab</source>
-        <translation>Nueva pestaña</translation>
+        <translation>Новая вкладка</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="580"/>
         <source>Close Others</source>
-        <translation>Cerrar las demás pestañas</translation>
+        <translation>Закрыть другие вкладки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="581"/>
         <source>Close Tabs to the Right</source>
-        <translation>Cerrar pestañas a la derecha</translation>
+        <translation>Закрыть вкладки справа</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="582"/>
         <source>Close Saved Tabs</source>
-        <translation>Cerrar pestañas guardadas</translation>
+        <translation>Закрыть сохранённые вкладки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="583"/>
         <source>Close All Tabs</source>
-        <translation>Cerrar todas las pestañas</translation>
+        <translation>Закрыть все вкладки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Pin Tab</source>
-        <translation>Fijar pestaña</translation>
+        <translation>Закрепить вкладку</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="598"/>
         <source>Reveal in Finder</source>
-        <translation>Mostrar en Finder</translation>
+        <translation>Показать в Finder</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="600"/>
         <source>Reveal in File Explorer</source>
-        <translation>Mostrar en el Explorador de archivos</translation>
+        <translation>Показать в проводнике</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="606"/>
         <source>Move Tab to New Window</source>
-        <translation>Mover pestaña a una ventana nueva</translation>
+        <translation>Переместить вкладку в новое окно</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="609"/>
         <source>Copy Tab to New Window</source>
-        <translation>Copiar pestaña a una ventana nueva</translation>
+        <translation>Копировать вкладку в новое окно</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="166"/>
         <source>This file changed. Search again to update its matches.</source>
-        <translation>Este archivo ha cambiado. Vuelva a buscar para actualizar sus coincidencias.</translation>
+        <translation>Этот файл изменён. Выполните поиск повторно, чтобы обновить совпадения.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="216"/>
         <source>This match cannot be selected precisely in live preview. Showing it in source mode.</source>
-        <translation>Esta coincidencia no se puede seleccionar con precisión en la vista previa en vivo. Se muestra en el modo de código fuente.</translation>
+        <translation>Это совпадение нельзя точно выделить в режиме предпросмотра. Оно показано в режиме исходного кода.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="241"/>
         <source>Preview Folder Replacement</source>
-        <translation>Vista previa del reemplazo en la carpeta</translation>
+        <translation>Предпросмотр замены в папке</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="245"/>
         <source>Folder: %1
 Find: %2
 Replace with: %3</source>
-        <translation>Carpeta: %1
-Buscar: %2
-Reemplazar por: %3</translation>
+        <translation>Папка: %1
+Найти: %2
+Заменить на: %3</translation>
     </message>
     <message>
         <source>Include paths: %1 · Exclude paths: %2 · Match case: %3 · Regular expression: %4</source>
-        <translation type="vanished">Incluir rutas: %1 · Excluir rutas: %2 · Distinguir mayúsculas y minúsculas: %3 · Expresión regular: %4</translation>
+        <translation type="vanished">Включить пути: %1 · Исключить пути: %2 · Учитывать регистр: %3 · Регулярное выражение: %4</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>Yes</source>
-        <translation>Sí</translation>
+        <translation>Да</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>No</source>
-        <translation>No</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>Matches</source>
-        <translation>Coincidencias</translation>
+        <translation>Совпадения</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="43"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="216"/>
         <source>Rename / Move</source>
-        <translation>Renombrar / Mover</translation>
+        <translation>Переименовать / Переместить</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="44"/>
         <source>The destination already exists or is inside the folder being moved.</source>
-        <translation>El destino ya existe o está dentro de la carpeta que se está moviendo.</translation>
+        <translation>Путь назначения уже существует или находится внутри перемещаемой папки.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Checking links…</source>
-        <translation>Comprobando enlaces…</translation>
+        <translation>Проверка ссылок…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="70"/>
         <source>Preview Link Updates</source>
-        <translation>Vista previa de la actualización de enlaces</translation>
+        <translation>Предпросмотр обновления ссылок</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="73"/>
         <source>%1 → %2
 Search folder: %3</source>
         <translation>%1 → %2
-Carpeta de búsqueda: %3</translation>
+Папка поиска: %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <source>Links</source>
-        <translation>Enlaces</translation>
+        <translation>Ссылки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="90"/>
         <source> (unsaved)</source>
-        <translation> (sin guardar)</translation>
+        <translation> (не сохранено)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="97"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="275"/>
         <source>Skipped</source>
-        <translation>Omitidos</translation>
+        <translation>Пропущены</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="123"/>
         <source>Updates Markdown links, reference definitions and Markdown images in this folder. Code and external URLs are excluded. Unsaved notes stay unsaved and can be undone. Disk originals are backed up.
 Hidden folders, build folders, symbolic links, unreadable files and files over 8 MB are excluded; links outside this folder are not scanned.</source>
-        <translation>Actualiza los enlaces Markdown, las definiciones de referencias y las imágenes Markdown de esta carpeta. Se excluyen el código y las URL externas. Las notas sin guardar permanecen sin guardar y los cambios se pueden deshacer. Se crean copias de seguridad de los originales en disco.
-Se excluyen las carpetas ocultas, las carpetas de compilación, los enlaces simbólicos, los archivos ilegibles y los archivos de más de 8 MB; no se analizan los enlaces fuera de esta carpeta.</translation>
+        <translation>Обновляет ссылки Markdown, определения ссылок и изображения Markdown в этой папке. Код и внешние URL исключаются. Несохранённые заметки остаются несохранёнными, а изменения можно отменить. Для оригиналов на диске создаются резервные копии.
+Скрытые папки, папки сборки, символические ссылки, недоступные для чтения файлы и файлы размером более 8 МБ исключаются; ссылки вне этой папки не проверяются.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="129"/>
         <source>Some files could not be checked. Their links may need manual updates.</source>
-        <translation>No se pudieron comprobar algunos archivos. Puede que sus enlaces requieran una actualización manual.</translation>
+        <translation>Некоторые файлы не удалось проверить. Их ссылки может потребоваться обновить вручную.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="134"/>
         <source>Rename / Move Only</source>
-        <translation>Solo renombrar / mover</translation>
+        <translation>Только переименовать / переместить</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="136"/>
         <source>Update Links</source>
-        <translation>Actualizar enlaces</translation>
+        <translation>Обновить ссылки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="165"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="169"/>
         <source>A note changed after the preview. Please try again.</source>
-        <translation>Una nota cambió después de la vista previa. Vuelva a intentarlo.</translation>
+        <translation>Заметка изменилась после предпросмотра. Повторите попытку.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="174"/>
         <source>A file changed on disk after the preview. Please try again.</source>
-        <translation>Un archivo en disco cambió después de la vista previa. Vuelva a intentarlo.</translation>
+        <translation>Файл на диске изменился после предпросмотра. Повторите попытку.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="186"/>
         <source>
 Some originals could not be restored. Backups: %1</source>
         <translation>
-No se pudieron restaurar algunos originales. Copias de seguridad: %1</translation>
+Некоторые оригиналы не удалось восстановить. Резервные копии: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="191"/>
         <source>Link updates could not be completed. The path was not changed.</source>
-        <translation>No se pudo completar la actualización de enlaces. La ruta no se ha cambiado.</translation>
+        <translation>Не удалось завершить обновление ссылок. Путь не был изменён.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="206"/>
         <source>Could not rename or move: %1</source>
-        <translation>No se pudo renombrar o mover: %1</translation>
+        <translation>Не удалось переименовать или переместить: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="244"/>
         <source>Update Note Links</source>
-        <translation>Actualizar enlaces de notas</translation>
+        <translation>Обновить ссылки на заметки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="274"/>
         <source>Links updated. Originals backed up in %1</source>
-        <translation>Enlaces actualizados. Copias de seguridad de los originales guardadas en %1</translation>
+        <translation>Ссылки обновлены. Резервные копии оригиналов сохранены в %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="277"/>
         <source>Unsaved, changed, unreadable, oversized, mixed line endings, or not losslessly writable.</source>
-        <translation>Sin guardar, modificados, ilegibles, demasiado grandes, con finales de línea mixtos o que no se pueden escribir sin pérdida.</translation>
+        <translation>Не сохранены, изменены, недоступны для чтения, слишком велики, содержат разные окончания строк или не могут быть записаны без потери данных.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="281"/>
         <source>Replacement preview</source>
-        <translation>Vista previa del reemplazo</translation>
+        <translation>Предпросмотр замены</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="287"/>
         <source>
 … Preview truncated; the full file will be processed.</source>
         <translation>
-… Vista previa truncada; se procesará el archivo completo.</translation>
+… Предпросмотр сокращён; будет обработан весь файл.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="290"/>
@@ -4130,32 +4132,32 @@ No se pudieron restaurar algunos originales. Copias de seguridad: %1</translatio
 
 After:
 %2</source>
-        <translation>Antes:
+        <translation>До:
 %1
 
-Después:
+После:
 %2</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="295"/>
         <source>Files with unsaved changes are skipped. Originals are backed up for recovery. Files changed since this preview will not be overwritten.</source>
-        <translation>Se omiten los archivos con cambios sin guardar. Se crean copias de seguridad de los originales para poder recuperarlos. No se sobrescribirán los archivos modificados desde esta vista previa.</translation>
+        <translation>Файлы с несохранёнными изменениями пропускаются. Оригиналы сохраняются для восстановления. Файлы, изменённые после этого предпросмотра, не будут перезаписаны.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="309"/>
         <source>Replace %1 matches in %2 files</source>
-        <translation>Reemplazar %1 coincidencias en %2 archivos</translation>
+        <translation>Заменить %1 совпадений в %2 файлах</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="341"/>
         <source>Folder Replacement</source>
-        <translation>Reemplazo en la carpeta</translation>
+        <translation>Замена в папке</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="342"/>
         <source>%1 files changed; %2 skipped.
 %3</source>
-        <translation>%1 archivos modificados; %2 omitidos.
+        <translation>Изменено файлов: %1; пропущено: %2.
 %3</translation>
     </message>
     <message>
@@ -4163,7 +4165,7 @@ Después:
         <source>
 Recovery folder: %1</source>
         <translation>
-Carpeta de recuperación: %1</translation>
+Папка восстановления: %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="656"/>
@@ -4171,12 +4173,12 @@ Carpeta de recuperación: %1</translation>
         <location filename="../src/app/MainWindowSearch.cpp" line="357"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="376"/>
         <source>Undo Folder Replacement</source>
-        <translation>Deshacer el reemplazo en la carpeta</translation>
+        <translation>Отменить замену в папке</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="353"/>
         <source>No folder replacement is available to restore.</source>
-        <translation>No hay ningún reemplazo en una carpeta que se pueda deshacer.</translation>
+        <translation>Нет замены в папке, которую можно отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="358"/>
@@ -4184,1243 +4186,1243 @@ Carpeta de recuperación: %1</translation>
 %1
 
 Files edited afterward or containing unsaved changes will be skipped.</source>
-        <translation>¿Restaurar los archivos originales de este reemplazo?
+        <translation>Восстановить исходные файлы до этой замены?
 %1
 
-Se omitirán los archivos editados posteriormente o que contengan cambios sin guardar.</translation>
+Файлы, изменённые позже или содержащие несохранённые изменения, будут пропущены.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="361"/>
         <source>Restore Originals</source>
-        <translation>Restaurar originales</translation>
+        <translation>Восстановить оригиналы</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="362"/>
         <source>Open Recovery Folder</source>
-        <translation>Abrir la carpeta de recuperación</translation>
+        <translation>Открыть папку восстановления</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="377"/>
         <source>%1 files restored; %2 skipped.
 %3</source>
-        <translation>%1 archivos restaurados; %2 omitidos.
+        <translation>Восстановлено файлов: %1; пропущено: %2.
 %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Updating files…</source>
-        <translation>Actualizando archivos…</translation>
+        <translation>Обновление файлов…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Stop after current file</source>
-        <translation>Detener después del archivo actual</translation>
+        <translation>Остановить после текущего файла</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="32"/>
         <source>Linked file not found: %1</source>
-        <translation>No se encontró el archivo enlazado: %1</translation>
+        <translation>Файл по ссылке не найден: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="114"/>
         <source>Heading not found: %1</source>
-        <translation>No se encontró el encabezado: %1</translation>
+        <translation>Заголовок не найден: %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MarkdownSourceEdit</name>
+    <name>mufpen::MarkdownSourceEdit</name>
     <message>
         <source>(no spelling suggestions)</source>
-        <translation type="vanished">(sin sugerencias ortográficas)</translation>
+        <translation type="vanished">(нет вариантов исправления)</translation>
     </message>
     <message>
         <source>Ignore &quot;%1&quot;</source>
-        <translation type="vanished">Ignorar &quot;%1&quot;</translation>
+        <translation type="vanished">Игнорировать «%1»</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PreferencesDialog</name>
+    <name>mufpen::PreferencesDialog</name>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="223"/>
         <location filename="../src/app/PreferencesDialog.cpp" line="225"/>
         <source>Preferences</source>
-        <translation>Preferencias</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Files</source>
-        <translation>Archivos</translation>
+        <translation>Файлы</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="63"/>
         <source>Categories</source>
-        <translation>Categorías</translation>
+        <translation>Категории</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Image</source>
-        <translation>Imagen</translation>
+        <translation>Изображение</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Export</source>
-        <translation>Exportar</translation>
+        <translation>Экспорт</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Appearance</source>
-        <translation>Apariencia</translation>
+        <translation>Внешний вид</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>General</source>
-        <translation>General</translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Atajos de teclado</translation>
+        <translation>Сочетания клавиш</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Search</source>
-        <translation>Búsqueda</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="256"/>
         <source>No settings available.</source>
-        <translation>No hay ajustes disponibles.</translation>
+        <translation>Нет доступных настроек.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="vanished">Idioma</translation>
+        <translation type="vanished">Язык</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="vanished">Actualización</translation>
+        <translation type="vanished">Обновление</translation>
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation type="vanished">Buscar actualizaciones</translation>
+        <translation type="vanished">Проверить обновления</translation>
     </message>
     <message>
         <source>Automatically check for updates</source>
-        <translation type="vanished">Buscar actualizaciones automáticamente</translation>
+        <translation type="vanished">Автоматически проверять обновления</translation>
     </message>
     <message>
         <source>Include beta updates</source>
-        <translation type="vanished">Incluir actualizaciones beta</translation>
+        <translation type="vanished">Включать бета-обновления</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Avanzado</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Activar modo de depuración</translation>
+        <translation type="vanished">Включить режим отладки</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Enviar datos de uso anónimos</translation>
+        <translation type="vanished">Отправлять анонимные данные об использовании</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Abrir ajustes avanzados</translation>
+        <translation type="vanished">Открыть дополнительные настройки</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Restablecer ajustes avanzados</translation>
+        <translation type="vanished">Сбросить дополнительные настройки</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="vanished">Tema</translation>
+        <translation type="vanished">Тема</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation type="vanished">Zoom</translation>
+        <translation type="vanished">Масштаб</translation>
     </message>
     <message>
         <source>Text Size</source>
-        <translation type="vanished">Tamaño del texto</translation>
+        <translation type="vanished">Размер текста</translation>
     </message>
     <message>
         <source>Status Bar</source>
-        <translation type="vanished">Barra de estado</translation>
+        <translation type="vanished">Строка состояния</translation>
     </message>
     <message>
         <source>Show status bar</source>
-        <translation type="vanished">Mostrar barra de estado</translation>
+        <translation type="vanished">Показывать строку состояния</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsAppearancePage</name>
+    <name>mufpen::PrefsAppearancePage</name>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="143"/>
         <source>Theme</source>
-        <translation>Tema</translation>
+        <translation>Тема</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="144"/>
         <source>Zoom</source>
-        <translation>Zoom</translation>
+        <translation>Масштаб</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="145"/>
         <source>Reset</source>
-        <translation>Restablecer</translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="146"/>
         <source>Text Size</source>
-        <translation>Tamaño del texto</translation>
+        <translation>Размер текста</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="147"/>
         <source>Content Width</source>
-        <translation>Ancho del contenido</translation>
+        <translation>Ширина содержимого</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="148"/>
         <source>Theme Default</source>
-        <translation>Predeterminado del tema</translation>
+        <translation>По умолчанию для темы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="149"/>
         <source>Comfortable (1024 px)</source>
-        <translation>Cómodo (1024 px)</translation>
+        <translation>Комфортная (1024 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="150"/>
         <source>Wide (1200 px)</source>
-        <translation>Ancho (1200 px)</translation>
+        <translation>Широкая (1200 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="151"/>
         <source>Full Width</source>
-        <translation>Ancho completo</translation>
+        <translation>На всю ширину</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="152"/>
         <source>Status Bar</source>
-        <translation>Barra de estado</translation>
+        <translation>Строка состояния</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="153"/>
         <source>Show status bar</source>
-        <translation>Mostrar barra de estado</translation>
+        <translation>Показывать строку состояния</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="155"/>
         <source>Import Theme...</source>
-        <translation>Importar tema…</translation>
+        <translation>Импортировать тему…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsEditorPage</name>
+    <name>mufpen::PrefsEditorPage</name>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="215"/>
         <source>Default Indent</source>
-        <translation>Sangría predeterminada</translation>
+        <translation>Отступ по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="216"/>
         <source>Only effective for references and lists generated via menu bar or shortcuts</source>
-        <translation>Solo aplicable a referencias y listas generadas desde la barra de menú o atajos de teclado</translation>
+        <translation>Действует только для ссылок и списков, созданных через панель меню или горячие клавиши</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="218"/>
         <source>Align Indent</source>
-        <translation>Alinear sangría</translation>
+        <translation>Выравнивать отступ</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="220"/>
         <source>Use Paired Symbols</source>
-        <translation>Usar símbolos emparejados</translation>
+        <translation>Использовать парные символы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="221"/>
         <source>Match brackets and quotes</source>
-        <translation>Cerrar corchetes y comillas automáticamente</translation>
+        <translation>Подбирать парные скобки и кавычки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="222"/>
         <source>Match Markdown characters</source>
-        <translation>Cerrar caracteres de Markdown automáticamente</translation>
+        <translation>Подбирать парные символы Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="224"/>
         <source>Autocomplete</source>
-        <translation>Autocompletar</translation>
+        <translation>Автодополнение</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="225"/>
         <source>Enable Emoji autocomplete</source>
-        <translation>Activar autocompletar de emojis</translation>
+        <translation>Включить автодополнение эмодзи</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="227"/>
         <source>Live Rendering</source>
-        <translation>Renderizado en vivo</translation>
+        <translation>Живой рендеринг</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="228"/>
         <source>Show Markdown source of the current block element</source>
-        <translation>Mostrar fuente Markdown del elemento de bloque actual</translation>
+        <translation>Показывать исходный код Markdown текущего блочного элемента</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="229"/>
         <source>Show block handles</source>
-        <translation>Mostrar controles de bloque</translation>
+        <translation>Показывать маркеры блоков</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="230"/>
         <source>Hover to open a block menu or drag to move the complete block.</source>
-        <translation>Pasa el cursor para abrir el menú del bloque o arrastra para mover el bloque completo.</translation>
+        <translation>Наведите указатель, чтобы открыть меню блока, или перетащите, чтобы переместить весь блок.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="231"/>
         <source>Show Mermaid diagrams as source code instead of rendering</source>
-        <translation>Mostrar los diagramas Mermaid como código fuente en lugar de renderizarlos</translation>
+        <translation>Показывать диаграммы Mermaid как исходный код вместо рендеринга</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="233"/>
         <source>Default Copy Behavior</source>
-        <translation>Comportamiento predeterminado al copiar</translation>
+        <translation>Поведение копирования по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="234"/>
         <source>Copy Markdown source when copying plain text</source>
-        <translation>Copiar fuente Markdown al copiar texto sin formato</translation>
+        <translation>Копировать исходный код Markdown при копировании обычного текста</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="235"/>
         <source>Copy or cut the entire line when no text is selected</source>
-        <translation>Copiar o cortar la línea completa cuando no hay texto seleccionado</translation>
+        <translation>Копировать или вырезать всю строку, если текст не выделен</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="237"/>
         <source>Default Line Break</source>
-        <translation>Salto de línea predeterminado</translation>
+        <translation>Перенос строки по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="238"/>
         <source>Default line break for new files</source>
-        <translation>Salto de línea predeterminado para archivos nuevos</translation>
+        <translation>Перенос строки по умолчанию для новых файлов</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="239"/>
         <source>LF (Unix Style)</source>
-        <translation>LF (estilo Unix)</translation>
+        <translation>LF (стиль Unix)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="240"/>
         <source>CRLF (Windows Style)</source>
-        <translation>CRLF (estilo Windows)</translation>
+        <translation>CRLF (стиль Windows)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="248"/>
         <source>Spell Check</source>
-        <translation>Corrector ortográfico</translation>
+        <translation>Проверка орфографии</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="249"/>
         <source>Enable spell checking</source>
-        <translation>Activar corrección ortográfica</translation>
+        <translation>Включить проверку орфографии</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="250"/>
         <source>Language</source>
-        <translation>Idioma</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>Auto-detect language</source>
-        <translation type="vanished">Detectar idioma automáticamente</translation>
+        <translation type="vanished">Автоопределение языка</translation>
     </message>
     <message>
         <source>Chinese (Simplified)</source>
-        <translation type="vanished">Chino (simplificado)</translation>
+        <translation type="vanished">Китайский (упрощённый)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="252"/>
         <source>Typewriter Mode</source>
-        <translation>Modo máquina de escribir</translation>
+        <translation>Режим пишущей машинки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="253"/>
         <source>Always keep the cursor in the middle of the screen</source>
-        <translation>Mantener siempre el cursor en el centro de la pantalla</translation>
+        <translation>Всегда держать курсор в центре экрана</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="254"/>
         <source>Disable Typewriter / Focus Mode</source>
-        <translation>Desactivar modo máquina de escribir / modo enfoque</translation>
+        <translation>Отключить режим пишущей машинки / фокусировки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="242"/>
         <source>Locked Editing</source>
-        <translation>Bloqueo de edición</translation>
+        <translation>Блокировка редактирования</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="243"/>
         <source>Read-only reading mode: hides the caret and inline popups, rejects typing</source>
-        <translation>Modo de solo lectura: oculta el cursor de texto y las ventanas emergentes integradas e impide escribir</translation>
+        <translation>Режим чтения: скрывает текстовый курсор и встроенные всплывающие окна, блокирует ввод текста</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="244"/>
         <source>Enable locked editing</source>
-        <translation>Activar el bloqueo de edición</translation>
+        <translation>Включить блокировку редактирования</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="245"/>
         <source>Each tab locks on its own</source>
-        <translation>Bloquear cada pestaña por separado</translation>
+        <translation>Блокировать каждую вкладку отдельно</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="246"/>
         <source>One lock for the whole window</source>
-        <translation>Un solo bloqueo para toda la ventana</translation>
+        <translation>Одна блокировка для всего окна</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsExportPage</name>
+    <name>mufpen::PrefsExportPage</name>
     <message>
         <source>Select Pandoc Executable</source>
-        <translation type="vanished">Seleccionar ejecutable de Pandoc</translation>
+        <translation type="vanished">Выберите исполняемый файл Pandoc</translation>
     </message>
     <message>
         <source>Executables (*.exe);;All Files (*)</source>
-        <translation type="vanished">Ejecutables (*.exe);;Todos los archivos (*)</translation>
+        <translation type="vanished">Исполняемые файлы (*.exe);;Все файлы (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>General</source>
-        <translation>General</translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (sin estilos)</translation>
+        <translation>HTML (без стилей)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>Image</source>
-        <translation>Imagen</translation>
+        <translation>Изображение</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="93"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="106"/>
         <source>Formats</source>
-        <translation>Formatos</translation>
+        <translation>Форматы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="246"/>
         <source>Default Export Folder</source>
-        <translation>Carpeta de exportación predeterminada</translation>
+        <translation>Папка экспорта по умолчанию</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="vanished">Automático</translation>
+        <translation type="vanished">Автоматически</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="242"/>
         <source>Same folder as current file</source>
-        <translation>Misma carpeta que el archivo actual</translation>
+        <translation>В папке текущего файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="243"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Custom...</source>
-        <translation>Personalizada...</translation>
+        <translation>Другая...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <source>Pandoc Path</source>
-        <translation>Ruta de Pandoc</translation>
+        <translation>Путь к Pandoc</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="259"/>
         <source>(Auto-detect)</source>
-        <translation>(Detección automática)</translation>
+        <translation>(Автоопределение)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="178"/>
         <source>Browse...</source>
-        <translation>Examinar...</translation>
+        <translation>Обзор...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="94"/>
         <source>New...</source>
-        <translation>Nuevo...</translation>
+        <translation>Создать...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="95"/>
         <source>Duplicate</source>
-        <translation>Duplicar</translation>
+        <translation>Создать копию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="96"/>
         <source>Rename...</source>
-        <translation>Cambiar nombre...</translation>
+        <translation>Переименовать...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="97"/>
         <source>Remove</source>
-        <translation>Eliminar</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="98"/>
         <source>Up</source>
-        <translation>Subir</translation>
+        <translation>Выше</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="99"/>
         <source>Down</source>
-        <translation>Bajar</translation>
+        <translation>Ниже</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="239"/>
         <source>Shared defaults for all export formats. Select a format to configure its own options.</source>
-        <translation>Opciones predeterminadas compartidas por todos los formatos de exportación. Seleccione un formato para configurar sus opciones.</translation>
+        <translation>Общие настройки по умолчанию для всех форматов экспорта. Выберите формат, чтобы настроить его параметры.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="249"/>
         <source>Custom Folder</source>
-        <translation>Carpeta personalizada</translation>
+        <translation>Выбранная папка</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="256"/>
         <source>Untitled documents use the Documents folder.</source>
-        <translation>Los documentos sin título utilizan la carpeta Documentos.</translation>
+        <translation>Для документов без названия используется папка «Документы».</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>All Files (*)</source>
-        <translation>Todos los archivos (*)</translation>
+        <translation>Все файлы (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="260"/>
         <source>Auto-detect</source>
-        <translation>Detectar automáticamente</translation>
+        <translation>Определить автоматически</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
         <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML y las imágenes utilizan el motor de renderizado de Mufpen. Los demás formatos requieren Pandoc.</translation>
+        <translation>Для PDF, HTML и изображений используется движок отображения Mufpen. Для остальных форматов требуется Pandoc.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
         <source>Used when exporting as %1. Changes are saved immediately.</source>
-        <translation>Se utiliza al exportar como %1. Los cambios se guardan inmediatamente.</translation>
+        <translation>Используется при экспорте в %1. Изменения сохраняются сразу.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Theme</source>
-        <translation>Tema</translation>
+        <translation>Тема</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Current theme</source>
-        <translation>Tema actual</translation>
+        <translation>Текущая тема</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Default light theme</source>
-        <translation>Tema claro predeterminado</translation>
+        <translation>Стандартная светлая тема</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>Executable</source>
-        <translation>Ejecutable</translation>
+        <translation>Исполняемый файл</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="284"/>
         <source>Arguments</source>
-        <translation>Argumentos</translation>
+        <translation>Аргументы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="285"/>
         <source>Output Extension</source>
-        <translation>Extensión de salida</translation>
+        <translation>Расширение выходного файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="286"/>
         <source>Arguments must contain ${outputPath}. ${inputPath} is a temporary Markdown copy including unsaved edits. Also available: ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Los argumentos deben contener ${outputPath}. ${inputPath} es una copia temporal de Markdown que incluye los cambios sin guardar. También están disponibles: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Аргументы должны содержать ${outputPath}. ${inputPath} — временная копия Markdown, включающая несохранённые изменения. Также доступны: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="288"/>
         <source>Quote arguments containing spaces. Variables are expanded after splitting arguments; no command shell is used.</source>
-        <translation>Ponga entre comillas los argumentos que contengan espacios. Las variables se expanden después de separar los argumentos; no se utiliza ningún intérprete de comandos.</translation>
+        <translation>Заключайте аргументы с пробелами в кавычки. Переменные подставляются после разделения аргументов; командная оболочка не используется.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="290"/>
         <source>The command must create one file at ${outputPath}. Failed or canceled exports keep the existing destination.</source>
-        <translation>El comando debe crear un archivo en ${outputPath}. Si la exportación falla o se cancela, se conserva el archivo de destino existente.</translation>
+        <translation>Команда должна создать один файл по пути ${outputPath}. При ошибке или отмене экспорта существующий файл назначения сохраняется.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Page Size</source>
-        <translation>Tamaño de página</translation>
+        <translation>Размер страницы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="295"/>
         <source>Width</source>
-        <translation>Anchura</translation>
+        <translation>Ширина</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="296"/>
         <source>Height</source>
-        <translation>Altura</translation>
+        <translation>Высота</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="318"/>
         <source>Landscape</source>
-        <translation>Horizontal</translation>
+        <translation>Альбомная ориентация</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="319"/>
         <source>Page Margins</source>
-        <translation>Márgenes de página</translation>
+        <translation>Поля страницы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="321"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="340"/>
         <source>Font Size (px)</source>
-        <translation>Tamaño de fuente (px)</translation>
+        <translation>Размер шрифта (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="322"/>
         <source>Start each level-one heading on a new page</source>
-        <translation>Comenzar cada título de nivel uno en una página nueva</translation>
+        <translation>Начинать каждый заголовок первого уровня с новой страницы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="323"/>
         <source>Header</source>
-        <translation>Encabezado</translation>
+        <translation>Верхний колонтитул</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="324"/>
         <source>Footer</source>
-        <translation>Pie de página</translation>
+        <translation>Нижний колонтитул</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="326"/>
         <source>Show page numbers</source>
-        <translation>Mostrar números de página</translation>
+        <translation>Показывать номера страниц</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="327"/>
         <source>Header and footer variables: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Space is reserved automatically so they do not overlap the document.</source>
-        <translation>Variables del encabezado y pie de página: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Se reserva espacio automáticamente para que no se superpongan al documento.</translation>
+        <translation>Переменные колонтитулов: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Место выделяется автоматически, чтобы колонтитулы не перекрывали содержимое документа.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="330"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="358"/>
         <source>Include a table of contents</source>
-        <translation>Incluir una tabla de contenido</translation>
+        <translation>Добавить оглавление</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="333"/>
         <source>Add to &lt;head&gt;</source>
-        <translation>Añadir a &lt;head&gt;</translation>
+        <translation>Добавить в &lt;head&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="334"/>
         <source>Add before document content</source>
-        <translation>Añadir antes del contenido del documento</translation>
+        <translation>Добавить перед содержимым документа</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
         <source>Mufpen adds no theme stylesheet to this format.</source>
-        <translation>Mufpen no añade ninguna hoja de estilo del tema a este formato.</translation>
+        <translation>Mufpen не добавляет таблицу стилей темы в этот формат.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
         <source>Width (px)</source>
-        <translation>Anchura (px)</translation>
+        <translation>Ширина (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="339"/>
         <source>Output Scale</source>
-        <translation>Escala de salida</translation>
+        <translation>Масштаб вывода</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="342"/>
         <source>Exports one PNG. Maximum: 64 million pixels and 32,767 pixels in height. Use PDF for longer documents.</source>
-        <translation>Exporta un único PNG. Máximo: 64 millones de píxeles y 32,767 píxeles de altura. Utilice PDF para documentos más largos.</translation>
+        <translation>Экспортирует один файл PNG. Максимум: 64 миллиона пикселей и 32 767 пикселей в высоту. Для длинных документов используйте PDF.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="344"/>
         <source>Requires Pandoc. Configure its path under General.</source>
-        <translation>Requiere Pandoc. Configure su ruta en General.</translation>
+        <translation>Требуется Pandoc. Укажите путь к нему в разделе «Общие».</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="346"/>
         <source>Reference Document</source>
-        <translation>Documento de referencia</translation>
+        <translation>Документ-образец</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="349"/>
         <source>Custom CSS</source>
-        <translation>CSS personalizado</translation>
+        <translation>Собственный CSS</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="352"/>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>Название</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="325"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="354"/>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>Автор</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="359"/>
         <source>TOC Depth</source>
-        <translation>Niveles de la tabla de contenido</translation>
+        <translation>Глубина оглавления</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="364"/>
         <source>Number sections</source>
-        <translation>Numerar las secciones</translation>
+        <translation>Нумеровать разделы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Line Wrapping</source>
-        <translation>Ajuste de líneas</translation>
+        <translation>Перенос строк</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Do not wrap</source>
-        <translation>No ajustar</translation>
+        <translation>Без переноса</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Automatic</source>
-        <translation>Automático</translation>
+        <translation>Автоматически</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Preserve source wrapping</source>
-        <translation>Conservar los saltos de línea del original</translation>
+        <translation>Сохранять переносы исходного текста</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="369"/>
         <source>Additional Pandoc Arguments</source>
-        <translation>Argumentos adicionales de Pandoc</translation>
+        <translation>Дополнительные аргументы Pandoc</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
         <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
-        <translation>Escriba entre comillas las rutas que contengan espacios. Mufpen gestiona el formato de entrada, el formato de salida y la ruta de salida.</translation>
+        <translation>Заключайте пути с пробелами в кавычки. Mufpen управляет входным форматом, выходным форматом и путём вывода.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
         <source>After Export</source>
-        <translation>Después de exportar</translation>
+        <translation>После экспорта</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="375"/>
         <source>Open the exported file directory</source>
-        <translation>Abrir la carpeta del archivo exportado</translation>
+        <translation>Открыть папку экспортированного файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="377"/>
         <source>Open the exported file</source>
-        <translation>Abrir el archivo exportado</translation>
+        <translation>Открыть экспортированный файл</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="414"/>
         <source>New Export Preset</source>
-        <translation>Nuevo preajuste de exportación</translation>
+        <translation>Новый профиль экспорта</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="419"/>
         <source>%1 (copy)</source>
-        <translation>%1 (copia)</translation>
+        <translation>%1 (копия)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="420"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <source>Name</source>
-        <translation>Nombre</translation>
+        <translation>Название</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="425"/>
         <source>Custom Command</source>
-        <translation>Comando personalizado</translation>
+        <translation>Пользовательская команда</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="428"/>
         <source>Format</source>
-        <translation>Formato</translation>
+        <translation>Формат</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="439"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Enter a non-empty, unique preset name.</source>
-        <translation>Introduzca un nombre de preajuste único y no vacío.</translation>
+        <translation>Введите непустое и уникальное название профиля.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Rename Export Preset</source>
-        <translation>Cambiar nombre del preajuste de exportación</translation>
+        <translation>Переименовать профиль экспорта</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="505"/>
         <source>Using: %1</source>
-        <translation>En uso: %1</translation>
+        <translation>Используется: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="506"/>
         <source>Not a valid executable; will auto-detect.</source>
-        <translation>No es un ejecutable válido; se detectará automáticamente.</translation>
+        <translation>Недопустимый исполняемый файл; будет определён автоматически.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="513"/>
         <source>Detected: %1</source>
-        <translation>Detectado: %1</translation>
+        <translation>Обнаружено: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="512"/>
         <source>Pandoc was not found. Install it, or click Browse to locate.</source>
-        <translation>No se encontró Pandoc. Instálelo o haga clic en «Examinar» para localizarlo.</translation>
+        <translation>Pandoc не найден. Установите его или нажмите «Обзор», чтобы указать расположение.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsFilesPage</name>
+    <name>mufpen::PrefsFilesPage</name>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="462"/>
         <source>Startup</source>
-        <translation>Inicio</translation>
+        <translation>При запуске</translation>
     </message>
     <message>
         <source>Open new file</source>
-        <translation type="vanished">Abrir archivo nuevo</translation>
+        <translation type="vanished">Открыть новый файл</translation>
     </message>
     <message>
         <source>Reopen last file</source>
-        <translation type="vanished">Reabrir último archivo</translation>
+        <translation type="vanished">Открыть последний файл</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="448"/>
         <source>File Open Protection</source>
-        <translation>Protección al abrir archivos</translation>
+        <translation>Защита при открытии файлов</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="449"/>
         <source>Extension protection</source>
-        <translation>Protección por extensión</translation>
+        <translation>Проверка расширения</translation>
     </message>
     <message>
         <source>Text file extensions (open without a warning)</source>
-        <translation type="vanished">Extensiones de archivos de texto (abrir sin advertencia)</translation>
+        <translation type="vanished">Расширения текстовых файлов (открывать без предупреждения)</translation>
     </message>
     <message>
         <source>Separate extensions with commas, spaces, or semicolons. You can add or remove extensions.</source>
-        <translation type="vanished">Separa las extensiones con comas, espacios o punto y coma. Puedes añadir o eliminar extensiones.</translation>
+        <translation type="vanished">Разделяйте расширения запятыми, пробелами или точками с запятой. Можно добавлять и удалять расширения.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="450"/>
         <source>Allowed file extensions</source>
-        <translation>Extensiones de archivo permitidas</translation>
+        <translation>Разрешённые расширения файлов</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="451"/>
         <source>Ask before opening files with extensions outside this list.</source>
-        <translation>Preguntar antes de abrir archivos con extensiones que no estén en esta lista.</translation>
+        <translation>Запрашивать подтверждение перед открытием файлов с расширениями вне этого списка.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="452"/>
         <source>e.g. .txt, .log</source>
-        <translation>p. ej. .txt, .log</translation>
+        <translation>Например: .txt, .log</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="453"/>
         <source>Add</source>
-        <translation>Añadir</translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="454"/>
         <source>Restore Defaults</source>
-        <translation>Restaurar valores predeterminados</translation>
+        <translation>Восстановить по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="455"/>
         <source>File size protection</source>
-        <translation>Protección por tamaño de archivo</translation>
+        <translation>Проверка размера файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="456"/>
         <source>Large files may take longer to open and use more memory.</source>
-        <translation>Los archivos grandes pueden tardar más en abrirse y consumir más memoria.</translation>
+        <translation>Большие файлы могут открываться дольше и использовать больше памяти.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="457"/>
         <source>Warn before opening files larger than</source>
-        <translation>Advertir antes de abrir archivos de más de</translation>
+        <translation>Предупреждать перед открытием файлов размером больше</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="460"/>
         <source>File size unit</source>
-        <translation>Unidad de tamaño de archivo</translation>
+        <translation>Единица измерения размера файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="463"/>
         <source>Opening Files</source>
-        <translation>Apertura de archivos</translation>
+        <translation>Открытие файлов</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="464"/>
         <source>Open files in tabs by default</source>
-        <translation>Abrir archivos en pestañas de forma predeterminada</translation>
+        <translation>По умолчанию открывать файлы во вкладках</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
         <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
-        <translation>Los archivos abiertos desde el gestor de archivos o la línea de comandos se abren en la ventana existente de Mufpen. Desactiva esta opción para abrirlos en una ventana nueva.</translation>
+        <translation>Файлы, открываемые из файлового менеджера или командной строки, используют существующее окно Mufpen. Отключите этот параметр, чтобы открывать их в новом окне.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
         <source>Always start fresh</source>
-        <translation>Iniciar siempre con una sesión vacía</translation>
+        <translation>Всегда начинать с чистого листа</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="472"/>
         <source>Restore previous session</source>
-        <translation>Restaurar la sesión anterior</translation>
+        <translation>Восстановить предыдущий сеанс</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="478"/>
         <source>Outline</source>
-        <translation>Esquema</translation>
+        <translation>Структура</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="479"/>
         <source>Allow collapsing and expanding the outline view in the sidebar</source>
-        <translation>Permitir contraer y expandir la vista de esquema en la barra lateral</translation>
+        <translation>Разрешить сворачивание и разворачивание структуры на боковой панели</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="481"/>
         <source>Default File Type / Extension</source>
-        <translation>Tipo de archivo / extensión predeterminado</translation>
+        <translation>Тип файла / расширение по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="488"/>
         <source>Plain Text (.txt)</source>
-        <translation>Texto sin formato (.txt)</translation>
+        <translation>Обычный текст (.txt)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="494"/>
         <source>Save &amp; Restore</source>
-        <translation>Guardar y restaurar</translation>
+        <translation>Сохранение и восстановление</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="495"/>
         <source>Auto Save</source>
-        <translation>Guardado automático</translation>
+        <translation>Автосохранение</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="496"/>
         <source>Auto-save changes to the previous file when switching files</source>
-        <translation>Guardar automáticamente los cambios del archivo anterior al cambiar de archivo</translation>
+        <translation>Автоматически сохранять изменения предыдущего файла при переключении</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="497"/>
         <source>Restore Unsaved Drafts</source>
-        <translation>Restaurar borradores sin guardar</translation>
+        <translation>Восстанавливать несохранённые черновики</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="499"/>
         <source>Recently Used Files</source>
-        <translation>Archivos usados recientemente</translation>
+        <translation>Недавние файлы</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="500"/>
         <source>Record history files and folders</source>
-        <translation>Registrar historial de archivos y carpetas</translation>
+        <translation>Запоминать историю файлов и папок</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="501"/>
         <source>Clear History</source>
-        <translation>Borrar historial</translation>
+        <translation>Очистить историю</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="503"/>
         <source>When dragging files/folders into the window</source>
-        <translation>Al arrastrar archivos/carpetas a la ventana</translation>
+        <translation>При перетаскивании файлов/папок в окно</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="504"/>
         <source>When dragging a folder</source>
-        <translation>Al arrastrar una carpeta</translation>
+        <translation>При перетаскивании папки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
         <source>Open in Mufpen</source>
-        <translation>Abrir en Mufpen</translation>
+        <translation>Открыть в Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
         <source>Open in File Manager</source>
-        <translation>Abrir en el gestor de archivos</translation>
+        <translation>Открыть в файловом менеджере</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="515"/>
         <source>When dragging a Markdown file</source>
-        <translation>Al arrastrar un archivo Markdown</translation>
+        <translation>При перетаскивании файла Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="521"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="531"/>
         <source>Import File</source>
-        <translation>Importar archivo</translation>
+        <translation>Импортировать файл</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="526"/>
         <source>When dragging an importable file</source>
-        <translation>Al arrastrar un archivo importable</translation>
+        <translation>При перетаскивании импортируемого файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="539"/>
         <source>Windows Integration</source>
-        <translation>Integración con Windows</translation>
+        <translation>Интеграция с Windows</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
         <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
-        <translation>Añadir «Abrir con Mufpen» al menú contextual de archivos y carpetas del Explorador de archivos</translation>
+        <translation>Добавить «Открыть с помощью Mufpen» в контекстное меню файлов и папок в Проводнике</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
         <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Registrar Mufpen como editor de archivos Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
+        <translation>Зарегистрировать Mufpen как редактор файлов Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
         <source>Set Mufpen as Default…</source>
-        <translation>Establecer Mufpen como aplicación predeterminada…</translation>
+        <translation>Сделать Mufpen редактором по умолчанию…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
         <source>Remove .%1</source>
-        <translation>Eliminar .%1</translation>
+        <translation>Удалить .%1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsGeneralPage</name>
+    <name>mufpen::PrefsGeneralPage</name>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="126"/>
         <source>Checking...</source>
-        <translation>Comprobando...</translation>
+        <translation>Проверка...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="98"/>
         <source>Update Available</source>
-        <translation>Actualización disponible</translation>
+        <translation>Доступно обновление</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
         <source>A new version of Mufpen (%1) is available.</source>
-        <translation>Una nueva versión de Mufpen (%1) está disponible.</translation>
+        <translation>Доступна новая версия Mufpen (%1).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>Up to Date</source>
-        <translation>Actualizado</translation>
+        <translation>Обновлений нет</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Está utilizando la última versión de Mufpen.</translation>
+        <translation>Вы используете последнюю версию Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Update Check Failed</source>
-        <translation>Error al buscar actualizaciones</translation>
+        <translation>Не удалось проверить обновления</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>No se pudieron buscar actualizaciones:
+        <translation>Не удалось проверить обновления:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="139"/>
         <source>Language</source>
-        <translation>Idioma</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="140"/>
         <source>Update</source>
-        <translation>Actualización</translation>
+        <translation>Обновление</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="141"/>
         <source>Check for Updates</source>
-        <translation>Buscar actualizaciones</translation>
+        <translation>Проверить обновления</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="142"/>
         <source>Automatically check for updates</source>
-        <translation>Buscar actualizaciones automáticamente</translation>
+        <translation>Автоматически проверять обновления</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Avanzado</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Activar modo de depuración</translation>
+        <translation type="vanished">Включить режим отладки</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Enviar datos de uso anónimos</translation>
+        <translation type="vanished">Отправлять анонимные данные об использовании</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Abrir ajustes avanzados</translation>
+        <translation type="vanished">Открыть дополнительные настройки</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Restablecer ajustes avanzados</translation>
+        <translation type="vanished">Сбросить дополнительные настройки</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsImagePage</name>
+    <name>mufpen::PrefsImagePage</name>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="185"/>
         <source>When Inserting Images</source>
-        <translation>Al insertar imágenes</translation>
+        <translation>При вставке изображений</translation>
     </message>
     <message>
         <source>Learn more...</source>
-        <translation type="vanished">Más información...</translation>
+        <translation type="vanished">Подробнее...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="190"/>
         <source>No special operation</source>
-        <translation>Ninguna operación especial</translation>
+        <translation>Без дополнительных действий</translation>
     </message>
     <message>
         <source>Copy to custom folder</source>
-        <translation type="vanished">Copiar a carpeta personalizada</translation>
+        <translation type="vanished">Копировать в указанную папку</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="191"/>
         <source>Copy image to current folder (./)</source>
-        <translation>Copiar imagen a la carpeta actual (./)</translation>
+        <translation>Копировать изображение в текущую папку (./)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="192"/>
         <source>Copy image to ./assets folder</source>
-        <translation>Copiar imagen a la carpeta ./assets</translation>
+        <translation>Копировать изображение в папку ./assets</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="193"/>
         <source>Copy image to ./%1 folder</source>
-        <translation>Copiar imagen a la carpeta ./%1</translation>
+        <translation>Копировать изображение в папку ./%1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="194"/>
         <source>Upload image</source>
-        <translation>Subir imagen</translation>
+        <translation>Загрузить изображение</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="195"/>
         <source>Copy to specified path</source>
-        <translation>Copiar a la ruta especificada</translation>
+        <translation>Копировать в указанный путь</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="200"/>
         <source>Destination folder for copied images</source>
-        <translation>Carpeta de destino de las imágenes copiadas</translation>
+        <translation>Папка назначения для копируемых изображений</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="201"/>
         <source>Browse...</source>
-        <translation>Examinar...</translation>
+        <translation>Обзор...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="202"/>
         <source>Apply the above rules to local images</source>
-        <translation>Aplicar las reglas anteriores a imágenes locales</translation>
+        <translation>Применять указанные правила к локальным изображениям</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="203"/>
         <source>Apply the above rules to network images</source>
-        <translation>Aplicar las reglas anteriores a imágenes de red</translation>
+        <translation>Применять указанные правила к сетевым изображениям</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="204"/>
         <source>Allow automatic image upload based on YAML settings</source>
-        <translation>Permitir subida automática de imágenes según ajustes YAML</translation>
+        <translation>Разрешить автоматическую загрузку изображений по настройкам YAML</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="207"/>
         <source>Image Syntax Preferences</source>
-        <translation>Preferencias de sintaxis de imagen</translation>
+        <translation>Настройки синтаксиса изображений</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="208"/>
         <source>Prefer relative paths</source>
-        <translation>Preferir rutas relativas</translation>
+        <translation>Предпочитать относительные пути</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="209"/>
         <source>Add / to relative paths</source>
-        <translation>Agregar ./ a las rutas relativas</translation>
+        <translation>Добавлять / к относительным путям</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="210"/>
         <source>Auto-escape image URLs on insertion</source>
-        <translation>Escapar automáticamente URL de imágenes al insertar</translation>
+        <translation>Автоматически экранировать URL-адреса изображений при вставке</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="213"/>
         <source>Upload Service Settings</source>
-        <translation>Ajustes del servicio de subida</translation>
+        <translation>Настройки сервиса загрузки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="214"/>
         <source>Upload Service</source>
-        <translation>Servicio de subida</translation>
+        <translation>Сервис загрузки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="219"/>
         <source>None</source>
-        <translation>Ninguno</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="220"/>
         <source>Custom Command</source>
-        <translation>Comando personalizado</translation>
+        <translation>Пользовательская команда</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="225"/>
         <source>e.g. picgo upload or uPic -m upload</source>
-        <translation>p. ej. picgo upload o uPic -m upload</translation>
+        <translation>напр. picgo upload или uPic -m upload</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="226"/>
         <source>Test</source>
-        <translation>Probar</translation>
+        <translation>Проверить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="293"/>
         <source>Select Image Folder</source>
-        <translation>Seleccionar carpeta de imágenes</translation>
+        <translation>Выбрать папку изображений</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
@@ -5429,83 +5431,83 @@ Se omitirán los archivos editados posteriormente o que contengan cambios sin gu
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Test Upload</source>
-        <translation>Probar subida</translation>
+        <translation>Проверить загрузку</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
         <source>Enter an upload command first.</source>
-        <translation>Introduzca primero un comando de subida.</translation>
+        <translation>Сначала введите команду загрузки.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="310"/>
         <source>Could not create a test image.</source>
-        <translation>No se pudo crear una imagen de prueba.</translation>
+        <translation>Не удалось создать тестовое изображение.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="316"/>
         <source>Upload canceled.</source>
-        <translation>Subida cancelada.</translation>
+        <translation>Загрузка отменена.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <source>Upload succeeded. Returned URL:
 %1</source>
-        <translation>Subida correcta. URL devuelta:
+        <translation>Загрузка выполнена. Возвращённый URL:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Upload failed:
 %1</source>
-        <translation>Error de subida:
+        <translation>Сбой загрузки:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsMarkdownPage</name>
+    <name>mufpen::PrefsMarkdownPage</name>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="256"/>
         <source>Markdown Syntax Preferences</source>
-        <translation>Preferencias de sintaxis Markdown</translation>
+        <translation>Настройки синтаксиса Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="257"/>
         <source>Strict Mode</source>
-        <translation>Modo estricto</translation>
+        <translation>Строгий режим</translation>
     </message>
     <message>
         <source>Strict Mode turns off tables, strikethrough, task lists, auto links and formulas for plain CommonMark output.</source>
-        <translation type="vanished">El modo estricto desactiva las tablas, el tachado, las listas de tareas, los enlaces automáticos y las fórmulas para una salida CommonMark simple.</translation>
+        <translation type="vanished">Строгий режим отключает таблицы, зачёркивание, списки задач, автоматические ссылки и формулы для вывода в формате обычного CommonMark.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="258"/>
         <source>Strict Mode turns off tables, strikethrough and task lists for plain CommonMark structure. Inline extensions (formulas, auto links, sub/superscript, etc.) always follow their own switches and are not affected by Strict Mode.</source>
-        <translation>El modo estricto desactiva las tablas, el tachado y las listas de tareas para usar la estructura CommonMark estándar. Las extensiones en línea (fórmulas, enlaces automáticos, subíndices y superíndices, etc.) siempre siguen sus propios ajustes y no se ven afectadas por el modo estricto.</translation>
+        <translation>Строгий режим отключает таблицы, зачёркивание и списки задач, сохраняя стандартную структуру CommonMark. Встроенные расширения (формулы, автоматические ссылки, нижние и верхние индексы и т. п.) всегда управляются собственными переключателями и не зависят от строгого режима.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="261"/>
         <source>Break on Single Newline</source>
-        <translation>Salto de línea en cada nueva línea simple</translation>
+        <translation>Перенос по одному переводу строки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="263"/>
         <source>Render a single line break as a new line. Turn off for strict CommonMark, which joins soft-wrapped lines into one paragraph.</source>
-        <translation>Muestra cada salto de línea simple como una nueva línea. Desactívalo para CommonMark estricto, que une las líneas con salto suave en un solo párrafo.</translation>
+        <translation>Отображать каждый одиночный перевод строки как разрыв строки. Отключите для строгого CommonMark, который объединяет строки с мягким переносом в один абзац.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="265"/>
         <source>Heading Style</source>
-        <translation>Estilo de encabezado</translation>
+        <translation>Стиль заголовков</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="267"/>
         <source>Unordered List</source>
-        <translation>Lista sin ordenar</translation>
+        <translation>Маркированный список</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="269"/>
         <source>Ordered List</source>
-        <translation>Lista ordenada</translation>
+        <translation>Нумерованный список</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="270"/>
@@ -5520,1090 +5522,1090 @@ Se omitirán los archivos editados posteriormente o que contengan cambios sin gu
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="273"/>
         <source>Markdown Extended Syntax</source>
-        <translation>Sintaxis extendida de Markdown</translation>
+        <translation>Расширенный синтаксис Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="274"/>
         <source>Auto Recognize Links</source>
-        <translation>Reconocer enlaces automáticamente</translation>
+        <translation>Автоматически распознавать ссылки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="275"/>
         <source>Inline Formula</source>
-        <translation>Fórmula en línea</translation>
+        <translation>Встроенная формула</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="276"/>
         <source>Allow Spaces Inside Formula Delimiters</source>
-        <translation>Permitir espacios dentro de los delimitadores de fórmulas</translation>
+        <translation>Разрешить пробелы внутри разделителей формул</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="278"/>
         <source>Accept spaces or tabs next to inline formula delimiters. Turn this off for Pandoc-style parsing that avoids ambiguous currency text.</source>
-        <translation>Acepte espacios o tabulaciones junto a los delimitadores de fórmulas en línea. Desactive esta opción para usar el análisis al estilo de Pandoc, que evita texto monetario ambiguo.</translation>
+        <translation>Разрешать пробелы или знаки табуляции рядом с разделителями встроенных формул. Отключите этот параметр для разбора в стиле Pandoc, исключающего неоднозначное распознавание денежных сумм.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="280"/>
         <source>Subscript</source>
-        <translation>Subíndice</translation>
+        <translation>Нижний индекс</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="281"/>
         <source>Superscript</source>
-        <translation>Superíndice</translation>
+        <translation>Верхний индекс</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="282"/>
         <source>Highlight</source>
-        <translation>Resaltado</translation>
+        <translation>Выделение</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="283"/>
         <source>Render Emoji Shortcodes</source>
-        <translation>Renderizar códigos abreviados de emoji</translation>
+        <translation>Отображать короткие коды эмодзи</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="285"/>
         <source>Convert GitHub-style shortcodes like :smile: and :heart: into emoji glyphs when rendering. Turn off to keep the literal :shortcode: text (e.g. for technical documentation).</source>
-        <translation>Convertir códigos abreviados de estilo GitHub, como :smile: y :heart:, en caracteres emoji al renderizar. Desactive esta opción para conservar el texto literal :shortcode: (por ejemplo, en documentación técnica).</translation>
+        <translation>При отображении преобразовывать короткие коды в стиле GitHub, например :smile: и :heart:, в символы эмодзи. Отключите, чтобы сохранять буквальный текст :shortcode: (например, в технической документации).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="287"/>
         <source>Github Style Alert Box</source>
-        <translation>Caja de alerta estilo GitHub</translation>
+        <translation>Блоки предупреждений в стиле GitHub</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="288"/>
         <source>Mermaid Diagrams</source>
-        <translation>Diagramas Mermaid</translation>
+        <translation>Диаграммы Mermaid</translation>
     </message>
     <message>
         <source>Diagrams (Sequence, Flowchart, Mermaid)</source>
-        <translation type="vanished">Diagramas (Secuencia, Fluxograma, Mermaid)</translation>
+        <translation type="vanished">Диаграммы (Sequence, Flowchart, Mermaid)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="289"/>
         <source>Diagram Options</source>
-        <translation>Opciones de diagrama</translation>
+        <translation>Параметры диаграмм</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="292"/>
         <source>Smart Punctuation</source>
-        <translation>Puntuación inteligente</translation>
+        <translation>Умная пунктуация</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="293"/>
         <source>Convert on Input</source>
-        <translation>Convertir al escribir</translation>
+        <translation>Преобразовывать при вводе</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>No conversion</source>
-        <translation>Sin conversión</translation>
+        <translation>Без преобразования</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>When typing</source>
-        <translation>Al escribir</translation>
+        <translation>При вводе</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Always</source>
-        <translation>Siempre</translation>
+        <translation>Всегда</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="295"/>
         <source>Smart Quotes</source>
-        <translation>Comillas inteligentes</translation>
+        <translation>Умные кавычки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="304"/>
         <source>Smart Dashes</source>
-        <translation>Guiones inteligentes</translation>
+        <translation>Умные тире</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="305"/>
         <source>Convert on Rendering</source>
-        <translation>Convertir al renderizar</translation>
+        <translation>Преобразовывать при отрисовке</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="306"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Reasignar puntuación Unicode al analizar</translation>
+        <translation>Переназначать юникод-пунктуацию при разборе</translation>
     </message>
     <message>
         <source>Allow and convert Unicode punctuation when parsing Markdown</source>
-        <translation type="vanished">Permitir y convertir puntuación Unicode al analizar Markdown</translation>
+        <translation type="vanished">Разрешать и преобразовывать пунктуацию Unicode при разборе Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="309"/>
         <source>Code Blocks</source>
-        <translation>Bloques de código</translation>
+        <translation>Блоки кода</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="310"/>
         <source>Show Line Numbers</source>
-        <translation>Mostrar números de línea</translation>
+        <translation>Показывать номера строк</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="311"/>
         <source>Code Blocks Auto Wrap</source>
-        <translation>Ajuste automático de línea en bloques de código</translation>
+        <translation>Автоперенос в блоках кода</translation>
     </message>
     <message>
         <source>Use Shift+Tab to auto adjust indent of selected code</source>
-        <translation type="vanished">Usar Mayús+Tab para ajustar automáticamente la sangría del código seleccionado</translation>
+        <translation type="vanished">Использовать Shift+Tab для автоматической настройки отступа выделенного кода</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="312"/>
         <source>Code Indent</source>
-        <translation>Sangría de código</translation>
+        <translation>Отступ в коде</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="314"/>
         <source>Default Code Block Language</source>
-        <translation>Lenguaje predeterminado de bloques de código</translation>
+        <translation>Язык блока кода по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="315"/>
         <source>(empty)</source>
-        <translation>(vacío)</translation>
+        <translation>(пусто)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="317"/>
         <source>Automatically add code block language</source>
-        <translation>Agregar automáticamente lenguaje al bloque de código</translation>
+        <translation>Автоматически добавлять язык блока кода</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>When inserting code blocks via Markdown code</source>
-        <translation>Al insertar bloques de código mediante código Markdown</translation>
+        <translation>При вставке блоков кода через код Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Never</source>
-        <translation>Nunca</translation>
+        <translation>Никогда</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsSearchPage</name>
+    <name>mufpen::PrefsSearchPage</name>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="120"/>
         <source>Search scope</source>
-        <translation>Ámbito de búsqueda</translation>
+        <translation>Область поиска</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="121"/>
         <source>Applies to folder search and Quick Open. Changes take effect on the next search.</source>
-        <translation>Se aplica a la búsqueda en carpetas y a Apertura rápida. Los cambios se aplicarán en la próxima búsqueda.</translation>
+        <translation>Применяется к поиску в папках и быстрому открытию. Изменения вступят в силу при следующем поиске.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="122"/>
         <source>File extensions to search</source>
-        <translation>Extensiones de archivo que se buscarán</translation>
+        <translation>Расширения файлов для поиска</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="123"/>
         <source>Separate extensions with commas, for example: md, txt. Use * for all file types; leave empty to search no files.</source>
-        <translation>Separe las extensiones con comas, por ejemplo: md, txt. Use * para todos los tipos de archivo; deje el campo vacío para no buscar ningún archivo.</translation>
+        <translation>Разделяйте расширения запятыми, например: md, txt. Используйте * для всех типов файлов; оставьте поле пустым, чтобы не искать ни в каких файлах.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="125"/>
         <source>Ignored files and folders</source>
-        <translation>Archivos y carpetas ignorados</translation>
+        <translation>Игнорируемые файлы и папки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="126"/>
         <source>One rule per line: build/ ignores folders, *.bak ignores files, /drafts/ matches the search root, and ! includes a match again. Uses gitignore-style wildcards.</source>
-        <translation>Una regla por línea: build/ ignora carpetas, *.bak ignora archivos, /drafts/ busca coincidencias desde la raíz de búsqueda y ! vuelve a incluir una coincidencia. Usa comodines de estilo gitignore.</translation>
+        <translation>Одно правило на строку: build/ исключает папки, *.bak исключает файлы, /drafts/ применяется в корневой папке поиска, а ! снова включает совпадение. Используются подстановочные знаки в стиле gitignore.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="128"/>
         <source>Include hidden files and folders</source>
-        <translation>Incluir archivos y carpetas ocultos</translation>
+        <translation>Включать скрытые файлы и папки</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="129"/>
         <source>Read .gitignore files automatically</source>
-        <translation>Leer archivos .gitignore automáticamente</translation>
+        <translation>Автоматически читать файлы .gitignore</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="130"/>
         <source>Read .ignore files automatically</source>
-        <translation>Leer archivos .ignore automáticamente</translation>
+        <translation>Автоматически читать файлы .ignore</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="131"/>
         <source>Reads rules in the search root and its subfolders. .ignore takes priority over .gitignore; the rules above take priority over both. Ignored folders are not traversed. Symbolic links are always skipped.</source>
-        <translation>Lee las reglas de la raíz de búsqueda y sus subcarpetas. .ignore tiene prioridad sobre .gitignore; las reglas anteriores tienen prioridad sobre ambos. No se recorren las carpetas ignoradas. Los enlaces simbólicos siempre se omiten.</translation>
+        <translation>Читает правила в корневой папке поиска и её подпапках. .ignore имеет приоритет над .gitignore; правила выше имеют приоритет над обоими. Игнорируемые папки не просматриваются. Символические ссылки всегда пропускаются.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="133"/>
         <source>Content search limits</source>
-        <translation>Límites de búsqueda de contenido</translation>
+        <translation>Ограничения поиска по содержимому</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="134"/>
         <source>Maximum file size</source>
-        <translation>Tamaño máximo de archivo</translation>
+        <translation>Максимальный размер файла</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="135"/>
         <source>Maximum file size for regex</source>
-        <translation>Tamaño máximo de archivo para expresiones regulares</translation>
+        <translation>Максимальный размер файла для регулярных выражений</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="136"/>
         <source>Regex searches obey both limits. File size does not restrict Quick Open. Folder replacement keeps its separate 8 MiB safety limit. File opening protection is configured on the Files page.</source>
-        <translation>Las búsquedas con expresiones regulares respetan ambos límites. El tamaño del archivo no restringe Apertura rápida. El reemplazo en carpetas mantiene su propio límite de seguridad de 8 MiB. La protección al abrir archivos se configura en la página Archivos.</translation>
+        <translation>Поиск с регулярными выражениями учитывает оба ограничения. Размер файла не ограничивает быстрое открытие. Для замены в папках сохраняется отдельное ограничение безопасности в 8 МиБ. Защита при открытии файлов настраивается на странице «Файлы».</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="138"/>
         <source>Restore search defaults</source>
-        <translation>Restaurar valores de búsqueda predeterminados</translation>
+        <translation>Восстановить настройки поиска по умолчанию</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsShortcutsPage</name>
+    <name>mufpen::PrefsShortcutsPage</name>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="115"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Atajos de teclado</translation>
+        <translation>Сочетания клавиш</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <source>Restore all default shortcuts?</source>
-        <translation>¿Restaurar todos los atajos predeterminados?</translation>
+        <translation>Восстановить все сочетания клавиш по умолчанию?</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="101"/>
         <source>All custom shortcuts will be removed. This cannot be undone.</source>
-        <translation>Se eliminarán todos los atajos personalizados. Esta acción no se puede deshacer.</translation>
+        <translation>Все пользовательские сочетания клавиш будут удалены. Это действие нельзя отменить.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="102"/>
         <source>Restore Defaults</source>
-        <translation>Restaurar valores predeterminados</translation>
+        <translation>Восстановить по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="116"/>
         <source>Select a command and press a key combination. Changes apply to all windows immediately.</source>
-        <translation>Seleccione un comando y pulse una combinación de teclas. Los cambios se aplican inmediatamente a todas las ventanas.</translation>
+        <translation>Выберите команду и нажмите сочетание клавиш. Изменения сразу применяются ко всем окнам.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="117"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="118"/>
         <source>Search commands or shortcuts…</source>
-        <translation>Buscar comandos o atajos…</translation>
+        <translation>Поиск команд или сочетаний клавиш…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Command</source>
-        <translation>Comando</translation>
+        <translation>Команда</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="120"/>
         <source>Shortcut</source>
-        <translation>Atajo</translation>
+        <translation>Сочетание клавиш</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Default</source>
-        <translation>Predeterminado</translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="121"/>
         <source>Clear</source>
-        <translation>Borrar</translation>
+        <translation>Очистить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="122"/>
         <source>Use Default</source>
-        <translation>Usar predeterminado</translation>
+        <translation>Использовать по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="123"/>
         <source>Restore All Defaults…</source>
-        <translation>Restaurar todos los valores predeterminados…</translation>
+        <translation>Восстановить все значения по умолчанию…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="168"/>
         <source>No matching commands.</source>
-        <translation>No hay comandos que coincidan.</translation>
+        <translation>Нет подходящих команд.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Apply</source>
-        <translation>Aplicar</translation>
+        <translation>Применить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Reassign</source>
-        <translation>Reasignar</translation>
+        <translation>Переназначить</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="214"/>
         <source>This key is reserved for text entry or cursor navigation. Use a modifier key or a function key.</source>
-        <translation>Esta tecla está reservada para introducir texto o mover el cursor. Utilice una tecla modificadora o una tecla de función.</translation>
+        <translation>Эта клавиша используется для ввода текста или перемещения курсора. Используйте клавишу-модификатор или функциональную клавишу.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="220"/>
         <source>Used by: %1. Reassigning will clear those shortcuts.</source>
-        <translation>Utilizado por: %1. Al reasignarlo se borrarán esos atajos.</translation>
+        <translation>Используется командами: %1. При переназначении эти сочетания клавиш будут удалены.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="222"/>
         <source>Clear and Apply removes the shortcut. Use Default and Apply restores it.</source>
-        <translation>Pulse Borrar y Aplicar para eliminar el atajo. Pulse Usar predeterminado y Aplicar para restaurarlo.</translation>
+        <translation>Нажмите «Очистить», затем «Применить», чтобы удалить сочетание клавиш. Нажмите «Использовать по умолчанию», затем «Применить», чтобы восстановить его.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::QuickOpenDialog</name>
+    <name>mufpen::QuickOpenDialog</name>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="82"/>
         <location filename="../src/app/QuickOpenDialog.cpp" line="294"/>
         <source>Quick Open</source>
-        <translation>Apertura rápida</translation>
+        <translation>Быстрое открытие</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="89"/>
         <source>Matching files</source>
-        <translation>Archivos coincidentes</translation>
+        <translation>Соответствующие файлы</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="253"/>
         <source>Scanning folder…</source>
-        <translation>Explorando carpeta…</translation>
+        <translation>Сканирование папки…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="254"/>
         <source>No matching files</source>
-        <translation>No hay archivos coincidentes</translation>
+        <translation>Нет подходящих файлов</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="255"/>
         <source>%1 matching files</source>
-        <translation>%1 archivos coincidentes</translation>
+        <translation>Подходящих файлов: %1</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="257"/>
         <source> · Showing the first %1; type to narrow results</source>
-        <translation> · Se muestran los primeros %1; escriba para acotar los resultados</translation>
+        <translation> · Показаны первые %1; введите текст, чтобы сузить результаты</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="259"/>
         <source> · File limit reached; results are incomplete</source>
-        <translation> · Se alcanzó el límite de archivos; los resultados están incompletos</translation>
+        <translation> · Достигнут лимит файлов; результаты неполные</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="261"/>
         <source> · %1 unreadable folders skipped</source>
-        <translation> · Se omitieron %1 carpetas ilegibles</translation>
+        <translation> · Пропущено недоступных для чтения папок: %1</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="295"/>
         <source>Search file names or paths…</source>
-        <translation>Buscar nombres de archivo o rutas…</translation>
+        <translation>Поиск по именам файлов или путям…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="296"/>
         <source>Open and recent files</source>
-        <translation>Archivos abiertos y recientes</translation>
+        <translation>Открытые и недавние файлы</translation>
     </message>
     <message>
         <source>Type to filter files…</source>
-        <translation type="vanished">Escriba para filtrar archivos…</translation>
+        <translation type="vanished">Введите текст для фильтрации файлов…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SearchPanelWidget</name>
+    <name>mufpen::SearchPanelWidget</name>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="305"/>
         <source> · Unsaved</source>
-        <translation> · Sin guardar</translation>
+        <translation> · Не сохранён</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="325"/>
         <source>Open a folder to search its contents.</source>
-        <translation>Abra una carpeta para buscar en su contenido.</translation>
+        <translation>Откройте папку, чтобы выполнить поиск в её содержимом.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="327"/>
         <source>Search failed: %1</source>
-        <translation>Error en la búsqueda: %1</translation>
+        <translation>Ошибка поиска: %1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="329"/>
         <source>Search text files in this folder and its subfolders.</source>
-        <translation>Buscar en los archivos de texto de esta carpeta y sus subcarpetas.</translation>
+        <translation>Поиск в текстовых файлах этой папки и её подпапок.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="331"/>
         <source>%1 matches in %2 files</source>
-        <translation>%1 coincidencias en %2 archivos</translation>
+        <translation>%1 совпадений в %2 файлах</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="333"/>
         <source> · Searching…</source>
-        <translation> · Buscando…</translation>
+        <translation> · Поиск…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="335"/>
         <source> · Incomplete results; search again before replacing</source>
-        <translation> · Resultados incompletos; vuelva a buscar antes de reemplazar</translation>
+        <translation> · Неполные результаты; перед заменой повторите поиск</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="337"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="353"/>
         <source>%1 files searched</source>
-        <translation>%1 archivos examinados</translation>
+        <translation>Проверено файлов: %1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="339"/>
         <source> · %1 files or folders skipped</source>
-        <translation> · Se omitieron %1 archivos o carpetas</translation>
+        <translation> · Пропущено файлов или папок: %1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="341"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="400"/>
         <source>Result limit reached</source>
-        <translation>Se alcanzó el límite de resultados</translation>
+        <translation>Достигнут лимит результатов</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="344"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="350"/>
         <source>Search details</source>
-        <translation>Detalles de la búsqueda</translation>
+        <translation>Сведения о поиске</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Path</source>
-        <translation>Ruta</translation>
+        <translation>Путь</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Reason</source>
-        <translation>Motivo</translation>
+        <translation>Причина</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="364"/>
         <source>File size exceeds %1 MiB</source>
-        <translation>El tamaño del archivo supera %1 MiB</translation>
+        <translation>Размер файла превышает %1 MiB</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="367"/>
         <source>Regular expression search is limited to %1 MiB per file</source>
-        <translation>La búsqueda con expresiones regulares está limitada a %1 MiB por archivo</translation>
+        <translation>Поиск по регулярному выражению ограничен %1 MiB на файл</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="371"/>
         <source>File is loading or has conflicting unsaved versions</source>
-        <translation>El archivo se está cargando o tiene versiones sin guardar en conflicto</translation>
+        <translation>Файл загружается или имеет конфликтующие несохранённые версии</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="374"/>
         <source>Cannot read file or folder</source>
-        <translation>No se puede leer el archivo o la carpeta</translation>
+        <translation>Не удаётся прочитать файл или папку</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="377"/>
         <source>Unsupported encoding or binary content</source>
-        <translation>Codificación no compatible o contenido binario</translation>
+        <translation>Неподдерживаемая кодировка или двоичное содержимое</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="380"/>
         <source>File changed during search</source>
-        <translation>El archivo cambió durante la búsqueda</translation>
+        <translation>Файл изменился во время поиска</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="383"/>
         <source>Search exceeded its resource limit</source>
-        <translation>La búsqueda superó su límite de recursos</translation>
+        <translation>Поиск превысил лимит ресурсов</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="386"/>
         <source>Ignored directory</source>
-        <translation>Carpeta ignorada</translation>
+        <translation>Игнорируемый каталог</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="389"/>
         <source>Excluded by search ignore rules</source>
-        <translation>Excluido por las reglas de exclusión de búsqueda</translation>
+        <translation>Исключено правилами игнорирования поиска</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="392"/>
         <source>Cannot read ignore rules (UTF-8, up to 4 MiB)</source>
-        <translation>No se pueden leer las reglas de exclusión (UTF-8, hasta 4 MiB)</translation>
+        <translation>Не удалось прочитать правила игнорирования (UTF-8, до 4 МиБ)</translation>
     </message>
     <message>
         <source>No folder open</source>
-        <translation type="vanished">Ninguna carpeta abierta</translation>
+        <translation type="vanished">Нет открытой папки</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="408"/>
         <source>Search contents…</source>
-        <translation>Buscar en el contenido…</translation>
+        <translation>Поиск по содержимому…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="409"/>
         <source>Search contents</source>
-        <translation>Buscar en el contenido</translation>
+        <translation>Поиск по содержимому</translation>
     </message>
     <message>
         <source>Include paths (words or path segments)</source>
-        <translation type="vanished">Incluir rutas (palabras o segmentos de ruta)</translation>
+        <translation type="vanished">Включить пути (слова или части пути)</translation>
     </message>
     <message>
         <source>Exclude paths (words or path segments)</source>
-        <translation type="vanished">Excluir rutas (palabras o segmentos de ruta)</translation>
+        <translation type="vanished">Исключить пути (слова или части пути)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="252"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="412"/>
         <source>Match case</source>
-        <translation>Distinguir mayúsculas y minúsculas</translation>
+        <translation>Учитывать регистр</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="254"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="414"/>
         <source>Regular expression</source>
-        <translation>Expresión regular</translation>
+        <translation>Регулярное выражение</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="416"/>
         <source>Replace with…</source>
-        <translation>Reemplazar por…</translation>
+        <translation>Заменить на…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="417"/>
         <source>Replace with</source>
-        <translation>Reemplazar por</translation>
+        <translation>Заменить на</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="418"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="419"/>
         <source>Replace</source>
-        <translation>Reemplazar</translation>
+        <translation>Заменить</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="420"/>
         <source>Preview folder replacement…</source>
-        <translation>Vista previa del reemplazo en la carpeta…</translation>
+        <translation>Предпросмотр замены в папке…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="421"/>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="422"/>
         <source>Stop</source>
-        <translation>Detener</translation>
+        <translation>Остановить</translation>
     </message>
     <message>
         <source>Undo folder replacement…</source>
-        <translation type="vanished">Deshacer el reemplazo en la carpeta…</translation>
+        <translation type="vanished">Отменить замену в папке…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="423"/>
         <source>Content search results</source>
-        <translation>Resultados de búsqueda en el contenido</translation>
+        <translation>Результаты поиска по содержимому</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SidebarWidget</name>
+    <name>mufpen::SidebarWidget</name>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="323"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1143"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1172"/>
         <source>Files</source>
-        <translation>Archivos</translation>
+        <translation>Файлы</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="475"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1146"/>
         <source>Outline</source>
-        <translation>Esquema</translation>
+        <translation>Структура</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="736"/>
         <source>Directory pinned — click to follow the active tab</source>
-        <translation>Directorio fijado — haz clic para seguir la pestaña activa</translation>
+        <translation>Папка закреплена — нажмите, чтобы следовать за активной вкладкой</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="737"/>
         <source>Following active tab — click to pin this directory</source>
-        <translation>Siguiendo la pestaña activa — haz clic para fijar este directorio</translation>
+        <translation>Следование за активной вкладкой — нажмите, чтобы закрепить эту папку</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1123"/>
         <source>No folder open</source>
-        <translation>Ninguna carpeta abierta</translation>
+        <translation>Нет открытой папки</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1129"/>
         <source>New File</source>
-        <translation>Archivo nuevo</translation>
+        <translation>Новый файл</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1130"/>
         <source>New Folder</source>
-        <translation>Nueva carpeta</translation>
+        <translation>Новая папка</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1132"/>
         <source>Refresh Files</source>
-        <translation>Actualizar archivos</translation>
+        <translation>Обновить список файлов</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1133"/>
         <source>Sort Files</source>
-        <translation>Ordenar archivos</translation>
+        <translation>Сортировать файлы</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1134"/>
         <source>File Name</source>
-        <translation>Nombre del archivo</translation>
+        <translation>Имя файла</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1135"/>
         <source>Date Modified</source>
-        <translation>Fecha de modificación</translation>
+        <translation>Дата изменения</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1136"/>
         <source>Date Created</source>
-        <translation>Fecha de creación</translation>
+        <translation>Дата создания</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1137"/>
         <source>File Type</source>
-        <translation>Tipo de archivo</translation>
+        <translation>Тип файла</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1138"/>
         <source>File Size</source>
-        <translation>Tamaño del archivo</translation>
+        <translation>Размер файла</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1139"/>
         <source>Ascending</source>
-        <translation>Ascendente</translation>
+        <translation>По возрастанию</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1140"/>
         <source>Descending</source>
-        <translation>Descendente</translation>
+        <translation>По убыванию</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1149"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1173"/>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="369"/>
         <source>Expand All Folders</source>
-        <translation>Expandir todas las carpetas</translation>
+        <translation>Развернуть все папки</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="370"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1131"/>
         <source>Collapse All Folders</source>
-        <translation>Contraer todas las carpetas</translation>
+        <translation>Свернуть все папки</translation>
     </message>
     <message>
         <source>Folder Actions</source>
-        <translation type="vanished">Acciones de carpeta</translation>
+        <translation type="vanished">Действия с папкой</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="vanished">Abrir carpeta...</translation>
+        <translation type="vanished">Открыть папку...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="371"/>
         <source>Close Folder</source>
-        <translation>Cerrar carpeta</translation>
+        <translation>Закрыть папку</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
-        <translation>Sin encabezados</translation>
+        <translation>Нет заголовков</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SourceEditorWidget</name>
+    <name>mufpen::SourceEditorWidget</name>
     <message>
         <location filename="../src/editor/SourceEditorWidget.cpp" line="224"/>
         <source>Start writing...</source>
-        <translation>Empiece a escribir...</translation>
+        <translation>Начните писать...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::StatusBarWidget</name>
+    <name>mufpen::StatusBarWidget</name>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="233"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="590"/>
         <source>%1 words</source>
-        <translation>%1 palabras</translation>
+        <translation>%1 слов</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="397"/>
         <source>Click to view document statistics</source>
-        <translation>Haga clic para ver las estadísticas del documento</translation>
+        <translation>Щёлкните, чтобы просмотреть статистику документа</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Click to change the spell-check language</source>
-        <translation>Haga clic para cambiar el idioma de la corrección ortográfica</translation>
+        <translation>Щёлкните, чтобы изменить язык проверки орфографии</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Spell check is off — click to enable</source>
-        <translation>La corrección ortográfica está desactivada — haga clic para activarla</translation>
+        <translation>Проверка орфографии отключена — щёлкните, чтобы включить</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="403"/>
         <source>Cursor position (line : column)</source>
-        <translation>Posición del cursor (línea : columna)</translation>
+        <translation>Положение курсора (строка : столбец)</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="406"/>
         <source>File encoding · line ending</source>
-        <translation>Codificación del archivo · fin de línea</translation>
+        <translation>Кодировка файла · конец строки</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="539"/>
         <source>Spell Check</source>
-        <translation>Corrector ortográfico</translation>
+        <translation>Проверка орфографии</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="558"/>
         <source>Words</source>
-        <translation>Palabras</translation>
+        <translation>Слова</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="559"/>
         <source>Characters</source>
-        <translation>Caracteres</translation>
+        <translation>Символы</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="560"/>
         <source>Lines</source>
-        <translation>Líneas</translation>
+        <translation>Строки</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>Reading time</source>
-        <translation>Tiempo de lectura</translation>
+        <translation>Время чтения</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>&lt; 1 min</source>
-        <translation>&lt; 1 min</translation>
+        <translation>&lt; 1 мин</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>%1 min</source>
-        <translation>%1 min</translation>
+        <translation>%1 мин</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <source>Selected</source>
-        <translation>Selección</translation>
+        <translation>Выбрано</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Hide sidebar</source>
-        <translation>Ocultar la barra lateral</translation>
+        <translation>Скрыть боковую панель</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Show sidebar</source>
-        <translation>Mostrar la barra lateral</translation>
+        <translation>Показать боковую панель</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to rendered mode</source>
-        <translation>Cambiar al modo renderizado</translation>
+        <translation>Переключиться в режим просмотра</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to source mode</source>
-        <translation>Cambiar al modo código fuente</translation>
+        <translation>Переключиться в режим исходного кода</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Exit split view</source>
-        <translation>Salir de la vista dividida</translation>
+        <translation>Выйти из разделённого режима</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Source and preview side by side</source>
-        <translation>Código y vista previa en paralelo</translation>
+        <translation>Исходный код и предпросмотр рядом</translation>
     </message>
 </context>
 <context>
-    <name>muffin::TableToolbar</name>
+    <name>mufpen::TableToolbar</name>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="319"/>
         <source>Resize Table</source>
-        <translation>Cambiar tamaño de la tabla</translation>
+        <translation>Изменить размер таблицы</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="320"/>
         <source>Align Left</source>
-        <translation>Alinear a la izquierda</translation>
+        <translation>Выровнять по левому краю</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="321"/>
         <source>Align Center</source>
-        <translation>Centrar</translation>
+        <translation>Выровнять по центру</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="322"/>
         <source>Align Right</source>
-        <translation>Alinear a la derecha</translation>
+        <translation>Выровнять по правому краю</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="323"/>
         <source>More Actions</source>
-        <translation>Más acciones</translation>
+        <translation>Другие действия</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="324"/>
         <source>Delete Table</source>
-        <translation>Eliminar tabla</translation>
+        <translation>Удалить таблицу</translation>
     </message>
 </context>
 <context>
-    <name>muffin::UpdateChecker</name>
+    <name>mufpen::UpdateChecker</name>
     <message>
         <source>The update server returned an invalid version.</source>
-        <translation type="vanished">El servidor de actualizaciones devolvió una versión no válida.</translation>
+        <translation type="vanished">Сервер обновлений вернул недопустимую версию.</translation>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
         <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
-        <translation>No se pudo conectar con el servicio de actualizaciones. Inténtalo de nuevo más tarde o descarga Mufpen desde la página oficial de versiones.</translation>
+        <translation>Не удалось связаться со службой обновлений. Повторите попытку позже или скачайте Mufpen с официальной страницы релизов.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::VirtualSourceEdit</name>
+    <name>mufpen::VirtualSourceEdit</name>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="310"/>
         <source>Markdown source editor</source>
-        <translation>Editor de código fuente Markdown</translation>
+        <translation>Редактор исходного кода Markdown</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="311"/>
         <source>Plain-text Markdown source</source>
-        <translation>Código fuente Markdown en texto plano</translation>
+        <translation>Исходный код Markdown в виде простого текста</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1679"/>
         <source>Undo</source>
-        <translation>Deshacer</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1681"/>
         <source>Redo</source>
-        <translation>Rehacer</translation>
+        <translation>Повторить</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1685"/>
         <source>Cut</source>
-        <translation>Cortar</translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1691"/>
         <source>Copy</source>
-        <translation>Copiar</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1695"/>
         <source>Paste</source>
-        <translation>Pegar</translation>
+        <translation>Вставить</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1706"/>
         <source>Select All</source>
-        <translation>Seleccionar todo</translation>
+        <translation>Выделить всё</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsIntegration</name>
+    <name>mufpen::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
         <source>Open with Mufpen</source>
-        <translation>Abrir con Mufpen</translation>
+        <translation>Открыть с помощью Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
         <source>Mufpen Markdown Document</source>
-        <translation>Documento Markdown de Mufpen</translation>
+        <translation>Документ Markdown Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Открыть</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsUpdater</name>
+    <name>mufpen::WindowsUpdater</name>
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
         <source>Update Mufpen</source>
-        <translation>Actualizar Mufpen</translation>
+        <translation>Обновить Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
         <source>The update was canceled or could not be installed (code %1). Your session has been restored. You can try again from Help &gt; Check for Updates.</source>
-        <translation>La actualización se canceló o no se pudo instalar (código %1). Se ha restaurado la sesión. Puede volver a intentarlo desde Ayuda &gt; Buscar actualizaciones.</translation>
+        <translation>Обновление отменено или его не удалось установить (код %1). Сеанс восстановлен. Можно повторить попытку через Справка &gt; Проверить обновления.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="211"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
         <source>Downloading Mufpen %1… You can continue writing.</source>
-        <translation>Descargando Mufpen %1… Puede seguir escribiendo.</translation>
+        <translation>Загрузка Mufpen %1… Вы можете продолжать писать.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
         <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Mufpen %1 está listo. Antes de reiniciar, se comprobará si sus documentos tienen cambios sin guardar. Windows puede solicitar permiso de administrador.</translation>
+        <translation>Mufpen %1 готов к установке. Перед перезапуском документы будут проверены на наличие несохранённых изменений. Windows может запросить права администратора.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
         <source>Preparing to restart…</source>
-        <translation>Preparando el reinicio…</translation>
+        <translation>Подготовка к перезапуску…</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
         <source>Mufpen %1 is available. Download the update now?</source>
-        <translation>Mufpen %1 está disponible. ¿Descargar la actualización ahora?</translation>
+        <translation>Доступен Mufpen %1. Загрузить обновление сейчас?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Restart and Update</source>
-        <translation>Reiniciar y actualizar</translation>
+        <translation>Перезапустить и обновить</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Download Update</source>
-        <translation>Descargar actualización</translation>
+        <translation>Загрузить обновление</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Cancel Download</source>
-        <translation>Cancelar descarga</translation>
+        <translation>Отменить загрузку</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Later</source>
-        <translation>Más tarde</translation>
+        <translation>Позже</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="294"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="320"/>
         <source>The update download could not be saved or exceeded its expected size.</source>
-        <translation>No se pudo guardar la actualización descargada o se superó el tamaño esperado.</translation>
+        <translation>Не удалось сохранить загружаемое обновление либо его размер превысил ожидаемый.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="302"/>
         <source>The update manifest is too large.</source>
-        <translation>El manifiesto de actualización es demasiado grande.</translation>
+        <translation>Манифест обновления слишком большой.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="328"/>
         <source>Could not download the update: %1</source>
-        <translation>No se pudo descargar la actualización: %1</translation>
+        <translation>Не удалось загрузить обновление: %1</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="351"/>
         <source>The update signature is invalid or the package does not match this version of Windows. Nothing was installed.</source>
-        <translation>La firma de la actualización no es válida o el paquete no es compatible con esta versión de Windows. No se ha instalado nada.</translation>
+        <translation>Подпись обновления недействительна либо пакет не соответствует этой версии Windows. Ничего не установлено.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="363"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="368"/>
         <source>Could not create the update download folder.</source>
-        <translation>No se pudo crear la carpeta de descarga de la actualización.</translation>
+        <translation>Не удалось создать папку для загрузки обновления.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="377"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="467"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="476"/>
         <source>The downloaded update is incomplete or has been modified. Nothing was installed.</source>
-        <translation>La actualización descargada está incompleta o ha sido modificada. No se ha instalado nada.</translation>
+        <translation>Загруженное обновление неполное либо было изменено. Ничего не установлено.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
         <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Cierre las otras instancias de Mufpen antes de actualizar. Solo las versiones instaladas se pueden actualizar desde la aplicación.</translation>
+        <translation>Перед обновлением закройте другие запущенные экземпляры Mufpen. Обновление из приложения доступно только для установленных версий.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="581"/>
         <source>Could not save the session before updating.</source>
-        <translation>No se pudo guardar la sesión antes de actualizar.</translation>
+        <translation>Не удалось сохранить сеанс перед обновлением.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="545"/>
         <source>Could not start the update installer. Your current version is unchanged.</source>
-        <translation>No se pudo iniciar el instalador de la actualización. Su versión actual no ha cambiado.</translation>
+        <translation>Не удалось запустить установщик обновления. Текущая версия не изменена.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
         <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
-        <translation>El instalador no llegó a estar listo. Mufpen permanecerá abierto; vuelva a intentarlo.</translation>
+        <translation>Установщик не был готов к работе. Mufpen останется открытым; повторите попытку.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceReplace</name>
+    <name>mufpen::WorkspaceReplace</name>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="171"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="183"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="204"/>
         <source>Could not create recovery folder</source>
-        <translation>No se pudo crear la carpeta de recuperación</translation>
+        <translation>Не удалось создать папку восстановления</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="176"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="280"/>
         <source>Another folder replacement is running</source>
-        <translation>Ya hay otro reemplazo en una carpeta en curso</translation>
+        <translation>Уже выполняется другая замена в папке</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="285"/>
         <source>Could not read recovery journal</source>
-        <translation>No se pudo leer el registro de recuperación</translation>
+        <translation>Не удалось прочитать журнал восстановления</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="291"/>
         <source>Invalid recovery journal</source>
-        <translation>Registro de recuperación no válido</translation>
+        <translation>Недопустимый журнал восстановления</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceSearch</name>
+    <name>mufpen::WorkspaceSearch</name>
     <message>
         <location filename="../src/app/WorkspaceSearch.cpp" line="381"/>
         <source>Folder is unavailable</source>
-        <translation>La carpeta no está disponible</translation>
+        <translation>Папка недоступна</translation>
     </message>
     <message>
         <source>Regular expression exceeded its resource limit</source>
-        <translation type="vanished">La expresión regular superó su límite de recursos</translation>
+        <translation type="vanished">Регулярное выражение превысило лимит ресурсов</translation>
     </message>
 </context>
 </TS>

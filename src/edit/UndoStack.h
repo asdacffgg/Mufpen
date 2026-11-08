@@ -7,9 +7,9 @@
 #include <QElapsedTimer>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_CORE_EXPORT UndoStack final : public QObject {
+class MUFPEN_CORE_EXPORT UndoStack final : public QObject {
   Q_OBJECT
 
 public:
@@ -64,4 +64,4 @@ private:
   QElapsedTimer lastPushTime_;
 };
 
-} // namespace muffin
+} // namespace mufpen

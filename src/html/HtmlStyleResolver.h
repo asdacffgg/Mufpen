@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 class HtmlStyleResolver {
 public:
@@ -18,4 +18,4 @@ public:
   void resolve(HtmlBox& root, qreal baseFontSize, const HtmlColorPalette& palette = HtmlColorPalette::defaultLight());
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

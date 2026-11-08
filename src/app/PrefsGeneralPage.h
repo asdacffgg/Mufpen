@@ -7,7 +7,7 @@ class QComboBox;
 class QLabel;
 class QPushButton;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsGeneralPage final : public PreferencesPage {
   Q_OBJECT
@@ -27,4 +27,4 @@ private:
   QCheckBox* autoUpdateCheck_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

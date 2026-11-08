@@ -8,7 +8,7 @@
 
 class QString;
 
-namespace muffin {
+namespace mufpen {
 
 class CssThemeSheet;          // defined in CssThemeParser.h
 class CssComputedStyleEngine; // defined in CssComputedStyleEngine.h
@@ -17,16 +17,16 @@ class CssComputedStyle;
 // cssColor() is declared in theme/CssValueParser.h (included above) — the shared CSS→QColor
 // chokepoint used by extractColor()/varColor()/JSON parseColor() and HtmlBoxBuilder.
 
-// Translates a parsed CSS-theme sheet into a Muffin ThemeDefinition. This
+// Translates a parsed CSS-theme sheet into a Mufpen ThemeDefinition. This
 // projects the shared CSS computed styles into document typography and boxes.
 // Semantic tokens supply application chrome and native paint capabilities such
 // as gradients, pseudo decorations and counters; layout-time nodes use the same
 // computed-style projection as theme prototypes.
 //
 // The mapping is intentionally lenient: a stock CSS theme that only sets
-// element colours + fonts produces a usable theme; Muffin-specific knobs with no
+// element colours + fonts produces a usable theme; Mufpen-specific knobs with no
 // CSS equivalent (chrome palette, serif body, explicit dark flag, label) ride
-// on `--muffin-*` custom properties layered on top of the standard CSS.
+// on `--mufpen-*` custom properties layered on top of the standard CSS.
 class CssThemeMapper {
 public:
   // Parse `cssText` (already read from cssPath by the caller) and translate it.
@@ -56,4 +56,4 @@ public:
                                qreal containingPx);
 };
 
-} // namespace muffin
+} // namespace mufpen

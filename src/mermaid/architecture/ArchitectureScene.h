@@ -10,7 +10,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 
 struct ArchitectureConfig {
   QJsonValue useMaxWidth = true;
@@ -162,4 +162,4 @@ struct ArchitectureScene final : MermaidScene {
 ArchitectureScene buildArchitectureScene(const ArchitectureData& data, ArchitectureConfig config,
                                          ArchitectureSceneStyle style, const ArchitectureCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

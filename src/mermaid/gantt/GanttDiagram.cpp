@@ -11,7 +11,7 @@
 #include <cmath>
 #include <optional>
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 
 GanttParseError::GanttParseError(const QString& message, int line, int column, GanttErrorKind kind)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column), kind(kind) {
@@ -537,4 +537,4 @@ GanttData GanttDiagram::parse(const QString& rawSource) {
   return std::move(compiler.data);
 }
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

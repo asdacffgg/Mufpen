@@ -6,7 +6,7 @@
 
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 void appendInlineText(const InlineNode& node, QString& text) {
@@ -86,4 +86,4 @@ QVector<OutlineEntry> buildOutlineFragment(const MarkdownNode& topLevel) {
   return entries;
 }
 
-} // namespace muffin
+} // namespace mufpen

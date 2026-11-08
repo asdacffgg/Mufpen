@@ -9,7 +9,7 @@
 #include <optional>
 
 // Algorithm ported from RoughJS 4.6.6 (MIT), renderer.ts and hachure-fill 0.5.2.
-namespace muffin::mermaid::rough {
+namespace mufpen::mermaid::rough {
 namespace {
 
 constexpr qreal kTau = M_PI * 2.0;
@@ -822,4 +822,4 @@ QString opSetTypeName(OpSetType type) {
   return QStringLiteral("path");
 }
 
-} // namespace muffin::mermaid::rough
+} // namespace mufpen::mermaid::rough

@@ -2,7 +2,7 @@
 
 #include <QColor>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -128,17 +128,17 @@ QString sidebarStyleSheet(const ThemeDefinition& d, bool outlineFoldable) {
   toolbarPressed.setAlpha(30);
   QString sheet =
       QStringLiteral(
-          "#MuffinSidebar { background: %1; border-right: 1px solid %2; }"
-          "#MuffinSidebar QToolButton { background: transparent; border: 0; color: %3; padding: 5px 4px; }"
-          "#MuffinSidebar QToolButton:hover { background: %4; }"
-          "#MuffinSidebar QToolButton:checked { color: %5; border-bottom: 3px solid %3; }"
+          "#MufpenSidebar { background: %1; border-right: 1px solid %2; }"
+          "#MufpenSidebar QToolButton { background: transparent; border: 0; color: %3; padding: 5px 4px; }"
+          "#MufpenSidebar QToolButton:hover { background: %4; }"
+          "#MufpenSidebar QToolButton:checked { color: %5; border-bottom: 3px solid %3; }"
           "#OutlineEmptyLabel { color: %3; }"
           "#FilesEmptyLabel { color: %3; }"
-          "#MuffinSidebar QLabel, #MuffinSidebar QCheckBox { color:%5; background:transparent; }"
-          "#MuffinSidebar QLineEdit { color:%5; background:%1; border:1px solid %2; border-radius:4px; padding:5px; }"
-          "#MuffinSidebar QPushButton { color:%5; background:%1; border:1px solid %2; border-radius:4px; padding:4px; }"
-          "#MuffinSidebar QPushButton:hover { background:%4; }"
-          "#MuffinSidebar QPushButton:disabled { color:%3; }"
+          "#MufpenSidebar QLabel, #MufpenSidebar QCheckBox { color:%5; background:transparent; }"
+          "#MufpenSidebar QLineEdit { color:%5; background:%1; border:1px solid %2; border-radius:4px; padding:5px; }"
+          "#MufpenSidebar QPushButton { color:%5; background:%1; border:1px solid %2; border-radius:4px; padding:4px; }"
+          "#MufpenSidebar QPushButton:hover { background:%4; }"
+          "#MufpenSidebar QPushButton:disabled { color:%3; }"
           "#WorkspaceSearchResults { background:%1; color:%5; border:0; }"
           "#WorkspaceSearchResults::item { min-height:24px; padding:2px; }"
           "#WorkspaceSearchResults::item:selected { background:%6; color:%7; }"
@@ -367,4 +367,4 @@ QString dialogStyleSheet(const ThemeDefinition& d) {
          scrollBarStyleSheet(c.surface, c.chromeText, QStringLiteral("QComboBox QAbstractItemView"));
 }
 
-} // namespace muffin
+} // namespace mufpen

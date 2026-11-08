@@ -1,8 +1,8 @@
 // NOTE: This file contains tr() calls and therefore MUST NOT contain any
-// `namespace muffin { }` block — lupdate loses the namespace prefix otherwise
-// and generates context `HelpViewerDialog` instead of `muffin::HelpViewerDialog`,
+// `namespace mufpen { }` block — lupdate loses the namespace prefix otherwise
+// and generates context `HelpViewerDialog` instead of `mufpen::HelpViewerDialog`,
 // so translations never match at runtime (see CLAUDE.md). All HelpViewerDialog
-// methods use fully-qualified `muffin::` names; the tr()-free helper below lives
+// methods use fully-qualified `mufpen::` names; the tr()-free helper below lives
 // in an anonymous namespace at file scope (which the rule permits).
 
 #include "app/HelpViewerDialog.h"
@@ -24,18 +24,18 @@
 
 namespace {
 // Maps an internal cross-document link key (`help:<key>`) back to a topic.
-muffin::HelpTopic topicFromKey(const QString& key) {
+mufpen::HelpTopic topicFromKey(const QString& key) {
   if (key == QLatin1String("markdown-reference")) {
-    return muffin::HelpTopic::MarkdownReference;
+    return mufpen::HelpTopic::MarkdownReference;
   }
   if (key == QLatin1String("acknowledgements")) {
-    return muffin::HelpTopic::Acknowledgements;
+    return mufpen::HelpTopic::Acknowledgements;
   }
-  return muffin::HelpTopic::QuickStart;
+  return mufpen::HelpTopic::QuickStart;
 }
 } // namespace
 
-void muffin::HelpViewerDialog::open(QWidget* parent, HelpTopic topic) {
+void mufpen::HelpViewerDialog::open(QWidget* parent, HelpTopic topic) {
   static QPointer<HelpViewerDialog> instance;
   if (!instance) {
     QWidget* host = parent ? parent->window() : nullptr;
@@ -49,7 +49,7 @@ void muffin::HelpViewerDialog::open(QWidget* parent, HelpTopic topic) {
   instance->activateWindow();
 }
 
-muffin::HelpViewerDialog::HelpViewerDialog(QWidget* parent) : QDialog(parent) {
+mufpen::HelpViewerDialog::HelpViewerDialog(QWidget* parent) : QDialog(parent) {
   setMinimumSize(560, 420);
   resize(840, 640);
 
@@ -102,7 +102,7 @@ muffin::HelpViewerDialog::HelpViewerDialog(QWidget* parent) : QDialog(parent) {
   loadTopic(HelpTopic::QuickStart);
 }
 
-void muffin::HelpViewerDialog::loadTopic(HelpTopic topic) {
+void mufpen::HelpViewerDialog::loadTopic(HelpTopic topic) {
   currentTopic_ = topic;
   if (history_.isEmpty() || history_.constLast() != topic) {
     history_.resize(historyIndex_ + 1);
@@ -113,7 +113,7 @@ void muffin::HelpViewerDialog::loadTopic(HelpTopic topic) {
   updateNavButtons();
 }
 
-void muffin::HelpViewerDialog::goBack() {
+void mufpen::HelpViewerDialog::goBack() {
   if (historyIndex_ <= 0) {
     return;
   }
@@ -123,7 +123,7 @@ void muffin::HelpViewerDialog::goBack() {
   updateNavButtons();
 }
 
-void muffin::HelpViewerDialog::goForward() {
+void mufpen::HelpViewerDialog::goForward() {
   if (historyIndex_ + 1 >= history_.size()) {
     return;
   }
@@ -133,14 +133,14 @@ void muffin::HelpViewerDialog::goForward() {
   updateNavButtons();
 }
 
-void muffin::HelpViewerDialog::goHome() {
+void mufpen::HelpViewerDialog::goHome() {
   browser_->moveCursor(QTextCursor::Start);
   if (auto* sb = browser_->verticalScrollBar()) {
     sb->setValue(0);
   }
 }
 
-void muffin::HelpViewerDialog::renderCurrent() {
+void mufpen::HelpViewerDialog::renderCurrent() {
   const QString locale = LanguageManager::instance().effectiveLanguageCode();
   const QString markdown = readTopicDoc(currentTopic_, locale);
   browser_->document()->setMarkdown(markdown, QTextDocument::MarkdownDialectGitHub);
@@ -151,19 +151,19 @@ void muffin::HelpViewerDialog::renderCurrent() {
   setWindowTitle(tr("%1 — Mufpen Help").arg(topicTitle(currentTopic_)));
 }
 
-void muffin::HelpViewerDialog::updateNavButtons() {
+void mufpen::HelpViewerDialog::updateNavButtons() {
   backButton_->setEnabled(historyIndex_ > 0);
   forwardButton_->setEnabled(historyIndex_ + 1 < history_.size());
 }
 
-void muffin::HelpViewerDialog::retranslateUi() {
+void mufpen::HelpViewerDialog::retranslateUi() {
   backButton_->setToolTip(tr("Go back"));
   forwardButton_->setToolTip(tr("Go forward"));
   homeButton_->setToolTip(tr("Scroll to top"));
   setWindowTitle(tr("%1 — Mufpen Help").arg(topicTitle(currentTopic_)));
 }
 
-void muffin::HelpViewerDialog::changeEvent(QEvent* event) {
+void mufpen::HelpViewerDialog::changeEvent(QEvent* event) {
   QDialog::changeEvent(event);
   if (event->type() == QEvent::LanguageChange) {
     // Locale changed: re-render so the matching localized doc is shown.
@@ -172,7 +172,7 @@ void muffin::HelpViewerDialog::changeEvent(QEvent* event) {
   }
 }
 
-QString muffin::HelpViewerDialog::topicKey(HelpTopic topic) {
+QString mufpen::HelpViewerDialog::topicKey(HelpTopic topic) {
   switch (topic) {
   case HelpTopic::QuickStart:
     return QStringLiteral("quick-start");
@@ -184,7 +184,7 @@ QString muffin::HelpViewerDialog::topicKey(HelpTopic topic) {
   return QStringLiteral("quick-start");
 }
 
-QString muffin::HelpViewerDialog::topicTitle(HelpTopic topic) {
+QString mufpen::HelpViewerDialog::topicTitle(HelpTopic topic) {
   switch (topic) {
   case HelpTopic::QuickStart:
     return tr("Quick Start");
@@ -196,7 +196,7 @@ QString muffin::HelpViewerDialog::topicTitle(HelpTopic topic) {
   return {};
 }
 
-QString muffin::HelpViewerDialog::readTopicDoc(HelpTopic topic, const QString& localeCode) {
+QString mufpen::HelpViewerDialog::readTopicDoc(HelpTopic topic, const QString& localeCode) {
   const QString key = topicKey(topic);
   if (!localeCode.isEmpty() && localeCode != QLatin1String("en")) {
     QFile localized(QStringLiteral(":/help/%1/%2.md").arg(localeCode, key));

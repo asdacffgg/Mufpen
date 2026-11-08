@@ -3,7 +3,7 @@
 #include "html/HtmlBoxBuilder.h"
 #include "html/HtmlStyleResolver.h"
 
-namespace muffin::html {
+namespace mufpen::html {
 
 InlineHtmlFormatResult InlineHtmlRenderer::render(const QString& htmlFragment, qreal baseFontSize,
                                                   const HtmlColorPalette& palette) const {
@@ -82,4 +82,4 @@ bool InlineHtmlRenderer::isRenderableTag(QStringView tagName) {
   return false;
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

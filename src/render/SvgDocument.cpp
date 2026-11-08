@@ -8,7 +8,7 @@
 #include <cmath>
 #include <algorithm>
 
-namespace muffin::svg {
+namespace mufpen::svg {
 QByteArray qtCompatible(const QByteArray& source) {
   if (!source.contains("feDropShadow"))
     return source;
@@ -27,7 +27,7 @@ QByteArray qtCompatible(const QByteArray& source) {
   const auto unique = [&] {
     QString result;
     do {
-      result = QStringLiteral("muffin-filter-%1").arg(++sequence);
+      result = QStringLiteral("mufpen-filter-%1").arg(++sequence);
     } while (names.contains(result));
     names.insert(result);
     return result;
@@ -134,4 +134,4 @@ QImage rasterize(const QByteArray& source, QSizeF size, qreal dpr) {
   renderer.render(&painter, QRectF(QPointF(), size));
   return image;
 }
-} // namespace muffin::svg
+} // namespace mufpen::svg

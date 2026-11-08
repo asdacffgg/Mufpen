@@ -4,7 +4,7 @@
 
 #include <algorithm>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 using Arg = MathFunctionArgType;
@@ -263,4 +263,4 @@ const QHash<QString, MathFunctionSpec>& MathFunctionRegistry::functions() {
   return registry;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -12,7 +12,7 @@
 #include <QList>
 #include <QString>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 struct PostorderEntry {
   int low = 0;
@@ -31,4 +31,4 @@ ClusterPath findPath(const DagreGraph& g, const QHash<QString, PostorderEntry>& 
 
 void parentDummyChains(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

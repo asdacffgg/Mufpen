@@ -11,7 +11,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 namespace {
 
 editor::CssPixelFont textFont(const VennScene& scene, qreal size, const QString& resolvedFamily = {},
@@ -171,4 +171,4 @@ void paintVennScene(const VennScene& scene, QPainter& painter, const MermaidPain
   painter.restore();
 }
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

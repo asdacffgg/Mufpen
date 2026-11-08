@@ -6,7 +6,7 @@
 
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathBuilder {
 public:
@@ -70,4 +70,4 @@ private:
   MathOptions options_;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

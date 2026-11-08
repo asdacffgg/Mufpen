@@ -10,7 +10,7 @@
 
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 QString plainTextForNode(const MarkdownNode& node) {
@@ -554,4 +554,4 @@ QString SelectionSerializer::plainTextForMarkdownRange(const QString& markdownTe
   return text;
 }
 
-} // namespace muffin
+} // namespace mufpen

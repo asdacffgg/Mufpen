@@ -13,7 +13,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 
 struct RadarConfig {
   bool useMaxWidth = true;
@@ -168,4 +168,4 @@ struct RadarScene : MermaidScene {
 
 RadarScene buildRadarScene(const RadarData& data, RadarConfig config, RadarSceneStyle style);
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

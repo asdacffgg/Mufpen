@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 void InlineDisplayMap::reset(const InlineProjection& projection) {
   visibleLength_ = projection.visibleText().size();
@@ -303,4 +303,4 @@ void InlineDisplayMap::collapse(DisplayOffsetRange range, QChar placeholder) {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

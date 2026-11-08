@@ -296,7 +296,7 @@ if(MSVC)
     #   /source-charset:<value> Source encoding, supports only UTF-8
     # So we don't need to pass /source-charset:utf-8 to clang-cl, and we cannot pass /execution-charset:us-ascii to clang-cl.
     if(CMAKE_C_COMPILER_ID MATCHES "MSVC")
-        # NOTE (Muffin): the top-level CMake adds /utf-8 globally (add_compile_options(/utf-8)),
+        # NOTE (Mufpen): the top-level CMake adds /utf-8 globally (add_compile_options(/utf-8)),
         # which already sets source-charset:utf-8. Adding /source-charset here too triggers MSVC
         # error D8016 ("/utf-8 and /source-charset are incompatible"), so the explicit charset
         # flags below are intentionally omitted — avif's sources are ASCII, so /utf-8 is safe.
@@ -460,9 +460,9 @@ if(AVIF_CODEC_DAV1D_ENABLED)
         # built by this project"), so augment dav1d directly only when it is locally built.
         # For an imported dav1d the provider's recipe owns its transitive link interface
         # (it already carries dl when needed); still link dl on our own object lib here as a
-        # safety net for dav1d's dlsym usage. Local patch for Muffin — see VENDORED.md.
-        get_target_property(_muffin_dav1d_imported dav1d::dav1d IMPORTED)
-        if(_muffin_dav1d_imported)
+        # safety net for dav1d's dlsym usage. Local patch for Mufpen — see VENDORED.md.
+        get_target_property(_mufpen_dav1d_imported dav1d::dav1d IMPORTED)
+        if(_mufpen_dav1d_imported)
             target_link_libraries(avif_obj PRIVATE ${CMAKE_DL_LIBS})
         else()
             target_link_libraries(dav1d::dav1d INTERFACE ${CMAKE_DL_LIBS}) # for dlsym

@@ -2,20 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>CFBundleExecutable</key><string>MuffinQuickLook</string>
+  <key>CFBundleExecutable</key><string>MufpenQuickLook</string>
   <key>CFBundleIdentifier</key><string>io.github.asdacffgg.Mufpen.QuickLook</string>
-  <key>CFBundleName</key><string>Muffin Markdown Preview</string>
-  <key>CFBundleDisplayName</key><string>Muffin Markdown Preview</string>
+  <key>CFBundleName</key><string>Mufpen Markdown Preview</string>
+  <key>CFBundleDisplayName</key><string>Mufpen Markdown Preview</string>
   <key>CFBundlePackageType</key><string>XPC!</string>
   <key>CFBundleSupportedPlatforms</key><array><string>MacOSX</string></array>
   <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
-  <key>CFBundleShortVersionString</key><string>@MUFFIN_EFFECTIVE_VERSION@</string>
-  <key>CFBundleVersion</key><string>@MUFFIN_EFFECTIVE_VERSION@</string>
+  <key>CFBundleShortVersionString</key><string>@MUFPEN_EFFECTIVE_VERSION@</string>
+  <key>CFBundleVersion</key><string>@MUFPEN_EFFECTIVE_VERSION@</string>
   <key>LSMinimumSystemVersion</key><string>10.15</string>
   <key>NSExtension</key>
   <dict>
     <key>NSExtensionPointIdentifier</key><string>com.apple.quicklook.preview</string>
-    <key>NSExtensionPrincipalClass</key><string>MuffinPreviewController</string>
+    <key>NSExtensionPrincipalClass</key><string>MufpenPreviewController</string>
     <key>NSExtensionAttributes</key>
     <dict>
       <key>QLSupportedContentTypes</key>

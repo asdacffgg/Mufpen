@@ -1,6 +1,6 @@
 # libavif (vendored)
 
-AVIF decoder backing `src/render/ImageDecoder.cpp`'s `decodeAvif()`. Built directly by Muffin's
+AVIF decoder backing `src/render/ImageDecoder.cpp`'s `decodeAvif()`. Built directly by Mufpen's
 CMake — **not** via Conan.
 
 ## Why vendored (and why libyuv is gone)
@@ -23,13 +23,13 @@ Result: no **external** libyuv, no aom, no googlesource — the AVIF stack only 
 outside; libavif's internal libyuv subset ships as committed source.
 
 The integration lives in the top-level `CMakeLists.txt` (search for `third_party/libavif`),
-mirroring the `nuspell` subproject pattern. Muffin links the `avif_static` target.
+mirroring the `nuspell` subproject pattern. Mufpen links the `avif_static` target.
 
 > **dav1d must be linked explicitly by the consumer.** `avif_static` is a merged static archive
 > (`merge_static_libs`) that only folds in libavif's `AVIF_LOCAL` deps; a `SYSTEM` dav1d from
 > Conan is **not** merged into the archive and **not** forwarded by the archive target. So
-> `dav1d::dav1d` is linked directly on `MuffinUi` (PRIVATE — it still propagates to every
-> `Muffin.exe` / test consumer because `MuffinUi` is STATIC). Without this, libavif's dav1d
+> `dav1d::dav1d` is linked directly on `MufpenUi` (PRIVATE — it still propagates to every
+> `Mufpen.exe` / test consumer because `MufpenUi` is STATIC). Without this, libavif's dav1d
 > symbols are undefined at the final link (seen on macOS arm64; would also hit Linux).
 
 ## Local patches to upstream
@@ -42,7 +42,7 @@ mirroring the `nuspell` subproject pattern. Muffin links the `avif_static` targe
   failed at configure time. Patched to check the target's `IMPORTED` property and, when
   imported, link `dl` onto `avif_obj` instead of the imported dav1d target. The block is
   already `if(UNIX AND NOT APPLE)` so Windows/macOS were never affected. Look for the
-  `_muffin_dav1d_imported` guard.
+  `_mufpen_dav1d_imported` guard.
 
 ## Provenance
 

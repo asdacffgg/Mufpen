@@ -18,7 +18,7 @@
 #include <cstring>
 #include <vector>
 
-namespace muffin::image_decoder {
+namespace mufpen::image_decoder {
 
 namespace {
 
@@ -323,4 +323,4 @@ QSize detectSize(const QString& filePath) {
   return {};
 }
 
-} // namespace muffin::image_decoder
+} // namespace mufpen::image_decoder

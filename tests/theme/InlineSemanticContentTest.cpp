@@ -12,7 +12,7 @@
 #include <QJsonArray>
 #include <QPainter>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 QString normalizedDisplay(QString text) {
   text.remove(QChar(0x200b));
@@ -23,10 +23,10 @@ QString normalizedDisplay(QString text) {
 void testBrowserSemantics() {
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/inline-semantics-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/inline-semantics-browser.json")).toUtf8())
           .object();
   const auto family = browserLayoutFont(reference).value("muffinfixturesans");
-  QFile icons(QStringLiteral(MUFFIN_SOURCE_DIR "/src/theme/MarkdownAlertIcon.h"));
+  QFile icons(QStringLiteral(MUFPEN_SOURCE_DIR "/src/theme/MarkdownAlertIcon.h"));
   require(
       icons.open(QIODevice::ReadOnly) &&
           QString::fromLatin1(

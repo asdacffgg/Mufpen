@@ -5,7 +5,7 @@
 #include <QSettings>
 #include <QSet>
 
-namespace muffin {
+namespace mufpen {
 
 QString exportExtension(ExportFormat format) {
   switch (format) {
@@ -125,4 +125,4 @@ bool exportCommandArguments(const ExportPreset& preset, const QVariantMap& varia
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -23,7 +23,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 // Pull the stateless geometry helpers (blockComesBefore, blocksBetween, selectableLength, …)
 // into scope so the selection-paint call sites read as before.
@@ -31,7 +31,7 @@ using namespace editor_geometry;
 
 namespace {
 
-Q_LOGGING_CATEGORY(viewPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(viewPerf, "mufpen.perf", QtWarningMsg)
 
 // The selection overlay color from the theme, capped to translucent: the overlay paints ON TOP of
 // rendered text, so an opaque theme selection (GitHub's #d7e8ff) must stay see-through enough to
@@ -53,7 +53,7 @@ struct PerfTimer : diag::ScopedPerfProbe {
 void EditorView::paintLoadingOverlay(QPainter& painter) const {
   const QFont font = theme_.headingFont(1);
   const TextFontMetrics metrics(font);
-  const QString text = QCoreApplication::translate("muffin::EditorView", "Loading…");
+  const QString text = QCoreApplication::translate("mufpen::EditorView", "Loading…");
 
   const QRectF rect = viewport()->rect();
   const qreal textHeight = metrics.height();
@@ -549,4 +549,4 @@ void EditorView::paintHtmlHoverOverlay(QPainter& painter) const {
   htmlHover_.paint(painter, htmlHoverInputs(), viewport()->rect());
 }
 
-} // namespace muffin
+} // namespace mufpen

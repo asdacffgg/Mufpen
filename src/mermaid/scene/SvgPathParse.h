@@ -16,8 +16,8 @@
 class QString;
 class QPainterPath;
 
-namespace muffin::mermaid::scene {
+namespace mufpen::mermaid::scene {
 
 QPainterPath parseSvgPath(const QString& d);
 
-} // namespace muffin::mermaid::scene
+} // namespace mufpen::mermaid::scene

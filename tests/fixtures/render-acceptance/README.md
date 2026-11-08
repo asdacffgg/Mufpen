@@ -12,7 +12,7 @@ URLs by `images.json`. Tests seed the normal image cache so screenshots do not
 depend on a network request or changes at shields.io. The original filtered
 SVG logo remains an SVG and follows the application's normal decoder.
 
-Run `ctest --preset conan-release -R MuffinDocumentVisualAcceptance` after a
+Run `ctest --preset conan-release -R MufpenDocumentVisualAcceptance` after a
 Release build. The three registered tests use display scales 100%, 125%, 150%;
 each renders all four documents at editor zoom 100%, 125%, 150% with the bundled
 GitHub theme. The theme viewport is 1920×1080 logical pixels and the editor has

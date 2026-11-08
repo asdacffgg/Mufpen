@@ -6,7 +6,7 @@
 
 #include "../TestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 CssComputedStyle styleFor(const QString& css, const CssElement& element);

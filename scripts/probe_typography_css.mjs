@@ -5,13 +5,13 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {browserLayoutFont, loadBrowserLayoutFont} from './browser_layout_font.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const moduleName = process.env.MUFFIN_PLAYWRIGHT_MODULE;
+const moduleName = process.env.MUFPEN_PLAYWRIGHT_MODULE;
 const {chromium} = await import(moduleName ? pathToFileURL(path.resolve(moduleName)).href : 'playwright');
 const browser = await chromium.launch({headless:true,
   ...(process.env.CHROME_EXECUTABLE ? {executablePath:process.env.CHROME_EXECUTABLE} : {})});
 const base = fs.readFileSync(path.join(root, 'resources/themes/document-base.css'), 'utf8');
 const font = browserLayoutFont(root);
-const auditDir = process.env.MUFFIN_THEME_AUDIT_DIR;
+const auditDir = process.env.MUFPEN_THEME_AUDIT_DIR;
 if (auditDir) fs.mkdirSync(auditDir,{recursive:true});
 const pinFont = '#write,#write *{font-family:MuffinFixtureSans!important}';
 const headings = Array.from({length:6}, (_,i)=>({tag:`h${i+1}`,text:`Heading ${i+1} sample`}));

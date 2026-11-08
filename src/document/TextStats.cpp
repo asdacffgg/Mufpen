@@ -2,7 +2,7 @@
 
 #include "document/PieceTable.h"
 
-namespace muffin::text_stats {
+namespace mufpen::text_stats {
 namespace {
 
 class WordCounter {
@@ -36,4 +36,4 @@ int countWords(const PieceTable& text) {
   return text.wordCount();
 }
 
-} // namespace muffin::text_stats
+} // namespace mufpen::text_stats

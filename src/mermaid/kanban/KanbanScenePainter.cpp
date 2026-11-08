@@ -10,7 +10,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 namespace {
 
 color::SvgPaint rootPaint(const QString& value) {
@@ -161,4 +161,4 @@ void paintKanbanScene(const KanbanScene& scene, QPainter& painter, const Mermaid
   }
 }
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

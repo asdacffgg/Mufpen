@@ -4,7 +4,7 @@
 
 class QApplication;
 
-namespace muffin {
+namespace mufpen {
 
 // Removes the DWM-drawn window border Windows 11 puts around Qt::Popup
 // top-level windows (menus, combo dropdowns, completer popups).
@@ -38,4 +38,4 @@ private:
   explicit DwmPopupBorderFilter(QObject* parent);
 };
 
-} // namespace muffin
+} // namespace mufpen

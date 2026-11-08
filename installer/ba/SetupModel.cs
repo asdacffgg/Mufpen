@@ -7,7 +7,7 @@ using System.Windows.Input;
 using Microsoft.Win32;
 using WixToolset.Mba.Core;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     public enum SetupPage
     {
@@ -35,9 +35,9 @@ namespace Muffin.Setup
     /// </summary>
     public class SetupModel : INotifyPropertyChanged
     {
-        private readonly MuffinBa _ba;
+        private readonly MufpenBa _ba;
 
-        public SetupModel(MuffinBa ba)
+        public SetupModel(MufpenBa ba)
         {
             _ba = ba;
             InstallCommand = new RelayCommand(_ => BeginIntent(SetupIntent.Install), _ => !IsWorking);
@@ -532,7 +532,7 @@ namespace Muffin.Setup
 
         /// <summary>
         /// The MSI publishes ARPINSTALLLOCATION, so the per-machine uninstall
-        /// registration tells us where Muffin.exe lives without needing a
+        /// registration tells us where Mufpen.exe lives without needing a
         /// Burn→MSI property round-trip. Entries without a location (older
         /// installs, the bundle's own registration) are skipped.
         /// </summary>

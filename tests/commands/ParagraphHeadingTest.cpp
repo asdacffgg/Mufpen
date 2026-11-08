@@ -13,7 +13,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testSetHeadingLevel() {
   DocumentSession session;

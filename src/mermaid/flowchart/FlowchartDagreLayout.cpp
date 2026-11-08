@@ -10,9 +10,9 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
-namespace d = muffin::mermaid::dagre;
+namespace d = mufpen::mermaid::dagre;
 constexpr qreal kSelfLoopLabelRectExtent = 0.1;
 
 QPointF intersectNodeForShape(const d::DagreNodeLabel& node, const QString& type, const QPointF& toward,
@@ -861,4 +861,4 @@ FlowLayoutResult layoutFlowchartNodesDagre(const FlowchartData& data, const QMap
   return layoutFlowchartNodesDagreScope(data, measuredNodes, std::move(options), dagreSnapshots, {});
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

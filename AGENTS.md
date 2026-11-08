@@ -31,7 +31,7 @@ ctest --preset conan-release --output-on-failure
 
 ## Package And Run
 
-`cmake --build --preset conan-release` updates `build\Release\Muffin.exe`, but it does not update `build\dist\Muffin.exe`.
+`cmake --build --preset conan-release` updates `build\Release\Mufpen.exe`, but it does not update `build\dist\Mufpen.exe`.
 
 To refresh the distributable app bundle, run the dist target after building:
 
@@ -43,20 +43,20 @@ cmake --build --preset conan-release --target dist
 The packaged executable is:
 
 ```powershell
-.\build\dist\Muffin.exe
+.\build\dist\Mufpen.exe
 ```
 
-If `build\dist\Muffin.exe` is older than `build\Release\Muffin.exe`, run the dist target again before testing the packaged app.
+If `build\dist\Mufpen.exe` is older than `build\Release\Mufpen.exe`, run the dist target again before testing the packaged app.
 
 ### Linux input methods (CJK input)
 
 The dist bundle carries its own Qt and `qt.conf` points `Plugins` at the bundle, so Qt never looks at the distribution's plugin directory. Qt also refuses plugins built against a different minor version (`uses incompatible Qt library`), and Qt 6.11 removed the XIM fallback from the xcb platform plugin. A Linux bundle without a `platforminputcontexts/` plugin therefore cannot talk to fcitx5/ibus at all — no Chinese/Japanese/Korean input, silently.
 
-`cmake/MuffinFcitx5Qt.cmake` closes that hole: the dist target builds fcitx5-qt (`5.1.13`, `BUILD_ONLY_PLUGIN=ON`, `BUILD_STATIC_PLUGIN=OFF`, so one self-contained `libfcitx5platforminputcontextplugin.so`) against the exact Qt this build links and copies it into `dist/platforminputcontexts/`. It needs `extra-cmake-modules` on the build machine (`sudo apt install extra-cmake-modules`) and a Qt built with DBus — `conanfile.py` therefore sets `qt/*:with_dbus=True` on Linux, because the plugin talks to fcitx5 over QtDBus. Pass `-DMUFFIN_BUNDLE_FCITX5_PLUGIN=OFF` to skip the plugin and ship a bundle without IME support.
+`cmake/MufpenFcitx5Qt.cmake` closes that hole: the dist target builds fcitx5-qt (`5.1.13`, `BUILD_ONLY_PLUGIN=ON`, `BUILD_STATIC_PLUGIN=OFF`, so one self-contained `libfcitx5platforminputcontextplugin.so`) against the exact Qt this build links and copies it into `dist/platforminputcontexts/`. It needs `extra-cmake-modules` on the build machine (`sudo apt install extra-cmake-modules`) and a Qt built with DBus — `conanfile.py` therefore sets `qt/*:with_dbus=True` on Linux, because the plugin talks to fcitx5 over QtDBus. Pass `-DMUFPEN_BUNDLE_FCITX5_PLUGIN=OFF` to skip the plugin and ship a bundle without IME support.
 
 ## Application Icons
 
-The committed raster icons in `resources/app-icons/` (PNGs at 16–1024px, `mufpen.ico`, `mufpen.icns`) are embedded by CMake automatically — the `.ico` into the Windows `.exe` via `cmake/muffin.rc.in`, the `.icns` into the macOS `.app` bundle, and a 256px PNG as the runtime window icon (all platforms, primary on Linux). No GitHub Actions change is needed; the build picks them up on every platform.
+The committed raster icons in `resources/app-icons/` (PNGs at 16–1024px, `mufpen.ico`, `mufpen.icns`) are embedded by CMake automatically — the `.ico` into the Windows `.exe` via `cmake/mufpen.rc.in`, the `.icns` into the macOS `.app` bundle, and a 256px PNG as the runtime window icon (all platforms, primary on Linux). No GitHub Actions change is needed; the build picks them up on every platform.
 
 They are generated from `logo.svg`. Regenerate after editing the logo:
 
@@ -70,11 +70,11 @@ This requires PySide6 (uses `QSvgRenderer`, the same Qt SVG engine the app links
 
 ### lupdate namespace context bug
 
-`lupdate` fails to track namespace prefixes across `namespace muffin { }` wrappers in `.cpp` files. It generates context `ClassName` instead of the correct `muffin::ClassName`, causing translations to never match at runtime (where `tr()` uses `metaObject()->className()` = `muffin::ClassName`).
+`lupdate` fails to track namespace prefixes across `namespace mufpen { }` wrappers in `.cpp` files. It generates context `ClassName` instead of the correct `mufpen::ClassName`, causing translations to never match at runtime (where `tr()` uses `metaObject()->className()` = `mufpen::ClassName`).
 
-**Rule:** A `.cpp` file in `MUFFIN_TRANSLATABLE_SOURCES` that contains `tr()` calls MUST NOT contain *any* `namespace muffin { }` block — not even one wrapping `tr()`-free helpers. A single such block anywhere in the file corrupts `lupdate`'s namespace state, so every `tr()` afterward lands under the wrong (un-prefixed) context. Define methods with fully-qualified names (e.g. `muffin::MainWindow::setupFileMenu()`) and put `tr()`-free file-local helpers in an *anonymous* namespace (`namespace { ... }`) at file scope — never inside `namespace muffin { }`.
+**Rule:** A `.cpp` file in `MUFPEN_TRANSLATABLE_SOURCES` that contains `tr()` calls MUST NOT contain *any* `namespace mufpen { }` block — not even one wrapping `tr()`-free helpers. A single such block anywhere in the file corrupts `lupdate`'s namespace state, so every `tr()` afterward lands under the wrong (un-prefixed) context. Define methods with fully-qualified names (e.g. `mufpen::MainWindow::setupFileMenu()`) and put `tr()`-free file-local helpers in an *anonymous* namespace (`namespace { ... }`) at file scope — never inside `namespace mufpen { }`.
 
-When adding a new `.cpp` file with `tr()` calls to the translatable sources, do NOT wrap it in `namespace muffin { }` — not even partially. Use `muffin::ClassName::method()` for all method definitions and keep helpers in an anonymous namespace. `src/app/HelpViewerDialog.cpp` is a worked example: `muffin::HelpViewerDialog::method()` definitions plus a `namespace { ... }` helper, which `lupdate` correctly attributes to the `muffin::HelpViewerDialog` context.
+When adding a new `.cpp` file with `tr()` calls to the translatable sources, do NOT wrap it in `namespace mufpen { }` — not even partially. Use `mufpen::ClassName::method()` for all method definitions and keep helpers in an anonymous namespace. `src/app/HelpViewerDialog.cpp` is a worked example: `mufpen::HelpViewerDialog::method()` definitions plus a `namespace { ... }` helper, which `lupdate` correctly attributes to the `mufpen::HelpViewerDialog` context.
 
 ### Updating translations
 

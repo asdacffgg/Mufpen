@@ -13,16 +13,16 @@ LANGUAGES = {
     "vi": 0x042A, "zh_CN": 0x0804, "zh_TW": 0x0404,
 }
 STRINGS = {
-    "MUFFIN_IDS_OPEN_WITH": "Open with Muffin",
-    "MUFFIN_IDS_DOCUMENT_TYPE": "Muffin Markdown Document",
-    "MUFFIN_IDS_OPEN": "Open",
+    "MUFPEN_IDS_OPEN_WITH": "Open with Mufpen",
+    "MUFPEN_IDS_DOCUMENT_TYPE": "Mufpen Markdown Document",
+    "MUFPEN_IDS_OPEN": "Open",
 }
 
 
 def translations(path):
     result = {}
     for context in ET.parse(path).getroot().findall("context"):
-        if context.findtext("name") != "muffin::WindowsIntegration":
+        if context.findtext("name") != "mufpen::WindowsIntegration":
             continue
         for message in context.findall("message"):
             translation = message.find("translation")
@@ -48,10 +48,10 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     header = (root / "src/app/WindowsShellResources.h").as_posix()
-    lines = ["// Generated from muffin_*.ts. Do not edit.", f'#include "{header}"']
+    lines = ["// Generated from mufpen_*.ts. Do not edit.", f'#include "{header}"']
     emitted = set()
     for code, language in LANGUAGES.items():
-        labels = {source: source for source in STRINGS.values()} if code == "en" else translations(root / f"translations/muffin_{code}.ts")
+        labels = {source: source for source in STRINGS.values()} if code == "en" else translations(root / f"translations/mufpen_{code}.ts")
         # Neutral primary-language resources cover regional OS variants. Chinese
         # keeps distinct Simplified/Traditional tables; English is the fallback.
         variants = [language]

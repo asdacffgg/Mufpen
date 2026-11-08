@@ -2,7 +2,7 @@
 
 #include "app/EditorBackend.h"
 
-namespace muffin {
+namespace mufpen {
 
 class SourceEditorWidget;
 
@@ -65,4 +65,4 @@ private:
   SourceEditorWidget* editor_;
 };
 
-} // namespace muffin
+} // namespace mufpen

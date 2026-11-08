@@ -12,7 +12,7 @@
 #include <QJsonDocument>
 #include <QRegularExpression>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void checkText(const InlineLayout& text, QPointF origin, NodeId node, DocumentLayout& layout,
                const RenderTheme& theme) {
@@ -59,12 +59,12 @@ void checkBlock(const BlockLayout& block, DocumentLayout& layout, const RenderTh
 }
 
 void documents() {
-  const QString folder = QStringLiteral(MUFFIN_VISUAL_FIXTURES);
+  const QString folder = QStringLiteral(MUFPEN_VISUAL_FIXTURES);
   const auto images = QJsonDocument::fromJson(readFixture(folder + "/images.json").toUtf8()).object();
   for (auto it = images.begin(); it != images.end(); ++it)
     ImageLoader::instance().store(it.key(), image_decoder::decodeFileFallback(folder + '/' + it.value().toString()));
   const qreal dpr = qApp->devicePixelRatio();
-  const auto output = qEnvironmentVariable("MUFFIN_VISUAL_OUTPUT");
+  const auto output = qEnvironmentVariable("MUFPEN_VISUAL_OUTPUT");
   if (!output.isEmpty())
     QDir().mkpath(output);
   QJsonArray report;
@@ -136,7 +136,7 @@ int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
   prepareDocumentVisualFonts();
-  QCoreApplication::setOrganizationName("MuffinTest");
+  QCoreApplication::setOrganizationName("MufpenTest");
   QCoreApplication::setApplicationName("DocumentVisualAcceptance");
   runTest("real document visuals and hit testing", documents);
   runTest("viewport and user width contract", viewportContract);

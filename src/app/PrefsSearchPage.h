@@ -7,7 +7,7 @@ class QLineEdit;
 class QPlainTextEdit;
 class QSpinBox;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsSearchPage final : public PreferencesPage {
   Q_OBJECT
@@ -25,4 +25,4 @@ private:
   QPushButton* reset_;
 };
 
-} // namespace muffin
+} // namespace mufpen

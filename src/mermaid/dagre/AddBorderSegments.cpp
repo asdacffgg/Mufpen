@@ -8,7 +8,7 @@
 
 #include <functional>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -75,4 +75,4 @@ void addBorderSegments(DagreGraph& g) {
     dfs(v);
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

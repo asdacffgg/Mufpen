@@ -8,7 +8,7 @@
 #include <cmath>
 #include <tuple>
 
-namespace muffin {
+namespace mufpen {
 
 qreal LiteralTextLayout::cursorX(const VisualLine& visual, qsizetype offset) const {
   const auto line = cachedParagraph(visual.paragraph).layout->lineAt(visual.row);
@@ -370,4 +370,4 @@ void LiteralTextLayout::draw(QPainter& painter, QPointF origin,
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -19,7 +19,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::wardley {
+namespace mufpen::mermaid::wardley {
 namespace {
 
 QStringList cssFontFamilies(const QString& expression) {
@@ -574,4 +574,4 @@ QJsonObject WardleyScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::wardley
+} // namespace mufpen::mermaid::wardley

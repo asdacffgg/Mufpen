@@ -10,8 +10,8 @@ const native=JSON.parse(fs.readFileSync(path.join(outputDir,'native.json'),'utf8
 const specimen={text:native.text,width:native.width,letterSpacing:native.letterSpacing,wordSpacing:native.wordSpacing};
 const bytes=fs.readFileSync(fontPath),sha=createHash('sha256').update(bytes).digest('hex');
 if(sha!==native.fontSha256) throw new Error('Native and browser font files differ');
-const {chromium}=await import(process.env.MUFFIN_PLAYWRIGHT_MODULE?
-  pathToFileURL(path.resolve(process.env.MUFFIN_PLAYWRIGHT_MODULE)).href:'playwright');
+const {chromium}=await import(process.env.MUFPEN_PLAYWRIGHT_MODULE?
+  pathToFileURL(path.resolve(process.env.MUFPEN_PLAYWRIGHT_MODULE)).href:'playwright');
 const browser=await chromium.launch({headless:true,
   ...(process.env.CHROME_EXECUTABLE?{executablePath:process.env.CHROME_EXECUTABLE}:{})});
 try {

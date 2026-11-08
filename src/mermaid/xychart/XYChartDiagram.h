@@ -9,7 +9,7 @@
 #include <limits>
 #include <stdexcept>
 
-namespace muffin::mermaid::xychart {
+namespace mufpen::mermaid::xychart {
 
 enum class XYChartOrientation { Vertical, Horizontal };
 enum class XYChartAxisType { Band, Linear };
@@ -60,4 +60,4 @@ public:
   static XYChartData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::xychart
+} // namespace mufpen::mermaid::xychart

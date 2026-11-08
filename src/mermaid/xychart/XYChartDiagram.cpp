@@ -13,7 +13,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::mermaid::xychart {
+namespace mufpen::mermaid::xychart {
 
 XYChartParseError::XYChartParseError(const QString& message, int line, int column)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column) {
@@ -660,4 +660,4 @@ XYChartData XYChartDiagram::parse(const QString& rawSource) {
   return data;
 }
 
-} // namespace muffin::mermaid::xychart
+} // namespace mufpen::mermaid::xychart

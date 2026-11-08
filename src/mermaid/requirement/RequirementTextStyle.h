@@ -23,7 +23,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 enum class RequirementTextTransform { None, UpperCase, LowerCase, Capitalize };
 
@@ -72,4 +72,4 @@ RequirementTextStyle resolveRequirementTextStyle(const QStringList& cssStyles, c
 // treated as a word boundary; only the first cased char of each word is titled.
 QString applyRequirementTextTransform(QString source, RequirementTextTransform tf);
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

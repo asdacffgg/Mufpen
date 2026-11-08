@@ -22,9 +22,9 @@
 #include <stdexcept>
 #include <utility>
 
-using namespace muffin;
+using namespace mufpen;
 
-namespace muffin::math {
+namespace mufpen::math {
 
 // Test-only convenience. Production callers consume the structured result and
 // must not erase failure details behind an optional-returning API.
@@ -37,7 +37,7 @@ static std::optional<MathCssPaintOperation> checkedMathMlPaintOperations(const M
   return std::move(build.operation);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math
 
 namespace {
 
@@ -1898,7 +1898,7 @@ int main(int argc, char** argv) {
     const QString expectedPaintOperationHash =
         QStringLiteral("0ac65710d059da205424679186ee51bf5e4c83da12b3999fa775dbe292ce1cec");
     if (paintOperationHash != expectedPaintOperationHash ||
-        qEnvironmentVariableIsSet("MUFFIN_MATH_DUMP_PAINT_HASHES")) {
+        qEnvironmentVariableIsSet("MUFPEN_MATH_DUMP_PAINT_HASHES")) {
       for (const QJsonValue& value : paintOperationGolden) {
         const QJsonObject goldenCase = value.toObject();
         const QByteArray json = QJsonDocument(goldenCase).toJson(QJsonDocument::Compact);

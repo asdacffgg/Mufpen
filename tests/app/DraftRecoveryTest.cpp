@@ -22,7 +22,7 @@
 // Follows the project's test convention (no QTest): require() asserts that exit
 // on failure, plain test functions, and a main() that runs them under QCoreApplication.
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -350,14 +350,14 @@ void testPruneKeepsDraftsForDeletedSource() {
   writeSourceFile(alivePath);
   recovery.snapshot(QStringLiteral("alive"), alivePath);
   // A source that was deleted before next launch remains recoverable as untitled.
-  recovery.snapshot(QStringLiteral("ghost"), QStringLiteral("/tmp/muffin-no-such-file.md"));
+  recovery.snapshot(QStringLiteral("ghost"), QStringLiteral("/tmp/mufpen-no-such-file.md"));
   require(recovery.pendingDrafts().size() == 2, QStringLiteral("Both drafts listed before prune"));
   recovery.pruneOrphaned();
   const auto after = recovery.pendingDrafts();
   require(after.size() == 2, QStringLiteral("Complete drafts must survive regardless of source existence"));
   bool foundMissingSource = false;
   for (const auto& draft : after) {
-    if (draft.sourcePath == QStringLiteral("/tmp/muffin-no-such-file.md")) {
+    if (draft.sourcePath == QStringLiteral("/tmp/mufpen-no-such-file.md")) {
       foundMissingSource = recovery.loadDraft(draft) == QStringLiteral("ghost");
     }
   }

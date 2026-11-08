@@ -9,7 +9,7 @@
 #include <QtGlobal>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 std::optional<QVector<QPair<QString, int>>> parseCounterOperations(const QString& text, int defaultValue) {
   QVector<QPair<QString, int>> result;
@@ -279,4 +279,4 @@ QString resolveContentTokens(const std::vector<ContentToken>& tokens, const std:
   return out;
 }
 
-} // namespace muffin
+} // namespace mufpen

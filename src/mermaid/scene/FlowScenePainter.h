@@ -21,7 +21,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 
 // Paint mode. `Color` renders the scene with its resolved colours (the editor/
 // export path). `CategoryMask` renders the SAME geometry in the SAME draw order
@@ -56,4 +56,4 @@ void paintFlowScene(const FlowScene& scene, QPainter& painter, const QString& fo
 QImage renderFlowSceneToImage(const FlowScene& scene, qreal dpr = 1.0, qreal padding = 8.0,
                               const QString& fontFamily = QStringLiteral("Arial"));
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

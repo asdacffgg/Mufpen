@@ -5,7 +5,7 @@
 #include "render/TextLayout.h"
 #include "theme/ThemeDefinition.h"
 
-namespace muffin {
+namespace mufpen {
 
 struct TextShadowRasterStats {
   quint64 requests = 0, hits = 0, misses = 0, culled = 0, rasterizedPixels = 0, largestSurfacePixels = 0;
@@ -27,4 +27,4 @@ private:
   mutable std::shared_ptr<Owner> owner_;
 };
 
-} // namespace muffin
+} // namespace mufpen

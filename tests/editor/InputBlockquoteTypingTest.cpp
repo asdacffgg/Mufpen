@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Regression guard for the "type `>` to start a blockquote and the caret vanishes" bug.
 //

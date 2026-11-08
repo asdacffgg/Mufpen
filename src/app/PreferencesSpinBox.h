@@ -6,7 +6,7 @@
 #include <QStyleOptionSpinBox>
 #include <QWheelEvent>
 
-namespace muffin {
+namespace mufpen {
 
 // Keep Qt's editing, button/key stepping and accessibility; paint only the two chevrons.
 // The stylesheet places the buttons, and those same rectangles drive painting
@@ -52,4 +52,4 @@ protected:
   }
 };
 
-} // namespace muffin
+} // namespace mufpen

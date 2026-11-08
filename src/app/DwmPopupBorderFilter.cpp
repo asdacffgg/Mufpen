@@ -22,9 +22,9 @@
 #endif
 #endif
 
-namespace muffin {
+namespace mufpen {
 
-void muffin::DwmPopupBorderFilter::install(QApplication& app) {
+void mufpen::DwmPopupBorderFilter::install(QApplication& app) {
 #if defined(Q_OS_WIN)
   // DWMWA_BORDER_COLOR only exists on Windows 11; older systems have no
   // DWM popup border to remove in the first place.
@@ -36,10 +36,10 @@ void muffin::DwmPopupBorderFilter::install(QApplication& app) {
 #endif
 }
 
-muffin::DwmPopupBorderFilter::DwmPopupBorderFilter(QObject* parent) : QObject(parent) {
+mufpen::DwmPopupBorderFilter::DwmPopupBorderFilter(QObject* parent) : QObject(parent) {
 }
 
-bool muffin::DwmPopupBorderFilter::eventFilter(QObject* watched, QEvent* event) {
+bool mufpen::DwmPopupBorderFilter::eventFilter(QObject* watched, QEvent* event) {
 #if defined(Q_OS_WIN)
   if (event->type() == QEvent::Show) {
     if (auto* widget = qobject_cast<QWidget*>(watched); widget != nullptr && widget->isWindow() &&
@@ -89,4 +89,4 @@ bool muffin::DwmPopupBorderFilter::eventFilter(QObject* watched, QEvent* event) 
   return QObject::eventFilter(watched, event);
 }
 
-} // namespace muffin
+} // namespace mufpen

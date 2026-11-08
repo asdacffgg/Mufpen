@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct FlowVertex {
   QString id;
@@ -23,8 +23,8 @@ struct FlowVertex {
   QJsonObject props;
   QString link;
   QString linkTarget;
-  // Muffin-only (milestone H2): set at parse time when `link` fails the URL
-  // safety check (muffin::isSafeUrl). The raw link is PRESERVED so the AST stays
+  // Mufpen-only (milestone H2): set at parse time when `link` fails the URL
+  // safety check (mufpen::isSafeUrl). The raw link is PRESERVED so the AST stays
   // faithful to upstream; the render/export layer (milestone I) consults this
   // flag + MermaidSecurityPolicy to decide whether to make the link interactive.
   // NOT serialized into toJson (it is not part of the upstream-comparable AST).
@@ -87,12 +87,12 @@ struct FlowchartParseOptions {
   bool inheritDir = false;
 };
 
-// Muffin's safety boundary against pathological input (milestone H1). SEPARATE
+// Mufpen's safety boundary against pathological input (milestone H1). SEPARATE
 // from FlowchartParseOptions (which stays semantic, matching upstream): upstream
-// mermaid has no such limits (a browser tab just OOMs), but Muffin is a desktop
+// mermaid has no such limits (a browser tab just OOMs), but Mufpen is a desktop
 // editor where unbounded growth crashes the document session — so these bounds
 // are intentionally stricter than upstream. A parity harness sets them to
-// INT_MAX to compare raw AST faithfulness; the editor uses the Muffin defaults.
+// INT_MAX to compare raw AST faithfulness; the editor uses the Mufpen defaults.
 // Exceeding any bound throws FlowchartParseError{LimitExceeded}.
 struct FlowchartLimits {
   int maxVertices = 2000;
@@ -139,4 +139,4 @@ private:
   FlowchartData data_;
 };
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

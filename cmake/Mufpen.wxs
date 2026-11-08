@@ -1,0 +1,344 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package
+    Name="Mufpen"
+    Manufacturer="Mufpen"
+    Version="$(var.MufpenVersion)"
+    UpgradeCode="af6d833d-99d8-4038-a848-a463caee0fea"
+    Language="1033"
+    Compressed="yes">
+
+    <!-- The registry choices include changes made from the app after install.
+         Migrating the old MSI feature state would overwrite those choices. -->
+    <!-- Remove the old product inside the MSI transaction. The default
+         afterInstallValidate schedule cannot restore it if the update fails. -->
+    <MajorUpgrade Schedule="afterInstallInitialize" MigrateFeatures="no"
+                  DowngradeErrorMessage="A newer version of Mufpen is already installed." />
+
+    <Property Id="MUFPENCONTEXTMENUSAVED">
+      <RegistrySearch Id="SavedContextMenu" Root="HKCU" Key="Software\Mufpen\Mufpen\integration"
+                      Name="contextMenu" Type="raw" />
+    </Property>
+    <Property Id="MUFPENOPENWITHSAVED">
+      <RegistrySearch Id="SavedOpenWith" Root="HKCU" Key="Software\Mufpen\Mufpen\integration"
+                      Name="openWith" Type="raw" />
+    </Property>
+    <Property Id="MUFPENCONTEXTMENUFOUND">
+      <RegistrySearch Id="ExistingContextMenu" Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Mufpen" Type="raw" />
+    </Property>
+    <Property Id="MUFPENOPENWITHFOUND">
+      <RegistrySearch Id="ExistingOpenWith" Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md" Type="raw" />
+    </Property>
+
+    <!-- Capture the final feature action state after costing/UI/ADDLOCAL.
+         WriteRegistryValues owns persistence and rollback, so detection,
+         cancel, failed installs and uninstall cannot save a new selection. -->
+    <Property Id="MUFPENCONTEXTMENUSTATE" Value="0" />
+    <Property Id="MUFPENOPENWITHSTATE" Value="0" />
+    <SetProperty Id="MUFPENCONTEXTMENUSTATE" Value="1" Before="InstallInitialize" Sequence="execute"
+                 Condition="&amp;ShellContextMenu = 3 OR &amp;ShellContextMenu = 4 OR (&amp;ShellContextMenu = -1 AND (!ShellContextMenu = 3 OR !ShellContextMenu = 4))" />
+    <SetProperty Id="MUFPENOPENWITHSTATE" Value="1" Before="InstallInitialize" Sequence="execute"
+                 Condition="&amp;FileAssociations = 3 OR &amp;FileAssociations = 4 OR (&amp;FileAssociations = -1 AND (!FileAssociations = 3 OR !FileAssociations = 4))" />
+
+    <!-- Publishes the install folder to ARP so the setup UI (and anything
+         else) can locate Mufpen.exe without a Burn→MSI property round-trip.
+         A plain Property would write the literal "[INSTALLFOLDER]"; SetProperty
+         schedules the type-51 action that expands it at install time. -->
+    <SetProperty Id="ARPINSTALLLOCATION" Value="[INSTALLFOLDER]" After="CostFinalize" Sequence="both" />
+
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <!-- Interactive install wizard with a feature tree so users can opt out of
+         the shell-integration pieces. WixUI_FeatureTree shows: Welcome →
+         Customize (feature checkboxes) → Ready to Install. No license file or
+         install-folder prompt is required. -->
+    <ui:WixUI Id="WixUI_FeatureTree" />
+
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="Mufpen">
+        <Directory Id="PlatformsDir" Name="platforms" />
+        <Directory Id="StylesDir" Name="styles" />
+        <Directory Id="ImageformatsDir" Name="imageformats" />
+        <Directory Id="TlsDir" Name="tls" />
+        <Directory Id="NetworkinformationDir" Name="networkinformation" />
+        <Directory Id="MufpenResourcesDir" Name="resources">
+          <Directory Id="MufpenIcuDir" Name="icu" />
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+
+    <!-- The application itself is required (Absent=disallow); the two shell-
+         integration features below default to installed and can be unchecked
+         in the Customize step of the wizard, or toggled later from the app's
+         Files preferences page (which writes the same HKCU\SOFTWARE\Classes
+         keys the per-user components below install). -->
+    <Feature Id="MainFeature" Title="Mufpen" Level="1" AllowAbsent="no">
+      <ComponentGroupRef Id="MufpenMainFiles" />
+      <ComponentGroupRef Id="MufpenPlatformsPlugins" />
+      <ComponentGroupRef Id="MufpenStylesPlugins" />
+      <ComponentGroupRef Id="MufpenImageformatsPlugins" />
+      <ComponentGroupRef Id="MufpenTlsPlugins" />
+      <ComponentGroupRef Id="MufpenNetworkinformationPlugins" />
+      <ComponentGroupRef Id="MufpenIcuDataFiles" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="IntegrationChoices" />
+
+      <Feature Id="ShellContextMenu" Title="Explorer context menu" Level="1"
+               Description="Adds &quot;Open with Mufpen&quot; to the right-click menu for Markdown files, folders, and folder backgrounds.">
+        <Level Value="2" Condition="MUFPENCONTEXTMENUSAVED = &quot;#0&quot; OR (MUFPENCONTEXTMENUSAVED &lt;&gt; &quot;#1&quot; AND (WIX_UPGRADE_DETECTED OR Installed OR MUFPENCONTEXTMENUFOUND OR MUFPENOPENWITHFOUND) AND NOT MUFPENCONTEXTMENUFOUND)" />
+        <ComponentGroupRef Id="MufpenContextMenu" />
+      </Feature>
+
+      <Feature Id="FileAssociations" Title="Show Mufpen in Open with" Level="1"
+               Description="Lists Mufpen in &quot;Open with&quot; for .md, .markdown, .mdx, .mkd, and .mdown files. Your default editor stays unchanged.">
+        <Level Value="2" Condition="MUFPENOPENWITHSAVED = &quot;#0&quot; OR (MUFPENOPENWITHSAVED &lt;&gt; &quot;#1&quot; AND (WIX_UPGRADE_DETECTED OR Installed OR MUFPENCONTEXTMENUFOUND OR MUFPENOPENWITHFOUND) AND NOT MUFPENOPENWITHFOUND)" />
+        <ComponentGroupRef Id="MufpenFileAssociations" />
+      </Feature>
+    </Feature>
+
+    <!-- Start Menu shortcut -->
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Mufpen">
+        <Component Id="ApplicationShortcut" Guid="c1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c">
+          <Shortcut Id="ApplicationStartMenuShortcut"
+            Name="Mufpen"
+            Target="[INSTALLFOLDER]Mufpen.exe"
+            WorkingDirectory="INSTALLFOLDER" />
+          <RemoveFolder Id="RemoveApplicationProgramsFolder"
+            Directory="ApplicationProgramsFolder"
+            On="uninstall" />
+          <RegistryValue Root="HKCU"
+            Key="Software\Mufpen"
+            Name="installed"
+            Type="integer"
+            Value="1"
+            KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+  </Package>
+
+  <Fragment>
+    <Component Id="IntegrationChoices" Guid="0bf6cc9c-e8eb-4df9-937a-af5aee906953" Directory="TARGETDIR">
+      <RegistryValue Root="HKCU" Key="Software\Mufpen\Mufpen\integration" Name="contextMenu"
+                     Type="integer" Value="[MUFPENCONTEXTMENUSTATE]" KeyPath="yes" />
+      <RegistryValue Root="HKCU" Key="Software\Mufpen\Mufpen\integration" Name="openWith"
+                     Type="integer" Value="[MUFPENOPENWITHSTATE]" />
+    </Component>
+  </Fragment>
+
+  <!-- Main directory files: exe, dlls, qt.conf -->
+  <Fragment>
+    <ComponentGroup Id="MufpenMainFiles" Directory="INSTALLFOLDER">
+      <Component Id="MufpenExe" Guid="d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a">
+        <File Id="MufpenExeFile" Source="$(var.DistDir)/Mufpen.exe" KeyPath="yes" />
+      </Component>
+      <!-- Headless mermaid CLI (mmdc-compatible flag subset). Sits beside
+           Mufpen.exe so the bundled Qt DLLs and qt.conf resolve for it too. -->
+      <Component Id="MufpenMmdc" Guid="a3b4c5d6-e7f8-4a9b-8c0d-2e3f4a5b6c7d">
+        <File Id="MufpenMmdcFile" Source="$(var.DistDir)/mufpen-mmdc.exe" KeyPath="yes" />
+      </Component>
+      <!-- MIT requires the copyright and permission notice to travel with every
+           distributed copy. dist/ carries it as LICENSE.txt on all platforms. -->
+      <Component Id="LicenseFile" Guid="*">
+        <File Id="LicenseTxt" Source="$(var.DistDir)/LICENSE.txt" />
+      </Component>
+      <Component Id="Qt6Core" Guid="*">
+        <File Id="Qt6CoreDll" Source="$(var.DistDir)/Qt6Core.dll" />
+      </Component>
+      <Component Id="Qt6Gui" Guid="*">
+        <File Id="Qt6GuiDll" Source="$(var.DistDir)/Qt6Gui.dll" />
+      </Component>
+      <Component Id="Qt6Svg" Guid="*">
+        <File Id="Qt6SvgDll" Source="$(var.DistDir)/Qt6Svg.dll" />
+      </Component>
+      <Component Id="Qt6Widgets" Guid="*">
+        <File Id="Qt6WidgetsDll" Source="$(var.DistDir)/Qt6Widgets.dll" />
+      </Component>
+      <Component Id="Qt6PrintSupport" Guid="*">
+        <File Id="Qt6PrintSupportDll" Source="$(var.DistDir)/Qt6PrintSupport.dll" />
+      </Component>
+      <Component Id="Qt6Network" Guid="*">
+        <File Id="Qt6NetworkDll" Source="$(var.DistDir)/Qt6Network.dll" />
+      </Component>
+      <!-- Mufpen's own code, shipped as shared libraries under the default
+           MUFPEN_LIB_TYPE=SHARED (Mufpen.exe and mufpen-mmdc.exe both link
+           them, sharing one copy of the ~100 MB of code instead of embedding
+           it twice). A STATIC build's dist has no such files and the msi
+           target would fail here. Note Qt6Concurrent.dll is NOT shipped:
+           nothing imports it (QFutureWatcher/QThreadPool live in QtCore). -->
+      <Component Id="MufpenCoreDll" Guid="*">
+        <File Id="MufpenCoreDllFile" Source="$(var.DistDir)/MufpenCore.dll" />
+      </Component>
+      <Component Id="MufpenUiDll" Guid="*">
+        <File Id="MufpenUiDllFile" Source="$(var.DistDir)/MufpenUi.dll" />
+      </Component>
+      <Component Id="QtConf" Guid="c7d8e9f0-a1b2-4c3d-e4f5-a6b7c8d9e0f1">
+        <File Id="QtConfFile" Source="$(var.DistDir)/qt.conf" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- ICU runtime data -->
+  <Fragment>
+    <ComponentGroup Id="MufpenIcuDataFiles" Directory="MufpenIcuDir">
+      <Component Id="MufpenIcuData" Guid="*">
+        <File Id="MufpenIcuDataFile" Source="$(var.DistDir)/resources/icu/$(var.IcuDataName)" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Qt platforms plugins -->
+  <Fragment>
+    <ComponentGroup Id="MufpenPlatformsPlugins" Directory="PlatformsDir">
+      <Component Id="QWindows" Guid="*">
+        <File Id="QWindowsDll" Source="$(var.DistDir)/platforms/qwindows.dll" />
+      </Component>
+      <Component Id="QDirect2D" Guid="*">
+        <File Id="QDirect2DDll" Source="$(var.DistDir)/platforms/qdirect2d.dll" />
+      </Component>
+      <Component Id="QMinimal" Guid="*">
+        <File Id="QMinimalDll" Source="$(var.DistDir)/platforms/qminimal.dll" />
+      </Component>
+      <Component Id="QOffscreen" Guid="*">
+        <File Id="QOffscreenDll" Source="$(var.DistDir)/platforms/qoffscreen.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Qt styles plugins -->
+  <Fragment>
+    <ComponentGroup Id="MufpenStylesPlugins" Directory="StylesDir">
+      <Component Id="QModernWindowsStyle" Guid="*">
+        <File Id="QModernWindowsStyleDll" Source="$(var.DistDir)/styles/qmodernwindowsstyle.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Qt imageformats plugins -->
+  <Fragment>
+    <ComponentGroup Id="MufpenImageformatsPlugins" Directory="ImageformatsDir">
+      <Component Id="QGif" Guid="*">
+        <File Id="QGifDll" Source="$(var.DistDir)/imageformats/qgif.dll" />
+      </Component>
+      <Component Id="QIco" Guid="*">
+        <File Id="QIcoDll" Source="$(var.DistDir)/imageformats/qico.dll" />
+      </Component>
+      <Component Id="QSvg" Guid="*">
+        <File Id="QSvgDll" Source="$(var.DistDir)/imageformats/qsvg.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Qt TLS plugins -->
+  <Fragment>
+    <ComponentGroup Id="MufpenTlsPlugins" Directory="TlsDir">
+      <Component Id="QSchannelBackend" Guid="*">
+        <File Id="QSchannelBackendDll" Source="$(var.DistDir)/tls/qschannelbackend.dll" />
+      </Component>
+      <Component Id="QOpenSslBackend" Guid="*">
+        <File Id="QOpenSslBackendDll" Source="$(var.DistDir)/tls/qopensslbackend.dll" />
+      </Component>
+      <Component Id="QCertOnlyBackend" Guid="*">
+        <File Id="QCertOnlyBackendDll" Source="$(var.DistDir)/tls/qcertonlybackend.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Qt NetworkInformation plugins -->
+  <Fragment>
+    <ComponentGroup Id="MufpenNetworkinformationPlugins" Directory="NetworkinformationDir">
+      <Component Id="QNetworkListManager" Guid="*">
+        <File Id="QNetworkListManagerDll" Source="$(var.DistDir)/networkinformation/qnetworklistmanager.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Per-user Explorer "Open with Mufpen" verbs. Each component owns one
+       Mufpen-authored subtree of HKCU\SOFTWARE\Classes so uninstall removes
+       exactly what we added (other apps' verbs are left untouched). Commands
+       quote the installed exe; folder backgrounds use %V (the open folder),
+       while files and folder selections use %1. -->
+  <Fragment>
+    <ComponentGroup Id="MufpenContextMenu" Directory="TARGETDIR">
+      <Component Id="CtxFile_md" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5001">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxFile_markdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5002">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxFile_mdx" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5003">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxFile_mkd" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5004">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxFile_mdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5005">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxDirectory" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5006">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; --folder &quot;%1&quot;" />
+      </Component>
+      <Component Id="CtxDirectoryBackground" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5007">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Mufpen" Type="string" Value="Open with Mufpen" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Mufpen" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1001" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Mufpen\Icon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Directory\Background\shell\Mufpen\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; --folder &quot;%V&quot;" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- File association: registers the Mufpen.md ProgID and lists it under each
+       extension's OpenWithProgids so Mufpen shows up in "Open with" and can be
+       set as the default. OpenWithProgids values are authored as empty
+       REG_BINARY (WiX has no REG_NONE authoring); the Windows shell keys off
+       the value name, so this is accepted. Default-app changes are only
+       available from the application's explicit preferences action. -->
+  <Fragment>
+    <ComponentGroup Id="MufpenFileAssociations" Directory="TARGETDIR">
+      <Component Id="MufpenProgId" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5008">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md" Type="string" Value="Mufpen Markdown Document" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md" Name="FriendlyTypeName" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1002" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md" Name="FriendlyAppName" Type="string" Value="Mufpen" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md\DefaultIcon" Type="string" Value="[INSTALLFOLDER]Mufpen.exe,0" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md\shell\open" Type="string" Value="Open" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md\shell\open" Name="MUIVerb" Type="string" Value="@[INSTALLFOLDER]Mufpen.exe,-1003" />
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\Mufpen.md\shell\open\command" Type="string" Value="&quot;[INSTALLFOLDER]Mufpen.exe&quot; &quot;%1&quot;" />
+      </Component>
+      <Component Id="Assoc_md" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d5009">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.md\OpenWithProgids" Name="Mufpen.md" Type="binary" Value="" KeyPath="yes" />
+      </Component>
+      <Component Id="Assoc_markdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d500a">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.markdown\OpenWithProgids" Name="Mufpen.md" Type="binary" Value="" KeyPath="yes" />
+      </Component>
+      <Component Id="Assoc_mdx" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d500b">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdx\OpenWithProgids" Name="Mufpen.md" Type="binary" Value="" KeyPath="yes" />
+      </Component>
+      <Component Id="Assoc_mkd" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d500c">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mkd\OpenWithProgids" Name="Mufpen.md" Type="binary" Value="" KeyPath="yes" />
+      </Component>
+      <Component Id="Assoc_mdown" Guid="e94b1f8a-3c61-4d72-9e0a-1a2b3c4d500d">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\Classes\.mdown\OpenWithProgids" Name="Mufpen.md" Type="binary" Value="" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

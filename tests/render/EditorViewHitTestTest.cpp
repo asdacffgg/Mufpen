@@ -7,7 +7,7 @@
 #include <QEventLoop>
 #include <QTimer>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testClickAfterTextStopsBeforeLineBreak() {
   SettingsOverride singleNewline("markdown/breakOnSingleNewline", true);
@@ -1268,7 +1268,7 @@ int main(int argc, char** argv) {
   // codeBlockWrapEnabled() reads a default-constructed QSettings(); without org/app names the
   // SettingsOverride below writes to a location the production code reads inconsistently, so the
   // wrap setting never takes effect (the markdown-prefs gotcha).
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("EditorViewHitTestTest"));
 #define RUN_TEST(test) runTest(#test, test)
   RUN_TEST(testNestedHtmlSourceSwitchKeepsTheClickedChildInPlace);

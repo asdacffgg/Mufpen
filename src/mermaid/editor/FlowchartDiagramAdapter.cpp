@@ -20,7 +20,7 @@
 #include <algorithm>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue effectiveHtmlLabelsValue(const QJsonObject& config, const QJsonObject& flowConfig) {
@@ -180,4 +180,4 @@ const Diagram& flowchartDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

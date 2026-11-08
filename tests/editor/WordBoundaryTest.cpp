@@ -9,9 +9,9 @@
 
 namespace {
 
-using muffin::words::nextWordOffset;
-using muffin::words::previousWordOffset;
-using muffin::words::wordRangeAt;
+using mufpen::words::nextWordOffset;
+using mufpen::words::previousWordOffset;
+using mufpen::words::wordRangeAt;
 
 void testAsciiWords() {
   const QString text = QStringLiteral("hello world_foo bar");

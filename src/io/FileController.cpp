@@ -22,7 +22,7 @@
 namespace {
 
 bool decodeWithIcu(const QByteArray& raw, const QString& encodingName, QString* out) {
-  if (!muffin::initializeIcuData())
+  if (!mufpen::initializeIcuData())
     return false;
   UErrorCode status = U_ZERO_ERROR;
   UConverter* converter = ucnv_open(encodingName.toUtf8().constData(), &status);
@@ -53,7 +53,7 @@ bool decodeWithIcu(const QByteArray& raw, const QString& encodingName, QString* 
 }
 
 bool encodeWithIcu(const QString& text, const QString& encodingName, QByteArray* out) {
-  if (!muffin::initializeIcuData())
+  if (!mufpen::initializeIcuData())
     return false;
   UErrorCode status = U_ZERO_ERROR;
   UConverter* converter = ucnv_open(encodingName.toUtf8().constData(), &status);
@@ -85,7 +85,7 @@ bool encodeWithIcu(const QString& text, const QString& encodingName, QByteArray*
   return true;
 }
 
-muffin::TextLineEnding detectLineEnding(QStringView text) {
+mufpen::TextLineEnding detectLineEnding(QStringView text) {
   qsizetype crlf = 0;
   qsizetype lf = 0;
   qsizetype cr = 0;
@@ -102,12 +102,12 @@ muffin::TextLineEnding detectLineEnding(QStringView text) {
     }
   }
   if (crlf >= lf && crlf >= cr && crlf > 0) {
-    return muffin::TextLineEnding::Crlf;
+    return mufpen::TextLineEnding::Crlf;
   }
   if (cr > lf && cr > 0) {
-    return muffin::TextLineEnding::Cr;
+    return mufpen::TextLineEnding::Cr;
   }
-  return muffin::TextLineEnding::Lf;
+  return mufpen::TextLineEnding::Lf;
 }
 
 void normalizeLineEndings(QString* text) {
@@ -236,8 +236,8 @@ bool encodeLegacyText(const QString& text, const QString& encodingName, QByteArr
 }
 
 bool decodeText(const QByteArray& raw, const QString& requestedEncoding, QString* text,
-                muffin::TextFileFormat* format) {
-  if (!muffin::initializeIcuData())
+                mufpen::TextFileFormat* format) {
+  if (!mufpen::initializeIcuData())
     return false;
   QByteArray payload = raw;
   QString encoding = requestedEncoding;
@@ -331,15 +331,15 @@ QByteArray bomForEncoding(const QString& encoding) {
 
 } // namespace
 
-muffin::FileController::FileController(QObject* parent) : QObject(parent) {
+mufpen::FileController::FileController(QObject* parent) : QObject(parent) {
 }
 
-bool muffin::FileController::decodeTextBytes(const QByteArray& bytes, QString* text, TextFileFormat* format) {
+bool mufpen::FileController::decodeTextBytes(const QByteArray& bytes, QString* text, TextFileFormat* format) {
   text->clear();
   return decodeText(bytes, {}, text, format);
 }
 
-bool muffin::FileController::encodeTextBytes(const QString& text, const TextFileFormat& format, QByteArray* bytes) {
+bool mufpen::FileController::encodeTextBytes(const QString& text, const TextFileFormat& format, QByteArray* bytes) {
   QString diskText = text;
   if (format.lineEnding == TextLineEnding::Crlf)
     diskText.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
@@ -354,7 +354,7 @@ bool muffin::FileController::encodeTextBytes(const QString& text, const TextFile
   return true;
 }
 
-bool muffin::FileController::newFile(DocumentSession& session, QWidget* parent) {
+bool mufpen::FileController::newFile(DocumentSession& session, QWidget* parent) {
   autoSaveOnSwitchIfEnabled(session, parent);
   if (!confirmDiscardIfModified(session, parent)) {
     return false;
@@ -363,16 +363,16 @@ bool muffin::FileController::newFile(DocumentSession& session, QWidget* parent) 
   return true;
 }
 
-QString muffin::FileController::chooseOpenPath(QWidget* parent) const {
+QString mufpen::FileController::chooseOpenPath(QWidget* parent) const {
   return QFileDialog::getOpenFileName(parent, tr("Open"), QString(),
                                       tr("Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)"));
 }
 
-void muffin::FileController::setPathAvailableCheck(std::function<bool(const QString&)> check) {
+void mufpen::FileController::setPathAvailableCheck(std::function<bool(const QString&)> check) {
   pathAvailableCheck_ = std::move(check);
 }
 
-bool muffin::FileController::open(DocumentSession& session, QWidget* parent, QString path) {
+bool mufpen::FileController::open(DocumentSession& session, QWidget* parent, QString path) {
   if (path.isEmpty()) {
     path = chooseOpenPath(parent);
   }
@@ -408,7 +408,7 @@ bool muffin::FileController::open(DocumentSession& session, QWidget* parent, QSt
   return true;
 }
 
-muffin::SaveOutcome muffin::FileController::save(DocumentSession& session, QWidget* parent, const QString& defaultDir) {
+mufpen::SaveOutcome mufpen::FileController::save(DocumentSession& session, QWidget* parent, const QString& defaultDir) {
   // Refuse to persist while an async open parse is in flight: document_ still holds the pre-open
   // text, but filePath_ already points at the new file — writing would clobber it with stale content.
   if (session.isOpenInProgress()) {
@@ -432,7 +432,7 @@ muffin::SaveOutcome muffin::FileController::save(DocumentSession& session, QWidg
   return SaveOutcome::Saved;
 }
 
-QString muffin::FileController::defaultUntitledName() const {
+QString mufpen::FileController::defaultUntitledName() const {
   // files/defaultExtension: 0 = .md (default), 1 = .markdown, 2 = .txt.
   QSettings settings;
   switch (settings.value(QStringLiteral("files/defaultExtension"), 0).toInt()) {
@@ -445,7 +445,7 @@ QString muffin::FileController::defaultUntitledName() const {
   }
 }
 
-void muffin::FileController::autoSaveOnSwitchIfEnabled(DocumentSession& session, QWidget* parent) {
+void mufpen::FileController::autoSaveOnSwitchIfEnabled(DocumentSession& session, QWidget* parent) {
   // The internal Save paths below intentionally keep defaultDir = {} — only the
   // explicit Save / Save As commands (which know the sidebar folder) seed it.
   // Silently persist a pathed, modified document before switching away, so the
@@ -460,7 +460,7 @@ void muffin::FileController::autoSaveOnSwitchIfEnabled(DocumentSession& session,
   save(session, parent);
 }
 
-muffin::SaveOutcome muffin::FileController::saveAs(DocumentSession& session, QWidget* parent,
+mufpen::SaveOutcome mufpen::FileController::saveAs(DocumentSession& session, QWidget* parent,
                                                    const QString& defaultDir) {
   if (session.isOpenInProgress()) {
     return SaveOutcome::SkippedBusy;
@@ -501,7 +501,7 @@ muffin::SaveOutcome muffin::FileController::saveAs(DocumentSession& session, QWi
   return SaveOutcome::Saved;
 }
 
-bool muffin::FileController::confirmDiscardIfModified(DocumentSession& session, QWidget* parent) {
+bool mufpen::FileController::confirmDiscardIfModified(DocumentSession& session, QWidget* parent) {
   if (!session.document().isModified()) {
     return true;
   }
@@ -520,7 +520,7 @@ bool muffin::FileController::confirmDiscardIfModified(DocumentSession& session, 
   return true;
 }
 
-bool muffin::FileController::confirmOverwriteIfChanged(DocumentSession& session, QWidget* parent) {
+bool mufpen::FileController::confirmOverwriteIfChanged(DocumentSession& session, QWidget* parent) {
   if (!session.hasFileBaseline()) {
     return true; // no baseline (first save / freshly opened before baseline recorded) → just write
   }
@@ -541,7 +541,7 @@ bool muffin::FileController::confirmOverwriteIfChanged(DocumentSession& session,
   return choice == QMessageBox::Yes;
 }
 
-bool muffin::FileController::readTextFile(const QString& path, QString* out, TextFileFormat* format,
+bool mufpen::FileController::readTextFile(const QString& path, QString* out, TextFileFormat* format,
                                           QWidget* parent) const {
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly)) {
@@ -551,12 +551,12 @@ bool muffin::FileController::readTextFile(const QString& path, QString* out, Tex
 
   // Decode the complete byte stream once so charset detection and BOM handling see the whole file.
   const QByteArray raw = [&] {
-    muffin::diag::OpenPerfScope scope("open.read_bytes");
+    mufpen::diag::OpenPerfScope scope("open.read_bytes");
     return file.readAll();
   }();
   QString text;
   const bool decoded = [&] {
-    muffin::diag::OpenPerfScope scope("open.decode");
+    mufpen::diag::OpenPerfScope scope("open.decode");
     return decodeText(raw, {}, &text, format);
   }();
   if (!decoded) {
@@ -567,7 +567,7 @@ bool muffin::FileController::readTextFile(const QString& path, QString* out, Tex
   return true;
 }
 
-bool muffin::FileController::writeTextFile(const QString& path, const QString& text, const TextFileFormat& format,
+bool mufpen::FileController::writeTextFile(const QString& path, const QString& text, const TextFileFormat& format,
                                            QString* normalizedText, QWidget* parent) const {
   QSaveFile file(path);
   if (!file.open(QIODevice::WriteOnly)) {
@@ -619,7 +619,7 @@ bool muffin::FileController::writeTextFile(const QString& path, const QString& t
   return true;
 }
 
-muffin::TextFileFormat muffin::FileController::formatForNewFile() const {
+mufpen::TextFileFormat mufpen::FileController::formatForNewFile() const {
   QSettings settings;
   TextFileFormat format;
   format.encodingName = QStringLiteral("UTF-8");
@@ -629,7 +629,7 @@ muffin::TextFileFormat muffin::FileController::formatForNewFile() const {
   return format;
 }
 
-bool muffin::FileController::readTextFileWithEncoding(const QString& path, QString* out, TextFileFormat* format,
+bool mufpen::FileController::readTextFileWithEncoding(const QString& path, QString* out, TextFileFormat* format,
                                                       QWidget* parent, const QString& encodingName) const {
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly)) {
@@ -647,7 +647,7 @@ bool muffin::FileController::readTextFileWithEncoding(const QString& path, QStri
   return true;
 }
 
-bool muffin::FileController::reopenWithEncoding(DocumentSession& session, QWidget* parent,
+bool mufpen::FileController::reopenWithEncoding(DocumentSession& session, QWidget* parent,
                                                 const QString& encodingName) {
   if (session.filePath().isEmpty()) {
     return false;
@@ -680,7 +680,7 @@ bool muffin::FileController::reopenWithEncoding(DocumentSession& session, QWidge
   return true;
 }
 
-bool muffin::FileController::moveTo(DocumentSession& session, QWidget* parent) {
+bool mufpen::FileController::moveTo(DocumentSession& session, QWidget* parent) {
   if (session.filePath().isEmpty()) {
     return false;
   }
@@ -711,7 +711,7 @@ bool muffin::FileController::moveTo(DocumentSession& session, QWidget* parent) {
   return true;
 }
 
-bool muffin::FileController::reload(DocumentSession& session, QWidget* parent) {
+bool mufpen::FileController::reload(DocumentSession& session, QWidget* parent) {
   if (session.filePath().isEmpty()) {
     return false;
   }

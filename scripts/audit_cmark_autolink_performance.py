@@ -98,16 +98,16 @@ def main():
     blocks = (root / 'build/cmark-profiled-blocks.inc').read_text(encoding='utf-8')
     for stage, call in enumerate(('process_inlines(parser, parser->refmap, parser->options);',
                                   'process_footnotes(parser);')):
-        hook = f'{{ muffin_probe_stage_begin({stage}); {call} muffin_probe_stage_end({stage}); }}'
+        hook = f'{{ mufpen_probe_stage_begin({stage}); {call} mufpen_probe_stage_end({stage}); }}'
         assert blocks.count(hook) == 1
         blocks = blocks.replace(hook, call)
     assert blocks == (root / 'third_party/cmark-gfm/src/blocks.c').read_text(encoding='utf-8')
     autolink = (root / 'build/cmark-profiled-autolink.inc').read_text(encoding='utf-8')
-    assert autolink.count('muffin_autolink_text(parser, node);') == 2
-    autolink = autolink.replace('muffin_autolink_text(parser, node);', 'postprocess_text(parser, node);')
+    assert autolink.count('mufpen_autolink_text(parser, node);') == 2
+    autolink = autolink.replace('mufpen_autolink_text(parser, node);', 'postprocess_text(parser, node);')
     for statement in ('node = cmark_iter_get_node(iter);', 'cmark_chunk *literal = &node->as.literal;'):
-        assert autolink.count(statement+' muffin_autolink_visit();') == 1
-        autolink = autolink.replace(statement+' muffin_autolink_visit();', statement)
+        assert autolink.count(statement+' mufpen_autolink_visit();') == 1
+        autolink = autolink.replace(statement+' mufpen_autolink_visit();', statement)
     assert autolink == (root / 'third_party/cmark-gfm/extensions/autolink.c').read_text(encoding='utf-8')
     data['ast_preparation'] = ast
     data['semantic_oracle_provenance'] = oracle['provenance']

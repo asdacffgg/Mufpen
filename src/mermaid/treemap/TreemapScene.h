@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::treemap {
+namespace mufpen::mermaid::treemap {
 
 struct TreemapConfig {
   QJsonValue useMaxWidth = true;
@@ -146,4 +146,4 @@ struct TreemapScene final : MermaidScene {
 TreemapScene buildTreemapScene(const TreemapData& data, TreemapConfig config, TreemapSceneStyle style,
                                const TreemapCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::treemap
+} // namespace mufpen::mermaid::treemap

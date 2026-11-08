@@ -6,7 +6,7 @@
 #include <QStringList>
 #include <QTimer>
 
-namespace muffin {
+namespace mufpen {
 
 namespace file_open_preferences {
 inline constexpr char kOpenInTabs[] = "files/openInTabs";
@@ -42,4 +42,4 @@ private:
   QTimer retry_;
 };
 
-} // namespace muffin
+} // namespace mufpen

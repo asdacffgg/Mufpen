@@ -19,7 +19,7 @@
 #include "theme/CssThemeMapper.h"
 #include "theme/RenderTheme.h"
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 QString fingerprint(const QImage& image) {
   return QString::fromLatin1(

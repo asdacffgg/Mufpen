@@ -23,7 +23,7 @@ const mermaidRoot = path.resolve(
   process.argv[3] ?? path.join("..", "mermaid-cli", "node_modules", "mermaid"),
 );
 const nativeExecutable = path.resolve(
-  process.argv[4] ?? path.join("build", "Release", "MuffinMermaidFlowchartDifferentialFuzzTest.exe"),
+  process.argv[4] ?? path.join("build", "Release", "MufpenMermaidFlowchartDifferentialFuzzTest.exe"),
 );
 const outputPath = path.resolve(process.argv[5] ?? `${sourcePath}.min.mmd`);
 const chrome = process.argv[6] ?? "C:/Program Files/Google/Chrome/Application/chrome.exe";

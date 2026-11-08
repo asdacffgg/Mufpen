@@ -5,7 +5,7 @@
 
 class QFont;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 class MermaidFontRegistry {
 public:
@@ -21,4 +21,4 @@ public:
   static void configureFont(QFont& font, const QString& familyExpression);
 };
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

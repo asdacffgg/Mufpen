@@ -12,7 +12,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 struct TextFormatSpan {
   int start;
@@ -123,4 +123,4 @@ private:
                          std::vector<HtmlTextLayout::TextSourceSpan>* sources = nullptr) const;
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 
 struct JourneyTask {
   QString section;
@@ -36,4 +36,4 @@ public:
   static JourneyData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

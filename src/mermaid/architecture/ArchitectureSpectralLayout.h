@@ -5,7 +5,7 @@
 
 #include <functional>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 
 struct ArchitectureSpectralRelativeConstraint {
   bool horizontal = true;
@@ -23,4 +23,4 @@ void transformArchitectureSpectralConstraints(QVector<QPointF>& positions,
                                               const QVector<QVector<int>>& horizontalAlignments,
                                               const QVector<ArchitectureSpectralRelativeConstraint>& relative);
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

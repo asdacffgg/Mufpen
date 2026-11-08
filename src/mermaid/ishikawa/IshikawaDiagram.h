@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 
 enum class IshikawaErrorKind { Lexer, Parser };
 
@@ -37,4 +37,4 @@ public:
   static IshikawaData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

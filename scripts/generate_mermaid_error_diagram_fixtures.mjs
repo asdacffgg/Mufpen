@@ -225,7 +225,7 @@ const out = await page.evaluate(async ({ moduleUrl, fontUrl, common }) => {
 
 // The suppressed variant needs initialize()-level config (the secure-source
 // sanitizer strips the key from directives/frontmatter), which is outside
-// Muffin's Markdown API — capture it separately for the semantics record.
+// Mufpen's Markdown API — capture it separately for the semantics record.
 {
   const semantics = await page.evaluate(async ({ moduleUrl }) => {
     const mermaid = (await import(moduleUrl)).default;

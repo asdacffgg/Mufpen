@@ -17,17 +17,17 @@
 
 namespace {
 
-using muffin::mermaid::UnknownDiagramError;
-using muffin::mermaid::detectDiagramType;
-using muffin::mermaid::preprocessDiagram;
-using muffin::mermaid::xychart::XYChartAxisData;
-using muffin::mermaid::xychart::XYChartAxisType;
-using muffin::mermaid::xychart::XYChartData;
-using muffin::mermaid::xychart::XYChartDiagram;
-using muffin::mermaid::xychart::XYChartOrientation;
-using muffin::mermaid::xychart::XYChartParseError;
-using muffin::mermaid::xychart::XYChartPlotData;
-using muffin::mermaid::xychart::XYChartPlotType;
+using mufpen::mermaid::UnknownDiagramError;
+using mufpen::mermaid::detectDiagramType;
+using mufpen::mermaid::preprocessDiagram;
+using mufpen::mermaid::xychart::XYChartAxisData;
+using mufpen::mermaid::xychart::XYChartAxisType;
+using mufpen::mermaid::xychart::XYChartData;
+using mufpen::mermaid::xychart::XYChartDiagram;
+using mufpen::mermaid::xychart::XYChartOrientation;
+using mufpen::mermaid::xychart::XYChartParseError;
+using mufpen::mermaid::xychart::XYChartPlotData;
+using mufpen::mermaid::xychart::XYChartPlotType;
 
 [[noreturn]] void fail(const QString& message) {
   throw std::runtime_error(message.toStdString());

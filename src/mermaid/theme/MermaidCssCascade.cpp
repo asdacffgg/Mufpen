@@ -11,7 +11,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::csscascade {
+namespace mufpen::mermaid::csscascade {
 namespace {
 
 bool cssWide(const QString& value) {
@@ -774,4 +774,4 @@ FlowchartProjection resolveFlowchart(const flowchart::FlowchartData& data, const
   return result;
 }
 
-} // namespace muffin::mermaid::csscascade
+} // namespace mufpen::mermaid::csscascade

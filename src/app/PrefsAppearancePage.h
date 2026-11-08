@@ -10,7 +10,7 @@ class QComboBox;
 class QLabel;
 class QPushButton;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsAppearancePage final : public PreferencesPage {
   Q_OBJECT
@@ -58,4 +58,4 @@ private:
   QCheckBox* showStatusBarCheck_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

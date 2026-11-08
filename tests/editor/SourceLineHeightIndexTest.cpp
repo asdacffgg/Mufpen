@@ -4,7 +4,7 @@
 
 #include <QCoreApplication>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testCompressedDefaultsAndPointMeasurements() {
   SourceLineHeightIndex index;

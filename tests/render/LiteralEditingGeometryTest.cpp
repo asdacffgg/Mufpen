@@ -299,7 +299,7 @@ void testCodeHighlightColorsReachPaintedGlyphs() {
       QPainter painter(&image);
       block.paint(painter, theme, 0);
     }
-    if (const auto path = qEnvironmentVariable("MUFFIN_CODE_HIGHLIGHT_SCREENSHOT"); !path.isEmpty())
+    if (const auto path = qEnvironmentVariable("MUFPEN_CODE_HIGHLIGHT_SCREENSHOT"); !path.isEmpty())
       require(image.save(path + QLatin1Char('.') + name + QStringLiteral(".png")),
               "capture actual code highlight painting");
     const auto requireTokenColor = [&](const QString& token, CodeHighlightRole role) {
@@ -617,7 +617,7 @@ void testLongFenceBoundedShaping() {
 int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName("MuffinTest");
+  QCoreApplication::setOrganizationName("MufpenTest");
   QCoreApplication::setApplicationName("LiteralEditingGeometryTest");
   SettingsOverride wrap("markdown/codeBlockWrap", true);
   SettingsOverride lineNumbers("markdown/showLineNumbers", false);

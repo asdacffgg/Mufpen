@@ -19,7 +19,7 @@
 #include <QSettings>
 #include <QVBoxLayout>
 
-muffin::PrefsImagePage::PrefsImagePage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsImagePage::PrefsImagePage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(14);
@@ -180,7 +180,7 @@ muffin::PrefsImagePage::PrefsImagePage(QWidget* parent) : PreferencesPage(parent
   connect(testButton_, &QPushButton::clicked, this, [this] { testUploader(); });
 }
 
-void muffin::PrefsImagePage::retranslateUi() {
+void mufpen::PrefsImagePage::retranslateUi() {
   // Card 1: Insert images
   insertLabel_->setText(tr("When Inserting Images"));
   {
@@ -226,7 +226,7 @@ void muffin::PrefsImagePage::retranslateUi() {
   testButton_->setText(tr("Test"));
 }
 
-void muffin::PrefsImagePage::loadSettings() {
+void mufpen::PrefsImagePage::loadSettings() {
   QSettings settings;
 
   const int insert = settings.value(QStringLiteral("image/insertAction"), 0).toInt();
@@ -278,7 +278,7 @@ void muffin::PrefsImagePage::loadSettings() {
   commandEdit_->blockSignals(false);
 }
 
-void muffin::PrefsImagePage::updateConditionalRows() {
+void mufpen::PrefsImagePage::updateConditionalRows() {
   if (customFolderRow_) {
     const bool copyToCustom = insertCombo_->currentIndex() == static_cast<int>(ImageInsertAction::CopyToCustomFolder);
     customFolderRow_->setVisible(copyToCustom);
@@ -289,14 +289,14 @@ void muffin::PrefsImagePage::updateConditionalRows() {
   }
 }
 
-void muffin::PrefsImagePage::browseCustomFolder() {
+void mufpen::PrefsImagePage::browseCustomFolder() {
   const QString dir = QFileDialog::getExistingDirectory(this, tr("Select Image Folder"), customFolderEdit_->text());
   if (!dir.isEmpty()) {
     customFolderEdit_->setText(dir);
   }
 }
 
-void muffin::PrefsImagePage::testUploader() {
+void mufpen::PrefsImagePage::testUploader() {
   const QString command = commandEdit_->text().trimmed();
   if (command.isEmpty()) {
     QMessageBox::warning(this, tr("Test Upload"), tr("Enter an upload command first."));
@@ -305,7 +305,7 @@ void muffin::PrefsImagePage::testUploader() {
   // Generate a tiny throwaway image so the uploader has a real file to post.
   QImage test(16, 16, QImage::Format_RGB32);
   test.fill(Qt::white);
-  const QString tempPath = ApplicationPaths::temporaryDirectory() + QStringLiteral("/muffin_upload_test.png");
+  const QString tempPath = ApplicationPaths::temporaryDirectory() + QStringLiteral("/mufpen_upload_test.png");
   if (!test.save(tempPath, "PNG")) {
     QMessageBox::warning(this, tr("Test Upload"), tr("Could not create a test image."));
     return;

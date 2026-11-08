@@ -15,7 +15,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 
 struct MermaidRenderEntry;
 
@@ -38,4 +38,4 @@ struct Diagram {
                                     const QString& theme) const = 0;
 };
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

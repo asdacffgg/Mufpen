@@ -20,7 +20,7 @@ void require(bool condition, const QString& message) {
   }
 }
 
-const muffin::HtmlSanitizer kSanitizer;
+const mufpen::HtmlSanitizer kSanitizer;
 
 // The src attribute value in `html`, or "NOT FOUND".
 QString srcValue(const QString& html) {
@@ -99,8 +99,8 @@ void testClipboardUsesPreviewPolicyAndPreservesHidden() {
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("Muffin"));
-  QCoreApplication::setApplicationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("Mufpen"));
+  QCoreApplication::setApplicationName(QStringLiteral("MufpenTests"));
   testWindowsForwardSlashPathSurvives();
   testWindowsBackslashPathSurvives();
   testRelativePathSurvives();

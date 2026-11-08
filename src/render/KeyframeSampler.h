@@ -4,7 +4,7 @@
 
 #include <QColor>
 
-namespace muffin {
+namespace mufpen {
 
 // Interpolated values for one host at one animation phase (0..1, already eased
 // + direction-applied by the driver). Each flag says whether the keyframes
@@ -31,4 +31,4 @@ AnimatedSample sampleAtPhase(const KeyframesDef& kf, qreal phase);
 
 } // namespace KeyframeSampler
 
-} // namespace muffin
+} // namespace mufpen

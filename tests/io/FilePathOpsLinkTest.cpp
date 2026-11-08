@@ -10,7 +10,7 @@
 #include <QDir>
 #include <QFileInfo>
 
-using namespace muffin;
+using namespace mufpen;
 
 void requireEq(const QString& actual, const QString& expected, const QString& message) {
   require(actual == expected, QStringLiteral("%1\n   expected: %2\n   actual:   %3").arg(message, expected, actual));
@@ -105,7 +105,7 @@ const InlineNode* findLink(const MarkdownNode& node) {
 }
 
 void testGeneratedLinksParseAndResolve() {
-  const QString docDir = QDir::tempPath() + QStringLiteral("/muffin-link-doc");
+  const QString docDir = QDir::tempPath() + QStringLiteral("/mufpen-link-doc");
   for (const QString& name : {QStringLiteral("read me.pdf"), QStringLiteral("x](y)[z].pdf"),
                               QStringLiteral("literal%20#&amp;.pdf"), QStringLiteral("nested/示例 (1).md")}) {
     const QString path = QDir(docDir).filePath(name);

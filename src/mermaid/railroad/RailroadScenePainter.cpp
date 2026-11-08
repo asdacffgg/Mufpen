@@ -11,7 +11,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::railroad {
+namespace mufpen::mermaid::railroad {
 namespace {
 
 // themeCSS helpers: css channel or primitive base fallback.
@@ -151,4 +151,4 @@ void paintRailroadScene(const RailroadScene& scene, QPainter& painter, const Mer
   }
 }
 
-} // namespace muffin::mermaid::railroad
+} // namespace mufpen::mermaid::railroad

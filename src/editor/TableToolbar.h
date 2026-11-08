@@ -11,13 +11,13 @@ class QToolButton;
 class QWidget;
 class QBoxLayout;
 
-namespace muffin {
+namespace mufpen {
 
 class BlockLayout;
 struct HitTestResult;
 class DocumentLayout;
 
-class MUFFIN_UI_EXPORT TableToolbar : public QObject {
+class MUFPEN_UI_EXPORT TableToolbar : public QObject {
   Q_OBJECT
 
 public:
@@ -60,4 +60,4 @@ private:
   bool updating_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

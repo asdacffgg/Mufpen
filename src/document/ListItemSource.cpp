@@ -3,7 +3,7 @@
 #include "document/PieceTable.h"
 #include "document/BlockPredicates.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
 qsizetype columnAfter(QStringView text, qsizetype column = 0) {
   for (QChar ch : text)
@@ -345,4 +345,4 @@ QString renumberListItems(const PieceTable& markdown, InlineRange source, const 
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

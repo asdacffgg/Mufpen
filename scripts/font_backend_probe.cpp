@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
   qputenv("QT_FONT_DPI", "96");
   QApplication app(argc, argv);
   if (argc != 3) {
-    std::fprintf(stderr, "Usage: MuffinFontBackendProbe font.ttf output-directory\n");
+    std::fprintf(stderr, "Usage: MufpenFontBackendProbe font.ttf output-directory\n");
     return 1;
   }
   const auto output = QDir(QString::fromLocal8Bit(argv[2]));
@@ -46,8 +46,8 @@ int main(int argc, char** argv) {
             font.setPointSizeF(size * .75);
             font.setWeight(bold ? QFont::Bold : QFont::Normal);
             font.setItalic(italic);
-            muffin::font_rendering::configureCssFont(
-                font, .7, .3, precision == 1 ? muffin::TextBackend::Native : muffin::TextBackend::Fractional);
+            mufpen::font_rendering::configureCssFont(
+                font, .7, .3, precision == 1 ? mufpen::TextBackend::Native : mufpen::TextBackend::Fractional);
             // This diagnostic deliberately constructs Qt's device directly.
             // Match the shared backend's conversion (Qt scales letters, not words).
             font.setWordSpacing(font.wordSpacing() * precision);

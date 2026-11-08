@@ -3,7 +3,7 @@
 #include <QString>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 // Reconstruct SFNT from local WOFF/WOFF2 through FreeType's webfont decoder.
 // The result is consumed by the native Qt font backend, including DirectWrite.
 QByteArray decodeThemeWebFont(const QByteArray& source);
@@ -27,4 +27,4 @@ QString registerPrivateFont(const PreparedThemeFont& source, const QString& fami
                             std::optional<bool> italic = {});
 QString registerPrivateFont(const QByteArray& source, const QString& family, std::optional<int> weight = {},
                             std::optional<bool> italic = {});
-} // namespace muffin
+} // namespace mufpen

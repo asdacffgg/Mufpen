@@ -9,7 +9,7 @@
 class QMenu;
 class QToolButton;
 
-namespace muffin {
+namespace mufpen {
 
 // Statistics shown in the click-to-open detail popup.
 struct StatusBarStats {
@@ -29,7 +29,7 @@ struct StatusBarStats {
 // trigger, cursor position, and a clickable spell-check language button that
 // opens a language menu). Clicking the stats trigger emits statsClicked() so the
 // owner can compute counts and call showStatsPopup().
-class MUFFIN_UI_EXPORT StatusBarWidget : public QStatusBar {
+class MUFPEN_UI_EXPORT StatusBarWidget : public QStatusBar {
   Q_OBJECT
 
 public:
@@ -118,4 +118,4 @@ private:
   Hover hover_ = Hover::None;
 };
 
-} // namespace muffin
+} // namespace mufpen

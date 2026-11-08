@@ -5,7 +5,7 @@
 #include <QClipboard>
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 BlockTarget EditorController::blockTarget(NodeId id) const {
   if (!session_)
     return {};
@@ -133,4 +133,4 @@ bool EditorController::performBlockAction(BlockTarget target, BlockAction action
   plan.text.replace(converted.range.start, converted.range.end, converted.text);
   return applyBlockPlan(std::move(plan), QStringLiteral("Convert Block"), true);
 }
-} // namespace muffin
+} // namespace mufpen

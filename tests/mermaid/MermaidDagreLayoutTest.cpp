@@ -18,7 +18,7 @@
 #include <cmath>
 #include <cstdlib>
 
-using namespace muffin::mermaid::flowchart;
+using namespace mufpen::mermaid::flowchart;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

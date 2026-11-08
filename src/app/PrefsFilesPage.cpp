@@ -24,7 +24,7 @@
 
 namespace {
 
-class FileSizeSpinBox final : public muffin::PreferencesSpinBox<QDoubleSpinBox> {
+class FileSizeSpinBox final : public mufpen::PreferencesSpinBox<QDoubleSpinBox> {
 public:
   explicit FileSizeSpinBox(QWidget* parent) : PreferencesSpinBox(parent) {
     // GB needs fractional values to display an existing KB/MB threshold
@@ -101,7 +101,7 @@ private:
 
 } // namespace
 
-muffin::PrefsFilesPage::PrefsFilesPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsFilesPage::PrefsFilesPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(14);
@@ -430,12 +430,12 @@ muffin::PrefsFilesPage::PrefsFilesPage(QWidget* parent) : PreferencesPage(parent
           [](int index) { QSettings().setValue(QStringLiteral("files/dropMarkdown"), index); });
   connect(dropImportCombo_, QOverload<int>::of(&QComboBox::currentIndexChanged), this,
           [](int index) { QSettings().setValue(QStringLiteral("files/dropImportable"), index); });
-  connect(clearHistoryButton_, &QPushButton::clicked, this, &muffin::PrefsFilesPage::clearRecentFilesRequested);
-  connect(restoreDraftButton_, &QPushButton::clicked, this, &muffin::PrefsFilesPage::restoreDraftsRequested);
+  connect(clearHistoryButton_, &QPushButton::clicked, this, &mufpen::PrefsFilesPage::clearRecentFilesRequested);
+  connect(restoreDraftButton_, &QPushButton::clicked, this, &mufpen::PrefsFilesPage::restoreDraftsRequested);
 
 #ifdef Q_OS_WIN
   // The registry is the single source of truth — each toggle re-applies the
-  // full desired state (on = write the Muffin keys, off = remove only them).
+  // full desired state (on = write the Mufpen keys, off = remove only them).
   connect(winContextMenuCheck_, &QCheckBox::toggled, this,
           [this](bool on) { WindowsIntegration::applyIntegration(on, winAssociateCheck_->isChecked()); });
   connect(winAssociateCheck_, &QCheckBox::toggled, this,
@@ -444,7 +444,7 @@ muffin::PrefsFilesPage::PrefsFilesPage(QWidget* parent) : PreferencesPage(parent
 #endif
 }
 
-void muffin::PrefsFilesPage::retranslateUi() {
+void mufpen::PrefsFilesPage::retranslateUi() {
   openProtectionLabel_->setText(tr("File Open Protection"));
   extensionProtectionCheck_->setText(tr("Extension protection"));
   textExtensionsLabel_->setText(tr("Allowed file extensions"));
@@ -544,7 +544,7 @@ void muffin::PrefsFilesPage::retranslateUi() {
 #endif
 }
 
-void muffin::PrefsFilesPage::addTextExtensions() {
+void mufpen::PrefsFilesPage::addTextExtensions() {
   const auto additions = file_open_protection::normalizedTextExtensions(textExtensionsEdit_->text());
   if (additions.isEmpty())
     return;
@@ -556,13 +556,13 @@ void muffin::PrefsFilesPage::addTextExtensions() {
   saveTextExtensions();
 }
 
-void muffin::PrefsFilesPage::saveTextExtensions() {
+void mufpen::PrefsFilesPage::saveTextExtensions() {
   QSettings().setValue(QLatin1String(file_open_protection::kTextExtensions),
                        textExtensions_.join(QStringLiteral(", ")));
   refreshTextExtensionChips();
 }
 
-void muffin::PrefsFilesPage::refreshTextExtensionChips() {
+void mufpen::PrefsFilesPage::refreshTextExtensionChips() {
   auto* layout = textExtensionChips_->layout();
   while (auto* item = layout->takeAt(0)) {
     item->widget()->hide();
@@ -598,7 +598,7 @@ void muffin::PrefsFilesPage::refreshTextExtensionChips() {
   textExtensionChips_->updateGeometry();
 }
 
-void muffin::PrefsFilesPage::updateSizeLimitControls() {
+void mufpen::PrefsFilesPage::updateSizeLimitControls() {
   const QSignalBlocker blocker(sizeLimitSpin_);
   sizeLimitUnitBytes_ = sizeLimitUnit_->currentData().toLongLong();
   sizeLimitSpin_->setRange(double(file_open_protection::kMinimumSizeLimitBytes) / sizeLimitUnitBytes_,
@@ -607,7 +607,7 @@ void muffin::PrefsFilesPage::updateSizeLimitControls() {
   sizeLimitSpin_->setValue(double(sizeLimitBytes_) / sizeLimitUnitBytes_);
 }
 
-void muffin::PrefsFilesPage::loadSettings() {
+void mufpen::PrefsFilesPage::loadSettings() {
   QSettings settings;
   loadCheck(extensionProtectionCheck_, QLatin1String(file_open_protection::kExtensionEnabled), true);
   textExtensions_ = file_open_protection::normalizedTextExtensions(

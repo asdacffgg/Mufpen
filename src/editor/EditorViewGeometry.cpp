@@ -2,7 +2,7 @@
 
 #include "unicode/WordBoundary.h"
 
-namespace muffin {
+namespace mufpen {
 namespace editor_geometry {
 
 bool isSelectableZone(HitTestResult::Zone zone) {
@@ -245,4 +245,4 @@ bool blockComesBefore(const DocumentLayout& layout, NodeId first, NodeId second)
 }
 
 } // namespace editor_geometry
-} // namespace muffin
+} // namespace mufpen

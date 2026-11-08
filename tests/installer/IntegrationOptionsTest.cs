@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Win32;
-using Muffin.Setup;
+using Mufpen.Setup;
 
 internal static class IntegrationOptionsTest
 {
@@ -22,7 +22,7 @@ internal static class IntegrationOptionsTest
 
     private static void TestRegistryChoices()
     {
-        var path = @"Software\MuffinInstallerTest\" + Guid.NewGuid().ToString("N");
+        var path = @"Software\MufpenInstallerTest\" + Guid.NewGuid().ToString("N");
         try
         {
             using (var root = Registry.CurrentUser.CreateSubKey(path))
@@ -31,13 +31,13 @@ internal static class IntegrationOptionsTest
                 Check(root, true, false, false); // old installation with both options unchecked
                 using (var context = root.CreateSubKey(IntegrationOptions.ContextMenuKey))
                 {
-                    context.SetValue("", "Open with Muffin");
+                    context.SetValue("", "Open with Mufpen");
                 }
                 Check(root, true, true, false);
                 Check(root, false, true, false); // portable integration / an older bare MSI
                 using (var openWith = root.CreateSubKey(IntegrationOptions.OpenWithKey))
                 {
-                    openWith.SetValue("", "Muffin Markdown Document");
+                    openWith.SetValue("", "Mufpen Markdown Document");
                 }
                 Check(root, true, true, true);
                 root.DeleteSubKeyTree(IntegrationOptions.ContextMenuKey);
@@ -77,20 +77,20 @@ internal static class IntegrationOptionsTest
             Require(PersonalSettingsCleanup.ShouldClear(requested, status, uninstall, related) ==
                     (requested && uninstall && !related && (status == 0 || status == 3010 || status == 1641)),
                     "only successful, explicitly requested standalone uninstall clears settings");
-        var path = @"Software\MuffinCleanupTest\" + Guid.NewGuid().ToString("N");
+        var path = @"Software\MufpenCleanupTest\" + Guid.NewGuid().ToString("N");
         try
         {
             using (var root = Registry.CurrentUser.CreateSubKey(path))
             {
-                using (var settings = root.CreateSubKey(@"Software\Muffin\Muffin")) settings.SetValue("theme", "night");
-                using (var other = root.CreateSubKey(@"Software\Muffin\AnotherApp")) other.SetValue("keep", "yes");
+                using (var settings = root.CreateSubKey(@"Software\Mufpen\Mufpen")) settings.SetValue("theme", "night");
+                using (var other = root.CreateSubKey(@"Software\Mufpen\AnotherApp")) other.SetValue("keep", "yes");
                 PersonalSettingsCleanup.Clear(root);
-                Require(root.OpenSubKey(@"Software\Muffin\Muffin") == null, "remove only Muffin preferences");
-                using (var other = root.OpenSubKey(@"Software\Muffin\AnotherApp"))
+                Require(root.OpenSubKey(@"Software\Mufpen\Mufpen") == null, "remove only Mufpen preferences");
+                using (var other = root.OpenSubKey(@"Software\Mufpen\AnotherApp"))
                     Require((string)other.GetValue("keep") == "yes", "keep other applications' preferences");
-                root.DeleteSubKeyTree(@"Software\Muffin\AnotherApp");
+                root.DeleteSubKeyTree(@"Software\Mufpen\AnotherApp");
                 PersonalSettingsCleanup.Clear(root);
-                Require(root.OpenSubKey(@"Software\Muffin") == null, "remove empty publisher key");
+                Require(root.OpenSubKey(@"Software\Mufpen") == null, "remove empty publisher key");
                 PersonalSettingsCleanup.Clear(root); // An absent profile is valid.
             }
         }
@@ -184,10 +184,10 @@ internal static class IntegrationOptionsTest
                 {
                     MsiSetProperty(package, "WIX_UPGRADE_DETECTED", installed ? "old-product" : "");
                     MsiSetProperty(package, "Installed", "");
-                    MsiSetProperty(package, "MUFFINCONTEXTMENUFOUND", hasContext ? "Open with Muffin" : "");
-                    MsiSetProperty(package, "MUFFINOPENWITHFOUND", hasOpen ? "Muffin Markdown Document" : "");
-                    MsiSetProperty(package, "MUFFINCONTEXTMENUSAVED", savedContext);
-                    MsiSetProperty(package, "MUFFINOPENWITHSAVED", savedOpen);
+                    MsiSetProperty(package, "MUFPENCONTEXTMENUFOUND", hasContext ? "Open with Mufpen" : "");
+                    MsiSetProperty(package, "MUFPENOPENWITHFOUND", hasOpen ? "Mufpen Markdown Document" : "");
+                    MsiSetProperty(package, "MUFPENCONTEXTMENUSAVED", savedContext);
+                    MsiSetProperty(package, "MUFPENOPENWITHSAVED", savedOpen);
                     var known = installed || hasContext || hasOpen;
                     bool? context = savedContext == "#0" ? false : savedContext == "#1" ? true : (bool?)null;
                     bool? open = savedOpen == "#0" ? false : savedOpen == "#1" ? true : (bool?)null;
@@ -196,16 +196,16 @@ internal static class IntegrationOptionsTest
                     Require(MsiEvaluateCondition(package, openCondition) == (IntegrationOptions.Resolve(open, hasOpen, known) ? 0 : 1),
                         "MSI and setup UI agree on Open with defaults");
                 }
-                Require(Scalar(database, "SELECT `Value` FROM `Registry` WHERE `Name`='contextMenu'") == "#[MUFFINCONTEXTMENUSTATE]",
+                Require(Scalar(database, "SELECT `Value` FROM `Registry` WHERE `Name`='contextMenu'") == "#[MUFPENCONTEXTMENUSTATE]",
                     "MSI stores context-menu choice as a transactional DWORD");
-                Require(Scalar(database, "SELECT `Value` FROM `Registry` WHERE `Name`='openWith'") == "#[MUFFINOPENWITHSTATE]",
+                Require(Scalar(database, "SELECT `Value` FROM `Registry` WHERE `Name`='openWith'") == "#[MUFPENOPENWITHSTATE]",
                     "MSI stores Open with choice as a transactional DWORD");
                 foreach (var verb in new[] { @".md", @".markdown", @".mdx", @".mkd", @".mdown", @"Directory", @"Directory\Background" })
-                    Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\" + verb + @"\shell\Muffin' AND `Name`='MUIVerb'") == "@[INSTALLFOLDER]Muffin.exe,-1001",
+                    Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\" + verb + @"\shell\Mufpen' AND `Name`='MUIVerb'") == "@[INSTALLFOLDER]Mufpen.exe,-1001",
                         "Explorer verbs use localized resources before the application is launched");
-                Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\Muffin.md' AND `Name`='FriendlyTypeName'") == "@[INSTALLFOLDER]Muffin.exe,-1002",
+                Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\Mufpen.md' AND `Name`='FriendlyTypeName'") == "@[INSTALLFOLDER]Mufpen.exe,-1002",
                     "Explorer document type uses localized resources");
-                Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\Muffin.md\shell\open' AND `Name`='MUIVerb'") == "@[INSTALLFOLDER]Muffin.exe,-1003",
+                Require(Scalar(database, @"SELECT `Value` FROM `Registry` WHERE `Key`='SOFTWARE\Classes\Mufpen.md\shell\open' AND `Name`='MUIVerb'") == "@[INSTALLFOLDER]Mufpen.exe,-1003",
                     "Explorer open action uses localized resources");
                 Require(Scalar(database, "SELECT `Feature_Parent` FROM `Feature` WHERE `Feature`='ShellContextMenu'") == "MainFeature",
                     "integration features remain optional children of the required application");
@@ -225,8 +225,8 @@ internal static class IntegrationOptionsTest
             Require(MsiOpenPackageEx(path, 1, out package) == 0, "open package for feature costing");
             try
             {
-                MsiSetProperty(package, "MUFFINCONTEXTMENUSAVED", context ? "#0" : "#1");
-                MsiSetProperty(package, "MUFFINOPENWITHSAVED", openWith ? "#0" : "#1");
+                MsiSetProperty(package, "MUFPENCONTEXTMENUSAVED", context ? "#0" : "#1");
+                MsiSetProperty(package, "MUFPENOPENWITHSAVED", openWith ? "#0" : "#1");
                 MsiSetProperty(package, "ADDLOCAL", "MainFeature" + (context ? ",ShellContextMenu" : "") + (openWith ? ",FileAssociations" : ""));
                 MsiSetProperty(package, "REMOVE", (context ? "" : "ShellContextMenu") + (!context && !openWith ? "," : "") + (openWith ? "" : "FileAssociations"));
                 foreach (var action in new[] { "CostInitialize", "FileCost", "CostFinalize" })
@@ -234,7 +234,7 @@ internal static class IntegrationOptionsTest
                 var database = MsiGetActiveDatabase(package);
                 try
                 {
-                    foreach (var choice in new[] { Tuple.Create("MUFFINCONTEXTMENUSTATE", context), Tuple.Create("MUFFINOPENWITHSTATE", openWith) })
+                    foreach (var choice in new[] { Tuple.Create("MUFPENCONTEXTMENUSTATE", context), Tuple.Create("MUFPENOPENWITHSTATE", openWith) })
                     {
                         var action = Scalar(database, "SELECT `Action` FROM `CustomAction` WHERE `Source`='" + choice.Item1 + "'");
                         var condition = Scalar(database, "SELECT `Condition` FROM `InstallExecuteSequence` WHERE `Action`='" + action + "'");

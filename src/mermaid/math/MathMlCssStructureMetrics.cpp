@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 qreal arrayDelimiterWidth(const QString& delimiter, qreal targetHeight) {
   if (delimiter.isEmpty() || delimiter == QLatin1String("."))
@@ -916,4 +916,4 @@ const MathRenderNode* radicalBody(const MathRenderNode* radical) {
   return nullptr;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

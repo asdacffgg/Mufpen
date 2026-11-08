@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::sankey {
+namespace mufpen::mermaid::sankey {
 namespace {
 
 [[noreturn]] void parserError(int line, int column, const QString& token, const QString& detail) {
@@ -148,4 +148,4 @@ SankeyData SankeyDiagram::parse(const QString& source) {
   return result;
 }
 
-} // namespace muffin::mermaid::sankey
+} // namespace mufpen::mermaid::sankey

@@ -9,7 +9,7 @@
 #include <lexbor/dom/interfaces/text.h>
 #include <lexbor/html/html.h>
 
-namespace muffin::html {
+namespace mufpen::html {
 namespace {
 
 bool parseCssLength(QString value, qreal referenceFontSize, qreal& out) {
@@ -535,4 +535,4 @@ QString HtmlBoxBuilder::toRoman(int n) {
   return result;
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

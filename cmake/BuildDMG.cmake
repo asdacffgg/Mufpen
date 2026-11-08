@@ -1,22 +1,22 @@
 # BuildDMG.cmake — Create a macOS DMG disk image from the .app bundle
 #
 # Required variables:
-#   DIST_DIR        - Path to the dist directory containing Muffin.app
-#   MUFFIN_VERSION  - Version string (e.g. "0.1.0")
+#   DIST_DIR        - Path to the dist directory containing Mufpen.app
+#   MUFPEN_VERSION  - Version string (e.g. "0.1.0")
 #   SOURCE_DIR      - Project source root containing Quick Look signing files
 #   MACDEPLOYQT     - Path to macdeployqt executable
 
 if(NOT DEFINED DIST_DIR OR DIST_DIR STREQUAL "")
   message(FATAL_ERROR "DIST_DIR is required")
 endif()
-if(NOT DEFINED MUFFIN_VERSION OR MUFFIN_VERSION STREQUAL "")
-  message(FATAL_ERROR "MUFFIN_VERSION is required")
+if(NOT DEFINED MUFPEN_VERSION OR MUFPEN_VERSION STREQUAL "")
+  message(FATAL_ERROR "MUFPEN_VERSION is required")
 endif()
 if(NOT DEFINED MACDEPLOYQT OR MACDEPLOYQT STREQUAL "")
   message(FATAL_ERROR "MACDEPLOYQT is required")
 endif()
 
-set(APP_BUNDLE "${DIST_DIR}/Muffin.app")
+set(APP_BUNDLE "${DIST_DIR}/Mufpen.app")
 if(NOT EXISTS "${APP_BUNDLE}")
   message(FATAL_ERROR
     "App bundle not found at ${APP_BUNDLE}. "
@@ -39,7 +39,7 @@ endif()
 message(STATUS "macdeployqt completed successfully")
 
 # Reapply the sandbox entitlement after deployment, then seal the host last.
-if(EXISTS "${APP_BUNDLE}/Contents/PlugIns/MuffinQuickLook.appex")
+if(EXISTS "${APP_BUNDLE}/Contents/PlugIns/MufpenQuickLook.appex")
   set(ENTITLEMENTS "${SOURCE_DIR}/cmake/QuickLook.entitlements")
   include("${SOURCE_DIR}/cmake/SignMacQuickLook.cmake")
 endif()
@@ -77,10 +77,10 @@ math(EXPR DMG_SIZE_KIB
 message(STATUS "DMG volume capacity: ${DMG_SIZE_KIB} KiB (${DMG_CONTENT_BYTES} content bytes)")
 
 # Create the DMG
-set(DMG_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFFIN_VERSION}-macos-arm64.dmg")
+set(DMG_OUTPUT "${CMAKE_BINARY_DIR}/Mufpen-${MUFPEN_VERSION}-macos-arm64.dmg")
 execute_process(
   COMMAND hdiutil create
-    -volname "Muffin"
+    -volname "Mufpen"
     -srcfolder "${DMG_STAGING}"
     -fs HFS+
     -size "${DMG_SIZE_KIB}k"

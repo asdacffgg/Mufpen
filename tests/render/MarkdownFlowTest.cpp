@@ -14,7 +14,7 @@
 #include <QTextLayout>
 #include <QGlyphRun>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 void mixedFlow() {
@@ -101,7 +101,7 @@ void editableContainerGeometry() {
 }
 
 void centeredImages() {
-  const QString src = "https://muffin.test/flow.png";
+  const QString src = "https://mufpen.test/flow.png";
   auto& resources = LayoutResources::instance();
   const auto key = LayoutResources::imageKey(src);
   LayoutResourceVersion previous;

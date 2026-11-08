@@ -5,7 +5,7 @@
 #include "math/MathParseError.h"
 #include "math/MathParser.h"
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 constexpr qreal kKatexLineBoxHeightEm = 1.13636;
@@ -178,4 +178,4 @@ MathLayoutResult MathRenderer::render(const QString& tex, qreal rootFontPixelSiz
   return result;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

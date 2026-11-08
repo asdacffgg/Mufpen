@@ -56,7 +56,7 @@ bool verifySignature(const QByteArray& payload, const QByteArray& signature, con
 }
 } // namespace
 
-QString muffin::UpdatePackage::architectureName() {
+QString mufpen::UpdatePackage::architectureName() {
 #if defined(Q_PROCESSOR_ARM_64)
   return QStringLiteral("arm64");
 #elif defined(Q_PROCESSOR_X86_64)
@@ -66,11 +66,11 @@ QString muffin::UpdatePackage::architectureName() {
 #endif
 }
 
-QByteArray muffin::UpdatePackage::trustedPublicKey() {
-  return QByteArray::fromHex(MUFFIN_UPDATE_PUBLIC_KEY_HEX);
+QByteArray mufpen::UpdatePackage::trustedPublicKey() {
+  return QByteArray::fromHex(MUFPEN_UPDATE_PUBLIC_KEY_HEX);
 }
 
-std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonObject& json,
+std::optional<mufpen::UpdateRelease> mufpen::UpdatePackage::release(const QJsonObject& json,
                                                                     const QString& architecture) {
   const QString tag = json.value(QStringLiteral("tag_name")).toString();
   const QString version = tag.startsWith(u'v') ? tag.mid(1) : QString();
@@ -111,7 +111,7 @@ std::optional<muffin::UpdateRelease> muffin::UpdatePackage::release(const QJsonO
   return result;
 }
 
-std::optional<muffin::UpdatePackage> muffin::UpdatePackage::verify(const QByteArray& envelope,
+std::optional<mufpen::UpdatePackage> mufpen::UpdatePackage::verify(const QByteArray& envelope,
                                                                    const UpdateRelease& release,
                                                                    const QString& architecture,
                                                                    const QByteArray& publicKey) {

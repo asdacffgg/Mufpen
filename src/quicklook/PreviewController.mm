@@ -1,14 +1,14 @@
 #import "PreviewController.h"
 #import "MarkdownPreview.h"
 
-@interface MuffinPreviewController ()
+@interface MufpenPreviewController ()
 @property(nonatomic, strong) NSTextView* textView;
 @property(nonatomic, strong) dispatch_queue_t renderQueue;
 @property(nonatomic, strong) NSProgress* currentProgress;
 @property(nonatomic) NSUInteger requestGeneration;
 @end
 
-@implementation MuffinPreviewController
+@implementation MufpenPreviewController
 
 - (void)loadView {
   auto* scroll = [[NSScrollView alloc] initWithFrame:NSMakeRect(0, 0, 800, 640)];
@@ -39,21 +39,21 @@
   // main queue and serialize bounded parsing separately from AppKit layout.
   dispatch_async(dispatch_get_main_queue(), ^{
     if (!self.renderQueue)
-      self.renderQueue = dispatch_queue_create("com.muffin-editor.Muffin.quicklook", DISPATCH_QUEUE_SERIAL);
+      self.renderQueue = dispatch_queue_create("com.mufpen-editor.Mufpen.quicklook", DISPATCH_QUEUE_SERIAL);
     const NSUInteger generation = ++self.requestGeneration;
     [self.currentProgress cancel];
     NSProgress* progress = [NSProgress progressWithTotalUnitCount:1];
     self.currentProgress = progress;
     [self.textView.textStorage setAttributedString:[[NSAttributedString alloc] initWithString:@""]];
-    __weak MuffinPreviewController* weakSelf = self;
+    __weak MufpenPreviewController* weakSelf = self;
     dispatch_async(self.renderQueue, ^{
       @autoreleasepool {
         NSError* error = nil;
-        NSData* data = !progress.cancelled ? muffin::quicklook::readPreviewFile(url, &error) : nil;
+        NSData* data = !progress.cancelled ? mufpen::quicklook::readPreviewFile(url, &error) : nil;
         NSAttributedString* result =
-            data && !progress.cancelled ? muffin::quicklook::renderMarkdown(data, &error) : nil;
+            data && !progress.cancelled ? mufpen::quicklook::renderMarkdown(data, &error) : nil;
         dispatch_async(dispatch_get_main_queue(), ^{
-          MuffinPreviewController* controller = weakSelf;
+          MufpenPreviewController* controller = weakSelf;
           if (!controller || controller.requestGeneration != generation) {
             handler([NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil]);
             return;

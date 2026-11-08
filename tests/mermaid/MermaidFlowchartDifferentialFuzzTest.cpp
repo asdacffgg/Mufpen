@@ -18,9 +18,9 @@
 
 #include <cstdlib>
 
-using muffin::mermaid::flowchart::Flowchart;
-using muffin::mermaid::flowchart::FlowchartErrorCategory;
-using muffin::mermaid::flowchart::FlowchartErrorCode;
+using mufpen::mermaid::flowchart::Flowchart;
+using mufpen::mermaid::flowchart::FlowchartErrorCategory;
+using mufpen::mermaid::flowchart::FlowchartErrorCode;
 
 namespace {
 
@@ -123,11 +123,11 @@ int runOracle() {
         const QString source = requestObject.value(QStringLiteral("source")).toString();
         if (requestObject.value(QStringLiteral("tokenize")).toBool()) {
           QJsonArray tokens;
-          for (const auto& token : muffin::mermaid::flowchart::FlowchartTokenizer(
+          for (const auto& token : mufpen::mermaid::flowchart::FlowchartTokenizer(
                                        source, requestObject.value(QStringLiteral("document")).toBool())
                                        .tokenize()) {
             QJsonObject value;
-            value.insert(QStringLiteral("kind"), muffin::mermaid::flowchart::flowTokenName(token.kind));
+            value.insert(QStringLiteral("kind"), mufpen::mermaid::flowchart::flowTokenName(token.kind));
             value.insert(QStringLiteral("text"), token.text);
             value.insert(QStringLiteral("line"), token.line);
             value.insert(QStringLiteral("column"), token.column);
@@ -141,7 +141,7 @@ int runOracle() {
         }
         response.insert(QStringLiteral("ok"), true);
         response.insert(QStringLiteral("ast"), Flowchart::parse(source).toJson());
-      } catch (const muffin::mermaid::flowchart::FlowchartParseError& error) {
+      } catch (const mufpen::mermaid::flowchart::FlowchartParseError& error) {
         response.insert(QStringLiteral("ok"), false);
         response.insert(QStringLiteral("category"), static_cast<int>(error.category()));
         response.insert(QStringLiteral("class"), errorClass(error.category()));
@@ -170,7 +170,7 @@ int main(int argc, char** argv) {
   if (argc == 2 && QByteArray(argv[1]) == QByteArrayLiteral("--oracle"))
     return runOracle();
   require(argc == 2, QStringLiteral("Expected differential fuzz fixture path"));
-  const QString overrideFixture = qEnvironmentVariable("MUFFIN_FLOWCHART_DIFFERENTIAL_FIXTURE");
+  const QString overrideFixture = qEnvironmentVariable("MUFPEN_FLOWCHART_DIFFERENTIAL_FIXTURE");
   QFile file(overrideFixture.isEmpty() ? QString::fromLocal8Bit(argv[1]) : overrideFixture);
   require(file.open(QIODevice::ReadOnly), QStringLiteral("Could not open %1").arg(file.fileName()));
   configureFailureArtifacts(file.fileName());
@@ -265,7 +265,7 @@ int main(int argc, char** argv) {
     bool rejected = false;
     try {
       (void)Flowchart::parse(source);
-    } catch (const muffin::mermaid::flowchart::FlowchartParseError& nativeError) {
+    } catch (const mufpen::mermaid::flowchart::FlowchartParseError& nativeError) {
       rejected = true;
       const QString actualClass = errorClass(nativeError.category());
       if (actualClass != expectedClass) {

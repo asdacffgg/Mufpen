@@ -1,4 +1,4 @@
-# Muffin 编辑快捷键对照
+# Mufpen 编辑快捷键对照
 
 以下对应当前命令表。可在「偏好设置 → 键盘快捷键」搜索命令名或命令 ID，修改、清除或恢复默认按键。更改立即应用到已打开的窗口。
 
@@ -28,8 +28,8 @@
 | 标题 1–6 | Ctrl+1…6 | ⌘1…6 | 已支持 |
 | 转为正文 | Ctrl+0 | ⌘0 | 已支持 |
 | 引用 | Ctrl+Shift+Q | ⌘Shift+Q | 已支持 |
-| 无序列表 | Ctrl+Shift+] | ⌘Shift+] | 已支持，保留 Muffin 原有按键 |
-| 有序列表 | Ctrl+Shift+[ | ⌘Shift+[ | 已支持，保留 Muffin 原有按键 |
+| 无序列表 | Ctrl+Shift+] | ⌘Shift+] | 已支持，保留 Mufpen 原有按键 |
+| 有序列表 | Ctrl+Shift+[ | ⌘Shift+[ | 已支持，保留 Mufpen 原有按键 |
 | 任务列表 | Ctrl+Shift+X | ⌘Shift+X | 已支持；也可输入 `- [ ] ` / `- [x] ` |
 | 列表增加/减少层级 | Tab / Shift+Tab | Tab / Shift+Tab | 已支持；缩进、减少缩进命令也可另外绑定组合键 |
 | 分割线 | Ctrl+Alt+Shift+- | ⌘Option+Shift+- | 本次补默认键；Ctrl+Shift+- 已用于缩小 |
@@ -43,7 +43,7 @@
 
 段落对齐在实时编辑中对顶层段落、标题以及独占段落的图片生效，光标需折叠。它使用带 `text-align` 的 HTML 容器保存，保留内部 Markdown、源码映射和撤销记录；再次修改对齐会复用这个段落专用容器。列表项、引用内部段落、跨块选区和源码模式会禁用该命令并显示原因，防止破坏 Markdown 容器结构。可以直接在源码模式中编辑 HTML。
 
-给出的 Typora 清单有按键冲突：`Ctrl+Shift+L` 同时写成左对齐和无序列表，`Ctrl+Shift+O` 同时写成有序列表和最近文件，`Ctrl+Shift+M` 同时写成行内和块公式。因此没有原样复制整套默认键。Muffin 的 `Ctrl+Shift+L` 仍切换侧栏，`Ctrl+Shift+C` 仍复制 Markdown；需要时可在偏好设置中重新分配，界面会先指出冲突。
+给出的 Typora 清单有按键冲突：`Ctrl+Shift+L` 同时写成左对齐和无序列表，`Ctrl+Shift+O` 同时写成有序列表和最近文件，`Ctrl+Shift+M` 同时写成行内和块公式。因此没有原样复制整套默认键。Mufpen 的 `Ctrl+Shift+L` 仍切换侧栏，`Ctrl+Shift+C` 仍复制 Markdown；需要时可在偏好设置中重新分配，界面会先指出冲突。
 
 ## 表格
 

@@ -8,7 +8,7 @@
 #include <QRectF>
 #include <QSizeF>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 
 struct ClassLayoutMemberInput {
   QString text;
@@ -163,4 +163,4 @@ ClassDagreMeasurements measureClassDagreInput(const ClassLayoutInput& input, con
 ClassPlacementResult layoutClassDiagramDagre(const ClassLayoutInput& input, const ClassDagreMeasurements& measurements,
                                              bool handDrawn = false, quint32 handDrawnSeed = 0);
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

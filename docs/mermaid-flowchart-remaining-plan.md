@@ -15,9 +15,9 @@
 <path-to-mermaid-cli>\package-lock.json
 ```
 
-最终目标是在 Muffin 中使用纯 C++20/Qt 实现 Mermaid flowchart 的解析、
+最终目标是在 Mufpen 中使用纯 C++20/Qt 实现 Mermaid flowchart 的解析、
 布局和绘制。Node、JavaScript、Puppeteer 和浏览器只能用于离线生成上游
-golden，不得成为 Muffin 构建、运行、测试或发布依赖。
+golden，不得成为 Mufpen 构建、运行、测试或发布依赖。
 
 “完成”不是指常见示例看起来相似，而是同时满足：
 
@@ -26,7 +26,7 @@ golden，不得成为 Muffin 构建、运行、测试或发布依赖。
 3. 形状路径、交点、marker、文字和样式语义一致；
 4. 固定平台、字体、DPR 和绘制参数下通过完整主题像素 golden；
 5. 无 JS/浏览器运行时依赖，并通过资源、错误输入和性能保护测试；
-6. 只有以上门槛全部通过后才接入 Muffin 编辑器和导出路径。
+6. 只有以上门槛全部通过后才接入 Mufpen 编辑器和导出路径。
 
 ## 2. 当前基线（2026-07-23）
 
@@ -286,7 +286,7 @@ golden 会反复失效，也会把错误几何固化为 UI 行为。
   alias 均有 fixture；
 - 未知 shape 与上游产生相同类别的错误，不得静默回退矩形；
 - shape registry 测试自动检查“上游 shape 列表 - native shape 列表”为空；
-- icon/image 的网络行为明确禁用，或由 Muffin 已有安全资源加载器实现；
+- icon/image 的网络行为明确禁用，或由 Mufpen 已有安全资源加载器实现；
 - 所有 shape 的尺寸、路径和交点 geometry golden 通过。
 
 ## 9. 里程碑 F：原生 flowchart painter 与主题系统
@@ -316,7 +316,7 @@ Mermaid 11.16.0 配置允许：`default`、`base`、`dark`、`forest`、`neutral
 - `look=classic/handDrawn/neo`；
 - fontFamily、fontSize、fontWeight 和 HTML/Markdown label 样式继承。
 
-不应直接复用 Muffin 文档 CSS 选择器含义。Mermaid 样式先在自己的受限模型中
+不应直接复用 Mufpen 文档 CSS 选择器含义。Mermaid 样式先在自己的受限模型中
 解析，再由明确映射进入 scene，避免任意 CSS 影响编辑器 UI。
 
 ### 文字
@@ -394,13 +394,13 @@ Chrome 与 Qt 的字体栅格和抗锯齿不保证逐字节相同，因此严格
 - 长 chain、深 nested subgraph、超长 label、超多 edge/node 使用显式限制；
 - parser、layout、paint 均支持取消和总工作量预算；
 - fuzz 测试验证不崩溃、不越界、不无限循环；
-- URL、callback、HTML label、image/icon 遵守 Muffin 安全策略；
+- URL、callback、HTML label、image/icon 遵守 Mufpen 安全策略；
 - 不执行 Mermaid callback JavaScript，仅保存或安全忽略其语义。
 
 完成标准是 parser coverage 清单无“未审计”分支，已发现的长 chain 栈保护
 问题有回归测试并修复。
 
-## 12. 里程碑 I：Muffin 编辑器与导出接入
+## 12. 里程碑 I：Mufpen 编辑器与导出接入
 
 ### 接入步骤
 
@@ -409,13 +409,13 @@ Chrome 与 Qt 的字体栅格和抗锯齿不保证逐字节相同，因此严格
 3. parsing 状态显示稳定占位，不改变文档滚动位置；
 4. 错误时显示原始源码和定位信息，绝不丢失 code fence 内容；
 5. 复用 scene painter 进行编辑器、打印和图片/PDF 导出；
-6. 链接和 tooltip 使用 Muffin 现有安全交互路径；
+6. 链接和 tooltip 使用 Mufpen 现有安全交互路径；
 7. 大图采用 viewport culling，不在 paint event 重新布局；
 8. 保留“以源码显示”回退开关。
 
 当前编辑器将 `QPainter` dirty clip 反算为 scene 坐标，并为 flowchart、sequence、
 class 和 state 的 cluster、边、标签和节点执行带 overscan 的细粒度裁剪。默认 painter
-选项不裁剪，因此打印、PDF 和图片导出仍绘制完整 scene。`MuffinMermaidSceneCullingTest`
+选项不裁剪，因此打印、PDF 和图片导出仍绘制完整 scene。`MufpenMermaidSceneCullingTest`
 使用每类 2400 个 primitive 验证可见像素与全量路径一致，并限制昂贵绘制工作为单个
 viewport 内的 primitive 数量。
 

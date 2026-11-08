@@ -27,7 +27,7 @@
 
 namespace {
 
-using namespace muffin;
+using namespace mufpen;
 
 QMutex& registryMutex() {
   static QMutex mutex;
@@ -383,10 +383,10 @@ QAccessibleInterface* editorAccessibleFactory(const QString& classname, QObject*
   if (!object || !object->isWidgetType()) {
     return nullptr;
   }
-  if (classname == QLatin1String("muffin::EditorView")) {
+  if (classname == QLatin1String("mufpen::EditorView")) {
     return new EditorViewAccessible(static_cast<EditorView*>(object));
   }
-  if (classname == QLatin1String("muffin::VirtualSourceEdit")) {
+  if (classname == QLatin1String("mufpen::VirtualSourceEdit")) {
     return new VirtualSourceEditAccessible(static_cast<VirtualSourceEdit*>(object));
   }
   return nullptr;
@@ -394,7 +394,7 @@ QAccessibleInterface* editorAccessibleFactory(const QString& classname, QObject*
 
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 namespace a11y {
 
 void registerController(EditorView* view, EditorController* controller) {
@@ -427,4 +427,4 @@ void installEditorAccessibility() {
   QAccessible::installFactory(&editorAccessibleFactory);
 }
 
-} // namespace muffin
+} // namespace mufpen

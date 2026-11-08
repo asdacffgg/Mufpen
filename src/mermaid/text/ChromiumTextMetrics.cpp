@@ -10,7 +10,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::textmetrics {
+namespace mufpen::mermaid::textmetrics {
 namespace {
 struct RawSource {
   QRawFont raw;
@@ -132,4 +132,4 @@ std::optional<QRectF> harfBuzzInkBounds(const QString& text, const QString& cssF
   return QRectF(qreal(minimum) * scale, 0.0, qreal(maximum - minimum) * scale, 0.0);
 }
 
-} // namespace muffin::mermaid::textmetrics
+} // namespace mufpen::mermaid::textmetrics

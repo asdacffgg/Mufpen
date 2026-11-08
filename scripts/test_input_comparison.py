@@ -125,7 +125,7 @@ class InputComparisonRunnerTest(unittest.TestCase):
     def prepare(self, directory):
         workspace = Path(directory)
         (workspace / "build/Release").mkdir(parents=True)
-        (workspace / "build/Release/MuffinGuiPerformanceProbe.exe").write_bytes(b"fake executable; never launched")
+        (workspace / "build/Release/MufpenGuiPerformanceProbe.exe").write_bytes(b"fake executable; never launched")
         (workspace / "build/generators").mkdir()
         (workspace / "build/generators/CMakePresets.json").write_text(json.dumps({
             "configurePresets": [{"environment": {"QT_HOST_PATH": "C:\\Qt"}}],
@@ -140,17 +140,17 @@ class InputComparisonRunnerTest(unittest.TestCase):
 
             def child(command, **kwargs):
                 env = kwargs["env"]
-                kind = "native" if env.get("MUFFIN_GUI_NATIVE_INPUT") else "qt"
-                mode = env["MUFFIN_GUI_PROFILE"]
-                self.assertEqual(env.get("MUFFIN_GUI_TRACE"), "1" if mode == "detailed" else None)
-                self.assertEqual(env["MUFFIN_GUI_FOREGROUND_WAIT_MS"], "600000")
-                self.assertNotIn("MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT", env)
+                kind = "native" if env.get("MUFPEN_GUI_NATIVE_INPUT") else "qt"
+                mode = env["MUFPEN_GUI_PROFILE"]
+                self.assertEqual(env.get("MUFPEN_GUI_TRACE"), "1" if mode == "detailed" else None)
+                self.assertEqual(env["MUFPEN_GUI_FOREGROUND_WAIT_MS"], "600000")
+                self.assertNotIn("MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT", env)
                 observed.append((kind, mode))
                 Path(command[1]).write_text(json.dumps(fixture(kind, mode)), encoding="utf-8")
                 return SimpleNamespace(returncode=0)
 
-            with patch.dict(os.environ, {"MUFFIN_GUI_TRACE": "stale", "MUFFIN_GUI_NATIVE_INPUT": "stale",
-                                          "MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT": "stale"}):
+            with patch.dict(os.environ, {"MUFPEN_GUI_TRACE": "stale", "MUFPEN_GUI_NATIVE_INPUT": "stale",
+                                          "MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT": "stale"}):
                 original = dict(os.environ)
                 with patch("run_input_comparison.subprocess.run", side_effect=child):
                     self.assertEqual(run_comparison(workspace, workspace / "result", 4, 2, 600), 0)

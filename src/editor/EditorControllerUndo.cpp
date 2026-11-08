@@ -15,13 +15,13 @@
 #include <cstring>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(undoLog, "muffin.undo", QtWarningMsg)
-Q_LOGGING_CATEGORY(undoPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(undoLog, "mufpen.undo", QtWarningMsg)
+Q_LOGGING_CATEGORY(undoPerf, "mufpen.perf", QtWarningMsg)
 
-// Scoped perf probe routed to the muffin.perf category (captured by MUFFIN_PERF_LOG). No-op when
+// Scoped perf probe routed to the mufpen.perf category (captured by MUFPEN_PERF_LOG). No-op when
 // perf debugging is off. Used to localize the Ctrl+Z-hangs-on-a-huge-document regression: the
 // blocking cost is a synchronous full reparse (applyMarkdownText) + full layout rebuild fired when
 // the undo's localized edit can't be applied (applyTextDelta returns false). These probes record
@@ -810,4 +810,4 @@ CursorPosition EditorController::remapSnapshotCursor(const CursorPosition& snaps
   return cursor;
 }
 
-} // namespace muffin
+} // namespace mufpen

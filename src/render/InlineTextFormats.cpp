@@ -4,7 +4,7 @@
 
 #include <QRegularExpression>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 using DisplayOffsetRange = InlineDisplayMap::DisplayOffsetRange;
@@ -358,4 +358,4 @@ QVector<QTextLayout::FormatRange> buildInlineTextFormats(const InlineFormatInput
   return InlineFormatBuilder(input).build();
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 
 struct TopLevelRangeChange {
   qsizetype first = -1;
@@ -15,4 +15,4 @@ struct TopLevelRangeChange {
   friend bool operator==(const TopLevelRangeChange&, const TopLevelRangeChange&) = default;
 };
 
-} // namespace muffin
+} // namespace mufpen

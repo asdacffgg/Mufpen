@@ -18,7 +18,7 @@ class QProgressBar;
 class QNetworkReply;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class MainWindow;
 
@@ -73,4 +73,4 @@ private:
   QPushButton* primary_ = nullptr;
   QPushButton* cancel_ = nullptr;
 };
-} // namespace muffin
+} // namespace mufpen

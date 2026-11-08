@@ -1,14 +1,14 @@
-# erDiagram — Native Implementation Spec (Muffin)
+# erDiagram — Native Implementation Spec (Mufpen)
 
 This document is the contract for the `.cpp` files implementing
 `src/mermaid/erdiagram/`. The headers in that directory are **frozen**; this
 spec resolves every upstream ambiguity the implementer needs. Conventions match
 `src/mermaid/classdiagram/` and `src/mermaid/state/` exactly:
 
-- Namespace `muffin::mermaid::er`.
+- Namespace `mufpen::mermaid::er`.
 - `.cpp` files define methods with fully-qualified names
-  (`er::ClassName::method()`); they MUST NOT contain a `namespace muffin {}` or
-  `namespace muffin::mermaid::er {}` block (lupdate/correctness rule from
+  (`er::ClassName::method()`); they MUST NOT contain a `namespace mufpen {}` or
+  `namespace mufpen::mermaid::er {}` block (lupdate/correctness rule from
   CLAUDE.md — even though this module has no `tr()`, we keep the convention).
   File-local helpers go in an anonymous `namespace { }` at file scope.
 - C++20, Qt6, `QString`/`QStringLiteral`/`QLatin1String`/`QChar`. Include what
@@ -481,7 +481,7 @@ Anonymous-namespace helpers (copy/reuse from ClassScenePainter.cpp):
    Wrap parse in try/catch on `er::ErParseError` and map
    `er::formatErDiagnostic` into the cache's `MermaidDiagnostic` exactly as the
    class branch maps `ClassParseError`.
-3. **CMake:** `CMakeLists.txt` `MUFFIN_CORE_SOURCES` is an explicit list (no
+3. **CMake:** `CMakeLists.txt` `MUFPEN_CORE_SOURCES` is an explicit list (no
    glob). Add:
    ```
    src/mermaid/erdiagram/ErDiagram.cpp

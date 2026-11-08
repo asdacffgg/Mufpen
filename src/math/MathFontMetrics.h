@@ -4,7 +4,7 @@
 
 #include <optional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 struct CharacterMetrics {
   qreal depth = 0.0;
@@ -57,4 +57,4 @@ private:
   static void ensureLoaded();
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

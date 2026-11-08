@@ -8,7 +8,7 @@
 
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 
 KeyframeAnimator::KeyframeAnimator(QObject* parent) : QObject(parent) {
   clock_.start();
@@ -141,4 +141,4 @@ void KeyframeAnimator::onTick() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

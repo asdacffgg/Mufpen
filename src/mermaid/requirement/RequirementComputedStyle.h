@@ -3,7 +3,7 @@
 #include <QString>
 #include <QtTypes>
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 // CSS used values for one element in Mermaid's generated requirementDiagram
 // DOM. Geometry remains in RequirementScene; this type is shared by the
@@ -38,4 +38,4 @@ struct RequirementPaintedBackground {
   bool displayed = true;
 };
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

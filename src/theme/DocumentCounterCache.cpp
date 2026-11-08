@@ -5,7 +5,7 @@
 
 #include "diagnostics/ThemePerformance.h"
 
-namespace muffin {
+namespace mufpen {
 void DocumentCounterCache::reuseSemanticPool(const DocumentCounterCache& seed) {
   semanticReferences_ = seed.semanticReferences_;
 }
@@ -214,4 +214,4 @@ CooperativeTask DocumentCounterCache::evaluateSteps() {
   }
   memo_ = std::move(next);
 }
-} // namespace muffin
+} // namespace mufpen

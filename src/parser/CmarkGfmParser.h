@@ -6,7 +6,7 @@ extern "C" {
 #include "cmark-gfm-extension_api.h"
 }
 
-namespace muffin {
+namespace mufpen {
 
 class LineStartOffsetCache;
 
@@ -35,4 +35,4 @@ private:
   std::unique_ptr<MarkdownNode> createVirtualEmptyParagraph(int line, int column, qsizetype sourceOffset) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

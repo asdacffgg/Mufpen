@@ -4,7 +4,7 @@
 
 class QDir;
 
-namespace muffin {
+namespace mufpen {
 
 // Filesystem primitives for arbitrary paths (create / rename / copy / delete /
 // reveal). The sidebar file-tree context menu drives these; errors use explicit
@@ -68,4 +68,4 @@ private:
   FilePathOps() = delete;
 };
 
-} // namespace muffin
+} // namespace mufpen

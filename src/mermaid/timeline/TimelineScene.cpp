@@ -18,7 +18,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 
 void TimelineScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintTimelineScene(*this, painter, options);
@@ -871,4 +871,4 @@ QJsonObject TimelineScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

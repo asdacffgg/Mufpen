@@ -1,27 +1,27 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
 
-  <!-- Burn bundle wrapping the Muffin MSI behind a custom WPF bootstrapper
+  <!-- Burn bundle wrapping the Mufpen MSI behind a custom WPF bootstrapper
        application (installer/ba). The BA carries the modern install/update/
        uninstall UI; the MSI stays the actual payload so enterprise silent
        deployment keeps working:
 
-         Muffin-Setup-x.y.z-windows-x64.exe /install /quiet /norestart
+         Mufpen-Setup-x.y.z-windows-x64.exe /install /quiet /norestart
 
        The MSI itself is still published alongside the bundle as a release
        asset.
 
        Variables:
-         MuffinVersion - four-part version (same padding as the MSI)
-         MsiPath       - path to the built Muffin MSI (payload)
+         MufpenVersion - four-part version (same padding as the MSI)
+         MsiPath       - path to the built Mufpen MSI (payload)
          BaDir         - BA build output directory containing
-                         MuffinBootstrapperUI.dll, WixToolset.Mba.Core.dll,
+                         MufpenBootstrapperUI.dll, WixToolset.Mba.Core.dll,
                          and WixToolset.Mba.Host.config
          BaHostSuffix  - host arch suffix (_X64 / _X86 / _A64)
 
        Requires the WixToolset.Bal.wixext extension (same 4.0.5 line). -->
 
   <Bundle Name="Mufpen"
-          Version="$(var.MuffinVersion)"
+          Version="$(var.MufpenVersion)"
           Manufacturer="Mufpen"
           UpgradeCode="d10d91f3-dcd1-4df9-b4b2-bedf169ccf78"
           IconSourceFile="$(var.SourceDir)/resources/app-icons/mufpen.ico"
@@ -31,10 +31,10 @@
          WixToolset.Mba.Host.dll) as WixManagedBootstrapperApplicationHost,
          per architecture (_X64 / _X86 / _A64). It spins up the CLR 4.8 host
          described by our WixToolset.Mba.Host.config payload, which loads
-         MuffinBootstrapperUI.dll via its BootstrapperApplicationFactory
+         MufpenBootstrapperUI.dll via its BootstrapperApplicationFactory
          attribute. Everything must ship from the same WiX 4.0.5 line. -->
     <BootstrapperApplicationRef Id="WixManagedBootstrapperApplicationHost$(var.BaHostSuffix)">
-      <Payload SourceFile="$(var.BaDir)/MuffinBootstrapperUI.dll" />
+      <Payload SourceFile="$(var.BaDir)/MufpenBootstrapperUI.dll" />
       <Payload SourceFile="$(var.BaDir)/WixToolset.Mba.Core.dll" />
       <Payload SourceFile="$(var.BaDir)/WixToolset.Mba.Host.config" />
       <!-- mbanative.dll from the WixToolset.Mba.Core package is NOT the BA
@@ -46,22 +46,22 @@
 
     <!-- Only used by the in-app updater. Contains a PID and base64 paths, not
          shell commands. Hidden so user paths do not enter the bundle log. -->
-    <Variable Name="MuffinUpdate" Type="string" Value="" Hidden="yes" bal:Overridable="yes" />
+    <Variable Name="MufpenUpdate" Type="string" Value="" Hidden="yes" bal:Overridable="yes" />
     <!-- Explicit quiet uninstall opt-in. It is never remembered or inherited by upgrades. -->
-    <Variable Name="MuffinRemoveSettings" Type="numeric" Value="0" bal:Overridable="yes" />
+    <Variable Name="MufpenRemoveSettings" Type="numeric" Value="0" bal:Overridable="yes" />
     <Chain>
       <!-- EnableFeatureSelection lets the BA answer PlanMsiFeature for each
-           MSI feature from its checkboxes (see MuffinBa.OnPlanMsiFeature).
+           MSI feature from its checkboxes (see MufpenBa.OnPlanMsiFeature).
            Burn owns the ADDLOCAL/REMOVE plumbing itself. -->
       <!-- ARPSYSTEMCOMPONENT=1 hides the MSI's own Add/Remove-Programs entry
-           so only the bundle registers there — otherwise users see "Muffin"
+           so only the bundle registers there — otherwise users see "Mufpen"
            twice and uninstalling one leaves the other behind. Passed here as
            a bundle-only property: the bare MSI published as a release asset
            still installs without it and keeps its own ARP entry for
            enterprise silent deployments. ARPSYSTEMCOMPONENT is a public
            property, not one of Burn's controlled action properties, so this
            is legal where ADDLOCAL/REMOVE would be rejected (WIX0365). -->
-      <MsiPackage Id="MuffinMsi"
+      <MsiPackage Id="MufpenMsi"
                   Name="Mufpen.msi"
                   SourceFile="$(var.MsiPath)"
                   EnableFeatureSelection="yes"

@@ -15,9 +15,9 @@
 //   2. Its sync time must be within a small multiple of the normal-typing baseline (dashes 1 & 2).
 //      Pre-fix this ratio was ~80×; post-fix ~1-3×.
 //
-//   cmake --build --preset conan-release --target MuffinThirdDashProbe
+//   cmake --build --preset conan-release --target MufpenThirdDashProbe
 //   ctest --preset conan-release -R ThirdDashProbe --output-on-failure
-//   MUFFIN_BENCH_SIZE_MB=8 MuffinThirdDashProbe.exe   # manual diagnostic dump of the 3rd-dash probes
+//   MUFPEN_BENCH_SIZE_MB=8 MufpenThirdDashProbe.exe   # manual diagnostic dump of the 3rd-dash probes
 #include "../editor/EditorTestUtils.h"
 
 #include <QApplication>
@@ -37,26 +37,26 @@ QMutex g_perfMutex;
 QStringList g_perfLines;
 
 void perfCapture(QtMsgType, const QMessageLogContext& ctx, const QString& msg) {
-  if (QString::fromUtf8(ctx.category) != QLatin1String("muffin.perf")) {
+  if (QString::fromUtf8(ctx.category) != QLatin1String("mufpen.perf")) {
     return;
   }
   QMutexLocker locker(&g_perfMutex);
   g_perfLines.append(msg);
 }
 
-muffin::MarkdownNode* findEmptyParagraph(muffin::MarkdownNode* node) {
+mufpen::MarkdownNode* findEmptyParagraph(mufpen::MarkdownNode* node) {
   if (!node) {
     return nullptr;
   }
-  if (node->type() == muffin::BlockType::Paragraph) {
-    const muffin::SourceRange r = node->sourceRange();
+  if (node->type() == mufpen::BlockType::Paragraph) {
+    const mufpen::SourceRange r = node->sourceRange();
     if (r.byteStart == r.byteEnd) {
       return node;
     }
   }
-  muffin::MarkdownNode* found = nullptr;
+  mufpen::MarkdownNode* found = nullptr;
   for (const auto& c : node->children()) {
-    if (muffin::MarkdownNode* f = findEmptyParagraph(c.get())) {
+    if (mufpen::MarkdownNode* f = findEmptyParagraph(c.get())) {
       found = f;
     }
   }
@@ -147,16 +147,16 @@ int main(int argc, char** argv) {
   }
   QApplication app(argc, argv);
 
-  const bool diagnostic = !qgetenv("MUFFIN_PROBE_DUMP").isEmpty();
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf.debug=true"));
+  const bool diagnostic = !qgetenv("MUFPEN_PROBE_DUMP").isEmpty();
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf.debug=true"));
   qInstallMessageHandler(perfCapture);
 
-  const QByteArray sizeEnv = qgetenv("MUFFIN_BENCH_SIZE_MB");
+  const QByteArray sizeEnv = qgetenv("MUFPEN_BENCH_SIZE_MB");
   const qsizetype sizeMb = sizeEnv.isEmpty() ? 2 : sizeEnv.toLongLong();
 
-  muffin::DocumentSession session;
-  muffin::EditorView view;
-  muffin::EditorController controller;
+  mufpen::DocumentSession session;
+  mufpen::EditorView view;
+  mufpen::EditorController controller;
   controller.attach(&session, &view);
 
   const QString doc = makeBigDoc(sizeMb * 1024 * 1024);
@@ -168,7 +168,7 @@ int main(int argc, char** argv) {
   QCoreApplication::processEvents();
 
   const qsizetype topLevel = session.document().root().children().size();
-  muffin::MarkdownNode* empty = findEmptyParagraph(&session.document().root());
+  mufpen::MarkdownNode* empty = findEmptyParagraph(&session.document().root());
   std::fprintf(stdout, "doc: %lld bytes, %lld top-level blocks; empty-paragraph VEP %s\n",
                static_cast<long long>(doc.size()), static_cast<long long>(topLevel), empty ? "found" : "NOT FOUND");
   if (!empty) {
@@ -195,8 +195,8 @@ int main(int argc, char** argv) {
   // editor and an empty line appeared then vanished on the next Enter. Dump caret zone + source
   // after each Enter to see whether the caret ever leaves BlockAfter and whether blanks collapse.
   auto dumpEnter = [&](int idx, const KeystrokeResult& r) {
-    const muffin::CursorPosition c = controller.selection().cursorPosition();
-    const muffin::HitTestResult hit = controller.selection().currentHit();
+    const mufpen::CursorPosition c = controller.selection().cursorPosition();
+    const mufpen::HitTestResult hit = controller.selection().currentHit();
     const QString src = session.markdownText().toString();
     const int rulePos = src.indexOf(QStringLiteral("---"));
     const int from = qMax(0, rulePos - 2);
@@ -204,7 +204,7 @@ int main(int argc, char** argv) {
     QString snippet = src.mid(from, len);
     snippet.replace(QLatin1Char('\n'), QStringLiteral("\\n"));
     const char* markers = r.firedCollectPendingMarkerOffsets ? "YES" : "no";
-    const char* zone = hit.zone == muffin::HitTestResult::Zone::BlockAfter ? "BlockAfter" : "other";
+    const char* zone = hit.zone == mufpen::HitTestResult::Zone::BlockAfter ? "BlockAfter" : "other";
     const int afterBlock = c.afterBlock ? 1 : 0;
     const long long off = static_cast<long long>(c.text.sourceOffset);
     std::fprintf(stdout, "enter+%d: sync=%7.2f cursorAE=%7.2f markers=%s | afterBlock=%d blockId=%s off=%lld zone=%s\n",
@@ -240,7 +240,7 @@ int main(int argc, char** argv) {
     std::fprintf(stdout, "\n=== dash-3 probes ===\n");
     QMutexLocker locker(&g_perfMutex);
     for (const QString& line : g_perfLines) {
-      std::fprintf(stdout, "  muffin.perf: %s\n", line.toUtf8().constData());
+      std::fprintf(stdout, "  mufpen.perf: %s\n", line.toUtf8().constData());
     }
   }
 

@@ -20,7 +20,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::style {
+namespace mufpen::mermaid::style {
 
 // The subset of theme variables the cascade reads. Families fill this from
 // their resolved theme (flowchart: FlowThemeVariables; class/state/er: the
@@ -88,4 +88,4 @@ QStringList compiledClassStyles(const QStringList& classNames, const QVector<Cla
 // Whether a CSS property key is a label (text) style vs a node (box) style.
 bool isLabelStyle(const QString& key);
 
-} // namespace muffin::mermaid::style
+} // namespace mufpen::mermaid::style

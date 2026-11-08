@@ -11,7 +11,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 // Place the caret on the virtual trailing paragraph below the last top-level block.

@@ -6,7 +6,7 @@
 #include "document/ListItemSource.h"
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QString separatorBefore(const PieceTable& text, qsizetype position, qsizetype floor = 0) {
   int lines = 0;
@@ -347,4 +347,4 @@ BlockSourcePlan BlockStructure::listPlan(const PieceTable& text, BlockTarget sou
   plan.valid = true;
   return plan;
 }
-} // namespace muffin
+} // namespace mufpen

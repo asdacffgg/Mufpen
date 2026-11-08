@@ -13,7 +13,7 @@
 #include <functional>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QString cssTagForInline(InlineType type) {
   switch (type) {
@@ -987,4 +987,4 @@ bool NodeCssElementBuilder::hasClassUncached(const CssElement& element, const QS
   return false;
 }
 
-} // namespace muffin
+} // namespace mufpen

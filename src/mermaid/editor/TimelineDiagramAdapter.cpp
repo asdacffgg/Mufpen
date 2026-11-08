@@ -22,7 +22,7 @@
 #include <stdexcept>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue scalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -678,4 +678,4 @@ const Diagram& timelineDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

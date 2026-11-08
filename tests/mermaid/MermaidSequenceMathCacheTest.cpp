@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
 
-  using namespace muffin::mermaid;
+  using namespace mufpen::mermaid;
   constexpr int kMessageCount = 160;
   constexpr qint64 kTimeLimitMs = 2000;
   const QString source = stressSource(kMessageCount);

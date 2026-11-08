@@ -39,7 +39,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -774,10 +774,10 @@ int main(int argc, char** argv) {
   // Invalid->1.0, Valid-negative->1.0, Valid-zero->NoPen. Here we assert the
   // resolver itself, with a controlled context (so ex/ch assertions are exact).
   {
-    using muffin::CssLengthContext;
-    using muffin::CssLengthResult;
-    using muffin::CssLengthStatus;
-    using muffin::resolveCssLengthToPx;
+    using mufpen::CssLengthContext;
+    using mufpen::CssLengthResult;
+    using mufpen::CssLengthStatus;
+    using mufpen::resolveCssLengthToPx;
     const auto ctx = [](qreal em, qreal ex, qreal ch) {
       CssLengthContext c;
       c.emPx = em;

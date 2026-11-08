@@ -10,7 +10,7 @@
 #include <QRectF>
 #include <QVector>
 
-namespace muffin::mermaid::gitgraph {
+namespace mufpen::mermaid::gitgraph {
 
 struct GitGraphConfig {
   bool useMaxWidth = true;
@@ -164,4 +164,4 @@ GitGraphScene buildGitGraphScene(const GitGraphData& data, GitGraphConfig config
 QVector<int> gitGraphArrowClassDigits(const GitGraphData& data, const GitGraphConfig& config,
                                       const GitGraphSceneStyle& style);
 
-} // namespace muffin::mermaid::gitgraph
+} // namespace mufpen::mermaid::gitgraph

@@ -6,7 +6,7 @@
 #include <QSettings>
 #include <QTextStream>
 
-namespace muffin {
+namespace mufpen {
 
 QString CustomCommandUploader::resolvedCommand() {
   return QSettings().value(QStringLiteral("image/uploadCommand")).toString().trimmed();
@@ -22,7 +22,7 @@ CustomCommandResult CustomCommandUploader::upload(QWidget* parent, const QString
 
   const QString command = !commandOverride.isEmpty() ? commandOverride.trimmed() : resolvedCommand();
   if (command.isEmpty()) {
-    result.error = QCoreApplication::translate("muffin::CustomCommandUploader", "no upload command configured");
+    result.error = QCoreApplication::translate("mufpen::CustomCommandUploader", "no upload command configured");
     return result;
   }
 
@@ -31,7 +31,7 @@ CustomCommandResult CustomCommandUploader::upload(QWidget* parent, const QString
   // is `<uploader> <file1> <file2> …`.
   QStringList args = QProcess::splitCommand(command);
   if (args.isEmpty()) {
-    result.error = QCoreApplication::translate("muffin::CustomCommandUploader", "empty upload command");
+    result.error = QCoreApplication::translate("mufpen::CustomCommandUploader", "empty upload command");
     return result;
   }
   const QString program = args.takeFirst();
@@ -89,7 +89,7 @@ CustomCommandResult CustomCommandUploader::upload(QWidget* parent, const QString
   const QString stderrText = QString::fromUtf8(process.readAllStandardError()).trimmed();
   if (process.exitCode() != 0) {
     result.error = stderrText.isEmpty()
-                       ? QCoreApplication::translate("muffin::CustomCommandUploader", "uploader exited with code %1")
+                       ? QCoreApplication::translate("mufpen::CustomCommandUploader", "uploader exited with code %1")
                              .arg(process.exitCode())
                        : stderrText;
     return result;
@@ -106,10 +106,10 @@ CustomCommandResult CustomCommandUploader::upload(QWidget* parent, const QString
   }
   if (result.urls.isEmpty()) {
     result.error = stderrText.isEmpty()
-                       ? QCoreApplication::translate("muffin::CustomCommandUploader", "uploader produced no URLs")
+                       ? QCoreApplication::translate("mufpen::CustomCommandUploader", "uploader produced no URLs")
                        : stderrText;
   }
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

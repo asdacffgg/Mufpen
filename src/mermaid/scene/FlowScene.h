@@ -26,7 +26,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 
 struct FlowSceneLabel {
   QString text;
@@ -203,4 +203,4 @@ FlowScene buildFlowScene(const flowchart::FlowchartData& data, const flowchart::
                          flowchart::FlowLook look = flowchart::FlowLook::Classic, quint32 handDrawnSeed = 0,
                          const FlowSceneTextOptions& textOptions = {}, qreal shapeRadius = 5.0);
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

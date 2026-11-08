@@ -1,10 +1,10 @@
 using System;
 using Microsoft.Win32;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     /// <summary>
-    /// Shared registry contract with WindowsIntegration.cpp and Muffin.wxs.
+    /// Shared registry contract with WindowsIntegration.cpp and Mufpen.wxs.
     /// The MSI writes both DWORD choices transactionally, including zeroes,
     /// only when it installs the selected features successfully. The app
     /// writes the same values when its integration preferences change.

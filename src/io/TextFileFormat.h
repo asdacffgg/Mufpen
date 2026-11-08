@@ -2,7 +2,7 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 enum class TextLineEnding { Lf, Crlf, Cr };
 
@@ -16,4 +16,4 @@ struct TextFileFormat {
   bool operator==(const TextFileFormat&) const = default;
 };
 
-} // namespace muffin
+} // namespace mufpen

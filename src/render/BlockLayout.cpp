@@ -29,7 +29,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 // markdown/codeBlockWrap (default on): whether code-fence source lines soft-wrap. Math/HTML literal
@@ -738,7 +738,7 @@ const html::HtmlLayoutResult* BlockLayout::htmlLayout() const {
   return htmlLayout_.get();
 }
 
-void BlockLayout::setMermaidScene(std::shared_ptr<const muffin::mermaid::MermaidScene> scene, QSizeF naturalSize,
+void BlockLayout::setMermaidScene(std::shared_ptr<const mufpen::mermaid::MermaidScene> scene, QSizeF naturalSize,
                                   mermaid::MermaidRenderMetadata metadata) {
   mermaidScene_ = std::move(scene);
   mermaidNaturalSize_ = naturalSize;
@@ -753,7 +753,7 @@ bool BlockLayout::mermaidViewportCullingEnabled() const {
   return mermaidViewportCullingEnabled_;
 }
 
-const muffin::mermaid::MermaidScene* BlockLayout::mermaidScene() const {
+const mufpen::mermaid::MermaidScene* BlockLayout::mermaidScene() const {
   return mermaidScene_.get();
 }
 
@@ -1513,14 +1513,14 @@ void BlockLayout::paintMermaidDiagram(QPainter& painter, const RenderTheme& them
     // fractional client box fills the canvas, content painted through
     // translate(-clientBox.topLeft()), title at its scene-absolute anchor.
     // Piecewise families keep the centered contentOffset model.
-    const QRectF clientBox = muffin::mermaid::editor::mermaidClientBox(mermaidScene_, mermaidMetadata_);
+    const QRectF clientBox = mufpen::mermaid::editor::mermaidClientBox(mermaidScene_, mermaidMetadata_);
     qreal contentOffsetX = qMax<qreal>(0.0, (natW - mermaidMetadata_.contentSize.width()) / 2.0);
     qreal contentOffsetY = mermaidMetadata_.titleHeight + mermaidMetadata_.diagramPadding;
     QRectF titleRect(0.0, 0.0, natW, mermaidMetadata_.titleHeight);
     if (clientBox.isValid()) {
       contentOffsetX = 0.0;
       contentOffsetY = 0.0;
-      const qreal titleWidth = muffin::mermaid::measureMermaidTitleWidth(mermaidMetadata_);
+      const qreal titleWidth = mufpen::mermaid::measureMermaidTitleWidth(mermaidMetadata_);
       const qreal centerX = mermaidScene_->svgClientViewBox().center().x();
       titleRect =
           QRectF(centerX - titleWidth / 2.0, -mermaidMetadata_.titleHeight, titleWidth, mermaidMetadata_.titleHeight);
@@ -1528,13 +1528,13 @@ void BlockLayout::paintMermaidDiagram(QPainter& painter, const RenderTheme& them
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setRenderHint(QPainter::TextAntialiasing, true);
     const QRectF sceneBounds = mermaidScene_->sceneBounds();
-    muffin::mermaid::MermaidPaintOptions paintOptions;
+    mufpen::mermaid::MermaidPaintOptions paintOptions;
     paintOptions.animationTimeSeconds = state.mermaidAnimationTimeSeconds;
     paintOptions.openSequenceMenus = state.openSequenceMenus;
     painter.translate(dx, dy);
     painter.scale(scale, scale);
     if (!clientBox.isValid())
-      muffin::mermaid::paintMermaidTitle(mermaidMetadata_, painter, titleRect);
+      mufpen::mermaid::paintMermaidTitle(mermaidMetadata_, painter, titleRect);
     if (mermaidViewportCullingEnabled_ && painter.hasClipping()) {
       const QRectF visibleCanvas = painter.clipBoundingRect().intersected(
           clientBox.isValid() ? QRectF(0.0, 0.0, natW, natH)
@@ -1555,7 +1555,7 @@ void BlockLayout::paintMermaidDiagram(QPainter& painter, const RenderTheme& them
     else
       painter.translate(contentOffsetX - sceneBounds.left(), contentOffsetY - sceneBounds.top());
     if (clientBox.isValid())
-      muffin::mermaid::paintMermaidTitle(mermaidMetadata_, painter, titleRect);
+      mufpen::mermaid::paintMermaidTitle(mermaidMetadata_, painter, titleRect);
     mermaidScene_->paint(painter, paintOptions);
   }
   painter.restore();
@@ -1640,7 +1640,7 @@ bool BlockLayout::mermaidScenePointAt(QPointF documentPos, const RenderTheme& th
   // Inverse of the paint transform: document → scene coordinates. Client-box
   // families paint through translate(-clientBox.topLeft()) (the SVG/PNG
   // mapping); piecewise families keep the centered contentOffset model.
-  const QRectF clientBox = muffin::mermaid::editor::mermaidClientBox(mermaidScene_, mermaidMetadata_);
+  const QRectF clientBox = mufpen::mermaid::editor::mermaidClientBox(mermaidScene_, mermaidMetadata_);
   if (clientBox.isValid()) {
     scenePos = QPointF((documentPos.x() - dx) / s + clientBox.left(), (documentPos.y() - dy) / s + clientBox.top());
     return true;
@@ -2108,4 +2108,4 @@ QVector<QRectF> BlockLayout::definitionSelectionRects(qsizetype startOffset, qsi
   return rects;
 }
 
-} // namespace muffin
+} // namespace mufpen

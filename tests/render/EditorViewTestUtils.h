@@ -26,37 +26,37 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
-inline muffin::MarkdownNode* blockAt(const muffin::DocumentSession& session, qsizetype index) {
+inline mufpen::MarkdownNode* blockAt(const mufpen::DocumentSession& session, qsizetype index) {
   const auto& children = session.document().root().children();
   require(index >= 0 && index < static_cast<qsizetype>(children.size()), "block index out of range");
   return children.at(static_cast<size_t>(index)).get();
 }
 
-inline muffin::MarkdownNode* childAt(muffin::MarkdownNode* node, qsizetype index) {
+inline mufpen::MarkdownNode* childAt(mufpen::MarkdownNode* node, qsizetype index) {
   require(node != nullptr, "parent node should exist");
   const auto& children = node->children();
   require(index >= 0 && index < static_cast<qsizetype>(children.size()), "child index out of range");
   return children.at(static_cast<size_t>(index)).get();
 }
 
-inline muffin::MarkdownNode* listItemAt(const muffin::DocumentSession& session, qsizetype listIndex,
+inline mufpen::MarkdownNode* listItemAt(const mufpen::DocumentSession& session, qsizetype listIndex,
                                         qsizetype itemIndex) {
   return childAt(blockAt(session, listIndex), itemIndex);
 }
 
-inline void setCursor(muffin::SelectionController& selection, muffin::MarkdownNode* block, qsizetype offset) {
-  muffin::CursorPosition cursor;
+inline void setCursor(mufpen::SelectionController& selection, mufpen::MarkdownNode* block, qsizetype offset) {
+  mufpen::CursorPosition cursor;
   cursor.blockId = block->id();
   cursor.text.nodeId = block->id();
   cursor.text.textOffset = offset;
   selection.setCursorPosition(cursor);
 }
 
-inline void setSourceCursor(muffin::SelectionController& selection, muffin::MarkdownNode* block,
+inline void setSourceCursor(mufpen::SelectionController& selection, mufpen::MarkdownNode* block,
                             qsizetype visibleOffset, qsizetype sourceOffset) {
-  muffin::CursorPosition cursor;
+  mufpen::CursorPosition cursor;
   cursor.blockId = block->id();
   cursor.text.nodeId = block->id();
   cursor.text.textOffset = visibleOffset;
@@ -64,22 +64,22 @@ inline void setSourceCursor(muffin::SelectionController& selection, muffin::Mark
   selection.setCursorPosition(cursor);
 }
 
-inline bool pressKey(muffin::InputController& input, QObject* target, int key,
+inline bool pressKey(mufpen::InputController& input, QObject* target, int key,
                      Qt::KeyboardModifiers modifiers = Qt::NoModifier) {
   QKeyEvent event(QEvent::KeyPress, key, modifiers);
   return input.eventFilter(target, &event);
 }
 
-inline void wireInput(muffin::InputController& input, muffin::DocumentSession& session,
-                      muffin::SelectionController& selection, muffin::UndoStack& undoStack,
-                      muffin::BrushQueue& brushQueue, muffin::EditorView* view = nullptr,
-                      QHash<int, muffin::LiteralBlockController*> literalEditors = {}) {
+inline void wireInput(mufpen::InputController& input, mufpen::DocumentSession& session,
+                      mufpen::SelectionController& selection, mufpen::UndoStack& undoStack,
+                      mufpen::BrushQueue& brushQueue, mufpen::EditorView* view = nullptr,
+                      QHash<int, mufpen::LiteralBlockController*> literalEditors = {}) {
   input.setContext({&session, &selection, &undoStack, &brushQueue, view, literalEditors});
 }
 
-inline void setSelection(muffin::SelectionController& selection, muffin::MarkdownNode* block, qsizetype anchor,
+inline void setSelection(mufpen::SelectionController& selection, mufpen::MarkdownNode* block, qsizetype anchor,
                          qsizetype focus) {
-  muffin::SelectionRange range;
+  mufpen::SelectionRange range;
   range.anchor.blockId = block->id();
   range.anchor.text.nodeId = block->id();
   range.anchor.text.textOffset = anchor;
@@ -89,10 +89,10 @@ inline void setSelection(muffin::SelectionController& selection, muffin::Markdow
   selection.setSelection(range);
 }
 
-inline void setSourceSelection(muffin::SelectionController& selection, muffin::MarkdownNode* block,
-                               muffin::MarkdownNode* textNode, qsizetype anchorTextOffset, qsizetype anchorSourceOffset,
+inline void setSourceSelection(mufpen::SelectionController& selection, mufpen::MarkdownNode* block,
+                               mufpen::MarkdownNode* textNode, qsizetype anchorTextOffset, qsizetype anchorSourceOffset,
                                qsizetype focusTextOffset, qsizetype focusSourceOffset) {
-  muffin::SelectionRange range;
+  mufpen::SelectionRange range;
   range.anchor.blockId = block->id();
   range.anchor.text.nodeId = textNode->id();
   range.anchor.text.textOffset = anchorTextOffset;
@@ -104,17 +104,17 @@ inline void setSourceSelection(muffin::SelectionController& selection, muffin::M
   selection.setSelection(range);
 }
 
-inline QString selectedMarkdown(const muffin::DocumentSession& session, const muffin::SelectionController& selection) {
-  return muffin::SelectionSerializer().exportMarkdown(session.document(), selection.selection());
+inline QString selectedMarkdown(const mufpen::DocumentSession& session, const mufpen::SelectionController& selection) {
+  return mufpen::SelectionSerializer().exportMarkdown(session.document(), selection.selection());
 }
 
-inline QString selectedPlainText(const muffin::DocumentSession& session, const muffin::SelectionController& selection) {
-  return muffin::SelectionSerializer().exportPlainText(session.document(), selection.selection());
+inline QString selectedPlainText(const mufpen::DocumentSession& session, const mufpen::SelectionController& selection) {
+  return mufpen::SelectionSerializer().exportPlainText(session.document(), selection.selection());
 }
 
 struct ExpectedProjectionSpan {
-  muffin::InlineType type = muffin::InlineType::Unknown;
-  muffin::InlineSpanKind kind = muffin::InlineSpanKind::Text;
+  mufpen::InlineType type = mufpen::InlineType::Unknown;
+  mufpen::InlineSpanKind kind = mufpen::InlineSpanKind::Text;
   qsizetype sourceStart = 0;
   qsizetype sourceEnd = 0;
   qsizetype contentSourceStart = 0;
@@ -125,9 +125,9 @@ struct ExpectedProjectionSpan {
   qsizetype visibleEnd = 0;
 };
 
-QVector<muffin::InlineNode> withInlineTestRanges(QVector<muffin::InlineNode> inlines, const QString& markdown);
+QVector<mufpen::InlineNode> withInlineTestRanges(QVector<mufpen::InlineNode> inlines, const QString& markdown);
 
-inline void requireSpanContract(const muffin::InlineProjectionSpan& span, const ExpectedProjectionSpan& expected,
+inline void requireSpanContract(const mufpen::InlineProjectionSpan& span, const ExpectedProjectionSpan& expected,
                                 qsizetype index, const char* label) {
   const QString prefix = QStringLiteral("%1 span %2").arg(QString::fromUtf8(label)).arg(index);
   require(span.type == expected.type, prefix + QStringLiteral(" type mismatch"));
@@ -143,10 +143,10 @@ inline void requireSpanContract(const muffin::InlineProjectionSpan& span, const 
   require(span.visibleEnd == expected.visibleEnd, prefix + QStringLiteral(" visibleEnd mismatch"));
 }
 
-inline void requireProjectionSpans(const QVector<muffin::InlineNode>& inlines, const QString& markdown,
-                                   muffin::InlineProjectionState state, const QVector<ExpectedProjectionSpan>& expected,
+inline void requireProjectionSpans(const QVector<mufpen::InlineNode>& inlines, const QString& markdown,
+                                   mufpen::InlineProjectionState state, const QVector<ExpectedProjectionSpan>& expected,
                                    const QString& displayText, const QString& visibleText, const char* label) {
-  muffin::InlineProjection projection(withInlineTestRanges(inlines, markdown), markdown, state);
+  mufpen::InlineProjection projection(withInlineTestRanges(inlines, markdown), markdown, state);
   require(projection.isValid(), label);
   require(projection.displayText() == displayText,
           QStringLiteral("%1 display text mismatch: %2").arg(QString::fromUtf8(label), projection.displayText()));
@@ -159,12 +159,12 @@ inline void requireProjectionSpans(const QVector<muffin::InlineNode>& inlines, c
   }
 }
 
-inline void requireProjectionRoundTrip(const QVector<muffin::InlineNode>& inlines, const QString& markdown,
+inline void requireProjectionRoundTrip(const QVector<mufpen::InlineNode>& inlines, const QString& markdown,
                                        qsizetype cursorSourceOffset, const QString& visibleText,
                                        const QString& displayText, const char* label) {
-  muffin::InlineProjectionState state;
+  mufpen::InlineProjectionState state;
   state.cursorSourceOffset = cursorSourceOffset;
-  muffin::InlineProjection projection(withInlineTestRanges(inlines, markdown), markdown, state);
+  mufpen::InlineProjection projection(withInlineTestRanges(inlines, markdown), markdown, state);
   require(projection.isValid(), label);
   require(projection.visibleText() == visibleText,
           QStringLiteral("%1 visible text mismatch: %2").arg(QString::fromUtf8(label), projection.visibleText()));
@@ -194,9 +194,9 @@ inline void requireProjectionRoundTrip(const QVector<muffin::InlineNode>& inline
   }
 }
 
-inline void setInlineRanges(muffin::InlineNode& node, qsizetype sourceStart, qsizetype sourceEnd,
+inline void setInlineRanges(mufpen::InlineNode& node, qsizetype sourceStart, qsizetype sourceEnd,
                             qsizetype contentStart, qsizetype contentEnd) {
-  muffin::InlineSourceRanges ranges;
+  mufpen::InlineSourceRanges ranges;
   ranges.source = {sourceStart, sourceEnd};
   ranges.content = {contentStart, contentEnd};
   ranges.openMarker = {sourceStart, contentStart};
@@ -204,28 +204,28 @@ inline void setInlineRanges(muffin::InlineNode& node, qsizetype sourceStart, qsi
   node.setSourceRanges(ranges);
 }
 
-inline QString testMarkerForInline(const muffin::InlineNode& node) {
+inline QString testMarkerForInline(const mufpen::InlineNode& node) {
   switch (node.type()) {
-  case muffin::InlineType::Code:
+  case mufpen::InlineType::Code:
     return QStringLiteral("`");
-  case muffin::InlineType::InlineMath:
+  case mufpen::InlineType::InlineMath:
     return QStringLiteral("$");
-  case muffin::InlineType::Emphasis:
+  case mufpen::InlineType::Emphasis:
     return node.marker().isEmpty() ? QStringLiteral("*") : node.marker();
-  case muffin::InlineType::Strong:
+  case mufpen::InlineType::Strong:
     return node.marker().isEmpty() ? QStringLiteral("**") : node.marker();
-  case muffin::InlineType::Strikethrough:
+  case mufpen::InlineType::Strikethrough:
     return QStringLiteral("~~");
   default:
     return {};
   }
 }
 
-inline void annotateInlineTestRanges(QVector<muffin::InlineNode>& inlines, const QString& markdown,
+inline void annotateInlineTestRanges(QVector<mufpen::InlineNode>& inlines, const QString& markdown,
                                      qsizetype sourceStart, qsizetype sourceEnd) {
   qsizetype searchFrom = sourceStart;
-  for (muffin::InlineNode& node : inlines) {
-    const QString nodeMarkdown = muffin::InlineProjection::markdownForInlines({node});
+  for (mufpen::InlineNode& node : inlines) {
+    const QString nodeMarkdown = mufpen::InlineProjection::markdownForInlines({node});
     const qsizetype start = markdown.indexOf(nodeMarkdown, searchFrom);
     if (start < 0 || start + nodeMarkdown.size() > sourceEnd) {
       continue;
@@ -233,30 +233,30 @@ inline void annotateInlineTestRanges(QVector<muffin::InlineNode>& inlines, const
     const qsizetype end = start + nodeMarkdown.size();
     const QString marker = testMarkerForInline(node);
     if (!marker.isEmpty() && end - start >= marker.size() * 2 &&
-        (node.type() == muffin::InlineType::Code || node.type() == muffin::InlineType::InlineMath ||
-         node.type() == muffin::InlineType::Emphasis || node.type() == muffin::InlineType::Strong ||
-         node.type() == muffin::InlineType::Strikethrough)) {
+        (node.type() == mufpen::InlineType::Code || node.type() == mufpen::InlineType::InlineMath ||
+         node.type() == mufpen::InlineType::Emphasis || node.type() == mufpen::InlineType::Strong ||
+         node.type() == mufpen::InlineType::Strikethrough)) {
       setInlineRanges(node, start, end, start + marker.size(), end - marker.size());
       annotateInlineTestRanges(node.children(), markdown, start + marker.size(), end - marker.size());
-    } else if (node.type() == muffin::InlineType::Link) {
-      muffin::InlineSourceRanges ranges;
+    } else if (node.type() == mufpen::InlineType::Link) {
+      mufpen::InlineSourceRanges ranges;
       ranges.source = {start, end};
       ranges.openMarker = {start, start + 1};
       const qsizetype labelEnd = markdown.indexOf(QLatin1Char(']'), start);
-      ranges.content = labelEnd >= 0 && labelEnd <= end ? muffin::InlineRange{start + 1, labelEnd}
-                                                        : muffin::InlineRange{start + 1, start + 1};
+      ranges.content = labelEnd >= 0 && labelEnd <= end ? mufpen::InlineRange{start + 1, labelEnd}
+                                                        : mufpen::InlineRange{start + 1, start + 1};
       node.setSourceRanges(ranges);
       annotateInlineTestRanges(node.children(), markdown, ranges.content.start, ranges.content.end);
-    } else if (node.type() == muffin::InlineType::Image) {
-      muffin::InlineSourceRanges ranges;
+    } else if (node.type() == mufpen::InlineType::Image) {
+      mufpen::InlineSourceRanges ranges;
       ranges.source = {start, end};
       ranges.openMarker = {start, start + 2};
       const qsizetype labelEnd = markdown.indexOf(QLatin1Char(']'), start);
-      ranges.content = labelEnd >= 0 && labelEnd <= end ? muffin::InlineRange{start + 2, labelEnd}
-                                                        : muffin::InlineRange{start + 2, start + 2};
+      ranges.content = labelEnd >= 0 && labelEnd <= end ? mufpen::InlineRange{start + 2, labelEnd}
+                                                        : mufpen::InlineRange{start + 2, start + 2};
       node.setSourceRanges(ranges);
     } else {
-      muffin::InlineSourceRanges ranges;
+      mufpen::InlineSourceRanges ranges;
       ranges.source = {start, end};
       ranges.content = ranges.source;
       node.setSourceRanges(ranges);
@@ -265,29 +265,29 @@ inline void annotateInlineTestRanges(QVector<muffin::InlineNode>& inlines, const
   }
 }
 
-inline QVector<muffin::InlineNode> withInlineTestRanges(QVector<muffin::InlineNode> inlines, const QString& markdown) {
+inline QVector<mufpen::InlineNode> withInlineTestRanges(QVector<mufpen::InlineNode> inlines, const QString& markdown) {
   annotateInlineTestRanges(inlines, markdown, 0, markdown.size());
   return inlines;
 }
 
-inline const muffin::BlockLayout* requireViewBlock(muffin::EditorView& view, muffin::NodeId blockId,
+inline const mufpen::BlockLayout* requireViewBlock(mufpen::EditorView& view, mufpen::NodeId blockId,
                                                    const QString& label) {
   const QRectF blockRect = view.nodeRect(blockId);
   require(!blockRect.isEmpty(), label + QStringLiteral(" block rect should exist"));
-  const muffin::BlockLayout* block = view.blockAtViewportPos(blockRect.center());
+  const mufpen::BlockLayout* block = view.blockAtViewportPos(blockRect.center());
   require(block != nullptr, label + QStringLiteral(" block layout should exist"));
   return block;
 }
 
-inline const muffin::InlineLayout* requireViewInlineLayout(muffin::EditorView& view, muffin::NodeId blockId,
+inline const mufpen::InlineLayout* requireViewInlineLayout(mufpen::EditorView& view, mufpen::NodeId blockId,
                                                            const QString& label) {
-  const muffin::BlockLayout* block = requireViewBlock(view, blockId, label);
+  const mufpen::BlockLayout* block = requireViewBlock(view, blockId, label);
   require(block->inlineLayout() != nullptr, label + QStringLiteral(" inline layout should exist"));
   return block->inlineLayout();
 }
 
-inline muffin::CursorPosition inlineCursor(muffin::NodeId blockId, qsizetype textOffset, qsizetype sourceOffset) {
-  muffin::CursorPosition cursor;
+inline mufpen::CursorPosition inlineCursor(mufpen::NodeId blockId, qsizetype textOffset, qsizetype sourceOffset) {
+  mufpen::CursorPosition cursor;
   cursor.blockId = blockId;
   cursor.text.nodeId = blockId;
   cursor.text.textOffset = textOffset;
@@ -295,26 +295,26 @@ inline muffin::CursorPosition inlineCursor(muffin::NodeId blockId, qsizetype tex
   return cursor;
 }
 
-inline muffin::HitTestResult hitAtTextOffset(muffin::EditorView& view, muffin::NodeId blockId, qsizetype textOffset,
+inline mufpen::HitTestResult hitAtTextOffset(mufpen::EditorView& view, mufpen::NodeId blockId, qsizetype textOffset,
                                              const QString& label) {
   const QRectF blockRect = view.nodeRect(blockId);
-  const muffin::InlineLayout* inlineLayout = requireViewInlineLayout(view, blockId, label);
+  const mufpen::InlineLayout* inlineLayout = requireViewInlineLayout(view, blockId, label);
   const QRectF cursor = inlineLayout->cursorRect(textOffset);
   require(!cursor.isEmpty(), label + QStringLiteral(" cursor rect should exist"));
   return view.hitTest(blockRect.topLeft() + QPointF(cursor.left(), cursor.center().y()));
 }
 
-inline muffin::HitTestResult hitAtSourceOffset(muffin::EditorView& view, muffin::NodeId blockId, qsizetype sourceOffset,
+inline mufpen::HitTestResult hitAtSourceOffset(mufpen::EditorView& view, mufpen::NodeId blockId, qsizetype sourceOffset,
                                                const QString& label) {
   const QRectF blockRect = view.nodeRect(blockId);
-  const muffin::InlineLayout* inlineLayout = requireViewInlineLayout(view, blockId, label);
+  const mufpen::InlineLayout* inlineLayout = requireViewInlineLayout(view, blockId, label);
   const QRectF cursor = inlineLayout->cursorRectForSourceOffset(sourceOffset);
   require(!cursor.isEmpty(), label + QStringLiteral(" source cursor rect should exist"));
   return view.hitTest(blockRect.topLeft() + QPointF(cursor.left(), cursor.center().y()));
 }
 
-inline muffin::SelectionRange inlineSelection(muffin::NodeId blockId, qsizetype anchorOffset, qsizetype focusOffset) {
-  muffin::SelectionRange selection;
+inline mufpen::SelectionRange inlineSelection(mufpen::NodeId blockId, qsizetype anchorOffset, qsizetype focusOffset) {
+  mufpen::SelectionRange selection;
   selection.anchor = inlineCursor(blockId, anchorOffset, anchorOffset);
   selection.focus = inlineCursor(blockId, focusOffset, focusOffset);
   return selection;
@@ -326,7 +326,7 @@ struct CursorLineRange {
   qreal y = 0;
 };
 
-inline QVector<CursorLineRange> cursorLineRanges(const muffin::InlineLayout& layout) {
+inline QVector<CursorLineRange> cursorLineRanges(const mufpen::InlineLayout& layout) {
   QVector<CursorLineRange> ranges;
   const qsizetype length = layout.plainText().size();
   for (qsizetype offset = 0; offset <= length; ++offset) {

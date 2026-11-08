@@ -7,7 +7,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 // A source block's immutable shaping result. All coordinates are content-local;
 // moving a block or scrolling it only changes the caller's origin, never shaping.
@@ -100,4 +100,4 @@ private:
   QVector<NumberedLine> numberedLines_;
 };
 
-} // namespace muffin
+} // namespace mufpen

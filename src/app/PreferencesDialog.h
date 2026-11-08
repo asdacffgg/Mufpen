@@ -15,7 +15,7 @@ class QScrollArea;
 class QStackedWidget;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsAppearancePage;
 class PrefsEditorPage;
@@ -83,4 +83,4 @@ private:
   PrefsSearchPage* searchPage_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

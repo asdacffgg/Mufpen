@@ -6,7 +6,7 @@
 #include <QMessageLogger>
 #include <QtGlobal>
 
-namespace muffin::diag {
+namespace mufpen::diag {
 
 // RAII perf probe: on construction, if `category` has debug enabled, starts a timer; on
 // destruction logs "<label> <elapsed-ms> ms" to that category at debug level. When the
@@ -46,4 +46,4 @@ private:
   QElapsedTimer timer_;
 };
 
-} // namespace muffin::diag
+} // namespace mufpen::diag

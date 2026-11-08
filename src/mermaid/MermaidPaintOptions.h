@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 // Deterministic paint-work counters used by the large-scene regression gate.
 // A primitive is one independently cullable scene item (node, edge path,
@@ -69,4 +69,4 @@ inline bool mermaidPrimitiveIsVisible(QRectF primitiveBounds, const MermaidPaint
   return visible;
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

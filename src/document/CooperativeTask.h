@@ -5,7 +5,7 @@
 #include <exception>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 // A GUI-thread-only, cooperatively scheduled build. Destroying it cancels the
 // unpublished layout; no nested event loop and no cross-thread Qt resources.
 class CooperativeTask {
@@ -52,4 +52,4 @@ private:
   explicit CooperativeTask(std::coroutine_handle<promise_type> handle) : handle_(handle) {}
   std::coroutine_handle<promise_type> handle_;
 };
-} // namespace muffin
+} // namespace mufpen

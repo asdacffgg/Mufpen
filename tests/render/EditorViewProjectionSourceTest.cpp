@@ -97,16 +97,16 @@ void testProjectionReuseDecisionsMatchFreshProjection() {
 }
 
 void benchmarkInlineNavigation() {
-  if (!qEnvironmentVariableIsSet("MUFFIN_INLINE_NAV_BENCH"))
+  if (!qEnvironmentVariableIsSet("MUFPEN_INLINE_NAV_BENCH"))
     return;
-  QFile file(qEnvironmentVariable("MUFFIN_NAV_DOCUMENT"));
+  QFile file(qEnvironmentVariable("MUFPEN_NAV_DOCUMENT"));
   require(file.open(QIODevice::ReadOnly), "open navigation benchmark document");
   const auto markdown = QString::fromUtf8(file.readAll());
   DocumentSession session;
   session.setMarkdownText(markdown, false);
   EditorView view;
   view.resize(1000, 700);
-  const auto cssPath = qEnvironmentVariable("MUFFIN_NAV_THEME");
+  const auto cssPath = qEnvironmentVariable("MUFPEN_NAV_THEME");
   if (!cssPath.isEmpty())
     view.setTheme(RenderTheme::fromDefinition(ThemeDefinition::fromCss(cssPath, "nav-benchmark")));
   view.setDocument(session.document());
@@ -152,7 +152,7 @@ void benchmarkInlineNavigation() {
   });
 }
 
-using namespace muffin;
+using namespace mufpen;
 
 void testInlineProjectionMarkerSourcePositions() {
   QVector<InlineNode> strikeChildren;
@@ -327,23 +327,23 @@ void testInlineProjectionAutolinkUsesFullSourceRangeAndLabel() {
 
 void testInlineProjectionEntitiesAndMarkdownLinksUseParserRanges() {
   DocumentSession session;
-  const QString markdown = QStringLiteral("&amp; &lt; &gt; &copy;. [Muffin](https://example.com)");
+  const QString markdown = QStringLiteral("&amp; &lt; &gt; &copy;. [Mufpen](https://example.com)");
   session.setMarkdownText(markdown, false);
   MarkdownNode* block = blockAt(session, 0);
 
   InlineProjection projection(block->inlines(), markdown, InlineProjectionState{}, 0);
   require(projection.isValid(), "entity/link projection should be valid");
-  require(projection.visibleText() == QString::fromUtf8("& < > ©. Muffin"),
+  require(projection.visibleText() == QString::fromUtf8("& < > ©. Mufpen"),
           QStringLiteral("entity/link visible text mismatch: %1").arg(projection.visibleText()));
-  require(projection.displayText() == QString::fromUtf8("& < > ©. Muffin"),
+  require(projection.displayText() == QString::fromUtf8("& < > ©. Mufpen"),
           QStringLiteral("entity/link display text mismatch: %1").arg(projection.displayText()));
 
   InlineProjectionState activeLink;
-  activeLink.cursorSourceOffset = markdown.indexOf(QStringLiteral("Muffin"));
+  activeLink.cursorSourceOffset = markdown.indexOf(QStringLiteral("Mufpen"));
   InlineProjection activeProjection(block->inlines(), markdown, activeLink, 0);
   // Cursor is inside the link, not inside the entity text node, so entities
   // remain decoded and only link syntax is revealed.
-  require(activeProjection.displayText() == QString::fromUtf8("& < > ©. [Muffin](https://example.com)"),
+  require(activeProjection.displayText() == QString::fromUtf8("& < > ©. [Mufpen](https://example.com)"),
           QStringLiteral("active entity/link display text mismatch: %1").arg(activeProjection.displayText()));
 }
 
@@ -505,7 +505,7 @@ void testEditorViewInlineLayoutSmoke() {
 
 int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
-    qputenv("QT_QPA_PLATFORM", qEnvironmentVariableIsSet("MUFFIN_INLINE_NAV_BENCH") ? "minimal" : "offscreen");
+    qputenv("QT_QPA_PLATFORM", qEnvironmentVariableIsSet("MUFPEN_INLINE_NAV_BENCH") ? "minimal" : "offscreen");
   }
   QApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

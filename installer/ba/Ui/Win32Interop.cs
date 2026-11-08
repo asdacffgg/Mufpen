@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Data;
 using Microsoft.Win32;
 
-namespace Muffin.Setup.Ui
+namespace Mufpen.Setup.Ui
 {
     /// <summary>True → Collapsed, False → Visible (pairs with BooleanToVisibilityConverter).</summary>
     public class InverseBoolToVisibilityConverter : IValueConverter

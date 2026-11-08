@@ -9,7 +9,7 @@
 #include <utility>
 
 namespace {
-using namespace muffin;
+using namespace mufpen;
 bool canceled(const DocumentSearch::Cancellation& cancel) {
   return cancel && cancel->load(std::memory_order_relaxed);
 }
@@ -170,7 +170,7 @@ struct Navigation {
 };
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 SearchResults DocumentSearch::findAll(const QString& text, const QString& pattern, SearchOptions options,
                                       Cancellation cancel) {
   return findAll(PieceTable(text), pattern, options, std::move(cancel));
@@ -261,4 +261,4 @@ SearchResults DocumentSearch::replaceAll(const QString& text, const QString& pat
   }
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

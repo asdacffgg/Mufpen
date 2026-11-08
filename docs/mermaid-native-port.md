@@ -7,7 +7,7 @@ The complete 38-ID expansion and acceptance contract is maintained in
 
 ## Current status (2026-08-21)
 
-Muffin renders thirty-one Mermaid families through a native C++20/Qt pipeline:
+Mufpen renders thirty-one Mermaid families through a native C++20/Qt pipeline:
 
 - flowchart/graph, including the `flowchart-elk` detector ID and Mermaid
   11.16's bundled Dagre fallback when no external ELK loader is registered;
@@ -50,7 +50,7 @@ Muffin renders thirty-one Mermaid families through a native C++20/Qt pipeline:
   visual for the export paths (PNG/SVG) — mirroring mermaid.core's
   `Diagram.fromText("error")` path — while the diagnostic contract (exact
   upstream messages) stays primary. The editor canvas deliberately keeps its
-  source + diagnostic panel for Error entries (a Muffin editing surface
+  source + diagnostic panel for Error entries (a Mufpen editing surface
   locked by RenderMermaidBlockTest) instead of inlining the lightbulb.
   `suppressErrorRendering` is stripped by the shared secure-source
   sanitizer in both renderers, so the source API cannot disable the
@@ -63,7 +63,7 @@ Each supported family has parser/database, layout, immutable scene, structural,
 pixel, and editor-cache coverage. All 38 Mermaid 11.16 detector IDs now resolve
 through a native adapter. The Windows Conan Release gate is currently 293/293
 tests, including the end-to-end
-`MuffinRenderMermaidBlockTest` and the error-diagram parity test.
+`MufpenRenderMermaidBlockTest` and the error-diagram parity test.
 
 All thirty-one native families now share `MermaidRenderMetadata` for the diagram
 title, accessible title/description, role description, title styling, and
@@ -105,7 +105,7 @@ editor screen-reader parity.
 
 The editor interaction path now consumes the same immutable scenes. Flowchart
 nodes expose Mermaid tooltips and safe links through normal hit testing;
-opening a link retains Muffin's `Ctrl+Click` policy, while callback/call forms
+opening a link retains Mufpen's `Ctrl+Click` policy, while callback/call forms
 remain inert under the strict desktop security policy. Sequence `links` and
 `link` statements build participant menus. A participant click toggles its
 menu, while `sequence.forceMenus` keeps menus visible without changing the
@@ -122,11 +122,11 @@ export bytes and pagination do not depend on wall-clock timing.
 The compatibility baseline is `mermaid` 11.16.0 (MIT), resolved by the pinned
 `@mermaid-js/mermaid-cli` 11.16.0 package used by the fixture generators. The
 generator scripts accept the local Mermaid package path explicitly; no
-machine-specific source path is part of Muffin's build or test contract.
+machine-specific source path is part of Mufpen's build or test contract.
 
 `mermaid-cli` is not the Mermaid implementation. Its rendering path starts a
 Puppeteer browser, loads Mermaid and external layout packages, renders into an
-SVG DOM, and captures SVG/PNG/PDF output. Muffin must instead port the Mermaid
+SVG DOM, and captures SVG/PNG/PDF output. Mufpen must instead port the Mermaid
 semantic pipeline and render it through Qt:
 
 1. shared preprocessing and diagram detection;
@@ -136,7 +136,7 @@ semantic pipeline and render it through Qt:
 5. code-fence integration and export.
 
 The shared implementation layer is in `src/mermaid`. It is linked into
-`MuffinCore` and has no JavaScript or browser dependency. YAML frontmatter uses
+`MufpenCore` and has no JavaScript or browser dependency. YAML frontmatter uses
 the native `yaml-cpp` library.
 
 The flowchart parser in `src/mermaid/flowchart` exposes a typed `FlowchartData`
@@ -146,7 +146,7 @@ parallel edge IDs, classes/styles, nested subgraphs, and string/Markdown labels.
 The same comparison covers accessibility statements, click/callback/link data,
 node and edge metadata (`@{...}`), explicit edge IDs, animation properties,
 long link spellings, default `linkStyle`, tooltips, and Mermaid's default edge
-and text-size limits. `MuffinMermaidFlowchartCoverageMatrixTest`, parser-error
+and text-size limits. `MufpenMermaidFlowchartCoverageMatrixTest`, parser-error
 goldens, and differential fuzz fixtures close the audited `flow.jison` grammar
 and invalid-input contract for the supported baseline.
 
@@ -192,7 +192,7 @@ position/bk) operates on, and is the foundation for milestones B and C of the
 flowchart plan. Iteration order is part of the contract — graphlib relies on
 lodash `_.keys`/`_.values`, which yield string-key insertion order, so every
 iterated map is wrapped in an insertion-order-preserving `OrderedMap`. The
-unit test `MuffinMermaidGraphTest` covers parent reset and recursive
+unit test `MufpenMermaidGraphTest` covers parent reset and recursive
 re-parenting, ancestors and lowest-common-ancestor, parallel named edges,
 compound/leaf traversal, `__proto__`-style special IDs, a 50 000-deep parent
 chain (proving the cycle check and ancestor walk are iterative, not recursive),
@@ -205,7 +205,7 @@ determinism. The active flowchart layout pipeline uses this graph through
 `src/mermaid/dagre/` is a faithful, file-by-file port of the Dagre
 `runLayout` phases that the flat `WorkGraph` pipeline lacks. Each phase operates
 on the `DagreGraph` model above and carries hand-verified unit tests in
-`MuffinMermaidDagreCompoundTest`:
+`MufpenMermaidDagreCompoundTest`:
 
 - `DagreLabels.h` — the typed label set (`DagreNodeLabel` / `DagreEdgeLabel` /
   `DagreGraphLabel`) covering every field `buildLayoutGraph` and the runLayout
@@ -362,8 +362,8 @@ so every `@{ shape: }` alias now routes to its shape's handling. Unrecognised
 names fall back to `rect` (mermaid's default shape).
 
 `upstreamShortNames()` and `nativeShapeCanonicalNames()` feed
-`MuffinMermaidShapeRegistryTest`; the upstream-minus-native diff is empty.
-`MuffinMermaidFlowchartCoverageMatrixTest` additionally requires classic,
+`MufpenMermaidShapeRegistryTest`; the upstream-minus-native diff is empty.
+`MufpenMermaidFlowchartCoverageMatrixTest` additionally requires classic,
 hand-drawn, and neo shape matrices across directions, themes, and DPRs. Shape
 calibration retains Mermaid's raw label bbox, padding, post-measurement fork
 adjustment, and per-handler intersection rules.
@@ -381,7 +381,7 @@ version, and review the JSON diff.
 inside headless Chrome to parse source and serialize the observable FlowDB
 state into `tests/fixtures/mermaid/flowchart-db.json`. Chrome and Puppeteer are
 fixture-generation tools only; neither is linked, packaged, or invoked by
-Muffin or its native test suite.
+Mufpen or its native test suite.
 
 Sequence pixel fixtures deliberately separate structural coverage from raster
 coverage. All sequence cases retain their Mermaid 11.16.0 DOM, marker, MathML,
@@ -469,14 +469,14 @@ The reviewed statuses are deliberately not a yes/no support flag:
 | `upstream-inert` | 125 | Mermaid retains the option but 11.16.0 does not consume it |
 | `legacy-only` | 19 | Applies to an old browser renderer, not the unified native scene |
 | `api-only` | 25 | Function-valued hooks cannot be expressed by Markdown JSON/YAML config |
-| `security-fixed` | 1 | Muffin intentionally keeps its strict desktop security policy |
+| `security-fixed` | 1 | Mufpen intentionally keeps its strict desktop security policy |
 
 The `themeVariables.*` row moved from partial to parity: every one of the
 285 resolved inventory keys is byte-locked across all 11 themes through
 `FlowThemeVariables::get()` (26 live keys wired to their family consumers, 30
 upstream-dead keys modeled with zero-consumer evidence).
 
-`MuffinMermaidConfigEffectMatrixTest` validates the generated fixture digest,
+`MufpenMermaidConfigEffectMatrixTest` validates the generated fixture digest,
 schema completeness, status invariants, all seven dimensions, and production
 probes. The first audit also closed concrete gaps: Flowchart `diagramPadding`
 now reaches editor/PNG canvas geometry, State `nodeSpacing`/`rankSpacing` reach
@@ -523,7 +523,7 @@ full number list for every message.
 
 `MermaidPaintOptions` disables culling by default. `BlockLayoutBuilder` enables
 it only for the asynchronous editor path; synchronous image, print, and PDF
-layouts therefore paint the complete scene. `MuffinMermaidSceneCullingTest`
+layouts therefore paint the complete scene. `MufpenMermaidSceneCullingTest`
 constructs 2,400 primitives for each supported family, requires the culled and
 full paths to produce identical visible pixels, and places a deterministic
 upper bound on painted primitives. Timings are reported for profiling but are
@@ -559,7 +559,7 @@ The remaining boundaries are explicit rather than hidden parity claims:
   background rect, and the advance × cell-height getBBox feeding Dagre
   (pixel oracle: exact 253×718 canvas, IoU 0.999);
 - external `mermaid.initialize()` object/array configuration is not part of
-  Muffin's Markdown source API. In particular, source-level custom
+  Mufpen's Markdown source API. In particular, source-level custom
   `borderColorArray`/`bkgColorArray` values are ignored, matching Mermaid
   11.16.0's source-entry behavior.
 
@@ -572,7 +572,7 @@ custom dashes use pen-width units, so the shared `SvgStroke.h` conversion
 divides every CSS length by the active width and duplicates odd-length SVG
 patterns; all five painters use FlatCap/MiterJoin. The Class width matrix
 enters upstream through `themeVariables.strokeWidth`: Mermaid 11.16.0 rejects
-Class `linkStyle`, so Muffin's accepted Class `linkStyle` remains a
+Class `linkStyle`, so Mufpen's accepted Class `linkStyle` remains a
 compatibility extension rather than an upstream parity claim. Isolated
 edge-mask oracles prevent nodes, markers, Journey's separately painted axis
 marker, and C4's person image from hiding dash-period regressions. GitGraph's

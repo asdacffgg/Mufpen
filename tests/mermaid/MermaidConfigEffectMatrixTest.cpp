@@ -46,9 +46,9 @@
 #include <memory>
 #include <tuple>
 
-using muffin::mermaid::editor::MermaidRenderCache;
-using muffin::mermaid::editor::MermaidRenderEntry;
-using muffin::mermaid::editor::MermaidRenderStatus;
+using mufpen::mermaid::editor::MermaidRenderCache;
+using mufpen::mermaid::editor::MermaidRenderEntry;
+using mufpen::mermaid::editor::MermaidRenderStatus;
 
 namespace {
 
@@ -124,7 +124,7 @@ QImage pngImage(const QString& source) {
 }
 
 QPointF stateCenter(const MermaidRenderEntry& entry, const QString& id) {
-  const auto* stateScene = dynamic_cast<const muffin::mermaid::state::StateScene*>(entry.scene.get());
+  const auto* stateScene = dynamic_cast<const mufpen::mermaid::state::StateScene*>(entry.scene.get());
   require(stateScene != nullptr, QStringLiteral("Missing state scene while looking for %1").arg(id));
   for (const auto& node : stateScene->nodes)
     if (node.id == id)
@@ -133,7 +133,7 @@ QPointF stateCenter(const MermaidRenderEntry& entry, const QString& id) {
 }
 
 QPointF erCenter(const MermaidRenderEntry& entry, const QString& id) {
-  const auto* erScene = dynamic_cast<const muffin::mermaid::er::ErScene*>(entry.scene.get());
+  const auto* erScene = dynamic_cast<const mufpen::mermaid::er::ErScene*>(entry.scene.get());
   require(erScene != nullptr, QStringLiteral("Missing ER scene while looking for %1").arg(id));
   for (const auto& entity : erScene->entities)
     if (entity.id == id)
@@ -250,11 +250,11 @@ int main(int argc, char** argv) {
       QStringLiteral("%%{init: {\"themeCSS\": \".node rect { fill: rgb(255, 0, 0) !important; "
                      "stroke-width: 9px !important; }\"}}%%\nflowchart LR\nA --> B");
   const MermaidRenderEntry themeCssEntry = render(themeCssSource);
-  const auto* themeCssScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(themeCssEntry.scene.get());
+  const auto* themeCssScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(themeCssEntry.scene.get());
   require(themeCssEntry.status == MermaidRenderStatus::Ready && themeCssScene && themeCssScene->nodes.size() == 2,
           QStringLiteral("themeCSS production render failed"));
   for (const auto& item : themeCssScene->nodes) {
-    const QColor fill = muffin::mermaid::color::resolveSvgPaint(item.fill, muffin::mermaid::color::SvgPaintKind::Fill,
+    const QColor fill = mufpen::mermaid::color::resolveSvgPaint(item.fill, mufpen::mermaid::color::SvgPaintKind::Fill,
                                                                 QColor(Qt::black))
                             .color;
     require(fill == QColor(QLatin1String("#ff0000")),
@@ -267,7 +267,7 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry infoEntry =
       render(QStringLiteral("%%{init: {\"fontFamily\":\"Noto Sans\",\"themeVariables\":{"
                             "\"textColor\":\"#ff0000\"}}}%%\ninfo"));
-  const auto* infoScene = dynamic_cast<const muffin::mermaid::info::InfoScene*>(infoEntry.scene.get());
+  const auto* infoScene = dynamic_cast<const mufpen::mermaid::info::InfoScene*>(infoEntry.scene.get());
   require(infoEntry.status == MermaidRenderStatus::Ready && infoScene &&
               infoScene->style.fontFamily == QLatin1String("Noto Sans") &&
               infoScene->style.textColor == QLatin1String("#ff0000") && !infoEntry.metadata.svgEmitViewBox,
@@ -277,7 +277,7 @@ int main(int argc, char** argv) {
                                                               "\"themeVariables\": {\"emEventFill\": \"#123456\"}}}%%\n"
                                                               "eventmodeling\ntf 1 evt Created"));
   const auto* eventScene =
-      dynamic_cast<const muffin::mermaid::eventmodeling::EventModelingScene*>(eventEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::eventmodeling::EventModelingScene*>(eventEntry.scene.get());
   require(eventEntry.status == MermaidRenderStatus::Ready && eventScene && eventScene->padding == 80.0 &&
               !eventScene->useMaxWidth && !eventEntry.metadata.svgUseMaxWidth && eventScene->boxes.size() == 1 &&
               eventScene->boxes.first().fill == QLatin1String("#123456"),
@@ -290,7 +290,7 @@ int main(int argc, char** argv) {
     const MermaidRenderEntry stateEntry =
         render(QStringLiteral("%%{init: {\"theme\": \"%1\"}}%%\nstateDiagram-v2\n[*] --> A\nA --> [*]")
                    .arg(QLatin1String(theme)));
-    const auto* stateScene = dynamic_cast<const muffin::mermaid::state::StateScene*>(stateEntry.scene.get());
+    const auto* stateScene = dynamic_cast<const mufpen::mermaid::state::StateScene*>(stateEntry.scene.get());
     const bool hasSpecialShapes =
         stateScene && std::any_of(stateScene->nodes.cbegin(), stateScene->nodes.cend(), [](const auto& item) {
           return item.shape == QLatin1String("stateStart") || item.shape == QLatin1String("stateEnd");
@@ -305,7 +305,7 @@ int main(int argc, char** argv) {
                                                 "\"handDrawnSeed\": 17}}%%\n"
                                                 "ishikawa\nEffect\n  Cause A\n  Cause B");
   const MermaidRenderEntry ishikawaEntry = render(ishikawaSource);
-  const auto* ishikawaScene = dynamic_cast<const muffin::mermaid::ishikawa::IshikawaScene*>(ishikawaEntry.scene.get());
+  const auto* ishikawaScene = dynamic_cast<const mufpen::mermaid::ishikawa::IshikawaScene*>(ishikawaEntry.scene.get());
   require(ishikawaEntry.status == MermaidRenderStatus::Ready && ishikawaScene && ishikawaScene->padding == 80.0 &&
               !ishikawaScene->useMaxWidth && !ishikawaEntry.metadata.svgUseMaxWidth &&
               ishikawaScene->style.look == QLatin1String("handDrawn") &&
@@ -318,7 +318,7 @@ int main(int argc, char** argv) {
                                             "venn-beta\nset A: 10\nset B: 8\nunion A,B: 2\n"
                                             "text A note[\"Inside\"]");
   const MermaidRenderEntry vennEntry = render(vennSource);
-  const auto* vennScene = dynamic_cast<const muffin::mermaid::venn::VennScene*>(vennEntry.scene.get());
+  const auto* vennScene = dynamic_cast<const mufpen::mermaid::venn::VennScene*>(vennEntry.scene.get());
   require(vennEntry.status == MermaidRenderStatus::Ready && vennScene &&
               vennScene->bounds.size() == QSizeF(620.0, 360.0) && !vennScene->useMaxWidth &&
               !vennEntry.metadata.svgUseMaxWidth && vennScene->useDebugLayout && !vennScene->debugCircles.isEmpty() &&
@@ -334,7 +334,7 @@ int main(int argc, char** argv) {
                                               "\"nodeColors\": {\"A\": \"#ff0000\"}}}}%%\n"
                                               "sankey-beta\nA,B,8\nB,C,5\nB,D,3");
   const MermaidRenderEntry sankeyEntry = render(sankeySource);
-  const auto* sankeyScene = dynamic_cast<const muffin::mermaid::sankey::SankeyScene*>(sankeyEntry.scene.get());
+  const auto* sankeyScene = dynamic_cast<const mufpen::mermaid::sankey::SankeyScene*>(sankeyEntry.scene.get());
   require(sankeyEntry.status == MermaidRenderStatus::Ready && sankeyScene && sankeyScene->configuredWidth == 420.0 &&
               sankeyScene->configuredHeight == 260.0 && !sankeyScene->useMaxWidth &&
               !sankeyEntry.metadata.svgUseMaxWidth && sankeyScene->outlinedLabels &&
@@ -351,7 +351,7 @@ int main(int argc, char** argv) {
                      "\"titleColor\": \"#ff0000\", \"titleFontSize\": \"24px\"}}}}%%\n"
                      "treemap-beta\ntitle Revenue Map\n\"Root\"\n  \"A\": 1234.5\n  \"B\": 500");
   const MermaidRenderEntry treemapEntry = render(treemapSource);
-  const auto* treemapScene = dynamic_cast<const muffin::mermaid::treemap::TreemapScene*>(treemapEntry.scene.get());
+  const auto* treemapScene = dynamic_cast<const mufpen::mermaid::treemap::TreemapScene*>(treemapEntry.scene.get());
   const QSize treemapPngSize = pngImage(treemapSource).size();
   require(treemapEntry.status == MermaidRenderStatus::Ready && treemapScene && treemapScene->configuredWidth == 480.0 &&
               treemapScene->configuredHeight == 310.0 && !treemapScene->useMaxWidth &&
@@ -385,7 +385,7 @@ int main(int argc, char** argv) {
                                                "cynefin-beta\nclear\n  \"Standardise\"");
   const MermaidRenderEntry cynefinEntry = render(cynefinSource);
   const QSize cynefinPngSize = pngImage(cynefinSource).size();
-  const auto* cynefinScene = dynamic_cast<const muffin::mermaid::cynefin::CynefinScene*>(cynefinEntry.scene.get());
+  const auto* cynefinScene = dynamic_cast<const mufpen::mermaid::cynefin::CynefinScene*>(cynefinEntry.scene.get());
   require(cynefinEntry.status == MermaidRenderStatus::Ready && cynefinScene && cynefinScene->configuredWidth == 480.0 &&
               cynefinScene->configuredHeight == 360.0 && cynefinScene->configuredPadding == 12.0 &&
               !cynefinScene->useMaxWidth && !cynefinEntry.metadata.svgUseMaxWidth &&
@@ -418,7 +418,7 @@ int main(int argc, char** argv) {
                                                      QStringLiteral("\"fontFamily\":\"DefinitelyMissing, Noto Sans\""));
   const MermaidRenderEntry cynefinFallbackEntry = render(cynefinFallbackSource);
   const auto* cynefinFallbackScene =
-      dynamic_cast<const muffin::mermaid::cynefin::CynefinScene*>(cynefinFallbackEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::cynefin::CynefinScene*>(cynefinFallbackEntry.scene.get());
   require(cynefinFallbackEntry.status == MermaidRenderStatus::Ready && cynefinFallbackScene && cynefinScene &&
               cynefinFallbackScene->labels.first().bounds == cynefinScene->labels.first().bounds &&
               cynefinFallbackEntry.naturalSize == cynefinEntry.naturalSize,
@@ -432,7 +432,7 @@ int main(int argc, char** argv) {
                                                "\"componentFill\":\"#040506\",\"annotationFill\":\"#ff00ff\"}}}}%%\n"
                                                "wardley-beta\ncomponent A [0.5,0.5]");
   const MermaidRenderEntry wardleyEntry = render(wardleySource);
-  const auto* wardleyScene = dynamic_cast<const muffin::mermaid::wardley::WardleyScene*>(wardleyEntry.scene.get());
+  const auto* wardleyScene = dynamic_cast<const mufpen::mermaid::wardley::WardleyScene*>(wardleyEntry.scene.get());
   require(wardleyEntry.status == MermaidRenderStatus::Ready && wardleyScene && wardleyScene->config.width == 900.0 &&
               wardleyScene->config.height == 600.0 && wardleyScene->config.padding == 48.0 &&
               wardleyScene->config.nodeRadius == 6.0 && !wardleyScene->config.showGrid && wardleyScene->useMaxWidth &&
@@ -455,7 +455,7 @@ int main(int argc, char** argv) {
                                                     "a:R --> L:b");
   const MermaidRenderEntry architectureEntry = render(architectureSource);
   const auto* architectureScene =
-      dynamic_cast<const muffin::mermaid::architecture::ArchitectureScene*>(architectureEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::architecture::ArchitectureScene*>(architectureEntry.scene.get());
   require(architectureEntry.status == MermaidRenderStatus::Ready && architectureScene &&
               !architectureScene->useMaxWidth && !architectureEntry.metadata.svgUseMaxWidth &&
               architectureScene->config.padding == QJsonValue(18.0) &&
@@ -477,7 +477,7 @@ int main(int argc, char** argv) {
                                           "\"person_border_color\":\"#654321\"}}}%%\n"
                                           "C4Context\nPerson(user, \"User\")");
   const MermaidRenderEntry c4Entry = render(c4Source);
-  const auto* c4Scene = dynamic_cast<const muffin::mermaid::c4::C4Scene*>(c4Entry.scene.get());
+  const auto* c4Scene = dynamic_cast<const mufpen::mermaid::c4::C4Scene*>(c4Entry.scene.get());
   require(c4Entry.status == MermaidRenderStatus::Ready && c4Scene && !c4Scene->useMaxWidth &&
               !c4Entry.metadata.svgUseMaxWidth && c4Scene->config.diagramMarginX == 24.0 &&
               c4Scene->config.diagramMarginY == 18.0 && c4Scene->config.width == 180.0 &&
@@ -494,7 +494,7 @@ int main(int argc, char** argv) {
                                                 "\"ruleNameColor\": \"#654321\"}}}%%\n"
                                                 "railroad-ebnf-beta\nA = 'a';");
   const MermaidRenderEntry railroadEntry = render(railroadSource);
-  const auto* railroadScene = dynamic_cast<const muffin::mermaid::railroad::RailroadScene*>(railroadEntry.scene.get());
+  const auto* railroadScene = dynamic_cast<const mufpen::mermaid::railroad::RailroadScene*>(railroadEntry.scene.get());
   require(railroadEntry.status == MermaidRenderStatus::Ready && railroadScene && !railroadScene->config.useMaxWidth &&
               !railroadEntry.metadata.svgUseMaxWidth && railroadScene->config.padding == 24.0 &&
               railroadScene->config.fontSize == 20.0 &&
@@ -731,7 +731,7 @@ int main(int argc, char** argv) {
                                              "flowchart TB\nA[Start] --> B[Left]\nA --> C[Right]\n"
                                              "B --> D[End]\nC --> D\nA --> D");
   const MermaidRenderEntry rounded = render(roundedFlow);
-  const auto* roundedScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(rounded.scene.get());
+  const auto* roundedScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(rounded.scene.get());
   require(rounded.status == MermaidRenderStatus::Ready && rounded.scene && roundedScene,
           QStringLiteral("flowchart.curve rounded did not render"));
   bool sawRoundedCorner = false;
@@ -750,11 +750,11 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry dagreSwimlane =
       render(QStringLiteral("%%{init: {\"layout\": \"dagre\"}}%%\n") + swimlaneBody);
   const auto* nativeSwimlaneScene =
-      dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(nativeSwimlane.scene.get());
+      dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(nativeSwimlane.scene.get());
   const auto* linearSwimlaneScene =
-      dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(linearSwimlane.scene.get());
+      dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(linearSwimlane.scene.get());
   const auto* dagreSwimlaneScene =
-      dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(dagreSwimlane.scene.get());
+      dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(dagreSwimlane.scene.get());
   require(nativeSwimlane.status == MermaidRenderStatus::Ready && linearSwimlane.status == MermaidRenderStatus::Ready &&
               dagreSwimlane.status == MermaidRenderStatus::Ready && nativeSwimlaneScene && linearSwimlaneScene &&
               dagreSwimlaneScene &&
@@ -770,7 +770,7 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry unsupportedSwimlane =
       render(QStringLiteral("%%{init: {\"layout\": \"elk\"}}%%\n") + swimlaneBody);
   const auto* fallbackSwimlaneScene =
-      dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(unsupportedSwimlane.scene.get());
+      dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(unsupportedSwimlane.scene.get());
   require(unsupportedSwimlane.status == MermaidRenderStatus::Ready && fallbackSwimlaneScene &&
               std::any_of(fallbackSwimlaneScene->clusters.cbegin(), fallbackSwimlaneScene->clusters.cend(),
                           [](const auto& cluster) { return cluster.swimlane; }),
@@ -779,7 +779,7 @@ int main(int argc, char** argv) {
   const QString edgeRoundedFlow = QStringLiteral("flowchart LR\nA[Start] roundedEdge@--> B[Middle] --> C[End]\n"
                                                  "roundedEdge@{ curve: rounded }");
   const MermaidRenderEntry edgeRounded = render(edgeRoundedFlow);
-  const auto* edgeRoundedScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(edgeRounded.scene.get());
+  const auto* edgeRoundedScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(edgeRounded.scene.get());
   require(edgeRounded.status == MermaidRenderStatus::Ready && edgeRounded.scene && edgeRoundedScene &&
               edgeRoundedScene->edges.size() == 2,
           QStringLiteral("Per-edge rounded flow did not render"));
@@ -819,8 +819,8 @@ int main(int argc, char** argv) {
       QStringLiteral("%%{init: {\"er\": {\"nodeSpacing\": 220, \"rankSpacing\": 180}}}%%\n") + erSource;
   const MermaidRenderEntry normalEr = render(erSource);
   const MermaidRenderEntry configuredEr = render(spacedEr);
-  const auto* normalErScene = dynamic_cast<const muffin::mermaid::er::ErScene*>(normalEr.scene.get());
-  const auto* configuredErScene = dynamic_cast<const muffin::mermaid::er::ErScene*>(configuredEr.scene.get());
+  const auto* normalErScene = dynamic_cast<const mufpen::mermaid::er::ErScene*>(normalEr.scene.get());
+  const auto* configuredErScene = dynamic_cast<const mufpen::mermaid::er::ErScene*>(configuredEr.scene.get());
   require(normalEr.status == MermaidRenderStatus::Ready && configuredEr.status == MermaidRenderStatus::Ready &&
               normalErScene && configuredErScene,
           QStringLiteral("ER spacing probes did not render"));
@@ -841,14 +841,14 @@ int main(int argc, char** argv) {
                      "participant A as A deliberately long participant label for wrapping\n"
                      "participant B as Worker\nA->>B: a deliberately long message for wrapping");
   const MermaidRenderEntry wrapped = render(wrappedSequence);
-  const auto* wrappedScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(wrapped.scene.get());
+  const auto* wrappedScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(wrapped.scene.get());
   require(wrapped.status == MermaidRenderStatus::Ready && wrappedScene && !wrappedScene->participantLabels.isEmpty() &&
               wrappedScene->participantLabels.first().richText.text.contains(QLatin1Char('\n')),
           QStringLiteral("Root wrap directive did not reach sequence text/layout"));
   const QString numberedSequence = QStringLiteral("%%{init: {\"sequence\": {\"showSequenceNumbers\": true}}}%%\n"
                                                   "sequenceDiagram\nA->>B: first\nB-->>A: second");
   const MermaidRenderEntry numbered = render(numberedSequence);
-  const auto* numberedScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(numbered.scene.get());
+  const auto* numberedScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(numbered.scene.get());
   require(numbered.status == MermaidRenderStatus::Ready && numberedScene && numberedScene->sequenceNumbers.size() == 2,
           QStringLiteral("sequence.showSequenceNumbers did not reach text/paint"));
 
@@ -859,8 +859,8 @@ int main(int argc, char** argv) {
       QStringLiteral("%%{init: {\"sequence\": {\"forceMenus\": true}}}%%\n") + sequenceWithMenu;
   const MermaidRenderEntry closedMenu = render(sequenceWithMenu);
   const MermaidRenderEntry forcedMenu = render(forcedSequence);
-  const auto* closedMenuScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(closedMenu.scene.get());
-  const auto* forcedMenuScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(forcedMenu.scene.get());
+  const auto* closedMenuScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(closedMenu.scene.get());
+  const auto* forcedMenuScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(forcedMenu.scene.get());
   require(closedMenu.status == MermaidRenderStatus::Ready && forcedMenu.status == MermaidRenderStatus::Ready &&
               closedMenuScene && forcedMenuScene && !closedMenuScene->forceMenus && forcedMenuScene->forceMenus &&
               closedMenuScene->menus.size() == 1 && forcedMenuScene->menus.size() == 1 &&
@@ -877,7 +877,7 @@ int main(int argc, char** argv) {
   const QString weightedSequence = QStringLiteral("%%{init: {\"sequence\": {\"messageFontWeight\": 700}}}%%\n"
                                                   "sequenceDiagram\nAlice->>Bob: hello");
   const MermaidRenderEntry weighted = render(weightedSequence);
-  const auto* weightedScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(weighted.scene.get());
+  const auto* weightedScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(weighted.scene.get());
   require(weighted.status == MermaidRenderStatus::Ready && weightedScene && !weightedScene->messageLabels.isEmpty() &&
               weightedScene->messageLabels.first().richText.baseWeight == QFont::Bold,
           QStringLiteral("sequence.messageFontWeight did not reach the scene"));
@@ -898,7 +898,7 @@ int main(int argc, char** argv) {
                                                "\"titleFontSize\": \"20px\"}}}%%\n"
                                                "journey\ntitle Configured\nsection S\ntask: 5: Alice");
   const MermaidRenderEntry journeyEntry = render(journeySource);
-  const auto* journeyScene = dynamic_cast<const muffin::mermaid::journey::JourneyScene*>(journeyEntry.scene.get());
+  const auto* journeyScene = dynamic_cast<const mufpen::mermaid::journey::JourneyScene*>(journeyEntry.scene.get());
   require(journeyEntry.status == MermaidRenderStatus::Ready && journeyScene && !journeyScene->config.useMaxWidth &&
               journeyScene->config.diagramMarginX == 80.0 && journeyScene->config.diagramMarginY == 20.0 &&
               journeyScene->config.leftMargin == 175.0 && journeyScene->config.maxLabelWidth == 42.0 &&
@@ -921,7 +921,7 @@ int main(int argc, char** argv) {
                                              "\"axisLabelFactor\": 1.2, \"curveTension\": 0.1}}}%%\n"
                                              "radar-beta\naxis A,B,C\ncurve C {1,2,3}");
   const MermaidRenderEntry radarEntry = render(radarSource);
-  const auto* radarScene = dynamic_cast<const muffin::mermaid::radar::RadarScene*>(radarEntry.scene.get());
+  const auto* radarScene = dynamic_cast<const mufpen::mermaid::radar::RadarScene*>(radarEntry.scene.get());
   require(radarEntry.status == MermaidRenderStatus::Ready && radarScene && !radarEntry.metadata.svgUseMaxWidth &&
               radarScene->config.width == 420.0 && radarScene->config.height == 300.0 &&
               radarScene->config.marginTop == 10.0 && radarScene->config.marginRight == 20.0 &&
@@ -950,12 +950,12 @@ int main(int argc, char** argv) {
                                                "xychart-beta\ntitle Sales\nx-axis [A,B,C]\n"
                                                "y-axis 0 --> 3\nbar [1,2,3]");
   const MermaidRenderEntry xyChartEntry = render(xyChartSource);
-  const auto* xyChartScene = dynamic_cast<const muffin::mermaid::xychart::XYChartScene*>(xyChartEntry.scene.get());
+  const auto* xyChartScene = dynamic_cast<const mufpen::mermaid::xychart::XYChartScene*>(xyChartEntry.scene.get());
   require(xyChartEntry.status == MermaidRenderStatus::Ready && xyChartScene && xyChartScene->config.width == 640.0 &&
               xyChartScene->config.height == 420.0 && xyChartScene->config.titleFontSize == 32.0 &&
               xyChartScene->config.titlePadding == 23.0 && xyChartScene->config.showDataLabel &&
               xyChartScene->config.showDataLabelOutsideBar && !xyChartScene->config.showTitle &&
-              xyChartScene->config.orientation == muffin::mermaid::xychart::XYChartOrientation::Horizontal &&
+              xyChartScene->config.orientation == mufpen::mermaid::xychart::XYChartOrientation::Horizontal &&
               xyChartScene->config.plotReservedSpacePercent == 70.0 && !xyChartScene->config.xAxis.showLabel &&
               xyChartScene->config.xAxis.labelFontSize == 24.0 && xyChartScene->config.xAxis.labelPadding == 17.0 &&
               !xyChartScene->config.xAxis.showTitle && xyChartScene->config.xAxis.titleFontSize == 26.0 &&
@@ -976,7 +976,7 @@ int main(int argc, char** argv) {
                                                 "\"disableMulticolor\": true}}}%%\n"
                                                 "timeline\ntitle Releases\nAlpha : API ready\nBeta : Ship");
   const MermaidRenderEntry timelineEntry = render(timelineSource);
-  const auto* timelineScene = dynamic_cast<const muffin::mermaid::timeline::TimelineScene*>(timelineEntry.scene.get());
+  const auto* timelineScene = dynamic_cast<const mufpen::mermaid::timeline::TimelineScene*>(timelineEntry.scene.get());
   require(timelineEntry.status == MermaidRenderStatus::Ready && timelineScene &&
               !timelineEntry.metadata.svgUseMaxWidth && timelineScene->config.leftMargin == 210.0 &&
               timelineScene->config.padding == 17.0 && timelineScene->config.disableMulticolor,
@@ -989,7 +989,7 @@ int main(int argc, char** argv) {
                             "\"strokeWidth\": \"7px\"}}}%%\n"
                             "timeline\nOne : first event"));
   const auto* reduxTimelineScene =
-      dynamic_cast<const muffin::mermaid::timeline::TimelineScene*>(reduxTimeline.scene.get());
+      dynamic_cast<const mufpen::mermaid::timeline::TimelineScene*>(reduxTimeline.scene.get());
   require(reduxTimeline.status == MermaidRenderStatus::Ready && reduxTimelineScene &&
               reduxTimelineScene->style.strokeWidth == 7.0 &&
               reduxTimelineScene->style.nodeFontWeight == QFont::DemiBold,
@@ -999,7 +999,7 @@ int main(int argc, char** argv) {
                             "\"fontFamily\": \"Courier New\"}}}%%\n"
                             "timeline\nOne"));
   const auto* timelineFontScene =
-      dynamic_cast<const muffin::mermaid::timeline::TimelineScene*>(timelineFont.scene.get());
+      dynamic_cast<const mufpen::mermaid::timeline::TimelineScene*>(timelineFont.scene.get());
   require(timelineFont.status == MermaidRenderStatus::Ready && timelineFontScene &&
               timelineFontScene->style.fontFamily == QLatin1String("Courier New"),
           QStringLiteral("Timeline nested theme fontFamily precedence drifted"));
@@ -1012,7 +1012,7 @@ int main(int argc, char** argv) {
                                               "\"showBits\": false, \"paddingX\": 2, \"paddingY\": 3}}}%%\n"
                                               "packet-beta\ntitle Header\n0-3: \"Type\"\n4-7: \"Code\"");
   const MermaidRenderEntry packetEntry = render(packetSource);
-  const auto* packetScene = dynamic_cast<const muffin::mermaid::packet::PacketScene*>(packetEntry.scene.get());
+  const auto* packetScene = dynamic_cast<const mufpen::mermaid::packet::PacketScene*>(packetEntry.scene.get());
   require(packetEntry.status == MermaidRenderStatus::Ready && packetScene && !packetEntry.metadata.svgUseMaxWidth &&
               !packetScene->showBits && packetScene->svgWidth == 82.0 &&
               packetScene->config.rowHeight.toDouble() == 50.0 && packetScene->config.bitWidth.toDouble() == 10.0 &&
@@ -1033,7 +1033,7 @@ int main(int argc, char** argv) {
                                               "kanban\n  todo[Todo]\n"
                                               "    task1[Write docs]@{ ticket: KAN-7 }");
   const MermaidRenderEntry kanbanEntry = render(kanbanSource);
-  const auto* kanbanScene = dynamic_cast<const muffin::mermaid::kanban::KanbanScene*>(kanbanEntry.scene.get());
+  const auto* kanbanScene = dynamic_cast<const mufpen::mermaid::kanban::KanbanScene*>(kanbanEntry.scene.get());
   require(kanbanEntry.status == MermaidRenderStatus::Ready && kanbanScene && !kanbanEntry.metadata.svgUseMaxWidth &&
               kanbanScene->config.sectionWidth.toDouble() == 320.0 && kanbanScene->config.padding.toDouble() == 40.0 &&
               !kanbanScene->useMaxWidth && kanbanScene->interactions.size() == 1 &&
@@ -1042,7 +1042,7 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry inertKanban = render(QStringLiteral("%%{init: {\"kanban\": {\"padding\": 99, "
                                                                "\"useMaxWidth\": false}}}%%\n"
                                                                "kanban\n  todo[Todo]\n    task1[Write docs]"));
-  const auto* inertKanbanScene = dynamic_cast<const muffin::mermaid::kanban::KanbanScene*>(inertKanban.scene.get());
+  const auto* inertKanbanScene = dynamic_cast<const mufpen::mermaid::kanban::KanbanScene*>(inertKanban.scene.get());
   require(inertKanban.status == MermaidRenderStatus::Ready && inertKanbanScene &&
               inertKanbanScene->config.padding.toDouble() == 10.0 && inertKanbanScene->useMaxWidth,
           QStringLiteral("Inert Kanban padding/useMaxWidth leaked into rendering"));
@@ -1060,7 +1060,7 @@ int main(int argc, char** argv) {
                                                "mindmap\n  root((Root))\n"
                                                "    A[alpha beta gamma delta epsilon]\n    B[Beta]");
   const MermaidRenderEntry mindmapEntry = render(mindmapSource);
-  const auto* mindmapScene = dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(mindmapEntry.scene.get());
+  const auto* mindmapScene = dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(mindmapEntry.scene.get());
   require(mindmapEntry.status == MermaidRenderStatus::Ready && mindmapScene && !mindmapEntry.metadata.svgUseMaxWidth &&
               mindmapScene->config.padding.toDouble() == 20.0 && mindmapScene->config.maxNodeWidth.toDouble() == 80.0 &&
               !mindmapScene->config.htmlLabels && !mindmapScene->config.markdownAutoWrap &&
@@ -1069,15 +1069,15 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry inertMindmap =
       render(QStringLiteral("%%{init: {\"mindmap\": {\"layoutAlgorithm\": \"dagre\"}}}%%\n"
                             "mindmap\n  root((Root))\n    Child"));
-  const auto* inertMindmapScene = dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(inertMindmap.scene.get());
+  const auto* inertMindmapScene = dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(inertMindmap.scene.get());
   const MermaidRenderEntry fallbackMindmap = render(QStringLiteral("%%{init: {\"layout\": \"missing\"}}%%\n"
                                                                    "mindmap\n  root((Root))\n    Child"));
   const auto* fallbackMindmapScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(fallbackMindmap.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(fallbackMindmap.scene.get());
   const MermaidRenderEntry uppercaseLayoutMindmap = render(QStringLiteral("%%{init: {\"layout\": \"DAGRE\"}}%%\n"
                                                                           "mindmap\n  root((Root))\n    Child"));
   const auto* uppercaseLayoutMindmapScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(uppercaseLayoutMindmap.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(uppercaseLayoutMindmap.scene.get());
   require(inertMindmap.status == MermaidRenderStatus::Ready && inertMindmapScene &&
               inertMindmapScene->effectiveLayout == QLatin1String("cose-bilkent") &&
               fallbackMindmap.status == MermaidRenderStatus::Ready && fallbackMindmapScene &&
@@ -1097,10 +1097,10 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry configuredBlock = render(configuredBlockSource);
   const MermaidRenderEntry inertBlock =
       render(QStringLiteral("%%{init: {\"block\": {\"useWidth\": 999}}}%%\n") + blockBody);
-  const auto* baselineBlockScene = dynamic_cast<const muffin::mermaid::block::BlockScene*>(baselineBlock.scene.get());
+  const auto* baselineBlockScene = dynamic_cast<const mufpen::mermaid::block::BlockScene*>(baselineBlock.scene.get());
   const auto* configuredBlockScene =
-      dynamic_cast<const muffin::mermaid::block::BlockScene*>(configuredBlock.scene.get());
-  const auto* inertBlockScene = dynamic_cast<const muffin::mermaid::block::BlockScene*>(inertBlock.scene.get());
+      dynamic_cast<const mufpen::mermaid::block::BlockScene*>(configuredBlock.scene.get());
+  const auto* inertBlockScene = dynamic_cast<const mufpen::mermaid::block::BlockScene*>(inertBlock.scene.get());
   require(baselineBlock.status == MermaidRenderStatus::Ready && configuredBlock.status == MermaidRenderStatus::Ready &&
               inertBlock.status == MermaidRenderStatus::Ready && baselineBlockScene && configuredBlockScene &&
               inertBlockScene && !configuredBlock.metadata.svgUseMaxWidth &&
@@ -1120,9 +1120,9 @@ int main(int argc, char** argv) {
   const MermaidRenderEntry baselineGitGraph = render(gitGraphBody);
   const MermaidRenderEntry configuredGitGraph = render(configuredGitGraphSource);
   const auto* baselineGitGraphScene =
-      dynamic_cast<const muffin::mermaid::gitgraph::GitGraphScene*>(baselineGitGraph.scene.get());
+      dynamic_cast<const mufpen::mermaid::gitgraph::GitGraphScene*>(baselineGitGraph.scene.get());
   const auto* configuredGitGraphScene =
-      dynamic_cast<const muffin::mermaid::gitgraph::GitGraphScene*>(configuredGitGraph.scene.get());
+      dynamic_cast<const mufpen::mermaid::gitgraph::GitGraphScene*>(configuredGitGraph.scene.get());
   require(baselineGitGraph.status == MermaidRenderStatus::Ready &&
               configuredGitGraph.status == MermaidRenderStatus::Ready && baselineGitGraphScene &&
               configuredGitGraphScene && !configuredGitGraph.metadata.svgUseMaxWidth &&
@@ -1145,7 +1145,7 @@ int main(int argc, char** argv) {
                                                 "\"extensionIcons\": {\".js\": \"code\"}}}}%%\n"
                                                 "treeView-beta\nproject/\n  README.md\n  app.js");
   const MermaidRenderEntry treeViewEntry = render(treeViewSource);
-  const auto* treeViewScene = dynamic_cast<const muffin::mermaid::treeview::TreeViewScene*>(treeViewEntry.scene.get());
+  const auto* treeViewScene = dynamic_cast<const mufpen::mermaid::treeview::TreeViewScene*>(treeViewEntry.scene.get());
   require(treeViewEntry.status == MermaidRenderStatus::Ready && treeViewScene &&
               !treeViewEntry.metadata.svgUseMaxWidth && treeViewScene->config.rowIndent.toDouble() == 22.0 &&
               treeViewScene->config.paddingX.toDouble() == 8.0 && treeViewScene->config.paddingY.toDouble() == 7.0 &&
@@ -1172,7 +1172,7 @@ int main(int argc, char** argv) {
                                              "section Delivery\nBuild :build, 2024-01-01, 3d\n"
                                              "Ship :ship, after build, 2d");
   const MermaidRenderEntry ganttEntry = render(ganttSource);
-  const auto* ganttScene = dynamic_cast<const muffin::mermaid::gantt::GanttScene*>(ganttEntry.scene.get());
+  const auto* ganttScene = dynamic_cast<const mufpen::mermaid::gantt::GanttScene*>(ganttEntry.scene.get());
   require(ganttEntry.status == MermaidRenderStatus::Ready && ganttScene && !ganttEntry.metadata.svgUseMaxWidth &&
               ganttScene->config.useWidth == 640.0 && ganttScene->config.titleTopMargin == 17.0 &&
               ganttScene->config.barHeight == 28.0 && ganttScene->config.barGap == 9.0 &&
@@ -1199,8 +1199,8 @@ int main(int argc, char** argv) {
                                                    "\"fontSize\": \"2ex\"}}}%%\n"
                                                    "mindmap\n  root((Root))\n    Child"));
   const auto* fallbackFontScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(fallbackFontEntry.scene.get());
-  const auto* notoFontScene = dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(notoFontEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(fallbackFontEntry.scene.get());
+  const auto* notoFontScene = dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(notoFontEntry.scene.get());
   require(fallbackFontEntry.status == MermaidRenderStatus::Ready &&
               notoFontEntry.status == MermaidRenderStatus::Ready && fallbackFontScene && notoFontScene &&
               fallbackFontScene->style.fontSize > 0.0 &&
@@ -1217,11 +1217,11 @@ int main(int argc, char** argv) {
   const auto defaultThemeEntry = render(QStringLiteral("%%{init: {\"theme\": \"default\", \"look\": \"neo\"}}%%\n"
                                                        "mindmap\n  root((Root))\n    Child"));
   const auto* reduxThemeScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(reduxThemeEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(reduxThemeEntry.scene.get());
   const auto* uppercaseThemeScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(uppercaseThemeEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(uppercaseThemeEntry.scene.get());
   const auto* defaultThemeScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(defaultThemeEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(defaultThemeEntry.scene.get());
   require(reduxThemeScene && uppercaseThemeScene && defaultThemeScene &&
               reduxThemeScene->style.themeName == QLatin1String("redux") &&
               uppercaseThemeScene->style.themeName == QLatin1String("default") &&
@@ -1234,7 +1234,7 @@ int main(int argc, char** argv) {
                                                         "\"strokeWidth\": 7}}}%%\n"
                                                         "mindmap\n  root((Root))\n    Child"));
   const auto* styledMindmapScene =
-      dynamic_cast<const muffin::mermaid::mindmap::MindmapScene*>(styledMindmapEntry.scene.get());
+      dynamic_cast<const mufpen::mermaid::mindmap::MindmapScene*>(styledMindmapEntry.scene.get());
   require(styledMindmapScene && styledMindmapScene->style.mainBkg == QLatin1String("#123456") &&
               styledMindmapScene->style.strokeWidth == 7.0 && !styledMindmapScene->nodes.isEmpty() &&
               std::all_of(
@@ -1248,7 +1248,7 @@ int main(int argc, char** argv) {
     const MermaidRenderEntry entry = render(QStringLiteral("%%{init: {\"theme\": \"neo\", \"look\": \"neo\"%1}}%%\n"
                                                            "mindmap\n  root((Root))\n    Child")
                                                 .arg(vars));
-    return std::dynamic_pointer_cast<const muffin::mermaid::mindmap::MindmapScene>(entry.scene);
+    return std::dynamic_pointer_cast<const mufpen::mermaid::mindmap::MindmapScene>(entry.scene);
   };
   const auto shadowAbsent = shadowScene(QString(), false);
   const auto shadowNone = shadowScene(QStringLiteral("none"), true);

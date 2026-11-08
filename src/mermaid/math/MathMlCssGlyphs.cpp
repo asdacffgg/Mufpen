@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 bool findPaintOrigin(const MathRenderNode* node, const MathRenderNode* target, QPointF origin, QPointF* result) {
   if (!node || !target || !result)
@@ -367,4 +367,4 @@ CssTokenLineMetrics cssTokenLineMetrics(const MathRenderNode* node, qreal render
   return result;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

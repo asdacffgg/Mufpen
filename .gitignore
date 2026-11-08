@@ -7,7 +7,7 @@ Debug/
 Release/
 RelWithDebInfo/
 MinSizeRel/
-Muffin-dist/
+Mufpen-dist/
 
 # ======================== Conan ========================
 .conan/

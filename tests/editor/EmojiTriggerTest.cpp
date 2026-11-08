@@ -15,7 +15,7 @@
 #include <QKeyEvent>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -120,7 +120,7 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("EmojiTriggerTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

@@ -32,7 +32,7 @@
 #include <algorithm>
 #include <cmath>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -198,7 +198,7 @@ int main(int argc, char** argv) {
   require(root.value(QStringLiteral("font")).toObject().value(QStringLiteral("mode")).toString() ==
               QLatin1String("bundled"),
           QStringLiteral("Golden-pixel fixed font metadata is missing"));
-  const QString failDir = QDir::tempPath() + QStringLiteral("/muffin-golden-pixel-fail");
+  const QString failDir = QDir::tempPath() + QStringLiteral("/mufpen-golden-pixel-fail");
 
   int failures = 0;
   int highDpiCases = 0;

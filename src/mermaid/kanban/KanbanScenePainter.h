@@ -4,8 +4,8 @@
 
 class QPainter;
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 
 void paintKanbanScene(const KanbanScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

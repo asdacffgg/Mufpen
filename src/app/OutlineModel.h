@@ -5,7 +5,7 @@
 #include <QAbstractItemModel>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 // Compact outline model. Entries stay in document order and hierarchy is represented by integer
 // links, avoiding one heap-allocated QTreeWidgetItem plus several QVariants per heading.
@@ -41,4 +41,4 @@ private:
   bool foldable_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

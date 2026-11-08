@@ -21,7 +21,7 @@
 #include "theme/DocumentCounterCache.h"
 #include "theme/ThemeManager.h"
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 struct ProbeTotals {
   qsizetype calls = 0;
@@ -32,8 +32,8 @@ QJsonArray shadowRasters;
 QJsonArray boxRasters;
 QJsonArray compactBoxRasters;
 void messages(QtMsgType type, const QMessageLogContext& context, const QString& message) {
-  if (qstrcmp(context.category, "muffin.perf.detail") == 0 || qstrcmp(context.category, "muffin.perf.css") == 0 ||
-      qstrcmp(context.category, "muffin.perf.paint") == 0) {
+  if (qstrcmp(context.category, "mufpen.perf.detail") == 0 || qstrcmp(context.category, "mufpen.perf.css") == 0 ||
+      qstrcmp(context.category, "mufpen.perf.paint") == 0) {
     const auto parts = message.split(' ', Qt::SkipEmptyParts);
     if (parts.size() == 3 && parts[0] == "paint.boxCompact") {
       compactBoxRasters.append(QJsonArray{parts[1].toInt(), parts[2].toInt()});
@@ -156,15 +156,15 @@ int main(int argc, char** argv) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
   QLoggingCategory::setFilterRules(
-      QString(qEnvironmentVariableIsSet("MUFFIN_THEME_LAYOUT_DETAIL") ? "muffin.perf.detail.debug=true"
-                                                                      : "muffin.perf.detail.debug=false") +
-      (qEnvironmentVariableIsSet("MUFFIN_THEME_CSS_DETAIL") ? "\nmuffin.perf.css.debug=true"
-                                                            : "\nmuffin.perf.css.debug=false") +
-      (qEnvironmentVariableIsSet("MUFFIN_THEME_PAINT_DETAIL") ? "\nmuffin.perf.paint.debug=true"
-                                                              : "\nmuffin.perf.paint.debug=false"));
+      QString(qEnvironmentVariableIsSet("MUFPEN_THEME_LAYOUT_DETAIL") ? "mufpen.perf.detail.debug=true"
+                                                                      : "mufpen.perf.detail.debug=false") +
+      (qEnvironmentVariableIsSet("MUFPEN_THEME_CSS_DETAIL") ? "\nmufpen.perf.css.debug=true"
+                                                            : "\nmufpen.perf.css.debug=false") +
+      (qEnvironmentVariableIsSet("MUFPEN_THEME_PAINT_DETAIL") ? "\nmufpen.perf.paint.debug=true"
+                                                              : "\nmufpen.perf.paint.debug=false"));
   qInstallMessageHandler(messages);
   if (argc < 3) {
-    std::fprintf(stderr, "Usage: MuffinThemePerformanceProbe output.json MiB [theme.css]\n");
+    std::fprintf(stderr, "Usage: MufpenThemePerformanceProbe output.json MiB [theme.css]\n");
     return 2;
   }
   const double mib = QString::fromLocal8Bit(argv[2]).toDouble();
@@ -172,13 +172,13 @@ int main(int argc, char** argv) {
     return 2;
   const auto path =
       argc > 3 ? QString::fromLocal8Bit(argv[3])
-               : QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css");
+               : QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css");
   QJsonArray rows;
-  if (qEnvironmentVariableIsSet("MUFFIN_THEME_LIFECYCLE_ONLY")) {
+  if (qEnvironmentVariableIsSet("MUFPEN_THEME_LIFECYCLE_ONLY")) {
     QTemporaryDir settings;
     if (!settings.isValid())
       return 2;
-    QCoreApplication::setOrganizationName("MuffinBenchmarks");
+    QCoreApplication::setOrganizationName("MufpenBenchmarks");
     QCoreApplication::setApplicationName("ThemeLoadProbe");
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
@@ -250,7 +250,7 @@ int main(int argc, char** argv) {
     return 0;
   }
   DocumentSession session;
-  const QString inputPath = qEnvironmentVariable("MUFFIN_THEME_PROBE_DOCUMENT");
+  const QString inputPath = qEnvironmentVariable("MUFPEN_THEME_PROBE_DOCUMENT");
   QByteArray inputDigest;
   rows.append(measure("parse", [&] {
     if (inputPath.isEmpty())
@@ -265,8 +265,8 @@ int main(int argc, char** argv) {
     }
   }));
   enableThemePerformance(true);
-  const bool managerDocument = qEnvironmentVariableIsSet("MUFFIN_THEME_MANAGER_DOCUMENT");
-  const bool realSwitch = managerDocument || qEnvironmentVariableIsSet("MUFFIN_THEME_REAL_SWITCH");
+  const bool managerDocument = qEnvironmentVariableIsSet("MUFPEN_THEME_MANAGER_DOCUMENT");
+  const bool realSwitch = managerDocument || qEnvironmentVariableIsSet("MUFPEN_THEME_REAL_SWITCH");
   std::unique_ptr<ThemeManager> documentManager;
   const auto selectedId = QFileInfo(path).completeBaseName().toLower();
   ThemeDefinition definition;
@@ -330,7 +330,7 @@ int main(int argc, char** argv) {
   QImage lastImage;
   QJsonArray visuals;
   const auto captureVisual = [&](const QString& stage) {
-    if (!qEnvironmentVariableIsSet("MUFFIN_FIRST_LAYOUT_ONLY"))
+    if (!qEnvironmentVariableIsSet("MUFPEN_FIRST_LAYOUT_ONLY"))
       return;
     QJsonArray geometry;
     const auto rectJson = [](QRectF r) { return QJsonArray{r.x(), r.y(), r.width(), r.height()}; };
@@ -370,7 +370,7 @@ int main(int argc, char** argv) {
       QJsonObject{{"stage", "cold_selection_to_paint"}, {"wall_ms", selectionClock.nsecsElapsed() / 1e6}});
   captureVisual("first_viewport_paint");
   rows.append(measure("warm_viewport_paint", paint));
-  if (qEnvironmentVariableIsSet("MUFFIN_FIRST_LAYOUT_ONLY")) {
+  if (qEnvironmentVariableIsSet("MUFPEN_FIRST_LAYOUT_ONLY")) {
     const auto selected = theme;
     const auto selectedSource = definition.sourceSheet;
     for (int round = 0; round < 2; ++round) {
@@ -478,9 +478,9 @@ int main(int argc, char** argv) {
                      {"selection_callbacks", selectionCallbacks},
                      {"selection_to_paint", selectionToPaint},
                      {"qt_version", qVersion()},
-                     {"detailed", qEnvironmentVariableIsSet("MUFFIN_THEME_LAYOUT_DETAIL")},
-                     {"css_detailed", qEnvironmentVariableIsSet("MUFFIN_THEME_CSS_DETAIL")},
-                     {"paint_detailed", qEnvironmentVariableIsSet("MUFFIN_THEME_PAINT_DETAIL")},
+                     {"detailed", qEnvironmentVariableIsSet("MUFPEN_THEME_LAYOUT_DETAIL")},
+                     {"css_detailed", qEnvironmentVariableIsSet("MUFPEN_THEME_CSS_DETAIL")},
+                     {"paint_detailed", qEnvironmentVariableIsSet("MUFPEN_THEME_PAINT_DETAIL")},
                      {"MiB", mib},
                      {"document", inputPath},
                      {"document_sha256", QString::fromLatin1(inputDigest)},
@@ -490,7 +490,7 @@ int main(int argc, char** argv) {
                      {"full_counter_reference_matches", true},
                      {"visuals", visuals},
                      {"measurements", rows}};
-  if (qEnvironmentVariableIsSet("MUFFIN_FIRST_LAYOUT_ONLY"))
+  if (qEnvironmentVariableIsSet("MUFPEN_FIRST_LAYOUT_ONLY"))
     lastImage.save(QString::fromLocal8Bit(argv[1]) + ".png");
   output.write(QJsonDocument(result).toJson(QJsonDocument::Indented));
   return 0;

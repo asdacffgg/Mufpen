@@ -34,7 +34,7 @@ class QResizeEvent;
 class QTimer;
 class QVariant;
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentSession;
 class EditorController;
@@ -68,7 +68,7 @@ struct SourceEditorColors {
 
 // Source editor whose text remains in DocumentSession::PieceTable. It owns no
 // QTextDocument and creates QTextLayout objects only for visible logical lines.
-class MUFFIN_UI_EXPORT VirtualSourceEdit final : public QAbstractScrollArea {
+class MUFPEN_UI_EXPORT VirtualSourceEdit final : public QAbstractScrollArea {
   Q_OBJECT
 
 public:
@@ -262,4 +262,4 @@ private:
   mutable QList<int> layoutLru_;
 };
 
-} // namespace muffin
+} // namespace mufpen

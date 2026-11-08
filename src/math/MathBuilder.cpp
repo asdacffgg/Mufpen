@@ -21,7 +21,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QString firstAvailableFontFamily(std::initializer_list<QString> candidates) {
@@ -1852,4 +1852,4 @@ qreal MathBuilder::dimensionToPoints(const QString& value) const {
   return math::dimensionToPoints(value, options_.fontPointSize(), options_.basePointSize(), textFontPt);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

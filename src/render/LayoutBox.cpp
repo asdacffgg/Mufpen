@@ -10,7 +10,7 @@
 #include <QPainterPath>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 
 QTransform elementPaintTransform(const ThemeElementPaintStyle& style, const QRectF& rect, qreal zoom) {
   QTransform transform;
@@ -160,4 +160,4 @@ void paintLayoutBox(QPainter& painter, const LayoutBox& box, QPointF offset, con
   painter.restore();
 }
 
-} // namespace muffin
+} // namespace mufpen

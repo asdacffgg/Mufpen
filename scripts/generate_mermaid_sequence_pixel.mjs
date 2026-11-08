@@ -474,14 +474,14 @@ try {
       mathGlyphBox=await page.$$eval("math mi,math mo",(nodes,text)=>{
         const node=nodes.find((candidate)=>(candidate.textContent ?? "")===text);
         if(!node) return null;
-        node.setAttribute("data-muffin-glyph-oracle","");
+        node.setAttribute("data-mufpen-glyph-oracle","");
         const rect=node.getBoundingClientRect();
         return {x:Number(rect.x.toFixed(3)),y:Number(rect.y.toFixed(3)),
           width:Number(rect.width.toFixed(3)),height:Number(rect.height.toFixed(3))};
       },cases[i].mathGlyph);
       if(!mathGlyphBox)
         throw new Error(`${cases[i].id}: Math glyph ${cases[i].mathGlyph} was not found`);
-      const selector="[data-muffin-glyph-oracle]";
+      const selector="[data-mufpen-glyph-oracle]";
       const clip=await page.$eval(selector,(node)=>{
         const rect=node.getBoundingClientRect();
         return {x:rect.left,y:rect.top,width:Math.max(1,rect.width),
@@ -502,7 +502,7 @@ try {
         const root=document.querySelector("svg");
         for(const node of root.querySelectorAll("*"))
           node.style.removeProperty("visibility");
-        root.querySelector(selector)?.removeAttribute("data-muffin-glyph-oracle");
+        root.querySelector(selector)?.removeAttribute("data-mufpen-glyph-oracle");
       },selector);
     }
     if(cases[i].verticalDelimiter) {
@@ -516,7 +516,7 @@ try {
           .sort((left,right)=>left.rect.left-right.rect.left||
             left.rect.top-right.rect.top)
           .map(({node,index,text,rect},delimiterIndex)=>{
-            node.setAttribute("data-muffin-delimiter-oracle",String(delimiterIndex));
+            node.setAttribute("data-mufpen-delimiter-oracle",String(delimiterIndex));
             return {index,text,box:{x:Number(rect.x.toFixed(3)),
               y:Number(rect.y.toFixed(3)),width:Number(rect.width.toFixed(3)),
               height:Number(rect.height.toFixed(3))}};
@@ -525,7 +525,7 @@ try {
         throw new Error(`${cases[i].id}: no MathML delimiter nodes were found`);
       mathDelimiters=[];
       for(let delimiterIndex=0;delimiterIndex<delimiterNodes.length;++delimiterIndex) {
-        const selector=`[data-muffin-delimiter-oracle="${delimiterIndex}"]`;
+        const selector=`[data-mufpen-delimiter-oracle="${delimiterIndex}"]`;
         const clip=await page.$eval(selector,(node)=>{
           const rect=node.closest("math").getBoundingClientRect();
           return {x:rect.left,y:rect.top,width:Math.max(1,rect.width),
@@ -562,8 +562,8 @@ try {
       }
       await page.evaluate(()=>{
         for(const node of document.querySelectorAll(
-            "[data-muffin-delimiter-oracle]"))
-          node.removeAttribute("data-muffin-delimiter-oracle");
+            "[data-mufpen-delimiter-oracle]"))
+          node.removeAttribute("data-mufpen-delimiter-oracle");
       });
     }
     if(cases[i].mathTokenOracle||cases[i].mathPhaseOracle) {
@@ -588,7 +588,7 @@ try {
         };
         return nodes.map((node,index)=>{
           const role=tokenRole(node);
-          node.setAttribute("data-muffin-token-role",role);
+          node.setAttribute("data-mufpen-token-role",role);
           const rect=node.getBoundingClientRect();
           return {index,path:nodePath(node),tag:node.tagName,
             text:node.textContent ?? "",role,
@@ -601,7 +601,7 @@ try {
         mathTokenGroups=[];
         for(const role of [...new Set(mathTokens.map((token)=>token.role))]) {
           if(role==="large-operator") continue;
-          const selector=`[data-muffin-token-role="${role}"]`;
+          const selector=`[data-mufpen-token-role="${role}"]`;
           const clip=await page.$$eval(selector,(nodes)=>{
             const rects=nodes.map((node)=>node.getBoundingClientRect());
             const left=Math.min(...rects.map((rect)=>rect.left));
@@ -668,7 +668,7 @@ try {
           omitBackground:true,clip});
         const components=[];
         for(const role of [...new Set(mathTokens.map((token)=>token.role))]) {
-          const selector=`[data-muffin-token-role="${role}"]`;
+          const selector=`[data-mufpen-token-role="${role}"]`;
           await page.evaluate((selector)=>{
             const root=document.querySelector("svg");
             for(const node of root.querySelectorAll("*")) node.style.visibility="hidden";
@@ -711,8 +711,8 @@ try {
     }
     if(mathTokens) {
       await page.evaluate(()=>{
-        for(const node of document.querySelectorAll("[data-muffin-token-role]"))
-          node.removeAttribute("data-muffin-token-role");
+        for(const node of document.querySelectorAll("[data-mufpen-token-role]"))
+          node.removeAttribute("data-mufpen-token-role");
       });
     }
     let cropFile;

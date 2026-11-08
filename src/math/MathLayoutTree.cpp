@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 std::unique_ptr<MathLayoutNode> emptyLayoutNode() {
@@ -289,4 +289,4 @@ MathVListEntry makeLayoutVListKern(qreal size) {
   return entry;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

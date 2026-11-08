@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 void NodeIndex::rebuild(MarkdownNode& root) {
   rootPtr_ = &root;
@@ -108,4 +108,4 @@ void NodeIndex::ensureFreshOrder() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

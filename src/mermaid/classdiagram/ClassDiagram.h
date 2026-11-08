@@ -11,7 +11,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 
 enum class ClassErrorStage { Detector, Lexer, Parser, Semantic, Resource };
 enum class ClassErrorCode {
@@ -152,4 +152,4 @@ QString classErrorStageName(ClassErrorStage stage);
 QString classErrorCodeName(ClassErrorCode code);
 QString formatClassDiagnostic(const ClassDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

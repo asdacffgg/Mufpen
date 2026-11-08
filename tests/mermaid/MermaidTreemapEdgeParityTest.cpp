@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 #endif
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
-  muffin::mermaid::MermaidFontRegistry::ensureLoaded();
+  mufpen::mermaid::MermaidFontRegistry::ensureLoaded();
   require(argc == 2, QStringLiteral("Expected Treemap config fixture"));
   QFile file(QString::fromLocal8Bit(argv[1]));
   require(file.open(QIODevice::ReadOnly), file.errorString());

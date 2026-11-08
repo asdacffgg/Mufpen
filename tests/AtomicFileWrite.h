@@ -6,7 +6,7 @@
 #include <QString>
 #include <QThread>
 
-namespace muffin::test {
+namespace mufpen::test {
 
 // Model an external atomic writer independently of notification/UI assertions.
 // Windows can briefly deny replacement while another process inspects a file.
@@ -51,4 +51,4 @@ inline bool writeFileAtomically(const QString& path, const QByteArray& data, QSt
   }
 }
 
-} // namespace muffin::test
+} // namespace mufpen::test

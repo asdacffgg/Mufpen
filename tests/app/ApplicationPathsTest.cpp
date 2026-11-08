@@ -10,19 +10,19 @@
 #include <QStandardPaths>
 #include <QTemporaryDir>
 
-using namespace muffin;
+using namespace mufpen;
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  app.setOrganizationName("MuffinStorageTest");
+  app.setOrganizationName("MufpenStorageTest");
   app.setApplicationName("Portable");
   QStandardPaths::setTestModeEnabled(true);
   QTemporaryDir directory;
   require(directory.isValid(), "storage fixture directory");
-  const auto executable = directory.filePath("Muffin.exe");
+  const auto executable = directory.filePath("Mufpen.exe");
   QString error;
   if (app.arguments().contains("--portable")) {
-    QFile marker(directory.filePath("Muffin.portable"));
+    QFile marker(directory.filePath("Mufpen.portable"));
     require(marker.open(QIODevice::WriteOnly), "portable marker");
     marker.close();
     if (app.arguments().contains("--unwritable")) {

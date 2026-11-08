@@ -20,7 +20,7 @@ class QToolButton;
 class QTreeView;
 class QTimer;
 
-namespace muffin {
+namespace mufpen {
 
 class OutlineModel;
 class FileTreeModel;
@@ -42,7 +42,7 @@ struct InlineValidation {
   QString errorText;
 };
 
-class MUFFIN_UI_EXPORT SidebarWidget final : public QWidget {
+class MUFPEN_UI_EXPORT SidebarWidget final : public QWidget {
   Q_OBJECT
 
 public:
@@ -91,7 +91,7 @@ public:
   void beginInlineCreate(QString tempPath);
 
 signals:
-  void panelChanged(muffin::SidebarWidget::Panel panel);
+  void panelChanged(mufpen::SidebarWidget::Panel panel);
   void newWindowRequested();
   void newFileRequested(QString directory);
   void newFolderRequested(QString directory);
@@ -104,9 +104,9 @@ signals:
   void outlineActivated(NodeId nodeId, SourceRange sourceRange);
   // Inline-edit lifecycle, driven by the file-tree delegate. Validate is synchronous with an
   // out-param so the delegate can decide commit-vs-keep-open on the same call.
-  void inlineValidateRequested(muffin::InlineEditContext ctx, QString name, muffin::InlineValidation* out);
-  void inlineCommitRequested(muffin::InlineEditContext ctx, QString name);
-  void inlineCancelRequested(muffin::InlineEditContext ctx);
+  void inlineValidateRequested(mufpen::InlineEditContext ctx, QString name, mufpen::InlineValidation* out);
+  void inlineCommitRequested(mufpen::InlineEditContext ctx, QString name);
+  void inlineCancelRequested(mufpen::InlineEditContext ctx);
 
 private:
   void changeEvent(QEvent* event) override;
@@ -189,4 +189,4 @@ private:
   QMetaObject::Connection directoryLoadedConn_;
 };
 
-} // namespace muffin
+} // namespace mufpen

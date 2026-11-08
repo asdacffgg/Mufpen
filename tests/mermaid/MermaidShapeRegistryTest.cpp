@@ -11,9 +11,9 @@
 
 #include <cstdlib>
 
-using muffin::mermaid::flowchart::canonicalShape;
-using muffin::mermaid::flowchart::nativeShapeCanonicalNames;
-using muffin::mermaid::flowchart::upstreamShortNames;
+using mufpen::mermaid::flowchart::canonicalShape;
+using mufpen::mermaid::flowchart::nativeShapeCanonicalNames;
+using mufpen::mermaid::flowchart::upstreamShortNames;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

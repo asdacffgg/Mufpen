@@ -13,7 +13,7 @@
 #include <QSignalBlocker>
 #include <QVBoxLayout>
 
-muffin::PrefsEditorPage::PrefsEditorPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsEditorPage::PrefsEditorPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(14);
@@ -183,7 +183,7 @@ muffin::PrefsEditorPage::PrefsEditorPage(QWidget* parent) : PreferencesPage(pare
   wireBoolSetting(emojiAutocompleteCheck_, QStringLiteral("editor/emojiAutocomplete"));
   wireBoolSetting(showBlockSourceCheck_, QStringLiteral("editor/showBlockSource"));
   wireBoolSetting(blockHandlesCheck_, QStringLiteral("editor/blockHandlesEnabled"));
-  connect(blockHandlesCheck_, &QCheckBox::toggled, this, &muffin::PrefsEditorPage::blockHandlesChanged);
+  connect(blockHandlesCheck_, &QCheckBox::toggled, this, &mufpen::PrefsEditorPage::blockHandlesChanged);
   wireBoolSetting(showMermaidAsSourceCheck_, QStringLiteral("editor/showMermaidAsSource"));
   wireBoolSetting(copyAsMarkdownCheck_, QStringLiteral("editor/copyAsMarkdown"));
   wireBoolSetting(copyLineWhenNoSelectionCheck_, QStringLiteral("editor/copyLineNoSelection"));
@@ -208,10 +208,10 @@ muffin::PrefsEditorPage::PrefsEditorPage(QWidget* parent) : PreferencesPage(pare
   });
   wireBoolSetting(typewriterCursorMiddleCheck_, QStringLiteral("editor/typewriterCursorMiddle"));
   connect(disableTypewriterFocusButton_, &QPushButton::clicked, this,
-          &muffin::PrefsEditorPage::disableTypewriterFocusRequested);
+          &mufpen::PrefsEditorPage::disableTypewriterFocusRequested);
 }
 
-void muffin::PrefsEditorPage::retranslateUi() {
+void mufpen::PrefsEditorPage::retranslateUi() {
   indentLabel_->setText(tr("Default Indent"));
   indentDescLabel_->setText(tr("Only effective for references and lists generated via menu bar or shortcuts"));
   rebuildCombo(indentCombo_, {QStringLiteral("2"), QStringLiteral("4"), QStringLiteral("8")});
@@ -254,7 +254,7 @@ void muffin::PrefsEditorPage::retranslateUi() {
   disableTypewriterFocusButton_->setText(tr("Disable Typewriter / Focus Mode"));
 }
 
-void muffin::PrefsEditorPage::loadSettings() {
+void mufpen::PrefsEditorPage::loadSettings() {
   loadComboIndex(indentCombo_, QStringLiteral("editor/indentSize"), 0);
   loadCheck(alignIndentCheck_, QStringLiteral("editor/alignIndent"), false);
   loadCheck(matchBracketsCheck_, QStringLiteral("editor/matchBrackets"), true);

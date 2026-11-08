@@ -16,7 +16,7 @@
 #include <QApplication>
 #include <QPointer>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -216,7 +216,7 @@ int main(int argc, char** argv) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
   QApplication app(argc, argv);
-  muffin::installEditorAccessibility();
+  mufpen::installEditorAccessibility();
 #define RUN_TEST(test) runTest(#test, test)
   RUN_TEST(testSourceOffsetsAreUtf16Units);
   RUN_TEST(testRenderedAdapterBasics);

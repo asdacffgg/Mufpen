@@ -1021,7 +1021,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::BlockLayoutBuilder</name>
+    <name>mufpen::BlockLayoutBuilder</name>
     <message>
         <location filename="../src/render/BlockLayoutBuilder.cpp" line="504"/>
         <source>Start writing...</source>
@@ -1029,7 +1029,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::CustomCommandUploader</name>
+    <name>mufpen::CustomCommandUploader</name>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="25"/>
         <source>no upload command configured</source>
@@ -1052,7 +1052,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentSession</name>
+    <name>mufpen::DocumentSession</name>
     <message>
         <location filename="../src/document/DocumentSession.cpp" line="872"/>
         <source>Untitled</source>
@@ -1060,7 +1060,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentTab</name>
+    <name>mufpen::DocumentTab</name>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="116"/>
         <location filename="../src/app/DocumentTab.cpp" line="444"/>
@@ -1104,7 +1104,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::EditorView</name>
+    <name>mufpen::EditorView</name>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="115"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1659"/>
@@ -1134,7 +1134,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::FileController</name>
+    <name>mufpen::FileController</name>
     <message>
         <location filename="../src/io/FileController.cpp" line="367"/>
         <source>Open</source>
@@ -1254,7 +1254,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::FileOpenConfirmation</name>
+    <name>mufpen::FileOpenConfirmation</name>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="84"/>
         <source>Open this file?</source>
@@ -1272,7 +1272,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::FilePathOps</name>
+    <name>mufpen::FilePathOps</name>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="182"/>
         <source>path does not exist</source>
@@ -1330,7 +1330,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::FindBarWidget</name>
+    <name>mufpen::FindBarWidget</name>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
         <source>Close</source>
@@ -1384,7 +1384,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::HelpViewerDialog</name>
+    <name>mufpen::HelpViewerDialog</name>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
@@ -1428,7 +1428,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::ImageFileOps</name>
+    <name>mufpen::ImageFileOps</name>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="216"/>
         <source>source or destination directory is unavailable</source>
@@ -1451,7 +1451,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::LanguageManager</name>
+    <name>mufpen::LanguageManager</name>
     <message>
         <location filename="../src/app/LanguageManager.cpp" line="17"/>
         <source>System Default</source>
@@ -1459,7 +1459,7 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::MainWindow</name>
+    <name>mufpen::MainWindow</name>
     <message>
         <source>Parse %1 ms</source>
         <translation type="vanished">구문 분석 %1 ms</translation>
@@ -1620,8 +1620,8 @@ Make it your default editor now?</source>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
@@ -2420,8 +2420,8 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <translation>창 전환</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;플랫폼:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;작성자:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;라이선스:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;웹사이트:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
@@ -4230,7 +4230,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::MarkdownSourceEdit</name>
+    <name>mufpen::MarkdownSourceEdit</name>
     <message>
         <source>(no spelling suggestions)</source>
         <translation type="vanished">(맞춤법 제안 없음)</translation>
@@ -4241,7 +4241,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PreferencesDialog</name>
+    <name>mufpen::PreferencesDialog</name>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="223"/>
         <location filename="../src/app/PreferencesDialog.cpp" line="225"/>
@@ -4360,7 +4360,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsAppearancePage</name>
+    <name>mufpen::PrefsAppearancePage</name>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="143"/>
         <source>Theme</source>
@@ -4423,7 +4423,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsEditorPage</name>
+    <name>mufpen::PrefsEditorPage</name>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="215"/>
         <source>Default Indent</source>
@@ -4589,7 +4589,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsExportPage</name>
+    <name>mufpen::PrefsExportPage</name>
     <message>
         <source>Select Pandoc Executable</source>
         <translation type="vanished">Pandoc 실행 파일 선택</translation>
@@ -4998,7 +4998,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsFilesPage</name>
+    <name>mufpen::PrefsFilesPage</name>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="462"/>
         <source>Startup</source>
@@ -5220,7 +5220,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsGeneralPage</name>
+    <name>mufpen::PrefsGeneralPage</name>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="126"/>
         <source>Checking...</source>
@@ -5300,7 +5300,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsImagePage</name>
+    <name>mufpen::PrefsImagePage</name>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="185"/>
         <source>When Inserting Images</source>
@@ -5464,7 +5464,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsMarkdownPage</name>
+    <name>mufpen::PrefsMarkdownPage</name>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="256"/>
         <source>Markdown Syntax Preferences</source>
@@ -5689,7 +5689,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsSearchPage</name>
+    <name>mufpen::PrefsSearchPage</name>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="120"/>
         <source>Search scope</source>
@@ -5767,7 +5767,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsShortcutsPage</name>
+    <name>mufpen::PrefsShortcutsPage</name>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="115"/>
@@ -5863,7 +5863,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::QuickOpenDialog</name>
+    <name>mufpen::QuickOpenDialog</name>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="82"/>
         <location filename="../src/app/QuickOpenDialog.cpp" line="294"/>
@@ -5921,7 +5921,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::SearchPanelWidget</name>
+    <name>mufpen::SearchPanelWidget</name>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="305"/>
         <source> · Unsaved</source>
@@ -6116,7 +6116,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::SidebarWidget</name>
+    <name>mufpen::SidebarWidget</name>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="323"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1143"/>
@@ -6237,7 +6237,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::SourceEditorWidget</name>
+    <name>mufpen::SourceEditorWidget</name>
     <message>
         <location filename="../src/editor/SourceEditorWidget.cpp" line="224"/>
         <source>Start writing...</source>
@@ -6245,7 +6245,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::StatusBarWidget</name>
+    <name>mufpen::StatusBarWidget</name>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="233"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
@@ -6350,7 +6350,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::TableToolbar</name>
+    <name>mufpen::TableToolbar</name>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="319"/>
         <source>Resize Table</source>
@@ -6383,7 +6383,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::UpdateChecker</name>
+    <name>mufpen::UpdateChecker</name>
     <message>
         <source>The update server returned an invalid version.</source>
         <translation type="vanished">업데이트 서버에서 잘못된 버전을 반환했습니다.</translation>
@@ -6395,7 +6395,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::VirtualSourceEdit</name>
+    <name>mufpen::VirtualSourceEdit</name>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="310"/>
         <source>Markdown source editor</source>
@@ -6438,7 +6438,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsIntegration</name>
+    <name>mufpen::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
         <source>Open with Mufpen</source>
@@ -6456,7 +6456,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsUpdater</name>
+    <name>mufpen::WindowsUpdater</name>
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
@@ -6571,7 +6571,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceReplace</name>
+    <name>mufpen::WorkspaceReplace</name>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="171"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="183"/>
@@ -6597,7 +6597,7 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceSearch</name>
+    <name>mufpen::WorkspaceSearch</name>
     <message>
         <location filename="../src/app/WorkspaceSearch.cpp" line="381"/>
         <source>Folder is unavailable</source>

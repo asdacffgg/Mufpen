@@ -26,7 +26,7 @@
 #include <limits>
 #include <memory>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 

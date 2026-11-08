@@ -23,7 +23,7 @@
 #include <QHash>
 #include <optional>
 
-namespace muffin::mermaid::flowtheme {
+namespace mufpen::mermaid::flowtheme {
 
 enum class FlowThemeId {
   Base,
@@ -483,4 +483,4 @@ struct FlowThemeVariables {
 FlowThemeVariables resolveFlowTheme(FlowThemeId id);
 FlowThemeVariables resolveFlowTheme(FlowThemeId id, const QHash<QString, QString>& overrides);
 
-} // namespace muffin::mermaid::flowtheme
+} // namespace mufpen::mermaid::flowtheme

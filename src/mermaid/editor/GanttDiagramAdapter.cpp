@@ -17,7 +17,7 @@
 #include <cmath>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue scalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -470,4 +470,4 @@ const Diagram& ganttDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

@@ -6,7 +6,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 // The lazy payload owns DefinitionBlock, so both metadata layers need explicit deep-copy support.
 // Keep their field lists in sync with MarkdownNode.h when adding domain state.
@@ -580,4 +580,4 @@ std::unique_ptr<MarkdownNode> MarkdownNode::clone(CloneMode mode) const {
   return copy;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -3,7 +3,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 enum class SequenceTokenKind {
   Eof,
@@ -86,4 +86,4 @@ private:
   bool labelMode_ = false;
 };
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

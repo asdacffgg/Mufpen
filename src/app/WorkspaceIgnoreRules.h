@@ -4,7 +4,7 @@
 #include <QStringView>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 // Compiled gitignore-style rules, relative to the directory containing their
 // source file. Directory pruning is performed by WorkspaceFileIndex, so an
@@ -24,4 +24,4 @@ private:
   QVector<Rule> rules_;
 };
 
-} // namespace muffin
+} // namespace mufpen

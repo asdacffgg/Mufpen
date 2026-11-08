@@ -26,7 +26,7 @@ const effects = [
  ['mask-vendor',`-webkit-mask:${image} center / 24px 16px no-repeat`],
  ['mask-content',`mask-image:${image};mask-origin:content-box;mask-clip:content-box;mask-size:12px 8px;mask-repeat:round space`],
  ['mask-none','mask-image:none'],
- ['mask-missing',"mask-image:url('file:///missing-muffin-mask.png')"],
+ ['mask-missing',"mask-image:url('file:///missing-mufpen-mask.png')"],
  ['mask-filter-opacity','filter:invert(.3);opacity:.6;mask-image:linear-gradient(to right,transparent,black)'],
  ...['add','subtract','intersect','exclude'].map(mode=>['mask-'+mode,
    'mask-image:linear-gradient(to right,black 50%,transparent 50%),linear-gradient(to bottom,black 50%,transparent 50%);mask-composite:'+mode]),

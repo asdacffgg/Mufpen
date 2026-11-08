@@ -12,9 +12,9 @@
 #include <bcrypt.h>
 #endif
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(resourceDigestPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(resourceDigestPerf, "mufpen.perf.detail", QtWarningMsg)
 
 template <typename Append> bool streamResource(QFile& file, const Append& append) {
   QByteArray buffer(256 * 1024, Qt::Uninitialized);
@@ -126,4 +126,4 @@ QByteArray themeContentDigest(QByteArrayView bytes) {
   return QCryptographicHash::hash(bytes, QCryptographicHash::Sha256);
 }
 
-} // namespace muffin
+} // namespace mufpen

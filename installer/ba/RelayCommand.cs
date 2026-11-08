@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     /// <summary>Minimal ICommand for the setup UI (no MVVM toolkit dependency).</summary>
     public class RelayCommand : ICommand

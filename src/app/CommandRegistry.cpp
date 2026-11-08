@@ -3,7 +3,7 @@
 
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 CommandRegistry::CommandRegistry(QObject* parent) : QObject(parent) {
   connect(&ShortcutSettings::instance(), &ShortcutSettings::changed, this, [this] {
@@ -75,4 +75,4 @@ void CommandRegistry::attachHandler(const QString& id, QAction* action) {
   });
 }
 
-} // namespace muffin
+} // namespace mufpen

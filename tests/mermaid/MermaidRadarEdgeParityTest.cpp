@@ -31,7 +31,7 @@
 #include <limits>
 #include <memory>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -198,7 +198,7 @@ void compareConfigCase(QStringList& errors, const QJsonObject& fixture) {
   const QString id = fixture.value(QStringLiteral("id")).toString();
   const QString source = fixture.value(QStringLiteral("source")).toString();
   const MermaidPreprocessResult pre = preprocessDiagram(source);
-  // Muffin retains JSON null until the family adapter applies its fallback;
+  // Mufpen retains JSON null until the family adapter applies its fallback;
   // Mermaid's source-entry snapshot removes the member earlier. Compare the
   // effective sanitized trees while retaining strict string/bool/array/object
   // distinctions for every non-null value.

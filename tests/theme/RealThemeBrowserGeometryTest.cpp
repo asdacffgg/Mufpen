@@ -8,7 +8,7 @@
 #include "render/DocumentLayout.h"
 #include "theme/CssThemeMapper.h"
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void requireNear(qreal actual, qreal expected, const QString& message, qreal tolerance = 1.2) {
   require(qAbs(actual - expected) <= tolerance, message + QString(" actual=%1 expected=%2").arg(actual).arg(expected));
@@ -22,12 +22,12 @@ void boxNear(const QRectF& actual, QJsonArray expected, const QString& message) 
 void testRealThemeBrowserGeometry() {
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/real-theme-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/real-theme-browser.json")).toUtf8())
           .object();
   const auto family = browserLayoutFont(reference).value("muffinfixturesans");
   const auto sources = reference["sources"].toObject();
   for (auto it = sources.begin(); it != sources.end(); ++it) {
-    auto text = readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/") + it.key());
+    auto text = readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/") + it.key());
     text.replace("\r\n", "\n");
     require(QString::fromLatin1(QCryptographicHash::hash(text.toUtf8(), QCryptographicHash::Sha256).toHex()) ==
                 it.value().toString(),
@@ -37,11 +37,11 @@ void testRealThemeBrowserGeometry() {
     const auto entry = value.toObject();
     const auto context = entry["id"].toString();
     auto css =
-        readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes/") + entry["theme"].toString() + ".css") +
+        readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes/") + entry["theme"].toString() + ".css") +
         '\n' + reference["fixedFontCss"].toString();
     css.replace("MuffinFixtureSans", family);
     auto theme = RenderTheme::fromDefinition(
-        CssThemeMapper::fromCss(css, context, QStringLiteral(MUFFIN_SOURCE_DIR "/resources/themes")));
+        CssThemeMapper::fromCss(css, context, QStringLiteral(MUFPEN_SOURCE_DIR "/resources/themes")));
     const auto width = entry["width"].toDouble();
     theme.updateForViewport(width, 1000);
     DocumentSession session;
@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("RealThemeBrowserGeometry");
   QSettings().setValue("markdown/breakOnSingleNewline", false);
   runTest("testRealThemeBrowserGeometry", testRealThemeBrowserGeometry);

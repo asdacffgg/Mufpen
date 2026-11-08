@@ -3,7 +3,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::mermaid::text {
+namespace mufpen::mermaid::text {
 
 // CSS whitespace collapse for SVG text measurement: any run of [\x09-\x0D\x20] (tab, LF, VT,
 // FF, CR, space) becomes a single space — what Chromium's white-space:normal processing leaves
@@ -15,4 +15,4 @@ QString collapsedSvgText(QString value, bool trimEdges = true);
 // quotes stripped, empties dropped.
 QStringList cssFontFamilies(const QString& expression);
 
-} // namespace muffin::mermaid::text
+} // namespace mufpen::mermaid::text

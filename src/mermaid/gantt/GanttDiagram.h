@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 
 enum class GanttErrorKind { Lexer, Parser, Runtime };
 
@@ -71,4 +71,4 @@ public:
   static GanttData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

@@ -19,7 +19,7 @@
 #include <QSize>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 namespace editor_geometry {
 
 // Zones a click/selection can land on (text-bearing content).
@@ -81,4 +81,4 @@ void forEachMultiBlockSelectionBlock(
     const std::function<void(const BlockLayout* block, qsizetype start, qsizetype end)>& visit);
 
 } // namespace editor_geometry
-} // namespace muffin
+} // namespace mufpen

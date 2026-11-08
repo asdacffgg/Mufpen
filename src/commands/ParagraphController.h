@@ -9,12 +9,12 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 struct InlineBlockFormat;
 
-class MUFFIN_UI_EXPORT ParagraphController final : public QObject, private EditorContextHolder {
+class MUFPEN_UI_EXPORT ParagraphController final : public QObject, private EditorContextHolder {
   Q_OBJECT
 
 public:
@@ -113,4 +113,4 @@ private:
   CursorPosition cursorForSourceOffset(qsizetype sourceOffset) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

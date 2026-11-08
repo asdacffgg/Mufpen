@@ -37,7 +37,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 // Per-section config that the renderer consumes. The parser does NOT populate
 // this — it comes from the `%%{init}%%` directive via the preprocessor's
@@ -90,4 +90,4 @@ double pieOriginalSum(const QVector<PieSection>& sections);
 // is >= 1% (value/origSum*100 >= 1). Zero when the original sum is 0.
 int pieDrawCount(const QVector<PieSection>& sections);
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

@@ -15,7 +15,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::railroad {
+namespace mufpen::mermaid::railroad {
 
 void RailroadScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintRailroadScene(*this, painter, options);
@@ -527,4 +527,4 @@ QJsonObject RailroadScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::railroad
+} // namespace mufpen::mermaid::railroad

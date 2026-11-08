@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math {
+namespace mufpen::math {
 using namespace mathml;
 namespace {
 
@@ -637,4 +637,4 @@ std::optional<MathCssAccentBox> layoutMathMlAccentBox(const MathLayoutResult& la
   return result;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

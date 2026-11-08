@@ -11,7 +11,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::er {
+namespace mufpen::mermaid::er {
 
 // Layout-projection model, mirroring StateLayout.h. The er diagram is projected
 // into the flowchart dagre pipeline (vertices = entities, edges = relationships,
@@ -91,4 +91,4 @@ ErPlacementResult layoutErDiagramDagre(const ErLayoutInput& input, const ErLayou
                                        qreal entitySpacing = 60.0, qreal rankSpacing = 80.0);
 QJsonObject erLayoutInputToJson(const ErLayoutInput& input);
 
-} // namespace muffin::mermaid::er
+} // namespace mufpen::mermaid::er

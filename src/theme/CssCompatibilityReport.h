@@ -4,7 +4,7 @@
 
 #include <QJsonObject>
 
-namespace muffin {
+namespace mufpen {
 
 // An explicit, offline stylesheet audit, not a prediction of the final cascade
 // or pixel parity. Never run this while discovering a theme directory. Stable
@@ -19,4 +19,4 @@ private:
   QJsonObject report_;
 };
 
-} // namespace muffin
+} // namespace mufpen

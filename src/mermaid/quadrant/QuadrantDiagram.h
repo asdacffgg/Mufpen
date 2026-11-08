@@ -25,7 +25,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::quadrant {
+namespace mufpen::mermaid::quadrant {
 
 // Point styles (quadrantDb.parseStyles): comma-separated `key: value`. Each
 // field is empty/unset unless declared. Validation rejects unknown keys and bad
@@ -73,4 +73,4 @@ struct QuadrantParseError : std::runtime_error {
   QuadrantParseError(const QString& message, int line = 0);
 };
 
-} // namespace muffin::mermaid::quadrant
+} // namespace mufpen::mermaid::quadrant

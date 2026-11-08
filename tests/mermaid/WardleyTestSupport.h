@@ -17,7 +17,7 @@
 
 namespace wardley_test {
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 inline void ensureWardleyFonts() {
   static const QStringList files = {

@@ -4,7 +4,7 @@
 
 #include <stdexcept>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathParseError : public std::runtime_error {
 public:
@@ -24,4 +24,4 @@ private:
   qsizetype endPosition_ = -1;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

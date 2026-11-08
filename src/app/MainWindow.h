@@ -35,7 +35,7 @@ class QWidget;
 class QVariantAnimation;
 class QPropertyAnimation;
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -65,7 +65,7 @@ public:
   // Open <path> as the sidebar folder root (switches to the Files panel).
   // Shared body of the File → Open Folder command and the new-window path,
   // and the entry point for the command-line --folder argument and the
-  // Explorer "Open with Muffin" directory verb.
+  // Explorer "Open with Mufpen" directory verb.
   void openFolderAtPath(QString path);
   // Restore the actual open tabs/workspace, independently of recent-file history.
   // Command-line files/folders and recovered drafts take precedence.
@@ -369,9 +369,9 @@ private:
   void showPathProperties(QString path);
   // Inline file-tree edit handlers (validate / commit / cancel), connected to SidebarWidget
   // signals. The FS op + preserved post-steps (open doc sync, open-on-create) live here.
-  void onInlineValidate(muffin::InlineEditContext ctx, const QString& name, muffin::InlineValidation* out);
-  void onInlineCommit(muffin::InlineEditContext ctx, const QString& name);
-  void onInlineCancel(muffin::InlineEditContext ctx);
+  void onInlineValidate(mufpen::InlineEditContext ctx, const QString& name, mufpen::InlineValidation* out);
+  void onInlineCommit(mufpen::InlineEditContext ctx, const QString& name);
+  void onInlineCancel(mufpen::InlineEditContext ctx);
   void copyPathToClipboard(QString path) const;
   // Reveal in the OS file manager, selecting the item where the platform allows.
   // revealCurrentFile() delegates here so the menu command shares the behavior.
@@ -482,4 +482,4 @@ private:
   bool editingLocked_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

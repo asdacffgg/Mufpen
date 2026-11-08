@@ -27,9 +27,9 @@
 #include <initializer_list>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(themeDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(themeDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 std::optional<PseudoElementRule> resolvePseudoAttributes(std::optional<PseudoElementRule> rule,
                                                          const CssElement& origin) {
@@ -191,7 +191,7 @@ RenderTheme RenderTheme::fromDefinitionWithEngine(const ThemeDefinition& input, 
     if (definition.preparedEngine && definition.preparedSourceRevision == t.sourceSheet_->revision())
       t.styleEngine_ = definition.preparedEngine->withEnvironment({});
     else
-      t.styleEngine_ = std::make_shared<CssComputedStyleEngine>(muffin::documentStyleSheet(*t.sourceSheet_));
+      t.styleEngine_ = std::make_shared<CssComputedStyleEngine>(mufpen::documentStyleSheet(*t.sourceSheet_));
   }
   t.viewportUnits_ = t.styleEngine_ && t.styleEngine_->hasViewportUnits();
   if (const auto* page = t.elementStyle(QStringLiteral("#write"))) {
@@ -1485,4 +1485,4 @@ qreal RenderTheme::scaledFont(qreal value) const {
   return scaled(value) * static_cast<qreal>(fontSizePx_) / 16.0;
 }
 
-} // namespace muffin
+} // namespace mufpen

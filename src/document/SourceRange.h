@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 
 struct SourceRange {
   qsizetype byteStart = 0;
@@ -17,4 +17,4 @@ struct SourceRange {
   qsizetype byteLength() const { return byteEnd >= byteStart ? byteEnd - byteStart : 0; }
 };
 
-} // namespace muffin
+} // namespace mufpen

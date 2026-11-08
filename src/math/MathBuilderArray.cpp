@@ -12,7 +12,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 bool hasInkDescender(const MathRenderNode* node) {
@@ -335,4 +335,4 @@ std::unique_ptr<MathRenderNode> MathBuilder::makeArray(const MathParseNode& node
   return array;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

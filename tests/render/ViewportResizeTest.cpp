@@ -386,7 +386,7 @@ void testBudgetedPrefetchAndEviction() {
 }
 
 void benchmarkLargeResize() {
-  if (!qEnvironmentVariableIsSet("MUFFIN_RESIZE_BENCH"))
+  if (!qEnvironmentVariableIsSet("MUFPEN_RESIZE_BENCH"))
     return;
   DocumentSession session;
   QString markdown;
@@ -399,7 +399,7 @@ void benchmarkLargeResize() {
   layout.rebuild(session.document(), theme, 1000, {}, {}, DocumentLayout::BuildPolicy::Lazy);
   QElapsedTimer timer;
   timer.start();
-  const bool fullRebuild = qEnvironmentVariableIsSet("MUFFIN_RESIZE_BENCH_FULL");
+  const bool fullRebuild = qEnvironmentVariableIsSet("MUFPEN_RESIZE_BENCH_FULL");
   for (int i = 0; i < 24; ++i) {
     const int width = 500 + (i % 7) * 50;
     const bool changed = theme.updateForViewport(width, 700);
@@ -413,13 +413,13 @@ void benchmarkLargeResize() {
             << " frames=24 totalMs=" << timer.elapsed() << '\n';
 }
 void benchmarkEditorResize() {
-  if (!qEnvironmentVariableIsSet("MUFFIN_RESIZE_VIEW_BENCH"))
+  if (!qEnvironmentVariableIsSet("MUFPEN_RESIZE_VIEW_BENCH"))
     return;
-  QFile file(qEnvironmentVariable("MUFFIN_RESIZE_DOCUMENT"));
+  QFile file(qEnvironmentVariable("MUFPEN_RESIZE_DOCUMENT"));
   require(file.open(QIODevice::ReadOnly), "open resize benchmark document");
   DocumentSession session;
   session.setMarkdownText(QString::fromUtf8(file.readAll()), false);
-  const auto cssPath = qEnvironmentVariable("MUFFIN_RESIZE_THEME");
+  const auto cssPath = qEnvironmentVariable("MUFPEN_RESIZE_THEME");
   auto theme = cssPath.isEmpty() ? resizeTheme()
                                  : RenderTheme::fromDefinition(ThemeDefinition::fromCss(cssPath, "resize-benchmark"));
   EditorView view;
@@ -432,7 +432,7 @@ void benchmarkEditorResize() {
     view.setCursorPosition(inlineCursor(session.document().root().children().front()->id(), 0, 0));
   QVector<qreal> resizeMs, frameMs;
   QElapsedTimer timer;
-  const int frames = qEnvironmentVariableIntValue("MUFFIN_RESIZE_FRAMES");
+  const int frames = qEnvironmentVariableIntValue("MUFPEN_RESIZE_FRAMES");
   for (int i = 0; i < (frames > 0 ? frames : 40); ++i) {
     timer.start();
     view.resize(700 + (i % 20) * 10, 700 + (i % 3));
@@ -454,7 +454,7 @@ void benchmarkEditorResize() {
 
 int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty())
-    qputenv("QT_QPA_PLATFORM", qEnvironmentVariableIsSet("MUFFIN_RESIZE_VIEW_BENCH") ? "minimal" : "offscreen");
+    qputenv("QT_QPA_PLATFORM", qEnvironmentVariableIsSet("MUFPEN_RESIZE_VIEW_BENCH") ? "minimal" : "offscreen");
   QApplication app(argc, argv);
   runTest("lazy resize matches fresh layout", testLazyResizeRetainsIndicesAndMatchesFreshLayout);
   runTest("centering on demand", testCenteringIsAppliedOnDemand);

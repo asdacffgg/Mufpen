@@ -1,10 +1,10 @@
-// muffin-mmdc — a headless, native drop-in for the common `mmdc` workflow.
+// mufpen-mmdc — a headless, native drop-in for the common `mmdc` workflow.
 //
 // Renders Mermaid source to SVG or PNG through the same pure C++/Qt engine the
 // editor uses (mermaid 11.16 parity, no browser or JS runtime). The flag
 // surface mirrors mermaid-cli's frequently used subset:
 //
-//   muffin-mmdc -i diagram.mmd [-o out.svg|out.png|-] [-t theme] [-s scale]
+//   mufpen-mmdc -i diagram.mmd [-o out.svg|out.png|-] [-t theme] [-s scale]
 //                [-C config.json] [-b background] [--version]
 //
 // - input '-' (or an omitted -i) reads stdin; output '-' writes to stdout.
@@ -32,14 +32,14 @@
 
 #include <cstdio>
 
-#ifndef MUFFIN_VERSION
-#define MUFFIN_VERSION "0.0.0"
+#ifndef MUFPEN_VERSION
+#define MUFPEN_VERSION "0.0.0"
 #endif
 
 namespace {
 
 void printError(const QString& message) {
-  std::fprintf(stderr, "muffin-mmdc: %s\n", qPrintable(message));
+  std::fprintf(stderr, "mufpen-mmdc: %s\n", qPrintable(message));
   std::fflush(stderr);
 }
 
@@ -106,10 +106,10 @@ int main(int argc, char** argv) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
   QGuiApplication app(argc, argv);
-  QCoreApplication::setApplicationName(QStringLiteral("muffin-mmdc"));
-  QCoreApplication::setApplicationVersion(QStringLiteral(MUFFIN_VERSION));
+  QCoreApplication::setApplicationName(QStringLiteral("mufpen-mmdc"));
+  QCoreApplication::setApplicationVersion(QStringLiteral(MUFPEN_VERSION));
   QString storageError;
-  if (!muffin::ApplicationPaths::initialize(QCoreApplication::applicationFilePath(), &storageError)) {
+  if (!mufpen::ApplicationPaths::initialize(QCoreApplication::applicationFilePath(), &storageError)) {
     printError(QStringLiteral("Cannot write to the portable data folder: ") + storageError);
     return 1;
   }
@@ -193,7 +193,7 @@ int main(int argc, char** argv) {
   const bool wantPng = outputPath.endsWith(QLatin1String(".png"), Qt::CaseInsensitive);
 
   if (!wantPng) {
-    const auto rendered = muffin::mermaid::editor::MermaidRenderCache::renderMermaidSourceToSvg(source);
+    const auto rendered = mufpen::mermaid::editor::MermaidRenderCache::renderMermaidSourceToSvg(source);
     if (rendered.svg.isEmpty()) {
       printError(QStringLiteral("rendering produced no SVG"));
       return 1;
@@ -212,7 +212,7 @@ int main(int argc, char** argv) {
 
   const qreal scale = parser.value(scaleOption).toDouble();
   const auto rendered =
-      muffin::mermaid::editor::MermaidRenderCache::renderMermaidSourceToPng(source, scale > 0.0 ? scale : 1.0);
+      mufpen::mermaid::editor::MermaidRenderCache::renderMermaidSourceToPng(source, scale > 0.0 ? scale : 1.0);
   static const QLatin1String kPngPrefix("data:image/png;base64,");
   if (!rendered.dataUrl.startsWith(kPngPrefix)) {
     printError(QStringLiteral("rendering produced no PNG"));

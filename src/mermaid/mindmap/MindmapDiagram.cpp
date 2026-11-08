@@ -14,7 +14,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 
 MindmapParseError::MindmapParseError(const QString& message, int line, int column, MindmapErrorKind kind, QString token)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column), kind(kind),
@@ -668,4 +668,4 @@ MindmapData MindmapDiagram::parse(const QString& source, const MindmapParseConfi
   return Parser(source, config).parse();
 }
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

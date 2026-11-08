@@ -24,7 +24,7 @@
 
 #include "RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -1046,7 +1046,7 @@ int main(int argc, char** argv) {
   // This binary is the ARM64 SHARED-library teardown-crash reproducer; the
   // handler prints the faulting module + frame backtrace before the process
   // dies (all 29 subtest RUN lines print first — the crash is after main returns).
-  installMuffinTestCrashHandler();
+  installMufpenTestCrashHandler();
   std::fprintf(stderr, "RUN QApplication initialization\n");
   std::fflush(stderr);
   QApplication app(argc, argv);
@@ -1086,7 +1086,7 @@ int main(int argc, char** argv) {
   // All assertions passed. The ARM64 SHARED-library teardown crash that used
   // to fire here was root-caused (via a WER dump on the runner) to the
   // ImageLoader singleton's atexit destructor destroying its
-  // QNetworkAccessManager inside MuffinUi.dll's DLL_PROCESS_DETACH; the
+  // QNetworkAccessManager inside MufpenUi.dll's DLL_PROCESS_DETACH; the
   // singleton is now intentionally leaked, and normal teardown is safe again.
   return 0;
 }

@@ -13,7 +13,7 @@
 #include <cmath>
 #include <climits>
 
-namespace muffin {
+namespace mufpen {
 struct CssSvgRasterCache {
   QCache<QByteArray, QImage> entries{16 * 1024 * 1024};
 };
@@ -160,4 +160,4 @@ QImage CssImageResource::raster(const QSize& pixels) const {
     rasters_->entries.insert(key, new QImage(image), int(image.sizeInBytes()));
   return image;
 }
-} // namespace muffin
+} // namespace mufpen

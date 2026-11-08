@@ -4,7 +4,7 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 std::uint32_t nextPriority() {
@@ -190,4 +190,4 @@ void SourceLineHeightIndex::replaceLines(qsizetype firstLine, qsizetype removedC
   root_ = merge(merge(std::move(left), makeNode(insertedCount, estimatedHeight_)), std::move(right));
 }
 
-} // namespace muffin
+} // namespace mufpen

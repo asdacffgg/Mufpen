@@ -13,7 +13,7 @@
 #include <cmath>
 #include <numeric>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 namespace {
 QColor color(const QString& value) {
   return mermaid::color::toQColor(value);
@@ -976,4 +976,4 @@ void StateScene::paint(QPainter& painter, const MermaidPaintOptions& options) co
   paintStateScene(*this, painter, options);
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

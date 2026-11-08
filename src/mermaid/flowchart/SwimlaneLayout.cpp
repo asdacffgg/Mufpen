@@ -16,7 +16,7 @@
 #include <optional>
 #include <tuple>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 using routing::OrthogonalSide;
 using routing::simplifyRouterPoints;
@@ -2035,4 +2035,4 @@ QMap<QString, QSizeF> measureSwimlaneHandDrawnNodes(const FlowchartData& data,
   return result;
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::railroad {
+namespace mufpen::mermaid::railroad {
 
 struct RailroadConfig {
   bool useMaxWidth = true;
@@ -122,4 +122,4 @@ struct RailroadScene final : MermaidScene {
 RailroadScene buildRailroadScene(const RailroadData& data, RailroadConfig config,
                                  const RailroadCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::railroad
+} // namespace mufpen::mermaid::railroad

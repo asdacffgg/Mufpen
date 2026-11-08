@@ -11,7 +11,7 @@
 // non-BMP characters are consumed as one unit. Templated over the text container so both the
 // PieceTable virtual sequence and plain QString/QStringView use one implementation and can never
 // diverge.
-namespace muffin::words {
+namespace mufpen::words {
 
 inline bool isWordCharacter(QChar ch) {
   return ch.isLetterOrNumber() || ch == QLatin1Char('_');
@@ -84,4 +84,4 @@ std::pair<qsizetype, qsizetype> wordRangeAt(const Text& text, qsizetype position
   return {start, end};
 }
 
-} // namespace muffin::words
+} // namespace mufpen::words

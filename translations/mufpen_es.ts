@@ -1,198 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="es_ES">
 <context>
     <name>EditorView</name>
     <message>
         <source>Markdown editor</source>
-        <translation type="vanished">Markdown-editor</translation>
+        <translation type="vanished">Editor de Markdown</translation>
     </message>
     <message>
         <source>Rendered Markdown document</source>
-        <translation type="vanished">Gerenderd Markdown-document</translation>
+        <translation type="vanished">Documento Markdown renderizado</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>New</source>
-        <translation type="obsolete">Nieuw</translation>
+        <translation type="obsolete">Nuevo</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="obsolete">Nieuw venster</translation>
+        <translation type="obsolete">Nueva ventana</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="obsolete">Map openen...</translation>
+        <translation type="obsolete">Abrir carpeta...</translation>
     </message>
     <message>
         <source>Open...</source>
-        <translation type="obsolete">Openen...</translation>
+        <translation type="obsolete">Abrir...</translation>
     </message>
     <message>
         <source>Quick Open...</source>
-        <translation type="obsolete">Snel openen...</translation>
+        <translation type="obsolete">Apertura rápida...</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="obsolete">Opslaan</translation>
+        <translation type="obsolete">Guardar</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation type="obsolete">Opslaan als...</translation>
+        <translation type="obsolete">Guardar como...</translation>
     </message>
     <message>
         <source>Move To...</source>
-        <translation type="obsolete">Verplaatsen naar...</translation>
+        <translation type="obsolete">Mover a...</translation>
     </message>
     <message>
         <source>Save All Open Files...</source>
-        <translation type="obsolete">Alle geopende bestanden opslaan...</translation>
+        <translation type="obsolete">Guardar todos los archivos abiertos...</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="obsolete">Eigenschappen</translation>
+        <translation type="obsolete">Propiedades</translation>
     </message>
     <message>
         <source>Show in File Manager...</source>
-        <translation type="obsolete">Tonen in bestandsbeheer...</translation>
+        <translation type="obsolete">Mostrar en el gestor de archivos...</translation>
     </message>
     <message>
         <source>Show in Sidebar</source>
-        <translation type="obsolete">Tonen in zijbalk</translation>
+        <translation type="obsolete">Mostrar en la barra lateral</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation type="obsolete">Verwijderen...</translation>
+        <translation type="obsolete">Eliminar...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="obsolete">Importeren...</translation>
+        <translation type="obsolete">Importar...</translation>
     </message>
     <message>
         <source>Print...</source>
-        <translation type="obsolete">Afdrukken...</translation>
+        <translation type="obsolete">Imprimir...</translation>
     </message>
     <message>
         <source>Preferences...</source>
-        <translation type="obsolete">Voorkeuren...</translation>
+        <translation type="obsolete">Preferencias...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">Sluiten</translation>
+        <translation type="obsolete">Cerrar</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="obsolete">Ongedaan maken</translation>
+        <translation type="obsolete">Deshacer</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="obsolete">Opnieuw</translation>
+        <translation type="obsolete">Rehacer</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="obsolete">Knippen</translation>
+        <translation type="obsolete">Cortar</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="obsolete">Kopiëren</translation>
+        <translation type="obsolete">Copiar</translation>
     </message>
     <message>
         <source>Copy Image</source>
-        <translation type="obsolete">Afbeelding kopiëren</translation>
+        <translation type="obsolete">Copiar imagen</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="obsolete">Plakken</translation>
+        <translation type="obsolete">Pegar</translation>
     </message>
     <message>
         <source>Copy as Plain Text</source>
-        <translation type="obsolete">Kopiëren als platte tekst</translation>
+        <translation type="obsolete">Copiar como texto sin formato</translation>
     </message>
     <message>
         <source>Copy as Markdown</source>
-        <translation type="obsolete">Kopiëren als Markdown</translation>
+        <translation type="obsolete">Copiar como Markdown</translation>
     </message>
     <message>
         <source>Copy as HTML</source>
-        <translation type="obsolete">Kopiëren als HTML</translation>
+        <translation type="obsolete">Copiar como HTML</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
-        <translation type="obsolete">Plakken als platte tekst</translation>
+        <translation type="obsolete">Pegar como texto sin formato</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="obsolete">Alles selecteren</translation>
+        <translation type="obsolete">Seleccionar todo</translation>
     </message>
     <message>
         <source>Select Paragraph or Block</source>
-        <translation type="obsolete">Alinea of blok selecteren</translation>
+        <translation type="obsolete">Seleccionar párrafo o bloque</translation>
     </message>
     <message>
         <source>Select Current Line or Sentence</source>
-        <translation type="obsolete">Huidige regel of zin selecteren</translation>
+        <translation type="obsolete">Seleccionar línea o frase actual</translation>
     </message>
     <message>
         <source>Select Current Format Text</source>
-        <translation type="obsolete">Tekst met huidige opmaak selecteren</translation>
+        <translation type="obsolete">Seleccionar texto con formato actual</translation>
     </message>
     <message>
         <source>Select Current Word</source>
-        <translation type="obsolete">Huidig woord selecteren</translation>
+        <translation type="obsolete">Seleccionar palabra actual</translation>
     </message>
     <message>
         <source>Jump to Start of Document</source>
-        <translation type="obsolete">Naar begin van document</translation>
+        <translation type="obsolete">Ir al inicio del documento</translation>
     </message>
     <message>
         <source>Jump to Selection</source>
-        <translation type="obsolete">Naar selectie</translation>
+        <translation type="obsolete">Ir a la selección</translation>
     </message>
     <message>
         <source>Jump to End of Document</source>
-        <translation type="obsolete">Naar einde van document</translation>
+        <translation type="obsolete">Ir al final del documento</translation>
     </message>
     <message>
         <source>Jump to Start of Line</source>
-        <translation type="obsolete">Naar begin van regel</translation>
+        <translation type="obsolete">Ir al inicio de línea</translation>
     </message>
     <message>
         <source>Jump to End of Line</source>
-        <translation type="obsolete">Naar einde van regel</translation>
+        <translation type="obsolete">Ir al final de línea</translation>
     </message>
     <message>
         <source>Move Line Up</source>
-        <translation type="obsolete">Regel omhoog verplaatsen</translation>
+        <translation type="obsolete">Mover línea arriba</translation>
     </message>
     <message>
         <source>Move Line Down</source>
-        <translation type="obsolete">Regel omlaag verplaatsen</translation>
+        <translation type="obsolete">Mover línea abajo</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="obsolete">Verwijderen</translation>
+        <translation type="obsolete">Eliminar</translation>
     </message>
     <message>
         <source>Delete Block</source>
-        <translation type="obsolete">Blok verwijderen</translation>
+        <translation type="obsolete">Eliminar bloque</translation>
     </message>
     <message>
         <source>Delete Current Line</source>
-        <translation type="obsolete">Huidige regel verwijderen</translation>
+        <translation type="obsolete">Eliminar línea actual</translation>
     </message>
     <message>
         <source>Delete Current Format Text</source>
-        <translation type="obsolete">Huidige opgemaakte tekst verwijderen</translation>
+        <translation type="obsolete">Eliminar texto con formato actual</translation>
     </message>
     <message>
         <source>Delete Current Word</source>
-        <translation type="obsolete">Huidige woord verwijderen</translation>
+        <translation type="obsolete">Eliminar palabra actual</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="obsolete">Spellingcontrole...</translation>
+        <translation type="obsolete">Revisión ortográfica...</translation>
     </message>
     <message>
         <source>Windows (CRLF)</source>
@@ -204,83 +204,83 @@
     </message>
     <message>
         <source>Ensure Trailing Newline on Save</source>
-        <translation type="obsolete">Afsluitende regeleinde bij opslaan garanderen</translation>
+        <translation type="obsolete">Asegurar salto de línea final al guardar</translation>
     </message>
     <message>
         <source>Find...</source>
-        <translation type="obsolete">Zoeken...</translation>
+        <translation type="obsolete">Buscar...</translation>
     </message>
     <message>
         <source>Replace...</source>
-        <translation type="obsolete">Vervangen...</translation>
+        <translation type="obsolete">Reemplazar...</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation type="obsolete">Volgende zoeken</translation>
+        <translation type="obsolete">Buscar siguiente</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation type="obsolete">Vorige zoeken</translation>
+        <translation type="obsolete">Buscar anterior</translation>
     </message>
     <message>
         <source>Paragraph</source>
-        <translation type="obsolete">Alinea</translation>
+        <translation type="obsolete">Párrafo</translation>
     </message>
     <message>
         <source>Promote Heading</source>
-        <translation type="obsolete">Kop promoveren</translation>
+        <translation type="obsolete">Subir nivel del encabezado</translation>
     </message>
     <message>
         <source>Demote Heading</source>
-        <translation type="obsolete">Kop degraderen</translation>
+        <translation type="obsolete">Bajar nivel del encabezado</translation>
     </message>
     <message>
         <source>Formula Block</source>
-        <translation type="obsolete">Formuleblok</translation>
+        <translation type="obsolete">Bloque de fórmula</translation>
     </message>
     <message>
         <source>Code Block</source>
-        <translation type="obsolete">Codeblok</translation>
+        <translation type="obsolete">Bloque de código</translation>
     </message>
     <message>
         <source>Quote</source>
-        <translation type="obsolete">Citaat</translation>
+        <translation type="obsolete">Cita</translation>
     </message>
     <message>
         <source>Ordered List</source>
-        <translation type="obsolete">Genummerde lijst</translation>
+        <translation type="obsolete">Lista ordenada</translation>
     </message>
     <message>
         <source>Unordered List</source>
-        <translation type="obsolete">Ongenummerde lijst</translation>
+        <translation type="obsolete">Lista sin ordenar</translation>
     </message>
     <message>
         <source>Task List</source>
-        <translation type="obsolete">Takenlijst</translation>
+        <translation type="obsolete">Lista de tareas</translation>
     </message>
     <message>
         <source>Insert Paragraph Before</source>
-        <translation type="obsolete">Alinea ervoor invoegen</translation>
+        <translation type="obsolete">Insertar párrafo antes</translation>
     </message>
     <message>
         <source>Insert Paragraph After</source>
-        <translation type="obsolete">Alinea erna invoegen</translation>
+        <translation type="obsolete">Insertar párrafo después</translation>
     </message>
     <message>
         <source>Link Reference</source>
-        <translation type="obsolete">Linkverwijzing</translation>
+        <translation type="obsolete">Referencia de enlace</translation>
     </message>
     <message>
         <source>Footnote</source>
-        <translation type="obsolete">Voetnoot</translation>
+        <translation type="obsolete">Nota al pie</translation>
     </message>
     <message>
         <source>Horizontal Rule</source>
-        <translation type="obsolete">Horizontale lijn</translation>
+        <translation type="obsolete">Línea horizontal</translation>
     </message>
     <message>
         <source>Table of Contents</source>
-        <translation type="obsolete">Inhoudsopgave</translation>
+        <translation type="obsolete">Tabla de contenido</translation>
     </message>
     <message>
         <source>YAML</source>
@@ -296,99 +296,99 @@
     </message>
     <message>
         <source>Insert Row Above</source>
-        <translation type="obsolete">Rij erboven invoegen</translation>
+        <translation type="obsolete">Insertar fila arriba</translation>
     </message>
     <message>
         <source>Insert Row Below</source>
-        <translation type="obsolete">Rij eronder invoegen</translation>
+        <translation type="obsolete">Insertar fila abajo</translation>
     </message>
     <message>
         <source>Insert Column Left</source>
-        <translation type="obsolete">Kolom links invoegen</translation>
+        <translation type="obsolete">Insertar columna a la izquierda</translation>
     </message>
     <message>
         <source>Insert Column Right</source>
-        <translation type="obsolete">Kolom rechts invoegen</translation>
+        <translation type="obsolete">Insertar columna a la derecha</translation>
     </message>
     <message>
         <source>Move Row Up</source>
-        <translation type="obsolete">Rij omhoog verplaatsen</translation>
+        <translation type="obsolete">Mover fila arriba</translation>
     </message>
     <message>
         <source>Move Row Down</source>
-        <translation type="obsolete">Rij omlaag verplaatsen</translation>
+        <translation type="obsolete">Mover fila abajo</translation>
     </message>
     <message>
         <source>Move Column Left</source>
-        <translation type="obsolete">Kolom naar links verplaatsen</translation>
+        <translation type="obsolete">Mover columna a la izquierda</translation>
     </message>
     <message>
         <source>Move Column Right</source>
-        <translation type="obsolete">Kolom naar rechts verplaatsen</translation>
+        <translation type="obsolete">Mover columna a la derecha</translation>
     </message>
     <message>
         <source>Delete Row</source>
-        <translation type="obsolete">Rij verwijderen</translation>
+        <translation type="obsolete">Eliminar fila</translation>
     </message>
     <message>
         <source>Delete Column</source>
-        <translation type="obsolete">Kolom verwijderen</translation>
+        <translation type="obsolete">Eliminar columna</translation>
     </message>
     <message>
         <source>Copy Table</source>
-        <translation type="obsolete">Tabel kopiëren</translation>
+        <translation type="obsolete">Copiar tabla</translation>
     </message>
     <message>
         <source>Format Table Source</source>
-        <translation type="obsolete">Tabelbron opmaken</translation>
+        <translation type="obsolete">Formatear fuente de tabla</translation>
     </message>
     <message>
         <source>Delete Table</source>
-        <translation type="obsolete">Tabel verwijderen</translation>
+        <translation type="obsolete">Eliminar tabla</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="obsolete">Links uitlijnen</translation>
+        <translation type="obsolete">Alinear a la izquierda</translation>
     </message>
     <message>
         <source>Align Center</source>
-        <translation type="obsolete">Centreren</translation>
+        <translation type="obsolete">Centrar</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="obsolete">Rechts uitlijnen</translation>
+        <translation type="obsolete">Alinear a la derecha</translation>
     </message>
     <message>
         <source>Clear Alignment</source>
-        <translation type="obsolete">Uitlijning wissen</translation>
+        <translation type="obsolete">Borrar alineación</translation>
     </message>
     <message>
         <source>Enter Edit</source>
-        <translation type="obsolete">Bewerken starten</translation>
+        <translation type="obsolete">Entrar en edición</translation>
     </message>
     <message>
         <source>Exit Edit</source>
-        <translation type="obsolete">Bewerken afsluiten</translation>
+        <translation type="obsolete">Salir de edición</translation>
     </message>
     <message>
         <source>Set Language...</source>
-        <translation type="obsolete">Taal instellen...</translation>
+        <translation type="obsolete">Establecer idioma...</translation>
     </message>
     <message>
         <source>Code Language</source>
-        <translation type="obsolete">Codetaal</translation>
+        <translation type="obsolete">Lenguaje de código</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="obsolete">Taal:</translation>
+        <translation type="obsolete">Idioma:</translation>
     </message>
     <message>
         <source>Set HTML...</source>
-        <translation type="obsolete">HTML instellen...</translation>
+        <translation type="obsolete">Establecer HTML...</translation>
     </message>
     <message>
         <source>HTML Source</source>
-        <translation type="obsolete">HTML-bron</translation>
+        <translation type="obsolete">Código HTML</translation>
     </message>
     <message>
         <source>HTML:</source>
@@ -396,11 +396,11 @@
     </message>
     <message>
         <source>Set TeX...</source>
-        <translation type="obsolete">TeX instellen...</translation>
+        <translation type="obsolete">Establecer TeX...</translation>
     </message>
     <message>
         <source>Math TeX</source>
-        <translation type="obsolete">Wiskundige TeX</translation>
+        <translation type="obsolete">TeX matemático</translation>
     </message>
     <message>
         <source>TeX:</source>
@@ -408,103 +408,103 @@
     </message>
     <message>
         <source>Bold</source>
-        <translation type="obsolete">Vet</translation>
+        <translation type="obsolete">Negrita</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="obsolete">Cursief</translation>
+        <translation type="obsolete">Cursiva</translation>
     </message>
     <message>
         <source>Underline</source>
-        <translation type="obsolete">Onderstrepen</translation>
+        <translation type="obsolete">Subrayado</translation>
     </message>
     <message>
         <source>Inline Code</source>
-        <translation type="obsolete">Inline code</translation>
+        <translation type="obsolete">Código en línea</translation>
     </message>
     <message>
         <source>Inline Formula</source>
-        <translation type="obsolete">Inline formule</translation>
+        <translation type="obsolete">Fórmula en línea</translation>
     </message>
     <message>
         <source>Strikethrough</source>
-        <translation type="obsolete">Doorhalen</translation>
+        <translation type="obsolete">Tachado</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation type="obsolete">Opmerking</translation>
+        <translation type="obsolete">Comentario</translation>
     </message>
     <message>
         <source>Hyperlink</source>
-        <translation type="obsolete">Hyperlink</translation>
+        <translation type="obsolete">Hipervínculo</translation>
     </message>
     <message>
         <source>Clear Style</source>
-        <translation type="obsolete">Stijl wissen</translation>
+        <translation type="obsolete">Borrar estilo</translation>
     </message>
     <message>
         <source>Insert Image...</source>
-        <translation type="obsolete">Afbeelding invoegen...</translation>
+        <translation type="obsolete">Insertar imagen...</translation>
     </message>
     <message>
         <source>Insert Local Image...</source>
-        <translation type="obsolete">Lokale afbeelding invoegen...</translation>
+        <translation type="obsolete">Insertar imagen local...</translation>
     </message>
     <message>
         <source>Open Image Location...</source>
-        <translation type="obsolete">Afbeeldingslocatie openen...</translation>
+        <translation type="obsolete">Abrir ubicación de la imagen...</translation>
     </message>
     <message>
         <source>Delete Image File</source>
-        <translation type="obsolete">Afbeeldingsbestand verwijderen</translation>
+        <translation type="obsolete">Eliminar archivo de imagen</translation>
     </message>
     <message>
         <source>Delete Image</source>
-        <translation type="obsolete">Afbeelding verwijderen</translation>
+        <translation type="obsolete">Eliminar imagen</translation>
     </message>
     <message>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation type="obsolete">Afbeeldingsbestand &quot;%1&quot; verwijderen?
-Dit kan niet ongedaan worden gemaakt.</translation>
+        <translation type="obsolete">¿Eliminar el archivo de imagen «%1»?
+Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <source>Copy Image To...</source>
-        <translation type="obsolete">Afbeelding kopiëren naar...</translation>
+        <translation type="obsolete">Copiar imagen a...</translation>
     </message>
     <message>
         <source>Copy Image To</source>
-        <translation type="obsolete">Afbeelding kopiëren naar</translation>
+        <translation type="obsolete">Copiar imagen a</translation>
     </message>
     <message>
         <source>Rename / Move Image To...</source>
-        <translation type="obsolete">Afbeelding hernoemen / verplaatsen naar...</translation>
+        <translation type="obsolete">Renombrar / Mover imagen a...</translation>
     </message>
     <message>
         <source>Move Image To</source>
-        <translation type="obsolete">Afbeelding verplaatsen naar</translation>
+        <translation type="obsolete">Mover imagen a</translation>
     </message>
     <message>
         <source>Upload Image</source>
-        <translation type="obsolete">Afbeelding uploaden</translation>
+        <translation type="obsolete">Subir imagen</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="obsolete">Afbeeldingsupload is nog niet geconfigureerd.
-Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
+        <translation type="obsolete">La subida de imágenes aún no está configurada.
+Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     </message>
     <message>
         <source>Upload All Local Images</source>
-        <translation type="obsolete">Alle lokale afbeeldingen uploaden</translation>
+        <translation type="obsolete">Subir todas las imágenes locales</translation>
     </message>
     <message>
         <source>Upload All Images</source>
-        <translation type="obsolete">Alle afbeeldingen uploaden</translation>
+        <translation type="obsolete">Subir todas las imágenes</translation>
     </message>
     <message>
         <source>Reload All Images</source>
-        <translation type="obsolete">Alle afbeeldingen opnieuw laden</translation>
+        <translation type="obsolete">Recargar todas las imágenes</translation>
     </message>
     <message>
         <source>25%</source>
@@ -527,12 +527,8 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
         <translation type="obsolete">150%</translation>
     </message>
     <message>
-        <source>Custom...</source>
-        <translation type="obsolete">Aangepast...</translation>
-    </message>
-    <message>
         <source>Standard Markdown ![](url)</source>
-        <translation type="obsolete">Standaard Markdown ![](url)</translation>
+        <translation type="obsolete">Markdown estándar ![](url)</translation>
     </message>
     <message>
         <source>HTML &lt;img&gt;</source>
@@ -540,151 +536,151 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="obsolete">Relatief pad invoegen</translation>
+        <translation type="obsolete">Insertar ruta relativa</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="obsolete">Absoluut pad invoegen</translation>
+        <translation type="obsolete">Insertar ruta absoluta</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="obsolete">Kopiëren naar aangepaste map</translation>
+        <translation type="obsolete">Copiar a carpeta personalizada</translation>
     </message>
     <message>
         <source>Copy All Images To...</source>
-        <translation type="obsolete">Alle afbeeldingen kopiëren naar...</translation>
+        <translation type="obsolete">Copiar todas las imágenes a...</translation>
     </message>
     <message>
         <source>Copy All Images To</source>
-        <translation type="obsolete">Alle afbeeldingen kopiëren naar</translation>
+        <translation type="obsolete">Copiar todas las imágenes a</translation>
     </message>
     <message>
         <source>Copy All Images</source>
-        <translation type="obsolete">Alle afbeeldingen kopiëren</translation>
+        <translation type="obsolete">Copiar todas las imágenes</translation>
     </message>
     <message>
         <source>Copied %1 of %2 image(s).</source>
-        <translation type="obsolete">%1 van %2 afbeelding(en) gekopieerd.</translation>
+        <translation type="obsolete">Se copiaron %1 de %2 imagen(es).</translation>
     </message>
     <message>
         <source>Move All Images To...</source>
-        <translation type="obsolete">Alle afbeeldingen verplaatsen naar...</translation>
+        <translation type="obsolete">Mover todas las imágenes a...</translation>
     </message>
     <message>
         <source>Move All Images To</source>
-        <translation type="obsolete">Alle afbeeldingen verplaatsen naar</translation>
+        <translation type="obsolete">Mover todas las imágenes a</translation>
     </message>
     <message>
         <source>Move All Images</source>
-        <translation type="obsolete">Alle afbeeldingen verplaatsen</translation>
+        <translation type="obsolete">Mover todas las imágenes</translation>
     </message>
     <message>
         <source>Moved %1 image(s).</source>
-        <translation type="obsolete">%1 afbeelding(en) verplaatst.</translation>
+        <translation type="obsolete">Se movieron %1 imagen(es).</translation>
     </message>
     <message>
         <source>Global Image Settings...</source>
-        <translation type="obsolete">Algemene afbeeldingsinstellingen...</translation>
+        <translation type="obsolete">Configuración global de imágenes...</translation>
     </message>
     <message>
         <source>Show / Hide Sidebar</source>
-        <translation type="vanished">Zijbalk tonen / verbergen</translation>
+        <translation type="vanished">Mostrar / ocultar barra lateral</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation type="obsolete">Overzicht</translation>
+        <translation type="obsolete">Esquema</translation>
     </message>
     <message>
         <source>File Tree</source>
-        <translation type="obsolete">Bestandsstructuur</translation>
+        <translation type="obsolete">Árbol de archivos</translation>
     </message>
     <message>
         <source>Source Code Mode</source>
-        <translation type="obsolete">Broncodemodus</translation>
+        <translation type="obsolete">Modo código fuente</translation>
     </message>
     <message>
         <source>Word Wrap</source>
-        <translation type="obsolete">Tekstterugloop</translation>
+        <translation type="obsolete">Ajuste de línea</translation>
     </message>
     <message>
         <source>Focus Mode</source>
-        <translation type="obsolete">Focusmodus</translation>
+        <translation type="obsolete">Modo enfoque</translation>
     </message>
     <message>
         <source>Typewriter Mode</source>
-        <translation type="obsolete">Typemachinemodus</translation>
+        <translation type="obsolete">Modo máquina de escribir</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="obsolete">Statusbalk tonen</translation>
+        <translation type="obsolete">Mostrar barra de estado</translation>
     </message>
     <message>
         <source>Word Count Window</source>
-        <translation type="obsolete">Woordentellingsvenster</translation>
+        <translation type="obsolete">Ventana de recuento de palabras</translation>
     </message>
     <message>
         <source>Toggle Full Screen</source>
-        <translation type="obsolete">Volledig scherm wisselen</translation>
+        <translation type="obsolete">Alternar pantalla completa</translation>
     </message>
     <message>
         <source>Always on Top</source>
-        <translation type="obsolete">Altijd bovenaan</translation>
+        <translation type="obsolete">Siempre visible</translation>
     </message>
     <message>
         <source>Actual Size</source>
-        <translation type="obsolete">Werkelijke grootte</translation>
+        <translation type="obsolete">Tamaño real</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="obsolete">Inzoomen</translation>
+        <translation type="obsolete">Acercar</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="obsolete">Uitzoomen</translation>
+        <translation type="obsolete">Alejar</translation>
     </message>
     <message>
         <source>Switch Windows</source>
-        <translation type="obsolete">Vensters wisselen</translation>
+        <translation type="obsolete">Cambiar ventanas</translation>
     </message>
     <message>
         <source>Quick Start</source>
-        <translation type="obsolete">Snelstart</translation>
+        <translation type="obsolete">Inicio rápido</translation>
     </message>
     <message>
         <source>Markdown Reference</source>
-        <translation type="obsolete">Markdown-referentie</translation>
+        <translation type="obsolete">Referencia de Markdown</translation>
     </message>
     <message>
         <source>Custom Themes</source>
-        <translation type="obsolete">Aangepaste thema’s</translation>
+        <translation type="obsolete">Temas personalizados</translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="obsolete">Dankbetuigingen</translation>
+        <translation type="obsolete">Agradecimientos</translation>
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="obsolete">Wijzigingslog</translation>
+        <translation type="obsolete">Registro de cambios</translation>
     </message>
     <message>
         <source>Official Website</source>
-        <translation type="obsolete">Officiële website</translation>
+        <translation type="obsolete">Sitio web oficial</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="obsolete">Feedback</translation>
+        <translation type="obsolete">Comentarios</translation>
     </message>
     <message>
         <source>Check for Updates...</source>
-        <translation type="obsolete">Controleren op updates...</translation>
+        <translation type="obsolete">Buscar actualizaciones...</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="obsolete">Over</translation>
+        <translation type="obsolete">Acerca de</translation>
     </message>
     <message>
         <source>About Mufpen</source>
-        <translation type="obsolete">Over Mufpen</translation>
+        <translation type="obsolete">Acerca de Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -692,71 +688,71 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="obsolete">Mufpen %1
 
-Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.</translation>
+Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="obsolete">Bestand</translation>
+        <translation type="obsolete">Archivo</translation>
     </message>
     <message>
         <source>Open Recent</source>
-        <translation type="obsolete">Recent openen</translation>
+        <translation type="obsolete">Abrir recientes</translation>
     </message>
     <message>
         <source>Reopen with Encoding</source>
-        <translation type="obsolete">Opnieuw openen met codering</translation>
+        <translation type="obsolete">Reabrir con codificación</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="obsolete">Exporteren</translation>
+        <translation type="obsolete">Exportar</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="obsolete">Bewerken</translation>
+        <translation type="obsolete">Editar</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="obsolete">Selecteren</translation>
+        <translation type="obsolete">Seleccionar</translation>
     </message>
     <message>
         <source>Delete Range</source>
-        <translation type="obsolete">Bereik verwijderen</translation>
+        <translation type="obsolete">Eliminar rango</translation>
     </message>
     <message>
         <source>Math Tools</source>
-        <translation type="obsolete">Wiskundehulpmiddelen</translation>
+        <translation type="obsolete">Herramientas matemáticas</translation>
     </message>
     <message>
         <source>Smart Punctuation</source>
-        <translation type="obsolete">Slimme interpunctie</translation>
+        <translation type="obsolete">Puntuación inteligente</translation>
     </message>
     <message>
         <source>Line Breaks</source>
-        <translation type="obsolete">Regeleinden</translation>
+        <translation type="obsolete">Saltos de línea</translation>
     </message>
     <message>
         <source>Find and Replace</source>
-        <translation type="obsolete">Zoeken en vervangen</translation>
+        <translation type="obsolete">Buscar y reemplazar</translation>
     </message>
     <message>
         <source>Table</source>
-        <translation type="obsolete">Tabel</translation>
+        <translation type="obsolete">Tabla</translation>
     </message>
     <message>
         <source>Code Tools</source>
-        <translation type="obsolete">Codehulpmiddelen</translation>
+        <translation type="obsolete">Herramientas de código</translation>
     </message>
     <message>
         <source>Alert</source>
-        <translation type="obsolete">Waarschuwing</translation>
+        <translation type="obsolete">Alerta</translation>
     </message>
     <message>
         <source>Task Status</source>
-        <translation type="obsolete">Taakstatus</translation>
+        <translation type="obsolete">Estado de la tarea</translation>
     </message>
     <message>
         <source>List Indent</source>
-        <translation type="obsolete">Lijstinspringing</translation>
+        <translation type="obsolete">Sangría de lista</translation>
     </message>
     <message>
         <source>Front Matter</source>
@@ -764,59 +760,59 @@ Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.
     </message>
     <message>
         <source>Code</source>
-        <translation type="obsolete">Code</translation>
+        <translation type="obsolete">Código</translation>
     </message>
     <message>
         <source>Math</source>
-        <translation type="obsolete">Wiskunde</translation>
+        <translation type="obsolete">Matemáticas</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="obsolete">Opmaak</translation>
+        <translation type="obsolete">Formato</translation>
     </message>
     <message>
         <source>Link Actions</source>
-        <translation type="obsolete">Linkacties</translation>
+        <translation type="obsolete">Acciones de enlace</translation>
     </message>
     <message>
         <source>Image</source>
-        <translation type="obsolete">Afbeelding</translation>
+        <translation type="obsolete">Imagen</translation>
     </message>
     <message>
         <source>Resize Image</source>
-        <translation type="obsolete">Afbeeldingsgrootte wijzigen</translation>
+        <translation type="obsolete">Redimensionar imagen</translation>
     </message>
     <message>
         <source>Convert Image Syntax</source>
-        <translation type="obsolete">Afbeeldingssyntaxis converteren</translation>
+        <translation type="obsolete">Convertir sintaxis de imagen</translation>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="obsolete">Bij invoegen van lokale afbeelding</translation>
+        <translation type="obsolete">Al insertar imagen local</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="obsolete">Beeld</translation>
+        <translation type="obsolete">Ver</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="obsolete">Thema</translation>
+        <translation type="obsolete">Tema</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="obsolete">Help</translation>
+        <translation type="obsolete">Ayuda</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="obsolete">tabel %1:%2 offset %3</translation>
+        <translation type="obsolete">tabla %1:%2 desplazamiento %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="obsolete">%1 woorden</translation>
+        <translation type="obsolete">%1 palabras</translation>
     </message>
     <message>
         <source>Insert Table</source>
-        <translation type="obsolete">Tabel invoegen</translation>
+        <translation type="obsolete">Insertar tabla</translation>
     </message>
     <message>
         <source>Unicode</source>
@@ -836,329 +832,329 @@ Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.
     </message>
     <message>
         <source>Western</source>
-        <translation type="vanished">West-Europees</translation>
+        <translation type="vanished">Occidental</translation>
     </message>
     <message>
         <source>Western (Windows-1252)</source>
-        <translation type="vanished">West-Europees (Windows-1252)</translation>
+        <translation type="vanished">Occidental (Windows-1252)</translation>
     </message>
     <message>
         <source>Cyrillic</source>
-        <translation type="vanished">Cyrillisch</translation>
+        <translation type="vanished">Cirílico</translation>
     </message>
     <message>
         <source>Cyrillic (Windows-1251)</source>
-        <translation type="vanished">Cyrillisch (Windows-1251)</translation>
+        <translation type="vanished">Cirílico (Windows-1251)</translation>
     </message>
     <message>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation type="vanished">Cyrillisch (ISO-8859-5)</translation>
+        <translation type="vanished">Cirílico (ISO-8859-5)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM866)</source>
-        <translation type="vanished">Cyrillisch (IBM866)</translation>
+        <translation type="vanished">Cirílico (IBM866)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM855)</source>
-        <translation type="vanished">Cyrillisch (IBM855)</translation>
+        <translation type="vanished">Cirílico (IBM855)</translation>
     </message>
     <message>
         <source>Cyrillic (KOI8-R)</source>
-        <translation type="vanished">Cyrillisch (KOI8-R)</translation>
+        <translation type="vanished">Cirílico (KOI8-R)</translation>
     </message>
     <message>
         <source>Cyrillic (Mac)</source>
-        <translation type="vanished">Cyrillisch (Mac)</translation>
+        <translation type="vanished">Cirílico (Mac)</translation>
     </message>
     <message>
         <source>Central European</source>
-        <translation type="vanished">Centraal-Europees</translation>
+        <translation type="vanished">Centroeuropeo</translation>
     </message>
     <message>
         <source>Central European (Windows-1250)</source>
-        <translation type="vanished">Centraal-Europees (Windows-1250)</translation>
+        <translation type="vanished">Centroeuropeo (Windows-1250)</translation>
     </message>
     <message>
         <source>Central European (ISO-8859-2)</source>
-        <translation type="vanished">Centraal-Europees (ISO-8859-2)</translation>
+        <translation type="vanished">Centroeuropeo (ISO-8859-2)</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="vanished">Grieks</translation>
+        <translation type="vanished">Griego</translation>
     </message>
     <message>
         <source>Greek (Windows-1253)</source>
-        <translation type="vanished">Grieks (Windows-1253)</translation>
+        <translation type="vanished">Griego (Windows-1253)</translation>
     </message>
     <message>
         <source>Greek (ISO-8859-7)</source>
-        <translation type="vanished">Grieks (ISO-8859-7)</translation>
+        <translation type="vanished">Griego (ISO-8859-7)</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="vanished">Hebreeuws</translation>
+        <translation type="vanished">Hebreo</translation>
     </message>
     <message>
         <source>Hebrew (Windows-1255)</source>
-        <translation type="vanished">Hebreeuws (Windows-1255)</translation>
+        <translation type="vanished">Hebreo (Windows-1255)</translation>
     </message>
     <message>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation type="vanished">Hebreeuws (ISO-8859-8)</translation>
+        <translation type="vanished">Hebreo (ISO-8859-8)</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="vanished">Vereenvoudigd Chinees</translation>
+        <translation type="vanished">Chino simplificado</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB2312)</source>
-        <translation type="vanished">Vereenvoudigd Chinees (GB2312)</translation>
+        <translation type="vanished">Chino simplificado (GB2312)</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB18030)</source>
-        <translation type="vanished">Vereenvoudigd Chinees (GB18030)</translation>
+        <translation type="vanished">Chino simplificado (GB18030)</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="vanished">Traditioneel Chinees</translation>
+        <translation type="vanished">Chino tradicional</translation>
     </message>
     <message>
         <source>Chinese Traditional (Big5)</source>
-        <translation type="vanished">Traditioneel Chinees (Big5)</translation>
+        <translation type="vanished">Chino tradicional (Big5)</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="vanished">Japans</translation>
+        <translation type="vanished">Japonés</translation>
     </message>
     <message>
         <source>Japanese (Shift_JIS)</source>
-        <translation type="vanished">Japans (Shift_JIS)</translation>
+        <translation type="vanished">Japonés (Shift_JIS)</translation>
     </message>
     <message>
         <source>Japanese (EUC-JP)</source>
-        <translation type="vanished">Japans (EUC-JP)</translation>
+        <translation type="vanished">Japonés (EUC-JP)</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="vanished">Koreaans</translation>
+        <translation type="vanished">Coreano</translation>
     </message>
     <message>
         <source>Korean (EUC-KR)</source>
-        <translation type="vanished">Koreaans (EUC-KR)</translation>
+        <translation type="vanished">Coreano (EUC-KR)</translation>
     </message>
     <message>
         <source>Thai</source>
-        <translation type="vanished">Thais</translation>
+        <translation type="vanished">Tailandés</translation>
     </message>
     <message>
         <source>Thai (TIS-620)</source>
-        <translation type="vanished">Thais (TIS-620)</translation>
+        <translation type="vanished">Tailandés (TIS-620)</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Schakel tussen bron- / weergavemodus</translation>
+        <translation type="vanished">Alternar modo fuente / renderizado</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="obsolete">Vervangen</translation>
+        <translation type="obsolete">Reemplazar</translation>
     </message>
 </context>
 <context>
     <name>VirtualSourceEdit</name>
     <message>
         <source>Markdown source editor</source>
-        <translation type="vanished">Markdown-broncode-editor</translation>
+        <translation type="vanished">Editor de código fuente Markdown</translation>
     </message>
     <message>
         <source>Plain-text Markdown source</source>
-        <translation type="vanished">Markdown-broncode als platte tekst</translation>
+        <translation type="vanished">Código fuente Markdown en texto plano</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>A fast native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Een snelle native Markdown-editor gebouwd met C++ en Qt 6 Widgets.</translation>
+        <translation type="vanished">Un editor Markdown nativo rápido creado con C++ y Qt 6 Widgets.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
         <source>Cannot write to the portable data folder.</source>
-        <translation>Kan niet schrijven naar de gegevensmap van de draagbare versie.</translation>
+        <translation>No se puede escribir en la carpeta de datos de la versión portátil.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
         <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
-        <translation>De meegeleverde ICU-gegevens kunnen niet worden geladen. Installeer Mufpen opnieuw.</translation>
+        <translation>No se pueden cargar los datos ICU incluidos. Vuelve a instalar Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
         <source>A fast, lightweight, native Markdown editor built with C++ and Qt 6.</source>
-        <translation>Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6.</translation>
+        <translation>Un editor Markdown rápido, ligero y nativo, creado con C++ y Qt 6.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="149"/>
         <source>Open &lt;folder&gt; in the sidebar file browser.</source>
-        <translation>&lt;folder&gt; openen in de bestandsbrowser van de zijbalk.</translation>
+        <translation>Abrir &lt;folder&gt; en el explorador de archivos de la barra lateral.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="159"/>
         <source>Markdown or text file (or folder) to open.</source>
-        <translation>Te openen Markdown- of tekstbestand (of map).</translation>
+        <translation>Archivo Markdown, archivo de texto o carpeta que se abrirá.</translation>
     </message>
     <message>
         <source>Default Markdown editor</source>
-        <translation type="vanished">Standaard Markdown-editor</translation>
+        <translation type="vanished">Editor de Markdown predeterminado</translation>
     </message>
     <message>
         <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Mufpen is geregistreerd als editor voor Markdown-bestanden.
-Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
+        <translation type="vanished">Mufpen está registrado como editor de archivos Markdown.
+¿Desea convertirlo en su editor predeterminado ahora?</translation>
     </message>
     <message>
         <source>Markdown or text file to open.</source>
-        <translation type="vanished">Markdown- of tekstbestand om te openen.</translation>
+        <translation type="vanished">Archivo Markdown o de texto para abrir.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::BlockLayoutBuilder</name>
+    <name>mufpen::BlockLayoutBuilder</name>
     <message>
         <location filename="../src/render/BlockLayoutBuilder.cpp" line="504"/>
         <source>Start writing...</source>
-        <translation>Begin met schrijven...</translation>
+        <translation>Empiece a escribir...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::CustomCommandUploader</name>
+    <name>mufpen::CustomCommandUploader</name>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="25"/>
         <source>no upload command configured</source>
-        <translation>geen uploadopdracht ingesteld</translation>
+        <translation>no se ha configurado ningún comando de subida</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="34"/>
         <source>empty upload command</source>
-        <translation>lege uploadopdracht</translation>
+        <translation>el comando de subida está vacío</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="92"/>
         <source>uploader exited with code %1</source>
-        <translation>uploadprogramma beëindigd met code %1</translation>
+        <translation>el programa de subida terminó con el código %1</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="109"/>
         <source>uploader produced no URLs</source>
-        <translation>uploadprogramma heeft geen URL&apos;s geleverd</translation>
+        <translation>el programa de subida no devolvió ninguna URL</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentSession</name>
+    <name>mufpen::DocumentSession</name>
     <message>
         <location filename="../src/document/DocumentSession.cpp" line="872"/>
         <source>Untitled</source>
-        <translation>Naamloos</translation>
+        <translation>Sin título</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentTab</name>
+    <name>mufpen::DocumentTab</name>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="116"/>
         <location filename="../src/app/DocumentTab.cpp" line="444"/>
         <source>Markdown source</source>
-        <translation>Markdown-bron</translation>
+        <translation>Código Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="119"/>
         <location filename="../src/app/DocumentTab.cpp" line="445"/>
         <source>Read-only preview</source>
-        <translation>Alleen-lezenvoorbeeld</translation>
+        <translation>Vista previa de solo lectura</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="123"/>
         <location filename="../src/app/DocumentTab.cpp" line="446"/>
         <source>Synchronized scrolling</source>
-        <translation>Gesynchroniseerd scrollen</translation>
+        <translation>Desplazamiento sincronizado</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="147"/>
         <location filename="../src/app/DocumentTab.cpp" line="452"/>
         <source>Side by side</source>
-        <translation>Naast elkaar</translation>
+        <translation>Lado a lado</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="148"/>
         <location filename="../src/app/DocumentTab.cpp" line="453"/>
         <source>Top and bottom</source>
-        <translation>Boven elkaar</translation>
+        <translation>Arriba y abajo</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="157"/>
         <location filename="../src/app/DocumentTab.cpp" line="454"/>
         <source>Swap source and preview</source>
-        <translation>Broncode en voorbeeld omwisselen</translation>
+        <translation>Intercambiar código y vista previa</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="449"/>
         <source>Split layout</source>
-        <translation>Paneelindeling</translation>
+        <translation>Disposición de paneles</translation>
     </message>
 </context>
 <context>
-    <name>muffin::EditorView</name>
+    <name>mufpen::EditorView</name>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="115"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1659"/>
         <source>(no spelling suggestions)</source>
-        <translation>(geen spellingssuggesties)</translation>
+        <translation>(sin sugerencias ortográficas)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="131"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1670"/>
         <source>Ignore &quot;%1&quot;</source>
-        <translation>&quot;%1&quot; negeren</translation>
+        <translation>Ignorar &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorViewPaint.cpp" line="56"/>
         <source>Loading…</source>
-        <translation>Laden…</translation>
+        <translation>Cargando…</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="818"/>
         <source>Markdown editor</source>
-        <translation>Markdown-editor</translation>
+        <translation>Editor de Markdown</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="819"/>
         <source>Rendered Markdown document</source>
-        <translation>Gerenderd Markdown-document</translation>
+        <translation>Documento Markdown renderizado</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileController</name>
+    <name>mufpen::FileController</name>
     <message>
         <location filename="../src/io/FileController.cpp" line="367"/>
         <source>Open</source>
-        <translation>Openen</translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="368"/>
         <source>Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)</source>
-        <translation>Markdown- en tekstbestanden (*.md *.markdown *.mdown *.txt);;Alle bestanden (*.*)</translation>
+        <translation>Archivos Markdown y de texto (*.md *.markdown *.mdown *.txt);;Todos los archivos (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Save As</source>
-        <translation>Opslaan als</translation>
+        <translation>Guardar como</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="603"/>
         <source>The document cannot be encoded as %1.</source>
-        <translation>Het document kan niet als %1 worden gecodeerd.</translation>
+        <translation>El documento no se puede codificar como %1.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Markdown files (*.md);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Markdown-bestanden (*.md);;Tekstbestanden (*.txt);;Alle bestanden (*.*)</translation>
+        <translation>Archivos Markdown (*.md);;Archivos de texto (*.txt);;Todos los archivos (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
@@ -1169,213 +1165,213 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Markdown files (*.md *.markdown);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Markdown-bestanden (*.md *.markdown);;Tekstbestanden (*.txt);;Alle bestanden (*.*)</translation>
+        <translation>Archivos Markdown (*.md *.markdown);;Archivos de texto (*.txt);;Todos los archivos (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Het huidige document bevat niet-opgeslagen wijzigingen.</translation>
+        <translation>El documento actual tiene cambios sin guardar.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="529"/>
         <source>File Missing</source>
-        <translation>Bestand ontbreekt</translation>
+        <translation>Archivo no encontrado</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="530"/>
         <source>The file &quot;%1&quot; no longer exists on disk. Use Save As to write it to a new location.</source>
-        <translation>Het bestand &quot;%1&quot; bestaat niet meer op de schijf. Gebruik &quot;Opslaan als&quot; om het op een nieuwe locatie op te slaan.</translation>
+        <translation>El archivo «%1» ya no existe en el disco. Use Guardar como para guardarlo en otra ubicación.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="538"/>
         <source>File Changed on Disk</source>
-        <translation>Bestand op schijf gewijzigd</translation>
+        <translation>Archivo modificado en el disco</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
         <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
-        <translation>Het bestand &quot;%1&quot; is buiten Mufpen gewijzigd. Overschrijven?</translation>
+        <translation>El archivo «%1» se ha modificado fuera de Mufpen. ¿Desea sobrescribirlo?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
         <location filename="../src/io/FileController.cpp" line="636"/>
         <source>Open Failed</source>
-        <translation>Openen mislukt</translation>
+        <translation>Error al abrir</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <source>Could not detect a lossless text encoding for this file.</source>
-        <translation>Er kon geen tekstcodering zonder gegevensverlies voor dit bestand worden gedetecteerd.</translation>
+        <translation>No se pudo detectar una codificación de texto sin pérdida para este archivo.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="574"/>
         <location filename="../src/io/FileController.cpp" line="611"/>
         <location filename="../src/io/FileController.cpp" line="616"/>
         <source>Save Failed</source>
-        <translation>Opslaan mislukt</translation>
+        <translation>Error al guardar</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <location filename="../src/io/FileController.cpp" line="602"/>
         <location filename="../src/io/FileController.cpp" line="642"/>
         <source>Encoding Error</source>
-        <translation>Coderingsfout</translation>
+        <translation>Error de codificación</translation>
     </message>
     <message>
         <source>Unsupported encoding: %1</source>
-        <translation type="vanished">Niet-ondersteunde codering: %1</translation>
+        <translation type="vanished">Codificación no compatible: %1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="643"/>
         <source>Failed to decode file with encoding: %1</source>
-        <translation>Bestand decoderen met codering %1 mislukt</translation>
+        <translation>Error al decodificar el archivo con la codificación: %1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="658"/>
         <source>The document has unsaved changes. Save before reopening with a new encoding?</source>
-        <translation>Het document heeft niet-opgeslagen wijzigingen. Opslaan voordat u met een nieuwe codering heropent?</translation>
+        <translation>El documento tiene cambios sin guardar. ¿Guardar antes de reabrir con una nueva codificación?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Move To</source>
-        <translation>Verplaatsen naar</translation>
+        <translation>Mover a</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Move Failed</source>
-        <translation>Verplaatsen mislukt</translation>
+        <translation>Error al mover</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Could not move file to:
 %1</source>
-        <translation>Kan bestand niet verplaatsen naar:
+        <translation>No se pudo mover el archivo a:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileOpenConfirmation</name>
+    <name>mufpen::FileOpenConfirmation</name>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="84"/>
         <source>Open this file?</source>
-        <translation>Dit bestand openen?</translation>
+        <translation>¿Abrir este archivo?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="85"/>
         <source>This file is not a Markdown or text file. Are you sure you want to open it?</source>
-        <translation>Dit bestand is geen Markdown- of tekstbestand. Weet u zeker dat u het wilt openen?</translation>
+        <translation>Este archivo no es un archivo Markdown ni de texto. ¿Seguro que quieres abrirlo?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="87"/>
         <source>Opening this large file may take a long time and use a lot of memory. Are you sure you want to open it?</source>
-        <translation>Het openen van dit grote bestand kan lang duren en veel geheugen gebruiken. Weet u zeker dat u het wilt openen?</translation>
+        <translation>Abrir este archivo grande puede tardar mucho tiempo y consumir mucha memoria. ¿Seguro que quieres abrirlo?</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FilePathOps</name>
+    <name>mufpen::FilePathOps</name>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="182"/>
         <source>path does not exist</source>
-        <translation>pad bestaat niet</translation>
+        <translation>la ruta no existe</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="23"/>
         <source>operation failed</source>
-        <translation>bewerking mislukt</translation>
+        <translation>la operación falló</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="31"/>
         <source>file already exists</source>
-        <translation>bestand bestaat al</translation>
+        <translation>el archivo ya existe</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="38"/>
         <source>could not create parent directory</source>
-        <translation>bovenliggende map kon niet worden aangemaakt</translation>
+        <translation>no se pudo crear la carpeta superior</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="56"/>
         <source>path already exists</source>
-        <translation>pad bestaat al</translation>
+        <translation>la ruta ya existe</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="62"/>
         <source>could not create folder</source>
-        <translation>map kon niet worden aangemaakt</translation>
+        <translation>no se pudo crear la carpeta</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="84"/>
         <source>could not rename (target may exist or the move crosses volumes)</source>
-        <translation>hernoemen niet mogelijk (doel bestaat mogelijk al of ligt op een ander volume)</translation>
+        <translation>no se pudo cambiar el nombre (el destino puede existir o el traslado puede ser entre volúmenes)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="93"/>
         <source>could not rename (case-change intermediate step failed)</source>
-        <translation>hernoemen niet mogelijk (tussenstap bij het wijzigen van hoofdletters en kleine letters mislukt)</translation>
+        <translation>no se pudo cambiar el nombre (falló el paso intermedio del cambio de mayúsculas y minúsculas)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="103"/>
         <source>could not rename (case-change final step failed)</source>
-        <translation>hernoemen niet mogelijk (laatste stap bij het wijzigen van hoofdletters en kleine letters mislukt)</translation>
+        <translation>no se pudo cambiar el nombre (falló el paso final del cambio de mayúsculas y minúsculas)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="137"/>
         <source>could not create destination directory</source>
-        <translation>doelmap kon niet worden aangemaakt</translation>
+        <translation>no se pudo crear la carpeta de destino</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="143"/>
         <source>could not copy (destination may already exist)</source>
-        <translation>kopiëren niet mogelijk (doel bestaat mogelijk al)</translation>
+        <translation>no se pudo copiar (el destino puede existir)</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FindBarWidget</name>
+    <name>mufpen::FindBarWidget</name>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
         <source>Close</source>
-        <translation>Sluiten</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="104"/>
         <source>Find</source>
-        <translation>Zoeken</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="105"/>
         <source>Previous</source>
-        <translation>Vorige</translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="106"/>
         <source>Next</source>
-        <translation>Volgende</translation>
+        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="108"/>
         <location filename="../src/editor/FindBarWidget.cpp" line="109"/>
         <source>Replace</source>
-        <translation>Vervangen</translation>
+        <translation>Reemplazar</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="110"/>
         <source>Replace All</source>
-        <translation>Alles vervangen</translation>
+        <translation>Reemplazar todo</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="111"/>
         <source>Regex</source>
-        <translation>Reguliere expressie</translation>
+        <translation>Expresión regular</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="112"/>
         <source>Match Case</source>
-        <translation>Hoofdlettergevoelig</translation>
+        <translation>Distinguir mayúsculas y minúsculas</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="154"/>
         <source>Not found</source>
-        <translation>Niet gevonden</translation>
+        <translation>No encontrado</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="156"/>
@@ -1384,199 +1380,199 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     </message>
 </context>
 <context>
-    <name>muffin::HelpViewerDialog</name>
+    <name>mufpen::HelpViewerDialog</name>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
         <source>%1 — Mufpen Help</source>
-        <translation>%1 — Mufpen-help</translation>
+        <translation>%1 — Ayuda de Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
         <source>Go back</source>
-        <translation>Terug</translation>
+        <translation>Atrás</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="161"/>
         <source>Go forward</source>
-        <translation>Vooruit</translation>
+        <translation>Adelante</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="162"/>
         <source>Scroll to top</source>
-        <translation>Naar boven</translation>
+        <translation>Ir arriba</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="190"/>
         <source>Quick Start</source>
-        <translation>Snelstart</translation>
+        <translation>Inicio rápido</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="192"/>
         <source>Markdown Reference</source>
-        <translation>Markdown-referentie</translation>
+        <translation>Referencia de Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="194"/>
         <source>Acknowledgements</source>
-        <translation>Dankbetuigingen</translation>
+        <translation>Agradecimientos</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="211"/>
         <source>This page is not available.</source>
-        <translation>Deze pagina is niet beschikbaar.</translation>
+        <translation>Esta página no está disponible.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::ImageFileOps</name>
+    <name>mufpen::ImageFileOps</name>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="216"/>
         <source>source or destination directory is unavailable</source>
-        <translation>bron- of doelmap is niet beschikbaar</translation>
+        <translation>la carpeta de origen o de destino no está disponible</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="250"/>
         <source>could not locate an image destination in the document source</source>
-        <translation>afbeeldingsdoel kon niet worden gevonden in de broncode van het document</translation>
+        <translation>no se pudo encontrar la ruta de una imagen en el código fuente del documento</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="269"/>
         <source>could not move %1</source>
-        <translation>%1 kon niet worden verplaatst</translation>
+        <translation>no se pudo mover %1</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="271"/>
         <source>; rollback failed for %1</source>
-        <translation>; terugdraaien mislukt voor %1</translation>
+        <translation>; no se pudo devolver %1 a su ubicación original</translation>
     </message>
 </context>
 <context>
-    <name>muffin::LanguageManager</name>
+    <name>mufpen::LanguageManager</name>
     <message>
         <location filename="../src/app/LanguageManager.cpp" line="17"/>
         <source>System Default</source>
-        <translation>Systeemstandaard</translation>
+        <translation>Predeterminado del sistema</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MainWindow</name>
+    <name>mufpen::MainWindow</name>
     <message>
         <source>Parse %1 ms</source>
-        <translation type="vanished">Parseren %1 ms</translation>
+        <translation type="vanished">Análisis %1 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="431"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="933"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="937"/>
         <source> (Editing Locked)</source>
-        <translation> (Bewerken vergrendeld)</translation>
+        <translation> (Edición bloqueada)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Unlock Editing</source>
-        <translation>Bewerken ontgrendelen</translation>
+        <translation>Desbloquear edición</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="647"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Lock Editing</source>
-        <translation>Bewerken vergrendelen</translation>
+        <translation>Bloquear edición</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="493"/>
         <source>This pane is a read-only preview. Edit the Markdown source on the left.</source>
-        <translation>Dit paneel is een alleen-lezenvoorbeeld. Bewerk de Markdown-bron aan de linkerkant.</translation>
+        <translation>Este panel es una vista previa de solo lectura. Edite el código Markdown a la izquierda.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="495"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="932"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="936"/>
         <source>Editing is locked. Unlock editing to change this document.</source>
-        <translation>Bewerken is vergrendeld. Ontgrendel het om dit document te wijzigen.</translation>
+        <translation>La edición está bloqueada. Desbloquéala para modificar este documento.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="497"/>
         <source>The document is still loading.</source>
-        <translation>Het document wordt nog geladen.</translation>
+        <translation>El documento aún se está cargando.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="688"/>
         <source>Open Folder</source>
-        <translation>Map openen</translation>
+        <translation>Abrir carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1933"/>
         <source>Show / Hide Sidebar</source>
-        <translation>Zijbalk tonen / verbergen</translation>
+        <translation>Mostrar / ocultar barra lateral</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Schakel tussen bron- / weergavemodus</translation>
+        <translation type="vanished">Alternar modo fuente / renderizado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2170"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>File</source>
-        <translation>Bestand</translation>
+        <translation>Archivo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="114"/>
         <source>New</source>
-        <translation>Nieuw</translation>
+        <translation>Nuevo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="119"/>
         <source>New Window</source>
-        <translation>Nieuw venster</translation>
+        <translation>Nueva ventana</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="128"/>
         <source>Open...</source>
-        <translation>Openen...</translation>
+        <translation>Abrir...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="124"/>
         <source>Open Folder...</source>
-        <translation>Map openen...</translation>
+        <translation>Abrir carpeta...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="133"/>
         <source>Quick Open...</source>
-        <translation>Snel openen...</translation>
+        <translation>Apertura rápida...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="144"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2178"/>
         <source>Open Recent</source>
-        <translation>Recent openen</translation>
+        <translation>Abrir recientes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2182"/>
         <source>Reopen with Encoding</source>
-        <translation>Opnieuw openen met codering</translation>
+        <translation>Reabrir con codificación</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="162"/>
         <source>Save</source>
-        <translation>Opslaan</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="176"/>
         <source>Save As...</source>
-        <translation>Opslaan als...</translation>
+        <translation>Guardar como...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="187"/>
         <source>Move To...</source>
-        <translation>Verplaatsen naar...</translation>
+        <translation>Mover a...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="193"/>
         <source>Save All Open Files...</source>
-        <translation>Alle geopende bestanden opslaan...</translation>
+        <translation>Guardar todos los archivos abiertos...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="199"/>
@@ -1584,199 +1580,199 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
         <location filename="../src/app/MainWindowFileOps.cpp" line="402"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1223"/>
         <source>Properties</source>
-        <translation>Eigenschappen</translation>
+        <translation>Propiedades</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="204"/>
         <source>Show in File Manager...</source>
-        <translation>Weergeven in bestandsbeheerder...</translation>
+        <translation>Mostrar en el gestor de archivos...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="209"/>
         <source>Show in Sidebar</source>
-        <translation>Tonen in zijbalk</translation>
+        <translation>Mostrar en la barra lateral</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="215"/>
         <source>Delete...</source>
-        <translation>Verwijderen...</translation>
+        <translation>Eliminar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="221"/>
         <source>Import...</source>
-        <translation>Importeren...</translation>
+        <translation>Importar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1914"/>
         <source>Could not move images:
 %1</source>
-        <translation>Afbeeldingen konden niet worden verplaatst:
+        <translation>No se pudieron mover las imágenes:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1968"/>
         <source>Source and Preview</source>
-        <translation>Bron en voorbeeld</translation>
+        <translation>Código y vista previa</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Auteur:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Licentie:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Plataforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Licencia:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Sitio web:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
         <source>Export</source>
-        <translation>Exporteren</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="227"/>
         <source>Print...</source>
-        <translation>Afdrukken...</translation>
+        <translation>Imprimir...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="324"/>
         <source>Preferences...</source>
-        <translation>Voorkeuren...</translation>
+        <translation>Preferencias...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Sluiten</translation>
+        <translation type="vanished">Cerrar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2233"/>
         <source>Edit</source>
-        <translation>Bewerken</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="366"/>
         <source>Undo</source>
-        <translation>Ongedaan maken</translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="372"/>
         <source>Redo</source>
-        <translation>Opnieuw</translation>
+        <translation>Rehacer</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="378"/>
         <source>Cut</source>
-        <translation>Knippen</translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="383"/>
         <source>Copy</source>
-        <translation>Kopiëren</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1559"/>
         <source>Copy Image</source>
-        <translation>Afbeelding kopiëren</translation>
+        <translation>Copiar imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="420"/>
         <source>Paste</source>
-        <translation>Plakken</translation>
+        <translation>Pegar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="425"/>
         <source>Copy as Plain Text</source>
-        <translation>Kopiëren als platte tekst</translation>
+        <translation>Copiar como texto sin formato</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="431"/>
         <source>Copy as Markdown</source>
-        <translation>Kopiëren als Markdown</translation>
+        <translation>Copiar como Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="438"/>
         <source>Copy as HTML</source>
-        <translation>Kopiëren als HTML</translation>
+        <translation>Copiar como HTML</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="445"/>
         <source>Paste as Plain Text</source>
-        <translation>Plakken als platte tekst</translation>
+        <translation>Pegar como texto sin formato</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2250"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="232"/>
         <source>Select</source>
-        <translation>Selecteren</translation>
+        <translation>Seleccionar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="450"/>
         <source>Select All</source>
-        <translation>Alles selecteren</translation>
+        <translation>Seleccionar todo</translation>
     </message>
     <message>
         <source>Select Current Line</source>
-        <translation type="vanished">Huidige regel selecteren</translation>
+        <translation type="vanished">Seleccionar línea actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="469"/>
         <source>Select Current Format Text</source>
-        <translation>Tekst met huidige opmaak selecteren</translation>
+        <translation>Seleccionar texto con formato actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="518"/>
         <source>Move Line Up</source>
-        <translation>Regel omhoog verplaatsen</translation>
+        <translation>Mover línea arriba</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="526"/>
         <source>Move Line Down</source>
-        <translation>Regel omlaag verplaatsen</translation>
+        <translation>Mover línea abajo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="546"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="349"/>
         <source>Delete</source>
-        <translation>Verwijderen</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2272"/>
         <source>Delete Range</source>
-        <translation>Bereik verwijderen</translation>
+        <translation>Eliminar rango</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="553"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="56"/>
         <source>Delete Block</source>
-        <translation>Blok verwijderen</translation>
+        <translation>Eliminar bloque</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="560"/>
         <source>Delete Current Line</source>
-        <translation>Huidige regel verwijderen</translation>
+        <translation>Eliminar línea actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="567"/>
         <source>Delete Current Format Text</source>
-        <translation>Huidige opgemaakte tekst verwijderen</translation>
+        <translation>Eliminar texto con formato actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="574"/>
         <source>Delete Current Word</source>
-        <translation>Huidige woord verwijderen</translation>
+        <translation>Eliminar palabra actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2281"/>
         <source>Math Tools</source>
-        <translation>Wiskundehulpmiddelen</translation>
+        <translation>Herramientas matemáticas</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2287"/>
         <source>Smart Punctuation</source>
-        <translation>Slimme interpunctie</translation>
+        <translation>Puntuación inteligente</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2301"/>
         <source>Line Breaks</source>
-        <translation>Regeleinden</translation>
+        <translation>Saltos de línea</translation>
     </message>
     <message>
         <source>Spaces and Line Breaks</source>
-        <translation type="vanished">Spaties en regeleinden</translation>
+        <translation type="vanished">Espacios y saltos de línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="592"/>
@@ -1791,16 +1787,16 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="614"/>
         <source>Ensure Trailing Newline on Save</source>
-        <translation>Regeleinde aan bestandseinde garanderen bij opslaan</translation>
+        <translation>Asegurar salto de línea final al guardar</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="vanished">Spellingcontrole...</translation>
+        <translation type="vanished">Revisión ortográfica...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2311"/>
         <source>Find and Replace</source>
-        <translation>Zoeken en vervangen</translation>
+        <translation>Buscar y reemplazar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="739"/>
@@ -1808,112 +1804,112 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="59"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="214"/>
         <source>Paragraph</source>
-        <translation>Alinea</translation>
+        <translation>Párrafo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="61"/>
         <source>Heading %1</source>
-        <translation>Kop %1</translation>
+        <translation>Encabezado %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="749"/>
         <source>Promote Heading</source>
-        <translation>Kop promoveren</translation>
+        <translation>Subir nivel del encabezado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="761"/>
         <source>Demote Heading</source>
-        <translation>Kop degraderen</translation>
+        <translation>Bajar nivel del encabezado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2367"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2448"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="171"/>
         <source>Table</source>
-        <translation>Tabel</translation>
+        <translation>Tabla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="773"/>
         <source>Formula Block</source>
-        <translation>Formuleblok</translation>
+        <translation>Bloque de fórmula</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="785"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="66"/>
         <source>Code Block</source>
-        <translation>Codeblok</translation>
+        <translation>Bloque de código</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2394"/>
         <source>Code Tools</source>
-        <translation>Codehulpmiddelen</translation>
+        <translation>Herramientas de código</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2407"/>
         <source>Alert</source>
-        <translation>Waarschuwing</translation>
+        <translation>Alerta</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="797"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="65"/>
         <source>Quote</source>
-        <translation>Citaat</translation>
+        <translation>Cita</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="805"/>
         <source>Ordered List</source>
-        <translation>Genummerde lijst</translation>
+        <translation>Lista ordenada</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="813"/>
         <source>Unordered List</source>
-        <translation>Ongenummerde lijst</translation>
+        <translation>Lista sin ordenar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="821"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="64"/>
         <source>Task List</source>
-        <translation>Takenlijst</translation>
+        <translation>Lista de tareas</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2349"/>
         <source>Task Status</source>
-        <translation>Taakstatus</translation>
+        <translation>Estado de la tarea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2355"/>
         <source>List Indent</source>
-        <translation>Lijstinspringing</translation>
+        <translation>Sangría de lista</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="877"/>
         <source>Insert Paragraph Before</source>
-        <translation>Alinea ervoor invoegen</translation>
+        <translation>Insertar párrafo antes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="888"/>
         <source>Insert Paragraph After</source>
-        <translation>Alinea erna invoegen</translation>
+        <translation>Insertar párrafo después</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="899"/>
         <source>Link Reference</source>
-        <translation>Linkverwijzing</translation>
+        <translation>Referencia de enlace</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="906"/>
         <source>Footnote</source>
-        <translation>Voetnoot</translation>
+        <translation>Nota al pie</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="913"/>
         <source>Horizontal Rule</source>
-        <translation>Horizontale lijn</translation>
+        <translation>Línea horizontal</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="921"/>
         <source>Table of Contents</source>
-        <translation>Inhoudsopgave</translation>
+        <translation>Tabla de contenido</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2420"/>
@@ -1938,113 +1934,113 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2485"/>
         <source>Format</source>
-        <translation>Opmaak</translation>
+        <translation>Formato</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1297"/>
         <source>Bold</source>
-        <translation>Vet</translation>
+        <translation>Negrita</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1309"/>
         <source>Italic</source>
-        <translation>Cursief</translation>
+        <translation>Cursiva</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1321"/>
         <source>Underline</source>
-        <translation>Onderstrepen</translation>
+        <translation>Subrayado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1343"/>
         <source>Inline Code</source>
-        <translation>Inline code</translation>
+        <translation>Código en línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1355"/>
         <source>Inline Formula</source>
-        <translation>Inline formule</translation>
+        <translation>Fórmula en línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1368"/>
         <source>Strikethrough</source>
-        <translation>Doorhalen</translation>
+        <translation>Tachado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1381"/>
         <source>Comment</source>
-        <translation>Opmerking</translation>
+        <translation>Comentario</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1386"/>
         <source>Hyperlink</source>
-        <translation>Hyperlink</translation>
+        <translation>Hipervínculo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2217"/>
         <source>Export Presets</source>
-        <translation>Exportvoorinstellingen</translation>
+        <translation>Preajustes de exportación</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2435"/>
         <source>Paragraph Alignment</source>
-        <translation>Alinea-uitlijning</translation>
+        <translation>Alineación del párrafo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2497"/>
         <source>Link Actions</source>
-        <translation>Linkacties</translation>
+        <translation>Acciones de enlace</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2504"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="155"/>
         <source>Image</source>
-        <translation>Afbeelding</translation>
+        <translation>Imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1533"/>
         <source>Insert Image...</source>
-        <translation>Afbeelding invoegen...</translation>
+        <translation>Insertar imagen...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1540"/>
         <source>Insert Local Image...</source>
-        <translation>Lokale afbeelding invoegen...</translation>
+        <translation>Insertar imagen local...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1545"/>
         <source>Open Image Location...</source>
-        <translation>Afbeeldingslocatie openen...</translation>
+        <translation>Abrir ubicación de la imagen...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1579"/>
         <source>Delete Image File</source>
-        <translation>Afbeeldingsbestand verwijderen</translation>
+        <translation>Eliminar archivo de imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1605"/>
         <source>Copy Image To...</source>
-        <translation>Afbeelding kopiëren naar...</translation>
+        <translation>Copiar imagen a...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1639"/>
         <source>Rename / Move Image To...</source>
-        <translation>Afbeelding hernoemen / verplaatsen naar...</translation>
+        <translation>Renombrar / Mover imagen a...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1713"/>
         <source>Upload All Local Images</source>
-        <translation>Alle lokale afbeeldingen uploaden</translation>
+        <translation>Subir todas las imágenes locales</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1772"/>
         <source>Reload All Images</source>
-        <translation>Alle afbeeldingen opnieuw laden</translation>
+        <translation>Recargar todas las imágenes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2521"/>
         <source>Resize Image</source>
-        <translation>Afbeeldingsgrootte wijzigen</translation>
+        <translation>Redimensionar imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1783"/>
@@ -2074,17 +2070,17 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1834"/>
         <source>Custom...</source>
-        <translation>Aangepast...</translation>
+        <translation>Personalizado...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2533"/>
         <source>Convert Image Syntax</source>
-        <translation>Afbeeldingssyntaxis converteren</translation>
+        <translation>Convertir sintaxis de imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1856"/>
         <source>Standard Markdown ![](url)</source>
-        <translation>Standaard Markdown ![](url)</translation>
+        <translation>Markdown estándar ![](url)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1863"/>
@@ -2093,201 +2089,201 @@ Wilt u Mufpen nu als uw standaardeditor instellen?</translation>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="vanished">Bij invoegen van lokale afbeelding</translation>
+        <translation type="vanished">Al insertar imagen local</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="vanished">Relatief pad invoegen</translation>
+        <translation type="vanished">Insertar ruta relativa</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="vanished">Absoluut pad invoegen</translation>
+        <translation type="vanished">Insertar ruta absoluta</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="vanished">Kopiëren naar aangepaste map</translation>
+        <translation type="vanished">Copiar a carpeta personalizada</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1870"/>
         <source>Copy All Images To...</source>
-        <translation>Alle afbeeldingen kopiëren naar...</translation>
+        <translation>Copiar todas las imágenes a...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1897"/>
         <source>Move All Images To...</source>
-        <translation>Alle afbeeldingen verplaatsen naar...</translation>
+        <translation>Mover todas las imágenes a...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1927"/>
         <source>Global Image Settings...</source>
-        <translation>Algemene afbeeldingsinstellingen...</translation>
+        <translation>Configuración global de imágenes...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1412"/>
         <source>Clear Style</source>
-        <translation>Stijl wissen</translation>
+        <translation>Borrar estilo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1017"/>
         <location filename="../src/app/MainWindowActions.cpp" line="165"/>
         <source>Insert Table</source>
-        <translation>Tabel invoegen</translation>
+        <translation>Insertar tabla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1024"/>
         <source>Insert Row Above</source>
-        <translation>Rij erboven invoegen</translation>
+        <translation>Insertar fila arriba</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1030"/>
         <source>Insert Row Below</source>
-        <translation>Rij eronder invoegen</translation>
+        <translation>Insertar fila abajo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1076"/>
         <source>Delete Row</source>
-        <translation>Rij verwijderen</translation>
+        <translation>Eliminar fila</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1050"/>
         <source>Move Row Up</source>
-        <translation>Rij omhoog verplaatsen</translation>
+        <translation>Mover fila arriba</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1056"/>
         <source>Move Row Down</source>
-        <translation>Rij omlaag verplaatsen</translation>
+        <translation>Mover fila abajo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1038"/>
         <source>Insert Column Left</source>
-        <translation>Kolom links invoegen</translation>
+        <translation>Insertar columna a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1044"/>
         <source>Insert Column Right</source>
-        <translation>Kolom rechts invoegen</translation>
+        <translation>Insertar columna a la derecha</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1084"/>
         <source>Delete Column</source>
-        <translation>Kolom verwijderen</translation>
+        <translation>Eliminar columna</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1062"/>
         <source>Move Column Left</source>
-        <translation>Kolom naar links verplaatsen</translation>
+        <translation>Mover columna a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1069"/>
         <source>Move Column Right</source>
-        <translation>Kolom naar rechts verplaatsen</translation>
+        <translation>Mover columna a la derecha</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1107"/>
         <source>Align Left</source>
-        <translation>Links uitlijnen</translation>
+        <translation>Alinear a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1113"/>
         <source>Align Center</source>
-        <translation>Centreren</translation>
+        <translation>Centrar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1119"/>
         <source>Align Right</source>
-        <translation>Rechts uitlijnen</translation>
+        <translation>Alinear a la derecha</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1125"/>
         <source>Clear Alignment</source>
-        <translation>Uitlijning wissen</translation>
+        <translation>Borrar alineación</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1101"/>
         <source>Delete Table</source>
-        <translation>Tabel verwijderen</translation>
+        <translation>Eliminar tabla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="455"/>
         <source>Select Paragraph or Block</source>
-        <translation>Alinea of blok selecteren</translation>
+        <translation>Seleccionar párrafo o bloque</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="462"/>
         <source>Select Current Line or Sentence</source>
-        <translation>Huidige regel of zin selecteren</translation>
+        <translation>Seleccionar línea o frase actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="476"/>
         <source>Select Current Word</source>
-        <translation>Huidig woord selecteren</translation>
+        <translation>Seleccionar palabra actual</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="483"/>
         <source>Jump to Start of Document</source>
-        <translation>Naar begin van document</translation>
+        <translation>Ir al inicio del documento</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="490"/>
         <source>Jump to Selection</source>
-        <translation>Naar selectie</translation>
+        <translation>Ir a la selección</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="496"/>
         <source>Jump to End of Document</source>
-        <translation>Naar einde van document</translation>
+        <translation>Ir al final del documento</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="503"/>
         <source>Jump to Start of Line</source>
-        <translation>Naar begin van regel</translation>
+        <translation>Ir al inicio de línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="510"/>
         <source>Jump to End of Line</source>
-        <translation>Naar einde van regel</translation>
+        <translation>Ir al final de línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1089"/>
         <source>Copy Table</source>
-        <translation>Tabel kopiëren</translation>
+        <translation>Copiar tabla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1095"/>
         <source>Format Table Source</source>
-        <translation>Tabelbron opmaken</translation>
+        <translation>Formatear fuente de tabla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1679"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1719"/>
         <source>No upload command is configured.
 Set up a custom upload command in Preferences → Images.</source>
-        <translation>Er is geen uploadopdracht geconfigureerd.
-Stel een aangepaste uploadopdracht in via Voorkeuren → Afbeeldingen.</translation>
+        <translation>No hay configurado ningún comando de subida.
+Configure un comando de subida personalizado en Preferencias → Imágenes.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1695"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1751"/>
         <source>Upload failed:
 %1</source>
-        <translation>Uploaden mislukt:
+        <translation>Error de subida:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1741"/>
         <source>There are no local images to upload.</source>
-        <translation>Er zijn geen lokale afbeeldingen om te uploaden.</translation>
+        <translation>No hay imágenes locales para subir.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1753"/>
         <source>the uploader did not return one URL per image</source>
-        <translation>het uploadprogramma heeft niet voor elke afbeelding één URL geleverd</translation>
+        <translation>el programa de subida no devolvió una URL por imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1767"/>
         <source>Uploaded %1 image(s).</source>
-        <translation>%1 afbeelding(en) geüpload.</translation>
+        <translation>Se subieron %1 imagen(es).</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2295,214 +2291,218 @@ Stel een aangepaste uploadopdracht in via Voorkeuren → Afbeeldingen.</translat
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Live voorbeeld en bronbewerking; exporteren naar PDF, HTML en nog vele andere formaten via Pandoc; afbeeldingen invoegen met kopiëren-naar-map en uploaden via aangepaste opdracht; spellingcontrole; thema&apos;s; zoeken en vervangen; overzicht; snel openen; en crash-veilige conceptherstel.</translation>
+        <translation type="vanished">Mufpen %1
+
+Un editor Markdown rápido, ligero y nativo, creado con C++ y Qt 6.
+
+Vista previa en vivo y edición de código fuente; exportación a PDF, HTML y muchos más formatos mediante Pandoc; inserción de imágenes con copia a carpeta y subida por comando personalizado; corrector ortográfico; temas; buscar y reemplazar; esquema; apertura rápida; y recuperación de borradores a prueba de fallos.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2458"/>
         <source>Code</source>
-        <translation>Code</translation>
+        <translation>Código</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1133"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1223"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1260"/>
         <source>Enter Edit</source>
-        <translation>Bewerken starten</translation>
+        <translation>Entrar en edición</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1141"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1231"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1268"/>
         <source>Exit Edit</source>
-        <translation>Bewerken afsluiten</translation>
+        <translation>Salir de edición</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1150"/>
         <source>Set Language...</source>
-        <translation>Taal instellen...</translation>
+        <translation>Establecer idioma...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2476"/>
         <source>Math</source>
-        <translation>Wiskunde</translation>
+        <translation>Matemáticas</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1277"/>
         <source>Set TeX...</source>
-        <translation>TeX instellen...</translation>
+        <translation>Establecer TeX...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1240"/>
         <source>Set HTML...</source>
-        <translation>HTML instellen...</translation>
+        <translation>Establecer HTML...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2548"/>
         <source>View</source>
-        <translation>Beeld</translation>
+        <translation>Ver</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1944"/>
         <source>Outline</source>
-        <translation>Overzicht</translation>
+        <translation>Esquema</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1949"/>
         <source>File Tree</source>
-        <translation>Bestandsstructuur</translation>
+        <translation>Árbol de archivos</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="vanished">Zoeken</translation>
+        <translation type="vanished">Buscar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1954"/>
         <source>Source Code Mode</source>
-        <translation>Broncodemodus</translation>
+        <translation>Modo código fuente</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1981"/>
         <source>Word Wrap</source>
-        <translation>Tekstterugloop</translation>
+        <translation>Ajuste de línea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1994"/>
         <source>Focus Mode</source>
-        <translation>Focusmodus</translation>
+        <translation>Modo enfoque</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2005"/>
         <source>Typewriter Mode</source>
-        <translation>Typemachinemodus</translation>
+        <translation>Modo máquina de escribir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2016"/>
         <source>Show Status Bar</source>
-        <translation>Statusbalk tonen</translation>
+        <translation>Mostrar barra de estado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2027"/>
         <source>Word Count Window</source>
-        <translation>Woordentellingsvenster</translation>
+        <translation>Ventana de recuento de palabras</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2031"/>
         <source>Toggle Full Screen</source>
-        <translation>Volledig scherm wisselen</translation>
+        <translation>Alternar pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2036"/>
         <source>Always on Top</source>
-        <translation>Altijd bovenaan</translation>
+        <translation>Siempre visible</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2047"/>
         <source>Actual Size</source>
-        <translation>Werkelijke grootte</translation>
+        <translation>Tamaño real</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2056"/>
         <source>Zoom In</source>
-        <translation>Inzoomen</translation>
+        <translation>Acercar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2065"/>
         <source>Zoom Out</source>
-        <translation>Uitzoomen</translation>
+        <translation>Alejar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2074"/>
         <source>Switch Windows</source>
-        <translation>Vensters wisselen</translation>
+        <translation>Cambiar ventanas</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Auteur:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Licentie:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Plataforma:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Licencia:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Sitio web:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
         <source>Insert</source>
-        <translation>Invoegen</translation>
+        <translation>Insertar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2578"/>
         <source>Theme</source>
-        <translation>Thema</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2580"/>
         <source>Help</source>
-        <translation>Help</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2086"/>
         <source>Quick Start</source>
-        <translation>Snelstart</translation>
+        <translation>Inicio rápido</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2090"/>
         <source>Markdown Reference</source>
-        <translation>Markdown-referentie</translation>
+        <translation>Referencia de Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2094"/>
         <source>Custom Themes</source>
-        <translation>Aangepaste thema’s</translation>
+        <translation>Temas personalizados</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2098"/>
         <source>Acknowledgements</source>
-        <translation>Dankbetuigingen</translation>
+        <translation>Agradecimientos</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2102"/>
         <source>Changelog</source>
-        <translation>Wijzigingslog</translation>
+        <translation>Registro de cambios</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2110"/>
         <source>Official Website</source>
-        <translation>Officiële website</translation>
+        <translation>Sitio web oficial</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2115"/>
         <source>Feedback</source>
-        <translation>Feedback</translation>
+        <translation>Comentarios</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2122"/>
         <source>Check for Updates...</source>
-        <translation>Controleren op updates...</translation>
+        <translation>Buscar actualizaciones...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2130"/>
         <source>About</source>
-        <translation>Over</translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1589"/>
         <source>Delete Image</source>
-        <translation>Afbeelding verwijderen</translation>
+        <translation>Eliminar imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="155"/>
         <source>Reopen Closed File</source>
-        <translation>Gesloten bestand opnieuw openen</translation>
+        <translation>Reabrir archivo cerrado</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="171"/>
         <source>Document is still loading…</source>
-        <translation>Document wordt nog geladen…</translation>
+        <translation>El documento aún se está cargando…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="234"/>
         <source>Export with Previous Settings...</source>
-        <translation>Exporteren met vorige instellingen...</translation>
+        <translation>Exportar con la configuración anterior...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="240"/>
         <source>Export and Overwrite Previous</source>
-        <translation>Exporteren en vorige bestand overschrijven</translation>
+        <translation>Exportar y sobrescribir el archivo anterior</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="246"/>
@@ -2518,12 +2518,12 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="258"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (zonder stijlen)</translation>
+        <translation>HTML (sin estilos)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="264"/>
         <source>Image (PNG)</source>
-        <translation>Afbeelding (PNG)</translation>
+        <translation>Imagen (PNG)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="270"/>
@@ -2576,98 +2576,98 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="554"/>
         <source>Close Tab</source>
-        <translation>Tabblad sluiten</translation>
+        <translation>Cerrar pestaña</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="334"/>
         <source>Quit</source>
-        <translation>Afsluiten</translation>
+        <translation>Salir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="341"/>
         <source>Next Tab</source>
-        <translation>Volgend tabblad</translation>
+        <translation>Pestaña siguiente</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="346"/>
         <source>Previous Tab</source>
-        <translation>Vorig tabblad</translation>
+        <translation>Pestaña anterior</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="353"/>
         <source>Back</source>
-        <translation>Terug</translation>
+        <translation>Atrás</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="359"/>
         <source>Forward</source>
-        <translation>Vooruit</translation>
+        <translation>Adelante</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="388"/>
         <source>Open Link</source>
-        <translation>Link openen</translation>
+        <translation>Abrir enlace</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="404"/>
         <source>Copy Link Address</source>
-        <translation>Linkadres kopiëren</translation>
+        <translation>Copiar dirección del enlace</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="534"/>
         <source>Skip Closing Symbol</source>
-        <translation>Sluitteken overslaan</translation>
+        <translation>Saltar símbolo de cierre</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="580"/>
         <source>Spell Check</source>
-        <translation>Spellingcontrole</translation>
+        <translation>Corrector ortográfico</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="634"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="357"/>
         <source>Find in Folder…</source>
-        <translation>Zoeken in map…</translation>
+        <translation>Buscar en la carpeta…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="639"/>
         <source>Replace in Folder…</source>
-        <translation>Vervangen in map…</translation>
+        <translation>Reemplazar en la carpeta…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="685"/>
         <source>Heading 1</source>
-        <translation>Kop 1</translation>
+        <translation>Encabezado 1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="694"/>
         <source>Heading 2</source>
-        <translation>Kop 2</translation>
+        <translation>Encabezado 2</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="703"/>
         <source>Heading 3</source>
-        <translation>Kop 3</translation>
+        <translation>Encabezado 3</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="712"/>
         <source>Heading 4</source>
-        <translation>Kop 4</translation>
+        <translation>Encabezado 4</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="721"/>
         <source>Heading 5</source>
-        <translation>Kop 5</translation>
+        <translation>Encabezado 5</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="730"/>
         <source>Heading 6</source>
-        <translation>Kop 6</translation>
+        <translation>Encabezado 6</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="829"/>
         <source>Align Paragraph Left</source>
-        <translation>Alinea links uitlijnen</translation>
+        <translation>Alinear párrafo a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="835"/>
@@ -2675,179 +2675,179 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/CommandDeclarations.cpp" line="859"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="871"/>
         <source>Place the caret in a top-level paragraph or heading in live editing mode.</source>
-        <translation>Plaats de cursor in een alinea of kop op het hoogste niveau in de livebewerkingsmodus.</translation>
+        <translation>Coloca el cursor en un párrafo o encabezado de nivel superior en el modo de edición en vivo.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="841"/>
         <source>Center Paragraph</source>
-        <translation>Alinea centreren</translation>
+        <translation>Centrar párrafo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="853"/>
         <source>Align Paragraph Right</source>
-        <translation>Alinea rechts uitlijnen</translation>
+        <translation>Alinear párrafo a la derecha</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="865"/>
         <source>Justify Paragraph</source>
-        <translation>Alinea uitvullen</translation>
+        <translation>Justificar párrafo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="945"/>
         <source>Note</source>
-        <translation>Opmerking</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="952"/>
         <source>Tip</source>
-        <translation>Tip</translation>
+        <translation>Consejo</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="959"/>
         <source>Important</source>
-        <translation>Belangrijk</translation>
+        <translation>Importante</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="966"/>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="973"/>
         <source>Caution</source>
-        <translation>Pas op</translation>
+        <translation>Precaución</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="983"/>
         <source>Toggle Task Status</source>
-        <translation>Taakstatus wisselen</translation>
+        <translation>Cambiar estado de la tarea</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="995"/>
         <source>Indent</source>
-        <translation>Inspringen</translation>
+        <translation>Aumentar sangría</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1005"/>
         <source>Outdent</source>
-        <translation>Uitspringen</translation>
+        <translation>Disminuir sangría</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1168"/>
         <source>Copy Code Block Content</source>
-        <translation>Codeblok-inhoud kopiëren</translation>
+        <translation>Copiar contenido del bloque de código</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1183"/>
         <source>Indent Selection</source>
-        <translation>Selectie inspringen</translation>
+        <translation>Aumentar sangría de la selección</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1193"/>
         <source>Dedent Selection</source>
-        <translation>Selectie uitspringen</translation>
+        <translation>Disminuir sangría de la selección</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1203"/>
         <source>Indent Whole Block</source>
-        <translation>Hele blok inspringen</translation>
+        <translation>Aumentar sangría de todo el bloque</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1212"/>
         <source>Dedent Whole Block</source>
-        <translation>Hele blok uitspringen</translation>
+        <translation>Disminuir sangría de todo el bloque</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1336"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1425"/>
         <source>Switch to live editing to use this formatting command.</source>
-        <translation>Schakel over naar live bewerken om deze opmaakopdracht te gebruiken.</translation>
+        <translation>Cambie a la edición en vivo para usar este comando de formato.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1337"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1406"/>
         <source>Select text within a single paragraph or table cell, or place the caret in editable text.</source>
-        <translation>Selecteer tekst binnen één alinea of tabelcel, of plaats de cursor in bewerkbare tekst.</translation>
+        <translation>Seleccione texto dentro de un solo párrafo o una sola celda de tabla, o coloque el cursor en texto editable.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1402"/>
         <source>Wait for the document to finish loading.</source>
-        <translation>Wacht tot het document volledig is geladen.</translation>
+        <translation>Espere a que el documento termine de cargarse.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1404"/>
         <source>Select text within one line, or place the caret where you want to insert the link.</source>
-        <translation>Selecteer tekst binnen één regel, of plaats de cursor waar u de link wilt invoegen.</translation>
+        <translation>Seleccione texto dentro de una sola línea, o coloque el cursor donde quiera insertar el enlace.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1426"/>
         <source>Place the caret in the paragraph or table cell whose formatting you want to clear.</source>
-        <translation>Plaats de cursor in de alinea of tabelcel waarvan u de opmaak wilt wissen.</translation>
+        <translation>Coloque el cursor en el párrafo o la celda de tabla cuyo formato quiera borrar.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1433"/>
         <source>Refresh All Math</source>
-        <translation>Alle formules vernieuwen</translation>
+        <translation>Actualizar todas las fórmulas</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1442"/>
         <source>Convert on Input</source>
-        <translation>Converteren bij invoer</translation>
+        <translation>Convertir al escribir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1463"/>
         <source>Convert on Rendering</source>
-        <translation>Converteren bij weergave</translation>
+        <translation>Convertir al renderizar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1484"/>
         <source>Smart Quotes</source>
-        <translation>Slimme aanhalingstekens</translation>
+        <translation>Comillas inteligentes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1498"/>
         <source>Smart Dashes</source>
-        <translation>Slimme streepjes</translation>
+        <translation>Guiones inteligentes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1512"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Unicode-leestekens opnieuw toewijzen bij parseren</translation>
+        <translation>Reasignar puntuación Unicode al analizar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1526"/>
         <source>More Options...</source>
-        <translation>Meer opties...</translation>
+        <translation>Más opciones...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1590"/>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation>Afbeeldingsbestand &quot;%1&quot; verwijderen?
-Dit kan niet ongedaan worden gemaakt.</translation>
+        <translation>¿Eliminar el archivo de imagen «%1»?
+Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1616"/>
         <source>Copy Image To</source>
-        <translation>Afbeelding kopiëren naar</translation>
+        <translation>Copiar imagen a</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1650"/>
         <source>Move Image To</source>
-        <translation>Afbeelding verplaatsen naar</translation>
+        <translation>Mover imagen a</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1672"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1678"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1694"/>
         <source>Upload Image</source>
-        <translation>Afbeelding uploaden</translation>
+        <translation>Subir imagen</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="vanished">Afbeeldingsupload is nog niet geconfigureerd.
-Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
+        <translation type="vanished">La subida de imágenes aún no está configurada.
+Configure un cargador de imágenes en Preferencias → Imágenes.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1718"/>
@@ -2856,64 +2856,64 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
         <location filename="../src/app/CommandDeclarations.cpp" line="1765"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1766"/>
         <source>Upload All Images</source>
-        <translation>Alle afbeeldingen uploaden</translation>
+        <translation>Subir todas las imágenes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Image Size</source>
-        <translation>Afbeeldingsgrootte</translation>
+        <translation>Tamaño de imagen</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Zoom percent:</source>
-        <translation>Zoompercentage:</translation>
+        <translation>Porcentaje de zoom:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1878"/>
         <source>Copy All Images To</source>
-        <translation>Alle afbeeldingen kopiëren naar</translation>
+        <translation>Copiar todas las imágenes a</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1890"/>
         <source>Copy All Images</source>
-        <translation>Alle afbeeldingen kopiëren</translation>
+        <translation>Copiar todas las imágenes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1891"/>
         <source>Copied %1 of %2 image(s).</source>
-        <translation>%1 van %2 afbeelding(en) gekopieerd.</translation>
+        <translation>Se copiaron %1 de %2 imagen(es).</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1905"/>
         <source>Move All Images To</source>
-        <translation>Alle afbeeldingen verplaatsen naar</translation>
+        <translation>Mover todas las imágenes a</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1913"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1919"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1921"/>
         <source>Move All Images</source>
-        <translation>Alle afbeeldingen verplaatsen</translation>
+        <translation>Mover todas las imágenes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1922"/>
         <source>Moved %1 image(s).</source>
-        <translation>%1 afbeelding(en) verplaatst.</translation>
+        <translation>Se movieron %1 imagen(es).</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1155"/>
         <source>Code Language</source>
-        <translation>Codetaal</translation>
+        <translation>Lenguaje de código</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1156"/>
         <source>Language:</source>
-        <translation>Taal:</translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1244"/>
         <source>HTML Source</source>
-        <translation>HTML-bron</translation>
+        <translation>Código HTML</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1245"/>
@@ -2923,7 +2923,7 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1281"/>
         <source>Math TeX</source>
-        <translation>Wiskundige TeX</translation>
+        <translation>TeX matemático</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1282"/>
@@ -2933,7 +2933,7 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
         <source>About Mufpen</source>
-        <translation>Over Mufpen</translation>
+        <translation>Acerca de Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2941,43 +2941,43 @@ Stel een uploader in bij Voorkeuren → Afbeeldingen.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="vanished">Mufpen %1
 
-Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.</translation>
+Un editor Markdown nativo, rápido y ligero, construido con C++ y Qt 6 Widgets.</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="vanished">tabel %1:%2 offset %3</translation>
+        <translation type="vanished">tabla %1:%2 desplazamiento %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="vanished">%1 woorden</translation>
+        <translation type="vanished">%1 palabras</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="181"/>
         <source>Rows:</source>
-        <translation>Rijen:</translation>
+        <translation>Filas:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="182"/>
         <source>Columns:</source>
-        <translation>Kolommen:</translation>
+        <translation>Columnas:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="185"/>
         <location filename="../src/app/MainWindowActions.cpp" line="227"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="186"/>
         <location filename="../src/app/MainWindowActions.cpp" line="228"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>Annuleren</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="207"/>
         <source>Insert Image</source>
-        <translation>Afbeelding invoegen</translation>
+        <translation>Insertar imagen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="214"/>
@@ -2987,12 +2987,12 @@ Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="217"/>
         <source>Alternative text</source>
-        <translation>Alternatieve tekst</translation>
+        <translation>Texto alternativo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="220"/>
         <source>Title (optional)</source>
-        <translation>Titel (optioneel)</translation>
+        <translation>Título (opcional)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="222"/>
@@ -3002,37 +3002,37 @@ Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="223"/>
         <source>Alt Text:</source>
-        <translation>Alternatieve tekst:</translation>
+        <translation>Texto alternativo:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="224"/>
         <source>Title:</source>
-        <translation>Titel:</translation>
+        <translation>Título:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="258"/>
         <source>Images (%1)</source>
-        <translation>Afbeeldingen (%1)</translation>
+        <translation>Imágenes (%1)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="259"/>
         <source>Select Image</source>
-        <translation>Afbeelding selecteren</translation>
+        <translation>Seleccionar imagen</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="89"/>
         <source>Clear Recent Files</source>
-        <translation>Lijst met recente bestanden wissen</translation>
+        <translation>Borrar archivos recientes</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="145"/>
         <source>Import Theme...</source>
-        <translation>Thema importeren...</translation>
+        <translation>Importar tema…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="147"/>
         <source>Open Themes Folder</source>
-        <translation>Themamap openen</translation>
+        <translation>Abrir carpeta de temas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
@@ -3043,43 +3043,43 @@ Een snelle, lichtgewicht native Markdown-editor gebouwd met C++ en Qt 6 Widgets.
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Import Theme</source>
-        <translation>Thema importeren</translation>
+        <translation>Importar tema</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
         <source>Theme Files (*.css *.json)</source>
-        <translation>Themabestanden (*.css *.json)</translation>
+        <translation>Archivos de tema (*.css *.json)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="196"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <source>Could not read the selected file.</source>
-        <translation>Het geselecteerde bestand kon niet worden gelezen.</translation>
+        <translation>No se pudo leer el archivo seleccionado.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="202"/>
         <source>The selected file is not a valid theme.</source>
-        <translation>Het geselecteerde bestand is geen geldig thema.</translation>
+        <translation>El archivo seleccionado no es un tema válido.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="184"/>
         <source>A built-in theme named &quot;%1&quot; already exists; choose a different file name.</source>
-        <translation>Er bestaat al een ingebouwd thema met de naam &apos;%1&apos;; kies een andere bestandsnaam.</translation>
+        <translation>Ya existe un tema integrado llamado «%1»; elija otro nombre de archivo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="119"/>
         <source>Clear Recent Folders</source>
-        <translation>Lijst met recente mappen wissen</translation>
+        <translation>Borrar carpetas recientes</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="209"/>
         <source>The theme file is missing required colours (background and text).</source>
-        <translation>In het themabestand ontbreken de vereiste kleuren (achtergrond en tekst).</translation>
+        <translation>Al archivo de tema le faltan los colores necesarios (fondo y texto).</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Could not copy the theme into the themes folder.</source>
-        <translation>Het thema kon niet naar de themamap worden gekopieerd.</translation>
+        <translation>No se pudo copiar el tema en la carpeta de temas.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="392"/>
@@ -3089,123 +3089,123 @@ Size: %3 bytes
 Modified: %4
 Words: %5
 Parse time: %6 ms</source>
-        <translation>Naam: %1
-Locatie: %2
-Grootte: %3 bytes
-Gewijzigd: %4
-Woorden: %5
-Parsetijd: %6 ms</translation>
+        <translation>Nombre: %1
+Ubicación: %2
+Tamaño: %3 bytes
+Modificado: %4
+Palabras: %5
+Tiempo de análisis: %6 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="580"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="591"/>
         <source>Unsaved Drafts Found</source>
-        <translation>Niet-opgeslagen concepten gevonden</translation>
+        <translation>Borradores sin guardar encontrados</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
         <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Mufpen heeft %n niet-opgeslagen concept uit een vorige sessie gevonden. Herstel het in dit venster, verwijder alle of bewaar ze voor later.</numerusform>
-            <numerusform>Mufpen heeft %n niet-opgeslagen concepten uit een vorige sessie gevonden. Herstel er een in dit venster, verwijder alle of bewaar ze voor later.</numerusform>
+            <numerusform>Mufpen encontró %n borrador sin guardar de una sesión anterior. Restáurelo en esta ventana, descártelo o consérvelo para más tarde.</numerusform>
+            <numerusform>Mufpen encontró %n borradores sin guardar de una sesión anterior. Restaure uno en esta ventana, descártelos todos o consérvelos para más tarde.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="597"/>
         <location filename="../src/app/MainWindowExport.cpp" line="94"/>
         <source>Untitled</source>
-        <translation>Naamloos</translation>
+        <translation>Sin título</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="598"/>
         <source>%1  —  %2  (%n char(s))</source>
         <translation>
-            <numerusform>%1  —  %2  (%n teken)</numerusform>
-            <numerusform>%1  —  %2  (%n tekens)</numerusform>
+            <numerusform>%1  —  %2  (%n carácter)</numerusform>
+            <numerusform>%1  —  %2  (%n caracteres)</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="606"/>
         <source>Restore</source>
-        <translation>Herstellen</translation>
+        <translation>Restaurar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="607"/>
         <source>Discard All</source>
-        <translation>Alle verwijderen</translation>
+        <translation>Descartar todo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="608"/>
         <source>Later</source>
-        <translation>Later</translation>
+        <translation>Más tarde</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="689"/>
         <source>No files to open</source>
-        <translation>Geen bestanden om te openen</translation>
+        <translation>No hay archivos para abrir</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="711"/>
         <source>Import</source>
-        <translation>Importeren</translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="712"/>
         <source>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;All files (*)</source>
-        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Alle bestanden (*)</translation>
+        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Todos los archivos (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="729"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="746"/>
         <source>Import Failed</source>
-        <translation>Importeren mislukt</translation>
+        <translation>Error de importación</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="730"/>
         <location filename="../src/app/MainWindowExport.cpp" line="184"/>
         <source>Pandoc was not found. Install Pandoc or set its path in Preferences → Export.</source>
-        <translation>Pandoc is niet gevonden. Installeer Pandoc of stel het pad in via Voorkeuren → Exporteren.</translation>
+        <translation>No se encontró Pandoc. Instale Pandoc o defina su ruta en Preferencias → Exportar.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="734"/>
         <source>Importing %1…</source>
-        <translation>%1 importeren…</translation>
+        <translation>Importando %1…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="747"/>
         <source>Pandoc could not convert the file.</source>
-        <translation>Pandoc kon het bestand niet converteren.</translation>
+        <translation>Pandoc no pudo convertir el archivo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="756"/>
         <source>Imported %1</source>
-        <translation>%1 geïmporteerd</translation>
+        <translation>%1 importado</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="119"/>
         <source>Nothing to export</source>
-        <translation>Niets om te exporteren</translation>
+        <translation>Nada que exportar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="264"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="299"/>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>Export As</source>
-        <translation>Exporteren als</translation>
+        <translation>Exportar como</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>%1 files (*%2)</source>
-        <translation>%1-bestanden (*%2)</translation>
+        <translation>Archivos %1 (*%2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="164"/>
         <source>Exporting %1…</source>
-        <translation>%1 exporteren…</translation>
+        <translation>Exportando %1…</translation>
     </message>
     <message>
         <source>Pandoc failed:</source>
-        <translation type="vanished">Pandoc is mislukt:</translation>
+        <translation type="vanished">Pandoc falló:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="280"/>
@@ -3216,31 +3216,31 @@ Parsetijd: %6 ms</translation>
         <location filename="../src/app/MainWindowExport.cpp" line="168"/>
         <location filename="../src/app/MainWindowExport.cpp" line="236"/>
         <source>Export Failed</source>
-        <translation>Exporteren mislukt</translation>
+        <translation>Error de exportación</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="283"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="321"/>
         <location filename="../src/app/MainWindowExport.cpp" line="243"/>
         <source>Exported to %1</source>
-        <translation>Geëxporteerd naar %1</translation>
+        <translation>Exportado a %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="895"/>
         <source>Save All</source>
-        <translation>Alles opslaan</translation>
+        <translation>Guardar todo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="896"/>
         <source>Saved %1 file(s). %2 file(s) could not be saved.</source>
-        <translation>%1 bestand(en) opgeslagen. %2 bestand(en) konden niet worden opgeslagen.</translation>
+        <translation>Se guardaron %1 archivo(s). %2 archivo(s) no se pudieron guardar.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="926"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="952"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete File</source>
-        <translation>Bestand verwijderen</translation>
+        <translation>Eliminar archivo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="927"/>
@@ -3248,9 +3248,9 @@ Parsetijd: %6 ms</translation>
         <source>Are you sure you want to move &quot;%1&quot; to the trash?
 
 This action cannot be undone.</source>
-        <translation>Weet u zeker dat u &quot;%1&quot; naar de prullenbak wilt verplaatsen?
+        <translation>¿Está seguro de que desea mover «%1» a la papelera?
 
-Deze actie kan niet ongedaan worden gemaakt.</translation>
+Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="953"/>
@@ -3258,37 +3258,37 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
         <source>Could not move to trash. Permanently delete &quot;%1&quot;?
 
 This action cannot be undone.</source>
-        <translation>Kan niet naar prullenbak verplaatsen. &quot;%1&quot; permanent verwijderen?
+        <translation>No se pudo mover a la papelera. ¿Eliminar permanentemente «%1»?
 
-Deze actie kan niet ongedaan worden gemaakt.</translation>
+Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Delete Failed</source>
-        <translation>Verwijderen mislukt</translation>
+        <translation>Error al eliminar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <source>Could not delete file:
 %1</source>
-        <translation>Kan bestand niet verwijderen:
+        <translation>No se pudo eliminar el archivo:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1073"/>
         <source>Name cannot be empty.</source>
-        <translation>De naam mag niet leeg zijn.</translation>
+        <translation>El nombre no puede estar vacío.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1087"/>
         <source>An item named &quot;%1&quot; already exists.</source>
-        <translation>Er bestaat al een item met de naam &quot;%1&quot;.</translation>
+        <translation>Ya existe un elemento llamado «%1».</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1109"/>
         <source>Could not rename: %1</source>
-        <translation>Hernoemen niet mogelijk: %1</translation>
+        <translation>No se pudo cambiar el nombre: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1026"/>
@@ -3296,7 +3296,7 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
 %1
 
 %2</source>
-        <translation>Bestand kon niet worden aangemaakt:
+        <translation>No se pudo crear el archivo:
 %1
 
 %2</translation>
@@ -3304,53 +3304,53 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="53"/>
         <source>Manage Export Presets...</source>
-        <translation>Exportvoorinstellingen beheren...</translation>
+        <translation>Administrar preajustes de exportación...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="90"/>
         <source>Enter a valid output extension in the export preset.</source>
-        <translation>Voer een geldige uitvoerextensie in bij de exportvoorinstelling.</translation>
+        <translation>Introduzca una extensión de salida válida en el preajuste de exportación.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="114"/>
         <location filename="../src/app/MainWindowExport.cpp" line="211"/>
         <source>The export destination is an open document. Choose another file.</source>
-        <translation>Het exportdoel is een geopend document. Kies een ander bestand.</translation>
+        <translation>El destino de exportación es un documento abierto. Elija otro archivo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="136"/>
         <source>Could not create a temporary export file.</source>
-        <translation>Kan geen tijdelijk exportbestand maken.</translation>
+        <translation>No se pudo crear un archivo temporal de exportación.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="147"/>
         <source>PDF export failed: the printer device could not be opened.</source>
-        <translation>PDF-export mislukt: het printerapparaat kon niet worden geopend.</translation>
+        <translation>Error al exportar a PDF: no se pudo abrir el dispositivo de impresión.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="152"/>
         <source>Image export failed. The image must fit within 64 million pixels and 32,767 pixels in height. Try a smaller width or scale, or export as PDF.</source>
-        <translation>Exporteren van de afbeelding is mislukt. De afbeelding mag niet groter zijn dan 64 miljoen pixels en 32,767 pixels hoog. Probeer een kleinere breedte of schaal, of exporteer als PDF.</translation>
+        <translation>No se pudo exportar la imagen. La imagen no puede superar los 64 millones de píxeles ni los 32,767 píxeles de altura. Pruebe con una anchura o escala menor, o exporte como PDF.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="179"/>
         <source>Configure an executable and arguments containing ${outputPath}. Supported variables: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Stel een uitvoerbaar bestand en argumenten met ${outputPath} in. Ondersteunde variabelen: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Configure un ejecutable y argumentos que contengan ${outputPath}. Variables admitidas: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="188"/>
         <source>Export resource was not found: %1</source>
-        <translation>Exportbron niet gevonden: %1</translation>
+        <translation>No se encontró el recurso de exportación: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="192"/>
         <source>Additional arguments cannot override the input format, output format, output path, or defaults file.</source>
-        <translation>Aanvullende argumenten mogen het invoerformaat, het uitvoerformaat, het uitvoerpad of het bestand met standaardopties niet overschrijven.</translation>
+        <translation>Los argumentos adicionales no pueden sustituir el formato de entrada, el formato de salida, la ruta de salida ni el archivo de opciones predeterminadas.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="205"/>
         <source>Export command failed:</source>
-        <translation>Exportopdracht mislukt:</translation>
+        <translation>El comando de exportación falló:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="778"/>
@@ -3375,157 +3375,157 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="784"/>
         <source>Western</source>
-        <translation>West-Europees</translation>
+        <translation>Occidental</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="786"/>
         <source>Western (Windows-1252)</source>
-        <translation>West-Europees (Windows-1252)</translation>
+        <translation>Occidental (Windows-1252)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="788"/>
         <source>Cyrillic</source>
-        <translation>Cyrillisch</translation>
+        <translation>Cirílico</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="790"/>
         <source>Cyrillic (Windows-1251)</source>
-        <translation>Cyrillisch (Windows-1251)</translation>
+        <translation>Cirílico (Windows-1251)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="791"/>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation>Cyrillisch (ISO-8859-5)</translation>
+        <translation>Cirílico (ISO-8859-5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="792"/>
         <source>Cyrillic (IBM866)</source>
-        <translation>Cyrillisch (IBM866)</translation>
+        <translation>Cirílico (IBM866)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="793"/>
         <source>Cyrillic (IBM855)</source>
-        <translation>Cyrillisch (IBM855)</translation>
+        <translation>Cirílico (IBM855)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="794"/>
         <source>Cyrillic (KOI8-R)</source>
-        <translation>Cyrillisch (KOI8-R)</translation>
+        <translation>Cirílico (KOI8-R)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="795"/>
         <source>Cyrillic (Mac)</source>
-        <translation>Cyrillisch (Mac)</translation>
+        <translation>Cirílico (Mac)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="797"/>
         <source>Central European</source>
-        <translation>Centraal-Europees</translation>
+        <translation>Centroeuropeo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="799"/>
         <source>Central European (Windows-1250)</source>
-        <translation>Centraal-Europees (Windows-1250)</translation>
+        <translation>Centroeuropeo (Windows-1250)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="800"/>
         <source>Central European (ISO-8859-2)</source>
-        <translation>Centraal-Europees (ISO-8859-2)</translation>
+        <translation>Centroeuropeo (ISO-8859-2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="802"/>
         <source>Greek</source>
-        <translation>Grieks</translation>
+        <translation>Griego</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="804"/>
         <source>Greek (Windows-1253)</source>
-        <translation>Grieks (Windows-1253)</translation>
+        <translation>Griego (Windows-1253)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="805"/>
         <source>Greek (ISO-8859-7)</source>
-        <translation>Grieks (ISO-8859-7)</translation>
+        <translation>Griego (ISO-8859-7)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="807"/>
         <source>Hebrew</source>
-        <translation>Hebreeuws</translation>
+        <translation>Hebreo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="809"/>
         <source>Hebrew (Windows-1255)</source>
-        <translation>Hebreeuws (Windows-1255)</translation>
+        <translation>Hebreo (Windows-1255)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="810"/>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation>Hebreeuws (ISO-8859-8)</translation>
+        <translation>Hebreo (ISO-8859-8)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="812"/>
         <source>Chinese Simplified</source>
-        <translation>Vereenvoudigd Chinees</translation>
+        <translation>Chino simplificado</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="814"/>
         <source>Chinese Simplified (GB2312)</source>
-        <translation>Vereenvoudigd Chinees (GB2312)</translation>
+        <translation>Chino simplificado (GB2312)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="815"/>
         <source>Chinese Simplified (GB18030)</source>
-        <translation>Vereenvoudigd Chinees (GB18030)</translation>
+        <translation>Chino simplificado (GB18030)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="817"/>
         <source>Chinese Traditional</source>
-        <translation>Traditioneel Chinees</translation>
+        <translation>Chino tradicional</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="819"/>
         <source>Chinese Traditional (Big5)</source>
-        <translation>Traditioneel Chinees (Big5)</translation>
+        <translation>Chino tradicional (Big5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="821"/>
         <source>Japanese</source>
-        <translation>Japans</translation>
+        <translation>Japonés</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="823"/>
         <source>Japanese (Shift_JIS)</source>
-        <translation>Japans (Shift_JIS)</translation>
+        <translation>Japonés (Shift_JIS)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="824"/>
         <source>Japanese (EUC-JP)</source>
-        <translation>Japans (EUC-JP)</translation>
+        <translation>Japonés (EUC-JP)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="826"/>
         <source>Korean</source>
-        <translation>Koreaans</translation>
+        <translation>Coreano</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="828"/>
         <source>Korean (EUC-KR)</source>
-        <translation>Koreaans (EUC-KR)</translation>
+        <translation>Coreano (EUC-KR)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="830"/>
         <source>Thai</source>
-        <translation>Thais</translation>
+        <translation>Tailandés</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="832"/>
         <source>Thai (TIS-620)</source>
-        <translation>Thais (TIS-620)</translation>
+        <translation>Tailandés (TIS-620)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <source>Markdown Files (*.md *.markdown);;All Files (*)</source>
-        <translation>Markdown-bestanden (*.md *.markdown);;Alle bestanden (*)</translation>
+        <translation>Archivos Markdown (*.md *.markdown);;Todos los archivos (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1045"/>
@@ -3533,7 +3533,7 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
 %1
 
 %2</source>
-        <translation>Map kon niet worden aangemaakt:
+        <translation>No se pudo crear la carpeta:
 %1
 
 %2</translation>
@@ -3544,7 +3544,7 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
 %1
 
 %2</source>
-        <translation>Kopie kon niet worden aangemaakt:
+        <translation>No se pudo crear una copia:
 %1
 
 %2</translation>
@@ -3552,40 +3552,40 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete Folder</source>
-        <translation>Map verwijderen</translation>
+        <translation>Eliminar carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1157"/>
         <source>Are you sure you want to move &quot;%1&quot; and all its contents to the trash?
 
 This action cannot be undone.</source>
-        <translation>Weet u zeker dat u &quot;%1&quot; en alle inhoud naar de prullenbak wilt verplaatsen?
+        <translation>¿Seguro que desea mover «%1» y todo su contenido a la papelera?
 
-Deze actie kan niet ongedaan worden gemaakt.</translation>
+Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Could not delete:
 %1</source>
-        <translation>Verwijderen niet mogelijk:
+        <translation>No se pudo eliminar:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>Folder</source>
-        <translation>Map</translation>
+        <translation>Carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>File</source>
         <comment>properties: entry type</comment>
-        <translation>Bestand</translation>
+        <translation>Archivo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1219"/>
         <source>Size: %1 bytes
 </source>
-        <translation>Grootte: %1 bytes
+        <translation>Tamaño: %1 bytes
 </translation>
     </message>
     <message>
@@ -3594,16 +3594,16 @@ Deze actie kan niet ongedaan worden gemaakt.</translation>
 Type: %2
 Location: %3
 %4Modified: %5</source>
-        <translation>Naam: %1
-Type: %2
-Locatie: %3
-%4Gewijzigd: %5</translation>
+        <translation>Nombre: %1
+Tipo: %2
+Ubicación: %3
+%4Modificado: %5</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1240"/>
         <source>Could not reveal:
 %1</source>
-        <translation>Weergeven niet mogelijk:
+        <translation>No se pudo mostrar la ubicación:
 %1</translation>
     </message>
     <message>
@@ -3616,225 +3616,225 @@ Locatie: %3
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Het huidige document bevat niet-opgeslagen wijzigingen.</translation>
+        <translation>El documento actual tiene cambios sin guardar.</translation>
     </message>
     <message>
         <source>Open Failed</source>
-        <translation type="vanished">Openen mislukt</translation>
+        <translation type="vanished">Error al abrir</translation>
     </message>
     <message>
         <source>Render Diagnostics</source>
-        <translation type="vanished">Renderdiagnostiek</translation>
+        <translation type="vanished">Diagnóstico de renderizado</translation>
     </message>
     <message>
         <source>Developer Tools</source>
-        <translation type="vanished">Ontwikkelaarshulpmiddelen</translation>
+        <translation type="vanished">Herramientas de desarrollo</translation>
     </message>
     <message>
         <source>What&apos;s New...</source>
-        <translation type="vanished">Wat is nieuw...</translation>
+        <translation type="vanished">Novedades...</translation>
     </message>
     <message>
         <source>Install and Use Pandoc</source>
-        <translation type="vanished">Pandoc installeren en gebruiken</translation>
+        <translation type="vanished">Instalar y usar Pandoc</translation>
     </message>
     <message>
         <source>Use Images in Mufpen</source>
-        <translation type="vanished">Afbeeldingen gebruiken in Mufpen</translation>
+        <translation type="vanished">Usar imágenes en Mufpen</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
-        <translation type="vanished">Gegevensherstel en versiebeheer</translation>
+        <translation type="vanished">Recuperación de datos y control de versiones</translation>
     </message>
     <message>
         <source>More Themes...</source>
-        <translation type="vanished">Meer thema’s...</translation>
+        <translation type="vanished">Más temas...</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="vanished">Privacybeleid</translation>
+        <translation type="vanished">Política de privacidad</translation>
     </message>
     <message>
         <source>My License...</source>
-        <translation type="vanished">Mijn licentie...</translation>
+        <translation type="vanished">Mi licencia...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="624"/>
         <source>Find...</source>
-        <translation>Zoeken...</translation>
+        <translation>Buscar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="629"/>
         <source>Replace...</source>
-        <translation>Vervangen...</translation>
+        <translation>Reemplazar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="660"/>
         <source>Find Next</source>
-        <translation>Volgende zoeken</translation>
+        <translation>Buscar siguiente</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="671"/>
         <source>Find Previous</source>
-        <translation>Vorige zoeken</translation>
+        <translation>Buscar anterior</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="254"/>
         <source>File Already Open</source>
-        <translation>Bestand al geopend</translation>
+        <translation>Archivo ya abierto</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="255"/>
         <source>This file is already open in another tab. Switch to that tab to edit or save it.</source>
-        <translation>Dit bestand is al geopend in een ander tabblad. Ga naar dat tabblad om het te bewerken of op te slaan.</translation>
+        <translation>Este archivo ya está abierto en otra pestaña. Cambie a esa pestaña para editarlo o guardarlo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="406"/>
         <source>File Changed on Disk</source>
-        <translation>Bestand op schijf gewijzigd</translation>
+        <translation>Archivo modificado en el disco</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
         <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>Het bestand &quot;%1&quot; is buiten Mufpen gewijzigd. Opnieuw laden?
-Niet-opgeslagen wijzigingen in de editor gaan verloren.</translation>
+        <translation>El archivo «%1» se ha modificado fuera de Mufpen. ¿Desea volver a cargarlo?
+Se perderán los cambios sin guardar en el editor.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="491"/>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="503"/>
         <source>Update Available</source>
-        <translation>Update beschikbaar</translation>
+        <translation>Actualización disponible</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
         <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Een nieuwe versie van Mufpen (%1) is beschikbaar.
+        <translation>Una nueva versión de Mufpen (%1) está disponible.
 
-Wilt u de downloadpagina openen?</translation>
+¿Desea abrir la página de descarga?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
         <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Mufpen %1 is beschikbaar. Gebruik Help &gt; Controleren op updates om te downloaden.</translation>
+        <translation>Mufpen %1 está disponible. Use Ayuda &gt; Buscar actualizaciones para descargar.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
         <source>Up to Date</source>
-        <translation>Actueel</translation>
+        <translation>Actualizado</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>U gebruikt de nieuwste versie van Mufpen.</translation>
+        <translation>Está utilizando la última versión de Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
         <source>Update Check Failed</source>
-        <translation>Updatecontrole mislukt</translation>
+        <translation>Error al buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="529"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Kan niet controleren op updates:
+        <translation>No se pudieron buscar actualizaciones:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="143"/>
         <source>Export Mermaid as SVG...</source>
-        <translation>Mermaid exporteren als SVG...</translation>
+        <translation>Exportar Mermaid como SVG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="145"/>
         <source>Export Mermaid as PNG...</source>
-        <translation>Mermaid exporteren als PNG...</translation>
+        <translation>Exportar Mermaid como PNG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="158"/>
         <source>Resize</source>
-        <translation>Formaat wijzigen</translation>
+        <translation>Cambiar tamaño</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="162"/>
         <source>Convert</source>
-        <translation>Converteren</translation>
+        <translation>Convertir</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="196"/>
         <source>Copy as</source>
-        <translation>Kopiëren als</translation>
+        <translation>Copiar como</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="340"/>
         <source>Open</source>
-        <translation>Openen</translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="153"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="341"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="358"/>
         <source>Open in New Window</source>
-        <translation>Openen in nieuw venster</translation>
+        <translation>Abrir en una ventana nueva</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="50"/>
         <source>Insert Block Above</source>
-        <translation>Blok erboven invoegen</translation>
+        <translation>Insertar bloque encima</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="51"/>
         <source>Insert Block Below</source>
-        <translation>Blok eronder invoegen</translation>
+        <translation>Insertar bloque debajo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="53"/>
         <source>Copy Block</source>
-        <translation>Blok kopiëren</translation>
+        <translation>Copiar bloque</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="54"/>
         <source>Cut Block</source>
-        <translation>Blok knippen</translation>
+        <translation>Cortar bloque</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="55"/>
         <source>Duplicate Block</source>
-        <translation>Blok dupliceren</translation>
+        <translation>Duplicar bloque</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="57"/>
         <source>Turn Into</source>
-        <translation>Omzetten naar</translation>
+        <translation>Convertir en</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="62"/>
         <source>Bulleted List</source>
-        <translation>Lijst met opsommingstekens</translation>
+        <translation>Lista con viñetas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="63"/>
         <source>Numbered List</source>
-        <translation>Genummerde lijst</translation>
+        <translation>Lista numerada</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="68"/>
         <source>Move Block Up</source>
-        <translation>Blok omhoog verplaatsen</translation>
+        <translation>Mover bloque arriba</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="69"/>
         <source>Move Block Down</source>
-        <translation>Blok omlaag verplaatsen</translation>
+        <translation>Mover bloque abajo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="343"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="360"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1025"/>
         <source>New File</source>
-        <translation>Nieuw bestand</translation>
+        <translation>Archivo nuevo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="344"/>
@@ -3842,32 +3842,32 @@ Wilt u de downloadpagina openen?</translation>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1038"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1044"/>
         <source>New Folder</source>
-        <translation>Nieuwe map</translation>
+        <translation>Nueva carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="346"/>
         <source>Rename</source>
-        <translation>Hernoemen</translation>
+        <translation>Cambiar nombre</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="347"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="31"/>
         <source>Move To</source>
-        <translation>Verplaatsen naar</translation>
+        <translation>Mover a</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="348"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1140"/>
         <source>Duplicate</source>
-        <translation>Dupliceren</translation>
+        <translation>Duplicar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="353"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="363"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="596"/>
         <source>Copy Path</source>
-        <translation>Pad kopiëren</translation>
+        <translation>Copiar ruta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="354"/>
@@ -3875,253 +3875,253 @@ Wilt u de downloadpagina openen?</translation>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1239"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="602"/>
         <source>Reveal in File Manager</source>
-        <translation>Weergeven in bestandsbeheerder</translation>
+        <translation>Mostrar en el administrador de archivos</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="149"/>
         <location filename="../src/app/MainWindowFind.cpp" line="193"/>
         <location filename="../src/app/MainWindowFind.cpp" line="242"/>
         <source>Invalid regular expression: %1</source>
-        <translation>Ongeldige reguliere expressie: %1</translation>
+        <translation>Expresión regular no válida: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="208"/>
         <source>Replace</source>
-        <translation>Vervangen</translation>
+        <translation>Reemplazar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="258"/>
         <source>Replace All</source>
-        <translation>Alles vervangen</translation>
+        <translation>Reemplazar todo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="240"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Unpin Tab</source>
-        <translation>Tabblad losmaken</translation>
+        <translation>Desfijar pestaña</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="263"/>
         <source>Open Documents</source>
-        <translation>Geopende documenten</translation>
+        <translation>Documentos abiertos</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="267"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="270"/>
         <source>New Tab</source>
-        <translation>Nieuw tabblad</translation>
+        <translation>Nueva pestaña</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="580"/>
         <source>Close Others</source>
-        <translation>Andere tabbladen sluiten</translation>
+        <translation>Cerrar las demás pestañas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="581"/>
         <source>Close Tabs to the Right</source>
-        <translation>Tabbladen rechts sluiten</translation>
+        <translation>Cerrar pestañas a la derecha</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="582"/>
         <source>Close Saved Tabs</source>
-        <translation>Opgeslagen tabbladen sluiten</translation>
+        <translation>Cerrar pestañas guardadas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="583"/>
         <source>Close All Tabs</source>
-        <translation>Alle tabbladen sluiten</translation>
+        <translation>Cerrar todas las pestañas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Pin Tab</source>
-        <translation>Tabblad vastmaken</translation>
+        <translation>Fijar pestaña</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="598"/>
         <source>Reveal in Finder</source>
-        <translation>Weergeven in Finder</translation>
+        <translation>Mostrar en Finder</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="600"/>
         <source>Reveal in File Explorer</source>
-        <translation>Weergeven in Verkenner</translation>
+        <translation>Mostrar en el Explorador de archivos</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="606"/>
         <source>Move Tab to New Window</source>
-        <translation>Tabblad naar nieuw venster verplaatsen</translation>
+        <translation>Mover pestaña a una ventana nueva</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="609"/>
         <source>Copy Tab to New Window</source>
-        <translation>Tabblad naar nieuw venster kopiëren</translation>
+        <translation>Copiar pestaña a una ventana nueva</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="166"/>
         <source>This file changed. Search again to update its matches.</source>
-        <translation>Dit bestand is gewijzigd. Zoek opnieuw om de overeenkomsten bij te werken.</translation>
+        <translation>Este archivo ha cambiado. Vuelva a buscar para actualizar sus coincidencias.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="216"/>
         <source>This match cannot be selected precisely in live preview. Showing it in source mode.</source>
-        <translation>Deze overeenkomst kan niet nauwkeurig worden geselecteerd in het livevoorbeeld. Ze wordt in de bronmodus weergegeven.</translation>
+        <translation>Esta coincidencia no se puede seleccionar con precisión en la vista previa en vivo. Se muestra en el modo de código fuente.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="241"/>
         <source>Preview Folder Replacement</source>
-        <translation>Voorbeeld van vervanging in map</translation>
+        <translation>Vista previa del reemplazo en la carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="245"/>
         <source>Folder: %1
 Find: %2
 Replace with: %3</source>
-        <translation>Map: %1
-Zoeken: %2
-Vervangen door: %3</translation>
+        <translation>Carpeta: %1
+Buscar: %2
+Reemplazar por: %3</translation>
     </message>
     <message>
         <source>Include paths: %1 · Exclude paths: %2 · Match case: %3 · Regular expression: %4</source>
-        <translation type="vanished">Paden opnemen: %1 · Paden uitsluiten: %2 · Hoofdlettergevoelig: %3 · Reguliere expressie: %4</translation>
+        <translation type="vanished">Incluir rutas: %1 · Excluir rutas: %2 · Distinguir mayúsculas y minúsculas: %3 · Expresión regular: %4</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>Yes</source>
-        <translation>Ja</translation>
+        <translation>Sí</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>No</source>
-        <translation>Nee</translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>Matches</source>
-        <translation>Overeenkomsten</translation>
+        <translation>Coincidencias</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="43"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="216"/>
         <source>Rename / Move</source>
-        <translation>Hernoemen / Verplaatsen</translation>
+        <translation>Renombrar / Mover</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="44"/>
         <source>The destination already exists or is inside the folder being moved.</source>
-        <translation>De bestemming bestaat al of bevindt zich in de map die wordt verplaatst.</translation>
+        <translation>El destino ya existe o está dentro de la carpeta que se está moviendo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Checking links…</source>
-        <translation>Links controleren…</translation>
+        <translation>Comprobando enlaces…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="70"/>
         <source>Preview Link Updates</source>
-        <translation>Voorbeeld van linkwijzigingen</translation>
+        <translation>Vista previa de la actualización de enlaces</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="73"/>
         <source>%1 → %2
 Search folder: %3</source>
         <translation>%1 → %2
-Zoekmap: %3</translation>
+Carpeta de búsqueda: %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <source>Links</source>
-        <translation>Links</translation>
+        <translation>Enlaces</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="90"/>
         <source> (unsaved)</source>
-        <translation> (niet opgeslagen)</translation>
+        <translation> (sin guardar)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="97"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="275"/>
         <source>Skipped</source>
-        <translation>Overgeslagen</translation>
+        <translation>Omitidos</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="123"/>
         <source>Updates Markdown links, reference definitions and Markdown images in this folder. Code and external URLs are excluded. Unsaved notes stay unsaved and can be undone. Disk originals are backed up.
 Hidden folders, build folders, symbolic links, unreadable files and files over 8 MB are excluded; links outside this folder are not scanned.</source>
-        <translation>Werkt Markdown-links, verwijzingsdefinities en Markdown-afbeeldingen in deze map bij. Code en externe URL’s zijn uitgesloten. Niet-opgeslagen notities blijven niet-opgeslagen; de wijzigingen kunnen ongedaan worden gemaakt. Van de oorspronkelijke bestanden op schijf worden reservekopieën gemaakt.
-Verborgen mappen, buildmappen, symbolische koppelingen, onleesbare bestanden en bestanden groter dan 8 MB zijn uitgesloten; links buiten deze map worden niet gecontroleerd.</translation>
+        <translation>Actualiza los enlaces Markdown, las definiciones de referencias y las imágenes Markdown de esta carpeta. Se excluyen el código y las URL externas. Las notas sin guardar permanecen sin guardar y los cambios se pueden deshacer. Se crean copias de seguridad de los originales en disco.
+Se excluyen las carpetas ocultas, las carpetas de compilación, los enlaces simbólicos, los archivos ilegibles y los archivos de más de 8 MB; no se analizan los enlaces fuera de esta carpeta.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="129"/>
         <source>Some files could not be checked. Their links may need manual updates.</source>
-        <translation>Sommige bestanden konden niet worden gecontroleerd. Hun links moeten mogelijk handmatig worden bijgewerkt.</translation>
+        <translation>No se pudieron comprobar algunos archivos. Puede que sus enlaces requieran una actualización manual.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="134"/>
         <source>Rename / Move Only</source>
-        <translation>Alleen hernoemen / verplaatsen</translation>
+        <translation>Solo renombrar / mover</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="136"/>
         <source>Update Links</source>
-        <translation>Links bijwerken</translation>
+        <translation>Actualizar enlaces</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="165"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="169"/>
         <source>A note changed after the preview. Please try again.</source>
-        <translation>Een notitie is gewijzigd na het voorbeeld. Probeer het opnieuw.</translation>
+        <translation>Una nota cambió después de la vista previa. Vuelva a intentarlo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="174"/>
         <source>A file changed on disk after the preview. Please try again.</source>
-        <translation>Een bestand op schijf is gewijzigd na het voorbeeld. Probeer het opnieuw.</translation>
+        <translation>Un archivo en disco cambió después de la vista previa. Vuelva a intentarlo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="186"/>
         <source>
 Some originals could not be restored. Backups: %1</source>
         <translation>
-Sommige originelen konden niet worden hersteld. Reservekopieën: %1</translation>
+No se pudieron restaurar algunos originales. Copias de seguridad: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="191"/>
         <source>Link updates could not be completed. The path was not changed.</source>
-        <translation>De links konden niet volledig worden bijgewerkt. Het pad is niet gewijzigd.</translation>
+        <translation>No se pudo completar la actualización de enlaces. La ruta no se ha cambiado.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="206"/>
         <source>Could not rename or move: %1</source>
-        <translation>Kan niet hernoemen of verplaatsen: %1</translation>
+        <translation>No se pudo renombrar o mover: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="244"/>
         <source>Update Note Links</source>
-        <translation>Notitielinks bijwerken</translation>
+        <translation>Actualizar enlaces de notas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="274"/>
         <source>Links updated. Originals backed up in %1</source>
-        <translation>Links bijgewerkt. Reservekopieën van de originelen opgeslagen in %1</translation>
+        <translation>Enlaces actualizados. Copias de seguridad de los originales guardadas en %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="277"/>
         <source>Unsaved, changed, unreadable, oversized, mixed line endings, or not losslessly writable.</source>
-        <translation>Niet opgeslagen, gewijzigd, onleesbaar, te groot, met gemengde regeleinden of niet zonder verlies te schrijven.</translation>
+        <translation>Sin guardar, modificados, ilegibles, demasiado grandes, con finales de línea mixtos o que no se pueden escribir sin pérdida.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="281"/>
         <source>Replacement preview</source>
-        <translation>Vervangingsvoorbeeld</translation>
+        <translation>Vista previa del reemplazo</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="287"/>
         <source>
 … Preview truncated; the full file will be processed.</source>
         <translation>
-… Voorbeeld ingekort; het volledige bestand wordt verwerkt.</translation>
+… Vista previa truncada; se procesará el archivo completo.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="290"/>
@@ -4130,32 +4130,32 @@ Sommige originelen konden niet worden hersteld. Reservekopieën: %1</translation
 
 After:
 %2</source>
-        <translation>Voor:
+        <translation>Antes:
 %1
 
-Na:
+Después:
 %2</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="295"/>
         <source>Files with unsaved changes are skipped. Originals are backed up for recovery. Files changed since this preview will not be overwritten.</source>
-        <translation>Bestanden met niet-opgeslagen wijzigingen worden overgeslagen. Van de originelen worden reservekopieën gemaakt voor herstel. Bestanden die sinds dit voorbeeld zijn gewijzigd, worden niet overschreven.</translation>
+        <translation>Se omiten los archivos con cambios sin guardar. Se crean copias de seguridad de los originales para poder recuperarlos. No se sobrescribirán los archivos modificados desde esta vista previa.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="309"/>
         <source>Replace %1 matches in %2 files</source>
-        <translation>%1 overeenkomsten in %2 bestanden vervangen</translation>
+        <translation>Reemplazar %1 coincidencias en %2 archivos</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="341"/>
         <source>Folder Replacement</source>
-        <translation>Vervanging in map</translation>
+        <translation>Reemplazo en la carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="342"/>
         <source>%1 files changed; %2 skipped.
 %3</source>
-        <translation>%1 bestanden gewijzigd; %2 overgeslagen.
+        <translation>%1 archivos modificados; %2 omitidos.
 %3</translation>
     </message>
     <message>
@@ -4163,7 +4163,7 @@ Na:
         <source>
 Recovery folder: %1</source>
         <translation>
-Herstelmap: %1</translation>
+Carpeta de recuperación: %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="656"/>
@@ -4171,12 +4171,12 @@ Herstelmap: %1</translation>
         <location filename="../src/app/MainWindowSearch.cpp" line="357"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="376"/>
         <source>Undo Folder Replacement</source>
-        <translation>Vervanging in map ongedaan maken</translation>
+        <translation>Deshacer el reemplazo en la carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="353"/>
         <source>No folder replacement is available to restore.</source>
-        <translation>Er is geen vervanging in een map om ongedaan te maken.</translation>
+        <translation>No hay ningún reemplazo en una carpeta que se pueda deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="358"/>
@@ -4184,72 +4184,72 @@ Herstelmap: %1</translation>
 %1
 
 Files edited afterward or containing unsaved changes will be skipped.</source>
-        <translation>De oorspronkelijke bestanden van deze vervanging herstellen?
+        <translation>¿Restaurar los archivos originales de este reemplazo?
 %1
 
-Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worden overgeslagen.</translation>
+Se omitirán los archivos editados posteriormente o que contengan cambios sin guardar.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="361"/>
         <source>Restore Originals</source>
-        <translation>Originelen herstellen</translation>
+        <translation>Restaurar originales</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="362"/>
         <source>Open Recovery Folder</source>
-        <translation>Herstelmap openen</translation>
+        <translation>Abrir la carpeta de recuperación</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="377"/>
         <source>%1 files restored; %2 skipped.
 %3</source>
-        <translation>%1 bestanden hersteld; %2 overgeslagen.
+        <translation>%1 archivos restaurados; %2 omitidos.
 %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Updating files…</source>
-        <translation>Bestanden bijwerken…</translation>
+        <translation>Actualizando archivos…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Stop after current file</source>
-        <translation>Stoppen na huidig bestand</translation>
+        <translation>Detener después del archivo actual</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="32"/>
         <source>Linked file not found: %1</source>
-        <translation>Gekoppeld bestand niet gevonden: %1</translation>
+        <translation>No se encontró el archivo enlazado: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="114"/>
         <source>Heading not found: %1</source>
-        <translation>Kop niet gevonden: %1</translation>
+        <translation>No se encontró el encabezado: %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MarkdownSourceEdit</name>
+    <name>mufpen::MarkdownSourceEdit</name>
     <message>
         <source>(no spelling suggestions)</source>
-        <translation type="vanished">(geen spellingssuggesties)</translation>
+        <translation type="vanished">(sin sugerencias ortográficas)</translation>
     </message>
     <message>
         <source>Ignore &quot;%1&quot;</source>
-        <translation type="vanished">&quot;%1&quot; negeren</translation>
+        <translation type="vanished">Ignorar &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PreferencesDialog</name>
+    <name>mufpen::PreferencesDialog</name>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="223"/>
         <location filename="../src/app/PreferencesDialog.cpp" line="225"/>
         <source>Preferences</source>
-        <translation>Voorkeuren</translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Files</source>
-        <translation>Bestanden</translation>
+        <translation>Archivos</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
@@ -4259,86 +4259,86 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="63"/>
         <source>Categories</source>
-        <translation>Categorieën</translation>
+        <translation>Categorías</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Image</source>
-        <translation>Afbeelding</translation>
+        <translation>Imagen</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Export</source>
-        <translation>Exporteren</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Appearance</source>
-        <translation>Weergave</translation>
+        <translation>Apariencia</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>General</source>
-        <translation>Algemeen</translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Sneltoetsen</translation>
+        <translation>Atajos de teclado</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Search</source>
-        <translation>Zoeken</translation>
+        <translation>Búsqueda</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="256"/>
         <source>No settings available.</source>
-        <translation>Geen instellingen beschikbaar.</translation>
+        <translation>No hay ajustes disponibles.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="vanished">Taal</translation>
+        <translation type="vanished">Idioma</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="vanished">Update</translation>
+        <translation type="vanished">Actualización</translation>
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation type="vanished">Controleren op updates</translation>
+        <translation type="vanished">Buscar actualizaciones</translation>
     </message>
     <message>
         <source>Automatically check for updates</source>
-        <translation type="vanished">Automatisch controleren op updates</translation>
+        <translation type="vanished">Buscar actualizaciones automáticamente</translation>
     </message>
     <message>
         <source>Include beta updates</source>
-        <translation type="vanished">Beta-updates opnemen</translation>
+        <translation type="vanished">Incluir actualizaciones beta</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Geavanceerd</translation>
+        <translation type="vanished">Avanzado</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Debugmodus inschakelen</translation>
+        <translation type="vanished">Activar modo de depuración</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Anonieme gebruiksgegevens verzenden</translation>
+        <translation type="vanished">Enviar datos de uso anónimos</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Geavanceerde instellingen openen</translation>
+        <translation type="vanished">Abrir ajustes avanzados</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Geavanceerde instellingen herstellen</translation>
+        <translation type="vanished">Restablecer ajustes avanzados</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="vanished">Thema</translation>
+        <translation type="vanished">Tema</translation>
     </message>
     <message>
         <source>Zoom</source>
@@ -4346,23 +4346,23 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
     </message>
     <message>
         <source>Text Size</source>
-        <translation type="vanished">Tekstgrootte</translation>
+        <translation type="vanished">Tamaño del texto</translation>
     </message>
     <message>
         <source>Status Bar</source>
-        <translation type="vanished">Statusbalk</translation>
+        <translation type="vanished">Barra de estado</translation>
     </message>
     <message>
         <source>Show status bar</source>
-        <translation type="vanished">Statusbalk weergeven</translation>
+        <translation type="vanished">Mostrar barra de estado</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsAppearancePage</name>
+    <name>mufpen::PrefsAppearancePage</name>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="143"/>
         <source>Theme</source>
-        <translation>Thema</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="144"/>
@@ -4372,1055 +4372,1055 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="145"/>
         <source>Reset</source>
-        <translation>Resetten</translation>
+        <translation>Restablecer</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="146"/>
         <source>Text Size</source>
-        <translation>Tekstgrootte</translation>
+        <translation>Tamaño del texto</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="147"/>
         <source>Content Width</source>
-        <translation>Inhoudsbreedte</translation>
+        <translation>Ancho del contenido</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="148"/>
         <source>Theme Default</source>
-        <translation>Themastandaard</translation>
+        <translation>Predeterminado del tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="149"/>
         <source>Comfortable (1024 px)</source>
-        <translation>Comfortabel (1024 px)</translation>
+        <translation>Cómodo (1024 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="150"/>
         <source>Wide (1200 px)</source>
-        <translation>Breed (1200 px)</translation>
+        <translation>Ancho (1200 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="151"/>
         <source>Full Width</source>
-        <translation>Volledige breedte</translation>
+        <translation>Ancho completo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="152"/>
         <source>Status Bar</source>
-        <translation>Statusbalk</translation>
+        <translation>Barra de estado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="153"/>
         <source>Show status bar</source>
-        <translation>Statusbalk weergeven</translation>
+        <translation>Mostrar barra de estado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="155"/>
         <source>Import Theme...</source>
-        <translation>Thema importeren...</translation>
+        <translation>Importar tema…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsEditorPage</name>
+    <name>mufpen::PrefsEditorPage</name>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="215"/>
         <source>Default Indent</source>
-        <translation>Standaard inspringing</translation>
+        <translation>Sangría predeterminada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="216"/>
         <source>Only effective for references and lists generated via menu bar or shortcuts</source>
-        <translation>Alleen effectief voor verwijzingen en lijsten die via de menubalk of sneltoetsen worden gegenereerd</translation>
+        <translation>Solo aplicable a referencias y listas generadas desde la barra de menú o atajos de teclado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="218"/>
         <source>Align Indent</source>
-        <translation>Inspringing uitlijnen</translation>
+        <translation>Alinear sangría</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="220"/>
         <source>Use Paired Symbols</source>
-        <translation>Gepaarde symbolen gebruiken</translation>
+        <translation>Usar símbolos emparejados</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="221"/>
         <source>Match brackets and quotes</source>
-        <translation>Haakjes en aanhalingstekens paren</translation>
+        <translation>Cerrar corchetes y comillas automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="222"/>
         <source>Match Markdown characters</source>
-        <translation>Markdown-tekens paren</translation>
+        <translation>Cerrar caracteres de Markdown automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="224"/>
         <source>Autocomplete</source>
-        <translation>Automatisch aanvullen</translation>
+        <translation>Autocompletar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="225"/>
         <source>Enable Emoji autocomplete</source>
-        <translation>Emoji automatisch aanvullen inschakelen</translation>
+        <translation>Activar autocompletar de emojis</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="227"/>
         <source>Live Rendering</source>
-        <translation>Live weergave</translation>
+        <translation>Renderizado en vivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="228"/>
         <source>Show Markdown source of the current block element</source>
-        <translation>Markdown-bron van het huidige blokelement tonen</translation>
+        <translation>Mostrar fuente Markdown del elemento de bloque actual</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="229"/>
         <source>Show block handles</source>
-        <translation>Blokgrepen tonen</translation>
+        <translation>Mostrar controles de bloque</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="230"/>
         <source>Hover to open a block menu or drag to move the complete block.</source>
-        <translation>Beweeg de muis erover om het blokmenu te openen of sleep om het hele blok te verplaatsen.</translation>
+        <translation>Pasa el cursor para abrir el menú del bloque o arrastra para mover el bloque completo.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="231"/>
         <source>Show Mermaid diagrams as source code instead of rendering</source>
-        <translation>Mermaid-diagrammen als broncode tonen in plaats van ze te renderen</translation>
+        <translation>Mostrar los diagramas Mermaid como código fuente en lugar de renderizarlos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="233"/>
         <source>Default Copy Behavior</source>
-        <translation>Standaard kopieergedrag</translation>
+        <translation>Comportamiento predeterminado al copiar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="234"/>
         <source>Copy Markdown source when copying plain text</source>
-        <translation>Markdown-bron kopiëren bij het kopiëren van platte tekst</translation>
+        <translation>Copiar fuente Markdown al copiar texto sin formato</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="235"/>
         <source>Copy or cut the entire line when no text is selected</source>
-        <translation>De hele regel kopiëren of knippen als geen tekst is geselecteerd</translation>
+        <translation>Copiar o cortar la línea completa cuando no hay texto seleccionado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="237"/>
         <source>Default Line Break</source>
-        <translation>Standaard regeleinde</translation>
+        <translation>Salto de línea predeterminado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="238"/>
         <source>Default line break for new files</source>
-        <translation>Standaard regeleinde voor nieuwe bestanden</translation>
+        <translation>Salto de línea predeterminado para archivos nuevos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="239"/>
         <source>LF (Unix Style)</source>
-        <translation>LF (Unix-stijl)</translation>
+        <translation>LF (estilo Unix)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="240"/>
         <source>CRLF (Windows Style)</source>
-        <translation>CRLF (Windows-stijl)</translation>
+        <translation>CRLF (estilo Windows)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="248"/>
         <source>Spell Check</source>
-        <translation>Spellingcontrole</translation>
+        <translation>Corrector ortográfico</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="249"/>
         <source>Enable spell checking</source>
-        <translation>Spellingcontrole inschakelen</translation>
+        <translation>Activar corrección ortográfica</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="250"/>
         <source>Language</source>
-        <translation>Taal</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Auto-detect language</source>
-        <translation type="vanished">Taal automatisch detecteren</translation>
+        <translation type="vanished">Detectar idioma automáticamente</translation>
     </message>
     <message>
         <source>Chinese (Simplified)</source>
-        <translation type="vanished">Chinees (Vereenvoudigd)</translation>
+        <translation type="vanished">Chino (simplificado)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="252"/>
         <source>Typewriter Mode</source>
-        <translation>Typemachinemodus</translation>
+        <translation>Modo máquina de escribir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="253"/>
         <source>Always keep the cursor in the middle of the screen</source>
-        <translation>De cursor altijd in het midden van het scherm houden</translation>
+        <translation>Mantener siempre el cursor en el centro de la pantalla</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="254"/>
         <source>Disable Typewriter / Focus Mode</source>
-        <translation>Typemachine- / Focusmodus uitschakelen</translation>
+        <translation>Desactivar modo máquina de escribir / modo enfoque</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="242"/>
         <source>Locked Editing</source>
-        <translation>Bewerkingsvergrendeling</translation>
+        <translation>Bloqueo de edición</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="243"/>
         <source>Read-only reading mode: hides the caret and inline popups, rejects typing</source>
-        <translation>Alleen-lezenmodus: verbergt de tekstcursor en inline pop-ups en blokkeert typen</translation>
+        <translation>Modo de solo lectura: oculta el cursor de texto y las ventanas emergentes integradas e impide escribir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="244"/>
         <source>Enable locked editing</source>
-        <translation>Bewerkingsvergrendeling inschakelen</translation>
+        <translation>Activar el bloqueo de edición</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="245"/>
         <source>Each tab locks on its own</source>
-        <translation>Elk tabblad afzonderlijk vergrendelen</translation>
+        <translation>Bloquear cada pestaña por separado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="246"/>
         <source>One lock for the whole window</source>
-        <translation>Eén vergrendeling voor het hele venster</translation>
+        <translation>Un solo bloqueo para toda la ventana</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsExportPage</name>
+    <name>mufpen::PrefsExportPage</name>
     <message>
         <source>Select Pandoc Executable</source>
-        <translation type="vanished">Pandoc-programma selecteren</translation>
+        <translation type="vanished">Seleccionar ejecutable de Pandoc</translation>
     </message>
     <message>
         <source>Executables (*.exe);;All Files (*)</source>
-        <translation type="vanished">Programma&apos;s (*.exe);;Alle bestanden (*)</translation>
+        <translation type="vanished">Ejecutables (*.exe);;Todos los archivos (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>General</source>
-        <translation>Algemeen</translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (zonder stijlen)</translation>
+        <translation>HTML (sin estilos)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>Image</source>
-        <translation>Afbeelding</translation>
+        <translation>Imagen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="93"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="106"/>
         <source>Formats</source>
-        <translation>Indelingen</translation>
+        <translation>Formatos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="246"/>
         <source>Default Export Folder</source>
-        <translation>Standaard exportmap</translation>
+        <translation>Carpeta de exportación predeterminada</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="vanished">Auto</translation>
+        <translation type="vanished">Automático</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="242"/>
         <source>Same folder as current file</source>
-        <translation>Zelfde map als huidige bestand</translation>
+        <translation>Misma carpeta que el archivo actual</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="243"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Custom...</source>
-        <translation>Aangepast...</translation>
+        <translation>Personalizada...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <source>Pandoc Path</source>
-        <translation>Pandoc-pad</translation>
+        <translation>Ruta de Pandoc</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="259"/>
         <source>(Auto-detect)</source>
-        <translation>(Automatisch detecteren)</translation>
+        <translation>(Detección automática)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="178"/>
         <source>Browse...</source>
-        <translation>Bladeren...</translation>
+        <translation>Examinar...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="94"/>
         <source>New...</source>
-        <translation>Nieuw...</translation>
+        <translation>Nuevo...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="95"/>
         <source>Duplicate</source>
-        <translation>Dupliceren</translation>
+        <translation>Duplicar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="96"/>
         <source>Rename...</source>
-        <translation>Naam wijzigen...</translation>
+        <translation>Cambiar nombre...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="97"/>
         <source>Remove</source>
-        <translation>Verwijderen</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="98"/>
         <source>Up</source>
-        <translation>Omhoog</translation>
+        <translation>Subir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="99"/>
         <source>Down</source>
-        <translation>Omlaag</translation>
+        <translation>Bajar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="239"/>
         <source>Shared defaults for all export formats. Select a format to configure its own options.</source>
-        <translation>Gedeelde standaardinstellingen voor alle exportformaten. Selecteer een formaat om de bijbehorende opties in te stellen.</translation>
+        <translation>Opciones predeterminadas compartidas por todos los formatos de exportación. Seleccione un formato para configurar sus opciones.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="249"/>
         <source>Custom Folder</source>
-        <translation>Aangepaste map</translation>
+        <translation>Carpeta personalizada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="256"/>
         <source>Untitled documents use the Documents folder.</source>
-        <translation>Naamloze documenten gebruiken de map Documenten.</translation>
+        <translation>Los documentos sin título utilizan la carpeta Documentos.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>All Files (*)</source>
-        <translation>Alle bestanden (*)</translation>
+        <translation>Todos los archivos (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="260"/>
         <source>Auto-detect</source>
-        <translation>Automatisch detecteren</translation>
+        <translation>Detectar automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
         <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML en afbeeldingen gebruiken de renderer van Mufpen. Voor andere formaten is Pandoc vereist.</translation>
+        <translation>PDF, HTML y las imágenes utilizan el motor de renderizado de Mufpen. Los demás formatos requieren Pandoc.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
         <source>Used when exporting as %1. Changes are saved immediately.</source>
-        <translation>Wordt gebruikt bij het exporteren als %1. Wijzigingen worden direct opgeslagen.</translation>
+        <translation>Se utiliza al exportar como %1. Los cambios se guardan inmediatamente.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Theme</source>
-        <translation>Thema</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Current theme</source>
-        <translation>Huidig thema</translation>
+        <translation>Tema actual</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Default light theme</source>
-        <translation>Standaard licht thema</translation>
+        <translation>Tema claro predeterminado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>Executable</source>
-        <translation>Uitvoerbaar bestand</translation>
+        <translation>Ejecutable</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="284"/>
         <source>Arguments</source>
-        <translation>Argumenten</translation>
+        <translation>Argumentos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="285"/>
         <source>Output Extension</source>
-        <translation>Uitvoerextensie</translation>
+        <translation>Extensión de salida</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="286"/>
         <source>Arguments must contain ${outputPath}. ${inputPath} is a temporary Markdown copy including unsaved edits. Also available: ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>De argumenten moeten ${outputPath} bevatten. ${inputPath} is een tijdelijke Markdown-kopie met niet-opgeslagen wijzigingen. Ook beschikbaar: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Los argumentos deben contener ${outputPath}. ${inputPath} es una copia temporal de Markdown que incluye los cambios sin guardar. También están disponibles: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="288"/>
         <source>Quote arguments containing spaces. Variables are expanded after splitting arguments; no command shell is used.</source>
-        <translation>Zet argumenten met spaties tussen aanhalingstekens. Variabelen worden na het splitsen van de argumenten ingevuld; er wordt geen opdrachtshell gebruikt.</translation>
+        <translation>Ponga entre comillas los argumentos que contengan espacios. Las variables se expanden después de separar los argumentos; no se utiliza ningún intérprete de comandos.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="290"/>
         <source>The command must create one file at ${outputPath}. Failed or canceled exports keep the existing destination.</source>
-        <translation>De opdracht moet één bestand aanmaken op ${outputPath}. Bij een mislukte of geannuleerde export blijft het bestaande doelbestand behouden.</translation>
+        <translation>El comando debe crear un archivo en ${outputPath}. Si la exportación falla o se cancela, se conserva el archivo de destino existente.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Page Size</source>
-        <translation>Paginaformaat</translation>
+        <translation>Tamaño de página</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="295"/>
         <source>Width</source>
-        <translation>Breedte</translation>
+        <translation>Anchura</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="296"/>
         <source>Height</source>
-        <translation>Hoogte</translation>
+        <translation>Altura</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="318"/>
         <source>Landscape</source>
-        <translation>Liggend</translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="319"/>
         <source>Page Margins</source>
-        <translation>Paginamarges</translation>
+        <translation>Márgenes de página</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="321"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="340"/>
         <source>Font Size (px)</source>
-        <translation>Lettergrootte (px)</translation>
+        <translation>Tamaño de fuente (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="322"/>
         <source>Start each level-one heading on a new page</source>
-        <translation>Elke kop van niveau één op een nieuwe pagina beginnen</translation>
+        <translation>Comenzar cada título de nivel uno en una página nueva</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="323"/>
         <source>Header</source>
-        <translation>Koptekst</translation>
+        <translation>Encabezado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="324"/>
         <source>Footer</source>
-        <translation>Voettekst</translation>
+        <translation>Pie de página</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="326"/>
         <source>Show page numbers</source>
-        <translation>Paginanummers tonen</translation>
+        <translation>Mostrar números de página</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="327"/>
         <source>Header and footer variables: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Space is reserved automatically so they do not overlap the document.</source>
-        <translation>Variabelen voor kop- en voetteksten: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Er wordt automatisch ruimte gereserveerd zodat ze de documentinhoud niet overlappen.</translation>
+        <translation>Variables del encabezado y pie de página: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Se reserva espacio automáticamente para que no se superpongan al documento.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="330"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="358"/>
         <source>Include a table of contents</source>
-        <translation>Inhoudsopgave opnemen</translation>
+        <translation>Incluir una tabla de contenido</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="333"/>
         <source>Add to &lt;head&gt;</source>
-        <translation>Toevoegen aan &lt;head&gt;</translation>
+        <translation>Añadir a &lt;head&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="334"/>
         <source>Add before document content</source>
-        <translation>Toevoegen vóór de documentinhoud</translation>
+        <translation>Añadir antes del contenido del documento</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
         <source>Mufpen adds no theme stylesheet to this format.</source>
-        <translation>Mufpen voegt geen themastijlblad toe aan dit formaat.</translation>
+        <translation>Mufpen no añade ninguna hoja de estilo del tema a este formato.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
         <source>Width (px)</source>
-        <translation>Breedte (px)</translation>
+        <translation>Anchura (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="339"/>
         <source>Output Scale</source>
-        <translation>Uitvoerschaal</translation>
+        <translation>Escala de salida</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="342"/>
         <source>Exports one PNG. Maximum: 64 million pixels and 32,767 pixels in height. Use PDF for longer documents.</source>
-        <translation>Exporteert één PNG. Maximum: 64 miljoen pixels en 32,767 pixels hoog. Gebruik PDF voor langere documenten.</translation>
+        <translation>Exporta un único PNG. Máximo: 64 millones de píxeles y 32,767 píxeles de altura. Utilice PDF para documentos más largos.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="344"/>
         <source>Requires Pandoc. Configure its path under General.</source>
-        <translation>Pandoc is vereist. Stel het pad in onder Algemeen.</translation>
+        <translation>Requiere Pandoc. Configure su ruta en General.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="346"/>
         <source>Reference Document</source>
-        <translation>Referentiedocument</translation>
+        <translation>Documento de referencia</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="349"/>
         <source>Custom CSS</source>
-        <translation>Aangepaste CSS</translation>
+        <translation>CSS personalizado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="352"/>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="325"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="354"/>
         <source>Author</source>
-        <translation>Auteur</translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="359"/>
         <source>TOC Depth</source>
-        <translation>Niveaus in inhoudsopgave</translation>
+        <translation>Niveles de la tabla de contenido</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="364"/>
         <source>Number sections</source>
-        <translation>Secties nummeren</translation>
+        <translation>Numerar las secciones</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Line Wrapping</source>
-        <translation>Regelafbreking</translation>
+        <translation>Ajuste de líneas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Do not wrap</source>
-        <translation>Regels niet afbreken</translation>
+        <translation>No ajustar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Automatic</source>
-        <translation>Automatisch</translation>
+        <translation>Automático</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Preserve source wrapping</source>
-        <translation>Regelafbreking van de bron behouden</translation>
+        <translation>Conservar los saltos de línea del original</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="369"/>
         <source>Additional Pandoc Arguments</source>
-        <translation>Aanvullende Pandoc-argumenten</translation>
+        <translation>Argumentos adicionales de Pandoc</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
         <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
-        <translation>Zet paden met spaties tussen aanhalingstekens. Mufpen beheert het invoerformaat, het uitvoerformaat en het uitvoerpad.</translation>
+        <translation>Escriba entre comillas las rutas que contengan espacios. Mufpen gestiona el formato de entrada, el formato de salida y la ruta de salida.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
         <source>After Export</source>
-        <translation>Na exporteren</translation>
+        <translation>Después de exportar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="375"/>
         <source>Open the exported file directory</source>
-        <translation>De map van het geëxporteerde bestand openen</translation>
+        <translation>Abrir la carpeta del archivo exportado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="377"/>
         <source>Open the exported file</source>
-        <translation>Het geëxporteerde bestand openen</translation>
+        <translation>Abrir el archivo exportado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="414"/>
         <source>New Export Preset</source>
-        <translation>Nieuwe exportvoorinstelling</translation>
+        <translation>Nuevo preajuste de exportación</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="419"/>
         <source>%1 (copy)</source>
-        <translation>%1 (kopie)</translation>
+        <translation>%1 (copia)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="420"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <source>Name</source>
-        <translation>Naam</translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="425"/>
         <source>Custom Command</source>
-        <translation>Aangepaste opdracht</translation>
+        <translation>Comando personalizado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="428"/>
         <source>Format</source>
-        <translation>Formaat</translation>
+        <translation>Formato</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="439"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Enter a non-empty, unique preset name.</source>
-        <translation>Voer een unieke, niet-lege naam voor de voorinstelling in.</translation>
+        <translation>Introduzca un nombre de preajuste único y no vacío.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Rename Export Preset</source>
-        <translation>Exportvoorinstelling hernoemen</translation>
+        <translation>Cambiar nombre del preajuste de exportación</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="505"/>
         <source>Using: %1</source>
-        <translation>In gebruik: %1</translation>
+        <translation>En uso: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="506"/>
         <source>Not a valid executable; will auto-detect.</source>
-        <translation>Geen geldig uitvoerbaar bestand; wordt automatisch gedetecteerd.</translation>
+        <translation>No es un ejecutable válido; se detectará automáticamente.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="513"/>
         <source>Detected: %1</source>
-        <translation>Gedetecteerd: %1</translation>
+        <translation>Detectado: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="512"/>
         <source>Pandoc was not found. Install it, or click Browse to locate.</source>
-        <translation>Pandoc is niet gevonden. Installeer het, of klik op ‘Bladeren’ om het te vinden.</translation>
+        <translation>No se encontró Pandoc. Instálelo o haga clic en «Examinar» para localizarlo.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsFilesPage</name>
+    <name>mufpen::PrefsFilesPage</name>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="462"/>
         <source>Startup</source>
-        <translation>Opstarten</translation>
+        <translation>Inicio</translation>
     </message>
     <message>
         <source>Open new file</source>
-        <translation type="vanished">Nieuw bestand openen</translation>
+        <translation type="vanished">Abrir archivo nuevo</translation>
     </message>
     <message>
         <source>Reopen last file</source>
-        <translation type="vanished">Laatste bestand heropenen</translation>
+        <translation type="vanished">Reabrir último archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="448"/>
         <source>File Open Protection</source>
-        <translation>Beveiliging bij het openen van bestanden</translation>
+        <translation>Protección al abrir archivos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="449"/>
         <source>Extension protection</source>
-        <translation>Extensiebeveiliging</translation>
+        <translation>Protección por extensión</translation>
     </message>
     <message>
         <source>Text file extensions (open without a warning)</source>
-        <translation type="vanished">Extensies van tekstbestanden (openen zonder waarschuwing)</translation>
+        <translation type="vanished">Extensiones de archivos de texto (abrir sin advertencia)</translation>
     </message>
     <message>
         <source>Separate extensions with commas, spaces, or semicolons. You can add or remove extensions.</source>
-        <translation type="vanished">Scheid extensies met komma&apos;s, spaties of puntkomma&apos;s. U kunt extensies toevoegen of verwijderen.</translation>
+        <translation type="vanished">Separa las extensiones con comas, espacios o punto y coma. Puedes añadir o eliminar extensiones.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="450"/>
         <source>Allowed file extensions</source>
-        <translation>Toegestane bestandsextensies</translation>
+        <translation>Extensiones de archivo permitidas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="451"/>
         <source>Ask before opening files with extensions outside this list.</source>
-        <translation>Vraag om bevestiging voordat bestanden met extensies buiten deze lijst worden geopend.</translation>
+        <translation>Preguntar antes de abrir archivos con extensiones que no estén en esta lista.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="452"/>
         <source>e.g. .txt, .log</source>
-        <translation>Bijv. .txt, .log</translation>
+        <translation>p. ej. .txt, .log</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="453"/>
         <source>Add</source>
-        <translation>Toevoegen</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="454"/>
         <source>Restore Defaults</source>
-        <translation>Standaardwaarden herstellen</translation>
+        <translation>Restaurar valores predeterminados</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="455"/>
         <source>File size protection</source>
-        <translation>Beveiliging op bestandsgrootte</translation>
+        <translation>Protección por tamaño de archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="456"/>
         <source>Large files may take longer to open and use more memory.</source>
-        <translation>Grote bestanden kunnen meer tijd nodig hebben om te openen en meer geheugen gebruiken.</translation>
+        <translation>Los archivos grandes pueden tardar más en abrirse y consumir más memoria.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="457"/>
         <source>Warn before opening files larger than</source>
-        <translation>Waarschuwen vóór het openen van bestanden groter dan</translation>
+        <translation>Advertir antes de abrir archivos de más de</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="460"/>
         <source>File size unit</source>
-        <translation>Eenheid voor bestandsgrootte</translation>
+        <translation>Unidad de tamaño de archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="463"/>
         <source>Opening Files</source>
-        <translation>Bestanden openen</translation>
+        <translation>Apertura de archivos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="464"/>
         <source>Open files in tabs by default</source>
-        <translation>Bestanden standaard in tabbladen openen</translation>
+        <translation>Abrir archivos en pestañas de forma predeterminada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
         <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
-        <translation>Bestanden die vanuit de bestandsbeheerder of de opdrachtregel worden geopend, gebruiken het bestaande Mufpen-venster. Schakel dit uit om ze in een nieuw venster te openen.</translation>
+        <translation>Los archivos abiertos desde el gestor de archivos o la línea de comandos se abren en la ventana existente de Mufpen. Desactiva esta opción para abrirlos en una ventana nueva.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
         <source>Always start fresh</source>
-        <translation>Altijd opnieuw beginnen</translation>
+        <translation>Iniciar siempre con una sesión vacía</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="472"/>
         <source>Restore previous session</source>
-        <translation>Vorige sessie herstellen</translation>
+        <translation>Restaurar la sesión anterior</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="478"/>
         <source>Outline</source>
-        <translation>Overzicht</translation>
+        <translation>Esquema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="479"/>
         <source>Allow collapsing and expanding the outline view in the sidebar</source>
-        <translation>Samenvouwen en uitvouwen van het overzicht in de zijbalk toestaan</translation>
+        <translation>Permitir contraer y expandir la vista de esquema en la barra lateral</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="481"/>
         <source>Default File Type / Extension</source>
-        <translation>Standaard bestandstype / extensie</translation>
+        <translation>Tipo de archivo / extensión predeterminado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="488"/>
         <source>Plain Text (.txt)</source>
-        <translation>Platte tekst (.txt)</translation>
+        <translation>Texto sin formato (.txt)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="494"/>
         <source>Save &amp; Restore</source>
-        <translation>Opslaan &amp; herstellen</translation>
+        <translation>Guardar y restaurar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="495"/>
         <source>Auto Save</source>
-        <translation>Automatisch opslaan</translation>
+        <translation>Guardado automático</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="496"/>
         <source>Auto-save changes to the previous file when switching files</source>
-        <translation>Wijzigingen automatisch opslaan bij het wisselen van bestanden</translation>
+        <translation>Guardar automáticamente los cambios del archivo anterior al cambiar de archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="497"/>
         <source>Restore Unsaved Drafts</source>
-        <translation>Niet-opgeslagen concepten herstellen</translation>
+        <translation>Restaurar borradores sin guardar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="499"/>
         <source>Recently Used Files</source>
-        <translation>Recent gebruikte bestanden</translation>
+        <translation>Archivos usados recientemente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="500"/>
         <source>Record history files and folders</source>
-        <translation>Geschiedenis van bestanden en mappen bijhouden</translation>
+        <translation>Registrar historial de archivos y carpetas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="501"/>
         <source>Clear History</source>
-        <translation>Geschiedenis wissen</translation>
+        <translation>Borrar historial</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="503"/>
         <source>When dragging files/folders into the window</source>
-        <translation>Bij het slepen van bestanden/mappen naar het venster</translation>
+        <translation>Al arrastrar archivos/carpetas a la ventana</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="504"/>
         <source>When dragging a folder</source>
-        <translation>Bij het slepen van een map</translation>
+        <translation>Al arrastrar una carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
         <source>Open in Mufpen</source>
-        <translation>Openen in Mufpen</translation>
+        <translation>Abrir en Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
         <source>Open in File Manager</source>
-        <translation>Openen in bestandsbeheerder</translation>
+        <translation>Abrir en el gestor de archivos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="515"/>
         <source>When dragging a Markdown file</source>
-        <translation>Bij het slepen van een Markdown-bestand</translation>
+        <translation>Al arrastrar un archivo Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="521"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="531"/>
         <source>Import File</source>
-        <translation>Bestand importeren</translation>
+        <translation>Importar archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="526"/>
         <source>When dragging an importable file</source>
-        <translation>Bij het slepen van een importeerbaar bestand</translation>
+        <translation>Al arrastrar un archivo importable</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="539"/>
         <source>Windows Integration</source>
-        <translation>Windows-integratie</translation>
+        <translation>Integración con Windows</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
         <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
-        <translation>&quot;Openen met Mufpen&quot; toevoegen aan het contextmenu van Verkenner voor bestanden en mappen</translation>
+        <translation>Añadir «Abrir con Mufpen» al menú contextual de archivos y carpetas del Explorador de archivos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
         <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Mufpen registreren als editor voor Markdown-bestanden (.md, .markdown, .mdx, .mkd, .mdown)</translation>
+        <translation>Registrar Mufpen como editor de archivos Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
         <source>Set Mufpen as Default…</source>
-        <translation>Mufpen als standaard instellen…</translation>
+        <translation>Establecer Mufpen como aplicación predeterminada…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
         <source>Remove .%1</source>
-        <translation>.%1 verwijderen</translation>
+        <translation>Eliminar .%1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsGeneralPage</name>
+    <name>mufpen::PrefsGeneralPage</name>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="126"/>
         <source>Checking...</source>
-        <translation>Controleren...</translation>
+        <translation>Comprobando...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="98"/>
         <source>Update Available</source>
-        <translation>Update beschikbaar</translation>
+        <translation>Actualización disponible</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
         <source>A new version of Mufpen (%1) is available.</source>
-        <translation>Een nieuwe versie van Mufpen (%1) is beschikbaar.</translation>
+        <translation>Una nueva versión de Mufpen (%1) está disponible.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>Up to Date</source>
-        <translation>Actueel</translation>
+        <translation>Actualizado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>U gebruikt de nieuwste versie van Mufpen.</translation>
+        <translation>Está utilizando la última versión de Mufpen.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Update Check Failed</source>
-        <translation>Updatecontrole mislukt</translation>
+        <translation>Error al buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Kan niet controleren op updates:
+        <translation>No se pudieron buscar actualizaciones:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="139"/>
         <source>Language</source>
-        <translation>Taal</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="140"/>
         <source>Update</source>
-        <translation>Update</translation>
+        <translation>Actualización</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="141"/>
         <source>Check for Updates</source>
-        <translation>Controleren op updates</translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="142"/>
         <source>Automatically check for updates</source>
-        <translation>Automatisch controleren op updates</translation>
+        <translation>Buscar actualizaciones automáticamente</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Geavanceerd</translation>
+        <translation type="vanished">Avanzado</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Debugmodus inschakelen</translation>
+        <translation type="vanished">Activar modo de depuración</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Anonieme gebruiksgegevens verzenden</translation>
+        <translation type="vanished">Enviar datos de uso anónimos</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Geavanceerde instellingen openen</translation>
+        <translation type="vanished">Abrir ajustes avanzados</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Geavanceerde instellingen herstellen</translation>
+        <translation type="vanished">Restablecer ajustes avanzados</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsImagePage</name>
+    <name>mufpen::PrefsImagePage</name>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="185"/>
         <source>When Inserting Images</source>
-        <translation>Bij het invoegen van afbeeldingen</translation>
+        <translation>Al insertar imágenes</translation>
     </message>
     <message>
         <source>Learn more...</source>
-        <translation type="vanished">Meer informatie...</translation>
+        <translation type="vanished">Más información...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="190"/>
         <source>No special operation</source>
-        <translation>Geen speciale bewerking</translation>
+        <translation>Ninguna operación especial</translation>
     </message>
     <message>
         <source>Copy to custom folder</source>
-        <translation type="vanished">Kopiëren naar aangepaste map</translation>
+        <translation type="vanished">Copiar a carpeta personalizada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="191"/>
         <source>Copy image to current folder (./)</source>
-        <translation>Afbeelding kopiëren naar huidige map (./)</translation>
+        <translation>Copiar imagen a la carpeta actual (./)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="192"/>
         <source>Copy image to ./assets folder</source>
-        <translation>Afbeelding kopiëren naar map ./assets</translation>
+        <translation>Copiar imagen a la carpeta ./assets</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="193"/>
         <source>Copy image to ./%1 folder</source>
-        <translation>Afbeelding kopiëren naar map ./%1</translation>
+        <translation>Copiar imagen a la carpeta ./%1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="194"/>
         <source>Upload image</source>
-        <translation>Afbeelding uploaden</translation>
+        <translation>Subir imagen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="195"/>
         <source>Copy to specified path</source>
-        <translation>Kopiëren naar opgegeven pad</translation>
+        <translation>Copiar a la ruta especificada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="200"/>
         <source>Destination folder for copied images</source>
-        <translation>Bestemmingsmap voor gekopieerde afbeeldingen</translation>
+        <translation>Carpeta de destino de las imágenes copiadas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="201"/>
         <source>Browse...</source>
-        <translation>Bladeren...</translation>
+        <translation>Examinar...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="202"/>
         <source>Apply the above rules to local images</source>
-        <translation>De bovenstaande regels toepassen op lokale afbeeldingen</translation>
+        <translation>Aplicar las reglas anteriores a imágenes locales</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="203"/>
         <source>Apply the above rules to network images</source>
-        <translation>De bovenstaande regels toepassen op netwerkafbeeldingen</translation>
+        <translation>Aplicar las reglas anteriores a imágenes de red</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="204"/>
         <source>Allow automatic image upload based on YAML settings</source>
-        <translation>Automatische afbeeldingsupload toestaan op basis van YAML-instellingen</translation>
+        <translation>Permitir subida automática de imágenes según ajustes YAML</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="207"/>
         <source>Image Syntax Preferences</source>
-        <translation>Voorkeuren voor afbeeldingssyntaxis</translation>
+        <translation>Preferencias de sintaxis de imagen</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="208"/>
         <source>Prefer relative paths</source>
-        <translation>Voorkeur geven aan relatieve paden</translation>
+        <translation>Preferir rutas relativas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="209"/>
         <source>Add / to relative paths</source>
-        <translation>/ toevoegen aan relatieve paden</translation>
+        <translation>Agregar ./ a las rutas relativas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="210"/>
         <source>Auto-escape image URLs on insertion</source>
-        <translation>Afbeeldings-URL&apos;s automatisch escapen bij invoegen</translation>
+        <translation>Escapar automáticamente URL de imágenes al insertar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="213"/>
         <source>Upload Service Settings</source>
-        <translation>Uploadservice-instellingen</translation>
+        <translation>Ajustes del servicio de subida</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="214"/>
         <source>Upload Service</source>
-        <translation>Uploadservice</translation>
+        <translation>Servicio de subida</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="219"/>
         <source>None</source>
-        <translation>Geen</translation>
+        <translation>Ninguno</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="220"/>
         <source>Custom Command</source>
-        <translation>Aangepaste opdracht</translation>
+        <translation>Comando personalizado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="225"/>
         <source>e.g. picgo upload or uPic -m upload</source>
-        <translation>bv. picgo upload of uPic -m upload</translation>
+        <translation>p. ej. picgo upload o uPic -m upload</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="226"/>
         <source>Test</source>
-        <translation>Testen</translation>
+        <translation>Probar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="293"/>
         <source>Select Image Folder</source>
-        <translation>Afbeeldingenmap selecteren</translation>
+        <translation>Seleccionar carpeta de imágenes</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
@@ -5429,83 +5429,83 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Test Upload</source>
-        <translation>Upload testen</translation>
+        <translation>Probar subida</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
         <source>Enter an upload command first.</source>
-        <translation>Voer eerst een uploadopdracht in.</translation>
+        <translation>Introduzca primero un comando de subida.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="310"/>
         <source>Could not create a test image.</source>
-        <translation>Kan geen testafbeelding maken.</translation>
+        <translation>No se pudo crear una imagen de prueba.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="316"/>
         <source>Upload canceled.</source>
-        <translation>Uploaden geannuleerd.</translation>
+        <translation>Subida cancelada.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <source>Upload succeeded. Returned URL:
 %1</source>
-        <translation>Uploaden geslaagd. Geretourneerde URL:
+        <translation>Subida correcta. URL devuelta:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Upload failed:
 %1</source>
-        <translation>Uploaden mislukt:
+        <translation>Error de subida:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsMarkdownPage</name>
+    <name>mufpen::PrefsMarkdownPage</name>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="256"/>
         <source>Markdown Syntax Preferences</source>
-        <translation>Voorkeuren voor Markdown-syntaxis</translation>
+        <translation>Preferencias de sintaxis Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="257"/>
         <source>Strict Mode</source>
-        <translation>Strenge modus</translation>
+        <translation>Modo estricto</translation>
     </message>
     <message>
         <source>Strict Mode turns off tables, strikethrough, task lists, auto links and formulas for plain CommonMark output.</source>
-        <translation type="vanished">Strikte modus schakelt tabellen, doorhaling, takenlijsten, automatische links en formules uit voor gewone CommonMark-uitvoer.</translation>
+        <translation type="vanished">El modo estricto desactiva las tablas, el tachado, las listas de tareas, los enlaces automáticos y las fórmulas para una salida CommonMark simple.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="258"/>
         <source>Strict Mode turns off tables, strikethrough and task lists for plain CommonMark structure. Inline extensions (formulas, auto links, sub/superscript, etc.) always follow their own switches and are not affected by Strict Mode.</source>
-        <translation>De strenge modus schakelt tabellen, doorhaling en takenlijsten uit voor een zuivere CommonMark-structuur. Inline-uitbreidingen (formules, automatische links, subscript/superscript enz.) volgen altijd hun eigen instellingen en worden niet beïnvloed door de strenge modus.</translation>
+        <translation>El modo estricto desactiva las tablas, el tachado y las listas de tareas para usar la estructura CommonMark estándar. Las extensiones en línea (fórmulas, enlaces automáticos, subíndices y superíndices, etc.) siempre siguen sus propios ajustes y no se ven afectadas por el modo estricto.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="261"/>
         <source>Break on Single Newline</source>
-        <translation>Nieuwe regel bij één regeleinde</translation>
+        <translation>Salto de línea en cada nueva línea simple</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="263"/>
         <source>Render a single line break as a new line. Turn off for strict CommonMark, which joins soft-wrapped lines into one paragraph.</source>
-        <translation>Een enkel regeleinde als een nieuwe regel weergeven. Schakel dit uit voor strikte CommonMark, waarbij regels met zachte regeleinden tot één alinea worden samengevoegd.</translation>
+        <translation>Muestra cada salto de línea simple como una nueva línea. Desactívalo para CommonMark estricto, que une las líneas con salto suave en un solo párrafo.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="265"/>
         <source>Heading Style</source>
-        <translation>Kopstijl</translation>
+        <translation>Estilo de encabezado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="267"/>
         <source>Unordered List</source>
-        <translation>Ongenummerde lijst</translation>
+        <translation>Lista sin ordenar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="269"/>
         <source>Ordered List</source>
-        <translation>Genummerde lijst</translation>
+        <translation>Lista ordenada</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="270"/>
@@ -5520,786 +5520,786 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="273"/>
         <source>Markdown Extended Syntax</source>
-        <translation>Markdown uitgebreide syntaxis</translation>
+        <translation>Sintaxis extendida de Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="274"/>
         <source>Auto Recognize Links</source>
-        <translation>Links automatisch herkennen</translation>
+        <translation>Reconocer enlaces automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="275"/>
         <source>Inline Formula</source>
-        <translation>Inline formule</translation>
+        <translation>Fórmula en línea</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="276"/>
         <source>Allow Spaces Inside Formula Delimiters</source>
-        <translation>Spaties binnen formulebegrenzers toestaan</translation>
+        <translation>Permitir espacios dentro de los delimitadores de fórmulas</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="278"/>
         <source>Accept spaces or tabs next to inline formula delimiters. Turn this off for Pandoc-style parsing that avoids ambiguous currency text.</source>
-        <translation>Sta spaties of tabs toe naast begrenzers van inlineformules. Schakel dit uit voor parsering in Pandoc-stijl, waarmee dubbelzinnige valutatekst wordt vermeden.</translation>
+        <translation>Acepte espacios o tabulaciones junto a los delimitadores de fórmulas en línea. Desactive esta opción para usar el análisis al estilo de Pandoc, que evita texto monetario ambiguo.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="280"/>
         <source>Subscript</source>
-        <translation>Subscript</translation>
+        <translation>Subíndice</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="281"/>
         <source>Superscript</source>
-        <translation>Superscript</translation>
+        <translation>Superíndice</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="282"/>
         <source>Highlight</source>
-        <translation>Markeren</translation>
+        <translation>Resaltado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="283"/>
         <source>Render Emoji Shortcodes</source>
-        <translation>Emoji-shortcodes renderen</translation>
+        <translation>Renderizar códigos abreviados de emoji</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="285"/>
         <source>Convert GitHub-style shortcodes like :smile: and :heart: into emoji glyphs when rendering. Turn off to keep the literal :shortcode: text (e.g. for technical documentation).</source>
-        <translation>Shortcodes in GitHub-stijl zoals :smile: en :heart: bij het renderen omzetten in emoji-tekens. Schakel dit uit om de letterlijke :shortcode:-tekst te behouden (bijv. voor technische documentatie).</translation>
+        <translation>Convertir códigos abreviados de estilo GitHub, como :smile: y :heart:, en caracteres emoji al renderizar. Desactive esta opción para conservar el texto literal :shortcode: (por ejemplo, en documentación técnica).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="287"/>
         <source>Github Style Alert Box</source>
-        <translation>GitHub-stijl waarschuwingsvak</translation>
+        <translation>Caja de alerta estilo GitHub</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="288"/>
         <source>Mermaid Diagrams</source>
-        <translation>Mermaid-diagrammen</translation>
+        <translation>Diagramas Mermaid</translation>
     </message>
     <message>
         <source>Diagrams (Sequence, Flowchart, Mermaid)</source>
-        <translation type="vanished">Diagrammen (Sequentie, Stroomdiagram, Mermaid)</translation>
+        <translation type="vanished">Diagramas (Secuencia, Fluxograma, Mermaid)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="289"/>
         <source>Diagram Options</source>
-        <translation>Diagramopties</translation>
+        <translation>Opciones de diagrama</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="292"/>
         <source>Smart Punctuation</source>
-        <translation>Slimme interpunctie</translation>
+        <translation>Puntuación inteligente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="293"/>
         <source>Convert on Input</source>
-        <translation>Converteren bij invoer</translation>
+        <translation>Convertir al escribir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>No conversion</source>
-        <translation>Geen conversie</translation>
+        <translation>Sin conversión</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>When typing</source>
-        <translation>Bij het typen</translation>
+        <translation>Al escribir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Always</source>
-        <translation>Altijd</translation>
+        <translation>Siempre</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="295"/>
         <source>Smart Quotes</source>
-        <translation>Slimme aanhalingstekens</translation>
+        <translation>Comillas inteligentes</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="304"/>
         <source>Smart Dashes</source>
-        <translation>Slimme streepjes</translation>
+        <translation>Guiones inteligentes</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="305"/>
         <source>Convert on Rendering</source>
-        <translation>Converteren bij weergave</translation>
+        <translation>Convertir al renderizar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="306"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Unicode-leestekens opnieuw toewijzen bij parseren</translation>
+        <translation>Reasignar puntuación Unicode al analizar</translation>
     </message>
     <message>
         <source>Allow and convert Unicode punctuation when parsing Markdown</source>
-        <translation type="vanished">Unicode-interpunctie toestaan en converteren bij het parseren van Markdown</translation>
+        <translation type="vanished">Permitir y convertir puntuación Unicode al analizar Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="309"/>
         <source>Code Blocks</source>
-        <translation>Codeblokken</translation>
+        <translation>Bloques de código</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="310"/>
         <source>Show Line Numbers</source>
-        <translation>Regelnummers tonen</translation>
+        <translation>Mostrar números de línea</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="311"/>
         <source>Code Blocks Auto Wrap</source>
-        <translation>Automatische terugloop in codeblokken</translation>
+        <translation>Ajuste automático de línea en bloques de código</translation>
     </message>
     <message>
         <source>Use Shift+Tab to auto adjust indent of selected code</source>
-        <translation type="vanished">Shift+Tab gebruiken om inspringing van geselecteerde code automatisch aan te passen</translation>
+        <translation type="vanished">Usar Mayús+Tab para ajustar automáticamente la sangría del código seleccionado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="312"/>
         <source>Code Indent</source>
-        <translation>Code-inspringing</translation>
+        <translation>Sangría de código</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="314"/>
         <source>Default Code Block Language</source>
-        <translation>Standaard taal voor codeblokken</translation>
+        <translation>Lenguaje predeterminado de bloques de código</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="315"/>
         <source>(empty)</source>
-        <translation>(leeg)</translation>
+        <translation>(vacío)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="317"/>
         <source>Automatically add code block language</source>
-        <translation>Automatisch taal toevoegen aan codeblokken</translation>
+        <translation>Agregar automáticamente lenguaje al bloque de código</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>When inserting code blocks via Markdown code</source>
-        <translation>Bij het invoegen van codeblokken via Markdown-code</translation>
+        <translation>Al insertar bloques de código mediante código Markdown</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Never</source>
-        <translation>Nooit</translation>
+        <translation>Nunca</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsSearchPage</name>
+    <name>mufpen::PrefsSearchPage</name>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="120"/>
         <source>Search scope</source>
-        <translation>Zoekbereik</translation>
+        <translation>Ámbito de búsqueda</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="121"/>
         <source>Applies to folder search and Quick Open. Changes take effect on the next search.</source>
-        <translation>Geldt voor zoeken in mappen en Snel openen. Wijzigingen worden bij de volgende zoekopdracht toegepast.</translation>
+        <translation>Se aplica a la búsqueda en carpetas y a Apertura rápida. Los cambios se aplicarán en la próxima búsqueda.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="122"/>
         <source>File extensions to search</source>
-        <translation>Te doorzoeken bestandsextensies</translation>
+        <translation>Extensiones de archivo que se buscarán</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="123"/>
         <source>Separate extensions with commas, for example: md, txt. Use * for all file types; leave empty to search no files.</source>
-        <translation>Scheid extensies met komma&apos;s, bijvoorbeeld: md, txt. Gebruik * voor alle bestandstypen; laat dit leeg om geen bestanden te doorzoeken.</translation>
+        <translation>Separe las extensiones con comas, por ejemplo: md, txt. Use * para todos los tipos de archivo; deje el campo vacío para no buscar ningún archivo.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="125"/>
         <source>Ignored files and folders</source>
-        <translation>Genegeerde bestanden en mappen</translation>
+        <translation>Archivos y carpetas ignorados</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="126"/>
         <source>One rule per line: build/ ignores folders, *.bak ignores files, /drafts/ matches the search root, and ! includes a match again. Uses gitignore-style wildcards.</source>
-        <translation>Eén negeerregel per tekstregel: build/ negeert mappen, *.bak negeert bestanden, /drafts/ zoekt overeenkomsten vanaf de hoofdmap van de zoekopdracht en ! neemt een overeenkomst weer op. Gebruikt jokertekens in gitignore-stijl.</translation>
+        <translation>Una regla por línea: build/ ignora carpetas, *.bak ignora archivos, /drafts/ busca coincidencias desde la raíz de búsqueda y ! vuelve a incluir una coincidencia. Usa comodines de estilo gitignore.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="128"/>
         <source>Include hidden files and folders</source>
-        <translation>Verborgen bestanden en mappen opnemen</translation>
+        <translation>Incluir archivos y carpetas ocultos</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="129"/>
         <source>Read .gitignore files automatically</source>
-        <translation>.gitignore-bestanden automatisch lezen</translation>
+        <translation>Leer archivos .gitignore automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="130"/>
         <source>Read .ignore files automatically</source>
-        <translation>.ignore-bestanden automatisch lezen</translation>
+        <translation>Leer archivos .ignore automáticamente</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="131"/>
         <source>Reads rules in the search root and its subfolders. .ignore takes priority over .gitignore; the rules above take priority over both. Ignored folders are not traversed. Symbolic links are always skipped.</source>
-        <translation>Leest regels in de hoofdmap van de zoekopdracht en de onderliggende mappen. .ignore heeft voorrang op .gitignore; de bovenstaande regels hebben voorrang op beide. Genegeerde mappen worden niet doorzocht. Symbolische koppelingen worden altijd overgeslagen.</translation>
+        <translation>Lee las reglas de la raíz de búsqueda y sus subcarpetas. .ignore tiene prioridad sobre .gitignore; las reglas anteriores tienen prioridad sobre ambos. No se recorren las carpetas ignoradas. Los enlaces simbólicos siempre se omiten.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="133"/>
         <source>Content search limits</source>
-        <translation>Limieten voor zoeken in inhoud</translation>
+        <translation>Límites de búsqueda de contenido</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="134"/>
         <source>Maximum file size</source>
-        <translation>Maximale bestandsgrootte</translation>
+        <translation>Tamaño máximo de archivo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="135"/>
         <source>Maximum file size for regex</source>
-        <translation>Maximale bestandsgrootte voor reguliere expressies</translation>
+        <translation>Tamaño máximo de archivo para expresiones regulares</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="136"/>
         <source>Regex searches obey both limits. File size does not restrict Quick Open. Folder replacement keeps its separate 8 MiB safety limit. File opening protection is configured on the Files page.</source>
-        <translation>Zoekopdrachten met reguliere expressies houden zich aan beide limieten. De bestandsgrootte beperkt Snel openen niet. Vervangen in mappen behoudt de afzonderlijke veiligheidslimiet van 8 MiB. Beveiliging bij het openen van bestanden wordt ingesteld op de pagina Bestanden.</translation>
+        <translation>Las búsquedas con expresiones regulares respetan ambos límites. El tamaño del archivo no restringe Apertura rápida. El reemplazo en carpetas mantiene su propio límite de seguridad de 8 MiB. La protección al abrir archivos se configura en la página Archivos.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="138"/>
         <source>Restore search defaults</source>
-        <translation>Standaardzoekinstellingen herstellen</translation>
+        <translation>Restaurar valores de búsqueda predeterminados</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsShortcutsPage</name>
+    <name>mufpen::PrefsShortcutsPage</name>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="115"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Sneltoetsen</translation>
+        <translation>Atajos de teclado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <source>Restore all default shortcuts?</source>
-        <translation>Alle standaardsneltoetsen herstellen?</translation>
+        <translation>¿Restaurar todos los atajos predeterminados?</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="101"/>
         <source>All custom shortcuts will be removed. This cannot be undone.</source>
-        <translation>Alle aangepaste sneltoetsen worden verwijderd. Dit kan niet ongedaan worden gemaakt.</translation>
+        <translation>Se eliminarán todos los atajos personalizados. Esta acción no se puede deshacer.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="102"/>
         <source>Restore Defaults</source>
-        <translation>Standaardwaarden herstellen</translation>
+        <translation>Restaurar valores predeterminados</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="116"/>
         <source>Select a command and press a key combination. Changes apply to all windows immediately.</source>
-        <translation>Selecteer een opdracht en druk op een toetsencombinatie. Wijzigingen worden direct op alle vensters toegepast.</translation>
+        <translation>Seleccione un comando y pulse una combinación de teclas. Los cambios se aplican inmediatamente a todas las ventanas.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="117"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="118"/>
         <source>Search commands or shortcuts…</source>
-        <translation>Opdrachten of sneltoetsen zoeken…</translation>
+        <translation>Buscar comandos o atajos…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Command</source>
-        <translation>Opdracht</translation>
+        <translation>Comando</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="120"/>
         <source>Shortcut</source>
-        <translation>Sneltoets</translation>
+        <translation>Atajo</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Default</source>
-        <translation>Standaard</translation>
+        <translation>Predeterminado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="121"/>
         <source>Clear</source>
-        <translation>Wissen</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="122"/>
         <source>Use Default</source>
-        <translation>Standaard gebruiken</translation>
+        <translation>Usar predeterminado</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="123"/>
         <source>Restore All Defaults…</source>
-        <translation>Alle standaardinstellingen herstellen…</translation>
+        <translation>Restaurar todos los valores predeterminados…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="168"/>
         <source>No matching commands.</source>
-        <translation>Geen overeenkomende opdrachten.</translation>
+        <translation>No hay comandos que coincidan.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Apply</source>
-        <translation>Toepassen</translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Reassign</source>
-        <translation>Opnieuw toewijzen</translation>
+        <translation>Reasignar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="214"/>
         <source>This key is reserved for text entry or cursor navigation. Use a modifier key or a function key.</source>
-        <translation>Deze toets is gereserveerd voor tekstinvoer of cursornavigatie. Gebruik een modificatietoets of een functietoets.</translation>
+        <translation>Esta tecla está reservada para introducir texto o mover el cursor. Utilice una tecla modificadora o una tecla de función.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="220"/>
         <source>Used by: %1. Reassigning will clear those shortcuts.</source>
-        <translation>Gebruikt door: %1. Bij opnieuw toewijzen worden die sneltoetsen gewist.</translation>
+        <translation>Utilizado por: %1. Al reasignarlo se borrarán esos atajos.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="222"/>
         <source>Clear and Apply removes the shortcut. Use Default and Apply restores it.</source>
-        <translation>Klik op Wissen en Toepassen om de sneltoets te verwijderen. Klik op Standaard gebruiken en Toepassen om deze te herstellen.</translation>
+        <translation>Pulse Borrar y Aplicar para eliminar el atajo. Pulse Usar predeterminado y Aplicar para restaurarlo.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::QuickOpenDialog</name>
+    <name>mufpen::QuickOpenDialog</name>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="82"/>
         <location filename="../src/app/QuickOpenDialog.cpp" line="294"/>
         <source>Quick Open</source>
-        <translation>Snel openen</translation>
+        <translation>Apertura rápida</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="89"/>
         <source>Matching files</source>
-        <translation>Overeenkomende bestanden</translation>
+        <translation>Archivos coincidentes</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="253"/>
         <source>Scanning folder…</source>
-        <translation>Map scannen…</translation>
+        <translation>Explorando carpeta…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="254"/>
         <source>No matching files</source>
-        <translation>Geen overeenkomende bestanden</translation>
+        <translation>No hay archivos coincidentes</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="255"/>
         <source>%1 matching files</source>
-        <translation>%1 overeenkomende bestanden</translation>
+        <translation>%1 archivos coincidentes</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="257"/>
         <source> · Showing the first %1; type to narrow results</source>
-        <translation> · De eerste %1 worden getoond; typ om de resultaten te verfijnen</translation>
+        <translation> · Se muestran los primeros %1; escriba para acotar los resultados</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="259"/>
         <source> · File limit reached; results are incomplete</source>
-        <translation> · Bestandslimiet bereikt; resultaten zijn onvolledig</translation>
+        <translation> · Se alcanzó el límite de archivos; los resultados están incompletos</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="261"/>
         <source> · %1 unreadable folders skipped</source>
-        <translation> · %1 onleesbare mappen overgeslagen</translation>
+        <translation> · Se omitieron %1 carpetas ilegibles</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="295"/>
         <source>Search file names or paths…</source>
-        <translation>Bestandsnamen of paden zoeken…</translation>
+        <translation>Buscar nombres de archivo o rutas…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="296"/>
         <source>Open and recent files</source>
-        <translation>Geopende en recente bestanden</translation>
+        <translation>Archivos abiertos y recientes</translation>
     </message>
     <message>
         <source>Type to filter files…</source>
-        <translation type="vanished">Typ om bestanden te filteren…</translation>
+        <translation type="vanished">Escriba para filtrar archivos…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SearchPanelWidget</name>
+    <name>mufpen::SearchPanelWidget</name>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="305"/>
         <source> · Unsaved</source>
-        <translation> · Niet opgeslagen</translation>
+        <translation> · Sin guardar</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="325"/>
         <source>Open a folder to search its contents.</source>
-        <translation>Open een map om de inhoud te doorzoeken.</translation>
+        <translation>Abra una carpeta para buscar en su contenido.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="327"/>
         <source>Search failed: %1</source>
-        <translation>Zoeken mislukt: %1</translation>
+        <translation>Error en la búsqueda: %1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="329"/>
         <source>Search text files in this folder and its subfolders.</source>
-        <translation>Tekstbestanden in deze map en de onderliggende mappen doorzoeken.</translation>
+        <translation>Buscar en los archivos de texto de esta carpeta y sus subcarpetas.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="331"/>
         <source>%1 matches in %2 files</source>
-        <translation>%1 overeenkomsten in %2 bestanden</translation>
+        <translation>%1 coincidencias en %2 archivos</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="333"/>
         <source> · Searching…</source>
-        <translation> · Zoeken…</translation>
+        <translation> · Buscando…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="335"/>
         <source> · Incomplete results; search again before replacing</source>
-        <translation> · Onvolledige resultaten; zoek opnieuw voordat u vervangt</translation>
+        <translation> · Resultados incompletos; vuelva a buscar antes de reemplazar</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="337"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="353"/>
         <source>%1 files searched</source>
-        <translation>%1 bestanden doorzocht</translation>
+        <translation>%1 archivos examinados</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="339"/>
         <source> · %1 files or folders skipped</source>
-        <translation> · %1 bestanden of mappen overgeslagen</translation>
+        <translation> · Se omitieron %1 archivos o carpetas</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="341"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="400"/>
         <source>Result limit reached</source>
-        <translation>Resultaatlimiet bereikt</translation>
+        <translation>Se alcanzó el límite de resultados</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="344"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="350"/>
         <source>Search details</source>
-        <translation>Zoekdetails</translation>
+        <translation>Detalles de la búsqueda</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Path</source>
-        <translation>Pad</translation>
+        <translation>Ruta</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Reason</source>
-        <translation>Reden</translation>
+        <translation>Motivo</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="364"/>
         <source>File size exceeds %1 MiB</source>
-        <translation>Bestandsgrootte overschrijdt %1 MiB</translation>
+        <translation>El tamaño del archivo supera %1 MiB</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="367"/>
         <source>Regular expression search is limited to %1 MiB per file</source>
-        <translation>Zoeken met reguliere expressies is beperkt tot %1 MiB per bestand</translation>
+        <translation>La búsqueda con expresiones regulares está limitada a %1 MiB por archivo</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="371"/>
         <source>File is loading or has conflicting unsaved versions</source>
-        <translation>Bestand wordt geladen of heeft conflicterende niet-opgeslagen versies</translation>
+        <translation>El archivo se está cargando o tiene versiones sin guardar en conflicto</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="374"/>
         <source>Cannot read file or folder</source>
-        <translation>Kan bestand of map niet lezen</translation>
+        <translation>No se puede leer el archivo o la carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="377"/>
         <source>Unsupported encoding or binary content</source>
-        <translation>Niet-ondersteunde codering of binaire inhoud</translation>
+        <translation>Codificación no compatible o contenido binario</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="380"/>
         <source>File changed during search</source>
-        <translation>Bestand is gewijzigd tijdens het zoeken</translation>
+        <translation>El archivo cambió durante la búsqueda</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="383"/>
         <source>Search exceeded its resource limit</source>
-        <translation>De zoekopdracht heeft de resourcelimiet overschreden</translation>
+        <translation>La búsqueda superó su límite de recursos</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="386"/>
         <source>Ignored directory</source>
-        <translation>Genegeerde map</translation>
+        <translation>Carpeta ignorada</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="389"/>
         <source>Excluded by search ignore rules</source>
-        <translation>Uitgesloten door negeerregels voor zoeken</translation>
+        <translation>Excluido por las reglas de exclusión de búsqueda</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="392"/>
         <source>Cannot read ignore rules (UTF-8, up to 4 MiB)</source>
-        <translation>Kan negeerregels niet lezen (UTF-8, maximaal 4 MiB)</translation>
+        <translation>No se pueden leer las reglas de exclusión (UTF-8, hasta 4 MiB)</translation>
     </message>
     <message>
         <source>No folder open</source>
-        <translation type="vanished">Geen map geopend</translation>
+        <translation type="vanished">Ninguna carpeta abierta</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="408"/>
         <source>Search contents…</source>
-        <translation>Inhoud doorzoeken…</translation>
+        <translation>Buscar en el contenido…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="409"/>
         <source>Search contents</source>
-        <translation>Inhoud doorzoeken</translation>
+        <translation>Buscar en el contenido</translation>
     </message>
     <message>
         <source>Include paths (words or path segments)</source>
-        <translation type="vanished">Paden opnemen (woorden of padsegmenten)</translation>
+        <translation type="vanished">Incluir rutas (palabras o segmentos de ruta)</translation>
     </message>
     <message>
         <source>Exclude paths (words or path segments)</source>
-        <translation type="vanished">Paden uitsluiten (woorden of padsegmenten)</translation>
+        <translation type="vanished">Excluir rutas (palabras o segmentos de ruta)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="252"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="412"/>
         <source>Match case</source>
-        <translation>Hoofdlettergevoelig</translation>
+        <translation>Distinguir mayúsculas y minúsculas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="254"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="414"/>
         <source>Regular expression</source>
-        <translation>Reguliere expressie</translation>
+        <translation>Expresión regular</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="416"/>
         <source>Replace with…</source>
-        <translation>Vervangen door…</translation>
+        <translation>Reemplazar por…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="417"/>
         <source>Replace with</source>
-        <translation>Vervangen door</translation>
+        <translation>Reemplazar por</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="418"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="419"/>
         <source>Replace</source>
-        <translation>Vervangen</translation>
+        <translation>Reemplazar</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="420"/>
         <source>Preview folder replacement…</source>
-        <translation>Voorbeeld van vervanging in map…</translation>
+        <translation>Vista previa del reemplazo en la carpeta…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="421"/>
         <source>Search</source>
-        <translation>Zoeken</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="422"/>
         <source>Stop</source>
-        <translation>Stoppen</translation>
+        <translation>Detener</translation>
     </message>
     <message>
         <source>Undo folder replacement…</source>
-        <translation type="vanished">Vervanging in map ongedaan maken…</translation>
+        <translation type="vanished">Deshacer el reemplazo en la carpeta…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="423"/>
         <source>Content search results</source>
-        <translation>Resultaten van zoeken in inhoud</translation>
+        <translation>Resultados de búsqueda en el contenido</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SidebarWidget</name>
+    <name>mufpen::SidebarWidget</name>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="323"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1143"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1172"/>
         <source>Files</source>
-        <translation>Bestanden</translation>
+        <translation>Archivos</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="475"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1146"/>
         <source>Outline</source>
-        <translation>Overzicht</translation>
+        <translation>Esquema</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="736"/>
         <source>Directory pinned — click to follow the active tab</source>
-        <translation>Map vastgezet — klik om het actieve tabblad te volgen</translation>
+        <translation>Directorio fijado — haz clic para seguir la pestaña activa</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="737"/>
         <source>Following active tab — click to pin this directory</source>
-        <translation>Actief tabblad wordt gevolgd — klik om deze map vast te zetten</translation>
+        <translation>Siguiendo la pestaña activa — haz clic para fijar este directorio</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1123"/>
         <source>No folder open</source>
-        <translation>Geen map geopend</translation>
+        <translation>Ninguna carpeta abierta</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1129"/>
         <source>New File</source>
-        <translation>Nieuw bestand</translation>
+        <translation>Archivo nuevo</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1130"/>
         <source>New Folder</source>
-        <translation>Nieuwe map</translation>
+        <translation>Nueva carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1132"/>
         <source>Refresh Files</source>
-        <translation>Bestanden vernieuwen</translation>
+        <translation>Actualizar archivos</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1133"/>
         <source>Sort Files</source>
-        <translation>Bestanden sorteren</translation>
+        <translation>Ordenar archivos</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1134"/>
         <source>File Name</source>
-        <translation>Bestandsnaam</translation>
+        <translation>Nombre del archivo</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1135"/>
         <source>Date Modified</source>
-        <translation>Wijzigingsdatum</translation>
+        <translation>Fecha de modificación</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1136"/>
         <source>Date Created</source>
-        <translation>Aanmaakdatum</translation>
+        <translation>Fecha de creación</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1137"/>
         <source>File Type</source>
-        <translation>Bestandstype</translation>
+        <translation>Tipo de archivo</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1138"/>
         <source>File Size</source>
-        <translation>Bestandsgrootte</translation>
+        <translation>Tamaño del archivo</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1139"/>
         <source>Ascending</source>
-        <translation>Oplopend</translation>
+        <translation>Ascendente</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1140"/>
         <source>Descending</source>
-        <translation>Aflopend</translation>
+        <translation>Descendente</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1149"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1173"/>
         <source>Search</source>
-        <translation>Zoeken</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="369"/>
         <source>Expand All Folders</source>
-        <translation>Alle mappen uitvouwen</translation>
+        <translation>Expandir todas las carpetas</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="370"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1131"/>
         <source>Collapse All Folders</source>
-        <translation>Alle mappen samenvouwen</translation>
+        <translation>Contraer todas las carpetas</translation>
     </message>
     <message>
         <source>Folder Actions</source>
-        <translation type="vanished">Mapacties</translation>
+        <translation type="vanished">Acciones de carpeta</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="vanished">Map openen...</translation>
+        <translation type="vanished">Abrir carpeta...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="371"/>
         <source>Close Folder</source>
-        <translation>Map sluiten</translation>
+        <translation>Cerrar carpeta</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
-        <translation>Geen koppen</translation>
+        <translation>Sin encabezados</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SourceEditorWidget</name>
+    <name>mufpen::SourceEditorWidget</name>
     <message>
         <location filename="../src/editor/SourceEditorWidget.cpp" line="224"/>
         <source>Start writing...</source>
-        <translation>Begin met schrijven...</translation>
+        <translation>Empiece a escribir...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::StatusBarWidget</name>
+    <name>mufpen::StatusBarWidget</name>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="233"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="590"/>
         <source>%1 words</source>
-        <translation>%1 woorden</translation>
+        <translation>%1 palabras</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="397"/>
         <source>Click to view document statistics</source>
-        <translation>Klik om de documentstatistieken te bekijken</translation>
+        <translation>Haga clic para ver las estadísticas del documento</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Click to change the spell-check language</source>
-        <translation>Klik om de taal van de spellingcontrole te wijzigen</translation>
+        <translation>Haga clic para cambiar el idioma de la corrección ortográfica</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Spell check is off — click to enable</source>
-        <translation>Spellingcontrole staat uit — klik om in te schakelen</translation>
+        <translation>La corrección ortográfica está desactivada — haga clic para activarla</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="403"/>
         <source>Cursor position (line : column)</source>
-        <translation>Cursorpositie (regel : kolom)</translation>
+        <translation>Posición del cursor (línea : columna)</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="406"/>
         <source>File encoding · line ending</source>
-        <translation>Bestandscodering · regeleinde</translation>
+        <translation>Codificación del archivo · fin de línea</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="539"/>
         <source>Spell Check</source>
-        <translation>Spellingcontrole</translation>
+        <translation>Corrector ortográfico</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="558"/>
         <source>Words</source>
-        <translation>Woorden</translation>
+        <translation>Palabras</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="559"/>
         <source>Characters</source>
-        <translation>Tekens</translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="560"/>
         <source>Lines</source>
-        <translation>Regels</translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>Reading time</source>
-        <translation>Leestijd</translation>
+        <translation>Tiempo de lectura</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
@@ -6314,296 +6314,296 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <source>Selected</source>
-        <translation>Geselecteerd</translation>
+        <translation>Selección</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Hide sidebar</source>
-        <translation>Zijbalk verbergen</translation>
+        <translation>Ocultar la barra lateral</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Show sidebar</source>
-        <translation>Zijbalk tonen</translation>
+        <translation>Mostrar la barra lateral</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to rendered mode</source>
-        <translation>Overschakelen naar de weergavemodus</translation>
+        <translation>Cambiar al modo renderizado</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to source mode</source>
-        <translation>Overschakelen naar de broncodemodus</translation>
+        <translation>Cambiar al modo código fuente</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Exit split view</source>
-        <translation>Gesplitste weergave verlaten</translation>
+        <translation>Salir de la vista dividida</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Source and preview side by side</source>
-        <translation>Bron en voorbeeld naast elkaar</translation>
+        <translation>Código y vista previa en paralelo</translation>
     </message>
 </context>
 <context>
-    <name>muffin::TableToolbar</name>
+    <name>mufpen::TableToolbar</name>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="319"/>
         <source>Resize Table</source>
-        <translation>Tabelgrootte wijzigen</translation>
+        <translation>Cambiar tamaño de la tabla</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="320"/>
         <source>Align Left</source>
-        <translation>Links uitlijnen</translation>
+        <translation>Alinear a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="321"/>
         <source>Align Center</source>
-        <translation>Centreren</translation>
+        <translation>Centrar</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="322"/>
         <source>Align Right</source>
-        <translation>Rechts uitlijnen</translation>
+        <translation>Alinear a la derecha</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="323"/>
         <source>More Actions</source>
-        <translation>Meer acties</translation>
+        <translation>Más acciones</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="324"/>
         <source>Delete Table</source>
-        <translation>Tabel verwijderen</translation>
+        <translation>Eliminar tabla</translation>
     </message>
 </context>
 <context>
-    <name>muffin::UpdateChecker</name>
+    <name>mufpen::UpdateChecker</name>
     <message>
         <source>The update server returned an invalid version.</source>
-        <translation type="vanished">De updateserver heeft een ongeldige versie geretourneerd.</translation>
+        <translation type="vanished">El servidor de actualizaciones devolvió una versión no válida.</translation>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
         <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
-        <translation>De updateservice is niet bereikbaar. Probeer het later opnieuw of download Mufpen via de officiële releasepagina.</translation>
+        <translation>No se pudo conectar con el servicio de actualizaciones. Inténtalo de nuevo más tarde o descarga Mufpen desde la página oficial de versiones.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::VirtualSourceEdit</name>
+    <name>mufpen::VirtualSourceEdit</name>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="310"/>
         <source>Markdown source editor</source>
-        <translation>Markdown-broncode-editor</translation>
+        <translation>Editor de código fuente Markdown</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="311"/>
         <source>Plain-text Markdown source</source>
-        <translation>Markdown-broncode als platte tekst</translation>
+        <translation>Código fuente Markdown en texto plano</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1679"/>
         <source>Undo</source>
-        <translation>Ongedaan maken</translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1681"/>
         <source>Redo</source>
-        <translation>Opnieuw</translation>
+        <translation>Rehacer</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1685"/>
         <source>Cut</source>
-        <translation>Knippen</translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1691"/>
         <source>Copy</source>
-        <translation>Kopiëren</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1695"/>
         <source>Paste</source>
-        <translation>Plakken</translation>
+        <translation>Pegar</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1706"/>
         <source>Select All</source>
-        <translation>Alles selecteren</translation>
+        <translation>Seleccionar todo</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsIntegration</name>
+    <name>mufpen::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
         <source>Open with Mufpen</source>
-        <translation>Openen met Mufpen</translation>
+        <translation>Abrir con Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
         <source>Mufpen Markdown Document</source>
-        <translation>Mufpen Markdown-document</translation>
+        <translation>Documento Markdown de Mufpen</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
         <source>Open</source>
-        <translation>Openen</translation>
+        <translation>Abrir</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsUpdater</name>
+    <name>mufpen::WindowsUpdater</name>
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
         <source>Update Mufpen</source>
-        <translation>Mufpen bijwerken</translation>
+        <translation>Actualizar Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
         <source>The update was canceled or could not be installed (code %1). Your session has been restored. You can try again from Help &gt; Check for Updates.</source>
-        <translation>De update is geannuleerd of kon niet worden geïnstalleerd (code %1). Uw sessie is hersteld. U kunt het opnieuw proberen via Help &gt; Controleren op updates.</translation>
+        <translation>La actualización se canceló o no se pudo instalar (código %1). Se ha restaurado la sesión. Puede volver a intentarlo desde Ayuda &gt; Buscar actualizaciones.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="211"/>
         <source>Cancel</source>
-        <translation>Annuleren</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
         <source>Downloading Mufpen %1… You can continue writing.</source>
-        <translation>Mufpen %1 wordt gedownload… U kunt verder schrijven.</translation>
+        <translation>Descargando Mufpen %1… Puede seguir escribiendo.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
         <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Mufpen %1 is gereed. Voordat de toepassing opnieuw wordt gestart, worden uw documenten gecontroleerd op niet-opgeslagen wijzigingen. Windows kan om beheerdersrechten vragen.</translation>
+        <translation>Mufpen %1 está listo. Antes de reiniciar, se comprobará si sus documentos tienen cambios sin guardar. Windows puede solicitar permiso de administrador.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
         <source>Preparing to restart…</source>
-        <translation>Opnieuw starten wordt voorbereid…</translation>
+        <translation>Preparando el reinicio…</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
         <source>Mufpen %1 is available. Download the update now?</source>
-        <translation>Mufpen %1 is beschikbaar. De update nu downloaden?</translation>
+        <translation>Mufpen %1 está disponible. ¿Descargar la actualización ahora?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Restart and Update</source>
-        <translation>Opnieuw starten en bijwerken</translation>
+        <translation>Reiniciar y actualizar</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Download Update</source>
-        <translation>Update downloaden</translation>
+        <translation>Descargar actualización</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Cancel Download</source>
-        <translation>Download annuleren</translation>
+        <translation>Cancelar descarga</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Later</source>
-        <translation>Later</translation>
+        <translation>Más tarde</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="294"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="320"/>
         <source>The update download could not be saved or exceeded its expected size.</source>
-        <translation>De gedownloade update kon niet worden opgeslagen of is groter dan verwacht.</translation>
+        <translation>No se pudo guardar la actualización descargada o se superó el tamaño esperado.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="302"/>
         <source>The update manifest is too large.</source>
-        <translation>Het updatemanifest is te groot.</translation>
+        <translation>El manifiesto de actualización es demasiado grande.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="328"/>
         <source>Could not download the update: %1</source>
-        <translation>De update kon niet worden gedownload: %1</translation>
+        <translation>No se pudo descargar la actualización: %1</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="351"/>
         <source>The update signature is invalid or the package does not match this version of Windows. Nothing was installed.</source>
-        <translation>De handtekening van de update is ongeldig of het pakket is niet geschikt voor deze versie van Windows. Er is niets geïnstalleerd.</translation>
+        <translation>La firma de la actualización no es válida o el paquete no es compatible con esta versión de Windows. No se ha instalado nada.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="363"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="368"/>
         <source>Could not create the update download folder.</source>
-        <translation>De downloadmap voor de update kon niet worden gemaakt.</translation>
+        <translation>No se pudo crear la carpeta de descarga de la actualización.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="377"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="467"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="476"/>
         <source>The downloaded update is incomplete or has been modified. Nothing was installed.</source>
-        <translation>De gedownloade update is onvolledig of is gewijzigd. Er is niets geïnstalleerd.</translation>
+        <translation>La actualización descargada está incompleta o ha sido modificada. No se ha instalado nada.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
         <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Sluit andere actieve exemplaren van Mufpen voordat u bijwerkt. Alleen geïnstalleerde exemplaren kunnen vanuit de app worden bijgewerkt.</translation>
+        <translation>Cierre las otras instancias de Mufpen antes de actualizar. Solo las versiones instaladas se pueden actualizar desde la aplicación.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="581"/>
         <source>Could not save the session before updating.</source>
-        <translation>De sessie kon niet worden opgeslagen vóór het bijwerken.</translation>
+        <translation>No se pudo guardar la sesión antes de actualizar.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="545"/>
         <source>Could not start the update installer. Your current version is unchanged.</source>
-        <translation>Het installatieprogramma voor de update kon niet worden gestart. Uw huidige versie is ongewijzigd.</translation>
+        <translation>No se pudo iniciar el instalador de la actualización. Su versión actual no ha cambiado.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
         <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
-        <translation>Het installatieprogramma is niet gereed gekomen. Mufpen blijft geopend; probeer het opnieuw.</translation>
+        <translation>El instalador no llegó a estar listo. Mufpen permanecerá abierto; vuelva a intentarlo.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceReplace</name>
+    <name>mufpen::WorkspaceReplace</name>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="171"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="183"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="204"/>
         <source>Could not create recovery folder</source>
-        <translation>Kan herstelmap niet maken</translation>
+        <translation>No se pudo crear la carpeta de recuperación</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="176"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="280"/>
         <source>Another folder replacement is running</source>
-        <translation>Er wordt al een andere vervanging in een map uitgevoerd</translation>
+        <translation>Ya hay otro reemplazo en una carpeta en curso</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="285"/>
         <source>Could not read recovery journal</source>
-        <translation>Kan herstellogboek niet lezen</translation>
+        <translation>No se pudo leer el registro de recuperación</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="291"/>
         <source>Invalid recovery journal</source>
-        <translation>Ongeldig herstellogboek</translation>
+        <translation>Registro de recuperación no válido</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceSearch</name>
+    <name>mufpen::WorkspaceSearch</name>
     <message>
         <location filename="../src/app/WorkspaceSearch.cpp" line="381"/>
         <source>Folder is unavailable</source>
-        <translation>Map is niet beschikbaar</translation>
+        <translation>La carpeta no está disponible</translation>
     </message>
     <message>
         <source>Regular expression exceeded its resource limit</source>
-        <translation type="vanished">De reguliere expressie heeft de resourcelimiet overschreden</translation>
+        <translation type="vanished">La expresión regular superó su límite de recursos</translation>
     </message>
 </context>
 </TS>

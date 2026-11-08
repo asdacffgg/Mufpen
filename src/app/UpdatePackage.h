@@ -6,7 +6,7 @@
 #include <QUrl>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 
 struct UpdateRelease {
   QString version;
@@ -31,4 +31,4 @@ struct UpdatePackage {
   static QByteArray trustedPublicKey();
 };
 
-} // namespace muffin
+} // namespace mufpen

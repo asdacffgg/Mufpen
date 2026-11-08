@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <limits>
 
-namespace muffin::mermaid::flowtheme {
+namespace mufpen::mermaid::flowtheme {
 namespace {
 
 using color::adjust;
@@ -2918,4 +2918,4 @@ void FlowThemeVariables::set(const QString& key, const QString& value) {
     wardley.annotationFill = value;
 }
 
-} // namespace muffin::mermaid::flowtheme
+} // namespace mufpen::mermaid::flowtheme

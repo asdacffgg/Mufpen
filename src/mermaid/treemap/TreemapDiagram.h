@@ -6,7 +6,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::treemap {
+namespace mufpen::mermaid::treemap {
 
 enum class TreemapErrorKind { Lexer, Parser, Runtime };
 
@@ -50,4 +50,4 @@ public:
   static TreemapData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::treemap
+} // namespace mufpen::mermaid::treemap

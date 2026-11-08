@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 
 enum class TimelineDirection { LeftToRight, TopDown };
 enum class TimelineErrorKind { Parser, Runtime };
@@ -45,4 +45,4 @@ public:
   static TimelineData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

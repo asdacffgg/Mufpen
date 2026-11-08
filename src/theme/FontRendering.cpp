@@ -12,7 +12,7 @@
 #include "theme/CssContent.h"
 #include "theme/FontMetricsPolicy.h"
 
-void muffin::font_rendering::configureForScreen(QFont& font) {
+void mufpen::font_rendering::configureForScreen(QFont& font) {
 #if defined(Q_OS_WIN)
   // Qt 6.11 maps the default preference at DPR 1 to full horizontal hinting
   // and GDI-classic metrics for small text. Vertical hinting selects
@@ -24,10 +24,10 @@ void muffin::font_rendering::configureForScreen(QFont& font) {
 #endif
 }
 
-void muffin::font_rendering::configureCssFont(QFont& font, qreal letterSpacing, qreal wordSpacing) {
+void mufpen::font_rendering::configureCssFont(QFont& font, qreal letterSpacing, qreal wordSpacing) {
   configureCssFont(font, letterSpacing, wordSpacing, documentTextBackend());
 }
-void muffin::font_rendering::configureCssFont(QFont& font, qreal letterSpacing, qreal wordSpacing,
+void mufpen::font_rendering::configureCssFont(QFont& font, qreal letterSpacing, qreal wordSpacing,
                                               TextBackend backend) {
   configureForScreen(font);
   const qreal correction = syntheticBoldAdvanceCorrection(font);
@@ -36,7 +36,7 @@ void muffin::font_rendering::configureCssFont(QFont& font, qreal letterSpacing, 
   font.setWordSpacing(wordSpacing + correction);
 }
 
-namespace muffin::font_rendering {
+namespace mufpen::font_rendering {
 namespace {
 QHash<QString, QString> defaultFamilies;
 const QStringList& bundledFallbackFamilies() {
@@ -385,4 +385,4 @@ QString documentFallbackTail() {
   return families.join(QLatin1Char('\n'));
 }
 
-} // namespace muffin::font_rendering
+} // namespace mufpen::font_rendering

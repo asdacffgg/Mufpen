@@ -115,10 +115,10 @@ def inspect_run(raw, size, tabs, cycles, profile):
 
 def environment(root, phycat, profile, wait_seconds):
     preset = json.loads((root / "build/generators/CMakePresets.json").read_text(encoding="utf-8"))
-    result = {k: v for k, v in os.environ.items() if not k.startswith("MUFFIN_GUI_") and k != "MUFFIN_CSS_DEEP_PROFILE"}
+    result = {k: v for k, v in os.environ.items() if not k.startswith("MUFPEN_GUI_") and k != "MUFPEN_CSS_DEEP_PROFILE"}
     result.update(QT_QPA_PLATFORM="windows", QT_PLUGIN_PATH=preset["testPresets"][0]["environment"]["QT_PLUGIN_PATH"],
-                  MUFFIN_GUI_REQUIRE_FOREGROUND="1", MUFFIN_GUI_FOREGROUND_WAIT_MS=str(wait_seconds * 1000),
-                  MUFFIN_GUI_THEME_ACCEPTANCE="1", MUFFIN_GUI_PHYCAT_SOURCE=str(phycat), MUFFIN_GUI_PROFILE=profile,
+                  MUFPEN_GUI_REQUIRE_FOREGROUND="1", MUFPEN_GUI_FOREGROUND_WAIT_MS=str(wait_seconds * 1000),
+                  MUFPEN_GUI_THEME_ACCEPTANCE="1", MUFPEN_GUI_PHYCAT_SOURCE=str(phycat), MUFPEN_GUI_PROFILE=profile,
                   PYTHONDONTWRITEBYTECODE="1")
     result["PATH"] = preset["configurePresets"][0]["environment"]["QT_HOST_PATH"] + "/bin;" + result.get("PATH", "")
     return result
@@ -130,7 +130,7 @@ def run(args):
     destination.mkdir(parents=True, exist_ok=False)
     phycat = args.phycat.resolve()
     files = [root / f"build/Release/{name}" for name in
-             ("MuffinGuiPerformanceProbe.exe", "Muffin.exe", "MuffinCore.dll", "MuffinUi.dll")]
+             ("MufpenGuiPerformanceProbe.exe", "Mufpen.exe", "MufpenCore.dll", "MufpenUi.dll")]
     files += [root / "tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css",
               root / "resources/themes/github.css", root / "resources/themes/night.css",
               root / "resources/themes/document-base.css", phycat,
@@ -188,7 +188,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-directory", type=Path, required=True)
     parser.add_argument("--phycat", type=Path, default=Path(os.environ.get("APPDATA", ".")) /
-                        "Muffin/Muffin/themes/phycat-abyss.css")
+                        "Mufpen/Mufpen/themes/phycat-abyss.css")
     parser.add_argument("--cycles", type=int, default=8)
     parser.add_argument("--repetitions", type=int, default=2)
     parser.add_argument("--profile", choices=("minimal", "off"), default="minimal")

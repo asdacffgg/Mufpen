@@ -30,11 +30,11 @@
 #include <algorithm>
 #include <cstring>
 
-namespace muffin {
+namespace mufpen {
 namespace DecorationPainter {
 
 namespace {
-Q_LOGGING_CATEGORY(effectPerf, "muffin.perf.paint", QtWarningMsg)
+Q_LOGGING_CATEGORY(effectPerf, "mufpen.perf.paint", QtWarningMsg)
 
 struct ShadowRasterKey {
   QRectF core;
@@ -354,7 +354,7 @@ void paintBoxShadow(QPainter& painter, const QRectF& rect, qreal borderRadius, c
   // CSS blurs the spread-expanded shape itself; drawing an opaque spread core
   // after translucent shells creates a hard band outside the page. Render the
   // shape into an alpha image and blur it instead. Three box passes approximate
-  // a Gaussian, matching the text/filter blur path already used by Muffin.
+  // a Gaussian, matching the text/filter blur path already used by Mufpen.
   const int blurRadius = qMax(1, qRound(clampedBlur / 2.0));
   const qreal blurExtent = blurRadius * 3.0 + 2.0;
   // Raster coverage has finite subpixel precision. Equivalent eager/lazy sums
@@ -426,4 +426,4 @@ void paintBlockHoverGlow(QPainter& painter, const RenderTheme& theme, const QStr
 }
 
 } // namespace DecorationPainter
-} // namespace muffin
+} // namespace mufpen

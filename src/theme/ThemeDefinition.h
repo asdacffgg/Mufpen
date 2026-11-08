@@ -18,7 +18,7 @@
 #include <optional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 class CssThemeSheet; // forward-decl; full type lives in CssThemeParser.h
 class CssComputedStyle;
@@ -179,7 +179,7 @@ struct ThemeTypography {
 
 // The CSS-theme page model: body/html paint the viewport, while #write is a centered
 // document card with its own max-width, margins and padding. All fields are
-// optional; invalid/zero values fall back to Muffin's legacy flat page metrics.
+// optional; invalid/zero values fall back to Mufpen's legacy flat page metrics.
 struct ThemePage {
   bool borderBox = false;
   QColor viewportBackground;
@@ -193,7 +193,7 @@ struct ThemePage {
   // longhand), OR when #write has padding so the CSS default margin of 0 is the
   // intent. Distinguishes "margin: 0 auto" (parses to an all-zero QMarginsF)
   // from "no margin rule" — both are null QMarginsF, but only the latter should
-  // fall back to Muffin's legacy flat-document inset. See RenderTheme::pageMargin().
+  // fall back to Mufpen's legacy flat-document inset. See RenderTheme::pageMargin().
   bool pageMarginExplicit = false;
   qreal pageMaxWidth = 0.0;
   QColor pageShadowColor;
@@ -347,7 +347,7 @@ struct ElementBackground {
   bool present = false;
 };
 
-// A `:hover` effect on a host element — the tractable subset Muffin animates:
+// A `:hover` effect on a host element — the tractable subset Mufpen animates:
 // a box-shadow glow (colour + blur) and/or a background tint. phycat's
 // blockquote:hover / h2:hover glows live here. Other hover changes (transform
 // scale, text-shadow, background-image swap) are deferred.
@@ -635,4 +635,4 @@ struct ThemeDefinition {
   static std::optional<ThemeDefinition> builtIn(const QString& id);
 };
 
-} // namespace muffin
+} // namespace mufpen

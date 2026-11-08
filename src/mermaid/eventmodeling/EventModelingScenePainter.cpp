@@ -12,7 +12,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::eventmodeling {
+namespace mufpen::mermaid::eventmodeling {
 namespace {
 
 QColor resolved(const QString& value, const QColor& fallback = Qt::black) {
@@ -162,4 +162,4 @@ void paintEventModelingScene(const EventModelingScene& scene, QPainter& painter,
   painter.restore();
 }
 
-} // namespace muffin::mermaid::eventmodeling
+} // namespace mufpen::mermaid::eventmodeling

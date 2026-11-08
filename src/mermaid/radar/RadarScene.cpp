@@ -8,7 +8,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 
 void RadarScene::paint(QPainter& painter, const MermaidPaintOptions& paintOptions) const {
   paintRadarScene(*this, painter, paintOptions);
@@ -260,4 +260,4 @@ QJsonObject RadarScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

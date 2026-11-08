@@ -28,7 +28,7 @@
 #include <memory>
 #include <optional>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 namespace {
 
 bool jsTruthy(const QJsonValue& value) {
@@ -1503,4 +1503,4 @@ QJsonObject MindmapScene::toJsonObject() const {
   return out;
 }
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

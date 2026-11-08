@@ -5,21 +5,21 @@ import { pathToFileURL } from "node:url";
 // Captures real mermaid 11.16.0 requirementDiagram geometry (requirementBox
 // node bounds + body-row count + divider presence + relationship edge markers
 // + relationship type) via headless Chrome, normalized to the first source-order
-// node's centre (mirroring Muffin's origin subtraction). Output schema matches
+// node's centre (mirroring Mufpen's origin subtraction). Output schema matches
 // the fields of requirement::RequirementScene::toJsonObject that are comparable
 // against mermaid.
 //
 // Edge marker kinds are extracted from the marker-start/marker-end url; the
 // Start/End suffix is DROPPED (field position encodes the side), so the
 // fixture's markerStart/markerEnd read as bare types ("requirement_contains",
-// "requirement_arrow") exactly like Muffin's RequirementScene JSON.
+// "requirement_arrow") exactly like Mufpen's RequirementScene JSON.
 //
 // The relationship TYPE is extracted from the edge label text ("<<contains>>"
 // → "contains") so the oracle can assert the full 7-type multiset (the 6 dashed
 // types share the same marker; only the label distinguishes them).
 //
 // htmlLabels:false is set globally so both node rows and edge labels render as
-// deterministic SVG <text> (matching Muffin's htmlLabels:false measurement
+// deterministic SVG <text> (matching Mufpen's htmlLabels:false measurement
 // path: row height = ink height + 6).
 //
 //   node scripts/generate_mermaid_requirement_geometry_fixture.mjs \
@@ -192,7 +192,7 @@ try {
       for (let index = 0; index < cases.length; ++index) {
         const fixture = cases[index];
         // htmlLabels:false forces deterministic SVG <text> for both node rows
-        // and edge labels (matching Muffin's measurement path).
+        // and edge labels (matching Mufpen's measurement path).
         mermaid.initialize({
           startOnLoad: false,
           securityLevel: "strict",

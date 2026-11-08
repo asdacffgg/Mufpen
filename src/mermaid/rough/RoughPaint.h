@@ -27,7 +27,7 @@
 #include <QPointF>
 #include <QRectF>
 
-namespace muffin::mermaid::rough {
+namespace mufpen::mermaid::rough {
 
 inline QPainterPath roundedRectPath(const QRectF& bounds, qreal radius) {
   const QString data = QStringLiteral("M %1 %2 H %3 A %4 %4 0 0 1 %5 %6 V %7 "
@@ -162,4 +162,4 @@ inline void roughLine(QPainter& painter, const QPointF& a, const QPointF& b, qui
   drawRoughDrawable(painter, drawable, Qt::NoBrush, QPen(stroke, strokeWidth), Qt::NoPen);
 }
 
-} // namespace muffin::mermaid::rough
+} // namespace mufpen::mermaid::rough

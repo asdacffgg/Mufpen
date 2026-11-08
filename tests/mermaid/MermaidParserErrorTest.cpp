@@ -5,7 +5,7 @@
 // between a JS grammar and a C++ hand-written parser; docs/mermaid-flowchart-
 // remaining-plan.md §10). The fixture also records whether upstream mermaid
 // rejects the input; for resource-limit cases upstream parses fine (it has no
-// such limits) — Muffin's protection is intentionally stricter (milestone H).
+// such limits) — Mufpen's protection is intentionally stricter (milestone H).
 
 #include "mermaid/flowchart/Flowchart.h"
 
@@ -19,7 +19,7 @@
 
 #include <cstdlib>
 
-using namespace muffin::mermaid::flowchart;
+using namespace mufpen::mermaid::flowchart;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

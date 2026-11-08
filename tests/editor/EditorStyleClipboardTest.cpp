@@ -20,7 +20,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testStylizeCollapsedSkeletons() {
   DocumentSession session;
@@ -262,19 +262,19 @@ void testClipboardCrossMarkdownPreservesStartPrefix() {
   wireClipboard(clipboard, session, selection, input);
 
   session.setMarkdownText(
-      QStringLiteral("## Block Quote\n\n> Muffin treats Markdown as the source of truth.\n>\n> The editor surface"),
+      QStringLiteral("## Block Quote\n\n> Mufpen treats Markdown as the source of truth.\n>\n> The editor surface"),
       false);
   MarkdownNode* secondQuoteParagraph = childAt(blockAt(session, 1), 1);
   setCrossSelection(selection, blockAt(session, 0), 1, secondQuoteParagraph, 10);
   require(clipboard.copy(), "cross heading quote markdown copy should work");
   require(QApplication::clipboard()->text() ==
-              QStringLiteral("## lock Quote\n\n> Muffin treats Markdown as the source of truth.\n>\n> The editor"),
+              QStringLiteral("## lock Quote\n\n> Mufpen treats Markdown as the source of truth.\n>\n> The editor"),
           "cross heading quote markdown copy should preserve heading marker");
 
   setCrossSelection(selection, secondQuoteParagraph, 10, blockAt(session, 0), 1);
   require(clipboard.copy(), "reverse cross heading quote markdown copy should work");
   require(QApplication::clipboard()->text() ==
-              QStringLiteral("## lock Quote\n\n> Muffin treats Markdown as the source of truth.\n>\n> The editor"),
+              QStringLiteral("## lock Quote\n\n> Mufpen treats Markdown as the source of truth.\n>\n> The editor"),
           "reverse cross heading quote markdown copy should preserve heading marker");
 }
 void testSelectionSerializerFormats() {
@@ -542,7 +542,7 @@ void testRichClipboardInterop() {
   const auto exact = QString::fromUtf8(copied->data("text/markdown"));
   reset();
   require(clipboard.paste() && session.markdownText().toString() == exact,
-          "Muffin round trip uses exact Markdown MIME");
+          "Mufpen round trip uses exact Markdown MIME");
   if (preference.isValid())
     QSettings().setValue("editor/copyAsMarkdown", preference);
   else
@@ -627,7 +627,7 @@ int main(int argc, char** argv) {
   QApplication app(argc, argv);
   QTemporaryDir settingsDirectory;
   require(settingsDirectory.isValid(), "temporary clipboard test settings");
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinClipboardTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenClipboardTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settingsDirectory.path());
 #define RUN_TEST(test) runTest(#test, test)

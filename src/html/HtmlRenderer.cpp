@@ -12,7 +12,7 @@
 
 #include <utility>
 
-namespace muffin::html {
+namespace mufpen::html {
 namespace {
 
 QString resolvedImageSource(const QString& src, const QString& baseDirectory) {
@@ -113,4 +113,4 @@ HtmlLayoutResult HtmlRenderer::render(const QString& html, qreal baseFontSize, q
   return result;
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

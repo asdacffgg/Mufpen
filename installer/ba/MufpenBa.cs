@@ -2,17 +2,17 @@ using System;
 using System.Windows.Threading;
 using WixToolset.Mba.Core;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     /// <summary>
-    /// Muffin's custom bootstrapper application: drives the Burn engine
+    /// Mufpen's custom bootstrapper application: drives the Burn engine
     /// (Detect → Plan → Apply) behind a modern WPF shell.
     ///
     /// Engine callbacks arrive on a Burn worker thread; everything the model
     /// sees is marshalled onto the UI dispatcher (or run inline when the
     /// display is fully quiet and no window exists).
     /// </summary>
-    public class MuffinBa : BootstrapperApplication
+    public class MufpenBa : BootstrapperApplication
     {
         private readonly IBootstrapperCommand _command;
         private MainWindow _window;
@@ -24,7 +24,7 @@ namespace Muffin.Setup
         private int _exitCode;
         private UpdateHandoff _update;
 
-        public MuffinBa(IEngine engine, IBootstrapperCommand command)
+        public MufpenBa(IEngine engine, IBootstrapperCommand command)
             : base(engine)
         {
             _command = command;

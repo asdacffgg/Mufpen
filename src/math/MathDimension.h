@@ -3,7 +3,7 @@
 #include <QString>
 #include <QtGlobal>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 /**
  * Parse a CSS/TeX dimension string (e.g. "2em", "1.5pt", "-3mu")
@@ -16,7 +16,7 @@ namespace muffin::math {
 qreal sizeTextToEm(const QString& sizeText);
 
 /**
- * Parse a KaTeX/TeX dimension string and return the value in Muffin layout
+ * Parse a KaTeX/TeX dimension string and return the value in Mufpen layout
  * units.
  *
  * Relative units (em, ex) use textFontPointSize (the text-style font size)
@@ -36,4 +36,4 @@ qreal sizeTextToEm(const QString& sizeText);
 qreal dimensionToPoints(const QString& sizeText, qreal fontPointSize, qreal absoluteReferencePointSize = -1.0,
                         qreal textFontPointSize = -1.0);
 
-} // namespace muffin::math
+} // namespace mufpen::math

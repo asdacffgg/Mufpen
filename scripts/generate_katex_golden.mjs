@@ -339,7 +339,7 @@ const writeScreenshots = async () => {
 </body>
 </html>`;
 
-  const htmlPath = path.join(os.tmpdir(), `muffin-katex-bbox-${process.pid}.html`);
+  const htmlPath = path.join(os.tmpdir(), `mufpen-katex-bbox-${process.pid}.html`);
   await fs.writeFile(htmlPath, html, "utf8");
 
   const browser = await chromium.launch();

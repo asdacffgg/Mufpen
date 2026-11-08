@@ -15,24 +15,24 @@ def run(build, source, output, succeeds=True):
         + result.stdout + result.stderr)
 
 
-with tempfile.TemporaryDirectory(prefix="Muffin-portable-package-") as directory:
+with tempfile.TemporaryDirectory(prefix="Mufpen-portable-package-") as directory:
     root = Path(directory)
     build = root / "build"
     build.mkdir()
     source = build / "dist"
     source.mkdir()
-    (source / "Muffin.exe").write_bytes(b"fixture app")
+    (source / "Mufpen.exe").write_bytes(b"fixture app")
     icu = source / "resources" / "icu"
     icu.mkdir(parents=True)
     (icu / "icudt74l.dat").write_bytes(b"fixture ICU data")
     output = build / "portable"
     run(build, source, output)
-    assert (output / "Muffin.portable").is_file()
-    assert (output / "Muffin.exe").read_bytes() == b"fixture app"
+    assert (output / "Mufpen.portable").is_file()
+    assert (output / "Mufpen.exe").read_bytes() == b"fixture app"
     assert (output / "resources" / "icu" / "icudt74l.dat").read_bytes() == b"fixture ICU data"
-    assert not (source / "Muffin.portable").exists()
+    assert not (source / "Mufpen.portable").exists()
     run(build, output, output, False)
-    assert (output / "Muffin.exe").read_bytes() == b"fixture app"
+    assert (output / "Mufpen.exe").read_bytes() == b"fixture app"
     profile = output / "Data"
     profile.mkdir()
     sentinel = profile / "precious.ini"
@@ -45,7 +45,7 @@ with tempfile.TemporaryDirectory(prefix="Muffin-portable-package-") as directory
     profile.rmdir()
     (source / "Data").mkdir()
     run(build, source, output, False)
-    assert (output / "Muffin.exe").read_bytes() == b"fixture app"
+    assert (output / "Mufpen.exe").read_bytes() == b"fixture app"
     (source / "Data").rmdir()
     run(build, source, output)
     # A parent alias must not bypass input/output overlap detection. CI temp
@@ -53,10 +53,10 @@ with tempfile.TemporaryDirectory(prefix="Muffin-portable-package-") as directory
     alias = root / "build-alias"
     if sys.platform == "win32":
         # Directory junctions work without the elevated symlink privilege.
-        env = dict(os.environ, MUFFIN_TEST_LINK=str(alias), MUFFIN_TEST_TARGET=str(build))
+        env = dict(os.environ, MUFPEN_TEST_LINK=str(alias), MUFPEN_TEST_TARGET=str(build))
         subprocess.run(["powershell", "-NoProfile", "-NonInteractive", "-Command",
                         "$ErrorActionPreference='Stop'; New-Item -ItemType Junction "
-                        "-Path $env:MUFFIN_TEST_LINK -Target $env:MUFFIN_TEST_TARGET | Out-Null"],
+                        "-Path $env:MUFPEN_TEST_LINK -Target $env:MUFPEN_TEST_TARGET | Out-Null"],
                        env=env, check=True, capture_output=True, text=True)
     else:
         alias.symlink_to(build, target_is_directory=True)
@@ -65,7 +65,7 @@ with tempfile.TemporaryDirectory(prefix="Muffin-portable-package-") as directory
         run(alias, alias / "portable", alias / "portable", False)
         run(build, output, alias / "portable", False)
         run(alias, alias / "portable", output, False)
-        assert (output / "Muffin.exe").read_bytes() == b"fixture app"
+        assert (output / "Mufpen.exe").read_bytes() == b"fixture app"
     finally:
         if sys.platform == "win32":
             alias.rmdir()  # Remove the junction itself, never recurse into its target.

@@ -2,7 +2,7 @@
 
 #include "document/MarkdownNode.h"
 
-namespace muffin {
+namespace mufpen {
 
 QString mathOpeningDelimiter(const MarkdownNode& node) {
   return mathOpeningDelimiter(node.mathDelimiter());
@@ -125,4 +125,4 @@ ListLineInfo listLineInfoFor(const QString& line, qsizetype start) {
   return info;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -35,13 +35,13 @@
 #include <functional>
 #include <utility>
 
-namespace muffin {
-using namespace muffin::mermaid::editor;
+namespace mufpen {
+using namespace mufpen::mermaid::editor;
 using namespace layout_rules;
 namespace {
 
-Q_LOGGING_CATEGORY(blockBuildPerf, "muffin.perf", QtWarningMsg)
-Q_LOGGING_CATEGORY(blockBuildDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(blockBuildPerf, "mufpen.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(blockBuildDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 qreal containerSourceLineHeight(const MarkdownNode& node, const RenderTheme& theme, const QString& key) {
   const auto font = theme.textFontForElement(key, &node);
@@ -501,7 +501,7 @@ std::unique_ptr<BlockLayout> BlockLayoutBuilder::buildParagraphLike(const Markdo
     }
   }
   if (isEmptyDocumentParagraph(md(), node)) {
-    layout->setPlaceholderText(QCoreApplication::translate("muffin::BlockLayoutBuilder", "Start writing..."));
+    layout->setPlaceholderText(QCoreApplication::translate("mufpen::BlockLayoutBuilder", "Start writing..."));
   }
 
   auto inlineLayout = std::make_unique<InlineLayout>();
@@ -1990,4 +1990,4 @@ CooperativeTask BlockLayoutBuilder::estimateHeightSteps(const MarkdownNode& node
   return heightEstimator_.estimateHeightSteps(node, theme, width, result, depth);
 }
 
-} // namespace muffin
+} // namespace mufpen

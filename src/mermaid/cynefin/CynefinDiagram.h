@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 
 enum class CynefinErrorKind { Lexer, Parser, Runtime };
 
@@ -49,4 +49,4 @@ public:
   static CynefinData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

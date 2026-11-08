@@ -26,19 +26,19 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     directories = {"before": args.before.resolve(), "after": args.after.resolve()}
     pins = {str(directory / name): digest(directory / name) for directory in directories.values()
-            for name in ("MuffinCore.dll", "MuffinDelimiterPerformanceProbe.exe")}
-    assert pins[str(directories["before"] / "MuffinDelimiterPerformanceProbe.exe")] == pins[
-        str(directories["after"] / "MuffinDelimiterPerformanceProbe.exe")]
-    env = {k: v for k, v in os.environ.items() if not k.startswith("MUFFIN_")}
+            for name in ("MufpenCore.dll", "MufpenDelimiterPerformanceProbe.exe")}
+    assert pins[str(directories["before"] / "MufpenDelimiterPerformanceProbe.exe")] == pins[
+        str(directories["after"] / "MufpenDelimiterPerformanceProbe.exe")]
+    env = {k: v for k, v in os.environ.items() if not k.startswith("MUFPEN_")}
     env["PATH"] = str(root / "build/dist") + os.pathsep + env["PATH"]
     if args.details:
-        env["MUFFIN_DELIMITER_PROFILE"] = "1"
+        env["MUFPEN_DELIMITER_PROFILE"] = "1"
     cases = [(30, 12), (1, 3072)] if args.details else [(1, 12), (10, 12), (30, 12), (1, 192), (1, 3072)]
     records = []
     for repeat in range(1, args.repeats + 1):
         for mib, paragraph in (cases if repeat % 2 else list(reversed(cases))):
             for label in (("before", "after") if repeat % 2 else ("after", "before")):
-                executable = directories[label] / "MuffinDelimiterPerformanceProbe.exe"
+                executable = directories[label] / "MufpenDelimiterPerformanceProbe.exe"
                 raw_path = args.output / f"{label}-{mib}MiB-{paragraph}runs-r{repeat}.json"
                 result = subprocess.run([str(executable), str(mib), str(paragraph), "1"], cwd=root, env=env,
                                         capture_output=True, timeout=180, check=True)

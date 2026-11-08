@@ -5,9 +5,9 @@
 
 #include "diagnostics/ProcessMemory.h"
 
-namespace muffin::diag {
+namespace mufpen::diag {
 inline const QLoggingCategory& openPerformanceCategory() {
-  static const QLoggingCategory category("muffin.perf.open", QtWarningMsg);
+  static const QLoggingCategory category("mufpen.perf.open", QtWarningMsg);
   return category;
 }
 // Independent of the per-inline parser diagnostics: only a few coarse scopes
@@ -54,4 +54,4 @@ private:
   bool enabled_;
   std::chrono::steady_clock::time_point start_;
 };
-} // namespace muffin::diag
+} // namespace mufpen::diag

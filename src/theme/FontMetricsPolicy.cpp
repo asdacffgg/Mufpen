@@ -4,7 +4,7 @@
 #include <QtEndian>
 #include <cmath>
 
-qreal muffin::font_rendering::syntheticBoldAdvanceCorrection(const QFont& font) {
+qreal mufpen::font_rendering::syntheticBoldAdvanceCorrection(const QFont& font) {
 #if defined(Q_OS_WIN)
   if (font.weight() < QFont::DemiBold)
     return 0;

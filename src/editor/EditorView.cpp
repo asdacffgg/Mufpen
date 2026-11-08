@@ -15,7 +15,7 @@
 #include "io/FilePathOps.h"
 #include "document/ImageSyntaxOps.h"
 #include "document/LinkSyntaxOps.h"
-#include "io/MuffinMime.h"
+#include "io/MufpenMime.h"
 #include "render/DecorationPainter.h"
 #include "render/ImageLoader.h"
 #include "render/LayoutResources.h"
@@ -50,7 +50,7 @@
 #include <QKeyEvent>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 // Pull the stateless geometry/hit-test helpers into scope so call sites read as
 // before (isSelectableZone, selectableLength, …). The moved logic lives in
@@ -59,7 +59,7 @@ using namespace editor_geometry;
 
 namespace {
 
-Q_LOGGING_CATEGORY(viewPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(viewPerf, "mufpen.perf", QtWarningMsg)
 
 bool sameCursorPosition(const CursorPosition& a, const CursorPosition& b) {
   return a.blockId == b.blockId && a.text.nodeId == b.text.nodeId && a.text.textOffset == b.text.textOffset &&
@@ -819,8 +819,8 @@ void EditorView::setFocusMode(bool enabled) {
 
 void EditorView::retranslateAccessibility() {
   // Explicit contexts keep lupdate independent of the namespace wrapper.
-  setAccessibleName(QCoreApplication::translate("muffin::EditorView", "Markdown editor"));
-  setAccessibleDescription(QCoreApplication::translate("muffin::EditorView", "Rendered Markdown document"));
+  setAccessibleName(QCoreApplication::translate("mufpen::EditorView", "Markdown editor"));
+  setAccessibleDescription(QCoreApplication::translate("mufpen::EditorView", "Rendered Markdown document"));
 }
 
 void EditorView::changeEvent(QEvent* event) {
@@ -1938,12 +1938,12 @@ void EditorView::dropEvent(QDropEvent* event) {
     return;
   }
 
-  // A drag that originated in Muffin's sidebar file tree carries the kMuffinFileTreeDragMime
+  // A drag that originated in Mufpen's sidebar file tree carries the kMufpenFileTreeDragMime
   // marker. Route it as "insert at the drop position": a markdown link for any file, or an
   // inline image for image files. The path is resolved relative to the current document dir
   // when the file lives inside it (portable), otherwise absolute. External file:// drops
   // keep their existing open-as-document / open-as-folder behaviour.
-  if (event->mimeData()->hasFormat(kMuffinFileTreeDragMime)) {
+  if (event->mimeData()->hasFormat(kMufpenFileTreeDragMime)) {
     moveCaretToViewportPos(event->position());
     const QString alt = info.baseName();
     if (isImageSuffix(suffix)) {
@@ -1963,7 +1963,7 @@ void EditorView::dropEvent(QDropEvent* event) {
     emit textCommitted(image_syntax::markdownImage(alt, link_syntax::localPathHref(filePath)));
     return;
   }
-  // Markdown is Muffin's native format, so a dropped .md/.txt opens. Other files are routed
+  // Markdown is Mufpen's native format, so a dropped .md/.txt opens. Other files are routed
   // through the importable-file preference.
   if (suffix.compare(QStringLiteral("md"), Qt::CaseInsensitive) == 0 ||
       suffix.compare(QStringLiteral("markdown"), Qt::CaseInsensitive) == 0 ||
@@ -1983,4 +1983,4 @@ NodeId EditorView::specialAnchorTarget(const QString& href) const {
   return {};
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -11,7 +11,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 
 struct GanttConfig {
   bool useMaxWidth = true;
@@ -217,4 +217,4 @@ struct GanttScene : MermaidScene {
 GanttScene buildGanttScene(const GanttData& data, GanttConfig config, GanttSceneStyle style,
                            const GanttCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

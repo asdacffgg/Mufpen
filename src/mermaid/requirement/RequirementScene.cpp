@@ -1,7 +1,7 @@
 // RequirementScene — scene builder + JSON serialization for the requirementDiagram
 // family. Mirrors classdiagram::ClassScene.cpp / er::ErScene.cpp.
 //
-// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace muffin {}`
+// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace mufpen {}`
 // block; helpers live in an anonymous namespace and public functions use
 // fully-qualified names.
 
@@ -25,13 +25,13 @@
 #include <algorithm>
 #include <cmath>
 
-namespace flowchart = muffin::mermaid::flowchart;
-namespace color = muffin::mermaid::color;
-namespace req = muffin::mermaid::requirement;
-using muffin::CssLengthContext;
-using muffin::CssLengthResult;
-using muffin::CssLengthStatus;
-using muffin::resolveCssLengthToPx;
+namespace flowchart = mufpen::mermaid::flowchart;
+namespace color = mufpen::mermaid::color;
+namespace req = mufpen::mermaid::requirement;
+using mufpen::CssLengthContext;
+using mufpen::CssLengthResult;
+using mufpen::CssLengthStatus;
+using mufpen::resolveCssLengthToPx;
 
 namespace {
 
@@ -332,7 +332,7 @@ void resolveBoxStyle(const QStringList& cssStyles, const req::RequirementSceneSt
 
 } // namespace
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 QVector<RequirementMarkerDefinition> requirementMarkerDefinitions() {
   QVector<RequirementMarkerDefinition> result;
@@ -843,4 +843,4 @@ SvgMarkerProjection RequirementScene::svgMarkerProjection() const {
   return projection;
 }
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

@@ -8,7 +8,7 @@
 #include <QRectF>
 #include <QString>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 
 struct ArchitectureFcoseOptions {
   qreal iconSize = 80.0;
@@ -32,4 +32,4 @@ struct ArchitectureFcoseResult {
 ArchitectureFcoseResult layoutArchitectureFcose(const ArchitectureData& data, const ArchitectureFcoseOptions& options,
                                                 const QHash<QString, qreal>& renderedNodeHeights);
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

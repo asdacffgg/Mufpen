@@ -1,7 +1,7 @@
 #include "EditorViewTestUtils.h"
 #include "math/MathRenderer.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 void testInlineProjectionEntityDisplayAfterEdit() {
   DocumentSession session;

@@ -15,7 +15,7 @@
 
 #include <cstdio>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

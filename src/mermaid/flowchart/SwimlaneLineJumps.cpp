@@ -6,7 +6,7 @@
 #include <optional>
 #include <tuple>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 constexpr qreal kEps = 1e-6;
 constexpr qreal kRoundedCornerRadius = 5.0;
@@ -224,4 +224,4 @@ void applyLineJumps(FlowLayoutResult& result, const FlowchartData& data, const S
   }
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

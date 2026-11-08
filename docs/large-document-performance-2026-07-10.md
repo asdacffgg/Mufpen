@@ -97,7 +97,7 @@ editing or debounce paths.
 
 ## End-to-End Roundtrip Baseline (2026-07-23)
 
-`MuffinLargeDocumentRoundTripTest` now provides one deterministic contract across the real
+`MufpenLargeDocumentRoundTripTest` now provides one deterministic contract across the real
 file, parser, document, lazy-layout, editor, undo/redo, and save paths. Its shared fixture
 generator mixes front matter, headings, editable inline-rich paragraphs, alerts, nested task
 and ordered lists, tables, code, math, HTML, Mermaid, references, footnotes, and Unicode.
@@ -121,9 +121,9 @@ tree restoration, byte-identical save/reopen, and AST equivalence after the full
 Larger profiling runs accept 1-100 MiB fixtures:
 
 ```powershell
-$env:MUFFIN_BENCH_SIZE_MB = "20"
-$env:MUFFIN_BENCH_JSON = "large-document-roundtrip.json"
-ctest --preset conan-release -R "^MuffinLargeDocumentRoundTripTest$" --output-on-failure -V
+$env:MUFPEN_BENCH_SIZE_MB = "20"
+$env:MUFPEN_BENCH_JSON = "large-document-roundtrip.json"
+ctest --preset conan-release -R "^MufpenLargeDocumentRoundTripTest$" --output-on-failure -V
 ```
 
 The edited tree is reduced to its digest, node counts, and SHA-256 fingerprint before reopening.
@@ -206,13 +206,13 @@ definition ownership and all packed flags.
 At the 100 MiB node counts, the two 96-byte body reductions remove 797.2 MiB of fixed object
 storage before accounting for the minority lazy payloads. The measured parser-end reduction was
 798.6 MiB. `parse.convertBlock` previously raised working set from 2,873.0 to 3,680.9 MiB while
-cmark nodes and Muffin nodes overlapped; it now ends at 2,842.9 MiB, below the post-cmark sample.
+cmark nodes and Mufpen nodes overlapped; it now ends at 2,842.9 MiB, below the post-cmark sample.
 The same run reduced `convertBlock` from 6.084 to 4.866 seconds and the structured parser total
 from 23.151 to 17.582 seconds. Source SHA-256 and the complete semantic/source-range AST SHA-256
 matched the pre-layout baselines at 25, 50, and 100 MiB.
 
 The Conan Release build and all 165 CTest targets passed after the layout change. The `dist` target
-was refreshed, and its `Muffin.exe` matched the Release executable byte-for-byte by SHA-256.
+was refreshed, and its `Mufpen.exe` matched the Release executable byte-for-byte by SHA-256.
 
 ## Residual Risk
 
@@ -244,5 +244,5 @@ visible text layout:
 
 These points supersede the July values for the current source tree, but remain informational rather
 than a cross-machine promise. Repeat runs and different memory pressure can move the timings; use
-the benchmark command above with `MUFFIN_BENCH_SIZE_MB` and `MUFFIN_BENCH_JSON` when comparing a
+the benchmark command above with `MUFPEN_BENCH_SIZE_MB` and `MUFPEN_BENCH_JSON` when comparing a
 future build.

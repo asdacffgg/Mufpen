@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::sankey {
+namespace mufpen::mermaid::sankey {
 
 enum class SankeyErrorKind { Lexer, Parser, Runtime };
 
@@ -39,4 +39,4 @@ public:
   static SankeyData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::sankey
+} // namespace mufpen::mermaid::sankey

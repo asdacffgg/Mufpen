@@ -23,7 +23,7 @@
 #include <QPushButton>
 #include <algorithm>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void write(const QString& path, const QByteArray& bytes) {
   QDir().mkpath(QFileInfo(path).absolutePath());
@@ -491,7 +491,7 @@ void benchmark(const QString& path, const QString& pattern) {
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
   QTemporaryDir settingsDirectory;
-  QCoreApplication::setOrganizationName("MuffinTests");
+  QCoreApplication::setOrganizationName("MufpenTests");
   QCoreApplication::setApplicationName("WorkspaceSearch");
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settingsDirectory.path());

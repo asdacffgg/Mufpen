@@ -5,9 +5,9 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_UI_EXPORT SelectionController final : public QObject {
+class MUFPEN_UI_EXPORT SelectionController final : public QObject {
   Q_OBJECT
 
 public:
@@ -33,4 +33,4 @@ private:
   bool hasCursor_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

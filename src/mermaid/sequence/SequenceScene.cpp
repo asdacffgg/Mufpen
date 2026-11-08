@@ -7,7 +7,7 @@
 #include <cmath>
 #include <stdexcept>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 SequenceScene buildSequenceScene(const SequenceLayoutResult& layout, SequenceSceneStyle style,
                                  const SequencePreparedLabels& prepared, bool requirePrepared) {
@@ -304,4 +304,4 @@ SvgMarkerProjection SequenceScene::svgMarkerProjection() const {
   return projection;
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

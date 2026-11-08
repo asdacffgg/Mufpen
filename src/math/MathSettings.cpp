@@ -5,7 +5,7 @@
 
 #include <QDebug>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 namespace {
 
@@ -62,4 +62,4 @@ bool MathSettings::isTrusted(const MathTrustContext& context) const {
   return trust;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

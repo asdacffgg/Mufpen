@@ -9,7 +9,7 @@
 
 #include <QFont>
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 
 struct InfoSceneStyle {
   QString fontFamily;
@@ -35,4 +35,4 @@ struct InfoScene final : MermaidScene {
 
 InfoScene buildInfoScene(InfoSceneStyle style);
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

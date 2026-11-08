@@ -54,7 +54,7 @@
 //   "o{" -> ZeroOrMore      (right / entityB)
 
 namespace {
-using namespace muffin::mermaid::er;
+using namespace mufpen::mermaid::er;
 
 ErSourceSpan spanForOffset(const QString& source, qsizetype offset, qsizetype length = 0) {
   ErSourceSpan span{offset, length, 1, 0};
@@ -565,21 +565,21 @@ private:
 
 } // namespace
 
-muffin::mermaid::er::ErParseError::ErParseError(ErDiagnostic diagnostic)
+mufpen::mermaid::er::ErParseError::ErParseError(ErDiagnostic diagnostic)
     : std::runtime_error(formatErDiagnostic(diagnostic).toUtf8().constData()), diagnostic_(std::move(diagnostic)) {
 }
 
-const ErDiagnostic& muffin::mermaid::er::ErParseError::diagnostic() const noexcept {
+const ErDiagnostic& mufpen::mermaid::er::ErParseError::diagnostic() const noexcept {
   return diagnostic_;
 }
 
-muffin::mermaid::er::ErDiagram muffin::mermaid::er::ErDiagram::parse(const QString& source, ErLimits limits) {
+mufpen::mermaid::er::ErDiagram mufpen::mermaid::er::ErDiagram::parse(const QString& source, ErLimits limits) {
   ErDiagram diagram;
   diagram.data_ = Parser(source, limits).parse();
   return diagram;
 }
 
-QJsonObject muffin::mermaid::er::ErDiagram::toJson() const {
+QJsonObject mufpen::mermaid::er::ErDiagram::toJson() const {
   QJsonArray entities;
   for (const ErEntity& entity : data_.entities) {
     QJsonArray attributes;
@@ -613,7 +613,7 @@ QJsonObject muffin::mermaid::er::ErDiagram::toJson() const {
           {QStringLiteral("relationships"), relationships}};
 }
 
-QString muffin::mermaid::er::erErrorStageName(ErErrorStage stage) {
+QString mufpen::mermaid::er::erErrorStageName(ErErrorStage stage) {
   switch (stage) {
   case ErErrorStage::Detector:
     return QStringLiteral("detector");
@@ -629,7 +629,7 @@ QString muffin::mermaid::er::erErrorStageName(ErErrorStage stage) {
   return {};
 }
 
-QString muffin::mermaid::er::erErrorCodeName(ErErrorCode code) {
+QString mufpen::mermaid::er::erErrorCodeName(ErErrorCode code) {
   switch (code) {
   case ErErrorCode::MissingHeader:
     return QStringLiteral("missing-header");
@@ -649,7 +649,7 @@ QString muffin::mermaid::er::erErrorCodeName(ErErrorCode code) {
   return {};
 }
 
-QString muffin::mermaid::er::formatErDiagnostic(const ErDiagnostic& diagnostic) {
+QString mufpen::mermaid::er::formatErDiagnostic(const ErDiagnostic& diagnostic) {
   return QStringLiteral("%1 at %2:%3 (%4)")
       .arg(diagnostic.detail.isEmpty() ? erErrorCodeName(diagnostic.code) : diagnostic.detail)
       .arg(diagnostic.span.line)

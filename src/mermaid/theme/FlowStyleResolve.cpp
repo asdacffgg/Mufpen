@@ -2,7 +2,7 @@
 
 #include "mermaid/theme/MermaidStyleResolve.h"
 
-namespace muffin::mermaid::flowstyle {
+namespace mufpen::mermaid::flowstyle {
 namespace {
 
 // Flowchart adapter: map the flowchart-specific inputs onto the family-agnostic
@@ -78,4 +78,4 @@ ResolvedEdgeStyle resolveEdgeStyle(const flowchart::FlowEdge& edge, const flowth
       style::resolveEdgeStyle(edge.stroke, edge.style, edge.animate, edge.animation, themeDefaults(theme)));
 }
 
-} // namespace muffin::mermaid::flowstyle
+} // namespace mufpen::mermaid::flowstyle

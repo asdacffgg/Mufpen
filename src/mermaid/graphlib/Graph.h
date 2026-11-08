@@ -27,7 +27,7 @@
 #include <stdexcept>
 #include <utility>
 
-namespace muffin::mermaid::graphlib {
+namespace mufpen::mermaid::graphlib {
 namespace detail {
 
 // Reserved node/edge tokens, copied verbatim from graph.js.
@@ -550,4 +550,4 @@ template <typename G> QString lowestCommonAncestor(const G& g, const QString& a,
   return {};
 }
 
-} // namespace muffin::mermaid::graphlib
+} // namespace mufpen::mermaid::graphlib

@@ -7,7 +7,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 
 enum class ArchitectureErrorKind { Lexer, Parser, Runtime };
 
@@ -85,4 +85,4 @@ public:
   static ArchitectureData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

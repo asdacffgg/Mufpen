@@ -14,7 +14,7 @@
 #include <cmath>
 #include <utility>
 
-namespace muffin::mermaid::eventmodeling {
+namespace mufpen::mermaid::eventmodeling {
 namespace {
 
 constexpr qreal kSwimlaneMinHeight = 70.0;
@@ -456,4 +456,4 @@ QJsonObject EventModelingScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::eventmodeling
+} // namespace mufpen::mermaid::eventmodeling

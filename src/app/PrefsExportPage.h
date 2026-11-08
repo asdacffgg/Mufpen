@@ -6,7 +6,7 @@ class QLineEdit;
 class QListWidget;
 class QScrollArea;
 class QPushButton;
-namespace muffin {
+namespace mufpen {
 class PrefsExportPage final : public PreferencesPage {
   Q_OBJECT
 public:
@@ -36,4 +36,4 @@ private:
   QLineEdit* pandocPathEdit_ = nullptr;
   QLabel* pandocStatus_ = nullptr;
 };
-} // namespace muffin
+} // namespace mufpen

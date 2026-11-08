@@ -12,12 +12,12 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
 // Pin this disclaimer so nobody mistakes the fixture for real-mermaid parity.
-const QString kOracle = QStringLiteral("ErScene::toJsonObject (Muffin self-snapshot, not real-mermaid)");
+const QString kOracle = QStringLiteral("ErScene::toJsonObject (Mufpen self-snapshot, not real-mermaid)");
 
 struct ErCase {
   const char* id;
@@ -25,8 +25,8 @@ struct ErCase {
 };
 
 // Regression corpus (single source of truth). This is a REGRESSION GUARD, not a
-// parity oracle: each `expected` block is Muffin's own ErScene::toJsonObject()
-// output, captured via MUFFIN_GENERATE_ER_FIXTURE=1. It proves the ER scene is
+// parity oracle: each `expected` block is Mufpen's own ErScene::toJsonObject()
+// output, captured via MUFPEN_GENERATE_ER_FIXTURE=1. It proves the ER scene is
 // stable across builds. Real mermaid 11.16.0 parity is deferred until the
 // sibling G:/github/mermaid-cli checkout (puppeteer + mermaid + dagre-d3-es +
 // Chrome) is restored — see docs/mermaid-architecture.md step 5. When that
@@ -77,9 +77,9 @@ QJsonObject renderEr(editor::MermaidRenderCache& cache, const QString& source, c
   return erScene->toJsonObject();
 }
 
-// MUFFIN_GENERATE_ER_FIXTURE=1 path: write the full manifest (indented JSON) to
+// MUFPEN_GENERATE_ER_FIXTURE=1 path: write the full manifest (indented JSON) to
 // the fixture path passed by ctest (argv[1]), so regeneration is just
-// `MUFFIN_GENERATE_ER_FIXTURE=1 ctest -R ErSceneRegression`.
+// `MUFPEN_GENERATE_ER_FIXTURE=1 ctest -R ErSceneRegression`.
 int emitFixture(const QString& outPath) {
   editor::MermaidRenderCache cache;
   QJsonArray cases;
@@ -96,7 +96,7 @@ int emitFixture(const QString& outPath) {
   upstream[QStringLiteral("package")] = QStringLiteral("mermaid");
   upstream[QStringLiteral("version")] = QStringLiteral("11.16.0");
   upstream[QStringLiteral("notes")] =
-      QStringLiteral("REGRESSION GUARD ONLY. Generated from Muffin's own er::ErScene::toJsonObject(); "
+      QStringLiteral("REGRESSION GUARD ONLY. Generated from Mufpen's own er::ErScene::toJsonObject(); "
                      "NOT a real-mermaid reference. Real puppeteer/mermaid 11.16.0 parity deferred "
                      "until the G:/github/mermaid-cli checkout is restored "
                      "(docs/mermaid-architecture.md step 5).");
@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
 
   require(argc == 2, QStringLiteral("Expected ER scene regression fixture path"));
   const QString fixturePath = QString::fromLocal8Bit(argv[1]);
-  if (!qgetenv("MUFFIN_GENERATE_ER_FIXTURE").isEmpty())
+  if (!qgetenv("MUFPEN_GENERATE_ER_FIXTURE").isEmpty())
     return emitFixture(fixturePath);
 
   QFile file(fixturePath);
@@ -147,7 +147,7 @@ int main(int argc, char** argv) {
     const QString id = QString::fromLatin1(c.id);
     const QString source = QString::fromUtf8(c.source);
     require(fixtureById.contains(id), id + QStringLiteral(": missing from fixture (regenerate with "
-                                                          "MUFFIN_GENERATE_ER_FIXTURE=1)"));
+                                                          "MUFPEN_GENERATE_ER_FIXTURE=1)"));
     const QJsonObject fixture = fixtureById.value(id);
     require(fixture.value(QStringLiteral("source")).toString() == source,
             id + QStringLiteral(": fixture source drifted"));

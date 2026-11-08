@@ -8,7 +8,7 @@
 
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 RenderEditorBackend::RenderEditorBackend(EditorController& controller, DocumentSession& session, EditorView* view)
     : controller_(controller), session_(session), view_(view) {
@@ -296,4 +296,4 @@ QString RenderEditorBackend::cursorStatusText() const {
   return {};
 }
 
-} // namespace muffin
+} // namespace mufpen

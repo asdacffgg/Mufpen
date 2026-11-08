@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 
 RadarParseError::RadarParseError(const QString& message, int line, int column)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column) {
@@ -472,4 +472,4 @@ RadarData RadarDiagram::parse(const QString& rawSource) {
   return data;
 }
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

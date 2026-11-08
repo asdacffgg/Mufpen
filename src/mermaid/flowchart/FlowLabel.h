@@ -15,7 +15,7 @@ class QColor;
 class QPainter;
 class QRectF;
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct FlowLabelPreparedMath;
 struct FlowLabelLayoutMetrics;
@@ -259,4 +259,4 @@ void paintFlowLabel(QPainter& painter, const FlowLabelDocument& label, const QRe
                     qreal fontPixelSize, qreal lineHeight, const QColor& color, bool centerVertically,
                     FlowLabelAlign align = FlowLabelAlign::Center, qreal alignMargin = 0.0);
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

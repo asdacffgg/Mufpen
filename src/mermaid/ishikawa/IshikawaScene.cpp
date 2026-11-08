@@ -20,7 +20,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 namespace {
 
 constexpr qreal kSpineBaseLength = 250.0;
@@ -894,4 +894,4 @@ QJsonObject IshikawaScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

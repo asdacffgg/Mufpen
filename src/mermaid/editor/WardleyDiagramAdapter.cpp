@@ -12,7 +12,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 struct WardleyDiagramImpl final : Diagram {
@@ -77,4 +77,4 @@ const Diagram& wardleyDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

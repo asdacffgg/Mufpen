@@ -12,7 +12,7 @@
 #include <cmath>
 #include <functional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 QVector<MathMlPaintPrimitive> collectMathMlPaintPrimitives(const MathCssPaintOperation& operation,
                                                            MathMlPaintLayer layer) {
@@ -163,7 +163,7 @@ void paintMathMlVerticalGlyphOperation(QPainter& painter, const MathCssVerticalG
   if (glyph.kind == MathCssVerticalGlyphKind::FixedVariant && glyph.fixedGlyphIndex != 0 &&
       !glyph.inkBounds.isEmpty() && glyph.scalePolicy == MathCssVerticalScalePolicy::FitTargetExtent) {
     const qreal strikeScale = glyph.advance > 0.0 ? glyph.target.width() / glyph.advance : 1.0;
-    if (muffin::mermaid::math::MathGlyphRasterizer::paintStrikeGlyphFitBlock(
+    if (mufpen::mermaid::math::MathGlyphRasterizer::paintStrikeGlyphFitBlock(
             painter, glyph.fixedGlyphIndex,
             QRectF(glyph.inkBounds.topLeft() * strikeScale, glyph.inkBounds.size() * strikeScale), strikeScale,
             glyph.target, !glyph.clipToBlockExtent, color))
@@ -194,7 +194,7 @@ void paintMathMlVerticalGlyphOperation(QPainter& painter, const MathCssVerticalG
       placement.translate(glyph.target.center().x(), glyph.target.center().y());
       placement.scale(glyph.inkBounds.width() / bounds.width(), paintExtent / bounds.height());
       placement.translate(-bounds.center().x(), -bounds.center().y());
-      if (muffin::mermaid::math::MathGlyphRasterizer::paintPath(painter, placement.map(path), glyph.target, color))
+      if (mufpen::mermaid::math::MathGlyphRasterizer::paintPath(painter, placement.map(path), glyph.target, color))
         return;
     }
   }
@@ -222,7 +222,7 @@ void paintMathMlVerticalGlyphOperation(QPainter& painter, const MathCssVerticalG
       const MathCssVerticalGlyphPart& part = glyph.parts.at(index);
       if (!part.extender) {
         const QRectF partClip = part.inkBounds.translated(glyph.baselineOrigin).adjusted(-1.0, -1.0, 1.0, 1.0);
-        if (muffin::mermaid::math::MathGlyphRasterizer::paintOutlineRun(
+        if (mufpen::mermaid::math::MathGlyphRasterizer::paintOutlineRun(
                 painter, {indexes.at(index)}, {positions.at(index)}, glyph.baselineOrigin, 1.0, partClip, color, true))
           continue;
       }
@@ -313,12 +313,12 @@ void paintMathMlPrimitives(QPainter& painter, const QVector<MathMlPaintPrimitive
       if (rasterMode == MathMlGlyphRasterMode::Strike &&
           std::hypot(painter.combinedTransform().m11(), painter.combinedTransform().m12()) >= 2.0 &&
           !glyph.rawFont.isValid() &&
-          muffin::mermaid::math::MathGlyphRasterizer::paintStrikeRun(
+          mufpen::mermaid::math::MathGlyphRasterizer::paintStrikeRun(
               painter, glyph.glyphIndexes, glyph.positions, glyph.baselineOrigin, glyph.fontScale, glyph.clip, color))
         continue;
       if ((rasterMode == MathMlGlyphRasterMode::Outline || rasterMode == MathMlGlyphRasterMode::Strike) &&
           !glyph.rawFont.isValid()) {
-        if (muffin::mermaid::math::MathGlyphRasterizer::paintOutlineRun(painter, glyph.glyphIndexes, glyph.positions,
+        if (mufpen::mermaid::math::MathGlyphRasterizer::paintOutlineRun(painter, glyph.glyphIndexes, glyph.positions,
                                                                         glyph.baselineOrigin, glyph.fontScale,
                                                                         glyph.clip, color, deterministicCoverage))
           continue;
@@ -423,4 +423,4 @@ MathMlPaintOperationBuildResult paintMathMlOperations(QPainter& painter, const M
   return build;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

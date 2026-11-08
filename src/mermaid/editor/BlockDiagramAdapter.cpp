@@ -16,7 +16,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue blockScalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -130,4 +130,4 @@ const Diagram& blockDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

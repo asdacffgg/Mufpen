@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 template <typename T> bool holdsAttributeValue(const NodeAttributeValue& value) {
@@ -429,4 +429,4 @@ TextDeltaCommand& EditTransaction::textDeltaCommandMut() {
   return std::get<TextDeltaCommand>(storage_);
 }
 
-} // namespace muffin
+} // namespace mufpen

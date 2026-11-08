@@ -16,7 +16,7 @@
 #include <limits>
 #include <numeric>
 
-namespace muffin::mermaid::sankey {
+namespace mufpen::mermaid::sankey {
 namespace {
 
 struct WorkLink;
@@ -589,4 +589,4 @@ void refreshSankeyBounds(SankeyScene& scene) {
           .arg(svgNumber(bounds.x()), svgNumber(bounds.y()), svgNumber(bounds.width()), svgNumber(bounds.height()));
 }
 
-} // namespace muffin::mermaid::sankey
+} // namespace mufpen::mermaid::sankey

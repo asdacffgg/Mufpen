@@ -11,7 +11,7 @@
 #include <sstream>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 // Settings keys. The locale is stored as a code string (e.g. "en_US") rather than an
@@ -186,4 +186,4 @@ void SpellChecker::ignoreWord(QStringView word) {
   ignoredWords_.insert(word.toString().toLower());
 }
 
-} // namespace muffin
+} // namespace mufpen

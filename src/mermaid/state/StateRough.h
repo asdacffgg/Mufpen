@@ -9,7 +9,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 
 inline QVector<rough::Drawable> stateRoughNodeDrawables(const QString& shape, const QRectF& bounds, quint32 seed,
                                                         qreal strokeWidth = 1.0) {
@@ -114,4 +114,4 @@ inline QVector<rough::Drawable> stateRoughDividerDrawables(const QRectF& bounds,
   return {rough::rectangle(bounds.left(), bounds.top(), bounds.width(), bounds.height(), options)};
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

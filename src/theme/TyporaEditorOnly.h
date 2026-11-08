@@ -3,19 +3,19 @@
 #include <QSet>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
-// Typora editor chrome / UI constructs Muffin never renders. Community themes stash
+// Typora editor chrome / UI constructs Mufpen never renders. Community themes stash
 // editor-only hacks in their rules (e.g. pixyll `pre.md-meta-block { padding-top:2000px;
 // margin-top:-2010px; width:100vw }` to position the front-matter strip in Typora's
-// editor). Those hacks must not leak into Muffin's element-style matching, so any rule
+// editor). Those hacks must not leak into Mufpen's element-style matching, so any rule
 // whose selector carries one of these classes is dropped.
 //
 // Shared by BOTH CSS engines so the denylist stays in lock-step:
 //   - the flat semantic mapper (CssThemeMapper) drops the rule at flatten;
 //   - the computed-style engine (CssComputedStyleEngine) drops it at selector match.
 //
-// Functional classes Muffin DOES use — md-fences, md-focus, md-image, md-task-list-item,
+// Functional classes Mufpen DOES use — md-fences, md-focus, md-image, md-task-list-item,
 // md-heading — are intentionally NOT here. Confirmed: none of these are referenced as
 // editor-only chrome anywhere in src/.
 inline bool isTyporaEditorOnlyClass(const QString& cls) {
@@ -33,4 +33,4 @@ inline bool isTyporaEditorOnlyClass(const QString& cls) {
   return exact.contains(cls);
 }
 
-} // namespace muffin
+} // namespace mufpen

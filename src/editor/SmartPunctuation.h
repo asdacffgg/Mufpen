@@ -7,7 +7,7 @@
 
 #include <QString>
 
-namespace muffin::smartpunct {
+namespace mufpen::smartpunct {
 
 // Whether a quote at this position should be an opening (left) quote: true when
 // preceded by start-of-text, whitespace, or a non-word character. Mirrors the
@@ -28,4 +28,4 @@ inline const QString kEmDash = QString::fromUtf8("\xe2\x80\x94");           // �
 inline const QString kEnDash = QString::fromUtf8("\xe2\x80\x93");           // –
 inline const QString kEllipsis = QString::fromUtf8("\xe2\x80\xa6");         // …
 
-} // namespace muffin::smartpunct
+} // namespace mufpen::smartpunct

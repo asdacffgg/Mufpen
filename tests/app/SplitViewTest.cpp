@@ -34,7 +34,7 @@
 
 #include <utility>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 void waitFor(const std::function<bool()>& ready, const char* message) {
@@ -91,7 +91,7 @@ struct Fixture {
 };
 
 void editingWorkflow() {
-  SettingsOverride theme{"appearance/themeName", qEnvironmentVariable("MUFFIN_SPLIT_VIEW_CAPTURE_THEME", "github")};
+  SettingsOverride theme{"appearance/themeName", qEnvironmentVariable("MUFPEN_SPLIT_VIEW_CAPTURE_THEME", "github")};
   Fixture f;
   auto* tab = f.open(QStringLiteral("# Overview\n\nOriginal text\n\n- [ ] Task\n"));
   auto* split = f.command("Source and Preview");
@@ -134,7 +134,7 @@ void editingWorkflow() {
   require(dividerImage.pixelColor(dividerImage.width() / 2, dividerImage.height() / 2).rgb() !=
               tab->renderView->theme().backgroundColor().rgb(),
           "split divider is visible against the page background");
-  const auto capture = qEnvironmentVariable("MUFFIN_SPLIT_VIEW_CAPTURE");
+  const auto capture = qEnvironmentVariable("MUFPEN_SPLIT_VIEW_CAPTURE");
   if (!capture.isEmpty()) {
     QTest::qWait(150); // Capture the live panes after the mode-switch crossfade.
     require(f.window.grab().save(capture), "capture split view for visual review");

@@ -8,7 +8,7 @@
 #include <QJsonValue>
 #include <QRectF>
 
-namespace muffin::mermaid::block {
+namespace mufpen::mermaid::block {
 
 struct BlockConfig {
   QJsonValue useMaxWidth = true;
@@ -60,4 +60,4 @@ BlockScene buildBlockScene(const BlockData& data, BlockConfig config, const flow
                            const csscascade::FlowchartProjection* measurementCss = nullptr,
                            const csscascade::FlowchartProjection* paintCss = nullptr);
 
-} // namespace muffin::mermaid::block
+} // namespace mufpen::mermaid::block

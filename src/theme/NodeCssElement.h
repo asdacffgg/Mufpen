@@ -10,7 +10,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -109,4 +109,4 @@ QString cssTagForNode(const MarkdownNode& node);
 // offsets. Shared by style invalidation and counter program discovery.
 QByteArray cssSemanticSignature(const MarkdownNode& root);
 
-} // namespace muffin
+} // namespace mufpen

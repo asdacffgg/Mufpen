@@ -4,7 +4,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 namespace {
 const QHash<QString, StateTokenKind>& keywords() {
   static const QHash<QString, StateTokenKind> values = {
@@ -234,4 +234,4 @@ QString stateTokenName(StateTokenKind kind) {
   }
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

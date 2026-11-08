@@ -7,7 +7,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::architecture {
+namespace mufpen::mermaid::architecture {
 namespace {
 
 using Vector = QVector<double>;
@@ -557,4 +557,4 @@ void transformArchitectureSpectralConstraints(QVector<QPointF>& positions,
   }
 }
 
-} // namespace muffin::mermaid::architecture
+} // namespace mufpen::mermaid::architecture

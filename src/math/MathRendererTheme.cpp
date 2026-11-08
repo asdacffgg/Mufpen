@@ -2,7 +2,7 @@
 
 #include "theme/RenderTheme.h"
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 constexpr qreal kKatexRootFontScale = 1.21;
 constexpr qreal kCssPixelsPerPoint = 96.0 / 72.0;
@@ -24,4 +24,4 @@ MathLayoutResult MathRenderer::render(const QString& tex, const RenderTheme& the
   return render(tex, katexRootFontPixelSize(theme), theme.textColor(), displayMode, settings, maxWidth);
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

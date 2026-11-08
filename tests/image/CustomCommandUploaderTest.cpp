@@ -27,17 +27,17 @@ void require(bool condition, const QString& message) {
 
 void testUnsetCommandMeansUnavailable() {
   QSettings().remove(QStringLiteral("image/uploadCommand"));
-  require(muffin::CustomCommandUploader::resolvedCommand().isEmpty(),
+  require(mufpen::CustomCommandUploader::resolvedCommand().isEmpty(),
           QStringLiteral("Unset uploadCommand should resolve to an empty command"));
-  require(!muffin::CustomCommandUploader::isAvailable(),
+  require(!mufpen::CustomCommandUploader::isAvailable(),
           QStringLiteral("With no command configured, isAvailable() should be false"));
 }
 
 void testConfiguredCommandIsHonored() {
   QSettings().setValue(QStringLiteral("image/uploadCommand"), QStringLiteral("  picgo upload  "));
-  require(muffin::CustomCommandUploader::resolvedCommand() == QStringLiteral("picgo upload"),
+  require(mufpen::CustomCommandUploader::resolvedCommand() == QStringLiteral("picgo upload"),
           QStringLiteral("resolvedCommand should return the configured command, trimmed"));
-  require(muffin::CustomCommandUploader::isAvailable(),
+  require(mufpen::CustomCommandUploader::isAvailable(),
           QStringLiteral("A configured command should make isAvailable() true"));
   QSettings().remove(QStringLiteral("image/uploadCommand"));
 }
@@ -46,8 +46,8 @@ void testConfiguredCommandIsHonored() {
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("Muffin"));
-  QCoreApplication::setApplicationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("Mufpen"));
+  QCoreApplication::setApplicationName(QStringLiteral("MufpenTests"));
   testUnsetCommandMeansUnavailable();
   testConfiguredCommandIsHonored();
   return 0;

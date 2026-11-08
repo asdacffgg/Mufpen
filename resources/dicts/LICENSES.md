@@ -1,7 +1,7 @@
 # Spell-check dictionaries — sources & licenses
 
 These files are Hunspell-format dictionaries (`<locale>.aff` + `<locale>.dic`) bundled
-for Muffin's built-in spell checker (powered by nuspell). The spell-checker loads them
+for Mufpen's built-in spell checker (powered by nuspell). The spell-checker loads them
 read-only at runtime; they are not modified.
 
 ## English (`en_US`)

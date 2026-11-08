@@ -13,7 +13,7 @@
 #include <QStringList>
 #include <cstdio>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Subscript `H~2~O` and superscript `X^2^` (Pandoc-style). cmark-gfm has no extension for these, so
 // the markers arrive as literal Text and a post-parse pass (gated on enableSubscript/enableSuperscript)
@@ -91,8 +91,8 @@ void writeBlock(QDataStream& out, const MarkdownNode& node) {
 // independently of the token representation, across all sixteen option settings.
 QString delimiterCorpusFingerprint() {
   // Optional binary audit for reviewing intentional parser changes against an
-  // older MuffinCore, without replacing the fixed corpus with self-comparison.
-  QFile dump(qEnvironmentVariable("MUFFIN_DELIMITER_CORPUS_DUMP"));
+  // older MufpenCore, without replacing the fixed corpus with self-comparison.
+  QFile dump(qEnvironmentVariable("MUFPEN_DELIMITER_CORPUS_DUMP"));
   if (!dump.fileName().isEmpty())
     require(dump.open(QIODevice::WriteOnly), "cannot open delimiter corpus audit");
   QDataStream dumpStream(&dump);
@@ -340,7 +340,7 @@ void testNestedDelimiterSplicingPreservesSourceRanges() {
 }
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("SubscriptSuperscriptParseTest"));
   QCoreApplication app(argc, argv);
   if (argc == 2 && QString::fromLocal8Bit(argv[1]) == QStringLiteral("--delimiter-fingerprint")) {

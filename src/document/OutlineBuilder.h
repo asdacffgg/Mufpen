@@ -6,7 +6,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownDocument;
 class MarkdownNode;
@@ -23,4 +23,4 @@ struct OutlineEntry {
 QVector<OutlineEntry> buildOutline(const MarkdownDocument& document);
 QVector<OutlineEntry> buildOutlineFragment(const MarkdownNode& topLevel);
 
-} // namespace muffin
+} // namespace mufpen

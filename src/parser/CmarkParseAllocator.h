@@ -7,11 +7,11 @@ extern "C" {
 #include "cmark-gfm.h"
 }
 
-namespace muffin {
+namespace mufpen {
 
 // One parser/tree lifetime, confined to one thread at a time. Empty pages are
 // reclaimed during conversion, so the cmark tree need not overlap the full
-// Muffin AST. This is deliberately independent of cmark's global arena.
+// Mufpen AST. This is deliberately independent of cmark's global arena.
 class CmarkParseAllocator {
 public:
   struct Statistics {
@@ -68,4 +68,4 @@ private:
   Statistics statistics_;
 };
 
-} // namespace muffin
+} // namespace mufpen

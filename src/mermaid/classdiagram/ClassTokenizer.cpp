@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 namespace {
 
 bool isWordCharacter(QChar character) {
@@ -256,4 +256,4 @@ QString classTokenName(ClassTokenKind kind) {
   }
 }
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

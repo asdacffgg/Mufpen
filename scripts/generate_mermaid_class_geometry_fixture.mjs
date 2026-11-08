@@ -4,14 +4,14 @@ import { pathToFileURL } from "node:url";
 
 // Captures real mermaid 11.16.0 classDiagram geometry (class node bounds +
 // compartment divider count + relationship edge markers) via headless Chrome,
-// normalized to the first source-order class's centre (mirroring Muffin's
+// normalized to the first source-order class's centre (mirroring Mufpen's
 // origin subtraction). Output schema matches the fields of
 // classdiagram::ClassScene::toJsonObject that are comparable against mermaid.
 //
 // Edge marker kinds are extracted from the marker-start/marker-end url and the
 // Start/End suffix is DROPPED (the field position encodes the side), so the
 // fixture's markerStart/markerEnd read as bare types ("extension", "composition",
-// ...) exactly like Muffin's ClassScene JSON (arrowTypeStart/End via markerName).
+// ...) exactly like Mufpen's ClassScene JSON (arrowTypeStart/End via markerName).
 //
 //   node scripts/generate_mermaid_class_geometry_fixture.mjs \
 //     [mermaid-root] [output-json] [chrome-exe]
@@ -107,7 +107,7 @@ try {
       const out = [];
       for (let index = 0; index < cases.length; ++index) {
         const fixture = cases[index];
-        // fontFamily matches Muffin's default theme stack; htmlLabels:false
+        // fontFamily matches Mufpen's default theme stack; htmlLabels:false
         // forces deterministic SVG <text>.
         mermaid.initialize({
           startOnLoad: false,
@@ -147,7 +147,7 @@ try {
           return {
             pattern,
             // markerStart/markerEnd are bare types (null when absent) so they
-            // line up with Muffin's ClassScene markerStart/markerEnd fields.
+            // line up with Mufpen's ClassScene markerStart/markerEnd fields.
             markerStart: markerType(edge.getAttribute("marker-start")),
             markerEnd: markerType(edge.getAttribute("marker-end")),
           };

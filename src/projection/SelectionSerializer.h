@@ -7,7 +7,7 @@
 #include <QByteArray>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownDocument;
 class MarkdownNode;
@@ -68,4 +68,4 @@ private:
   QString plainTextForMarkdownRange(const QString& markdownText, qsizetype start, qsizetype end) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

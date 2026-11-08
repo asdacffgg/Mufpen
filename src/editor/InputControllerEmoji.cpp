@@ -13,7 +13,7 @@
 #include <QSettings>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 void InputController::setEmojiProvider(const EmojiProvider* provider) {
   emojiProvider_ = provider;
@@ -133,4 +133,4 @@ void InputController::insertEmoji(const QString& glyph) {
   emojiColonStart_ = -1;
 }
 
-} // namespace muffin
+} // namespace mufpen

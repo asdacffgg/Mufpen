@@ -8,9 +8,9 @@
 #include <algorithm>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(formattingDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(formattingDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 }
 
 void BlockFormattingCache::beginPass(bool incremental, QSet<NodeId> dirty) {
@@ -156,4 +156,4 @@ BlockFormattingCache::SolveResult BlockFormattingCache::solve(NodeId id, const T
   return {std::move(result), false};
 }
 
-} // namespace muffin
+} // namespace mufpen

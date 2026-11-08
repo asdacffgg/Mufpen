@@ -11,7 +11,7 @@ import { pathToFileURL } from "node:url";
 // CATEGORY + position (docs/mermaid-flowchart-remaining-plan.md §10).
 //
 // `upstreamError: false` on a case the native parser rejects is INTENTIONAL for
-// milestone H (resource limits / stricter security) — Muffin adds protection
+// milestone H (resource limits / stricter security) — Mufpen adds protection
 // upstream lacks. For pure-syntax cases upstreamError should be true.
 
 const mermaidRoot = path.resolve(
@@ -29,7 +29,7 @@ const { default: puppeteer } = await import(
   pathToFileURL(path.join(path.dirname(mermaidRoot), "puppeteer", "lib", "puppeteer", "puppeteer.js"))
 );
 
-// Curated case table. `expectedCategory` mirrors muffin::FlowchartErrorCategory.
+// Curated case table. `expectedCategory` mirrors mufpen::FlowchartErrorCategory.
 // `options` (optional) overrides FlowchartParseOptions for the native call.
 const cases = [
   { id: "no-header", source: "This is not a mermaid diagram at all.", expectedCategory: "MissingHeader", expectedStage: "detector", expectedCode: "missing-header", expectedLine: 1, expectedColumn: 1 },
@@ -38,7 +38,7 @@ const cases = [
   { id: "linkstyle-oob", source: "flowchart TB\nA --> B\nlinkStyle 5 stroke:red", expectedCategory: "LinkStyleBounds", expectedStage: "semantic", expectedCode: "link-style-bounds", expectedLine: 3, expectedColumn: 11 },
   { id: "bad-classdef", source: "flowchart TB\nclassDef x", expectedCategory: "InvalidDirective", expectedStage: "parser", expectedCode: "missing-token", expectedLine: 2, expectedColumn: 11 },
   // Resource-limit cases: upstream has NO such limits (parses fine); native
-  // throws LimitExceeded. Muffin's protection, intentionally stricter.
+  // throws LimitExceeded. Mufpen's protection, intentionally stricter.
   { id: "text-limit", source: "flowchart TB\nA --> B", expectedCategory: "LimitExceeded", expectedStage: "resource", expectedCode: "limit-exceeded", expectedLine: 0, expectedColumn: 0, options: { maxTextSize: 8 } },
   { id: "edge-limit", source: "flowchart TB\nA --> B\nC --> D", expectedCategory: "LimitExceeded", expectedStage: "resource", expectedCode: "limit-exceeded", expectedLine: 3, expectedColumn: 0, options: { maxEdges: 1 } },
   // FlowchartLimits overrides (milestone H1): upstream parses fine, native

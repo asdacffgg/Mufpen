@@ -15,10 +15,10 @@
 #include "io/ApplicationPaths.h"
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
-Q_LOGGING_CATEGORY(managerLoadPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(managerLoadPerf, "mufpen.perf.detail", QtWarningMsg)
 
 QHash<QString, QByteArray> sourceManifest(const QString& path) {
   diag::ScopedPerfProbe perf("theme.sourceManifest", managerLoadPerf());
@@ -375,4 +375,4 @@ void ThemeManager::reloadCustomThemes() {
   emit themesChanged();
 }
 
-} // namespace muffin
+} // namespace mufpen

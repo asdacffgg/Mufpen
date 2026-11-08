@@ -8,7 +8,7 @@ class QLabel;
 class QPushButton;
 class QRadioButton;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsEditorPage final : public PreferencesPage {
   Q_OBJECT
@@ -61,4 +61,4 @@ private:
   QPushButton* disableTypewriterFocusButton_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

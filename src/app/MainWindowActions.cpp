@@ -23,29 +23,29 @@
 #include <QTimer>
 
 namespace {
-Q_LOGGING_CATEGORY(actionsPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(actionsPerf, "mufpen.perf.detail", QtWarningMsg)
 
-QString zoneName(muffin::HitTestResult::Zone zone) {
+QString zoneName(mufpen::HitTestResult::Zone zone) {
   switch (zone) {
-  case muffin::HitTestResult::Zone::Text:
+  case mufpen::HitTestResult::Zone::Text:
     return QStringLiteral("text");
-  case muffin::HitTestResult::Zone::Marker:
+  case mufpen::HitTestResult::Zone::Marker:
     return QStringLiteral("marker");
-  case muffin::HitTestResult::Zone::TableCell:
+  case mufpen::HitTestResult::Zone::TableCell:
     return QStringLiteral("table");
-  case muffin::HitTestResult::Zone::Code:
+  case mufpen::HitTestResult::Zone::Code:
     return QStringLiteral("code");
-  case muffin::HitTestResult::Zone::Math:
+  case mufpen::HitTestResult::Zone::Math:
     return QStringLiteral("math");
-  case muffin::HitTestResult::Zone::Html:
+  case mufpen::HitTestResult::Zone::Html:
     return QStringLiteral("html");
-  case muffin::HitTestResult::Zone::FrontMatter:
+  case mufpen::HitTestResult::Zone::FrontMatter:
     return QStringLiteral("front matter");
-  case muffin::HitTestResult::Zone::Block:
+  case mufpen::HitTestResult::Zone::Block:
     return QStringLiteral("block");
-  case muffin::HitTestResult::Zone::BlockAfter:
+  case mufpen::HitTestResult::Zone::BlockAfter:
     return QStringLiteral("block after");
-  case muffin::HitTestResult::Zone::None:
+  case mufpen::HitTestResult::Zone::None:
   default:
     return QStringLiteral("none");
   }
@@ -53,7 +53,7 @@ QString zoneName(muffin::HitTestResult::Zone zone) {
 
 } // namespace
 
-void muffin::MainWindow::setupConnections() {
+void mufpen::MainWindow::setupConnections() {
   tab_->editorController.inputController().setEmojiProvider(&emojiProvider_);
 
   connectEditorSignals(tab_);
@@ -80,7 +80,7 @@ void muffin::MainWindow::setupConnections() {
   tab_->renderView->setDocument(tab_->session.document(), tab_->session.filePath());
 }
 
-void muffin::MainWindow::updateRenderCursorStatus(const HitTestResult& hit) {
+void mufpen::MainWindow::updateRenderCursorStatus(const HitTestResult& hit) {
   if (!hit.isValid()) {
     tab_->renderCursorStatus.clear();
   } else {
@@ -96,7 +96,7 @@ void muffin::MainWindow::updateRenderCursorStatus(const HitTestResult& hit) {
   scheduleEditorStateRefresh();
 }
 
-void muffin::MainWindow::updateBlockSourceLabel(const HitTestResult& hit) {
+void mufpen::MainWindow::updateBlockSourceLabel(const HitTestResult& hit) {
   if (!statusBar_) {
     return;
   }
@@ -131,13 +131,13 @@ void muffin::MainWindow::updateBlockSourceLabel(const HitTestResult& hit) {
   statusBar_->setBlockSource(flat, raw.trimmed());
 }
 
-void muffin::MainWindow::syncSourceEditorIfNeeded() {
+void mufpen::MainWindow::syncSourceEditorIfNeeded() {
   if (!tab_->editor)
     return;
   tab_->editor->syncFromSession();
 }
 
-void muffin::MainWindow::scheduleWordCountUpdate() {
+void mufpen::MainWindow::scheduleWordCountUpdate() {
   tab_->wordCountDirty = true;
   if (wordCountTimer_) {
     // PieceTable maintains this count incrementally. The debounce coalesces status repaints; the
@@ -146,8 +146,8 @@ void muffin::MainWindow::scheduleWordCountUpdate() {
   }
 }
 
-void muffin::MainWindow::updateWordCountNow() {
-  muffin::diag::ScopedPerfProbe perf("main.wordCount", actionsPerf());
+void mufpen::MainWindow::updateWordCountNow() {
+  mufpen::diag::ScopedPerfProbe perf("main.wordCount", actionsPerf());
   if (!statusBar_ || !tab_->wordCountDirty) {
     return;
   }
@@ -156,7 +156,7 @@ void muffin::MainWindow::updateWordCountNow() {
   tab_->wordCountDirty = false;
 }
 
-void muffin::MainWindow::insertTableWithDialog() {
+void mufpen::MainWindow::insertTableWithDialog() {
   if (tab_->backend->isSourceMode()) {
     return;
   }
@@ -198,7 +198,7 @@ void muffin::MainWindow::insertTableWithDialog() {
   tab_->renderCommands.insertTable(rowSpin->value(), columnSpin->value());
 }
 
-void muffin::MainWindow::insertImageWithDialog() {
+void mufpen::MainWindow::insertImageWithDialog() {
   if (tab_->backend->isSourceMode()) {
     return;
   }
@@ -249,7 +249,7 @@ void muffin::MainWindow::insertImageWithDialog() {
   tab_->editorController.inputController().insertText(markdown);
 }
 
-void muffin::MainWindow::insertLocalImageWithDialog() {
+void mufpen::MainWindow::insertLocalImageWithDialog() {
   if (tab_->backend->isSourceMode()) {
     return;
   }
@@ -263,13 +263,13 @@ void muffin::MainWindow::insertLocalImageWithDialog() {
 
   // Route through the centralized insertion policy so the picked file honours the
   // configured insert action (copy to ./assets, upload, …) and syntax checkboxes.
-  muffin::ImageInsertRequest req;
+  mufpen::ImageInsertRequest req;
   req.sourcePath = filePath;
   req.documentPath = tab_->session.filePath();
   req.documentText = tab_->session.markdownText().toString();
   req.alt = QFileInfo(filePath).completeBaseName();
   QSettings settings;
-  const muffin::ImageInsertResult res = muffin::ImageInsertionPolicy::resolveHref(req, settings, this);
+  const mufpen::ImageInsertResult res = mufpen::ImageInsertionPolicy::resolveHref(req, settings, this);
   if (!res.ok) {
     return;
   }
@@ -279,13 +279,13 @@ void muffin::MainWindow::insertLocalImageWithDialog() {
   tab_->editorController.inputController().insertText(markdown);
 }
 
-void muffin::MainWindow::undoEdit() {
+void mufpen::MainWindow::undoEdit() {
   if (tab_->backend->canUndo()) {
     tab_->backend->undo();
   }
 }
 
-void muffin::MainWindow::redoEdit() {
+void mufpen::MainWindow::redoEdit() {
   if (tab_->backend->canRedo()) {
     tab_->backend->redo();
   }

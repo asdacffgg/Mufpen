@@ -26,8 +26,8 @@ const fonts = sources.map(([family, file, weight, style]) => {
   const bytes = fs.readFileSync(path.join(root, file));
   return {family, file, weight, style, sha256: createHash('sha256').update(bytes).digest('hex'), bytes};
 });
-const {chromium} = await import(process.env.MUFFIN_PLAYWRIGHT_MODULE
-  ? pathToFileURL(path.resolve(process.env.MUFFIN_PLAYWRIGHT_MODULE)).href : 'playwright');
+const {chromium} = await import(process.env.MUFPEN_PLAYWRIGHT_MODULE
+  ? pathToFileURL(path.resolve(process.env.MUFPEN_PLAYWRIGHT_MODULE)).href : 'playwright');
 const browser = await chromium.launch({headless: true,
   ...(process.env.CHROME_EXECUTABLE ? {executablePath: process.env.CHROME_EXECUTABLE} : {})});
 try {

@@ -15,7 +15,7 @@
 #include <cmath>
 #include <cstdlib>
 
-using namespace muffin::mermaid::classdiagram;
+using namespace mufpen::mermaid::classdiagram;
 
 namespace {
 qreal coordinateTolerance = 0.01;

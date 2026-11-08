@@ -14,7 +14,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::quadrant {
+namespace mufpen::mermaid::quadrant {
 
 void QuadrantScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintQuadrantScene(*this, painter, options);
@@ -315,4 +315,4 @@ QJsonObject QuadrantScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::quadrant
+} // namespace mufpen::mermaid::quadrant

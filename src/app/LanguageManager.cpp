@@ -4,15 +4,15 @@
 #include <QLocale>
 #include <QSettings>
 
-muffin::LanguageManager& muffin::LanguageManager::instance() {
-  static muffin::LanguageManager manager;
+mufpen::LanguageManager& mufpen::LanguageManager::instance() {
+  static mufpen::LanguageManager manager;
   return manager;
 }
 
-muffin::LanguageManager::LanguageManager(QObject* parent) : QObject(parent) {
+mufpen::LanguageManager::LanguageManager(QObject* parent) : QObject(parent) {
 }
 
-QVector<muffin::LanguageInfo> muffin::LanguageManager::availableLanguages() const {
+QVector<mufpen::LanguageInfo> mufpen::LanguageManager::availableLanguages() const {
   return {
       {QStringLiteral("system"), tr("System Default"), QStringLiteral("System Default")},
       {QStringLiteral("en"), QStringLiteral("English"), QStringLiteral("English")},
@@ -33,20 +33,20 @@ QVector<muffin::LanguageInfo> muffin::LanguageManager::availableLanguages() cons
   };
 }
 
-QString muffin::LanguageManager::currentLanguageCode() const {
+QString mufpen::LanguageManager::currentLanguageCode() const {
   return selectedCode_;
 }
 
-QString muffin::LanguageManager::effectiveLanguageCode() const {
+QString mufpen::LanguageManager::effectiveLanguageCode() const {
   return currentCode_;
 }
 
-void muffin::LanguageManager::initialize() {
+void mufpen::LanguageManager::initialize() {
   QSettings settings;
   setLanguage(settings.value(settingsKey(), QStringLiteral("system")).toString());
 }
 
-bool muffin::LanguageManager::setLanguage(QString code) {
+bool mufpen::LanguageManager::setLanguage(QString code) {
   const QString selectedCode = code.isEmpty() ? QStringLiteral("system") : std::move(code);
   const QString resolved = resolvedCode(selectedCode);
   if (selectedCode == selectedCode_ && resolved == currentCode_) {
@@ -65,15 +65,15 @@ bool muffin::LanguageManager::setLanguage(QString code) {
   return true;
 }
 
-QString muffin::LanguageManager::settingsKey() {
+QString mufpen::LanguageManager::settingsKey() {
   return QStringLiteral("language");
 }
 
-QString muffin::LanguageManager::normalizedCode(QString code) {
+QString mufpen::LanguageManager::normalizedCode(QString code) {
   return resolvedCode(code);
 }
 
-QString muffin::LanguageManager::resolvedCode(const QString& code) {
+QString mufpen::LanguageManager::resolvedCode(const QString& code) {
   if (code.isEmpty() || code == QStringLiteral("system")) {
     const QString system = resolvedCode(QLocale::system().name());
     return system;
@@ -106,7 +106,7 @@ QString muffin::LanguageManager::resolvedCode(const QString& code) {
   return QStringLiteral("en");
 }
 
-bool muffin::LanguageManager::installTranslator(const QString& code) {
+bool mufpen::LanguageManager::installTranslator(const QString& code) {
   if (translator_) {
     QApplication::removeTranslator(translator_.get());
     translator_.reset();
@@ -121,7 +121,7 @@ bool muffin::LanguageManager::installTranslator(const QString& code) {
   }
 
   // Load application translations
-  const QString qmPath = QStringLiteral(":/i18n/muffin_%1.qm").arg(code);
+  const QString qmPath = QStringLiteral(":/i18n/mufpen_%1.qm").arg(code);
   auto translator = std::make_unique<QTranslator>();
   if (!translator->load(qmPath)) {
     return false;

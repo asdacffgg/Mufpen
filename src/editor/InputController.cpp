@@ -39,10 +39,10 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(inputPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(inputPerf, "mufpen.perf", QtWarningMsg)
 
 struct PerfTimer : diag::ScopedPerfProbe {
   explicit PerfTimer(const char* label) : diag::ScopedPerfProbe(label, inputPerf()) {}
@@ -2190,4 +2190,4 @@ QString InputController::printableText(QKeyEvent* event) const {
   return text;
 }
 
-} // namespace muffin
+} // namespace mufpen

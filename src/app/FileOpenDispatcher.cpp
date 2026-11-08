@@ -9,13 +9,13 @@
 #include <QSettings>
 #include <algorithm>
 
-bool muffin::file_open_preferences::openInTabs() {
+bool mufpen::file_open_preferences::openInTabs() {
   QSettings settings;
   settings.sync();
   return settings.value(QLatin1String(kOpenInTabs), true).toBool();
 }
 
-muffin::FileOpenDispatcher::FileOpenDispatcher(QObject* parent) : QObject(parent) {
+mufpen::FileOpenDispatcher::FileOpenDispatcher(QObject* parent) : QObject(parent) {
   qApp->installEventFilter(this);
   retry_.setInterval(100);
   retry_.setSingleShot(true);
@@ -26,7 +26,7 @@ muffin::FileOpenDispatcher::FileOpenDispatcher(QObject* parent) : QObject(parent
   });
 }
 
-bool muffin::FileOpenDispatcher::setInitialWindow(MainWindow* window) {
+bool mufpen::FileOpenDispatcher::setInitialWindow(MainWindow* window) {
   initialWindow_ = window;
   ready_ = true;
   const bool hadRequests = !pending_.isEmpty();
@@ -34,7 +34,7 @@ bool muffin::FileOpenDispatcher::setInitialWindow(MainWindow* window) {
   return hadRequests;
 }
 
-void muffin::FileOpenDispatcher::openFiles(const QStringList& paths) {
+void mufpen::FileOpenDispatcher::openFiles(const QStringList& paths) {
   if (paths.isEmpty())
     return;
   // An acknowledged OS open must survive an update attempt. Let it cancel the
@@ -44,7 +44,7 @@ void muffin::FileOpenDispatcher::openFiles(const QStringList& paths) {
   dispatch();
 }
 
-bool muffin::FileOpenDispatcher::eventFilter(QObject* watched, QEvent* event) {
+bool mufpen::FileOpenDispatcher::eventFilter(QObject* watched, QEvent* event) {
   if (event->type() == QEvent::WindowActivate) {
     if (auto* window = qobject_cast<MainWindow*>(watched))
       lastActiveWindow_ = window;
@@ -58,7 +58,7 @@ bool muffin::FileOpenDispatcher::eventFilter(QObject* watched, QEvent* event) {
   return QObject::eventFilter(watched, event);
 }
 
-muffin::MainWindow* muffin::FileOpenDispatcher::targetWindow() const {
+mufpen::MainWindow* mufpen::FileOpenDispatcher::targetWindow() const {
   if (lastActiveWindow_ && lastActiveWindow_->isVisible())
     return lastActiveWindow_;
   for (auto* widget : QApplication::topLevelWidgets()) {
@@ -68,7 +68,7 @@ muffin::MainWindow* muffin::FileOpenDispatcher::targetWindow() const {
   return initialWindow_;
 }
 
-void muffin::FileOpenDispatcher::dispatch() {
+void mufpen::FileOpenDispatcher::dispatch() {
   if (!ready_ || pending_.isEmpty())
     return;
   // Never interrupt a save/conflict dialog, export, or workspace replacement.

@@ -8,7 +8,7 @@
 #include <QtConcurrentRun>
 
 namespace {
-using namespace muffin;
+using namespace mufpen;
 QPair<qsizetype, qsizetype> selectedSourceRange(DocumentTab* tab) {
   if (tab->hasSourcePane())
     return {tab->editor->selectionStart(), tab->editor->selectionEnd()};
@@ -82,7 +82,7 @@ template <typename Work, typename Finish> void runSearch(DocumentTab* tab, Work 
 }
 } // namespace
 
-void muffin::MainWindow::showFindBar() {
+void mufpen::MainWindow::showFindBar() {
   if (!tab_->findBar)
     return;
   if (tab_->viewMode() == DocumentViewMode::Split)
@@ -99,13 +99,13 @@ void muffin::MainWindow::showFindBar() {
   tab_->findBar->activateFind();
 }
 
-void muffin::MainWindow::showReplaceBar() {
+void mufpen::MainWindow::showReplaceBar() {
   showFindBar();
   tab_->findBar->setReplaceVisible(true);
   tab_->findBar->activateReplace();
 }
 
-void muffin::MainWindow::hideFindBar() {
+void mufpen::MainWindow::hideFindBar() {
   if (tab_->findCancellation)
     tab_->findCancellation->store(true);
   tab_->session.cancelBatch();
@@ -113,7 +113,7 @@ void muffin::MainWindow::hideFindBar() {
     tab_->findBar->setVisible(false);
 }
 
-void muffin::MainWindow::performFind(const QString& text, bool forward, bool regularExpression, bool caseSensitive) {
+void mufpen::MainWindow::performFind(const QString& text, bool forward, bool regularExpression, bool caseSensitive) {
   if (text.isEmpty() || tab_->session.isOpenInProgress())
     return;
   auto* tab = tab_;
@@ -159,19 +159,19 @@ void muffin::MainWindow::performFind(const QString& text, bool forward, bool reg
       });
 }
 
-void muffin::MainWindow::performFindNext() {
+void mufpen::MainWindow::performFindNext() {
   if (tab_->findBar)
     performFind(tab_->findBar->searchText(), true, tab_->findBar->regularExpressionEnabled(),
                 tab_->findBar->caseSensitiveEnabled());
 }
 
-void muffin::MainWindow::performFindPrevious() {
+void mufpen::MainWindow::performFindPrevious() {
   if (tab_->findBar)
     performFind(tab_->findBar->searchText(), false, tab_->findBar->regularExpressionEnabled(),
                 tab_->findBar->caseSensitiveEnabled());
 }
 
-void muffin::MainWindow::performReplace(const QString& findText, const QString& replaceText, bool regularExpression,
+void mufpen::MainWindow::performReplace(const QString& findText, const QString& replaceText, bool regularExpression,
                                         bool caseSensitive) {
   if (!tab_->session.isEditingAllowed() || findText.isEmpty())
     return;
@@ -212,7 +212,7 @@ void muffin::MainWindow::performReplace(const QString& findText, const QString& 
       });
 }
 
-void muffin::MainWindow::performReplaceAll(const QString& findText, const QString& replaceText, bool regularExpression,
+void mufpen::MainWindow::performReplaceAll(const QString& findText, const QString& replaceText, bool regularExpression,
                                            bool caseSensitive) {
   if (!tab_->session.isEditingAllowed() || findText.isEmpty())
     return;

@@ -6,11 +6,11 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 
 struct TimelineScene;
 
@@ -30,4 +30,4 @@ TimelinePaintState timelineLineStroke(const QString& value, const QColor& presen
 
 void paintTimelineScene(const TimelineScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

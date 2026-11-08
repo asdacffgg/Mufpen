@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include <limits>
 
-using namespace muffin::mermaid::flowtheme;
+using namespace mufpen::mermaid::flowtheme;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -389,7 +389,7 @@ void compareXYChart(const FlowThemeVariables& theme, const QJsonObject& expected
 }
 
 QHash<QString, QString> sourceThemeOverrides(const QString& source) {
-  return muffin::mermaid::editor::themeOverrides(muffin::mermaid::preprocessDiagram(source).config);
+  return mufpen::mermaid::editor::themeOverrides(mufpen::mermaid::preprocessDiagram(source).config);
 }
 
 void checkPacketThemeOverrides() {
@@ -787,7 +787,7 @@ void checkThemeOverridesTclJs() {
           QJsonDocument::fromJson(("{\"THEME_COLOR_LIMIT\":" + tclValueJson + "}").toUtf8()).object();
       config.insert(QStringLiteral("themeVariables"), tv);
     }
-    return muffin::mermaid::editor::themeOverrides(config);
+    return mufpen::mermaid::editor::themeOverrides(config);
   };
   const auto equals = [](const QHash<QString, QString>& h, const QString& v) {
     return h.contains(QStringLiteral("THEME_COLOR_LIMIT")) && h.value(QStringLiteral("THEME_COLOR_LIMIT")) == v;

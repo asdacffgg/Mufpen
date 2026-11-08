@@ -16,7 +16,7 @@
 #include <cmath>
 #include <optional>
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 namespace {
 
 using PaintState = JourneyPaintState;
@@ -517,4 +517,4 @@ void paintJourneyScene(const JourneyScene& scene, QPainter& painter, const Merma
   painter.restore();
 }
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

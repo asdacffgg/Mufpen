@@ -22,7 +22,7 @@
 #include <algorithm>
 #include <cstdlib>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -180,8 +180,8 @@ int main(int argc, char** argv) {
       "skipped on Linux: raster goldens were captured against Windows-Chrome PNGs; the bundled Noto faces ARE registered cross-platform via the Qt resource, and geometry uses OpenType design metrics, but FreeType antialiasing/hinting still produces different edge pixels than the committed DirectWrite-rasterized references. Closure requires regenerating (or dual-sourcing) the browser goldens on Linux - a platform-infrastructure task, not a code change.");
   return 0;
 #endif
-  QCoreApplication::setOrganizationName(QStringLiteral("Muffin"));
-  QCoreApplication::setApplicationName(QStringLiteral("Muffin-test"));
+  QCoreApplication::setOrganizationName(QStringLiteral("Mufpen"));
+  QCoreApplication::setApplicationName(QStringLiteral("Mufpen-test"));
   QSettings().remove(QStringLiteral("editor/showMermaidAsSource")); // start clean
   QSettings().remove(QStringLiteral("markdown/diagrams"));
 

@@ -1,4 +1,4 @@
-// Requirement geometry parity oracle: compares Muffin's native
+// Requirement geometry parity oracle: compares Mufpen's native
 // requirement::RequirementScene against real mermaid 11.16.0 requirementDiagram
 // geometry captured by scripts/generate_mermaid_requirement_geometry_fixture.mjs
 // (headless Chrome via the sibling mermaid-cli checkout, htmlLabels:false for
@@ -33,7 +33,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -58,7 +58,7 @@ void require(bool condition, const QString& message) {
     fail(message);
 }
 
-// Normalize a marker field: Muffin's "" and mermaid's null both mean "no marker".
+// Normalize a marker field: Mufpen's "" and mermaid's null both mean "no marker".
 QString normMarker(const QJsonValue& v) {
   const QString s = v.toString();
   return (s.isEmpty() || s == QLatin1String("none")) ? QString() : s;
@@ -131,7 +131,7 @@ int main(int argc, char** argv) {
     if (actualTuples != expectedTuples) {
       assertErrors << id + QStringLiteral(": edge-tuple multiset diverged");
       assertErrors << QStringLiteral("  mermaid: %1").arg(expectedTuples.join(QStringLiteral(", ")));
-      assertErrors << QStringLiteral("  muffin : %1").arg(actualTuples.join(QStringLiteral(", ")));
+      assertErrors << QStringLiteral("  mufpen : %1").arg(actualTuples.join(QStringLiteral(", ")));
     }
 
     // Per-node body-row count + divider + type (font-independent, exact) +
@@ -154,17 +154,17 @@ int main(int argc, char** argv) {
       const int actualRows = static_cast<int>(node.value(QStringLiteral("bodyRows")).toDouble());
       const int expectedRows = static_cast<int>(exp.value(QStringLiteral("bodyRows")).toDouble());
       if (actualRows != expectedRows)
-        assertErrors << prefix + QStringLiteral("/bodyRows: muffin=%1 mermaid=%2").arg(actualRows).arg(expectedRows);
+        assertErrors << prefix + QStringLiteral("/bodyRows: mufpen=%1 mermaid=%2").arg(actualRows).arg(expectedRows);
       // Divider presence (exact).
       const int actualDiv = static_cast<int>(node.value(QStringLiteral("dividers")).toDouble());
       const int expectedDiv = static_cast<int>(exp.value(QStringLiteral("dividers")).toDouble());
       if (actualDiv != expectedDiv)
-        assertErrors << prefix + QStringLiteral("/dividers: muffin=%1 mermaid=%2").arg(actualDiv).arg(expectedDiv);
+        assertErrors << prefix + QStringLiteral("/dividers: mufpen=%1 mermaid=%2").arg(actualDiv).arg(expectedDiv);
       // Node type string (exact).
       const QString actualType = node.value(QStringLiteral("type")).toString();
       const QString expectedType = exp.value(QStringLiteral("type")).toString();
       if (actualType != expectedType)
-        assertErrors << prefix + QStringLiteral("/type: muffin='%1' mermaid='%2'").arg(actualType, expectedType);
+        assertErrors << prefix + QStringLiteral("/type: mufpen='%1' mermaid='%2'").arg(actualType, expectedType);
       // Height (font-coupled — asserted within tolerance).
       assertErrors +=
           parity::compareNumber(node.value(QStringLiteral("height")).toDouble(),

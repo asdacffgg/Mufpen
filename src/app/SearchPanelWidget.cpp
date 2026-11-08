@@ -77,7 +77,7 @@ public:
 };
 }
 
-muffin::SearchPanelWidget::SearchPanelWidget(QWidget* parent) : QWidget(parent) {
+mufpen::SearchPanelWidget::SearchPanelWidget(QWidget* parent) : QWidget(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(10, 12, 10, 8);
   query_ = new QLineEdit(this);
@@ -157,12 +157,12 @@ muffin::SearchPanelWidget::SearchPanelWidget(QWidget* parent) : QWidget(parent) 
           [this](QTreeWidgetItem* item) { emit results_->itemClicked(item, 0); });
   retranslateUi();
 }
-muffin::SearchPanelWidget::~SearchPanelWidget() {
+mufpen::SearchPanelWidget::~SearchPanelWidget() {
   saveState();
   if (cancel_)
     cancel_->store(true);
 }
-void muffin::SearchPanelWidget::saveState() const {
+void mufpen::SearchPanelWidget::saveState() const {
   if (root_.isEmpty())
     return;
   const QString key = QString::fromLatin1(
@@ -175,7 +175,7 @@ void muffin::SearchPanelWidget::saveState() const {
   settings.setValue("regex", regex_->isChecked());
   // Search/replacement text and old result snapshots are intentionally transient.
 }
-void muffin::SearchPanelWidget::cancelSearch() {
+void mufpen::SearchPanelWidget::cancelSearch() {
   if (cancel_)
     cancel_->store(true);
   running_ = false;
@@ -184,11 +184,11 @@ void muffin::SearchPanelWidget::cancelSearch() {
   preview_->setEnabled(false);
   updateSummary();
 }
-void muffin::SearchPanelWidget::invalidate() {
+void mufpen::SearchPanelWidget::invalidate() {
   timer_->stop();
   cancelSearch();
 }
-void muffin::SearchPanelWidget::scheduleSearch() {
+void mufpen::SearchPanelWidget::scheduleSearch() {
   cancelSearch();
   results_->clear();
   result_ = {};
@@ -196,7 +196,7 @@ void muffin::SearchPanelWidget::scheduleSearch() {
   if (!root_.isEmpty() && !query_->text().isEmpty())
     timer_->start();
 }
-void muffin::SearchPanelWidget::setRoot(const QString& root) {
+void mufpen::SearchPanelWidget::setRoot(const QString& root) {
   if (root_ == root)
     return;
   saveState();
@@ -213,23 +213,23 @@ void muffin::SearchPanelWidget::setRoot(const QString& root) {
   case_->setChecked(settings.value("case", false).toBool());
   regex_->setChecked(settings.value("regex", false).toBool());
 }
-void muffin::SearchPanelWidget::setDefaultRoot(const QString& root) {
+void mufpen::SearchPanelWidget::setDefaultRoot(const QString& root) {
   if (query_->text().isEmpty() && !running_)
     setRoot(root);
 }
-void muffin::SearchPanelWidget::activate(bool replace) {
+void mufpen::SearchPanelWidget::activate(bool replace) {
   replaceToggle_->setChecked(replace);
   query_->setFocus();
   query_->selectAll();
 }
-QWidget* muffin::SearchPanelWidget::focusWidget() const {
+QWidget* mufpen::SearchPanelWidget::focusWidget() const {
   return query_;
 }
-QString muffin::SearchPanelWidget::replacement() const {
+QString mufpen::SearchPanelWidget::replacement() const {
   return replacement_->text();
 }
 
-void muffin::SearchPanelWidget::startSearch(const OpenSearchBuffers& buffers) {
+void mufpen::SearchPanelWidget::startSearch(const OpenSearchBuffers& buffers) {
   timer_->stop();
   if (cancel_)
     cancel_->store(true);
@@ -298,7 +298,7 @@ void muffin::SearchPanelWidget::startSearch(const OpenSearchBuffers& buffers) {
     promise.addResult(result);
   }));
 }
-void muffin::SearchPanelWidget::addFile(const WorkspaceSearchFile& file) {
+void mufpen::SearchPanelWidget::addFile(const WorkspaceSearchFile& file) {
   const int fileIndex = result_.files.size();
   const QString parent = QDir(root_).relativeFilePath(QFileInfo(file.path).absolutePath());
   QString title = QFileInfo(file.path).fileName() + QStringLiteral(" (%1)").arg(file.hits.size()) +
@@ -319,7 +319,7 @@ void muffin::SearchPanelWidget::addFile(const WorkspaceSearchFile& file) {
   }
   group->setExpanded(true);
 }
-void muffin::SearchPanelWidget::updateSummary() {
+void mufpen::SearchPanelWidget::updateSummary() {
   QString text;
   if (root_.isEmpty())
     text = tr("Open a folder to search its contents.");
@@ -344,7 +344,7 @@ void muffin::SearchPanelWidget::updateSummary() {
     text += QStringLiteral(" · <a href=\"details\">%1</a>").arg(tr("Search details").toHtmlEscaped());
   summary_->setText(text);
 }
-void muffin::SearchPanelWidget::showDetails() {
+void mufpen::SearchPanelWidget::showDetails() {
   QDialog dialog(this);
   dialog.setObjectName("WorkspaceSearchDetails");
   dialog.setWindowTitle(tr("Search details"));
@@ -403,7 +403,7 @@ void muffin::SearchPanelWidget::showDetails() {
   layout->addWidget(buttons);
   dialog.exec();
 }
-void muffin::SearchPanelWidget::retranslateUi() {
+void mufpen::SearchPanelWidget::retranslateUi() {
   query_->setToolTip(QDir::toNativeSeparators(root_));
   query_->setPlaceholderText(tr("Search contents…"));
   query_->setAccessibleName(tr("Search contents"));
@@ -425,7 +425,7 @@ void muffin::SearchPanelWidget::retranslateUi() {
   cancelButton_->setEnabled(running_);
   updateSummary();
 }
-void muffin::SearchPanelWidget::setThemeDefinition(const ThemeDefinition& definition) {
+void mufpen::SearchPanelWidget::setThemeDefinition(const ThemeDefinition& definition) {
   const auto& colors = definition.colors;
   auto palette = results_->palette();
   palette.setColor(QPalette::Text, colors.chromeText);
@@ -435,7 +435,7 @@ void muffin::SearchPanelWidget::setThemeDefinition(const ThemeDefinition& defini
   palette.setColor(QPalette::BrightText, colors.accent.lightnessF() < 0.5 ? Qt::white : Qt::black);
   results_->setPalette(palette);
 }
-void muffin::SearchPanelWidget::changeEvent(QEvent* event) {
+void mufpen::SearchPanelWidget::changeEvent(QEvent* event) {
   if (event->type() == QEvent::LanguageChange)
     retranslateUi();
   QWidget::changeEvent(event);

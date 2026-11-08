@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 static void require(bool condition, const char* message) {
   if (!condition) {
     std::cerr << message << '\n';

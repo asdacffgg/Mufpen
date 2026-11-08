@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {browserLayoutFont, loadBrowserLayoutFont} from './browser_layout_font.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const moduleName = process.env.MUFFIN_PLAYWRIGHT_MODULE;
+const moduleName = process.env.MUFPEN_PLAYWRIGHT_MODULE;
 const {chromium} = await import(moduleName ? pathToFileURL(path.resolve(moduleName)).href : 'playwright');
 const browser = await chromium.launch({headless:true,
   ...(process.env.CHROME_EXECUTABLE ? {executablePath:process.env.CHROME_EXECUTABLE} : {})});

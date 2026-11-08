@@ -31,15 +31,15 @@ void fileRequestsCrossProcesses() {
   const QStringList paths{directory.filePath(QString::fromUtf8("中文 path/hello world.md")),
                           directory.filePath(QStringLiteral("a # & quoted\" name.md"))};
   {
-    muffin::ApplicationInstance primary(identity);
+    mufpen::ApplicationInstance primary(identity);
     require(primary.listen(), "first process owns the listener");
     require(primary.listen(), "starting a listener twice is harmless");
-    muffin::ApplicationInstance contender(identity);
+    mufpen::ApplicationInstance contender(identity);
     require(!contender.listen(), "another instance cannot replace a live listener");
-    muffin::ApplicationInstance independent(identity + QStringLiteral("other-profile"));
+    mufpen::ApplicationInstance independent(identity + QStringLiteral("other-profile"));
     require(independent.listen(), "different profiles do not share a listener");
     QList<QStringList> requests;
-    QObject::connect(&primary, &muffin::ApplicationInstance::filesRequested, &primary,
+    QObject::connect(&primary, &mufpen::ApplicationInstance::filesRequested, &primary,
                      [&](const QStringList& received) { requests.append(received); });
     std::vector<std::unique_ptr<QProcess>> launchers;
     for (int i = 0; i < 3; ++i) {
@@ -57,7 +57,7 @@ void fileRequestsCrossProcesses() {
     require(!contender.forwardFiles({QStringLiteral("relative.md")}), "relative IPC paths are rejected");
     require(!contender.forwardFiles({}), "empty launches are not forwarded");
   }
-  muffin::ApplicationInstance replacement(identity);
+  mufpen::ApplicationInstance replacement(identity);
   require(replacement.listen(), "closing the primary releases the identity for a later launch");
 }
 
@@ -77,7 +77,7 @@ void crashedListenerCanBeReplaced() {
   require(QFile::exists(ready), "crash fixture has acquired the listener");
   process.kill();
   require(process.waitForFinished(), "crashed fixture exits");
-  muffin::ApplicationInstance replacement(identity);
+  mufpen::ApplicationInstance replacement(identity);
   require(replacement.listen(), "stale process lock and socket are recovered after a crash");
 }
 } // namespace
@@ -86,11 +86,11 @@ int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
   const auto arguments = app.arguments();
   if (arguments.value(1) == QStringLiteral("--send")) {
-    muffin::ApplicationInstance instance(arguments.value(2));
+    mufpen::ApplicationInstance instance(arguments.value(2));
     return instance.forwardFiles(arguments.mid(3)) ? 0 : 1;
   }
   if (arguments.value(1) == QStringLiteral("--serve")) {
-    muffin::ApplicationInstance instance(arguments.value(2));
+    mufpen::ApplicationInstance instance(arguments.value(2));
     if (!instance.listen())
       return 1;
     QFile ready(arguments.value(3));

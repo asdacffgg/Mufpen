@@ -16,7 +16,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 struct TableCellSourceRange {
@@ -871,4 +871,4 @@ MarkdownNode* TableController::tableByIndex(int targetIndex) const {
   return visit(visit, ctx_.session->document().root());
 }
 
-} // namespace muffin
+} // namespace mufpen

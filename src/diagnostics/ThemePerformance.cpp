@@ -1,6 +1,6 @@
 #include "diagnostics/ThemePerformance.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
 thread_local bool enabled = false;
 thread_local ThemePerfSamples samples;
@@ -51,4 +51,4 @@ ThemePerfScope::~ThemePerfScope() {
     parent_->childNs_ += elapsed;
   current = parent_;
 }
-} // namespace muffin
+} // namespace mufpen

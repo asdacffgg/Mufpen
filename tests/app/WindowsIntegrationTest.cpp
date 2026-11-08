@@ -12,7 +12,7 @@
 #include <QTemporaryDir>
 #include <QFile>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -21,7 +21,7 @@ namespace {
 class UserRegistrySandbox {
 public:
   UserRegistrySandbox() {
-    path_ = L"Software\\MuffinIntegrationTest\\" + QUuid::createUuid().toString(QUuid::WithoutBraces).toStdWString();
+    path_ = L"Software\\MufpenIntegrationTest\\" + QUuid::createUuid().toString(QUuid::WithoutBraces).toStdWString();
     require(RegOpenKeyExW(HKEY_CURRENT_USER, L"", 0, KEY_ALL_ACCESS, &original_) == ERROR_SUCCESS,
             "open original user hive");
     require(RegCreateKeyExW(original_, path_.c_str(), 0, nullptr, 0, KEY_ALL_ACCESS, nullptr, &sandbox_, nullptr) ==
@@ -56,7 +56,7 @@ void testChoicesMatchAppliedIntegration() {
       for (const auto& entry :
            {qMakePair(QStringLiteral("contextMenu"), context), qMakePair(QStringLiteral("openWith"), openWith)}) {
         HKEY key = nullptr;
-        require(RegOpenKeyExW(HKEY_CURRENT_USER, L"Software\\Muffin\\Muffin\\integration", 0, KEY_READ, &key) ==
+        require(RegOpenKeyExW(HKEY_CURRENT_USER, L"Software\\Mufpen\\Mufpen\\integration", 0, KEY_READ, &key) ==
                     ERROR_SUCCESS,
                 "installer and app share the same settings key");
         DWORD type = 0, value = 9, size = sizeof(value);
@@ -102,9 +102,9 @@ QString nativeString(UINT id, WORD language) {
 
 void testLocalizedLabelsKeepChoicesAndCommands() {
   const std::wstring classes = L"SOFTWARE\\Classes\\";
-  const std::wstring fileVerb = classes + L".md\\shell\\Muffin";
-  const std::wstring openVerb = classes + L"Muffin.md\\shell\\open";
-  const std::wstring progId = classes + L"Muffin.md";
+  const std::wstring fileVerb = classes + L".md\\shell\\Mufpen";
+  const std::wstring openVerb = classes + L"Mufpen.md\\shell\\open";
+  const std::wstring progId = classes + L"Mufpen.md";
   WindowsIntegration::applyIntegration(false, false);
   QSettings settings;
   const auto savedChoices = settings.allKeys();
@@ -124,28 +124,28 @@ void testLocalizedLabelsKeepChoicesAndCommands() {
   for (const auto& [code, language] : languages) {
     QTranslator translator;
     if (code != "en") {
-      require(translator.load(":/i18n/muffin_" + code + ".qm"), "load application catalog for shell labels");
+      require(translator.load(":/i18n/mufpen_" + code + ".qm"), "load application catalog for shell labels");
       QCoreApplication::installTranslator(&translator);
     }
     WindowsIntegration::refreshLocalizedLabels();
     const auto label = [](const char* source) {
-      return QCoreApplication::translate("muffin::WindowsIntegration", source);
+      return QCoreApplication::translate("mufpen::WindowsIntegration", source);
     };
-    const auto context = label("Open with Muffin");
+    const auto context = label("Open with Mufpen");
     for (const auto& extension : WindowsIntegration::markdownExtensions()) {
-      const auto path = classes + extension.toStdWString() + L"\\shell\\Muffin";
+      const auto path = classes + extension.toStdWString() + L"\\shell\\Mufpen";
       require(registryText(path) == context && registryText(path, L"MUIVerb") == context,
               "all file verbs follow the selected app language");
     }
-    for (const auto* suffix : {L"Directory\\shell\\Muffin", L"Directory\\Background\\shell\\Muffin"})
+    for (const auto* suffix : {L"Directory\\shell\\Mufpen", L"Directory\\Background\\shell\\Mufpen"})
       require(registryText(classes + suffix, L"MUIVerb") == context, "folder verbs follow the selected app language");
-    require(registryText(progId) == label("Muffin Markdown Document") &&
-                registryText(progId, L"FriendlyTypeName") == label("Muffin Markdown Document") &&
+    require(registryText(progId) == label("Mufpen Markdown Document") &&
+                registryText(progId, L"FriendlyTypeName") == label("Mufpen Markdown Document") &&
                 registryText(openVerb, L"MUIVerb") == label("Open"),
             "document type and open verb are localized");
-    require(nativeString(MUFFIN_IDS_OPEN_WITH, language) == context &&
-                nativeString(MUFFIN_IDS_DOCUMENT_TYPE, language) == label("Muffin Markdown Document") &&
-                nativeString(MUFFIN_IDS_OPEN, language) == label("Open"),
+    require(nativeString(MUFPEN_IDS_OPEN_WITH, language) == context &&
+                nativeString(MUFPEN_IDS_DOCUMENT_TYPE, language) == label("Mufpen Markdown Document") &&
+                nativeString(MUFPEN_IDS_OPEN, language) == label("Open"),
             "installer resources reuse the app translations");
     require(registryText(fileVerb + L"\\command") == command && registryText(openVerb + L"\\command") == openCommand &&
                 registryText(progId + L"\\DefaultIcon") == icon && preferenceKeys == settings.allKeys(),
@@ -155,7 +155,7 @@ void testLocalizedLabelsKeepChoicesAndCommands() {
             "language changes preserve enabled preference values");
     QCoreApplication::removeTranslator(&translator);
   }
-  require(nativeString(MUFFIN_IDS_OPEN_WITH, 0) == QStringLiteral("Open with Muffin"),
+  require(nativeString(MUFPEN_IDS_OPEN_WITH, 0) == QStringLiteral("Open with Mufpen"),
           "unsupported OS languages fall back to English");
   WindowsIntegration::applyIntegration(false, true);
   WindowsIntegration::refreshLocalizedLabels();
@@ -169,24 +169,24 @@ void testLocalizedLabelsKeepChoicesAndCommands() {
 int main(int argc, char** argv) {
   UserRegistrySandbox sandbox;
   QCoreApplication app(argc, argv);
-  QCoreApplication::setOrganizationName("Muffin");
-  QCoreApplication::setApplicationName("Muffin");
+  QCoreApplication::setOrganizationName("Mufpen");
+  QCoreApplication::setApplicationName("Mufpen");
   runTest("testChoicesMatchAppliedIntegration", testChoicesMatchAppliedIntegration);
   runTest("testLocalizedLabelsKeepChoicesAndCommands", testLocalizedLabelsKeepChoicesAndCommands);
   // Portable mode must not alter an installed copy's Explorer registrations.
   WindowsIntegration::applyIntegration(true, true);
   QTemporaryDir portable;
   require(portable.isValid(), "portable integration fixture");
-  QFile marker(portable.filePath("Muffin.portable"));
+  QFile marker(portable.filePath("Mufpen.portable"));
   require(marker.open(QIODevice::WriteOnly), "portable marker");
   marker.close();
   QString error;
-  require(ApplicationPaths::initialize(portable.filePath("Muffin.exe"), &error), error);
+  require(ApplicationPaths::initialize(portable.filePath("Mufpen.exe"), &error), error);
   WindowsIntegration::applyIntegration(false, false);
   WindowsIntegration::applyIntegration(true, true);
   WindowsIntegration::refreshLocalizedLabels();
   HKEY registration = nullptr;
-  require(RegOpenKeyExW(HKEY_CURRENT_USER, L"Software\\Classes\\Muffin.md", 0, KEY_READ, &registration) ==
+  require(RegOpenKeyExW(HKEY_CURRENT_USER, L"Software\\Classes\\Mufpen.md", 0, KEY_READ, &registration) ==
               ERROR_SUCCESS,
           "portable operations preserve installed registrations");
   RegCloseKey(registration);

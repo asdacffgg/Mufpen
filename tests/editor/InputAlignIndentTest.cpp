@@ -11,7 +11,7 @@
 #include <QClipboard>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // editor/alignIndent (default off) makes a split list item's new marker line up under the parent
 // item's *content* column instead of the flat historical indent. Off must be byte-identical to the
@@ -69,9 +69,9 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  // Throwaway org/app + INI format so the test's QSettings never touches the real Muffin store
+  // Throwaway org/app + INI format so the test's QSettings never touches the real Mufpen store
   // and round-trips reliably within the process. Mirrors SpellCheckerTest.
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("InputAlignIndentTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

@@ -10,11 +10,11 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 
 // Theme-resolution warnings (e.g. a colour value that failed every parse strategy and would
 // otherwise silently render default/black). Default-off (QtCriticalMsg threshold): enable on
-// demand with QT_LOGGING_RULES="muffin.theme.warn=true" when chasing a black/missing render.
+// demand with QT_LOGGING_RULES="mufpen.theme.warn=true" when chasing a black/missing render.
 // Defined in CssValueParser.cpp.
 Q_DECLARE_LOGGING_CATEGORY(themeWarn)
 
@@ -104,4 +104,4 @@ qreal shadowBlurPx(const QString& shadowRaw, const QHash<QString, QString>& vars
 GradientSpec parseGradientSpec(const QString& raw, const QHash<QString, QString>& vars,
                                const CssLengthContext& context = {});
 
-} // namespace muffin
+} // namespace mufpen

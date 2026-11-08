@@ -14,7 +14,7 @@
 #include <iostream>
 #include <cmath>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 int failures = 0;
 void require(bool condition, const QString& label) {
@@ -36,7 +36,7 @@ void collect(const html::HtmlBox& box, QPointF parent, QHash<QString, QRectF>& r
     collect(*child, origin, rects);
 }
 void browserFixtures() {
-  QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/flex-layout-browser.json"));
+  QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/flex-layout-browser.json"));
   require(file.open(QIODevice::ReadOnly), "open Flex browser fixture");
   const auto reference = QJsonDocument::fromJson(file.readAll()).object();
   const auto aliases = browserLayoutFont(reference);

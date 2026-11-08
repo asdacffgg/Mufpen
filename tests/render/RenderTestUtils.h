@@ -79,45 +79,45 @@ inline QString katexGlyphsPathForFixture(const QString& fixturePath,
 
 // ---- AST navigation ----
 
-inline const muffin::MarkdownNode* findFirstBlock(const muffin::MarkdownNode& node, muffin::BlockType type) {
+inline const mufpen::MarkdownNode* findFirstBlock(const mufpen::MarkdownNode& node, mufpen::BlockType type) {
   if (node.type() == type) {
     return &node;
   }
   for (const auto& child : node.children()) {
-    if (const muffin::MarkdownNode* found = findFirstBlock(*child, type)) {
+    if (const mufpen::MarkdownNode* found = findFirstBlock(*child, type)) {
       return found;
     }
   }
   return nullptr;
 }
 
-inline const muffin::MarkdownNode* findBlockWithLiteral(const muffin::MarkdownNode& node, muffin::BlockType type,
+inline const mufpen::MarkdownNode* findBlockWithLiteral(const mufpen::MarkdownNode& node, mufpen::BlockType type,
                                                         const QString& literalPart) {
   if (node.type() == type && node.literal().contains(literalPart)) {
     return &node;
   }
   for (const auto& child : node.children()) {
-    if (const muffin::MarkdownNode* found = findBlockWithLiteral(*child, type, literalPart)) {
+    if (const mufpen::MarkdownNode* found = findBlockWithLiteral(*child, type, literalPart)) {
       return found;
     }
   }
   return nullptr;
 }
 
-inline const muffin::MarkdownNode* findFirstTableCell(const muffin::MarkdownNode& node) {
-  if (node.type() == muffin::BlockType::TableCell) {
+inline const mufpen::MarkdownNode* findFirstTableCell(const mufpen::MarkdownNode& node) {
+  if (node.type() == mufpen::BlockType::TableCell) {
     return &node;
   }
   for (const auto& child : node.children()) {
-    if (const muffin::MarkdownNode* found = findFirstTableCell(*child)) {
+    if (const mufpen::MarkdownNode* found = findFirstTableCell(*child)) {
       return found;
     }
   }
   return nullptr;
 }
 
-inline const muffin::MarkdownNode* findListItemWithText(const muffin::MarkdownNode& node, const QString& text) {
-  if (node.type() == muffin::BlockType::ListItem) {
+inline const mufpen::MarkdownNode* findListItemWithText(const mufpen::MarkdownNode& node, const QString& text) {
+  if (node.type() == mufpen::BlockType::ListItem) {
     if (node.literal().contains(text)) {
       return &node;
     }
@@ -128,15 +128,15 @@ inline const muffin::MarkdownNode* findListItemWithText(const muffin::MarkdownNo
     }
   }
   for (const auto& child : node.children()) {
-    if (const muffin::MarkdownNode* found = findListItemWithText(*child, text)) {
+    if (const mufpen::MarkdownNode* found = findListItemWithText(*child, text)) {
       return found;
     }
   }
   return nullptr;
 }
 
-inline void collectListItems(const muffin::MarkdownNode& node, QVector<const muffin::MarkdownNode*>& items) {
-  if (node.type() == muffin::BlockType::ListItem) {
+inline void collectListItems(const mufpen::MarkdownNode& node, QVector<const mufpen::MarkdownNode*>& items) {
+  if (node.type() == mufpen::BlockType::ListItem) {
     items.push_back(&node);
   }
   for (const auto& child : node.children()) {
@@ -240,7 +240,7 @@ inline bool findRenderTreeClass(const QJsonObject& node, const QString& classNam
 
 // ---- document manipulation ----
 
-inline muffin::MarkdownNode* mutableBlockAt(muffin::MarkdownDocument& document, qsizetype index) {
+inline mufpen::MarkdownNode* mutableBlockAt(mufpen::MarkdownDocument& document, qsizetype index) {
   auto& children = document.root().children();
   require(index >= 0 && index < static_cast<qsizetype>(children.size()),
           QStringLiteral("mutable block index out of range"));
@@ -255,7 +255,7 @@ inline void requireUsableRect(const QRectF& rect, const QString& label) {
 
 // ---- text layout helpers ----
 
-inline void requireTextLayoutCursorRoundTrip(const muffin::InlineLayout& layout, qsizetype offset,
+inline void requireTextLayoutCursorRoundTrip(const mufpen::InlineLayout& layout, qsizetype offset,
                                              const QString& label) {
   const QRectF cursor = layout.cursorRect(offset);
   require(!cursor.isEmpty(), label + QStringLiteral(" cursor rect should exist"));
@@ -263,7 +263,7 @@ inline void requireTextLayoutCursorRoundTrip(const muffin::InlineLayout& layout,
           label + QStringLiteral(" cursor-left hit-test should round-trip"));
 }
 
-inline void requireTextLayoutCharacterBias(const muffin::InlineLayout& layout, qsizetype offset, const QString& label) {
+inline void requireTextLayoutCharacterBias(const mufpen::InlineLayout& layout, qsizetype offset, const QString& label) {
   const QRectF leftCursor = layout.cursorRect(offset);
   const QRectF rightCursor = layout.cursorRect(offset + 1);
   require(!leftCursor.isEmpty() && !rightCursor.isEmpty(), label + QStringLiteral(" bias cursor rects should exist"));
@@ -293,8 +293,8 @@ inline void requireValidSelectionRects(const QVector<QRectF>& rects, const QStri
 
 // ---- table cell, pixel, HTML helpers ----
 
-inline bool hasRole(const QVector<muffin::CodeHighlightSpan>& spans, muffin::CodeHighlightRole role) {
-  for (const muffin::CodeHighlightSpan& span : spans) {
+inline bool hasRole(const QVector<mufpen::CodeHighlightSpan>& spans, mufpen::CodeHighlightRole role) {
+  for (const mufpen::CodeHighlightSpan& span : spans) {
     if (span.role == role) {
       return true;
     }
@@ -302,10 +302,10 @@ inline bool hasRole(const QVector<muffin::CodeHighlightSpan>& spans, muffin::Cod
   return false;
 }
 
-inline const muffin::BlockLayout::TableCellLayout* findTableCellLayout(const muffin::BlockLayout& tableLayout,
-                                                                       muffin::NodeId cellId) {
-  for (const muffin::BlockLayout::TableRowLayout& row : tableLayout.tableRows()) {
-    for (const muffin::BlockLayout::TableCellLayout& cell : row.cells) {
+inline const mufpen::BlockLayout::TableCellLayout* findTableCellLayout(const mufpen::BlockLayout& tableLayout,
+                                                                       mufpen::NodeId cellId) {
+  for (const mufpen::BlockLayout::TableRowLayout& row : tableLayout.tableRows()) {
+    for (const mufpen::BlockLayout::TableCellLayout& cell : row.cells) {
       if (cell.nodeId == cellId) {
         return &cell;
       }

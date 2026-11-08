@@ -8,7 +8,7 @@
 
 #include <utility>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

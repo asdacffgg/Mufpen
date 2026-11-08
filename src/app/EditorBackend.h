@@ -4,7 +4,7 @@
 
 class QTextDocument;
 
-namespace muffin {
+namespace mufpen {
 
 // Unified delete API. `Forward` preserves the legacy "delete selection or one
 // char forward" semantics used by the standalone Delete menu item; the other
@@ -89,4 +89,4 @@ public:
   virtual QString cursorStatusText() const = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

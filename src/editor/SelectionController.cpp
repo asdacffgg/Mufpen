@@ -2,7 +2,7 @@
 
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 SelectionController::SelectionController(QObject* parent) : QObject(parent) {
 }
@@ -76,4 +76,4 @@ void SelectionController::clear() {
   emit selectionChanged(selection_, currentHit_);
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -16,7 +16,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 // Shared by live document nodes and immutable theme prototypes. Separate
 // allocators could alias computed style identities when an engine is reused.
@@ -381,4 +381,4 @@ private:
 // do not run selectors again. Important declarations are invalid in keyframes.
 CssComputedStyle cssKeyframeStyle(CssComputedStyle base, const std::vector<CssDeclaration>& declarations);
 
-} // namespace muffin
+} // namespace mufpen

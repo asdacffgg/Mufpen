@@ -7,11 +7,11 @@
 
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
-Q_LOGGING_CATEGORY(lineOffsetPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(lineOffsetPerf, "mufpen.perf", QtWarningMsg)
 
 thread_local qint64 g_byteColNs = 0;
 thread_local bool g_byteColPerf = false;
@@ -280,4 +280,4 @@ qreal LineStartOffsetCache::byteColPerfMs() {
   return g_byteColNs / 1000000.0;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -3,9 +3,9 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 
-// Windows shell integration: Explorer context-menu verbs ("Open with Muffin"
+// Windows shell integration: Explorer context-menu verbs ("Open with Mufpen"
 // for files and folders) and file-association registration.
 //
 // Design notes
@@ -20,7 +20,7 @@ namespace muffin {
 //
 // "Default handler" caveat: Windows 8+ guards the UserChoice registry value
 // with a hash, so no application can silently become the *default* for an
-// extension. We therefore only register Muffin as an "Open with" candidate;
+// extension. We therefore only register Mufpen as an "Open with" candidate;
 // openDefaultAppsSettings() launches the system Default Apps page so the user
 // can choose the default explicitly. Registering an "Open with" candidate
 // never triggers a startup prompt or changes the user's default application.
@@ -29,15 +29,15 @@ namespace muffin {
 // preferences page, main()) compile unchanged.
 class WindowsIntegration {
 public:
-  // Extensions registered as Muffin "Open with" candidates: .md, .markdown,
+  // Extensions registered as Mufpen "Open with" candidates: .md, .markdown,
   // .mdx, .mkd, .mdown.
   static const QStringList& markdownExtensions();
 
   // Apply the persistent integration set to match the given desired state:
-  //   contextMenu — Explorer "Open with Muffin" verbs for files and folders.
-  //   associate   — register the Muffin.md ProgID + OpenWithProgids for each
-  //                 extension (Muffin then appears in the "Open with" menu).
-  // Keys that are turned off are removed; only Muffin-authored values are
+  //   contextMenu — Explorer "Open with Mufpen" verbs for files and folders.
+  //   associate   — register the Mufpen.md ProgID + OpenWithProgids for each
+  //                 extension (Mufpen then appears in the "Open with" menu).
+  // Keys that are turned off are removed; only Mufpen-authored values are
   // touched. Explorer is notified to refresh associations immediately.
   static void applyIntegration(bool contextMenu, bool associate);
 
@@ -46,15 +46,15 @@ public:
   static void refreshLocalizedLabels();
 
   // Query the current state from the registry (true if the corresponding
-  // Muffin keys exist). Used to initialize the preferences UI from the single
+  // Mufpen keys exist). Used to initialize the preferences UI from the single
   // source of truth rather than a separate preference mirror.
   static bool isContextMenuEnabled();
   static bool isAssociationEnabled();
 
   // Open the Windows "Default apps" settings page (ms-settings:defaultapps).
-  // This is the only supported way on Windows 8+ to let the user make Muffin
+  // This is the only supported way on Windows 8+ to let the user make Mufpen
   // the default editor for an extension.
   static void openDefaultAppsSettings();
 };
 
-} // namespace muffin
+} // namespace mufpen

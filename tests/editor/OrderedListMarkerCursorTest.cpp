@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 // Build a single-line document holding `marker` (e.g. "34."), place the caret at its end,

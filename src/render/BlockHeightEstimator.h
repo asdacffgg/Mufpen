@@ -5,7 +5,7 @@
 #include "editor/CursorPosition.h"
 #include "theme/RenderTheme.h"
 
-namespace muffin {
+namespace mufpen {
 
 struct BlockHeightEstimate {
   qreal height = 0;
@@ -64,4 +64,4 @@ private:
   mutable QHash<QString, QHash<qreal, ParagraphEstimate>> paragraphEstimateCache_;
 };
 
-} // namespace muffin
+} // namespace mufpen

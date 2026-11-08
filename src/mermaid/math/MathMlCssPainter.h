@@ -7,7 +7,7 @@
 class QColor;
 class QPainter;
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathMlPaintLayer { All, Body, Accent };
 
@@ -65,4 +65,4 @@ MathMlPaintOperationBuildResult paintMathMlOperations(QPainter& painter, const M
                                                       const QColor& color, qreal renderFontPixelSize,
                                                       MathMlPaintLayer layer = MathMlPaintLayer::All);
 
-} // namespace muffin::math
+} // namespace mufpen::math

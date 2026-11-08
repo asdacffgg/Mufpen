@@ -19,7 +19,7 @@
 #include <algorithm>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 // classDiagram behind the Diagram contract. Body is the former renderSource()
@@ -167,4 +167,4 @@ const Diagram& classDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

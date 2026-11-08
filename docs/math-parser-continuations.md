@@ -28,7 +28,7 @@ definitions (`\edef`/`\xdef`) share the caller's expansion counter and reserve
 their expansion before scheduling a child. A rejected depth-guard constructor
 does not increment its counter.
 
-`MuffinMathParserStackTest` runs on all platforms in a thread with a 256 KB
+`MufpenMathParserStackTest` runs on all platforms in a thread with a 256 KB
 stack. It verifies deep continuation return/error/destructor propagation,
 the exact brace-nesting boundary, deeply nested grammar and raw-text paths,
 macro ordering and token flags, and the shared expanded-definition budget.

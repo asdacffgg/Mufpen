@@ -7,7 +7,7 @@
 
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class TextBlockCommandBuilder {
 public:
@@ -64,4 +64,4 @@ private:
   const BlockEditContextResolver* resolver_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

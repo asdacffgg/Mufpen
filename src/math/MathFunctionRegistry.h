@@ -6,7 +6,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathFunctionArgType { Color, Size, Url, Raw, Original, HBox, Primitive, Math, Text };
 
@@ -111,4 +111,4 @@ private:
   static const QHash<QString, MathFunctionSpec>& functions();
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

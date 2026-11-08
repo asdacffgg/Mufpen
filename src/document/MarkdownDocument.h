@@ -9,9 +9,9 @@
 
 #include <QObject>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_CORE_EXPORT MarkdownDocument : public QObject {
+class MUFPEN_CORE_EXPORT MarkdownDocument : public QObject {
   Q_OBJECT
 
 public:
@@ -87,4 +87,4 @@ private:
   bool modified_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

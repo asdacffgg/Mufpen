@@ -7,7 +7,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 enum class SequenceLabelKind { Participant, Message, Note, Fragment, Box };
 
@@ -32,4 +32,4 @@ void paintSequenceLabel(QPainter& painter, const SequenceLabelDocument& label, c
                         bool centerVertically = true,
                         flowchart::FlowLabelAlign align = flowchart::FlowLabelAlign::Center, qreal alignMargin = 0.0);
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

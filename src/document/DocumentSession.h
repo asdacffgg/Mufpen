@@ -20,7 +20,7 @@
 #include <atomic>
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 
 struct LocalEditNodeHint {
   NodeId nodeId;
@@ -28,7 +28,7 @@ struct LocalEditNodeHint {
   BlockType type = BlockType::Unknown;
 };
 
-class MUFFIN_CORE_EXPORT DocumentSession final : public QObject {
+class MUFPEN_CORE_EXPORT DocumentSession final : public QObject {
   Q_OBJECT
 
 public:
@@ -141,7 +141,7 @@ public:
 signals:
   // Emitted once for a successful text commit, before parsed/layout consumers.
   // Failed edits and superseded workers never publish a position mapping.
-  void sourceTextChanged(const muffin::SourceTextChange& change);
+  void sourceTextChanged(const mufpen::SourceTextChange& change);
   void documentAboutToBeReplaced();
   void documentTextChanged(QString text);
   void documentLocallyEdited(qsizetype start, qsizetype removedLength, QString insertedText);
@@ -216,4 +216,4 @@ private:
   qint64 lastNotifiedSize_ = -2;
 };
 
-} // namespace muffin
+} // namespace mufpen

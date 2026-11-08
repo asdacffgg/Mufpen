@@ -18,13 +18,13 @@ extern "C" {
 #include "cmark-gfm-extension_api.h"
 }
 
-extern "C" uint64_t muffin_cmark_clock_ns(void) {
+extern "C" uint64_t mufpen_cmark_clock_ns(void) {
   return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch())
       .count();
 }
 namespace {
 QJsonObject memory() {
-  QJsonObject result{{"working_set_bytes", muffin::diag::workingSetBytes()}};
+  QJsonObject result{{"working_set_bytes", mufpen::diag::workingSetBytes()}};
 #ifdef Q_OS_WIN
   PROCESS_MEMORY_COUNTERS_EX counters{};
   if (GetProcessMemoryInfo(GetCurrentProcess(), reinterpret_cast<PROCESS_MEMORY_COUNTERS*>(&counters),
@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
   const int mib = QString::fromLocal8Bit(argv[1]).toInt();
   const auto kind = QString::fromLocal8Bit(argv[2]), mode = QString::fromLocal8Bit(argv[3]);
   const bool enabled = QString::fromLocal8Bit(argv[4]) == "stages";
-#ifdef MUFFIN_CMARK_ARCHIVE_CONTROL
+#ifdef MUFPEN_CMARK_ARCHIVE_CONTROL
   if (enabled)
     return 2;
 #endif
@@ -129,10 +129,10 @@ int main(int argc, char** argv) {
       extensions.append(name);
     }
   const double setupMs = timer.nsecsElapsed() / 1e6;
-  muffin_cmark_profile profile{};
-#ifndef MUFFIN_CMARK_ARCHIVE_CONTROL
+  mufpen_cmark_profile profile{};
+#ifndef MUFPEN_CMARK_ARCHIVE_CONTROL
   if (enabled)
-    muffin_cmark_profile_begin(parser, &profile);
+    mufpen_cmark_profile_begin(parser, &profile);
 #endif
   timer.restart();
   cmark_parser_feed(parser, bytes.constData(), size_t(bytes.size()));
@@ -141,9 +141,9 @@ int main(int argc, char** argv) {
   auto* root = cmark_parser_finish(parser);
   const double finishMs = timer.nsecsElapsed() / 1e6;
   const auto parsedMemory = memory();
-#ifndef MUFFIN_CMARK_ARCHIVE_CONTROL
+#ifndef MUFPEN_CMARK_ARCHIVE_CONTROL
   if (enabled)
-    muffin_cmark_profile_end();
+    mufpen_cmark_profile_end();
 #endif
   check(root != nullptr, "missing tree");
   const auto tree = fingerprint(root);
@@ -165,7 +165,7 @@ int main(int argc, char** argv) {
                            {"utf8_bytes", bytes.size()},
                            {"tree", tree},
                            {"html_sha256", QString::fromLatin1(htmlHash)},
-#ifdef MUFFIN_CMARK_ARCHIVE_CONTROL
+#ifdef MUFPEN_CMARK_ARCHIVE_CONTROL
                            {"implementation", "ordinary_archive"},
 #else
                            {"implementation", "diagnostic_block_object"},

@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 struct ImageLoader::Usage {
   ImageLoader& loader;
   QString url;
@@ -20,7 +20,7 @@ struct ImageLoader::Usage {
 
 ImageLoader& ImageLoader::instance() {
   // Intentionally leaked, never destroyed. A destroyed-at-exit() static would
-  // run during MuffinUi.dll's DLL_PROCESS_DETACH in SHARED builds: tearing down
+  // run during MufpenUi.dll's DLL_PROCESS_DETACH in SHARED builds: tearing down
   // QNetworkAccessManager there waits on Qt's internal threads and touches
   // already-freed socket notifiers under the loader lock — a deterministic
   // exit-time access violation on Windows ARM64 (confirmed by WER dump:
@@ -264,4 +264,4 @@ void ImageLoader::request(const QString& url) {
   });
 }
 
-} // namespace muffin
+} // namespace mufpen

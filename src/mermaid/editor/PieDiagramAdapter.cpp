@@ -20,7 +20,7 @@
 #include <limits>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 qreal chromiumTextAdvance(const QString& text, const QString& family, qreal pixelSize, const QString& weight) {
@@ -303,4 +303,4 @@ const Diagram& pieDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

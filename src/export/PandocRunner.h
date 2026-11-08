@@ -7,7 +7,7 @@
 
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 // Outcome of a Pandoc invocation. `ran` distinguishes "the process executed and
 // returned" from "we never managed to start it" (e.g. Pandoc not installed) —
@@ -20,8 +20,8 @@ using PandocRunOptions = ProcessRunOptions;
 // Thin wrapper around a QProcess that drives the external Pandoc executable.
 // Resolves and probes Pandoc; execution is shared with custom export commands
 // through ProcessRunner. It is tr()-free — callers own all user-facing messages so
-// this translation unit stays out of MUFFIN_TRANSLATABLE_SOURCES and may use a
-// `namespace muffin { }` wrapper freely (see CLAUDE.md).
+// this translation unit stays out of MUFPEN_TRANSLATABLE_SOURCES and may use a
+// `namespace mufpen { }` wrapper freely (see CLAUDE.md).
 class PandocRunner {
 public:
   // export/pandocPath if it is set and points to an executable; otherwise the
@@ -66,4 +66,4 @@ public:
   static PandocResult run(QWidget* parent, const QStringList& args, const PandocRunOptions& options = {});
 };
 
-} // namespace muffin
+} // namespace mufpen

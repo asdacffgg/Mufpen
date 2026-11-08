@@ -58,7 +58,7 @@ def fibonacci(n: int) -> list[int]:
 ```""",
     """```json
 {
-  "editor": "Muffin",
+  "editor": "Mufpen",
   "features": ["heading", "table", "code", "task-list"],
   "largeDocument": true
 }
@@ -74,7 +74,7 @@ RAW_HTML = """<details>
 """
 
 FRONT_MATTER = """---
-title: Muffin 超长 Markdown 压力测试文档
+title: Mufpen 超长 Markdown 压力测试文档
 generated_by: scripts/generate_long_markdown.py
 purpose: 覆盖标题、段落、列表、表格、代码块、引用、任务列表、脚注、HTML、特殊字符与超长正文
 ---
@@ -171,9 +171,9 @@ def chapter_block(chapter: int) -> str:
 def build_document(chapters: int) -> str:
     parts = [
         FRONT_MATTER,
-        "# Muffin 超长 Markdown 压力测试文档",
+        "# Mufpen 超长 Markdown 压力测试文档",
         "",
-        "这份文档由脚本生成，包含大量仿中文古典小说段落和多种 Markdown 结构，用于测试 Muffin 编辑器在超长文档中的解析、渲染、滚动、编辑和保存表现。",
+        "这份文档由脚本生成，包含大量仿中文古典小说段落和多种 Markdown 结构，用于测试 Mufpen 编辑器在超长文档中的解析、渲染、滚动、编辑和保存表现。",
         "",
         "## 目录片段",
         "",
@@ -200,7 +200,7 @@ def build_document(chapters: int) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate a very large Markdown document for Muffin editor testing.")
+    parser = argparse.ArgumentParser(description="Generate a very large Markdown document for Mufpen editor testing.")
     parser.add_argument("--chapters", type=int, default=240, help="Number of generated chapters.")
     parser.add_argument("--output", type=Path, default=Path("docs/long_markdown_stress_test.md"), help="Output Markdown file.")
     args = parser.parse_args()

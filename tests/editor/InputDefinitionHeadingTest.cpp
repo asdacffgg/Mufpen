@@ -14,7 +14,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testDefinitionTitleEditDoesNotRestoreSingleQuotedSourceText (lines 1568-1594)
 void testDefinitionTitleEditDoesNotRestoreSingleQuotedSourceText() {

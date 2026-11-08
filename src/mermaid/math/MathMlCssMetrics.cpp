@@ -6,7 +6,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin::math::mathml {
+namespace mufpen::math::mathml {
 
 qreal snapEighth(qreal value) {
   return std::round(value * 8.0) / 8.0;
@@ -729,4 +729,4 @@ MathCssBox convertTree(const MathRenderNode& node, qreal scale) {
   return box;
 }
 
-} // namespace muffin::math::mathml
+} // namespace mufpen::math::mathml

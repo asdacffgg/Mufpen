@@ -39,7 +39,7 @@
                 flood-opacity="0.18"/>
         </filter>
 
-        <!-- Indigo to violet: distinct from Muffin's neutral card, still calm. -->
+        <!-- Indigo to violet: distinct from Mufpen's neutral card, still calm. -->
         <linearGradient id="cardFill" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#2b6cf6"/>
             <stop offset="0.55" stop-color="#4a55ee"/>

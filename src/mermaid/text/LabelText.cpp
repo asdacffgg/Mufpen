@@ -3,7 +3,7 @@
 
 #include <QRegularExpression>
 
-namespace muffin::mermaid::text {
+namespace mufpen::mermaid::text {
 
 QString collapsedSvgText(QString value, bool trimEdges) {
   static const QRegularExpression whitespace(QStringLiteral(R"([\x{0009}-\x{000D}\x{0020}]+)"));
@@ -35,4 +35,4 @@ QStringList cssFontFamilies(const QString& expression) {
   return MermaidFontRegistry::resolveFamilies(result);
 }
 
-} // namespace muffin::mermaid::text
+} // namespace mufpen::mermaid::text

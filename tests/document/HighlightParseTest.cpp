@@ -7,7 +7,7 @@
 
 #include <QCoreApplication>
 
-using namespace muffin;
+using namespace mufpen;
 
 // ==highlight== (Pandoc-style). cmark-gfm has no highlight extension, so `==text==` arrives as
 // literal Text and a post-parse pass (gated on enableHighlight) splits it into Highlight inlines.
@@ -121,7 +121,7 @@ void testHighlightSerializesRoundTrip() {
 }
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("HighlightParseTest"));
   QCoreApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

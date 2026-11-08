@@ -35,7 +35,7 @@
 
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 
 struct MermaidRenderKey {
   QByteArray sourceHash; // sha256 of the (preprocessed) mermaid source
@@ -82,7 +82,7 @@ struct MermaidSvgRenderResult {
   QJsonObject errorDiagnostic;
 };
 
-class MUFFIN_CORE_EXPORT MermaidRenderCache : public QObject {
+class MUFPEN_CORE_EXPORT MermaidRenderCache : public QObject {
   Q_OBJECT
 public:
   explicit MermaidRenderCache(QObject* parent = nullptr, int capacity = 64);
@@ -155,4 +155,4 @@ private:
   QString debouncedSource_;
 };
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

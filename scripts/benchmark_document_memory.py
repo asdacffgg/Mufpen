@@ -1,7 +1,7 @@
 """Reproducible fixtures and fresh-process Windows GUI memory comparison.
 
 python scripts/benchmark_document_memory.py --output build/document-memory-before
-Requires a Release MuffinDocumentTabsTest and Conan-generated CMake presets.
+Requires a Release MufpenDocumentTabsTest and Conan-generated CMake presets.
 """
 
 import argparse
@@ -38,7 +38,7 @@ def fixtures(root):
 def main():
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--exe", type=Path, default=Path("build/Release/MuffinDocumentTabsTest.exe"))
+    parser.add_argument("--exe", type=Path, default=Path("build/Release/MufpenDocumentTabsTest.exe"))
     parser.add_argument("--repeats", type=int, default=2)
     parser.add_argument("--kind", choices=("chinese", "dense", "code"), help="measure only one fixture category")
     args = parser.parse_args()
@@ -59,8 +59,8 @@ def main():
         for repeat in range(args.repeats):
             name = f"{fixture.stem}-{repeat + 1}"
             report = output / f"{name}.json"
-            env["MUFFIN_BENCH_FILE"] = str(fixture)
-            env["MUFFIN_MEMORY_BENCH_OUTPUT"] = str(report)
+            env["MUFPEN_BENCH_FILE"] = str(fixture)
+            env["MUFPEN_MEMORY_BENCH_OUTPUT"] = str(report)
             with (output / f"{name}.log").open("wb") as log:
                 subprocess.run([str(args.exe.resolve()), "--document-memory"], env=env,
                                stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True)

@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <utility>
 
-namespace muffin::mermaid::wardley {
+namespace mufpen::mermaid::wardley {
 namespace {
 
 bool horizontal(QChar c) {
@@ -687,4 +687,4 @@ WardleyData WardleyDiagram::parse(const QString& source) {
   return Parser(source).run();
 }
 
-} // namespace muffin::mermaid::wardley
+} // namespace mufpen::mermaid::wardley

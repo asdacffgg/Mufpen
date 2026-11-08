@@ -16,7 +16,7 @@
 class QTextBrowser;
 class QToolButton;
 
-namespace muffin {
+namespace mufpen {
 
 enum class HelpTopic {
   QuickStart,
@@ -60,4 +60,4 @@ private:
   HelpTopic currentTopic_ = HelpTopic::QuickStart;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -8,7 +8,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::color {
+namespace mufpen::mermaid::color {
 namespace {
 
 // khroma Lang.round = Math.round(x*1e10)/1e10. JS Math.round rounds half toward
@@ -759,4 +759,4 @@ SvgPaint resolveSvgPaint(const QString& value, SvgPaintKind kind, const QColor& 
   return strokeInitial ? SvgPaint{true, {}} : SvgPaint{false, inherited};
 }
 
-} // namespace muffin::mermaid::color
+} // namespace mufpen::mermaid::color

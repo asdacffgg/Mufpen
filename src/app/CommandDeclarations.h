@@ -1,6 +1,6 @@
 #pragma once
 
-// Single source of truth for Muffin's commands and menu layout.
+// Single source of truth for Mufpen's commands and menu layout.
 //
 // Each CommandDeclaration bundles everything about one command: its id, the
 // translatable label and shortcut shown in menus, whether it is checkable / part
@@ -25,7 +25,7 @@
 #include <functional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 class MainWindow;
 
@@ -50,7 +50,7 @@ struct CommandDeclaration {
   CommandCategory category = CommandCategory::Other;
   // Used by menu state and dispatch alike, including user-assigned shortcuts.
   bool requiresEditableDocument = false;
-  QString text; // label, authored as muffin::MainWindow::tr(...)
+  QString text; // label, authored as mufpen::MainWindow::tr(...)
   QKeySequence shortcut;
   // Compatibility keys belong to the same command and are removed with its override.
   QList<QKeySequence> alternateShortcuts;
@@ -139,4 +139,4 @@ struct MenuSpec {
 // items in the order they appear, with explicit separators.
 const std::vector<MenuSpec>& mainMenuSpec();
 
-} // namespace muffin
+} // namespace mufpen

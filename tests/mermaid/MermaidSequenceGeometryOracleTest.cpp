@@ -1,4 +1,4 @@
-// Sequence geometry oracle: compares Muffin's native sequence::SequenceScene
+// Sequence geometry oracle: compares Mufpen's native sequence::SequenceScene
 // against real mermaid 11.16.0 sequenceDiagram structure captured by
 // scripts/generate_mermaid_sequence_geometry_fixture.mjs (headless Chrome).
 //
@@ -11,7 +11,7 @@
 //   - participant count + participant id multiset
 //   - message count
 //   - the ORDERED list of message tuples (from, to, dashed, markerEnd). Order
-//     matters for sequence (it IS the conversation flow). This proves Muffin
+//     matters for sequence (it IS the conversation flow). This proves Mufpen
 //     reproduces mermaid's exact message sequence: who signals whom, in what
 //     order, solid vs dashed, and arrow kind (arrowhead/crosshead/none for
 //     ->>/-->>, --x/-x, ->).
@@ -38,7 +38,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -52,7 +52,7 @@ void require(bool condition, const QString& message) {
     fail(message);
 }
 
-// Normalize a marker field: Muffin omits markerEnd when none; mermaid emits null.
+// Normalize a marker field: Mufpen omits markerEnd when none; mermaid emits null.
 QString normMarker(const QJsonValue& v) {
   const QString s = v.toString();
   return s;
@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
     if (actualParts != expectedParts) {
       assertErrors << id + QStringLiteral(": participant multiset diverged");
       assertErrors << QStringLiteral("  mermaid: %1").arg(expectedParts.join(QStringLiteral(", ")));
-      assertErrors << QStringLiteral("  muffin : %1").arg(actualParts.join(QStringLiteral(", ")));
+      assertErrors << QStringLiteral("  mufpen : %1").arg(actualParts.join(QStringLiteral(", ")));
     }
 
     // Message count.
@@ -136,7 +136,7 @@ int main(int argc, char** argv) {
       const int n = std::max(expectedTuples.size(), actualTuples.size());
       for (int i = 0; i < n; ++i) {
         if (i >= actualTuples.size() || i >= expectedTuples.size() || actualTuples[i] != expectedTuples[i])
-          assertErrors << QStringLiteral("  #%1  mermaid[%2]  muffin[%3]")
+          assertErrors << QStringLiteral("  #%1  mermaid[%2]  mufpen[%3]")
                               .arg(i)
                               .arg(i < expectedTuples.size() ? expectedTuples[i] : QStringLiteral("<none>"))
                               .arg(i < actualTuples.size() ? actualTuples[i] : QStringLiteral("<none>"));

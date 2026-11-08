@@ -27,7 +27,7 @@
 
 #include <algorithm>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -243,23 +243,23 @@ TextDigest digest(const PieceTable& text) {
 }
 
 qsizetype requestedSizeMb() {
-  const QByteArray value = qgetenv("MUFFIN_BENCH_SIZE_MB");
+  const QByteArray value = qgetenv("MUFPEN_BENCH_SIZE_MB");
   if (value.isEmpty()) {
     return kDefaultSizeMb;
   }
   bool ok = false;
   const qint64 parsed = value.toLongLong(&ok);
   require(ok && parsed >= 1 && parsed <= kMaximumSizeMb,
-          QStringLiteral("MUFFIN_BENCH_SIZE_MB must be between 1 and %1").arg(kMaximumSizeMb));
+          QStringLiteral("MUFPEN_BENCH_SIZE_MB must be between 1 and %1").arg(kMaximumSizeMb));
   return static_cast<qsizetype>(parsed);
 }
 
 qint64 parseTimeoutMs(qsizetype sizeMb) {
-  const QByteArray value = qgetenv("MUFFIN_BENCH_TIMEOUT_MS");
+  const QByteArray value = qgetenv("MUFPEN_BENCH_TIMEOUT_MS");
   if (!value.isEmpty()) {
     bool ok = false;
     const qint64 parsed = value.toLongLong(&ok);
-    require(ok && parsed >= 1000, QStringLiteral("MUFFIN_BENCH_TIMEOUT_MS must be at least 1000"));
+    require(ok && parsed >= 1000, QStringLiteral("MUFPEN_BENCH_TIMEOUT_MS must be at least 1000"));
     return parsed;
   }
   return std::max<qint64>(120000, static_cast<qint64>(sizeMb) * 5000);
@@ -316,15 +316,15 @@ void setCursor(EditorController& editor, MarkdownNode& block, qsizetype textOffs
 
 void writeReport(const QByteArray& report) {
   qInfo().noquote() << "LargeDocumentRoundTripTest" << report;
-  const QString outputPath = QString::fromLocal8Bit(qgetenv("MUFFIN_BENCH_JSON"));
+  const QString outputPath = QString::fromLocal8Bit(qgetenv("MUFPEN_BENCH_JSON"));
   if (outputPath.isEmpty()) {
     return;
   }
   QFile output(outputPath);
   require(output.open(QIODevice::WriteOnly | QIODevice::Truncate),
-          QStringLiteral("Could not open MUFFIN_BENCH_JSON output"));
-  require(output.write(report) == report.size(), QStringLiteral("Could not write complete MUFFIN_BENCH_JSON output"));
-  require(output.write("\n") == 1, QStringLiteral("Could not terminate MUFFIN_BENCH_JSON output"));
+          QStringLiteral("Could not open MUFPEN_BENCH_JSON output"));
+  require(output.write(report) == report.size(), QStringLiteral("Could not write complete MUFPEN_BENCH_JSON output"));
+  require(output.write("\n") == 1, QStringLiteral("Could not terminate MUFPEN_BENCH_JSON output"));
 }
 
 } // namespace
@@ -332,7 +332,7 @@ void writeReport(const QByteArray& report) {
 int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTests"));
   QCoreApplication::setApplicationName(QStringLiteral("LargeDocumentRoundTripTest"));
   QSettings().clear();
   QSettings().setValue(QStringLiteral("files/autoSaveOnSwitch"), false);
@@ -349,7 +349,7 @@ int main(int argc, char** argv) {
 
   QElapsedTimer timer;
   timer.start();
-  QString source = muffin::test::makeMixedMarkdown(targetBytes);
+  QString source = mufpen::test::makeMixedMarkdown(targetBytes);
   QByteArray sourceBytes = source.toUtf8();
   report.addPhase(QStringLiteral("fixture.generate"), timer.nsecsElapsed());
   require(sourceBytes.size() >= targetBytes, QStringLiteral("Generated fixture did not reach requested UTF-8 size"));

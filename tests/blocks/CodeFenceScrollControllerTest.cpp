@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 // The controller lives outside the rebuilt BlockLayouts and is keyed by NodeId, so its state must
 // survive both layout rebuilds and id-remapping reparses. These guard the rebuild-survival logic
@@ -53,7 +53,7 @@ void testScrollBarStripHeight() {
 }
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("CodeFenceScrollControllerTest"));
   QCoreApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

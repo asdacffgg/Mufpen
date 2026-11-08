@@ -18,7 +18,7 @@
 #include <cmath>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -383,7 +383,7 @@ int main(int argc, char** argv) {
       }
       const QImage nativeEdgeMask =
           classdiagram::renderClassSceneToImage(edgeOnlyScene, dpr, 8.0, classdiagram::ClassPaintMode::SemanticMask);
-      if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE"))
+      if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE"))
         nativeEdgeMask.save(QStringLiteral("build/native-%1-edge-mask.png").arg(id));
       require(!browserEdgeMask.isNull() && nativeEdgeMask.size() == browserEdgeMask.size(),
               id + QStringLiteral(": isolated edge viewport differs"));

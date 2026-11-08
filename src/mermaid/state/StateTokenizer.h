@@ -4,7 +4,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 
 enum class StateTokenKind {
   Eof,
@@ -96,4 +96,4 @@ private:
   qsizetype end_ = 0;
 };
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

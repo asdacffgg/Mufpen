@@ -85,11 +85,11 @@ class FileNameEdit final : public QLineEdit {
 public:
   explicit FileNameEdit(QWidget* parent) : QLineEdit(parent) {}
 
-  std::function<muffin::InlineValidation(muffin::InlineEditContext, QString)> validateFn;
-  std::function<void(muffin::InlineEditContext, QString)> commitFn;
-  std::function<void(muffin::InlineEditContext)> cancelFn;
+  std::function<mufpen::InlineValidation(mufpen::InlineEditContext, QString)> validateFn;
+  std::function<void(mufpen::InlineEditContext, QString)> commitFn;
+  std::function<void(mufpen::InlineEditContext)> cancelFn;
 
-  void setContext(muffin::InlineEditContext ctx) { ctx_ = std::move(ctx); }
+  void setContext(mufpen::InlineEditContext ctx) { ctx_ = std::move(ctx); }
 
   // Windows-Explorer style: select the basename, leave the extension (if any) unselected so a
   // retype keeps it. Directories and leading-dot / extension-less names select all.
@@ -149,14 +149,14 @@ private:
   // error) for Duplicate or Empty-on-rename, keeping the editor open.
   bool tryCommit() {
     const QString name = text().trimmed();
-    const muffin::InlineValidation v = validateFn ? validateFn(ctx_, name) : muffin::InlineValidation{};
-    if (v.kind == muffin::InlineValidation::Valid || v.kind == muffin::InlineValidation::NoChange) {
+    const mufpen::InlineValidation v = validateFn ? validateFn(ctx_, name) : mufpen::InlineValidation{};
+    if (v.kind == mufpen::InlineValidation::Valid || v.kind == mufpen::InlineValidation::NoChange) {
       if (commitFn) {
         commitFn(ctx_, name);
       }
       return true;
     }
-    if (v.kind == muffin::InlineValidation::Empty && ctx_.pendingCreate) {
+    if (v.kind == mufpen::InlineValidation::Empty && ctx_.pendingCreate) {
       if (cancelFn) {
         cancelFn(ctx_);
       }
@@ -166,7 +166,7 @@ private:
     return false;
   }
 
-  void showInlineError(const muffin::InlineValidation& v) const {
+  void showInlineError(const mufpen::InlineValidation& v) const {
     if (v.errorText.isEmpty()) {
       return;
     }
@@ -179,13 +179,13 @@ private:
     deleteLater(); // owner's QPointer<QWidget> auto-nulls on destruction
   }
 
-  muffin::InlineEditContext ctx_;
+  mufpen::InlineEditContext ctx_;
 };
 
 } // namespace
 
-muffin::SidebarWidget::SidebarWidget(QWidget* parent) : QWidget(parent) {
-  setObjectName(QStringLiteral("MuffinSidebar"));
+mufpen::SidebarWidget::SidebarWidget(QWidget* parent) : QWidget(parent) {
+  setObjectName(QStringLiteral("MufpenSidebar"));
   setMinimumWidth(kMinimumWidth);
   setMaximumWidth(kMaximumWidth);
 
@@ -233,14 +233,14 @@ muffin::SidebarWidget::SidebarWidget(QWidget* parent) : QWidget(parent) {
   });
 }
 
-muffin::SidebarWidget::~SidebarWidget() {
+mufpen::SidebarWidget::~SidebarWidget() {
   // Editors scheduled for deletion can outlive the latest active editor.
   // Disconnect them before QWidget destroys children and our fields are gone.
   for (auto* editor : fileTree_->viewport()->findChildren<QLineEdit*>())
     disconnect(editor, nullptr, this, nullptr);
 }
 
-void muffin::SidebarWidget::setupFilesPanel() {
+void mufpen::SidebarWidget::setupFilesPanel() {
   filesPanel_ = new QWidget(this);
   auto* layout = new QVBoxLayout(filesPanel_);
   layout->setContentsMargins(0, 0, 0, 0);
@@ -335,7 +335,7 @@ void muffin::SidebarWidget::setupFilesPanel() {
   fileTree_->setSelectionMode(QAbstractItemView::SingleSelection);
   fileTree_->setContextMenuPolicy(Qt::CustomContextMenu);
   // Allow dragging file/folder rows out of the tree onto the editor (DragOnly: the tree is a
-  // drag source, never a drop target). FileTreeModel tags the drag with kMuffinFileTreeDragMime
+  // drag source, never a drop target). FileTreeModel tags the drag with kMufpenFileTreeDragMime
   // so the editor inserts a markdown link instead of treating it as an external file:// drop.
   fileTree_->setDragEnabled(true);
   fileTree_->setDragDropMode(QAbstractItemView::DragOnly);
@@ -355,7 +355,7 @@ void muffin::SidebarWidget::setupFilesPanel() {
       return;
     }
     for (const QString& path : std::as_const(pendingCreatePaths_)) {
-      muffin::InlineEditContext ctx;
+      mufpen::InlineEditContext ctx;
       ctx.oldPath = path;
       ctx.pendingCreate = true;
       emit inlineCancelRequested(ctx);
@@ -453,7 +453,7 @@ void muffin::SidebarWidget::setupFilesPanel() {
   stack_->addWidget(filesPanel_);
 }
 
-void muffin::SidebarWidget::setupOutlinePanel() {
+void mufpen::SidebarWidget::setupOutlinePanel() {
   // files/outlineFoldable: when on, the outline is a real collapsible tree
   // (indentation + expand arrows); when off it is a flat list with text-only
   // indentation (the original behavior). Read once at construction; toggling the
@@ -469,7 +469,7 @@ void muffin::SidebarWidget::setupOutlinePanel() {
   outlineEmptyLabel_->setObjectName(QStringLiteral("OutlineEmptyLabel"));
   outlineEmptyLabel_->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
 
-  outlineModel_ = new muffin::OutlineModel(this);
+  outlineModel_ = new mufpen::OutlineModel(this);
   outlineModel_->setFoldable(outlineFoldable_);
   outlineTree_ = new QTreeView(outlinePanel_);
   outlineTree_->setAccessibleName(tr("Outline"));
@@ -492,12 +492,12 @@ void muffin::SidebarWidget::setupOutlinePanel() {
   layout->addWidget(outlineTree_, 1);
   outlineTree_->hide();
 
-  connect(outlineTree_, &QTreeView::clicked, this, &muffin::SidebarWidget::emitOutlineItem);
+  connect(outlineTree_, &QTreeView::clicked, this, &mufpen::SidebarWidget::emitOutlineItem);
 
   stack_->addWidget(outlinePanel_);
 }
 
-void muffin::SidebarWidget::setPanel(Panel panel) {
+void mufpen::SidebarWidget::setPanel(Panel panel) {
   const bool changed = panel_ != panel;
   panel_ = panel;
   stack_->setCurrentWidget(panel == Panel::Files     ? filesPanel_
@@ -513,18 +513,18 @@ void muffin::SidebarWidget::setPanel(Panel panel) {
   }
 }
 
-muffin::SidebarWidget::Panel muffin::SidebarWidget::panel() const {
+mufpen::SidebarWidget::Panel mufpen::SidebarWidget::panel() const {
   return panel_;
 }
 
-QWidget* muffin::SidebarWidget::activeTreeWidget() const {
+QWidget* mufpen::SidebarWidget::activeTreeWidget() const {
   if (panel_ == Panel::Search)
     return searchPanel_->focusWidget();
   QWidget* active = panel_ == Panel::Files ? fileTree_ : outlineTree_;
   return active ? active : (fileTree_ ? fileTree_ : outlineTree_);
 }
 
-void muffin::SidebarWidget::setCurrentDocument(QString displayName, QString filePath, bool modified) {
+void mufpen::SidebarWidget::setCurrentDocument(QString displayName, QString filePath, bool modified) {
   Q_UNUSED(displayName);
   Q_UNUSED(modified);
   const bool changed = currentFilePath_ != filePath;
@@ -548,7 +548,7 @@ void muffin::SidebarWidget::setCurrentDocument(QString displayName, QString file
   }
 }
 
-void muffin::SidebarWidget::setFolderRoot(QString path) {
+void mufpen::SidebarWidget::setFolderRoot(QString path) {
   folderExplicitlyClosed_ = path.isEmpty();
   folderPinned_ = !path.isEmpty();
   changeFolderRoot(std::move(path));
@@ -558,7 +558,7 @@ void muffin::SidebarWidget::setFolderRoot(QString path) {
   emit folderStateChanged();
 }
 
-void muffin::SidebarWidget::setFolderPinned(bool pinned) {
+void mufpen::SidebarWidget::setFolderPinned(bool pinned) {
   if (folderRoot_.isEmpty())
     return;
   folderPinned_ = pinned;
@@ -569,7 +569,7 @@ void muffin::SidebarWidget::setFolderPinned(bool pinned) {
   emit folderStateChanged();
 }
 
-void muffin::SidebarWidget::followCurrentDocument() {
+void mufpen::SidebarWidget::followCurrentDocument() {
   if (folderPinned_ || folderExplicitlyClosed_ || currentFilePath_.isEmpty())
     return;
   const QString parent = QFileInfo(currentFilePath_).absolutePath();
@@ -577,7 +577,7 @@ void muffin::SidebarWidget::followCurrentDocument() {
     changeFolderRoot(parent);
 }
 
-void muffin::SidebarWidget::changeFolderRoot(QString path) {
+void mufpen::SidebarWidget::changeFolderRoot(QString path) {
   path = path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
   if (WorkspaceFileIndex::pathKey(path) == WorkspaceFileIndex::pathKey(folderRoot_)) {
     updateFolderControls();
@@ -632,7 +632,7 @@ void muffin::SidebarWidget::changeFolderRoot(QString path) {
   emit folderStateChanged();
 }
 
-QVariantMap muffin::SidebarWidget::captureFolderView() const {
+QVariantMap mufpen::SidebarWidget::captureFolderView() const {
   if (folderRoot_.isEmpty())
     return {};
   // A root switched away before asynchronous loading completed still owns its
@@ -651,7 +651,7 @@ QVariantMap muffin::SidebarWidget::captureFolderView() const {
           {"horizontal", fileTree_->horizontalScrollBar()->value()}};
 }
 
-QVariantMap muffin::SidebarWidget::folderState() const {
+QVariantMap mufpen::SidebarWidget::folderState() const {
   QVariantList views;
   const auto current = captureFolderView();
   if (!current.isEmpty())
@@ -663,7 +663,7 @@ QVariantMap muffin::SidebarWidget::folderState() const {
   return {{"pinned", folderPinned_}, {"closed", folderExplicitlyClosed_}, {"views", views}};
 }
 
-void muffin::SidebarWidget::restoreFolderState(const QVariantMap& state) {
+void mufpen::SidebarWidget::restoreFolderState(const QVariantMap& state) {
   folderViews_.clear();
   for (const auto& value : state.value("views").toList()) {
     auto view = value.toMap();
@@ -687,7 +687,7 @@ void muffin::SidebarWidget::restoreFolderState(const QVariantMap& state) {
   emit folderStateChanged();
 }
 
-void muffin::SidebarWidget::restoreFolderView() {
+void mufpen::SidebarWidget::restoreFolderView() {
   if ((pendingFolderView_.isEmpty() && pendingRevealPath_.isEmpty()) || !folderExpansionQueue_.isEmpty())
     return;
   // Wait for the root listing / saved branches. directoryLoaded retries this
@@ -729,7 +729,7 @@ void muffin::SidebarWidget::restoreFolderView() {
   pendingFolderView_.clear();
 }
 
-void muffin::SidebarWidget::updateFolderPin() {
+void mufpen::SidebarWidget::updateFolderPin() {
   const QSignalBlocker blocker(folderPinButton_);
   folderPinButton_->setChecked(folderPinned_);
   folderPinButton_->setEnabled(!folderRoot_.isEmpty());
@@ -740,7 +740,7 @@ void muffin::SidebarWidget::updateFolderPin() {
   folderPinButton_->setAccessibleName(text);
 }
 
-QString muffin::SidebarWidget::selectedDirectory() const {
+QString mufpen::SidebarWidget::selectedDirectory() const {
   if (folderRoot_.isEmpty())
     return {};
   const QString selected = fileModel_->filePath(fileTree_->currentIndex());
@@ -750,7 +750,7 @@ QString muffin::SidebarWidget::selectedDirectory() const {
   return selected.isEmpty() ? folderRoot_ : QFileInfo(selected).isDir() ? selected : QFileInfo(selected).absolutePath();
 }
 
-void muffin::SidebarWidget::updateFolderControls() {
+void mufpen::SidebarWidget::updateFolderControls() {
   updateFolderPin();
   const bool open = !folderRoot_.isEmpty();
   fileTree_->setVisible(open);
@@ -765,7 +765,7 @@ void muffin::SidebarWidget::updateFolderControls() {
   }
 }
 
-void muffin::SidebarWidget::updateFileSort() {
+void mufpen::SidebarWidget::updateFileSort() {
   if (!fileModel_)
     return;
   for (auto* action : sortFilesMenu_->actions()) {
@@ -778,7 +778,7 @@ void muffin::SidebarWidget::updateFileSort() {
   }
 }
 
-void muffin::SidebarWidget::refreshFolders() {
+void mufpen::SidebarWidget::refreshFolders() {
   if (folderRoot_.isEmpty() || inlineEditor_)
     return;
   refreshSelectionPath_ = fileModel_->filePath(fileTree_->currentIndex());
@@ -792,7 +792,7 @@ void muffin::SidebarWidget::refreshFolders() {
   queueFolderExpansion(folderRoot_);
 }
 
-QStringList muffin::SidebarWidget::expandedFolders() const {
+QStringList mufpen::SidebarWidget::expandedFolders() const {
   QStringList paths;
   if (folderRoot_.isEmpty())
     return paths;
@@ -807,7 +807,7 @@ QStringList muffin::SidebarWidget::expandedFolders() const {
   return paths;
 }
 
-void muffin::SidebarWidget::restoreExpandedFolders(const QStringList& paths) {
+void mufpen::SidebarWidget::restoreExpandedFolders(const QStringList& paths) {
   if (folderRoot_.isEmpty())
     return;
   collapseAllFolders();
@@ -823,7 +823,7 @@ void muffin::SidebarWidget::restoreExpandedFolders(const QStringList& paths) {
   queueFolderExpansion(folderRoot_);
 }
 
-void muffin::SidebarWidget::queueFolderExpansion(const QString& path) {
+void mufpen::SidebarWidget::queueFolderExpansion(const QString& path) {
   if (folderRoot_.isEmpty())
     return;
   const QString relative = QDir(folderRoot_).relativeFilePath(path);
@@ -837,7 +837,7 @@ void muffin::SidebarWidget::queueFolderExpansion(const QString& path) {
     folderExpansionTimer_->start(0);
 }
 
-void muffin::SidebarWidget::processFolderExpansions() {
+void mufpen::SidebarWidget::processFolderExpansions() {
   // Restore only saved branches as QFileSystemModel loads them on demand.
   // Continue from directoryLoaded in bounded batches, without opening siblings.
   for (int count = 0; count < 32 && !folderExpansionQueue_.isEmpty(); ++count) {
@@ -881,7 +881,7 @@ void muffin::SidebarWidget::processFolderExpansions() {
     folderViewTimer_->start(0);
 }
 
-void muffin::SidebarWidget::collapseAllFolders() {
+void mufpen::SidebarWidget::collapseAllFolders() {
   pendingFolderView_.clear();
   pendingRevealPath_.clear();
   expandAllRequested_ = false;
@@ -895,18 +895,18 @@ void muffin::SidebarWidget::collapseAllFolders() {
   emit folderStateChanged();
 }
 
-void muffin::SidebarWidget::expandAllFolders() {
+void mufpen::SidebarWidget::expandAllFolders() {
   if (folderRoot_.isEmpty())
     return;
   expandAllRequested_ = true;
   queueFolderExpansion(folderRoot_);
 }
 
-QString muffin::SidebarWidget::folderRoot() const {
+QString mufpen::SidebarWidget::folderRoot() const {
   return folderRoot_;
 }
 
-void muffin::SidebarWidget::setCurrentPath(QString path) {
+void mufpen::SidebarWidget::setCurrentPath(QString path) {
   if (path.isEmpty() || !WorkspaceFileIndex::contains(folderRoot_, path)) {
     return;
   }
@@ -931,7 +931,7 @@ void muffin::SidebarWidget::setCurrentPath(QString path) {
   folderViewTimer_->start(0);
 }
 
-void muffin::SidebarWidget::beginInlineRename(QString path) {
+void mufpen::SidebarWidget::beginInlineRename(QString path) {
   if (path.isEmpty() || !fileTree_ || !fileModel_) {
     return;
   }
@@ -943,7 +943,7 @@ void muffin::SidebarWidget::beginInlineRename(QString path) {
   showInlineEditor(idx);
 }
 
-void muffin::SidebarWidget::beginInlineCreate(QString tempPath) {
+void mufpen::SidebarWidget::beginInlineCreate(QString tempPath) {
   if (tempPath.isEmpty() || !fileTree_ || !fileModel_) {
     return;
   }
@@ -978,7 +978,7 @@ void muffin::SidebarWidget::beginInlineCreate(QString tempPath) {
   QTimer::singleShot(150, this, [this, tempPath] { resolveAndEdit(tempPath); });
 }
 
-void muffin::SidebarWidget::resolveAndEdit(QString path) {
+void mufpen::SidebarWidget::resolveAndEdit(QString path) {
   if (!fileTree_ || !fileModel_) {
     return;
   }
@@ -993,7 +993,7 @@ void muffin::SidebarWidget::resolveAndEdit(QString path) {
   showInlineEditor(idx);
 }
 
-void muffin::SidebarWidget::showInlineEditor(QModelIndex idx) {
+void mufpen::SidebarWidget::showInlineEditor(QModelIndex idx) {
   if (!fileTree_ || !fileModel_ || !idx.isValid()) {
     return;
   }
@@ -1028,16 +1028,16 @@ void muffin::SidebarWidget::showInlineEditor(QModelIndex idx) {
     editor->setText(fileModel_->fileName(i));
     editor->setGeometry(rowRect);
     editor->selectBasename();
-    editor->validateFn = [this](muffin::InlineEditContext ctx, const QString& name) {
-      muffin::InlineValidation out;
+    editor->validateFn = [this](mufpen::InlineEditContext ctx, const QString& name) {
+      mufpen::InlineValidation out;
       emit inlineValidateRequested(ctx, name, &out);
       return out;
     };
-    editor->commitFn = [this](muffin::InlineEditContext ctx, const QString& name) {
+    editor->commitFn = [this](mufpen::InlineEditContext ctx, const QString& name) {
       forgetPendingCreate(ctx.oldPath);
       emit inlineCommitRequested(ctx, name);
     };
-    editor->cancelFn = [this](muffin::InlineEditContext ctx) {
+    editor->cancelFn = [this](mufpen::InlineEditContext ctx) {
       forgetPendingCreate(ctx.oldPath);
       emit inlineCancelRequested(ctx);
     };
@@ -1066,8 +1066,8 @@ void muffin::SidebarWidget::showInlineEditor(QModelIndex idx) {
   });
 }
 
-muffin::InlineEditContext muffin::SidebarWidget::contextForIndex(const QModelIndex& index) const {
-  muffin::InlineEditContext ctx;
+mufpen::InlineEditContext mufpen::SidebarWidget::contextForIndex(const QModelIndex& index) const {
+  mufpen::InlineEditContext ctx;
   if (!fileModel_ || !index.isValid()) {
     return ctx;
   }
@@ -1077,11 +1077,11 @@ muffin::InlineEditContext muffin::SidebarWidget::contextForIndex(const QModelInd
   return ctx;
 }
 
-void muffin::SidebarWidget::forgetPendingCreate(const QString& path) {
+void mufpen::SidebarWidget::forgetPendingCreate(const QString& path) {
   pendingCreatePaths_.remove(path);
 }
 
-void muffin::SidebarWidget::setOutline(QVector<OutlineEntry> entries) {
+void mufpen::SidebarWidget::setOutline(QVector<OutlineEntry> entries) {
   const bool empty = entries.isEmpty();
   outlineModel_->setEntries(std::move(entries));
   if (outlineFoldable_) {
@@ -1091,13 +1091,13 @@ void muffin::SidebarWidget::setOutline(QVector<OutlineEntry> entries) {
   outlineTree_->setVisible(!empty);
 }
 
-void muffin::SidebarWidget::clearOutline() {
+void mufpen::SidebarWidget::clearOutline() {
   outlineModel_->clear();
   outlineTree_->hide();
   outlineEmptyLabel_->show();
 }
 
-void muffin::SidebarWidget::setOutlineFoldable(bool foldable) {
+void mufpen::SidebarWidget::setOutlineFoldable(bool foldable) {
   if (outlineFoldable_ == foldable) {
     return;
   }
@@ -1112,12 +1112,12 @@ void muffin::SidebarWidget::setOutlineFoldable(bool foldable) {
   }
 }
 
-void muffin::SidebarWidget::applyTheme(const ThemeDefinition& theme) {
+void mufpen::SidebarWidget::applyTheme(const ThemeDefinition& theme) {
   currentTheme_ = theme;
   applyStyle();
 }
 
-void muffin::SidebarWidget::retranslateUi() {
+void mufpen::SidebarWidget::retranslateUi() {
   updateFolderPin();
   if (filesEmptyLabel_)
     filesEmptyLabel_->setText(tr("No folder open"));
@@ -1154,14 +1154,14 @@ void muffin::SidebarWidget::retranslateUi() {
   updateTabButtons();
 }
 
-void muffin::SidebarWidget::changeEvent(QEvent* event) {
+void mufpen::SidebarWidget::changeEvent(QEvent* event) {
   if (event->type() == QEvent::LanguageChange) {
     retranslateUi();
   }
   QWidget::changeEvent(event);
 }
 
-void muffin::SidebarWidget::updateTabButtons() {
+void mufpen::SidebarWidget::updateTabButtons() {
   filesTabButton_->setChecked(panel_ != Panel::Outline);
   outlineTabButton_->setChecked(panel_ == Panel::Outline);
   searchFilesButton_->setChecked(panel_ == Panel::Search);
@@ -1174,7 +1174,7 @@ void muffin::SidebarWidget::updateTabButtons() {
                 (key.isEmpty() ? QString() : QStringLiteral(" (%1)").arg(key.toString(QKeySequence::NativeText))));
 }
 
-void muffin::SidebarWidget::applyStyle() {
+void mufpen::SidebarWidget::applyStyle() {
   setStyleSheet(sidebarStyleSheet(currentTheme_, outlineFoldable_));
   searchPanel_->setThemeDefinition(currentTheme_);
   const auto color = currentTheme_.colors.chromeText;
@@ -1190,7 +1190,7 @@ void muffin::SidebarWidget::applyStyle() {
   folderPinButton_->setIcon(folderToolbarIcon("<path d='M5 1.5h6M6 1.5v5L3.5 9h9L10 6.5v-5M8 9v5.5'/>", color));
 }
 
-void muffin::SidebarWidget::emitOutlineItem(const QModelIndex& index) {
+void mufpen::SidebarWidget::emitOutlineItem(const QModelIndex& index) {
   const OutlineEntry* entry = outlineModel_->entry(index);
   if (!entry) {
     return;

@@ -15,7 +15,7 @@
 #include <Qt>
 #include <array>
 
-namespace muffin {
+namespace mufpen {
 namespace diag {
 struct MemoryAccounting;
 }
@@ -332,4 +332,4 @@ private:
   QColor blockquoteBackground_; // invalid → no quote fill
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -28,7 +28,7 @@ jobs:
             conan-arch: x86_64
             configure-preset: conan-default
             conan-cppstd: 20
-            cmake-args: '-DMUFFIN_MSI_ARCH=x64'
+            cmake-args: '-DMUFPEN_MSI_ARCH=x64'
             test-command: ctest --preset conan-release --verbose
           - name: Windows ARM64
             runner: windows-11-arm
@@ -36,7 +36,7 @@ jobs:
             conan-arch: armv8
             configure-preset: conan-default
             conan-cppstd: 20
-            cmake-args: '-DMUFFIN_MSI_ARCH=arm64'
+            cmake-args: '-DMUFPEN_MSI_ARCH=arm64'
             test-command: ctest --preset conan-release --verbose
           - name: macOS ARM64
             runner: macos-latest
@@ -71,8 +71,8 @@ jobs:
             echo "Release tags must use vX.X.X format, got: $tag" >&2
             exit 1
           fi
-          echo "MUFFIN_RELEASE_TAG=$tag" >> "$GITHUB_ENV"
-          echo "MUFFIN_RELEASE_VERSION=${tag#v}" >> "$GITHUB_ENV"
+          echo "MUFPEN_RELEASE_TAG=$tag" >> "$GITHUB_ENV"
+          echo "MUFPEN_RELEASE_VERSION=${tag#v}" >> "$GITHUB_ENV"
 
       # A manual rebuild keeps application sources at the immutable tag, but
       # uses packaging/test repairs from the selected workflow revision.
@@ -258,9 +258,9 @@ jobs:
             export PATH="$PATH:$HOME/.dotnet/tools"
           fi
           if [ -n "${{ steps.macdeployqt.outputs.path }}" ]; then
-            EXTRA_ARGS="-DMUFFIN_MACDEPLOYQT=${{ steps.macdeployqt.outputs.path }}"
+            EXTRA_ARGS="-DMUFPEN_MACDEPLOYQT=${{ steps.macdeployqt.outputs.path }}"
           fi
-          cmake --preset ${{ matrix.configure-preset }} -DMUFFIN_VERSION_OVERRIDE=${{ env.MUFFIN_RELEASE_VERSION }} ${{ matrix.cmake-args }} $EXTRA_ARGS
+          cmake --preset ${{ matrix.configure-preset }} -DMUFPEN_VERSION_OVERRIDE=${{ env.MUFPEN_RELEASE_VERSION }} ${{ matrix.cmake-args }} $EXTRA_ARGS
 
       - name: Build
         run: cmake --build --preset conan-release
@@ -277,9 +277,9 @@ jobs:
         shell: pwsh
         run: |
           $env:PATH = (Resolve-Path ./build/dist).Path + [IO.Path]::PathSeparator + $env:PATH
-          ./build/Release/MuffinWindowsTlsTest.exe --plugins ./build/dist
+          ./build/Release/MufpenWindowsTlsTest.exe --plugins ./build/dist
 
-      # BuildDMG runs macdeployqt against build/Release/dist/Muffin.app. Do it
+      # BuildDMG runs macdeployqt against build/Release/dist/Mufpen.app. Do it
       # before the Unix tar archive so both published macOS artifacts contain
       # the deployed Qt frameworks.
       - name: Build DMG disk image
@@ -292,13 +292,13 @@ jobs:
         run: |
           # Historical release tags predate the Quick Look extension.
           if [ -f scripts/check_macos_quicklook.py ]; then
-            python scripts/check_macos_quicklook.py --bundle build/Release/dist/Muffin.app
+            python scripts/check_macos_quicklook.py --bundle build/Release/dist/Mufpen.app
           fi
 
       - name: Smoke test Windows distribution
         if: runner.os == 'Windows'
         shell: pwsh
-        run: build/dist/Muffin.exe --version
+        run: build/dist/Mufpen.exe --version
 
       - name: Smoke test Unix distribution
         if: runner.os != 'Windows'
@@ -317,22 +317,22 @@ jobs:
           # before any window is shown. env -i keeps both honest about not
           # relying on leaked env vars to find Qt.
           if [ "${{ runner.os }}" = "macOS" ]; then
-            env -i HOME="$HOME" build/Release/dist/Muffin.app/Contents/MacOS/Muffin --version
+            env -i HOME="$HOME" build/Release/dist/Mufpen.app/Contents/MacOS/Mufpen --version
           else
-            env -i HOME="$HOME" QT_QPA_PLATFORM=offscreen build/Release/dist/Muffin --version
+            env -i HOME="$HOME" QT_QPA_PLATFORM=offscreen build/Release/dist/Mufpen --version
           fi
 
       - name: Archive Unix distribution
         if: runner.os != 'Windows'
         shell: bash
-        run: tar -czf "Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.tar.gz" -C build/Release/dist .
+        run: tar -czf "Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.tar.gz" -C build/Release/dist .
 
       - name: Upload distribution artifact
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
-          path: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.*
+          name: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
+          path: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.*
           if-no-files-found: error
 
       - name: Build setup bundle
@@ -350,7 +350,7 @@ jobs:
         run: |
           cmake "-DBINARY_DIR=$pwd/build" "-DDIST_DIR=$pwd/build/dist" "-DOUTPUT_DIR=$pwd/build/portable" -P cmake/BuildPortable.cmake
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $archive = "Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z"
+          $archive = "Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z"
           & "$env:ProgramFiles/7-Zip/7z.exe" a -t7z $archive "./build/portable/*" -m0=LZMA2 -mx=9 -md=64m -ms=on -mmt=2
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           & "$env:ProgramFiles/7-Zip/7z.exe" t $archive
@@ -359,15 +359,15 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
-          path: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z
+          name: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}
+          path: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}.7z
           if-no-files-found: error
 
       - name: Verify installer integration choices
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $msiPath = (Resolve-Path -LiteralPath "./build/Mufpen-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.msi").Path
+          $msiPath = (Resolve-Path -LiteralPath "./build/Mufpen-${{ env.MUFPEN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.msi").Path
           & ./build/installer-options-test/IntegrationOptionsTest.exe $msiPath
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
@@ -375,7 +375,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $bundlePath = (Resolve-Path -LiteralPath "./build/Mufpen-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe").Path
+          $bundlePath = (Resolve-Path -LiteralPath "./build/Mufpen-Setup-${{ env.MUFPEN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe").Path
           & ./build/installer-options-test/IntegrationOptionsTest.exe --update-bundle $bundlePath
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
@@ -383,31 +383,31 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         env:
-          MUFFIN_UPDATE_SIGNING_KEY: ${{ secrets.MUFFIN_UPDATE_SIGNING_KEY }}
+          MUFPEN_UPDATE_SIGNING_KEY: ${{ secrets.MUFPEN_UPDATE_SIGNING_KEY }}
         run: |
-          ./scripts/Sign-WindowsUpdate.ps1 -Installer "./build/Mufpen-Setup-${{ env.MUFFIN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe" -Version "${{ env.MUFFIN_RELEASE_VERSION }}" -Architecture "${{ matrix.conan-arch == 'armv8' && 'arm64' || 'x64' }}"
+          ./scripts/Sign-WindowsUpdate.ps1 -Installer "./build/Mufpen-Setup-${{ env.MUFPEN_RELEASE_VERSION }}-${{ matrix.artifact-suffix }}.exe" -Version "${{ env.MUFPEN_RELEASE_VERSION }}" -Architecture "${{ matrix.conan-arch == 'armv8' && 'arm64' || 'x64' }}"
 
       - name: Upload failed update entry logs
         if: failure() && runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
           name: update-entry-logs-${{ matrix.artifact-suffix }}
-          path: ${{ runner.temp }}/MuffinBundleCommandTest-*/*.log
+          path: ${{ runner.temp }}/MufpenBundleCommandTest-*/*.log
           if-no-files-found: ignore
 
       - name: Upload MSI artifact
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-msi
-          path: build/Muffin-*-${{ matrix.artifact-suffix }}.msi
+          name: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-msi
+          path: build/Mufpen-*-${{ matrix.artifact-suffix }}.msi
           if-no-files-found: error
 
       - name: Upload setup bundle artifact
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-setup
+          name: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-${{ matrix.artifact-suffix }}-setup
           path: |
             build/Mufpen-Setup-*-${{ matrix.artifact-suffix }}.exe
             build/Mufpen-Setup-*-${{ matrix.artifact-suffix }}.update.json
@@ -417,8 +417,8 @@ jobs:
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v4
         with:
-          name: Mufpen-${{ env.MUFFIN_RELEASE_TAG }}-macos-arm64-dmg
-          path: build/Release/Muffin-*-macos-arm64.dmg
+          name: Mufpen-${{ env.MUFPEN_RELEASE_TAG }}-macos-arm64-dmg
+          path: build/Release/Mufpen-*-macos-arm64.dmg
           if-no-files-found: error
 
   publish:
@@ -428,7 +428,7 @@ jobs:
     # Serialize publication across tags: a historical rebuild must not race the
     # stable feed pointer of a newer release.
     concurrency:
-      group: muffin-release-publication
+      group: mufpen-release-publication
       cancel-in-progress: false
     permissions:
       contents: write

@@ -15,7 +15,7 @@
 #include "theme/ThemeDefinition.h"
 #include "render/LayoutBox.h"
 
-namespace muffin::html {
+namespace mufpen::html {
 
 enum class HtmlDisplay {
   Block,
@@ -339,4 +339,4 @@ bool isBlockTag(HtmlTag tag);
 bool isInlineTag(HtmlTag tag);
 bool isVoidTag(HtmlTag tag); // self-closing elements like <br>, <hr>, <img>
 
-} // namespace muffin::html
+} // namespace mufpen::html

@@ -19,9 +19,9 @@
 // erDiagram scene builder. Mirrors src/mermaid/classdiagram/ClassScene.cpp::
 // buildClassScene. Per CLAUDE.md / IMPLEMENTATION_SPEC.md this .cpp defines its
 // free function with fully-qualified names (er::buildErScene) and keeps helpers
-// in an anonymous namespace — it is NOT wrapped in a `namespace muffin {}` block.
-namespace er = muffin::mermaid::er;
-namespace flowchart = muffin::mermaid::flowchart;
+// in an anonymous namespace — it is NOT wrapped in a `namespace mufpen {}` block.
+namespace er = mufpen::mermaid::er;
+namespace flowchart = mufpen::mermaid::flowchart;
 
 namespace {
 
@@ -141,8 +141,8 @@ QString cardName(er::ErCardinality c) {
 } // namespace
 
 er::ErScene er::buildErScene(const er::ErLayoutInput& input, const er::ErPlacementResult& placement,
-                             er::ErSceneStyle style, const QVector<muffin::mermaid::style::ClassDef>& classDefs,
-                             const muffin::mermaid::style::ThemeDefaults& themeDefaults) {
+                             er::ErSceneStyle style, const QVector<mufpen::mermaid::style::ClassDef>& classDefs,
+                             const mufpen::mermaid::style::ThemeDefaults& themeDefaults) {
   er::ErScene scene;
   scene.style = std::move(style);
 
@@ -163,7 +163,7 @@ er::ErScene er::buildErScene(const er::ErLayoutInput& input, const er::ErPlaceme
     // resolved values fall back to scene.style (the painter checks).
     if (source) {
       const QStringList classes = source->cssClasses.split(QLatin1Char(' '), Qt::SkipEmptyParts);
-      const auto resolved = muffin::mermaid::style::resolveNodeStyle(classes, source->styles, classDefs, themeDefaults);
+      const auto resolved = mufpen::mermaid::style::resolveNodeStyle(classes, source->styles, classDefs, themeDefaults);
       entity.fill = resolved.fill;
       entity.stroke = resolved.stroke;
       entity.link = source->link;
@@ -313,7 +313,7 @@ QJsonObject er::ErScene::toJsonObject() const {
   return o;
 }
 
-muffin::mermaid::SvgMarkerProjection er::ErScene::svgMarkerProjection() const {
+mufpen::mermaid::SvgMarkerProjection er::ErScene::svgMarkerProjection() const {
   using C = er::ErCardinality;
   SvgMarkerProjection projection;
   const auto add = [&](QString key, qreal refX, qreal refY, qreal width, qreal height, QString path, bool circle,

@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 class UnknownDiagramError final : public std::runtime_error {
 public:
@@ -16,4 +16,4 @@ public:
 // The detector order and renderer-selection rules match Mermaid 11.16.0.
 QString detectDiagramType(const QString& source, QJsonObject config = {});
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

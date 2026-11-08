@@ -11,7 +11,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::c4 {
+namespace mufpen::mermaid::c4 {
 
 struct C4Font {
   QString family = QStringLiteral("Noto Sans");
@@ -158,4 +158,4 @@ struct C4Scene final : MermaidScene {
 
 C4Scene buildC4Scene(const C4Data& data, C4Config config, C4SceneStyle style, const C4CssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::c4
+} // namespace mufpen::mermaid::c4

@@ -1,6 +1,6 @@
 #include "math/MathLexer.h"
 
-namespace muffin::math {
+namespace mufpen::math {
 
 MathLexer::MathLexer(QString input) : input_(std::move(input)) {
 }
@@ -115,4 +115,4 @@ MathToken MathLexer::readToken() {
   return {QString(ch), start, pos_};
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

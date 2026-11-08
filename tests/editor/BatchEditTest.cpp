@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void require(bool condition, const char* message) {
   if (!condition) {
@@ -198,7 +198,7 @@ int main(int argc, char** argv) {
     if (!session.lastParseWasLocalEdit() || session.lastChangeWasBatch())
       view.setDocument(session.document(), {}, true);
   });
-  const int repetitions = qMax(10000, qEnvironmentVariableIntValue("MUFFIN_BATCH_TEST_REPEATS"));
+  const int repetitions = qMax(10000, qEnvironmentVariableIntValue("MUFPEN_BATCH_TEST_REPEATS"));
   const QString before =
       QStringLiteral("## Heading\n\n中文 alpha **bold** and [link](x.md).\n\n").repeated(repetitions);
   const QString after = QString(before).replace("alpha", "replacement");

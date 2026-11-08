@@ -18,16 +18,16 @@
 
 include(ExternalProject)
 
-set(MUFFIN_FCITX5_QT_VERSION "5.1.13" CACHE STRING "fcitx5-qt release used for the bundled IME plugin")
-set(MUFFIN_FCITX5_QT_URL
-    "https://github.com/fcitx/fcitx5-qt/archive/refs/tags/${MUFFIN_FCITX5_QT_VERSION}.tar.gz"
+set(MUFPEN_FCITX5_QT_VERSION "5.1.13" CACHE STRING "fcitx5-qt release used for the bundled IME plugin")
+set(MUFPEN_FCITX5_QT_URL
+    "https://github.com/fcitx/fcitx5-qt/archive/refs/tags/${MUFPEN_FCITX5_QT_VERSION}.tar.gz"
     CACHE STRING "fcitx5-qt source archive")
-set(MUFFIN_FCITX5_QT_URL_HASH
+set(MUFPEN_FCITX5_QT_URL_HASH
     "SHA256=74b2c43ca865ec9ede257bcd3bdadafc20f571900cb2440a4488335e4d4e91cc"
     CACHE STRING "fcitx5-qt source archive hash")
 
 # Adds the plugin build and returns the built .so path in <out_plugin_file>.
-function(muffin_add_fcitx5_qt_plugin out_plugin_file)
+function(mufpen_add_fcitx5_qt_plugin out_plugin_file)
   find_package(ECM QUIET)
   if(NOT ECM_FOUND)
     message(FATAL_ERROR
@@ -35,7 +35,7 @@ function(muffin_add_fcitx5_qt_plugin out_plugin_file)
       "(fcitx5-qt calls find_package(ECM 1.4.0 REQUIRED)).\n"
       "  Ubuntu/Debian: sudo apt install extra-cmake-modules\n"
       "  Fedora:        sudo dnf install extra-cmake-modules\n"
-      "Pass -DMUFFIN_BUNDLE_FCITX5_PLUGIN=OFF to ship a bundle without IME support instead.")
+      "Pass -DMUFPEN_BUNDLE_FCITX5_PLUGIN=OFF to ship a bundle without IME support instead.")
   endif()
 
   set(source_dir "${CMAKE_BINARY_DIR}/fcitx5-qt/src")
@@ -51,9 +51,9 @@ function(muffin_add_fcitx5_qt_plugin out_plugin_file)
   endif()
   string(REPLACE ";" "\\;" prefix_path_arg "${CMAKE_PREFIX_PATH}")
 
-  ExternalProject_Add(muffin_fcitx5_qt
-    URL "${MUFFIN_FCITX5_QT_URL}"
-    URL_HASH "${MUFFIN_FCITX5_QT_URL_HASH}"
+  ExternalProject_Add(mufpen_fcitx5_qt
+    URL "${MUFPEN_FCITX5_QT_URL}"
+    URL_HASH "${MUFPEN_FCITX5_QT_URL_HASH}"
     DOWNLOAD_EXTRACT_TIMESTAMP TRUE
     SOURCE_DIR "${source_dir}"
     BINARY_DIR "${binary_dir}"

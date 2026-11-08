@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 namespace {
 
 QColor brighten(QColor color, bool enabled) {
@@ -419,4 +419,4 @@ void paintTimelineScene(const TimelineScene& scene, QPainter& painter, const Mer
   painter.restore();
 }
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

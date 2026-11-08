@@ -1,6 +1,6 @@
 #include "blocks/code/CodeFenceScrollController.h"
 
-namespace muffin {
+namespace mufpen {
 
 qreal CodeFenceScrollController::offsetFor(NodeId id) const {
   const auto it = entries_.constFind(id);
@@ -54,4 +54,4 @@ void CodeFenceScrollController::clear() {
   entries_.clear();
 }
 
-} // namespace muffin
+} // namespace mufpen

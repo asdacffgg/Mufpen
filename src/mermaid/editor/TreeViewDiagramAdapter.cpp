@@ -17,7 +17,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue treeViewScalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -297,4 +297,4 @@ const Diagram& treeViewDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

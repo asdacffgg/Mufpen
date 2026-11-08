@@ -8,11 +8,11 @@
 #include <QSet>
 #include <QSortFilterProxyModel>
 
-namespace muffin {
+namespace mufpen {
 
 // Path-based facade over the asynchronous filesystem model. View indexes always
 // belong to this proxy, including drag, rename and saved expansion state.
-class MUFFIN_UI_EXPORT FileTreeModel final : public QSortFilterProxyModel {
+class MUFPEN_UI_EXPORT FileTreeModel final : public QSortFilterProxyModel {
   Q_OBJECT
 public:
   enum class SortBy { Name, Modified, Created, Type, Size };
@@ -45,4 +45,4 @@ private:
   SortBy sortBy_ = SortBy::Name;
 };
 
-} // namespace muffin
+} // namespace mufpen

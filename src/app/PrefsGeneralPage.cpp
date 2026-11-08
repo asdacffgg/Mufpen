@@ -13,7 +13,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(kPageLeftMargin, kPageTopMargin, kPageRightMargin, kPageBottomMargin);
   layout->setSpacing(14);
@@ -77,8 +77,8 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
   // Request-scoped response connections live for the page lifetime. Creating
   // three SingleShot connections per click leaves the two non-emitted signals
   // behind and can produce duplicate dialogs on a later check.
-  auto& checker = muffin::UpdateChecker::instance();
-  connect(&checker, &muffin::UpdateChecker::updateAvailable, this,
+  auto& checker = mufpen::UpdateChecker::instance();
+  connect(&checker, &mufpen::UpdateChecker::updateAvailable, this,
           [this](const QString& version, const QString&, QObject* requester) {
             if (requester != this) {
               return;
@@ -98,7 +98,7 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
             QMessageBox::information(window(), tr("Update Available"),
                                      tr("A new version of Mufpen (%1) is available.").arg(version));
           });
-  connect(&checker, &muffin::UpdateChecker::upToDate, this, [this](QObject* requester) {
+  connect(&checker, &mufpen::UpdateChecker::upToDate, this, [this](QObject* requester) {
     if (requester != this) {
       return;
     }
@@ -106,7 +106,7 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
     retranslateUi();
     QMessageBox::information(window(), tr("Up to Date"), tr("You are running the latest version of Mufpen."));
   });
-  connect(&checker, &muffin::UpdateChecker::checkFailed, this, [this](const QString& errorMessage, QObject* requester) {
+  connect(&checker, &mufpen::UpdateChecker::checkFailed, this, [this](const QString& errorMessage, QObject* requester) {
     if (requester != this) {
       return;
     }
@@ -124,7 +124,7 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
     }
     checkUpdateButton_->setEnabled(false);
     checkUpdateButton_->setText(tr("Checking..."));
-    if (!muffin::UpdateChecker::instance().checkForUpdates(this)) {
+    if (!mufpen::UpdateChecker::instance().checkForUpdates(this)) {
       checkUpdateButton_->setEnabled(true);
       retranslateUi();
     }
@@ -135,14 +135,14 @@ muffin::PrefsGeneralPage::PrefsGeneralPage(QWidget* parent) : PreferencesPage(pa
   loadCheck(autoUpdateCheck_, QStringLiteral("update/autoCheck"), true);
 }
 
-void muffin::PrefsGeneralPage::retranslateUi() {
+void mufpen::PrefsGeneralPage::retranslateUi() {
   languageLabel_->setText(tr("Language"));
   updateLabel_->setText(tr("Update"));
   checkUpdateButton_->setText(tr("Check for Updates"));
   autoUpdateCheck_->setText(tr("Automatically check for updates"));
 }
 
-void muffin::PrefsGeneralPage::populateLanguages() {
+void mufpen::PrefsGeneralPage::populateLanguages() {
   if (!languageCombo_) {
     return;
   }

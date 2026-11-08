@@ -23,7 +23,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -130,7 +130,7 @@ int main(int argc, char** argv) {
     const editor::MermaidPngRenderResult result = editor::MermaidRenderCache::renderMermaidSourceToPng(source, dpr);
     const QImage native = decodePng(result.dataUrl);
     require(!native.isNull(), id + QStringLiteral(": production PNG must decode"));
-    if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE"))
+    if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE"))
       native.save(QStringLiteral("build/native-%1.png").arg(id));
     const qreal widthDiff = std::abs(native.width() - browser.width());
     const qreal heightDiff = std::abs(native.height() - browser.height());

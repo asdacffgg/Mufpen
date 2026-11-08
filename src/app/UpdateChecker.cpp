@@ -16,24 +16,24 @@ namespace {
 constexpr qsizetype kCatalogLimit = 128 * 1024;
 }
 
-muffin::UpdateChecker::UpdateChecker(QObject* parent)
+mufpen::UpdateChecker::UpdateChecker(QObject* parent)
     : QObject(parent),
       sources_{
           QUrl(QStringLiteral("https://github.com/asdacffgg/Mufpen/releases/latest/download/mufpen-update.json"))} {
 }
 
-muffin::UpdateChecker& muffin::UpdateChecker::instance() {
+mufpen::UpdateChecker& mufpen::UpdateChecker::instance() {
   static UpdateChecker checker;
   return checker;
 }
 
-QString muffin::UpdateChecker::cacheKey(int source) const {
+QString mufpen::UpdateChecker::cacheKey(int source) const {
   // Keep validators bound to the exact resource, including in tests.
   return QStringLiteral("update/catalog/") +
          QString::fromLatin1(sources_[source].toEncoded().toBase64(QByteArray::Base64UrlEncoding));
 }
 
-bool muffin::UpdateChecker::acceptCatalog(const QByteArray& data, QObject* requester) {
+bool mufpen::UpdateChecker::acceptCatalog(const QByteArray& data, QObject* requester) {
   if (data.isEmpty() || data.size() > kCatalogLimit)
     return false;
   QJsonParseError error;
@@ -59,7 +59,7 @@ bool muffin::UpdateChecker::acceptCatalog(const QByteArray& data, QObject* reque
   return true;
 }
 
-bool muffin::UpdateChecker::checkForUpdates(QObject* requester) {
+bool mufpen::UpdateChecker::checkForUpdates(QObject* requester) {
   if (checking_)
     return false;
   checking_ = true;
@@ -68,7 +68,7 @@ bool muffin::UpdateChecker::checkForUpdates(QObject* requester) {
   return true;
 }
 
-void muffin::UpdateChecker::requestCatalog(QPointer<QObject> owner, bool manual, int source) {
+void mufpen::UpdateChecker::requestCatalog(QPointer<QObject> owner, bool manual, int source) {
   if (manual && owner.isNull()) {
     checking_ = false;
     return;
@@ -153,7 +153,7 @@ void muffin::UpdateChecker::requestCatalog(QPointer<QObject> owner, bool manual,
   });
 }
 
-void muffin::UpdateChecker::maybeAutoCheck() {
+void mufpen::UpdateChecker::maybeAutoCheck() {
   QSettings settings;
   if (!settings.value(QStringLiteral("update/autoCheck"), true).toBool())
     return;

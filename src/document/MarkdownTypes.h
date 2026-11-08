@@ -1,6 +1,6 @@
 #pragma once
 
-namespace muffin {
+namespace mufpen {
 
 enum class BlockType {
   Document,
@@ -59,4 +59,4 @@ enum class TableAlignment { None, Left, Center, Right };
 
 enum class CloneMode { PreserveIds, RegenerateIds };
 
-} // namespace muffin
+} // namespace mufpen

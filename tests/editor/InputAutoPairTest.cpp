@@ -11,7 +11,7 @@
 #include <QClipboard>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // editor/matchBrackets (default on) and editor/matchMarkdown (default off) drive auto-pairing,
 // wrap-selection and skip-over in InputController::insertText. These cover the three behaviours
@@ -149,7 +149,7 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("InputAutoPairTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

@@ -3,7 +3,7 @@
 #include <QString>
 #include <QtGlobal>
 
-namespace muffin::test {
+namespace mufpen::test {
 
 inline QString makeInlineDenseMarkdown(qsizetype targetBytes) {
   static const char* units[] = {
@@ -71,4 +71,4 @@ inline QString makeMixedMarkdown(qsizetype targetUtf8Bytes) {
   return document;
 }
 
-} // namespace muffin::test
+} // namespace mufpen::test

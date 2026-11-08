@@ -3,7 +3,7 @@
 #include "parser/CmarkGfmParser.h"
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 // Retain source correspondence through delimiter removal, escaping and nesting.
 // These runs also let reading anchors follow the conversion and its undo.
@@ -236,4 +236,4 @@ InlineBlockConversion convertInlineBlock(const PieceTable& text, const MarkdownN
   result.valid = true;
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

@@ -10,7 +10,7 @@
 
 #include <limits>
 
-namespace muffin::mermaid::quadrant {
+namespace mufpen::mermaid::quadrant {
 
 QuadrantParseError::QuadrantParseError(const QString& message, int line)
     : std::runtime_error(message.toUtf8().constData()), line(line) {
@@ -464,4 +464,4 @@ QuadrantData QuadrantDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::quadrant
+} // namespace mufpen::mermaid::quadrant

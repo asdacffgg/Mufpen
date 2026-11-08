@@ -11,9 +11,9 @@
 
 namespace {
 
-Q_LOGGING_CATEGORY(documentPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(documentPerf, "mufpen.perf", QtWarningMsg)
 
-// Scoped perf probe routed to the muffin.perf category (captured by MUFFIN_PERF_LOG). No-op
+// Scoped perf probe routed to the mufpen.perf category (captured by MUFPEN_PERF_LOG). No-op
 // (single branch) when the category is disabled, so it is safe to keep in release builds.
 class PerfTimer {
 public:
@@ -35,7 +35,7 @@ private:
   QElapsedTimer timer_;
 };
 
-void resolveOutline(QVector<muffin::OutlineEntry>& entries, const muffin::NodeIndex& index) {
+void resolveOutline(QVector<mufpen::OutlineEntry>& entries, const mufpen::NodeIndex& index) {
   QVector<int> levelStack;
   for (qsizetype i = 0; i < entries.size(); ++i) {
     auto& entry = entries[i];
@@ -51,7 +51,7 @@ void resolveOutline(QVector<muffin::OutlineEntry>& entries, const muffin::NodeIn
 
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 MarkdownDocument::~MarkdownDocument() = default;
 
 const BlockStructure& MarkdownDocument::blockStructure() const {
@@ -416,4 +416,4 @@ void MarkdownDocument::replaceRoot(std::unique_ptr<MarkdownNode> root) {
   emit documentReset();
 }
 
-} // namespace muffin
+} // namespace mufpen

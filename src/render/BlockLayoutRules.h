@@ -4,7 +4,7 @@
 #include "editor/CursorPosition.h"
 #include "theme/RenderTheme.h"
 
-namespace muffin::layout_rules {
+namespace mufpen::layout_rules {
 
 // Shared flow rules consumed by both the cheap estimate and exact build paths.
 bool isInsideBlockquote(const MarkdownNode& node);
@@ -28,4 +28,4 @@ qreal codeLineNumberGutterWidth(const QString& literal, const QFont& font);
 QString displayLiteralFor(const MarkdownNode& node);
 QVector<InlineNode> primaryInlinesForListItem(const MarkdownNode& node);
 
-} // namespace muffin::layout_rules
+} // namespace mufpen::layout_rules

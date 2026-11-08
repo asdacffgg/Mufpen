@@ -70,7 +70,7 @@ def main():
     for stage, call in enumerate(('process_inlines(parser, parser->refmap, parser->options);',
                                   'process_footnotes(parser);')):
         assert vendor.count(call) == 1
-        generated = generated.replace(f'{{ muffin_probe_stage_begin({stage}); {call} muffin_probe_stage_end({stage}); }}', call)
+        generated = generated.replace(f'{{ mufpen_probe_stage_begin({stage}); {call} mufpen_probe_stage_end({stage}); }}', call)
     assert generated == vendor
     assert cmark['complete'] and len(cmark['records']) == 63
     clocks = 0

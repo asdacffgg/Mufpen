@@ -5,7 +5,7 @@
 
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -27,4 +27,4 @@ std::optional<TableCellSourceEdit> buildTableCellDeleteBackwardEdit(const Markdo
 std::optional<TableCellSourceEdit> buildTableCellDeleteForwardEdit(const MarkdownNode& cell, const QString& content,
                                                                    qsizetype sourceOffset);
 
-} // namespace muffin
+} // namespace mufpen

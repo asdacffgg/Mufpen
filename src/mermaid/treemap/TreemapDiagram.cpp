@@ -8,7 +8,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::treemap {
+namespace mufpen::mermaid::treemap {
 namespace {
 
 bool isHorizontal(QChar c) {
@@ -352,4 +352,4 @@ TreemapData TreemapDiagram::parse(const QString& source) {
   return Parser(source).run();
 }
 
-} // namespace muffin::mermaid::treemap
+} // namespace mufpen::mermaid::treemap

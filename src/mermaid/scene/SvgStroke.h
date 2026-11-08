@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <utility>
 
-namespace muffin::mermaid::scene {
+namespace mufpen::mermaid::scene {
 
 // SVG stroke-dasharray lengths are CSS pixels. QPen stores each dash entry as
 // a multiple of the pen width, so feed it the CSS pattern divided by width.
@@ -50,4 +50,4 @@ inline QVector<qreal> parseAndNormalizeSvgDashPattern(const QString& dasharray, 
   return normalizedSvgDashPattern(std::move(pattern), strokeWidth);
 }
 
-} // namespace muffin::mermaid::scene
+} // namespace mufpen::mermaid::scene

@@ -16,7 +16,7 @@
 #include "theme/CssImageResources.h"
 #include "theme/ThemeFontDecoder.h"
 
-namespace muffin::diag {
+namespace mufpen::diag {
 struct MemoryAccounting {
   QSet<const void*> buffers;
   qint64 strings = 0, sharedSource = 0, arrays = 0, blocks = 0, inlines = 0, metadata = 0;
@@ -177,4 +177,4 @@ struct MemoryAccounting {
              "Cumulative bytes submitted to native Qt font registration; OS shaping/cache residency is not exposed."}};
   }
 };
-} // namespace muffin::diag
+} // namespace mufpen::diag

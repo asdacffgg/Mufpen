@@ -10,7 +10,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 namespace {
 
 QString singleLineTitle(QString title) {
@@ -68,4 +68,4 @@ void paintMermaidTitle(const MermaidRenderMetadata& metadata, QPainter& painter,
   painter.restore();
 }
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

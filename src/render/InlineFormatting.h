@@ -10,7 +10,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 
 // A generated inline box edge must reserve advance without introducing a word
 // boundary or being discarded as trailing whitespace. It has no source text.
@@ -89,4 +89,4 @@ struct InlineLineBox {
   }
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -17,10 +17,10 @@
 #include <cmath>
 #include <cstdlib>
 
-using muffin::mermaid::editor::MermaidRenderCache;
-using muffin::mermaid::editor::MermaidRenderEntry;
-using muffin::mermaid::editor::MermaidSvgRenderResult;
-using muffin::mermaid::MermaidPaintOptions;
+using mufpen::mermaid::editor::MermaidRenderCache;
+using mufpen::mermaid::editor::MermaidRenderEntry;
+using mufpen::mermaid::editor::MermaidSvgRenderResult;
+using mufpen::mermaid::MermaidPaintOptions;
 
 namespace {
 

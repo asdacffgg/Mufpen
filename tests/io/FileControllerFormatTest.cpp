@@ -15,7 +15,7 @@
 
 #include <cstdlib>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -195,7 +195,7 @@ void testWindows1252UndefinedBytesRoundTrip(const QString& path) {
 
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTests"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTests"));
   QCoreApplication::setApplicationName(QStringLiteral("FileControllerFormatTest"));
   QSettings().clear();
   QSettings().setValue(QStringLiteral("editor/defaultLineBreak"), 1);

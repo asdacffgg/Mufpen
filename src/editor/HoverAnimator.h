@@ -10,7 +10,7 @@
 
 class QTimer;
 
-namespace muffin {
+namespace mufpen {
 
 // Animates a single block's hover-glow phase 0..1, idle-gated: the timer runs
 // only while a fade is in flight, so a static document costs nothing. Phase 1 =
@@ -19,7 +19,7 @@ namespace muffin {
 //
 // MVP: one block at a time. When hover moves from A to B, A's glow snaps off (its
 // rect is repainted once without glow) while B fades in; unhover fades B out.
-class MUFFIN_UI_EXPORT HoverAnimator : public QObject {
+class MUFPEN_UI_EXPORT HoverAnimator : public QObject {
   Q_OBJECT
 public:
   explicit HoverAnimator(QObject* parent = nullptr);
@@ -48,4 +48,4 @@ private:
   qint64 lastTickMs_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

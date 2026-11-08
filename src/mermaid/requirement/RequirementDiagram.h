@@ -39,7 +39,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 // Display-type strings emitted by the parser, matching RequirementDB's
 // RequirementType enum values exactly.
@@ -119,4 +119,4 @@ struct RequirementParseError : std::runtime_error {
 // keyword is not a recognized requirement type. Used by the parser.
 QString requirementTypeDisplay(const QString& keyword);
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

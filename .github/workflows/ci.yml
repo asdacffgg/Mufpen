@@ -168,18 +168,18 @@ jobs:
 
       - name: Build macOS integration and font raster tests
         if: runner.os == 'macOS'
-        run: cmake --build --preset conan-release --target MuffinQuickLook MuffinQuickLookTest MuffinIcuWordBoundaryTest MuffinDocumentTabsTest MuffinSidebarInteractionTest MuffinFontMappingCompatibilityTest MuffinFractionalFontMappingCompatibilityTest MuffinCssPaintInteractionTest
+        run: cmake --build --preset conan-release --target MufpenQuickLook MufpenQuickLookTest MufpenIcuWordBoundaryTest MufpenDocumentTabsTest MufpenSidebarInteractionTest MufpenFontMappingCompatibilityTest MufpenFractionalFontMappingCompatibilityTest MufpenCssPaintInteractionTest
 
       - name: Test macOS integration and font raster
         if: runner.os == 'macOS'
-        run: ctest --preset conan-release --verbose -R 'Muffin(QuickLook|QuickLookRegistration|IcuWordBoundary|DocumentTabs|LazySessionView|SidebarInteraction|.*FontMappingCompatibility|.*CssPaintInteraction)Test'
+        run: ctest --preset conan-release --verbose -R 'Mufpen(QuickLook|QuickLookRegistration|IcuWordBoundary|DocumentTabs|LazySessionView|SidebarInteraction|.*FontMappingCompatibility|.*CssPaintInteraction)Test'
 
       - name: Build
         run: cmake --build --preset conan-release
 
       - name: Verify macOS Quick Look bundle
         if: runner.os == 'macOS'
-        run: python scripts/check_macos_quicklook.py --bundle build/Release/Muffin.app
+        run: python scripts/check_macos_quicklook.py --bundle build/Release/Mufpen.app
 
       - name: Verify bundled Math font contract
         run: ctest --preset conan-release --verbose -L math-font-oracle
@@ -189,7 +189,7 @@ jobs:
         run: ${{ matrix.test-command }}
 
       # The Linux bundle ships a fcitx5 platforminputcontext plugin built against this build's
-      # Qt (cmake/MuffinFcitx5Qt.cmake). Without it the packaged app cannot do CJK input, so
+      # Qt (cmake/MufpenFcitx5Qt.cmake). Without it the packaged app cannot do CJK input, so
       # build the dist tree here instead of discovering the breakage during a release.
       - name: Build Linux distribution
         if: runner.os == 'Linux' && matrix.conan-arch == 'x86_64'
@@ -201,10 +201,10 @@ jobs:
         if: failure() && runner.os == 'macOS'
         shell: bash
         run: |
-          for test in MuffinDocumentTabsTest MuffinSidebarInteractionTest; do
+          for test in MufpenDocumentTabsTest MufpenSidebarInteractionTest; do
             (cd build/Release && QT_FONT_DPI=96 QT_QPA_PLATFORM=offscreen lldb --batch -o run -k 'thread backtrace all' -- "./$test") || true
           done
-          find "$HOME/Library/Logs/DiagnosticReports" -name 'Muffin*' -type f -exec cat {} + || true
+          find "$HOME/Library/Logs/DiagnosticReports" -name 'Mufpen*' -type f -exec cat {} + || true
 
       - name: Upload pixel mismatch diagnostics
         if: failure()
@@ -332,7 +332,7 @@ jobs:
       - name: Configure (AddressSanitizer + debug info)
         run: |
           cmake --preset conan-release \
-            -DMUFFIN_LIB_TYPE=SHARED \
+            -DMUFPEN_LIB_TYPE=SHARED \
             -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
             -DCMAKE_CXX_FLAGS="-fsanitize=address -fno-omit-frame-pointer -g1" \
             -DCMAKE_C_FLAGS="-fsanitize=address -fno-omit-frame-pointer -g1" \

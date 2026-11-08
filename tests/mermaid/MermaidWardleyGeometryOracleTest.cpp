@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 #endif
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
-  muffin::mermaid::MermaidFontRegistry::ensureLoaded();
+  mufpen::mermaid::MermaidFontRegistry::ensureLoaded();
   ensureWardleyFonts();
   require(argc == 2, QStringLiteral("Expected Wardley geometry fixture path"));
   QFile file(QString::fromLocal8Bit(argv[1]));

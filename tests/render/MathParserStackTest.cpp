@@ -11,7 +11,7 @@
 #include <memory>
 #include <stdexcept>
 
-using namespace muffin::math;
+using namespace mufpen::math;
 
 namespace {
 

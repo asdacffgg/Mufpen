@@ -2,9 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Interop;
-using Muffin.Setup.Ui;
+using Mufpen.Setup.Ui;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
     public partial class MainWindow : Window
     {
@@ -15,14 +15,14 @@ namespace Muffin.Setup
         public MainWindow(SetupModel model)
         {
             _model = model;
-            // UI-thread exceptions crash the process, which MuffinBa's
+            // UI-thread exceptions crash the process, which MufpenBa's
             // AppDomain.UnhandledException hook reports to the engine log.
             InitializeComponent();
 
             var dark = Win32Interop.SystemPrefersDarkTheme();
             var palette = new ResourceDictionary
             {
-                Source = new Uri($"pack://application:,,,/MuffinBootstrapperUI;component/Ui/Palette.{(dark ? "Dark" : "Light")}.xaml"),
+                Source = new Uri($"pack://application:,,,/MufpenBootstrapperUI;component/Ui/Palette.{(dark ? "Dark" : "Light")}.xaml"),
             };
             Resources.MergedDictionaries.Add(palette);
 

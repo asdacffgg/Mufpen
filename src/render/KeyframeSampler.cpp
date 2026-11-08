@@ -8,7 +8,7 @@
 #include <QStringList>
 #include <QtMath>
 
-namespace muffin {
+namespace mufpen {
 namespace KeyframeSampler {
 
 namespace {
@@ -140,4 +140,4 @@ AnimatedSample sampleAtPhase(const KeyframesDef& kf, qreal phase) {
 }
 
 } // namespace KeyframeSampler
-} // namespace muffin
+} // namespace mufpen

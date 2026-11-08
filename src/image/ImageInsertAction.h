@@ -1,6 +1,6 @@
 #pragma once
 
-namespace muffin {
+namespace mufpen {
 
 // The "When Inserting Images" preference (Image preferences page, Card 1). The
 // integer stored under QSettings key `image/insertAction` is cast directly to
@@ -14,4 +14,4 @@ enum class ImageInsertAction {
   CopyToCustomFolder = 5,   // 复制到指定路径 — image/customFolder.
 };
 
-} // namespace muffin
+} // namespace mufpen

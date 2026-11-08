@@ -11,9 +11,9 @@
 
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
-class MUFFIN_UI_EXPORT ThemeManager final : public QObject {
+class MUFPEN_UI_EXPORT ThemeManager final : public QObject {
   Q_OBJECT
 
 public:
@@ -101,4 +101,4 @@ private:
   QHash<QString, QString> cssSourcePaths_;
 };
 
-} // namespace muffin
+} // namespace mufpen

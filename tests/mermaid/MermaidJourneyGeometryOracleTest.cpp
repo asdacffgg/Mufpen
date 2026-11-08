@@ -24,7 +24,7 @@
 #include <cstdlib>
 #include <limits>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 

@@ -2,7 +2,7 @@
 
 #include <QtGlobal>
 
-namespace muffin {
+namespace mufpen {
 
 qsizetype LayoutPositionIndex::nodeSize(const LayoutPositionToken* node) {
   return node ? node->subtreeSize : 0;
@@ -169,4 +169,4 @@ void LayoutPositionIndex::replace(qsizetype first, qsizetype count, std::unique_
   root_ = merge(merge(std::move(prefix), std::move(replacements)), std::move(suffix));
 }
 
-} // namespace muffin
+} // namespace mufpen

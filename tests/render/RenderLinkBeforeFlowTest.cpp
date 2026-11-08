@@ -14,7 +14,7 @@
 #include "RenderTestUtils.h"
 #include "../theme/BrowserLayoutFont.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -68,7 +68,7 @@ void testLinkBeforeIconReservesFlow() {
 void testBrowserGeneratedLinksAndEditing() {
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/live-pseudos-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/live-pseudos-browser.json")).toUtf8())
           .object();
   const auto family = browserLayoutFont(reference).value("muffinfixturesans");
   for (const auto value : reference["cases"].toArray()) {

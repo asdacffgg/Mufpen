@@ -14,14 +14,14 @@
 #include <QSignalBlocker>
 #include <QVBoxLayout>
 
-muffin::PreferencesPage::PreferencesPage(QWidget* parent) : QWidget(parent) {
+mufpen::PreferencesPage::PreferencesPage(QWidget* parent) : QWidget(parent) {
   // Scope the transparent page surface in the dialog stylesheet. An unqualified
   // per-page rule also overrides inputs, item views and child message boxes.
   setObjectName(QStringLiteral("preferencesPage"));
   setAttribute(Qt::WA_StyledBackground);
 }
 
-QLabel* muffin::PreferencesPage::makeSectionLabel(QWidget* parent) const {
+QLabel* mufpen::PreferencesPage::makeSectionLabel(QWidget* parent) const {
   auto* label = new QLabel(parent);
   // Themed via object name (see dialogStyleSheet) so the colour follows the
   // active theme instead of a hard-coded near-black that's invisible on dark.
@@ -29,17 +29,17 @@ QLabel* muffin::PreferencesPage::makeSectionLabel(QWidget* parent) const {
   return label;
 }
 
-QLabel* muffin::PreferencesPage::makeMutedLabel(QWidget* parent) const {
+QLabel* mufpen::PreferencesPage::makeMutedLabel(QWidget* parent) const {
   auto* label = new QLabel(parent);
   label->setObjectName(QStringLiteral("preferencesMutedLabel"));
   return label;
 }
 
-QPushButton* muffin::PreferencesPage::makeButton(QWidget* parent) const {
+QPushButton* mufpen::PreferencesPage::makeButton(QWidget* parent) const {
   return new QPushButton(parent);
 }
 
-QLabel* muffin::PreferencesPage::makeInfoIcon(QWidget* parent) const {
+QLabel* mufpen::PreferencesPage::makeInfoIcon(QWidget* parent) const {
   auto* label = new QLabel(parent);
   const qreal dpr = qApp->devicePixelRatio();
   const int sz = 14;
@@ -62,38 +62,38 @@ QLabel* muffin::PreferencesPage::makeInfoIcon(QWidget* parent) const {
   return label;
 }
 
-QWidget* muffin::PreferencesPage::makeCard(QWidget* parent) const {
+QWidget* mufpen::PreferencesPage::makeCard(QWidget* parent) const {
   auto* card = new QWidget(parent);
   card->setObjectName(QStringLiteral("settingsCard"));
   return card;
 }
 
-QVBoxLayout* muffin::PreferencesPage::makeCardLayout(QWidget* card) const {
+QVBoxLayout* mufpen::PreferencesPage::makeCardLayout(QWidget* card) const {
   auto* layout = new QVBoxLayout(card);
   layout->setContentsMargins(kRowHorizontalMargin, kRowVerticalMargin, kRowHorizontalMargin, kRowVerticalMargin);
   layout->setSpacing(kRowSpacing);
   return layout;
 }
 
-void muffin::PreferencesPage::wireBoolSetting(QCheckBox* checkBox, const QString& key) const {
+void mufpen::PreferencesPage::wireBoolSetting(QCheckBox* checkBox, const QString& key) const {
   connect(checkBox, &QCheckBox::toggled, this, [key](bool checked) { QSettings().setValue(key, checked); });
 }
 
-void muffin::PreferencesPage::wireComboIndexSetting(QComboBox* comboBox, const QString& key) const {
+void mufpen::PreferencesPage::wireComboIndexSetting(QComboBox* comboBox, const QString& key) const {
   connect(comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this,
           [key](int index) { QSettings().setValue(key, index); });
 }
 
-void muffin::PreferencesPage::wireLineEditSetting(QLineEdit* lineEdit, const QString& key) const {
+void mufpen::PreferencesPage::wireLineEditSetting(QLineEdit* lineEdit, const QString& key) const {
   connect(lineEdit, &QLineEdit::textChanged, this, [key](const QString& text) { QSettings().setValue(key, text); });
 }
 
-void muffin::PreferencesPage::loadCheck(QCheckBox* checkBox, const QString& key, bool defaultValue) const {
+void mufpen::PreferencesPage::loadCheck(QCheckBox* checkBox, const QString& key, bool defaultValue) const {
   const QSignalBlocker blocker(checkBox);
   checkBox->setChecked(QSettings().value(key, defaultValue).toBool());
 }
 
-void muffin::PreferencesPage::loadComboIndex(QComboBox* comboBox, const QString& key, int defaultValue) const {
+void mufpen::PreferencesPage::loadComboIndex(QComboBox* comboBox, const QString& key, int defaultValue) const {
   if (comboBox->count() <= 0) {
     return;
   }
@@ -102,12 +102,12 @@ void muffin::PreferencesPage::loadComboIndex(QComboBox* comboBox, const QString&
   comboBox->setCurrentIndex(qBound(0, value, comboBox->count() - 1));
 }
 
-void muffin::PreferencesPage::loadLineEdit(QLineEdit* lineEdit, const QString& key, const QString& defaultValue) const {
+void mufpen::PreferencesPage::loadLineEdit(QLineEdit* lineEdit, const QString& key, const QString& defaultValue) const {
   const QSignalBlocker blocker(lineEdit);
   lineEdit->setText(QSettings().value(key, defaultValue).toString());
 }
 
-void muffin::PreferencesPage::rebuildCombo(QComboBox* comboBox, const QVector<QString>& items) const {
+void mufpen::PreferencesPage::rebuildCombo(QComboBox* comboBox, const QVector<QString>& items) const {
   const int current = comboBox->currentIndex();
   const QSignalBlocker blocker(comboBox);
   comboBox->clear();
@@ -120,7 +120,7 @@ void muffin::PreferencesPage::rebuildCombo(QComboBox* comboBox, const QVector<QS
   }
 }
 
-void muffin::PreferencesPage::polishComboBox(QComboBox* comboBox, int visibleItems) const {
+void mufpen::PreferencesPage::polishComboBox(QComboBox* comboBox, int visibleItems) const {
   if (!comboBox) {
     return;
   }

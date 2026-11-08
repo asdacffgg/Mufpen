@@ -4,10 +4,10 @@
 
 class QPainter;
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 
 struct IshikawaScene;
 
 void paintIshikawaScene(const IshikawaScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

@@ -8,7 +8,7 @@
 
 #include "mermaid/dagre/DagreLabels.h"
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // Rank every leaf node. Honours g.graph()->ranker ("tight-tree" / "longest-path"
 // / "network-simplex" / default). Default is network-simplex.
@@ -19,4 +19,4 @@ void longestPath(DagreGraph& g);
 int slack(const DagreGraph& g, const graphlib::Edge& e);
 void networkSimplex(DagreGraph& g); // input must already be simplified
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

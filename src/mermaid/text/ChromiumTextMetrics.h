@@ -6,7 +6,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::textmetrics {
+namespace mufpen::mermaid::textmetrics {
 
 // Shapes through the same OpenType tables as Chromium's HarfBuzz path and
 // returns the CSS-pixel advance before device rasterization. This avoids
@@ -17,4 +17,4 @@ std::optional<qreal> harfBuzzAdvance(const QString& text, const QString& cssFont
 std::optional<QRectF> harfBuzzInkBounds(const QString& text, const QString& cssFontFamilies, qreal fontSize,
                                         QFont::Weight weight = QFont::Normal);
 
-} // namespace muffin::mermaid::textmetrics
+} // namespace mufpen::mermaid::textmetrics

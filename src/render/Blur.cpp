@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -92,4 +92,4 @@ QImage blurred(const QImage& src, qreal radius) {
   return img;
 }
 
-} // namespace muffin
+} // namespace mufpen

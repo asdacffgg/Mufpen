@@ -10,7 +10,7 @@
 #include <memory>
 #include <optional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathMacroExpander {
 public:
@@ -59,4 +59,4 @@ private:
   int expandDepth_ = 0; // bounds logical \expandafter nesting
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

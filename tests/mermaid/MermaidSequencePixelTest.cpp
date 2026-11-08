@@ -23,7 +23,7 @@
 #include <initializer_list>
 #include <iterator>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -152,16 +152,16 @@ QImage alphaTrimmed(const QImage& image) {
   return bounds.isNull() ? image : image.copy(bounds);
 }
 QImage renderMathLayer(const sequence::SequenceLabelDocument& label, qreal fontPixelSize, qreal dpr,
-                       muffin::math::MathMlPaintLayer layer, const QColor& color, bool trim = true) {
+                       mufpen::math::MathMlPaintLayer layer, const QColor& color, bool trim = true) {
   if (label.richText.math.isEmpty())
     return {};
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
-  const muffin::math::MathLayoutResult layout =
+  const mufpen::math::MathLayoutResult layout =
       renderer.render(label.richText.math.front().source, renderFontPixelSize, color, true);
   if (!layout.valid())
     return {};
-  const muffin::math::MathCssBox box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
+  const mufpen::math::MathCssBox box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
   constexpr qreal padding = 2.0;
   QImage image(qCeil((box.width + 2.0 * padding) * dpr), qCeil((box.height + 2.0 * padding) * dpr),
                QImage::Format_ARGB32_Premultiplied);
@@ -171,20 +171,20 @@ QImage renderMathLayer(const sequence::SequenceLabelDocument& label, qreal fontP
   painter.setRenderHint(QPainter::TextAntialiasing);
   painter.scale(dpr, dpr);
   painter.translate(padding, padding);
-  muffin::math::paintMathMlOperations(painter, layout, color, renderFontPixelSize, layer);
+  mufpen::math::paintMathMlOperations(painter, layout, color, renderFontPixelSize, layer);
   painter.end();
   return trim ? alphaTrimmed(image) : image;
 }
 QImage renderMathAtPhase(const sequence::SequenceLabelDocument& label, qreal fontPixelSize, qreal dpr, qreal phase) {
   if (label.richText.math.isEmpty())
     return {};
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
-  const muffin::math::MathLayoutResult layout =
+  const mufpen::math::MathLayoutResult layout =
       renderer.render(label.richText.math.front().source, renderFontPixelSize, Qt::white, true);
   if (!layout.valid())
     return {};
-  const muffin::math::MathCssBox box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
+  const mufpen::math::MathCssBox box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
   constexpr qreal padding = 8.0;
   QImage image(qCeil((box.width + 2.0 * padding + 1.0) * dpr), qCeil((box.height + 2.0 * padding + 1.0) * dpr),
                QImage::Format_ARGB32_Premultiplied);
@@ -194,13 +194,13 @@ QImage renderMathAtPhase(const sequence::SequenceLabelDocument& label, qreal fon
   painter.setRenderHint(QPainter::TextAntialiasing);
   painter.scale(dpr, dpr);
   painter.translate(padding + phase, padding + phase);
-  muffin::math::paintMathMlOperations(painter, layout, Qt::white, renderFontPixelSize);
+  mufpen::math::paintMathMlOperations(painter, layout, Qt::white, renderFontPixelSize);
   painter.end();
   return alphaTrimmed(image);
 }
-const muffin::math::MathCssVerticalGlyphOperation*
-findLargeOperatorGlyph(const muffin::math::MathCssPaintOperation& operation) {
-  if (const auto* script = std::get_if<muffin::math::MathCssScriptOperation>(&operation.payload);
+const mufpen::math::MathCssVerticalGlyphOperation*
+findLargeOperatorGlyph(const mufpen::math::MathCssPaintOperation& operation) {
+  if (const auto* script = std::get_if<mufpen::math::MathCssScriptOperation>(&operation.payload);
       script && script->largeOperatorGlyph)
     return &*script->largeOperatorGlyph;
   for (const auto& child : operation.children)
@@ -208,23 +208,23 @@ findLargeOperatorGlyph(const muffin::math::MathCssPaintOperation& operation) {
       return glyph;
   return nullptr;
 }
-const muffin::math::MathCssAccentOperation* findAccentOperation(const muffin::math::MathCssPaintOperation& operation) {
-  if (const auto* accent = std::get_if<muffin::math::MathCssAccentOperation>(&operation.payload))
+const mufpen::math::MathCssAccentOperation* findAccentOperation(const mufpen::math::MathCssPaintOperation& operation) {
+  if (const auto* accent = std::get_if<mufpen::math::MathCssAccentOperation>(&operation.payload))
     return accent;
   for (const auto& child : operation.children)
     if (const auto* accent = findAccentOperation(child))
       return accent;
   return nullptr;
 }
-bool hasPaintKindPath(const muffin::math::MathCssPaintOperation& operation,
-                      std::initializer_list<muffin::math::MathCssPaintKind> path) {
+bool hasPaintKindPath(const mufpen::math::MathCssPaintOperation& operation,
+                      std::initializer_list<mufpen::math::MathCssPaintKind> path) {
   if (path.size() == 0 || operation.kind() != *path.begin())
     return false;
-  const muffin::math::MathCssPaintOperation* current = &operation;
+  const mufpen::math::MathCssPaintOperation* current = &operation;
   for (auto expected = std::next(path.begin()); expected != path.end(); ++expected) {
     const auto child = std::find_if(
         current->children.cbegin(), current->children.cend(),
-        [&](const muffin::math::MathCssPaintOperation& candidate) { return candidate.kind() == *expected; });
+        [&](const mufpen::math::MathCssPaintOperation& candidate) { return candidate.kind() == *expected; });
     if (child == current->children.cend())
       return false;
     current = &*child;
@@ -242,19 +242,19 @@ LargeOperatorRaster renderLargeOperatorGlyph(const sequence::SequenceLabelDocume
                                              qreal dpr) {
   if (label.richText.math.isEmpty())
     return {};
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
-  const muffin::math::MathLayoutResult layout =
+  const mufpen::math::MathLayoutResult layout =
       renderer.render(label.richText.math.front().source, renderFontPixelSize, Qt::white, true);
   if (!layout.valid())
     return {};
-  const auto built = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
+  const auto built = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
   if (!built.operation)
     return {};
   const auto* glyph = findLargeOperatorGlyph(*built.operation);
   if (!glyph)
     return {};
-  const muffin::math::MathCssBox box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
+  const mufpen::math::MathCssBox box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
   constexpr qreal padding = 2.0;
   QImage image(qCeil((box.width + 2.0 * padding) * dpr), qCeil((box.height + 2.0 * padding) * dpr),
                QImage::Format_ARGB32_Premultiplied);
@@ -264,44 +264,44 @@ LargeOperatorRaster renderLargeOperatorGlyph(const sequence::SequenceLabelDocume
   painter.setRenderHint(QPainter::TextAntialiasing);
   painter.scale(dpr, dpr);
   painter.translate(padding, padding);
-  muffin::math::paintMathMlVerticalGlyphOperation(painter, *glyph, Qt::white);
+  mufpen::math::paintMathMlVerticalGlyphOperation(painter, *glyph, Qt::white);
   painter.end();
   return {alphaTrimmed(image), glyph->target, glyph->inkBounds, glyph->parts.size(),
-          glyph->kind == muffin::math::MathCssVerticalGlyphKind::FixedVariant};
+          glyph->kind == mufpen::math::MathCssVerticalGlyphKind::FixedVariant};
 }
 struct NativeDelimiterRaster {
   QString character;
   QImage image;
   QRectF target;
   QRectF inkBounds;
-  QVector<muffin::math::MathCssVerticalGlyphPart> parts;
+  QVector<mufpen::math::MathCssVerticalGlyphPart> parts;
 };
 QVector<NativeDelimiterRaster> renderDelimiterGlyphs(const sequence::SequenceLabelDocument& label, qreal fontPixelSize,
                                                      qreal dpr) {
   QVector<NativeDelimiterRaster> result;
   if (label.richText.math.isEmpty())
     return result;
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
   const auto layout = renderer.render(label.richText.math.front().source, renderFontPixelSize, Qt::white, true);
   if (!layout.valid())
     return result;
-  const auto built = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
+  const auto built = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
   if (!built.operation)
     return result;
-  QVector<const muffin::math::MathCssVerticalGlyphOperation*> glyphs;
-  for (const auto& primitive : muffin::math::collectMathMlPaintPrimitives(*built.operation)) {
-    if (primitive.kind != muffin::math::MathMlPaintPrimitiveKind::VerticalGlyph ||
-        primitive.role == muffin::math::MathMlPaintPrimitiveRole::LargeOperator)
+  QVector<const mufpen::math::MathCssVerticalGlyphOperation*> glyphs;
+  for (const auto& primitive : mufpen::math::collectMathMlPaintPrimitives(*built.operation)) {
+    if (primitive.kind != mufpen::math::MathMlPaintPrimitiveKind::VerticalGlyph ||
+        primitive.role == mufpen::math::MathMlPaintPrimitiveRole::LargeOperator)
       continue;
-    glyphs.push_back(std::get<const muffin::math::MathCssVerticalGlyphOperation*>(primitive.payload));
+    glyphs.push_back(std::get<const mufpen::math::MathCssVerticalGlyphOperation*>(primitive.payload));
   }
   std::stable_sort(glyphs.begin(), glyphs.end(), [](const auto* left, const auto* right) {
     if (!qFuzzyCompare(left->target.left() + 1.0, right->target.left() + 1.0))
       return left->target.left() < right->target.left();
     return left->target.top() < right->target.top();
   });
-  const muffin::math::MathCssBox box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
+  const mufpen::math::MathCssBox box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
   constexpr qreal padding = 4.0;
   for (const auto* glyph : glyphs) {
     QImage image(qCeil((box.width + 2.0 * padding) * dpr), qCeil((box.height + 2.0 * padding) * dpr),
@@ -312,32 +312,32 @@ QVector<NativeDelimiterRaster> renderDelimiterGlyphs(const sequence::SequenceLab
     painter.setRenderHint(QPainter::TextAntialiasing);
     painter.scale(dpr, dpr);
     painter.translate(padding, padding);
-    muffin::math::paintMathMlVerticalGlyphOperation(painter, *glyph, Qt::white);
+    mufpen::math::paintMathMlVerticalGlyphOperation(painter, *glyph, Qt::white);
     painter.end();
     result.push_back({glyph->character, alphaTrimmed(image), glyph->target, glyph->inkBounds, glyph->parts});
   }
   return result;
 }
 QImage renderMathPrimitiveRole(const sequence::SequenceLabelDocument& label, qreal fontPixelSize, qreal dpr,
-                               muffin::math::MathMlPaintPrimitiveRole role, bool trim = true, QPointF phase = {}) {
+                               mufpen::math::MathMlPaintPrimitiveRole role, bool trim = true, QPointF phase = {}) {
   if (label.richText.math.isEmpty())
     return {};
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
-  const muffin::math::MathLayoutResult layout =
+  const mufpen::math::MathLayoutResult layout =
       renderer.render(label.richText.math.front().source, renderFontPixelSize, Qt::white, true);
   if (!layout.valid())
     return {};
-  const auto built = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
+  const auto built = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
   if (!built.operation)
     return {};
-  QVector<muffin::math::MathMlPaintPrimitive> selected;
-  for (const auto& primitive : muffin::math::collectMathMlPaintPrimitives(*built.operation))
+  QVector<mufpen::math::MathMlPaintPrimitive> selected;
+  for (const auto& primitive : mufpen::math::collectMathMlPaintPrimitives(*built.operation))
     if (primitive.role == role)
       selected.push_back(primitive);
   if (selected.isEmpty())
     return {};
-  const muffin::math::MathCssBox box = muffin::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
+  const mufpen::math::MathCssBox box = mufpen::math::layoutMathMlCssBox(layout, renderFontPixelSize, 16.0);
   const qreal padding = phase.isNull() ? 2.0 : 8.0;
   QImage image(qCeil((box.width + 2.0 * padding) * dpr), qCeil((box.height + 2.0 * padding) * dpr),
                QImage::Format_ARGB32_Premultiplied);
@@ -347,12 +347,12 @@ QImage renderMathPrimitiveRole(const sequence::SequenceLabelDocument& label, qre
   painter.setRenderHint(QPainter::TextAntialiasing);
   painter.scale(dpr, dpr);
   painter.translate(QPointF(padding, padding) + phase);
-  muffin::math::paintMathMlPrimitives(painter, selected, Qt::white);
+  mufpen::math::paintMathMlPrimitives(painter, selected, Qt::white);
   painter.end();
   return trim ? alphaTrimmed(image) : image;
 }
 struct NativeMathToken {
-  muffin::math::MathMlPaintPrimitiveRole role;
+  mufpen::math::MathMlPaintPrimitiveRole role;
   QString text;
   QRectF clip;
   QPointF baseline;
@@ -363,18 +363,18 @@ QVector<NativeMathToken> nativeMathTokens(const sequence::SequenceLabelDocument&
   QVector<NativeMathToken> result;
   if (label.richText.math.isEmpty())
     return result;
-  muffin::math::MathRenderer renderer;
+  mufpen::math::MathRenderer renderer;
   const qreal renderFontPixelSize = fontPixelSize * 1.21;
   const auto layout = renderer.render(label.richText.math.front().source, renderFontPixelSize, Qt::white, true);
   if (!layout.valid())
     return result;
-  const auto built = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
+  const auto built = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
   if (!built.operation)
     return result;
-  for (const auto& primitive : muffin::math::collectMathMlPaintPrimitives(*built.operation)) {
-    if (primitive.kind != muffin::math::MathMlPaintPrimitiveKind::GlyphRun)
+  for (const auto& primitive : mufpen::math::collectMathMlPaintPrimitives(*built.operation)) {
+    if (primitive.kind != mufpen::math::MathMlPaintPrimitiveKind::GlyphRun)
       continue;
-    const auto* run = std::get<const muffin::math::MathCssGlyphRunOperation*>(primitive.payload);
+    const auto* run = std::get<const mufpen::math::MathCssGlyphRunOperation*>(primitive.payload);
     result.push_back(
         {primitive.role, run->text, run->clip, run->baselineOrigin, run->fontScale, primitive.operationPath});
   }
@@ -464,23 +464,23 @@ int main(int argc, char** argv) {
                   sequenceScene->noteLabels.first().richText.math.first().prepared,
               QStringLiteral("%1 must use a prepared MathML operation").arg(id));
       const auto& label = sequenceScene->noteLabels.first();
-      muffin::math::MathRenderer renderer;
+      mufpen::math::MathRenderer renderer;
       const qreal renderFontPixelSize = sequenceScene->style.fontSize * 1.21;
       const auto layout = renderer.render(label.richText.math.first().source, renderFontPixelSize, Qt::white, true);
-      const auto build = muffin::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
-      require(build.operation.has_value() && build.operation->kind() == muffin::math::MathCssPaintKind::Radical,
+      const auto build = mufpen::math::buildMathMlPaintOperations(layout, renderFontPixelSize, 16.0);
+      require(build.operation.has_value() && build.operation->kind() == mufpen::math::MathCssPaintKind::Radical,
               QStringLiteral("%1 root radical operation is missing").arg(id));
       if (id.endsWith(QLatin1String("fraction")))
         require(hasPaintKindPath(*build.operation,
-                                 {muffin::math::MathCssPaintKind::Radical, muffin::math::MathCssPaintKind::Fraction}),
+                                 {mufpen::math::MathCssPaintKind::Radical, mufpen::math::MathCssPaintKind::Fraction}),
                 QStringLiteral("%1 fraction degree operation is missing").arg(id));
       if (id.endsWith(QLatin1String("radical")))
         require(hasPaintKindPath(*build.operation,
-                                 {muffin::math::MathCssPaintKind::Radical, muffin::math::MathCssPaintKind::Radical}),
+                                 {mufpen::math::MathCssPaintKind::Radical, mufpen::math::MathCssPaintKind::Radical}),
                 QStringLiteral("%1 radical degree operation is missing").arg(id));
       if (id.endsWith(QLatin1String("supsub")))
         require(hasPaintKindPath(*build.operation,
-                                 {muffin::math::MathCssPaintKind::Radical, muffin::math::MathCssPaintKind::SupSub}),
+                                 {mufpen::math::MathCssPaintKind::Radical, mufpen::math::MathCssPaintKind::SupSub}),
                 QStringLiteral("%1 supsub degree operation is missing").arg(id));
     }
     const qreal dpr = fixture.value(QStringLiteral("dpr")).toDouble(1.0);
@@ -644,10 +644,10 @@ int main(int argc, char** argv) {
       for (const QJsonValue& groupValue : fixture.value(QStringLiteral("mathTokenGroups")).toArray()) {
         const QJsonObject group = groupValue.toObject();
         const QString role = group.value(QStringLiteral("role")).toString();
-        const auto nativeRole = role == QLatin1String("row") ? muffin::math::MathMlPaintPrimitiveRole::Row
+        const auto nativeRole = role == QLatin1String("row") ? mufpen::math::MathMlPaintPrimitiveRole::Row
                                 : role == QLatin1String("subscript")
-                                    ? muffin::math::MathMlPaintPrimitiveRole::ScriptSubscript
-                                    : muffin::math::MathMlPaintPrimitiveRole::ScriptSuperscript;
+                                    ? mufpen::math::MathMlPaintPrimitiveRole::ScriptSubscript
+                                    : mufpen::math::MathMlPaintPrimitiveRole::ScriptSuperscript;
         const QString groupFile = group.value(QStringLiteral("file")).toString();
         require(fileSha256(dir.filePath(groupFile)) == group.value(QStringLiteral("sha256")).toString().toLatin1(),
                 QStringLiteral("%1 %2 token-group hash drifted").arg(id, role));
@@ -733,10 +733,10 @@ int main(int argc, char** argv) {
                       component.value(QStringLiteral("sha256")).toString().toLatin1(),
                   QStringLiteral("%1 phase %2 %3 hash drifted").arg(id).arg(phase).arg(role));
           const auto nativeRole =
-              role == QLatin1String("large-operator") ? muffin::math::MathMlPaintPrimitiveRole::LargeOperator
-              : role == QLatin1String("subscript")    ? muffin::math::MathMlPaintPrimitiveRole::ScriptSubscript
-              : role == QLatin1String("superscript")  ? muffin::math::MathMlPaintPrimitiveRole::ScriptSuperscript
-                                                      : muffin::math::MathMlPaintPrimitiveRole::Row;
+              role == QLatin1String("large-operator") ? mufpen::math::MathMlPaintPrimitiveRole::LargeOperator
+              : role == QLatin1String("subscript")    ? mufpen::math::MathMlPaintPrimitiveRole::ScriptSubscript
+              : role == QLatin1String("superscript")  ? mufpen::math::MathMlPaintPrimitiveRole::ScriptSuperscript
+                                                      : mufpen::math::MathMlPaintPrimitiveRole::Row;
           const QImage nativeComponent =
               renderMathPrimitiveRole(sequenceScene->noteLabels.first(), sequenceScene->style.fontSize, dpr, nativeRole,
                                       true, QPointF(phase, phase));
@@ -793,9 +793,9 @@ int main(int argc, char** argv) {
             fixture.value(QStringLiteral("structure")).toObject().value(QStringLiteral("mathMlBox")).toObject();
         QHash<int, qsizetype> roleCursor;
         const auto enumRole = [](const QString& role) {
-          return role == QLatin1String("row")         ? muffin::math::MathMlPaintPrimitiveRole::Row
-                 : role == QLatin1String("subscript") ? muffin::math::MathMlPaintPrimitiveRole::ScriptSubscript
-                                                      : muffin::math::MathMlPaintPrimitiveRole::ScriptSuperscript;
+          return role == QLatin1String("row")         ? mufpen::math::MathMlPaintPrimitiveRole::Row
+                 : role == QLatin1String("subscript") ? mufpen::math::MathMlPaintPrimitiveRole::ScriptSubscript
+                                                      : mufpen::math::MathMlPaintPrimitiveRole::ScriptSuperscript;
         };
         for (const QJsonValue& tokenValue : browserTokens) {
           const QJsonObject token = tokenValue.toObject();
@@ -845,17 +845,17 @@ int main(int argc, char** argv) {
                 QStringLiteral("%1 MathML component label is unavailable").arg(id));
         const sequence::SequenceLabelDocument& componentLabel = sequenceScene->noteLabels.front();
         const QColor componentColor(sequenceScene->style.noteTextColor);
-        muffin::math::MathRenderer componentRenderer;
+        mufpen::math::MathRenderer componentRenderer;
         const qreal componentFontSize = sequenceScene->style.fontSize * 1.21;
         const auto componentLayout = componentRenderer.render(componentLabel.richText.math.front().source,
                                                               componentFontSize, componentColor, true);
-        const auto componentBuild = muffin::math::buildMathMlPaintOperations(componentLayout, componentFontSize, 16.0);
+        const auto componentBuild = mufpen::math::buildMathMlPaintOperations(componentLayout, componentFontSize, 16.0);
         require(componentBuild.operation.has_value(), QStringLiteral("%1 accent operation is missing").arg(id));
         const auto* accentOperation = findAccentOperation(*componentBuild.operation);
         require(accentOperation &&
                     accentOperation->glyph.character == fixture.value(QStringLiteral("mathAccentText")).toString(),
                 QStringLiteral("%1 accent character drifted").arg(id));
-        if (accentOperation->glyph.kind == muffin::math::MathCssHorizontalGlyphKind::Assembly) {
+        if (accentOperation->glyph.kind == mufpen::math::MathCssHorizontalGlyphKind::Assembly) {
           qreal previousOffset = -1.0;
           for (const auto& part : accentOperation->glyph.parts) {
             require(part.glyphIndex != 0 && !part.inkBounds.isEmpty() && part.offset > previousOffset &&
@@ -867,9 +867,9 @@ int main(int argc, char** argv) {
                   QStringLiteral("%1 horizontal assembly lost its parts").arg(id));
         }
         const QImage nativeBody = renderMathLayer(componentLabel, sequenceScene->style.fontSize, dpr,
-                                                  muffin::math::MathMlPaintLayer::Body, componentColor);
+                                                  mufpen::math::MathMlPaintLayer::Body, componentColor);
         const QImage nativeAccent = renderMathLayer(componentLabel, sequenceScene->style.fontSize, dpr,
-                                                    muffin::math::MathMlPaintLayer::Accent, componentColor);
+                                                    mufpen::math::MathMlPaintLayer::Accent, componentColor);
         const QImage browserBody = alphaTrimmed(QImage(dir.filePath(bodyFile)));
         const QImage browserAccent = alphaTrimmed(QImage(dir.filePath(accentFile)));
         const QHash<QString, QSize> componentBounds{
@@ -945,12 +945,12 @@ int main(int argc, char** argv) {
         const sequence::SequenceLabelDocument& recursiveLabel = sequenceScene->noteLabels.front();
         const QColor recursiveColor(sequenceScene->style.noteTextColor);
         const qreal recursiveFontSize = sequenceScene->style.fontSize;
-        const QImage all = renderMathLayer(recursiveLabel, recursiveFontSize, dpr, muffin::math::MathMlPaintLayer::All,
+        const QImage all = renderMathLayer(recursiveLabel, recursiveFontSize, dpr, mufpen::math::MathMlPaintLayer::All,
                                            recursiveColor, false);
         const QImage body = renderMathLayer(recursiveLabel, recursiveFontSize, dpr,
-                                            muffin::math::MathMlPaintLayer::Body, recursiveColor, false);
+                                            mufpen::math::MathMlPaintLayer::Body, recursiveColor, false);
         const QImage accent = renderMathLayer(recursiveLabel, recursiveFontSize, dpr,
-                                              muffin::math::MathMlPaintLayer::Accent, recursiveColor, false);
+                                              mufpen::math::MathMlPaintLayer::Accent, recursiveColor, false);
         require(!all.isNull() && all.size() == body.size() && all.size() == accent.size(),
                 QStringLiteral("%1 MathML layer canvases drifted").arg(id));
         QImage composited(body);
@@ -963,7 +963,7 @@ int main(int argc, char** argv) {
         require(!sequenceScene->noteLabels.isEmpty(), QStringLiteral("nested accent label is unavailable"));
         const QImage nestedAccent =
             renderMathLayer(sequenceScene->noteLabels.front(), sequenceScene->style.fontSize, dpr,
-                            muffin::math::MathMlPaintLayer::Accent, QColor(sequenceScene->style.noteTextColor));
+                            mufpen::math::MathMlPaintLayer::Accent, QColor(sequenceScene->style.noteTextColor));
         const QRect nestedAccentInk = alphaBounds(nestedAccent);
         require(!nestedAccentInk.isNull() && nestedAccentInk.height() >= 40,
                 QStringLiteral("nested accent layer traversal regressed"));

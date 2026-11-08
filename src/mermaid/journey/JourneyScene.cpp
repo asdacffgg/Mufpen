@@ -12,7 +12,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 
 void JourneyScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintJourneyScene(*this, painter, options);
@@ -469,4 +469,4 @@ QJsonObject JourneyScene::toJsonObject() const {
   return root;
 }
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

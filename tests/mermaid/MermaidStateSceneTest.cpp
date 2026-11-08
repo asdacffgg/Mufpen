@@ -16,8 +16,8 @@
 #include <cmath>
 #include <cstdio>
 
-using namespace muffin::mermaid::state;
-namespace flowchart = muffin::mermaid::flowchart;
+using namespace mufpen::mermaid::state;
+namespace flowchart = mufpen::mermaid::flowchart;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -36,7 +36,7 @@ bool finiteRect(const QRectF& rect) {
 int main(int argc, char** argv) {
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QGuiApplication app(argc, argv);
-  muffin::mermaid::MermaidFontRegistry::ensureLoaded();
+  mufpen::mermaid::MermaidFontRegistry::ensureLoaded();
   if (argc != 2)
     fail(QStringLiteral("fixture path required"));
   QFile file(QString::fromLocal8Bit(argv[1]));
@@ -209,7 +209,7 @@ int main(int argc, char** argv) {
     QPainterPath straight;
     straight.moveTo(10.0, 60.0);
     straight.lineTo(190.0, 60.0);
-    edge.roughDrawable = muffin::mermaid::rough::roughEdgeDrawable(straight, 42);
+    edge.roughDrawable = mufpen::mermaid::rough::roughEdgeDrawable(straight, 42);
     edge.pathBounds = QRectF(10.0, 50.0, 180.0, 20.0);
     scene.edges.append(std::move(edge));
     scene.bounds = QRectF(0.0, 0.0, 200.0, 120.0);

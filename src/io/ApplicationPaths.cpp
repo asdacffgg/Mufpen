@@ -9,9 +9,9 @@ namespace {
 QString portableRoot;
 }
 
-bool muffin::ApplicationPaths::initialize(const QString& executablePath, QString* error) {
+bool mufpen::ApplicationPaths::initialize(const QString& executablePath, QString* error) {
   const QDir application(QFileInfo(executablePath).absolutePath());
-  const QFileInfo marker(application.filePath(QStringLiteral("Muffin.portable")));
+  const QFileInfo marker(application.filePath(QStringLiteral("Mufpen.portable")));
   if (!marker.exists())
     return true;
   const QString root = application.filePath(QStringLiteral("Data"));
@@ -29,19 +29,19 @@ bool muffin::ApplicationPaths::initialize(const QString& executablePath, QString
   return true;
 }
 
-bool muffin::ApplicationPaths::isPortable() {
+bool mufpen::ApplicationPaths::isPortable() {
   return !portableRoot.isEmpty();
 }
 
-QString muffin::ApplicationPaths::dataDirectory() {
+QString mufpen::ApplicationPaths::dataDirectory() {
   return isPortable() ? portableRoot : QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
-QString muffin::ApplicationPaths::localDataDirectory() {
+QString mufpen::ApplicationPaths::localDataDirectory() {
   return isPortable() ? portableRoot : QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
 }
 
-QString muffin::ApplicationPaths::temporaryDirectory() {
+QString mufpen::ApplicationPaths::temporaryDirectory() {
   if (!isPortable())
     return QStandardPaths::writableLocation(QStandardPaths::TempLocation);
   const auto path = portableRoot + QStringLiteral("/temp");

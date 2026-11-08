@@ -10,22 +10,22 @@ param(
 $ErrorActionPreference = 'Stop'
 $workspace = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $presets = Get-Content -LiteralPath (Join-Path $workspace 'build/generators/CMakePresets.json') -Raw | ConvertFrom-Json
-$probe = Join-Path $workspace 'build/Release/MuffinGuiPerformanceProbe.exe'
+$probe = Join-Path $workspace 'build/Release/MufpenGuiPerformanceProbe.exe'
 if (-not (Test-Path -LiteralPath $probe)) {
-    throw 'Build MuffinGuiPerformanceProbe with the conan-release preset first.'
+    throw 'Build MufpenGuiPerformanceProbe with the conan-release preset first.'
 }
 $destination = [System.IO.Path]::GetFullPath((Join-Path $workspace $OutputDirectory))
 New-Item -ItemType Directory -Path $destination -Force | Out-Null
 $originalPath = $env:PATH
 $originalPlugins = $env:QT_PLUGIN_PATH
 $originalQpa = $env:QT_QPA_PLATFORM
-$originalForeground = $env:MUFFIN_GUI_REQUIRE_FOREGROUND
+$originalForeground = $env:MUFPEN_GUI_REQUIRE_FOREGROUND
 try {
     $env:QT_PLUGIN_PATH = $presets.testPresets[0].environment.QT_PLUGIN_PATH
     $env:PATH = $presets.configurePresets[0].environment.QT_HOST_PATH + '\bin;' + $originalPath
     $env:QT_QPA_PLATFORM = 'windows'
-    $env:MUFFIN_GUI_REQUIRE_FOREGROUND = '1'
-    foreach ($flag in @('MUFFIN_GUI_NATIVE_INPUT', 'MUFFIN_GUI_INPUT_ONLY', 'MUFFIN_GUI_TYPING_ONLY')) {
+    $env:MUFPEN_GUI_REQUIRE_FOREGROUND = '1'
+    foreach ($flag in @('MUFPEN_GUI_NATIVE_INPUT', 'MUFPEN_GUI_INPUT_ONLY', 'MUFPEN_GUI_TYPING_ONLY')) {
         if ([Environment]::GetEnvironmentVariable($flag, 'Process')) {
             throw "Unset $flag before running the complete GUI phase matrix."
         }
@@ -72,5 +72,5 @@ try {
     $env:PATH = $originalPath
     $env:QT_PLUGIN_PATH = $originalPlugins
     $env:QT_QPA_PLATFORM = $originalQpa
-    [Environment]::SetEnvironmentVariable('MUFFIN_GUI_REQUIRE_FOREGROUND', $originalForeground, 'Process')
+    [Environment]::SetEnvironmentVariable('MUFPEN_GUI_REQUIRE_FOREGROUND', $originalForeground, 'Process')
 }

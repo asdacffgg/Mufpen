@@ -7,7 +7,7 @@
 #include <QByteArray>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 struct LayoutResourceState;
 struct LayoutResourceVersion {
   quint64 paint = 0, geometry = 0;
@@ -23,7 +23,7 @@ using LayoutResourceDependencies = QHash<QString, LayoutResourceVersion>;
 // GUI resource producers publish immutable metric identities. Paint changes do
 // not invalidate measurements; geometry changes do. Reads collect dependencies
 // on the calling thread, including dependencies consumed from a cached child.
-class MUFFIN_CORE_EXPORT LayoutResources : public QObject {
+class MUFPEN_CORE_EXPORT LayoutResources : public QObject {
   Q_OBJECT
 public:
   static LayoutResources& instance();
@@ -50,7 +50,7 @@ private:
   mutable QHash<QString, std::weak_ptr<LayoutResourceState>> entries_;
 };
 
-class MUFFIN_CORE_EXPORT LayoutResourceScope {
+class MUFPEN_CORE_EXPORT LayoutResourceScope {
 public:
   LayoutResourceScope();
   ~LayoutResourceScope();
@@ -58,4 +58,4 @@ public:
   LayoutResourceScope& operator=(const LayoutResourceScope&) = delete;
   LayoutResourceDependencies dependencies;
 };
-} // namespace muffin
+} // namespace mufpen

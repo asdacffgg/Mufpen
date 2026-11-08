@@ -4,7 +4,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentSession;
 
@@ -61,6 +61,6 @@ private:
   QString directory_;
 };
 
-} // namespace muffin
+} // namespace mufpen
 
-Q_DECLARE_METATYPE(muffin::DraftRecovery::PendingDraft)
+Q_DECLARE_METATYPE(mufpen::DraftRecovery::PendingDraft)

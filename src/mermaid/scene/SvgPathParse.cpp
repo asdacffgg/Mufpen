@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::scene {
+namespace mufpen::mermaid::scene {
 namespace {
 
 void appendArc(QPainterPath& path, const QPointF& start, const QPointF& end, qreal rawRx, qreal rawRy,
@@ -163,4 +163,4 @@ QPainterPath parseSvgPath(const QString& source) {
   return path;
 }
 
-} // namespace muffin::mermaid::scene
+} // namespace mufpen::mermaid::scene

@@ -6,7 +6,7 @@
 #include <QSvgRenderer>
 #include <QToolButton>
 
-namespace muffin {
+namespace mufpen {
 
 // Native tool-button labels can shift their icon by a pixel when checked or
 // pressed. Paint the panel with the active style, but center the artwork in a
@@ -57,4 +57,4 @@ private:
   int extent_;
 };
 
-} // namespace muffin
+} // namespace mufpen

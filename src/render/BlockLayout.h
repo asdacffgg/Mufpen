@@ -26,7 +26,7 @@
 #include <vector>
 #include <array>
 
-namespace muffin {
+namespace mufpen {
 class MarkdownDocument;
 
 class CodeFenceScrollController;
@@ -189,23 +189,23 @@ public:
   // Mermaid diagram (milestone I). When state == Ready the block paints the
   // cached immutable scene scaled to fit the content width instead of the source code.
   enum class MermaidState { None, Loading, Ready, Error, Unsupported };
-  void setMermaidScene(std::shared_ptr<const muffin::mermaid::MermaidScene> scene, QSizeF naturalSize,
-                       muffin::mermaid::MermaidRenderMetadata metadata = {});
+  void setMermaidScene(std::shared_ptr<const mufpen::mermaid::MermaidScene> scene, QSizeF naturalSize,
+                       mufpen::mermaid::MermaidRenderMetadata metadata = {});
   void setMermaidViewportCullingEnabled(bool enabled);
   bool mermaidViewportCullingEnabled() const;
-  const muffin::mermaid::MermaidScene* mermaidScene() const;
+  const mufpen::mermaid::MermaidScene* mermaidScene() const;
   QSizeF mermaidNaturalSize() const;
-  const muffin::mermaid::MermaidRenderMetadata& mermaidMetadata() const;
+  const mufpen::mermaid::MermaidRenderMetadata& mermaidMetadata() const;
   bool hasAnimatedMermaid() const;
   void setMermaidState(MermaidState state);
   MermaidState mermaidState() const;
-  void setMermaidDiagnostic(muffin::mermaid::MermaidDiagnostic diagnostic);
-  const muffin::mermaid::MermaidDiagnostic& mermaidDiagnostic() const;
+  void setMermaidDiagnostic(mufpen::mermaid::MermaidDiagnostic diagnostic);
+  const mufpen::mermaid::MermaidDiagnostic& mermaidDiagnostic() const;
   const QString& mermaidDiagnosticMessage() const;
   // The diagnostic panel is part of this block's total rect but sits below the
   // source code box. Exposed for hit/paint regression tests.
   QRectF mermaidDiagnosticRect(const RenderTheme& theme) const;
-  static qreal mermaidDiagnosticFootprint(const muffin::mermaid::MermaidDiagnostic& diagnostic,
+  static qreal mermaidDiagnosticFootprint(const mufpen::mermaid::MermaidDiagnostic& diagnostic,
                                           const RenderTheme& theme, qreal width);
   QVector<QRectF> mermaidDiagnosticSourceRects(const RenderTheme& theme) const;
   bool isMermaidRendered() const;
@@ -404,12 +404,12 @@ private:
   std::shared_ptr<math::MathLayoutResult> mathLayout_;
   MathDelimiter mathDelimiter_ = MathDelimiter::Dollar;
   std::shared_ptr<html::HtmlLayoutResult> htmlLayout_;
-  std::shared_ptr<const muffin::mermaid::MermaidScene> mermaidScene_;
+  std::shared_ptr<const mufpen::mermaid::MermaidScene> mermaidScene_;
   bool mermaidViewportCullingEnabled_ = false;
   QSizeF mermaidNaturalSize_;
-  muffin::mermaid::MermaidRenderMetadata mermaidMetadata_;
+  mufpen::mermaid::MermaidRenderMetadata mermaidMetadata_;
   MermaidState mermaidState_ = MermaidState::None;
-  muffin::mermaid::MermaidDiagnostic mermaidDiagnostic_;
+  mufpen::mermaid::MermaidDiagnostic mermaidDiagnostic_;
   QString mermaidDiagnosticMessage_;
   bool literalEditing_ = false;
   bool htmlContainer_ = false;
@@ -437,4 +437,4 @@ private:
   std::vector<TableRowLayout> tableRows_;
 };
 
-} // namespace muffin
+} // namespace mufpen

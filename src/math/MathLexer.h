@@ -3,7 +3,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 struct MathToken {
   QString text;
@@ -34,4 +34,4 @@ private:
   bool preserveSpaces_ = false;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

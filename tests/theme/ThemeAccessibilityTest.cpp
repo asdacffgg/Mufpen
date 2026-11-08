@@ -9,7 +9,7 @@
 
 #include <cmath>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

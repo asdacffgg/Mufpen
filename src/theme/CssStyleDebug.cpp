@@ -4,10 +4,10 @@
 #include <QMarginsF>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 
-Q_LOGGING_CATEGORY(themeStyleLog, "muffin.theme.style", QtWarningMsg)
-Q_LOGGING_CATEGORY(renderLayoutDebugLog, "muffin.render.layout.debug", QtWarningMsg)
+Q_LOGGING_CATEGORY(themeStyleLog, "mufpen.theme.style", QtWarningMsg)
+Q_LOGGING_CATEGORY(renderLayoutDebugLog, "mufpen.render.layout.debug", QtWarningMsg)
 
 namespace {
 
@@ -77,4 +77,4 @@ QString formatThemeDefinitionSummary(const ThemeDefinition& definition) {
   return parts.join(QStringLiteral(" "));
 }
 
-} // namespace muffin
+} // namespace mufpen

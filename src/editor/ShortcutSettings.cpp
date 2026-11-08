@@ -5,7 +5,7 @@
 #include <QKeyEvent>
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 ShortcutSettings::ShortcutSettings(QObject* parent) : QObject(parent) {
   QSettings settings;
@@ -85,4 +85,4 @@ bool ShortcutSettings::isReserved(const QKeySequence& sequence) {
          key == Qt::Key_Meta || key == Qt::Key_AltGr;
 }
 
-} // namespace muffin
+} // namespace mufpen

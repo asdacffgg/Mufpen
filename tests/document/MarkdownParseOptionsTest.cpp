@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Phase 0 foundation for the Markdown preferences page: ParseOptions::operator== (skip-reparse
 // guard), the parser honoring enableMath (previously a dead field — math was attached
@@ -137,7 +137,7 @@ void testStrictOptionsDisableExtensions() {
 // explicitly on, math must stay enabled — Strict Mode must not silently override an explicit switch.
 // Only the checkbox-less GFM defaults (tables, strikethrough, task lists) go off. This is the exact
 // gap that let the original bug through (tests used ParseOptions{} instead of this funnel). Settings
-// are written to this test's isolated org/app (MuffinTest), never the user's real Muffin settings.
+// are written to this test's isolated org/app (MufpenTest), never the user's real Mufpen settings.
 void testMarkdownParseOptionsStrictModeDoesNotOverrideSwitches() {
   QSettings().setValue(QStringLiteral("markdown/strictMode"), true);
   QSettings().setValue(QStringLiteral("markdown/inlineMath"), true);
@@ -188,7 +188,7 @@ void testEnableUnicodeRemapParsesEmDashAsThematicBreak() {
 }
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("MarkdownParseOptionsTest"));
   QCoreApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

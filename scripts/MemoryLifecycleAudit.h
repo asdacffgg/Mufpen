@@ -1,6 +1,6 @@
 #pragma once
 
-// Manual ownership/retention audit, invoked by MuffinDocumentTabsTest --memory-audit.
+// Manual ownership/retention audit, invoked by MufpenDocumentTabsTest --memory-audit.
 // Object liveness and retained payloads are evidence; OS commit is contextual only.
 #include "MemoryAccounting.h"
 #include "app/QuickOpenDialog.h"
@@ -24,7 +24,7 @@
 #include <QThreadPool>
 #include <QtTest/QTest>
 
-namespace muffin::diag {
+namespace mufpen::diag {
 
 inline void drainMemoryAuditEvents() {
   require(QThreadPool::globalInstance()->waitForDone(30000), "audit workers finish within 30 seconds");
@@ -230,11 +230,11 @@ template <class Fixture> void runMemoryLifecycleAudit() {
        "QObject/QPointer liveness, QString ownership, weak_ptr scene lifetime, cache payload census; OS commit is not a leak detector"},
       {"checks", checks},
       {"samples", samples}};
-  const auto output = qEnvironmentVariable("MUFFIN_MEMORY_AUDIT_OUTPUT");
-  require(!output.isEmpty(), "MUFFIN_MEMORY_AUDIT_OUTPUT must name the JSON report");
+  const auto output = qEnvironmentVariable("MUFPEN_MEMORY_AUDIT_OUTPUT");
+  require(!output.isEmpty(), "MUFPEN_MEMORY_AUDIT_OUTPUT must name the JSON report");
   QFile file(output);
   require(file.open(QIODevice::WriteOnly), "audit report opens");
   require(file.write(QJsonDocument(report).toJson()) > 0, "audit report writes");
 }
 
-} // namespace muffin::diag
+} // namespace mufpen::diag

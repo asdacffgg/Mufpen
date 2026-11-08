@@ -3,7 +3,7 @@
 #include "render/CssFormattingContext.h"
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 // Negative references explicitly mean indefinite. Cyclic percentages contribute
 // zero to intrinsic measurement; the absolute part of calc() is retained.
 inline qreal cssGap(const CssLengthPercentage& length, qreal reference, qreal scale = 1) {
@@ -79,4 +79,4 @@ inline QSizeF cssReplacedSize(const CssFormattingItem& item, qreal containingWid
   }
   return {qMax(horizontal, width), qMax(vertical, height)};
 }
-} // namespace muffin
+} // namespace mufpen

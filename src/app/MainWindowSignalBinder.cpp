@@ -31,7 +31,7 @@
 
 namespace {
 
-Q_LOGGING_CATEGORY(mainWindowPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(mainWindowPerf, "mufpen.perf", QtWarningMsg)
 
 class PerfTimer {
 public:
@@ -55,7 +55,7 @@ private:
 
 } // namespace
 
-void muffin::MainWindow::connectEditorSignals(DocumentTab* tab) {
+void mufpen::MainWindow::connectEditorSignals(DocumentTab* tab) {
   auto& window = *this; // preserves the window.X call sites after the friend→member split
   tab->commandTargetChanged = [this, tab] {
     if (tab_ == tab) {
@@ -74,7 +74,7 @@ void muffin::MainWindow::connectEditorSignals(DocumentTab* tab) {
                    });
 }
 
-void muffin::MainWindow::connectRenderSignals(DocumentTab* tab) {
+void mufpen::MainWindow::connectRenderSignals(DocumentTab* tab) {
   auto& window = *this;
   QObject::connect(&tab->editorController, &EditorController::cursorChanged, tab->windowConnections,
                    [&window, tab](const HitTestResult& hit) {
@@ -188,7 +188,7 @@ void muffin::MainWindow::connectRenderSignals(DocumentTab* tab) {
                      if (window.tab_ != tab) {
                        return;
                      }
-                     // files/dropFolder: 0 = open in Muffin (sidebar root), 1 = open in file manager.
+                     // files/dropFolder: 0 = open in Mufpen (sidebar root), 1 = open in file manager.
                      const int action = QSettings().value(QStringLiteral("files/dropFolder"), 0).toInt();
                      if (action == 1) {
                        QDesktopServices::openUrl(QUrl::fromLocalFile(path));
@@ -223,7 +223,7 @@ void muffin::MainWindow::connectRenderSignals(DocumentTab* tab) {
                    });
 }
 
-void muffin::MainWindow::connectSessionSignals(DocumentTab* tab) {
+void mufpen::MainWindow::connectSessionSignals(DocumentTab* tab) {
   connect(tab->findBar, &FindBarWidget::searchParametersChanged, tab->windowConnections, [tab] {
     if (tab->findCancellation)
       tab->findCancellation->store(true);
@@ -372,7 +372,7 @@ void muffin::MainWindow::connectSessionSignals(DocumentTab* tab) {
   });
 }
 
-void muffin::MainWindow::queueExternalFileChange(DocumentTab* tab) {
+void mufpen::MainWindow::queueExternalFileChange(DocumentTab* tab) {
   const auto path = tab->session.filePath();
   if (path.isEmpty()) {
     return;
@@ -385,7 +385,7 @@ void muffin::MainWindow::queueExternalFileChange(DocumentTab* tab) {
     QTimer::singleShot(0, this, &MainWindow::showNextExternalFileChange);
 }
 
-void muffin::MainWindow::showNextExternalFileChange() {
+void mufpen::MainWindow::showNextExternalFileChange() {
   if (updateClosePrepared_ || externalFileChangePromptActive_ || suppressSaveOnTabSwitch_ || !tab_ ||
       tab_->pendingExternalFileChangePath.isEmpty())
     return;
@@ -447,7 +447,7 @@ void muffin::MainWindow::showNextExternalFileChange() {
   dialog->open();
 }
 
-void muffin::MainWindow::connectApplicationSignals() {
+void mufpen::MainWindow::connectApplicationSignals() {
   auto& window = *this;
   QObject::connect(&window.themeManager_, &ThemeManager::themeChanged, &window,
                    [&window](const QString& name) { window.applyTheme(name); });
@@ -477,9 +477,9 @@ void muffin::MainWindow::connectApplicationSignals() {
   });
   QObject::connect(&SpellChecker::instance(), &SpellChecker::languageChanged, &window, refreshSpellOverlay);
 
-  auto& updateChecker = muffin::UpdateChecker::instance();
+  auto& updateChecker = mufpen::UpdateChecker::instance();
   QObject::connect(
-      &updateChecker, &muffin::UpdateChecker::updateAvailable, &window,
+      &updateChecker, &mufpen::UpdateChecker::updateAvailable, &window,
       [&window](const QString& version, const QString& url, QObject* requester) {
         if (requester == &window) {
           const auto& package = UpdateChecker::instance().latestPackage();
@@ -488,8 +488,8 @@ void muffin::MainWindow::connectApplicationSignals() {
             return;
           }
           const int result = QMessageBox::information(
-              &window, muffin::MainWindow::tr("Update Available"),
-              muffin::MainWindow::tr(
+              &window, mufpen::MainWindow::tr("Update Available"),
+              mufpen::MainWindow::tr(
                   "A new version of Mufpen (%1) is available.\n\nWould you like to open the download page?")
                   .arg(version),
               QMessageBox::Yes | QMessageBox::No);
@@ -500,7 +500,7 @@ void muffin::MainWindow::connectApplicationSignals() {
           const auto& package = UpdateChecker::instance().latestPackage();
           if (WindowsUpdater::installedCopy() && package) {
             if (!window.findChild<QPushButton*>(QStringLiteral("availableUpdateButton"))) {
-              auto* button = new QPushButton(muffin::MainWindow::tr("Update Available"), &window);
+              auto* button = new QPushButton(mufpen::MainWindow::tr("Update Available"), &window);
               button->setObjectName(QStringLiteral("availableUpdateButton"));
               window.statusBar()->addPermanentWidget(button);
               QObject::connect(button, &QPushButton::clicked, &window, [&window] {
@@ -511,27 +511,27 @@ void muffin::MainWindow::connectApplicationSignals() {
             }
           }
           window.statusBar()->showMessage(
-              muffin::MainWindow::tr("Mufpen %1 is available. Use Help > Check for Updates to download.").arg(version),
+              mufpen::MainWindow::tr("Mufpen %1 is available. Use Help > Check for Updates to download.").arg(version),
               15000);
         }
       });
-  QObject::connect(&updateChecker, &muffin::UpdateChecker::upToDate, &window, [&window](QObject* requester) {
+  QObject::connect(&updateChecker, &mufpen::UpdateChecker::upToDate, &window, [&window](QObject* requester) {
     if (requester == &window) {
-      QMessageBox::information(&window, muffin::MainWindow::tr("Up to Date"),
-                               muffin::MainWindow::tr("You are running the latest version of Mufpen."));
+      QMessageBox::information(&window, mufpen::MainWindow::tr("Up to Date"),
+                               mufpen::MainWindow::tr("You are running the latest version of Mufpen."));
     }
   });
-  QObject::connect(&updateChecker, &muffin::UpdateChecker::checkFailed, &window,
+  QObject::connect(&updateChecker, &mufpen::UpdateChecker::checkFailed, &window,
                    [&window](const QString& errorMessage, QObject* requester) {
                      if (requester == &window) {
                        QMessageBox::warning(
-                           &window, muffin::MainWindow::tr("Update Check Failed"),
-                           muffin::MainWindow::tr("Could not check for updates:\n%1").arg(errorMessage));
+                           &window, mufpen::MainWindow::tr("Update Check Failed"),
+                           mufpen::MainWindow::tr("Could not check for updates:\n%1").arg(errorMessage));
                      }
                    });
 }
 
-void muffin::MainWindow::connectFindBarSignals(DocumentTab* tab) {
+void mufpen::MainWindow::connectFindBarSignals(DocumentTab* tab) {
   connect(tab->findBar, &FindBarWidget::findRequested, tab->windowConnections,
           [this, tab](const QString& text, bool forward, bool regex, bool sensitive) {
             if (tab_ == tab) {
@@ -557,7 +557,7 @@ void muffin::MainWindow::connectFindBarSignals(DocumentTab* tab) {
           });
 }
 
-void muffin::MainWindow::connectChromeSignals() {
+void mufpen::MainWindow::connectChromeSignals() {
   auto& window = *this;
   QObject::connect(window.sidebarButton_, &QToolButton::clicked, &window, [&window] {
     if (QAction* action = window.commands_.action(QStringLiteral("view.sidebar"))) {
@@ -575,13 +575,13 @@ void muffin::MainWindow::connectChromeSignals() {
   });
 
   // Status bar: clicking the stats trigger pops a detail panel with the computed counts.
-  QObject::connect(window.statusBar_, &muffin::StatusBarWidget::statsClicked, &window, [&window] {
+  QObject::connect(window.statusBar_, &mufpen::StatusBarWidget::statsClicked, &window, [&window] {
     if (!window.statusBar_) {
       return;
     }
     const PieceTable& md = window.tab_->session.markdownText();
-    muffin::StatusBarStats stats;
-    stats.words = muffin::text_stats::countWords(md);
+    mufpen::StatusBarStats stats;
+    stats.words = mufpen::text_stats::countWords(md);
     stats.characters = md.size();
     stats.lines = window.tab_->session.document().lineOffsets().lineCount();
     stats.readingMinutes = qMax(1, stats.words / 200);
@@ -596,28 +596,28 @@ void muffin::MainWindow::connectChromeSignals() {
       }
     }
     if (!selected.isEmpty()) {
-      stats.selectedWords = muffin::text_stats::countWords(QStringView(selected));
+      stats.selectedWords = mufpen::text_stats::countWords(QStringView(selected));
       stats.selectedCharacters = selected.size();
     }
     window.statusBar_->showStatsPopup(stats);
   });
 
   // Keep the spell-language button in sync when the checker changes.
-  QObject::connect(&muffin::SpellChecker::instance(), &muffin::SpellChecker::languageChanged, &window,
+  QObject::connect(&mufpen::SpellChecker::instance(), &mufpen::SpellChecker::languageChanged, &window,
                    [&window](const QString& code) {
                      if (window.statusBar_) {
-                       window.statusBar_->setSpellLanguage(code, muffin::SpellChecker::instance().isEnabled());
+                       window.statusBar_->setSpellLanguage(code, mufpen::SpellChecker::instance().isEnabled());
                      }
                    });
-  QObject::connect(&muffin::SpellChecker::instance(), &muffin::SpellChecker::enabledChanged, &window,
+  QObject::connect(&mufpen::SpellChecker::instance(), &mufpen::SpellChecker::enabledChanged, &window,
                    [&window](bool enabled) {
                      if (window.statusBar_) {
-                       window.statusBar_->setSpellLanguage(muffin::SpellChecker::instance().language(), enabled);
+                       window.statusBar_->setSpellLanguage(mufpen::SpellChecker::instance().language(), enabled);
                      }
                    });
 }
 
-void muffin::MainWindow::connectSidebarSignals() {
+void mufpen::MainWindow::connectSidebarSignals() {
   auto& window = *this;
   auto* search = sidebar_->searchPanel();
   connect(search, &SearchPanelWidget::searchRequested, this,
@@ -655,13 +655,13 @@ void muffin::MainWindow::connectSidebarSignals() {
   // decide commit-vs-keep-open on the same call; commit does the FS op + post-steps; cancel
   // deletes a pending-create temp.
   QObject::connect(window.sidebar_, &SidebarWidget::inlineValidateRequested, &window,
-                   [&window](const muffin::InlineEditContext& ctx, const QString& name, muffin::InlineValidation* out) {
+                   [&window](const mufpen::InlineEditContext& ctx, const QString& name, mufpen::InlineValidation* out) {
                      window.onInlineValidate(ctx, name, out);
                    });
   QObject::connect(
       window.sidebar_, &SidebarWidget::inlineCommitRequested, &window,
-      [&window](const muffin::InlineEditContext& ctx, const QString& name) { window.onInlineCommit(ctx, name); });
+      [&window](const mufpen::InlineEditContext& ctx, const QString& name) { window.onInlineCommit(ctx, name); });
   QObject::connect(window.sidebar_, &SidebarWidget::inlineCancelRequested, &window,
-                   [&window](const muffin::InlineEditContext& ctx) { window.onInlineCancel(ctx); });
+                   [&window](const mufpen::InlineEditContext& ctx) { window.onInlineCancel(ctx); });
   QObject::connect(window.sidebar_, &SidebarWidget::outlineActivated, &window, &MainWindow::activateOutlineNode);
 }

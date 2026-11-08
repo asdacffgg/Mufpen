@@ -16,7 +16,7 @@ def main():
     root = Path(__file__).resolve().parent.parent
     destination = args.output.resolve()
     destination.mkdir(parents=True, exist_ok=False)
-    source = Path(os.environ['APPDATA']) / 'Muffin/Muffin/themes/phycat-abyss.css'
+    source = Path(os.environ['APPDATA']) / 'Mufpen/Mufpen/themes/phycat-abyss.css'
     dependencies = [source, source.parent / 'phycat/phycat.dark.css',
                     source.parent / 'phycat/Cascadia-Code-Regular.ttf',
                     source.parent / 'phycat/LXGWWenKai-Regular.ttf', root / 'resources/themes/document-base.css']
@@ -39,14 +39,14 @@ def main():
                                   encoding='utf-8')
     preset = json.loads((root / 'build/generators/CMakePresets.json').read_text(encoding='utf-8'))
     env = dict(os.environ)
-    env.update(QT_QPA_PLATFORM='offscreen', MUFFIN_FIRST_LAYOUT_ONLY='1',
+    env.update(QT_QPA_PLATFORM='offscreen', MUFPEN_FIRST_LAYOUT_ONLY='1',
                QT_PLUGIN_PATH=preset['testPresets'][0]['environment']['QT_PLUGIN_PATH'])
     env['PATH'] = preset['configurePresets'][0]['environment']['QT_HOST_PATH'] + '\\bin;' + env['PATH']
-    for key in ['MUFFIN_THEME_LAYOUT_DETAIL', 'MUFFIN_THEME_CSS_DETAIL', 'MUFFIN_THEME_PAINT_DETAIL']:
+    for key in ['MUFPEN_THEME_LAYOUT_DETAIL', 'MUFPEN_THEME_CSS_DETAIL', 'MUFPEN_THEME_PAINT_DETAIL']:
         env.pop(key, None)
-    env.pop('MUFFIN_THEME_PROBE_DOCUMENT', None)
+    env.pop('MUFPEN_THEME_PROBE_DOCUMENT', None)
     if args.paint_detail:
-        env['MUFFIN_THEME_PAINT_DETAIL'] = '1'
+        env['MUFPEN_THEME_PAINT_DETAIL'] = '1'
     result = {'complete': False, 'dependency_sha256': pinned, 'overrides': variants,
               'wrapper_sha256': {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in wrappers.values()},
               'method': 'Sequential fresh processes, 1 MiB, offscreen 960x900, rotated variant order each round. '
@@ -64,7 +64,7 @@ def main():
             output = destination / f'{name}-{repeat + 1}.json'
             print(output, flush=True)
             with output.with_suffix('.log').open('wb') as log:
-                subprocess.run([str(root / 'build/Release/MuffinThemePerformanceProbe.exe'), str(output), '1',
+                subprocess.run([str(root / 'build/Release/MufpenThemePerformanceProbe.exe'), str(output), '1',
                                 str(wrappers[name])], cwd=root, env=env, stdout=log, stderr=subprocess.STDOUT,
                                check=True, timeout=120)
             raw = json.loads(output.read_text(encoding='utf-8'))

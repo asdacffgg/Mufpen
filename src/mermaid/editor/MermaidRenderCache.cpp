@@ -75,7 +75,7 @@
 #include <stdexcept>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 void enforceUpstreamThemeColorLimit(const QJsonObject& config) {
@@ -283,7 +283,7 @@ std::optional<MermaidRenderEntry> upstreamLayoutConfigurationError(const Mermaid
 // that: the diagnostic entry keeps its contract AND carries the error scene
 // for the export paths (PNG/SVG). The editor canvas intentionally does NOT
 // consume it — BlockLayoutBuilder keeps source + diagnostic panel for Error
-// entries (a deliberate Muffin editing surface, locked by
+// entries (a deliberate Mufpen editing surface, locked by
 // RenderMermaidBlockTest), unlike the browser where the failed svg is
 // replaced in place.
 //
@@ -626,7 +626,7 @@ MermaidRenderEntry MermaidRenderCache::renderSourceDispatch(const QString& sourc
     diagnostic.stage = QStringLiteral("detector");
     diagnostic.code = QStringLiteral("missing-diagram-header");
     // Preserve the detector's upstream-compatible exception message. The
-    // structured code/span still gives Muffin a friendlier editor diagnostic
+    // structured code/span still gives Mufpen a friendlier editor diagnostic
     // without changing Mermaid's observable failure contract.
     diagnostic.message = QString::fromUtf8(error.what());
     diagnostic.expected = {QStringLiteral("flowchart"),    QStringLiteral("sequenceDiagram"),
@@ -1086,4 +1086,4 @@ MermaidRenderEntry MermaidRenderCache::renderSource(const QString& source, const
   return entry;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

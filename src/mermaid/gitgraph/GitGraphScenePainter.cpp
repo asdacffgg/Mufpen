@@ -8,7 +8,7 @@
 #include <QLinearGradient>
 #include <QPainter>
 
-namespace muffin::mermaid::gitgraph {
+namespace mufpen::mermaid::gitgraph {
 namespace {
 
 QColor paintColor(const QString& value, const QColor& fallback = Qt::black) {
@@ -125,4 +125,4 @@ void GitGraphScene::paint(QPainter& painter, const MermaidPaintOptions&) const {
   }
 }
 
-} // namespace muffin::mermaid::gitgraph
+} // namespace mufpen::mermaid::gitgraph

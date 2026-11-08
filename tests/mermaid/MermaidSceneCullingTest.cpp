@@ -15,7 +15,7 @@
 #include <functional>
 #include <utility>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 

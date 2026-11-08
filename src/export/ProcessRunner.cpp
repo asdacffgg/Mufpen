@@ -4,7 +4,7 @@
 #include <QProcess>
 #include <QProgressDialog>
 
-namespace muffin {
+namespace mufpen {
 
 ProcessResult ProcessRunner::run(QWidget* parent, const QString& program, const QStringList& args,
                                  const ProcessRunOptions& options) {
@@ -77,4 +77,4 @@ ProcessResult ProcessRunner::run(QWidget* parent, const QString& program, const 
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

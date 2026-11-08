@@ -15,7 +15,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 namespace {
 
 enum class Cat { Empty, Node, Cluster, Edge, EdgeLabelBg, Text, Shadow, Boundary };
@@ -176,7 +176,7 @@ CompareReport compareLevel3(const FlowScene& scene, const QImage& goldenIn, cons
                             qreal dpr) {
   CompareReport report;
   dpr = std::max<qreal>(1.0, dpr);
-  const bool debug = !qgetenv("MUFFIN_PIXEL_DEBUG").isEmpty();
+  const bool debug = !qgetenv("MUFPEN_PIXEL_DEBUG").isEmpty();
   QHash<QString, qint64>* debugHistogram = debug ? new QHash<QString, qint64> : nullptr;
   QImage golden = goldenIn.convertToFormat(QImage::Format_ARGB32);
 
@@ -453,4 +453,4 @@ CompareReport compareLevel3(const FlowScene& scene, const QImage& goldenIn, cons
   return report;
 }
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

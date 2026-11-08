@@ -12,7 +12,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::treeview {
+namespace mufpen::mermaid::treeview {
 
 struct TreeViewConfig {
   QJsonValue useMaxWidth = true;
@@ -138,4 +138,4 @@ struct TreeViewScene final : MermaidScene {
 
 TreeViewScene buildTreeViewScene(const TreeViewData& data, TreeViewConfig config, TreeViewSceneStyle style);
 
-} // namespace muffin::mermaid::treeview
+} // namespace mufpen::mermaid::treeview

@@ -2,7 +2,7 @@
 
 #include "editor/EditorContext.h"
 
-namespace muffin {
+namespace mufpen {
 
 class EditorContextHolder {
 public:
@@ -15,4 +15,4 @@ protected:
   EditorContext ctx_;
 };
 
-} // namespace muffin
+} // namespace mufpen

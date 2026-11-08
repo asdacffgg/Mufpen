@@ -10,7 +10,7 @@ class QCompleter;
 class QLineEdit;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 class BlockLayout;
 struct CursorPosition;
@@ -18,7 +18,7 @@ class DocumentLayout;
 struct HitTestResult;
 class MarkdownDocument;
 
-class MUFFIN_UI_EXPORT CodeLanguageEditor : public QObject {
+class MUFPEN_UI_EXPORT CodeLanguageEditor : public QObject {
   Q_OBJECT
 
 public:
@@ -44,4 +44,4 @@ private:
   bool updating_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -51,9 +51,9 @@ try {
       await page.setContent(`<!doctype html><style>html,body{margin:0;background:transparent}#box{position:absolute;left:8px;top:8px;width:96px;height:84px;box-sizing:border-box;${css}}</style><div id="box"></div>`);
       const raster = await page.screenshot({omitBackground:true});
       const png = PNG.sync.read(raster);
-      if(process.env.MUFFIN_BACKGROUND_PROBE_OUTPUT) {
-        fs.mkdirSync(process.env.MUFFIN_BACKGROUND_PROBE_OUTPUT,{recursive:true});
-        fs.writeFileSync(path.join(process.env.MUFFIN_BACKGROUND_PROBE_OUTPUT,`${id}-${dpr}.png`),raster);
+      if(process.env.MUFPEN_BACKGROUND_PROBE_OUTPUT) {
+        fs.mkdirSync(process.env.MUFPEN_BACKGROUND_PROBE_OUTPUT,{recursive:true});
+        fs.writeFileSync(path.join(process.env.MUFPEN_BACKGROUND_PROBE_OUTPUT,`${id}-${dpr}.png`),raster);
       }
       const pixels = [];
       const mask = [];

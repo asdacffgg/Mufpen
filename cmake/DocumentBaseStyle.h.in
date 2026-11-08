@@ -1,4 +1,4 @@
 #pragma once
-namespace muffin {
-inline constexpr char documentBaseCss[] = R"muffin-css(@MUFFIN_DOCUMENT_BASE_CSS@)muffin-css";
+namespace mufpen {
+inline constexpr char documentBaseCss[] = R"mufpen-css(@MUFPEN_DOCUMENT_BASE_CSS@)mufpen-css";
 }

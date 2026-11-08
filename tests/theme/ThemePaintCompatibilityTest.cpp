@@ -13,7 +13,7 @@
 #include <QPainter>
 #include "../render/RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 ThemeElementStyle project(const QString& declarations) {

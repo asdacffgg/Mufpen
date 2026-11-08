@@ -5,7 +5,7 @@
 #include <cmath>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 std::optional<CssBlendMode> parseCssBlendMode(const QString& value) {
   static const QStringList names{"normal",      "multiply",   "screen",     "overlay",    "darken",     "lighten",
                                  "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion",
@@ -95,4 +95,4 @@ void blendNonseparableCssImages(QImage& backdrop, const QImage& source, CssBlend
     }
   }
 }
-} // namespace muffin
+} // namespace mufpen

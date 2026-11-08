@@ -24,7 +24,7 @@
 #include <cstdlib>
 #include <memory>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 
@@ -230,7 +230,7 @@ int main(int argc, char** argv) {
               id + QStringLiteral(": browser dash mask hash drifted"));
       const QImage browserMask(maskPath);
       const QImage nativeMask = isolatedDashImage(*scene);
-      if (qEnvironmentVariableIsSet("MUFFIN_SAVE_NATIVE"))
+      if (qEnvironmentVariableIsSet("MUFPEN_SAVE_NATIVE"))
         nativeMask.save(QStringLiteral("build/native-journey-dash-width-4-mask.png"));
       const qreal dashIou = maskIou(nativeMask, browserMask);
       std::fprintf(stderr, "%s isolated dash IoU %.6f\n", qPrintable(id), dashIou);

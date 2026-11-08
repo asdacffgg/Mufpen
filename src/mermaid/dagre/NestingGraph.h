@@ -16,7 +16,7 @@
 #include <QHash>
 #include <QString>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // Made visible for unit tests.
 QHash<QString, int> treeDepths(const DagreGraph& g);
@@ -24,4 +24,4 @@ QHash<QString, int> treeDepths(const DagreGraph& g);
 void runNestingGraph(DagreGraph& g);
 void cleanupNestingGraph(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

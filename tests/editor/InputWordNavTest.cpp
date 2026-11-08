@@ -12,7 +12,7 @@
 #include <QApplication>
 #include <QKeyEvent>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Ctrl+Left/Right word movement in rendered prose.
 void testCtrlArrowsMoveByWord() {

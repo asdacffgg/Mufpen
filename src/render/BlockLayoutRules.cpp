@@ -4,7 +4,7 @@
 #include "theme/MarkdownFlow.h"
 #include "render/TextLayout.h"
 
-namespace muffin::layout_rules {
+namespace mufpen::layout_rules {
 
 bool isInsideBlockquote(const MarkdownNode& node) {
   for (const MarkdownNode* p = node.parent(); p; p = p->parent()) {
@@ -136,4 +136,4 @@ QVector<InlineNode> primaryInlinesForListItem(const MarkdownNode& node) {
   return {};
 }
 
-} // namespace muffin::layout_rules
+} // namespace mufpen::layout_rules

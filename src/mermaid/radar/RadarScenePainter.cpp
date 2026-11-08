@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 namespace {
 
 struct RootFill {
@@ -228,4 +228,4 @@ void paintRadarScene(const RadarScene& scene, QPainter& painter, const MermaidPa
   painter.restore();
 }
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

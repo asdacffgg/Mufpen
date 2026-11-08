@@ -26,7 +26,7 @@ const cases = [
   // P3a: the global htmlLabels:false boundary — upstream swaps every label for
   // SVG <text> with tspan dy=1.1em rows, fill-black ink (no inherited root
   // fill), and per-label background rects (edgeLabelBackground). The directive
-  // goes through the source entry, matching Muffin's render path.
+  // goes through the source entry, matching Mufpen's render path.
   { id: "html-labels-false", dpr: 1, theme: "default", source:
     "%%{init: {\"htmlLabels\": false}}%%\n" +
     "requirementDiagram\n" +

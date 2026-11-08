@@ -3,7 +3,7 @@
 #include "editor/BlockEditContext.h"
 #include "editor/SelectionController.h"
 
-namespace muffin {
+namespace mufpen {
 
 bool EditorContext::hasSession() const {
   return session != nullptr;
@@ -25,4 +25,4 @@ BlockEditContextResolver EditorContext::contextResolver() const {
   return BlockEditContextResolver(session, selection);
 }
 
-} // namespace muffin
+} // namespace mufpen

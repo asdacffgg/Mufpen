@@ -11,7 +11,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 namespace {
 [[noreturn]] void fail(const QString& s) {
   std::fprintf(stderr, "FAIL: %s\n", qPrintable(s));

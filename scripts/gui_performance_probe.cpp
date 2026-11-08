@@ -49,7 +49,7 @@
 #include "render/InlineLayout.h"
 #include "theme/ThemeManager.h"
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 using Clock = std::chrono::steady_clock;
 GuiQueueTrace* queueTrace = nullptr;
@@ -157,14 +157,14 @@ std::mutex openProbeMutex;
 QJsonArray openProbeScopes;
 std::atomic<qint64> openProbeStart{0};
 void configurePerformanceLogging(bool opening) {
-  const auto openMode = qEnvironmentVariable("MUFFIN_GUI_OPEN_PROFILE");
+  const auto openMode = qEnvironmentVariable("MUFPEN_GUI_OPEN_PROFILE");
   const bool coarseOpen = opening && !openMode.isEmpty() && openMode != "legacy";
   QLoggingCategory::setFilterRules(
       QString(
-          "muffin.perf.debug=%3\nmuffin.perf.css.debug=%1\nmuffin.perf.detail.debug=%2\nmuffin.perf.queue.debug=%2\nmuffin.perf.open.debug=%4")
-          .arg(qEnvironmentVariableIsSet("MUFFIN_CSS_DEEP_PROFILE") ? "true" : "false",
-               qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE") ? "true" : "false",
-               coarseOpen || qEnvironmentVariable("MUFFIN_GUI_PROFILE") == "off" ? "false" : "true",
+          "mufpen.perf.debug=%3\nmufpen.perf.css.debug=%1\nmufpen.perf.detail.debug=%2\nmufpen.perf.queue.debug=%2\nmufpen.perf.open.debug=%4")
+          .arg(qEnvironmentVariableIsSet("MUFPEN_CSS_DEEP_PROFILE") ? "true" : "false",
+               qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE") ? "true" : "false",
+               coarseOpen || qEnvironmentVariable("MUFPEN_GUI_PROFILE") == "off" ? "false" : "true",
                opening && openMode == "stages" ? "true" : "false"));
 }
 QJsonArray* activeTrace = nullptr;
@@ -181,11 +181,11 @@ void traceRow(QJsonObject row) {
     ++traceDropped;
 }
 void messageHandler(QtMsgType type, const QMessageLogContext& context, const QString& message) {
-  if (qstrcmp(context.category, "muffin.delimiter") == 0 || qstrcmp(context.category, "muffin.adapter") == 0) {
+  if (qstrcmp(context.category, "mufpen.delimiter") == 0 || qstrcmp(context.category, "mufpen.adapter") == 0) {
     std::fprintf(stderr, "%s %s\n", context.category, qPrintable(message));
     return;
   }
-  if (qstrcmp(context.category, "muffin.perf.open") == 0) {
+  if (qstrcmp(context.category, "mufpen.perf.open") == 0) {
     const auto start = openProbeStart.load();
     if (start) {
       const auto parts = message.split(' ', Qt::SkipEmptyParts);
@@ -200,7 +200,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext& context, const QSt
     }
     return;
   }
-  if (qstrcmp(context.category, "muffin.perf.queue") == 0) {
+  if (qstrcmp(context.category, "mufpen.perf.queue") == 0) {
     if (activeTrace) {
       const auto parts = message.split(' ');
       if (parts.size() == 6)
@@ -215,11 +215,11 @@ void messageHandler(QtMsgType type, const QMessageLogContext& context, const QSt
   // Background draft I/O has its own perf scopes. GUI-only containers below
   // are deliberately not shared with workers; their times are not GUI stalls.
   if (QCoreApplication::instance() && QThread::currentThread() != QCoreApplication::instance()->thread() &&
-      QStringView(QString::fromLatin1(context.category)).startsWith(u"muffin.perf"))
+      QStringView(QString::fromLatin1(context.category)).startsWith(u"mufpen.perf"))
     return;
   if (activeProbes &&
-      (qstrcmp(context.category, "muffin.perf") == 0 || qstrcmp(context.category, "muffin.perf.css") == 0 ||
-       qstrcmp(context.category, "muffin.perf.detail") == 0)) {
+      (qstrcmp(context.category, "mufpen.perf") == 0 || qstrcmp(context.category, "mufpen.perf.css") == 0 ||
+       qstrcmp(context.category, "mufpen.perf.detail") == 0)) {
     const auto parts = message.split(' ', Qt::SkipEmptyParts);
     bool ok = false;
     const auto elapsed = parts.size() > 1 ? parts[1].toDouble(&ok) : 0;
@@ -252,7 +252,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext& context, const QSt
 
 QString workload(qsizetype bytes) {
   QString text;
-  if (qEnvironmentVariableIsSet("MUFFIN_GUI_THEME_ACCEPTANCE"))
+  if (qEnvironmentVariableIsSet("MUFPEN_GUI_THEME_ACCEPTANCE"))
     text = QString::fromUtf8(
         "# Theme acceptance 标题\n\n"
         "Plain text 中英文 with **bold**, *italic*, ~~strike~~, `code`, "
@@ -276,14 +276,14 @@ public:
   Runner(ProbeApplication& app, QString output, double mib, int tabCount, int count, QString source)
       : app_(app), output_(std::move(output)), mib_(mib), tabCount_(tabCount), count_(count),
         source_(std::move(source)) {
-    chainFile_ = qEnvironmentVariable("MUFFIN_GUI_CHAIN_FILE");
+    chainFile_ = qEnvironmentVariable("MUFPEN_GUI_CHAIN_FILE");
     if (chainFile_.isEmpty())
       return;
     check(themeAcceptance_, "a GUI chain requires theme acceptance mode");
     QFile plan(chainFile_);
     check(plan.open(QIODevice::ReadOnly), "cannot read GUI chain plan");
     chainPlan_ = QJsonDocument::fromJson(plan.readAll()).object();
-    chainIndex_ = qEnvironmentVariableIntValue("MUFFIN_GUI_CHAIN_INDEX");
+    chainIndex_ = qEnvironmentVariableIntValue("MUFPEN_GUI_CHAIN_INDEX");
     const auto jobs = chainPlan_["jobs"].toArray();
     check(chainPlan_["schema"].toInt() == 1 && chainIndex_ >= 0 && chainIndex_ < jobs.size(),
           "invalid GUI chain index");
@@ -303,10 +303,10 @@ public:
     const auto job = jobs[chainIndex_].toObject();
     check(QFileInfo(job["output"].toString()).absoluteFilePath() == output_ && job["mib"].toDouble() == mib_ &&
               job["tabs"].toInt() == tabCount_ && job["cycles"].toInt() == count_ &&
-              job["profile"].toString() == qEnvironmentVariable("MUFFIN_GUI_PROFILE"),
+              job["profile"].toString() == qEnvironmentVariable("MUFPEN_GUI_PROFILE"),
           "GUI chain invocation differs from its plan");
 #ifdef Q_OS_WIN
-    const auto predecessor = qEnvironmentVariable("MUFFIN_GUI_PREDECESSOR_PID").toULong();
+    const auto predecessor = qEnvironmentVariable("MUFPEN_GUI_PREDECESSOR_PID").toULong();
     if (predecessor) {
       predecessorHandle_ = OpenProcess(SYNCHRONIZE, FALSE, predecessor);
       check(predecessorHandle_ || GetLastError() == ERROR_INVALID_PARAMETER, "cannot verify predecessor exit");
@@ -346,7 +346,7 @@ public:
     window_ = std::make_unique<MainWindow>();
     // Optional for an interactive desktop with other applications: keep only
     // this disposable benchmark window visible. Activation checks still apply.
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_PIN_WINDOW"))
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_PIN_WINDOW"))
       window_->setWindowFlag(Qt::WindowStaysOnTopHint);
     tabs_ = window_->findChild<QTabWidget*>("DocumentTabs");
     check(tabs_, "document tab widget missing");
@@ -389,9 +389,9 @@ public:
     sampler_ = std::jthread([this](std::stop_token stop) {
       while (!stop.stop_requested()) {
         if (recordingMemory_.load()) {
-          if (queueTrace && qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE")) {
+          if (queueTrace && qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE")) {
             const auto begin = nowNs();
-            auto row = qEnvironmentVariableIsSet("MUFFIN_GUI_SCHEDULER_SAMPLES") ? queueTrace->schedulingSample()
+            auto row = qEnvironmentVariableIsSet("MUFPEN_GUI_SCHEDULER_SAMPLES") ? queueTrace->schedulingSample()
                                                                                  : queueTrace->threadSample();
             row["query_begin_ns"] = begin;
             row["at_ns"] = nowNs();
@@ -550,11 +550,11 @@ private:
     successor.setArguments({next["output"].toString(), QString::number(next["mib"].toInt()),
                             QString::number(next["tabs"].toInt()), QString::number(next["cycles"].toInt())});
     auto environment = QProcessEnvironment::systemEnvironment();
-    environment.insert("MUFFIN_GUI_CHAIN_INDEX", QString::number(chainIndex_ + 1));
-    environment.insert("MUFFIN_GUI_PREDECESSOR_PID", QString::number(QCoreApplication::applicationPid()));
-    environment.insert("MUFFIN_GUI_PROFILE", next["profile"].toString());
+    environment.insert("MUFPEN_GUI_CHAIN_INDEX", QString::number(chainIndex_ + 1));
+    environment.insert("MUFPEN_GUI_PREDECESSOR_PID", QString::number(QCoreApplication::applicationPid()));
+    environment.insert("MUFPEN_GUI_PROFILE", next["profile"].toString());
     if (next.contains("open_profile"))
-      environment.insert("MUFFIN_GUI_OPEN_PROFILE", next["open_profile"].toString());
+      environment.insert("MUFPEN_GUI_OPEN_PROFILE", next["open_profile"].toString());
     successor.setProcessEnvironment(environment);
     successor.setWorkingDirectory(QDir::currentPath());
     successor.setProcessChannelMode(QProcess::MergedChannels);
@@ -684,12 +684,12 @@ private:
     // A manual activation can happen long after startup. Gate before creating
     // the workload and starting the open clock, rather than only before input
     // phases: otherwise the first paint was already recorded in the background.
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_REQUIRE_FOREGROUND")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_REQUIRE_FOREGROUND")) {
       const auto now = nowNs();
       if (!openForegroundWaitStart_) {
         openForegroundWaitStart_ = now;
         current()->renderView->setFocus(Qt::OtherFocusReason);
-        window_->setWindowTitle("Muffin theme benchmark | click editor to start document opening");
+        window_->setWindowTitle("Mufpen theme benchmark | click editor to start document opening");
         writeForegroundReadiness("waiting_for_foreground");
       }
       const bool ready = hasWindowsForeground() && window_->isActiveWindow() && window_->windowHandle()->isExposed() &&
@@ -711,7 +711,7 @@ private:
       }
       openForegroundWaits_.append(ms(now - openForegroundWaitStart_));
       openForegroundWaitStart_ = openForegroundStableStart_ = 0;
-      window_->setWindowTitle("Muffin theme benchmark | opening; keep editor in foreground");
+      window_->setWindowTitle("Mufpen theme benchmark | opening; keep editor in foreground");
       writeForegroundReadiness("opening");
     }
     const auto path = files_.filePath(QString("gui-%1.md").arg(documents_.size() + 1));
@@ -736,7 +736,7 @@ private:
     auto* tab = current();
     documents_.append(tab);
     tab->draftTimer->setObjectName(QString("benchmarkDraft/%1").arg(documents_.size() - 1));
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT"))
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT"))
       tab->draftTimer->blockSignals(true);
     app_.viewports.insert(tab->renderView->viewport(), documents_.size() - 1);
     connect(&tab->session, &DocumentSession::parseBusy, this, [this](bool busy) {
@@ -769,7 +769,7 @@ private:
                                  {"call_return_ms", ms(openCallReturned_ - started)},
                                  {"install_finished_ms", ms(openInstallFinished_ - started)},
                                  {"first_full_paint_ms", ms(openFirstPaint_ - started)},
-                                 {"open_profile", qEnvironmentVariable("MUFFIN_GUI_OPEN_PROFILE", "legacy")},
+                                 {"open_profile", qEnvironmentVariable("MUFPEN_GUI_OPEN_PROFILE", "legacy")},
                                  {"sampled_max_working_set", sampledMaxMemory_.load()},
                                  {"foreground_at_first_paint", openPaintForeground_},
                                  {"stages", stages},
@@ -792,7 +792,7 @@ private:
     tab->renderView->verticalScrollBar()->setValue(0);
   }
   void beginMeasurements(int activationAttempt = 0) {
-    if (!activationAttempt && qEnvironmentVariableIsSet("MUFFIN_GUI_REQUIRE_FOREGROUND")) {
+    if (!activationAttempt && qEnvironmentVariableIsSet("MUFPEN_GUI_REQUIRE_FOREGROUND")) {
       foregroundBeforeActivation_ = foregroundIdentity();
       // Loading can outlast the initial request. Qt's active flag alone is not
       // enough on Windows: request the ordinary activation once after setup.
@@ -816,11 +816,11 @@ private:
     }
     resetCaret();
     phases_ = {{"typing", count_, 50}, {"cursor_horizontal", count_, 50}, {"cursor_vertical", count_, 50}};
-    if (nativeInput_ || qEnvironmentVariableIsSet("MUFFIN_GUI_TYPING_ONLY"))
+    if (nativeInput_ || qEnvironmentVariableIsSet("MUFPEN_GUI_TYPING_ONLY"))
       phases_ = {{"typing", count_, 50}};
     // A focused queue reproduction keeps the same input prefix, without waiting
     // through unrelated scroll/theme phases on an interactive desktop.
-    if (!qEnvironmentVariableIsSet("MUFFIN_GUI_INPUT_ONLY") && !qEnvironmentVariableIsSet("MUFFIN_GUI_TYPING_ONLY") &&
+    if (!qEnvironmentVariableIsSet("MUFPEN_GUI_INPUT_ONLY") && !qEnvironmentVariableIsSet("MUFPEN_GUI_TYPING_ONLY") &&
         !nativeInput_) {
       phases_.append({"scroll_cold", count_, 100});
       phases_.append({"scroll_warm", count_, 100});
@@ -940,7 +940,7 @@ private:
   void launchPhase() {
     // A visible Qt window can still be behind another Windows foreground window.
     // Wait outside the measured interval; never steal focus while posting input.
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_REQUIRE_FOREGROUND")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_REQUIRE_FOREGROUND")) {
       const auto now = nowNs();
       if (!foregroundWaitStart_)
         foregroundWaitStart_ = now;
@@ -955,9 +955,9 @@ private:
           if (!foregroundWaitAnnounced_) {
             foregroundWaitAnnounced_ = true;
             window_->setWindowTitle(
-                QString(themeAcceptance_ ? "Muffin theme benchmark | %1 / %2 | click editor to start %3 operations"
-                                         : "Muffin input benchmark | %1 / %2 | click editor to start %3 keys")
-                    .arg(nativeInput_ ? "Windows" : "Qt", qEnvironmentVariable("MUFFIN_GUI_PROFILE"))
+                QString(themeAcceptance_ ? "Mufpen theme benchmark | %1 / %2 | click editor to start %3 operations"
+                                         : "Mufpen input benchmark | %1 / %2 | click editor to start %3 keys")
+                    .arg(nativeInput_ ? "Windows" : "Qt", qEnvironmentVariable("MUFPEN_GUI_PROFILE"))
                     .arg(phases_[phase_].count));
             writeForegroundReadiness("waiting_for_foreground");
             std::fprintf(stderr, "GUI waiting for benchmark foreground and editor focus (up to %d seconds)\n",
@@ -980,8 +980,8 @@ private:
       foregroundWaits_.append(ms(now - foregroundWaitStart_));
       foregroundWaitStart_ = foregroundStableStart_ = 0;
       foregroundWaitAnnounced_ = false;
-      window_->setWindowTitle(themeAcceptance_ ? "Muffin theme benchmark | recording; keep editor in foreground"
-                                               : "Muffin input benchmark | recording; keep editor in foreground");
+      window_->setWindowTitle(themeAcceptance_ ? "Mufpen theme benchmark | recording; keep editor in foreground"
+                                               : "Mufpen input benchmark | recording; keep editor in foreground");
       writeForegroundReadiness("recording");
     }
     samples_.clear();
@@ -1022,12 +1022,12 @@ private:
       std::lock_guard lock(schedulerMutex_);
       schedulerSamples_.clear();
     }
-    activeTrace = qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE") ? &trace_ : nullptr;
+    activeTrace = qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE") ? &trace_ : nullptr;
     app_.traceEvents = activeTrace != nullptr;
     resetThemePerformance();
     activeProbes = &probes_;
     themeScopeIntervals =
-        themeAcceptance_ && qEnvironmentVariable("MUFFIN_GUI_PROFILE") != "off" ? &themeScopes_ : nullptr;
+        themeAcceptance_ && qEnvironmentVariable("MUFPEN_GUI_PROFILE") != "off" ? &themeScopes_ : nullptr;
     const auto phase = phases_[phase_];
 #ifdef Q_OS_WIN
     const auto inputWindow = reinterpret_cast<HWND>(window_->winId());
@@ -1161,7 +1161,7 @@ private:
       row["post_to_dispatch_ms"] = ms(sample.dispatch - sample.posted);
       if (sample.paintStart)
         row["handler_end_to_paint_start_ms"] = qMax(0.0, ms(sample.paintStart - sample.end));
-      if (qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE")) {
+      if (qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE")) {
         row["cpu_before"] = sample.cpuBefore;
         row["cpu_after"] = sample.cpuAfter;
       }
@@ -1254,7 +1254,7 @@ private:
                        {"working_set_before", memoryBefore_},
                        {"working_set_after", memoryAfter},
                        {"process_after", diag::MemoryAccounting::process()},
-                       {"resource_state_after", qEnvironmentVariableIsSet("MUFFIN_GUI_MEMORY_CENSUS")
+                       {"resource_state_after", qEnvironmentVariableIsSet("MUFPEN_GUI_MEMORY_CENSUS")
                                                     ? diag::MemoryAccounting::resources(*window_, documents_)
                                                     : QJsonObject{}},
                        {"sampled_max_working_set", sampledMaxMemory_.load()},
@@ -1267,7 +1267,7 @@ private:
                        {"text_paint_work", textWork},
                        {"active_cache_stats", cacheStats},
                        {"samples", raw}};
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE")) {
       result["timeline"] = trace_;
       result["timeline_dropped"] = traceDropped;
     }
@@ -1289,7 +1289,7 @@ private:
     }
     triggerTheme(targets[index % 3]);
     resetCaret();
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_STATIC_VISUAL_AUDIT")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_STATIC_VISUAL_AUDIT")) {
       // Only the untimed reference pass: normalize editor interaction state
       // without moving the system cursor or disabling theme animations.
       QEvent leave(QEvent::Leave);
@@ -1360,7 +1360,7 @@ private:
     if (!drainStart_)
       drainStart_ = nowNs();
     const auto sampleDrain = [this] {
-      if (!qEnvironmentVariableIsSet("MUFFIN_GUI_MEMORY_CENSUS") || visualAuditDone_)
+      if (!qEnvironmentVariableIsSet("MUFPEN_GUI_MEMORY_CENSUS") || visualAuditDone_)
         return;
       draftMemorySamples_.append(QJsonObject{{"elapsed_ms", ms(nowNs() - drainStart_)},
                                              {"process", diag::MemoryAccounting::process()},
@@ -1388,7 +1388,7 @@ private:
                                    {"acknowledged", qint64(tab->lastDraftSnapshotRevision)}});
     const auto drainedWorkingSet = diag::workingSetBytes();
     const auto drainWaitMs = ms(nowNs() - drainStart_);
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_MEMORY_CENSUS") && !memoryCensusDone_) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_MEMORY_CENSUS") && !memoryCensusDone_) {
       memoryCensusDone_ = true;
       QJsonArray rows;
       for (auto* tab : documents_) {
@@ -1426,7 +1426,7 @@ private:
         {"qt_version", qVersion()},
         {"native_window_exposed", window_->windowHandle()->isExposed()},
         {"windows_foreground", hasWindowsForeground()},
-        {"foreground_wait_required", qEnvironmentVariableIsSet("MUFFIN_GUI_REQUIRE_FOREGROUND")},
+        {"foreground_wait_required", qEnvironmentVariableIsSet("MUFPEN_GUI_REQUIRE_FOREGROUND")},
         {"foreground_wait_limit_ms", foregroundWaitLimitMs_},
         {"foreground_wait_timed_out", foregroundWaitTimedOut_},
         {"foreground_wait_ms", foregroundWaits_},
@@ -1436,23 +1436,23 @@ private:
         {"foreground_identity", foregroundIdentity()},
         {"desktop", queueTrace ? queueTrace->desktopIdentity() : QJsonObject{}},
         {"active_window", window_->isActiveWindow()},
-        {"pinned_window", qEnvironmentVariableIsSet("MUFFIN_GUI_PIN_WINDOW")},
-        {"detailed_trace", qEnvironmentVariableIsSet("MUFFIN_GUI_TRACE")},
-        {"input_phases_only", qEnvironmentVariableIsSet("MUFFIN_GUI_INPUT_ONLY")},
-        {"typing_only", qEnvironmentVariableIsSet("MUFFIN_GUI_TYPING_ONLY")},
+        {"pinned_window", qEnvironmentVariableIsSet("MUFPEN_GUI_PIN_WINDOW")},
+        {"detailed_trace", qEnvironmentVariableIsSet("MUFPEN_GUI_TRACE")},
+        {"input_phases_only", qEnvironmentVariableIsSet("MUFPEN_GUI_INPUT_ONLY")},
+        {"typing_only", qEnvironmentVariableIsSet("MUFPEN_GUI_TYPING_ONLY")},
         {"theme_acceptance", themeAcceptance_},
         {"chain_index", chainIndex_},
-        {"predecessor_pid", qint64(qEnvironmentVariable("MUFFIN_GUI_PREDECESSOR_PID").toULongLong())},
+        {"predecessor_pid", qint64(qEnvironmentVariable("MUFPEN_GUI_PREDECESSOR_PID").toULongLong())},
         {"startup_theme", themeAcceptance_ ? "night" : "gui-vlook"},
         {"visual_audit", visualAudit_},
-        {"static_visual_audit", qEnvironmentVariableIsSet("MUFFIN_GUI_STATIC_VISUAL_AUDIT")},
+        {"static_visual_audit", qEnvironmentVariableIsSet("MUFPEN_GUI_STATIC_VISUAL_AUDIT")},
         {"memory_census", memoryCensus_},
         {"draft_memory_samples", draftMemorySamples_},
         {"working_set_before_visual_audit", memoryBeforeVisualAudit_},
         {"working_set_after_visual_audit", drainedWorkingSet},
-        {"draft_snapshots_enabled", !qEnvironmentVariableIsSet("MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT")},
-        {"deep_css_profile", qEnvironmentVariableIsSet("MUFFIN_CSS_DEEP_PROFILE")},
-        {"scheduler_sampling", qEnvironmentVariableIsSet("MUFFIN_GUI_SCHEDULER_SAMPLES")},
+        {"draft_snapshots_enabled", !qEnvironmentVariableIsSet("MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT")},
+        {"deep_css_profile", qEnvironmentVariableIsSet("MUFPEN_CSS_DEEP_PROFILE")},
+        {"scheduler_sampling", qEnvironmentVariableIsSet("MUFPEN_GUI_SCHEDULER_SAMPLES")},
         {"input_delivery", nativeInput_ ? "windows_sendinput" : "qt_posted"},
         {"native_observations", nativeObservations_},
         {"native_posts", nativePosts_.size()},
@@ -1463,19 +1463,19 @@ private:
         {"native_contaminated", nativeContaminated_},
         {"native_input_complete",
          !nativeInput_ || (!nativeAborted_ && !nativeContaminated_ && nativeReceived_ == count_)},
-        {"profiling_mode", qEnvironmentVariable("MUFFIN_GUI_PROFILE", "minimal")},
+        {"profiling_mode", qEnvironmentVariable("MUFPEN_GUI_PROFILE", "minimal")},
         {"draft_drain",
          QJsonObject{{"complete", drained},
                      {"schema_version", 2},
                      {"wait_ms", visualAuditDone_ ? drainWaitBeforeVisualAudit_ : drainWaitMs},
                      {"working_set_after", visualAuditDone_ ? memoryBeforeVisualAudit_ : drainedWorkingSet},
                      {"tabs", draftRows}}},
-        {"scheduler_state_sampling", qEnvironmentVariableIsSet("MUFFIN_GUI_SCHEDULER_SAMPLES")},
+        {"scheduler_state_sampling", qEnvironmentVariableIsSet("MUFPEN_GUI_SCHEDULER_SAMPLES")},
         {"queue_trace_version", 1},
         {"opaque_viewport", current()->renderView->viewport()->testAttribute(Qt::WA_OpaquePaintEvent)},
         {"clock_identity", queueTrace ? queueTrace->clockIdentity() : QJsonObject{}},
         {"steady_ns_at_identity", nowNs()},
-        {"draft_snapshot_enabled", !qEnvironmentVariableIsSet("MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT")},
+        {"draft_snapshot_enabled", !qEnvironmentVariableIsSet("MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT")},
         {"draft_write_mode", "background_serial"},
         {"window_size", QString("%1x%2").arg(window_->width()).arg(window_->height())},
         {"viewport_size", QString("%1x%2").arg(viewport.width()).arg(viewport.height())},
@@ -1500,7 +1500,7 @@ private:
     check(file.open(QIODevice::WriteOnly), "cannot write results");
     file.write(QJsonDocument(root).toJson(QJsonDocument::Indented));
     file.close();
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_REQUIRE_FOREGROUND"))
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_REQUIRE_FOREGROUND"))
       writeForegroundReadiness(foregroundWaitTimedOut_ ? "foreground_timeout" : "result_written");
     std::fprintf(stderr, "GUI results: %s\n", qPrintable(output_));
     // QApplication's quit closes windows first; disposable edited buffers must
@@ -1517,7 +1517,7 @@ private:
       if (phase["phase"] == "theme_switch")
         validChainRun &= phase["coalesced_input_count"].toInt() == 0;
     }
-    if (qEnvironmentVariableIsSet("MUFFIN_GUI_MEMORY_CENSUS")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_GUI_MEMORY_CENSUS")) {
       QJsonArray closed;
       const auto beforeClose = diag::workingSetBytes();
       for (auto* tab : documents_) {
@@ -1609,7 +1609,7 @@ private:
        lostForeground_ = false;
   QJsonObject foregroundLoss_;
   bool inOperation_ = false;
-  const bool themeAcceptance_ = qEnvironmentVariableIsSet("MUFFIN_GUI_THEME_ACCEPTANCE");
+  const bool themeAcceptance_ = qEnvironmentVariableIsSet("MUFPEN_GUI_THEME_ACCEPTANCE");
   bool visualAuditDone_ = false;
   qint64 memoryBeforeVisualAudit_ = 0;
   bool memoryCensusDone_ = false;
@@ -1617,7 +1617,7 @@ private:
   QJsonArray draftMemorySamples_;
   double drainWaitBeforeVisualAudit_ = 0;
   QJsonArray visualAudit_, themeScopes_;
-  const bool nativeInput_ = qEnvironmentVariableIsSet("MUFFIN_GUI_NATIVE_INPUT");
+  const bool nativeInput_ = qEnvironmentVariableIsSet("MUFPEN_GUI_NATIVE_INPUT");
   std::atomic<bool> nativeAborted_{false};
   quintptr nativeForegroundMismatch_ = 0, nativeExpectedWindow_ = 0;
   bool nativeContaminated_ = false;
@@ -1636,10 +1636,10 @@ private:
   QJsonArray openForegroundWaits_;
   bool foregroundWaitAnnounced_ = false, foregroundWaitTimedOut_ = false;
   const int foregroundWaitLimitMs_ = [] {
-    if (!qEnvironmentVariableIsSet("MUFFIN_GUI_FOREGROUND_WAIT_MS"))
+    if (!qEnvironmentVariableIsSet("MUFPEN_GUI_FOREGROUND_WAIT_MS"))
       return 120000;
     bool ok = false;
-    const auto value = qEnvironmentVariableIntValue("MUFFIN_GUI_FOREGROUND_WAIT_MS", &ok);
+    const auto value = qEnvironmentVariableIntValue("MUFPEN_GUI_FOREGROUND_WAIT_MS", &ok);
     check(ok && value >= 1000 && value <= 3600000, "foreground wait must be 1000..3600000 ms");
     return value;
   }();
@@ -1661,13 +1661,13 @@ int main(int argc, char** argv) {
   queueTrace = &queue;
   app.installNativeEventFilter(&queue);
   check(QGuiApplication::platformName() == "windows", "use the Windows QPA, never offscreen");
-  check(argc >= 4, "usage: MuffinGuiPerformanceProbe output.json MiB tabs [samples=80]");
+  check(argc >= 4, "usage: MufpenGuiPerformanceProbe output.json MiB tabs [samples=80]");
   const auto output = QFileInfo(QString::fromLocal8Bit(argv[1])).absoluteFilePath();
   const auto mib = QString::fromLocal8Bit(argv[2]).toDouble();
   const auto tabs = QString::fromLocal8Bit(argv[3]).toInt();
   const auto samples = argc > 4 ? QString::fromLocal8Bit(argv[4]).toInt() : 80;
   check(mib >= .01 && mib <= 30 && tabs >= 1 && tabs <= 3 && samples >= 4 && samples <= 500, "invalid dimensions");
-  QApplication::setOrganizationName("MuffinBenchmarks");
+  QApplication::setOrganizationName("MufpenBenchmarks");
   const auto name = "GuiPerformanceProbe-" + QUuid::createUuid().toString(QUuid::WithoutBraces);
   QApplication::setApplicationName(name);
   QTemporaryDir settings;
@@ -1678,7 +1678,7 @@ int main(int argc, char** argv) {
   s.setValue("files/autoSave", false);
   s.setValue("files/autoSaveOnSwitch", false);
   s.setValue("view/sourceMode", false);
-  const bool themeAcceptance = qEnvironmentVariableIsSet("MUFFIN_GUI_THEME_ACCEPTANCE");
+  const bool themeAcceptance = qEnvironmentVariableIsSet("MUFPEN_GUI_THEME_ACCEPTANCE");
   s.setValue("appearance/themeName", themeAcceptance ? "night" : "gui-vlook");
   s.setValue("appearance/fontSizePx", 16);
   s.setValue("appearance/zoomPercent", 100);
@@ -1686,20 +1686,20 @@ int main(int argc, char** argv) {
   s.setValue("appearance/reducedMotion", false);
   s.sync();
   LanguageManager::instance().setLanguage("en");
-  const auto source = QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css");
+  const auto source = QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css");
   const auto dataRoot = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
   const auto themes = ThemeManager::themesDirectory();
   check(QDir().mkpath(themes) && ThemeManager::installCssTheme(source, themes), "cannot stage fixed theme");
   check(QFile::rename(themes + "/vlook-fancy-dark.css", themes + "/gui-vlook.css"), "theme alias staging failed");
   if (themeAcceptance) {
-    const auto phycat = qEnvironmentVariable("MUFFIN_GUI_PHYCAT_SOURCE");
+    const auto phycat = qEnvironmentVariable("MUFPEN_GUI_PHYCAT_SOURCE");
     check(!phycat.isEmpty() && ThemeManager::installCssTheme(phycat, themes), "cannot stage fixed Phycat theme");
     check(QFile::rename(themes + '/' + QFileInfo(phycat).fileName().toLower(), themes + "/gui-phycat.css"),
           "Phycat alias staging failed");
   }
   configurePerformanceLogging(false);
   qInstallMessageHandler(messageHandler);
-  enableThemePerformance(qEnvironmentVariable("MUFFIN_GUI_PROFILE") != "off");
+  enableThemePerformance(qEnvironmentVariable("MUFPEN_GUI_PROFILE") != "off");
   int exitCode;
   {
     Runner runner(app, output, mib, tabs, samples, source);
@@ -1707,7 +1707,7 @@ int main(int argc, char** argv) {
     exitCode = app.exec();
   }
   // Only the unique app-owned directory created by this invocation is removed.
-  check(QFileInfo(dataRoot).fileName() == name && QDir(dataRoot).absolutePath().contains("MuffinBenchmarks"),
+  check(QFileInfo(dataRoot).fileName() == name && QDir(dataRoot).absolutePath().contains("MufpenBenchmarks"),
         "isolated data root validation failed");
   QDir(dataRoot).removeRecursively();
   return exitCode;

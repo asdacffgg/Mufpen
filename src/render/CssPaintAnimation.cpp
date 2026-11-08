@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 const QStringList& properties() {
   static const QStringList names{"color",
@@ -540,4 +540,4 @@ void CssPaintContext::clear() {
   nextPruneMs_ = 0;
 }
 
-} // namespace muffin
+} // namespace mufpen

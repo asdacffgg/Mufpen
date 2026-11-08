@@ -5,7 +5,7 @@
 class QKeySequenceEdit;
 class QTreeWidget;
 
-namespace muffin {
+namespace mufpen {
 class PrefsShortcutsPage final : public PreferencesPage {
   Q_OBJECT
 public:
@@ -30,4 +30,4 @@ private:
   QPushButton* restore_ = nullptr;
   QPushButton* reset_ = nullptr;
 };
-} // namespace muffin
+} // namespace mufpen

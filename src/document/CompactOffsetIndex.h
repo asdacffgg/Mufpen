@@ -8,7 +8,7 @@
 #include <utility>
 #include <variant>
 
-namespace muffin {
+namespace mufpen {
 
 // Sorted, nonnegative UTF-16 offsets. Ordinary documents use four bytes per
 // entry; promotion preserves qsizetype's complete domain. Qt buffers remain
@@ -63,4 +63,4 @@ private:
   std::variant<Narrow, Wide> values_;
 };
 
-} // namespace muffin
+} // namespace mufpen

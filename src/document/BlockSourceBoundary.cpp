@@ -5,7 +5,7 @@
 #include <QRegularExpression>
 #include <algorithm>
 
-namespace muffin {
+namespace mufpen {
 QString blockClosingSuffix(const PieceTable& text, const MarkdownNode& node) {
   const auto range = node.sourceRange();
   if (node.type() == BlockType::CodeFence && !node.isIndentedCode()) {

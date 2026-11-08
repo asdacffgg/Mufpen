@@ -7,7 +7,7 @@
 
 class QPainter;
 
-namespace muffin {
+namespace mufpen {
 
 struct ThemeElementPaintStyle;
 
@@ -40,4 +40,4 @@ void paintSparseCssFilter(QPainter& painter, QRectF sourceBounds, const ThemeEle
                           const std::function<void(QPainter&)>& source,
                           const std::function<void(QImage&, QPointF)>& finish = {});
 
-} // namespace muffin
+} // namespace mufpen

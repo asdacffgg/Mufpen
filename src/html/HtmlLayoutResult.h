@@ -12,7 +12,7 @@
 #include <memory>
 #include <vector>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 class HtmlLayoutResult {
 public:
@@ -80,4 +80,4 @@ private:
   mutable QHash<QString, QImage> imageCache_;
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

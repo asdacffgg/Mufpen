@@ -11,9 +11,9 @@
 
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(projectionPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(projectionPerf, "mufpen.perf.detail", QtWarningMsg)
 
 // CSS text-transform applied to a display-text run. Per-code-point case mapping
 // (QChar::toUpper/toLower) is length-preserving for every code point — unlike
@@ -1534,4 +1534,4 @@ bool InlineProjection::offsetInSource(qsizetype sourceOffset) const {
   return sourceOffset >= 0 && sourceOffset <= sourceText_.size();
 }
 
-} // namespace muffin
+} // namespace mufpen

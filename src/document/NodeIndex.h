@@ -7,7 +7,7 @@
 
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 class NodeIndex {
 public:
@@ -43,4 +43,4 @@ private:
   bool orderDirty_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

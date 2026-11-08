@@ -78,16 +78,16 @@ QString pathKey(const QString& path) {
   return key;
 }
 
-qsizetype sourceOffset(muffin::DocumentTab* document, const muffin::CursorPosition& cursor) {
-  muffin::BlockEditContextResolver resolver(&document->session, &document->editorController.selection());
+qsizetype sourceOffset(mufpen::DocumentTab* document, const mufpen::CursorPosition& cursor) {
+  mufpen::BlockEditContextResolver resolver(&document->session, &document->editorController.selection());
   const auto* node = document->session.document().node(cursor.blockId);
   // Literal controllers also produce block-local source offsets. Their text
   // offset is authoritative; never persist it as a document-wide position.
-  if (node && muffin::isLiteralBlockType(node->type()) && !cursor.afterBlock && !cursor.text.inMeta)
+  if (node && mufpen::isLiteralBlockType(node->type()) && !cursor.afterBlock && !cursor.text.inMeta)
     return resolver.literalContentStartOffset(*node) + cursor.text.textOffset;
   if (cursor.text.sourceOffset >= 0)
     return cursor.text.sourceOffset;
-  muffin::BlockEditContext context;
+  mufpen::BlockEditContext context;
   const auto id = cursor.text.nodeId.isValid() ? cursor.text.nodeId : cursor.blockId;
   if (resolver.forBlock(id, context)) {
     qsizetype local = 0;
@@ -99,15 +99,15 @@ qsizetype sourceOffset(muffin::DocumentTab* document, const muffin::CursorPositi
   return 0;
 }
 
-QVariantMap literalPosition(muffin::DocumentTab* document, const muffin::CursorPosition& cursor) {
+QVariantMap literalPosition(mufpen::DocumentTab* document, const mufpen::CursorPosition& cursor) {
   const auto* node = document->session.document().node(cursor.blockId);
-  if (!node || !muffin::isLiteralBlockType(node->type()) || cursor.afterBlock || cursor.text.inMeta)
+  if (!node || !mufpen::isLiteralBlockType(node->type()) || cursor.afterBlock || cursor.text.inMeta)
     return {};
   return {{QStringLiteral("block"), qlonglong(node->sourceRange().byteStart)},
           {QStringLiteral("offset"), qlonglong(cursor.text.textOffset)}};
 }
 
-QVariantMap viewportState(const muffin::ViewportPosition& position) {
+QVariantMap viewportState(const mufpen::ViewportPosition& position) {
   return {{QStringLiteral("source"), qlonglong(position.sourceOffset)},
           {QStringLiteral("screenY"), position.screenOffset},
           {QStringLiteral("horizontal"), position.horizontal},
@@ -115,8 +115,8 @@ QVariantMap viewportState(const muffin::ViewportPosition& position) {
           {QStringLiteral("start"), position.atStart}};
 }
 
-muffin::ViewportPosition viewportPosition(const QVariantMap& state) {
-  muffin::ViewportPosition position;
+mufpen::ViewportPosition viewportPosition(const QVariantMap& state) {
+  mufpen::ViewportPosition position;
   position.sourceOffset = state.value(QStringLiteral("source"), -1).toLongLong();
   const auto y = state.value(QStringLiteral("screenY")).toDouble();
   position.screenOffset = std::isfinite(y) ? qBound(-1000000.0, y, 1000000.0) : 0;
@@ -128,7 +128,7 @@ muffin::ViewportPosition viewportPosition(const QVariantMap& state) {
 
 } // namespace
 
-QList<muffin::DocumentTab*> muffin::MainWindow::documentTabs() const {
+QList<mufpen::DocumentTab*> mufpen::MainWindow::documentTabs() const {
   QList<DocumentTab*> documents;
   for (int i = 0; i < tabs_->count(); ++i) {
     documents.append(static_cast<DocumentTab*>(tabs_->widget(i)));
@@ -136,7 +136,7 @@ QList<muffin::DocumentTab*> muffin::MainWindow::documentTabs() const {
   return documents;
 }
 
-bool muffin::MainWindow::isPathOpen(const QString& path, const DocumentSession* except) const {
+bool mufpen::MainWindow::isPathOpen(const QString& path, const DocumentSession* except) const {
   const QString key = pathKey(path);
   for (DocumentTab* document : documentTabs()) {
     if (&document->session != except && !key.isEmpty() &&
@@ -147,7 +147,7 @@ bool muffin::MainWindow::isPathOpen(const QString& path, const DocumentSession* 
   return false;
 }
 
-void muffin::MainWindow::configureTab(DocumentTab* document) {
+void mufpen::MainWindow::configureTab(DocumentTab* document) {
   const RenderTheme theme = themeManager_.currentTheme(zoomPercent_, fontSizePx_);
   document->renderView->setTheme(theme);
   document->editor->setTheme(theme);
@@ -169,7 +169,7 @@ void muffin::MainWindow::configureTab(DocumentTab* document) {
   }
 }
 
-muffin::DocumentTab* muffin::MainWindow::createDocumentTab() {
+mufpen::DocumentTab* mufpen::MainWindow::createDocumentTab() {
   auto* document = new DocumentTab(tabs_);
   document->renderView->setThemeViewport(this);
   document->session.setParseOptions(markdownParseOptions());
@@ -191,7 +191,7 @@ muffin::DocumentTab* muffin::MainWindow::createDocumentTab() {
   return document;
 }
 
-bool muffin::MainWindow::eventFilter(QObject* watched, QEvent* event) {
+bool mufpen::MainWindow::eventFilter(QObject* watched, QEvent* event) {
   if (watched == tabs_->tabBar() && event->type() == QEvent::ContextMenu) {
     auto* context = static_cast<QContextMenuEvent*>(event);
     auto* bar = tabs_->tabBar();
@@ -213,7 +213,7 @@ bool muffin::MainWindow::eventFilter(QObject* watched, QEvent* event) {
   return QMainWindow::eventFilter(watched, event);
 }
 
-void muffin::MainWindow::setupTabButton(DocumentTab* document) {
+void mufpen::MainWindow::setupTabButton(DocumentTab* document) {
   const int index = tabs_->indexOf(document);
   if (QWidget* old = tabs_->tabBar()->tabButton(index, QTabBar::RightSide)) {
     old->deleteLater();
@@ -251,7 +251,7 @@ void muffin::MainWindow::setupTabButton(DocumentTab* document) {
   updateTabLabel(document);
 }
 
-void muffin::MainWindow::updateTabBarVisibility() {
+void mufpen::MainWindow::updateTabBarVisibility() {
   const bool multipleDocuments = tabs_->count() > 1 || (tab_ && tab_->pinned);
   tabs_->tabBar()->setVisible(multipleDocuments);
   // A visible corner widget reserves a row even when QTabBar auto-hides.
@@ -260,7 +260,7 @@ void muffin::MainWindow::updateTabBarVisibility() {
   }
 }
 
-void muffin::MainWindow::retranslateTabs() {
+void mufpen::MainWindow::retranslateTabs() {
   tabs_->tabBar()->setAccessibleName(tr("Open Documents"));
   auto* button = tabs_->findChild<QToolButton*>(QStringLiteral("NewTabButton"));
   if (button) {
@@ -281,15 +281,15 @@ void muffin::MainWindow::retranslateTabs() {
   }
 }
 
-bool muffin::MainWindow::hasOpenFile(const QString& path) const {
+bool mufpen::MainWindow::hasOpenFile(const QString& path) const {
   return isPathOpen(path);
 }
 
-bool muffin::MainWindow::openFile(QString path) {
+bool mufpen::MainWindow::openFile(QString path) {
   return openFileImpl(std::move(path), false);
 }
 
-bool muffin::MainWindow::openFileImpl(QString path, bool importCopy) {
+bool mufpen::MainWindow::openFileImpl(QString path, bool importCopy) {
   if (workspaceWriteInProgress_)
     return false;
   if (path.isEmpty()) {
@@ -344,7 +344,7 @@ bool muffin::MainWindow::openFileImpl(QString path, bool importCopy) {
   return true;
 }
 
-bool muffin::MainWindow::loadFileIntoTab(DocumentTab* document, const QString& path) {
+bool mufpen::MainWindow::loadFileIntoTab(DocumentTab* document, const QString& path) {
   if (!document->fileController.open(document->session, this, path))
     return false;
   document->editorController.clearHistoryAndSelection();
@@ -357,7 +357,7 @@ bool muffin::MainWindow::loadFileIntoTab(DocumentTab* document, const QString& p
   return true;
 }
 
-void muffin::MainWindow::confirmPendingFileOpen(DocumentTab* document) {
+void mufpen::MainWindow::confirmPendingFileOpen(DocumentTab* document) {
   if (document->pendingOpenPath.isEmpty())
     return;
   // Keep the guard up and the model read-only through the synchronous read/decode step.
@@ -382,7 +382,7 @@ void muffin::MainWindow::confirmPendingFileOpen(DocumentTab* document) {
   QTimer::singleShot(0, document->windowConnections, [this, document] { restoreTabViewState(document); });
 }
 
-void muffin::MainWindow::cancelPendingFileOpen(DocumentTab* document) {
+void mufpen::MainWindow::cancelPendingFileOpen(DocumentTab* document) {
   if (document->pendingOpenPath.isEmpty())
     return;
   if (pendingNavigation_ && pendingNavigation_->destination == document)
@@ -412,13 +412,13 @@ void muffin::MainWindow::cancelPendingFileOpen(DocumentTab* document) {
   }
 }
 
-bool muffin::MainWindow::startNewDocument() {
+bool mufpen::MainWindow::startNewDocument() {
   DocumentTab* document = createDocumentTab();
   tabs_->setCurrentWidget(document);
   return true;
 }
 
-void muffin::MainWindow::activateTab(int index) {
+void mufpen::MainWindow::activateTab(int index) {
   if (index < 0) {
     return;
   }
@@ -476,7 +476,7 @@ void muffin::MainWindow::activateTab(int index) {
   QTimer::singleShot(0, this, &MainWindow::showNextExternalFileChange);
 }
 
-bool muffin::MainWindow::closeTab(int index) {
+bool mufpen::MainWindow::closeTab(int index) {
   const QScopedValueRollback<bool> switchGuard(suppressSaveOnTabSwitch_, true);
   const bool updatesWerePaused = sessionUpdatesPaused_;
   const QScopedValueRollback<bool> sessionGuard(sessionUpdatesPaused_, true);
@@ -516,7 +516,7 @@ bool muffin::MainWindow::closeTab(int index) {
   return true;
 }
 
-void muffin::MainWindow::reopenClosedFile() {
+void mufpen::MainWindow::reopenClosedFile() {
   if (workspaceWriteInProgress_ || closedFiles_.isEmpty())
     return;
   const auto closed = closedFiles_.takeLast();
@@ -538,7 +538,7 @@ void muffin::MainWindow::reopenClosedFile() {
   updateAllActions();
 }
 
-void muffin::MainWindow::buildTabContextMenu(int index, QPoint globalPos) {
+void mufpen::MainWindow::buildTabContextMenu(int index, QPoint globalPos) {
   QPointer<DocumentTab> document = static_cast<DocumentTab*>(tabs_->widget(index));
   if (!document)
     return;
@@ -613,7 +613,7 @@ void muffin::MainWindow::buildTabContextMenu(int index, QPoint globalPos) {
   menu.exec(globalPos);
 }
 
-void muffin::MainWindow::closeTabs(const QList<DocumentTab*>& documents) {
+void mufpen::MainWindow::closeTabs(const QList<DocumentTab*>& documents) {
   QList<QPointer<DocumentTab>> pending;
   for (auto* document : documents)
     pending.append(document);
@@ -627,7 +627,7 @@ void muffin::MainWindow::closeTabs(const QList<DocumentTab*>& documents) {
   }
 }
 
-void muffin::MainWindow::setTabPinned(DocumentTab* document, bool pinned) {
+void mufpen::MainWindow::setTabPinned(DocumentTab* document, bool pinned) {
   if (tabs_->indexOf(document) < 0 || document->pinned == pinned)
     return;
   document->pinned = pinned;
@@ -637,7 +637,7 @@ void muffin::MainWindow::setTabPinned(DocumentTab* document, bool pinned) {
   saveSessionState();
 }
 
-void muffin::MainWindow::normalizePinnedTabs() {
+void mufpen::MainWindow::normalizePinnedTabs() {
   if (normalizingPinnedTabs_)
     return;
   const QScopedValueRollback<bool> guard(normalizingPinnedTabs_, true);
@@ -656,7 +656,7 @@ void muffin::MainWindow::normalizePinnedTabs() {
   }
 }
 
-void muffin::MainWindow::moveTabToNewWindow(DocumentTab* document) {
+void mufpen::MainWindow::moveTabToNewWindow(DocumentTab* document) {
   if (tabs_->indexOf(document) < 0 || document->session.isOpenInProgress())
     return;
   sessionSaveTimer_->stop();
@@ -703,7 +703,7 @@ void muffin::MainWindow::moveTabToNewWindow(DocumentTab* document) {
   window->saveSessionState();
 }
 
-void muffin::MainWindow::copyTabToNewWindow(DocumentTab* document) {
+void mufpen::MainWindow::copyTabToNewWindow(DocumentTab* document) {
   if (tabs_->indexOf(document) < 0 || document->session.isOpenInProgress())
     return;
   sessionSaveTimer_->stop();
@@ -730,12 +730,12 @@ void muffin::MainWindow::copyTabToNewWindow(DocumentTab* document) {
   window->saveSessionState();
 }
 
-void muffin::MainWindow::scheduleSessionSave() {
+void mufpen::MainWindow::scheduleSessionSave() {
   if (!sessionUpdatesPaused_ && sessionSaveTimer_)
     sessionSaveTimer_->start();
 }
 
-void muffin::MainWindow::saveSessionState() {
+void mufpen::MainWindow::saveSessionState() {
   if (sessionUpdatesPaused_ || !tabs_ || !sidebar_)
     return;
   if (sessionSaveTimer_)
@@ -745,7 +745,7 @@ void muffin::MainWindow::saveSessionState() {
   settings.sync();
 }
 
-QVariantMap muffin::MainWindow::sessionState() const {
+QVariantMap mufpen::MainWindow::sessionState() const {
   QStringList files;
   QVariantList views;
   int active = -1;
@@ -772,7 +772,7 @@ QVariantMap muffin::MainWindow::sessionState() const {
   return snapshot;
 }
 
-QVariantMap muffin::MainWindow::tabViewState(DocumentTab* document) const {
+QVariantMap mufpen::MainWindow::tabViewState(DocumentTab* document) const {
   if (document->pendingViewState) {
     auto state = *document->pendingViewState;
     state.insert(QStringLiteral("pinned"), document->pinned);
@@ -827,7 +827,7 @@ QVariantMap muffin::MainWindow::tabViewState(DocumentTab* document) const {
   return state;
 }
 
-void muffin::MainWindow::restoreTabViewState(DocumentTab* document) {
+void mufpen::MainWindow::restoreTabViewState(DocumentTab* document) {
   if (!document->pendingViewState || document != tab_ || sessionUpdatesPaused_ ||
       !document->pendingOpenPath.isEmpty() || document->session.isOpenInProgress() || !document->isVisible())
     return;
@@ -907,18 +907,18 @@ void muffin::MainWindow::restoreTabViewState(DocumentTab* document) {
   document->pendingViewState.reset();
 }
 
-void muffin::MainWindow::closeFolder() {
+void mufpen::MainWindow::closeFolder() {
   sidebarFolderRoot_.clear();
   sidebar_->setFolderRoot({});
   saveSessionState();
 }
 
-void muffin::MainWindow::cycleTab(bool forward) {
+void mufpen::MainWindow::cycleTab(bool forward) {
   const int count = tabs_->count();
   tabs_->setCurrentIndex((tabs_->currentIndex() + (forward ? 1 : count - 1)) % count);
 }
 
-void muffin::MainWindow::updateTabLabel(DocumentTab* document) {
+void mufpen::MainWindow::updateTabLabel(DocumentTab* document) {
   const int index = tabs_->indexOf(document);
   if (index < 0) {
     return;

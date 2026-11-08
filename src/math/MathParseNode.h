@@ -5,7 +5,7 @@
 
 #include <memory>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathNodeType {
   Ord,
@@ -132,4 +132,4 @@ struct MathParseNode {
   QString error;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

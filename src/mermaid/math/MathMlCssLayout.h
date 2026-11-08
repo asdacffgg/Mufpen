@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <variant>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 enum class MathCssBoxRole { Root, Row, Glyph, Fraction, Radical, SupSub, Array };
 
@@ -357,4 +357,4 @@ std::optional<MathCssFractionBox> layoutMathMlFractionBox(const MathLayoutResult
 MathMlPaintOperationBuildResult buildMathMlPaintOperations(const MathLayoutResult& layout, qreal renderFontPixelSize,
                                                            qreal cssRootFontPixelSize = 16.0);
 
-} // namespace muffin::math
+} // namespace mufpen::math

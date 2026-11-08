@@ -6,7 +6,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::er {
+namespace mufpen::mermaid::er {
 
 // Token model mirrors ClassTokenizer.h. Token design decisions (documented once
 // here; ErDiagram.cpp's parser depends on them):
@@ -108,4 +108,4 @@ private:
 
 QString erTokenName(ErTokenKind kind);
 
-} // namespace muffin::mermaid::er
+} // namespace mufpen::mermaid::er

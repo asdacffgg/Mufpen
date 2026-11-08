@@ -8,7 +8,7 @@
 #include <optional>
 #include <stdexcept>
 
-namespace muffin::mermaid::wardley {
+namespace mufpen::mermaid::wardley {
 
 enum class WardleyErrorKind { Lexer, Parser, Runtime };
 
@@ -101,4 +101,4 @@ public:
   static WardleyData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::wardley
+} // namespace mufpen::mermaid::wardley

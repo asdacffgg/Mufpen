@@ -7,7 +7,7 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 
 struct CursorFormatState {
   bool bold = false;
@@ -132,4 +132,4 @@ private:
   SourceModeFn sourceMode_;
 };
 
-} // namespace muffin
+} // namespace mufpen

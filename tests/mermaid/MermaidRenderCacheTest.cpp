@@ -34,7 +34,7 @@
 #include <cstdlib>
 #include <stdexcept>
 
-using namespace muffin::mermaid::editor;
+using namespace mufpen::mermaid::editor;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -119,7 +119,7 @@ int main(int argc, char** argv) {
     const MermaidRenderKey key = MermaidRenderCache::makeKey(erDiagram);
     const MermaidRenderEntry e = cache.getSync(key, erDiagram);
     require(e.status == kReady, QStringLiteral("valid erDiagram should be Ready (got %1)").arg((int)e.status));
-    const auto* erScene = dynamic_cast<const muffin::mermaid::er::ErScene*>(e.scene.get());
+    const auto* erScene = dynamic_cast<const mufpen::mermaid::er::ErScene*>(e.scene.get());
     require(erScene != nullptr, QStringLiteral("Ready er entry must carry an erScene"));
     require(e.naturalSize.width() > 0 && e.naturalSize.height() > 0,
             QStringLiteral("er natural size must be positive"));
@@ -158,8 +158,8 @@ int main(int argc, char** argv) {
                                                                  "Note over Alice,Bob: shared\n")),
                       QStringLiteral("sequenceDiagram\nAlice->>Bob: Hi\nBob-->>Alice: Yo\n"
                                      "Note over Alice,Bob: shared\n"));
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(seq.scene.get());
-    const auto* classicScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(classic.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(seq.scene.get());
+    const auto* classicScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(classic.scene.get());
     require(sequenceScene && classicScene && sequenceScene->toJsonObject() == classicScene->toJsonObject(),
             QStringLiteral("look:handDrawn must leave the sequence scene unchanged"));
   }
@@ -247,7 +247,7 @@ int main(int argc, char** argv) {
   {
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(stateDiagram), stateDiagram);
-    const auto* stateScene = dynamic_cast<const muffin::mermaid::state::StateScene*>(entry.scene.get());
+    const auto* stateScene = dynamic_cast<const mufpen::mermaid::state::StateScene*>(entry.scene.get());
     require(entry.status == kReady && stateScene != nullptr, QStringLiteral("stateDiagram-v2 should be Ready"));
     require(stateScene->nodes.size() == 4 && stateScene->edges.size() == 3 && entry.naturalSize.width() > 0 &&
                 entry.naturalSize.height() > 0,
@@ -260,7 +260,7 @@ int main(int argc, char** argv) {
   {
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(classDiagram), classDiagram);
-    const auto* classScene = dynamic_cast<const muffin::mermaid::classdiagram::ClassScene*>(entry.scene.get());
+    const auto* classScene = dynamic_cast<const mufpen::mermaid::classdiagram::ClassScene*>(entry.scene.get());
     require(entry.status == kReady && classScene != nullptr, QStringLiteral("classDiagram should be Ready"));
     require(classScene->nodes.size() == 2 && classScene->edges.size() == 1 && classScene->markers.size() == 20 &&
                 entry.naturalSize.width() > 0 && entry.naturalSize.height() > 0,
@@ -275,8 +275,8 @@ int main(int argc, char** argv) {
         QStringLiteral("%%{init: {\"class\": {\"nodeSpacing\": 123, \"rankSpacing\": 234}}}%%\n") + classDiagram;
     const MermaidRenderEntry baseline = cache.getSync(MermaidRenderCache::makeKey(classDiagram), classDiagram);
     const MermaidRenderEntry inert = cache.getSync(MermaidRenderCache::makeKey(configured), configured);
-    const auto* baselineScene = dynamic_cast<const muffin::mermaid::classdiagram::ClassScene*>(baseline.scene.get());
-    const auto* inertScene = dynamic_cast<const muffin::mermaid::classdiagram::ClassScene*>(inert.scene.get());
+    const auto* baselineScene = dynamic_cast<const mufpen::mermaid::classdiagram::ClassScene*>(baseline.scene.get());
+    const auto* inertScene = dynamic_cast<const mufpen::mermaid::classdiagram::ClassScene*>(inert.scene.get());
     require(baseline.status == kReady && inert.status == kReady && baselineScene && inertScene &&
                 baseline.naturalSize == inert.naturalSize && baselineScene->nodes.size() == inertScene->nodes.size(),
             QStringLiteral("class spacing config must remain upstream-inert"));
@@ -326,7 +326,7 @@ int main(int argc, char** argv) {
                                           "accDescr: Journey description\nsection S\ntask: 5");
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::journey::JourneyScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::journey::JourneyScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Journey overview") &&
                 entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle == QLatin1String("Journey accessible") &&
@@ -357,7 +357,7 @@ int main(int argc, char** argv) {
                                           "axis A,B,C\ncurve Team {1,2,3}");
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::radar::RadarScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::radar::RadarScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Radar overview") &&
                 entry.metadata.title.isEmpty() && entry.metadata.accessibleTitle == QLatin1String("Radar accessible") &&
                 entry.metadata.accessibleDescription == QLatin1String("Radar description"),
@@ -386,7 +386,7 @@ int main(int argc, char** argv) {
                                           "x-axis [A,B,C]\ny-axis 0 --> 3\nbar [1,2,3]");
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::xychart::XYChartScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::xychart::XYChartScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("XY overview") &&
                 entry.metadata.title.isEmpty() && entry.metadata.accessibleTitle == QLatin1String("XY accessible") &&
                 entry.metadata.accessibleDescription == QLatin1String("XY description"),
@@ -415,7 +415,7 @@ int main(int argc, char** argv) {
                                           "accDescr: Timeline description\nsection S\nTask : Event");
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::timeline::TimelineScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::timeline::TimelineScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Inline timeline") &&
                 entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle == QLatin1String("Timeline accessible") &&
@@ -427,7 +427,7 @@ int main(int argc, char** argv) {
     const MermaidRenderEntry noInlineTitle =
         cache.getSync(MermaidRenderCache::makeKey(frontmatterOnly), frontmatterOnly);
     const auto noInlineScene =
-        std::dynamic_pointer_cast<const muffin::mermaid::timeline::TimelineScene>(noInlineTitle.scene);
+        std::dynamic_pointer_cast<const mufpen::mermaid::timeline::TimelineScene>(noInlineTitle.scene);
     require(noInlineTitle.status == kReady && noInlineScene && noInlineScene->title.isEmpty() &&
                 noInlineTitle.metadata.title.isEmpty() && noInlineTitle.metadata.titleHeight == 0.0,
             QStringLiteral("Timeline must ignore a frontmatter-only visible title"));
@@ -440,7 +440,7 @@ int main(int argc, char** argv) {
                                           "title Temporary\ntitle\naxis A");
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::radar::RadarScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::radar::RadarScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Frontmatter Radar"),
             QStringLiteral("Empty Radar title must retain frontmatter title"));
   }
@@ -504,7 +504,7 @@ int main(int argc, char** argv) {
                                           "title Inline Packet\naccTitle: Packet accessible\n"
                                           "accDescr: Packet description\n0-7: \"Header\"");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::packet::PacketScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::packet::PacketScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Inline Packet") &&
                 entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle == QLatin1String("Packet accessible") &&
@@ -514,7 +514,7 @@ int main(int argc, char** argv) {
     const QString frontmatterOnly = QStringLiteral("---\ntitle: Frontmatter Packet\n---\n"
                                                    "packet-beta\n0-7: \"Header\"");
     const MermaidRenderEntry fallback = cache.getSync(MermaidRenderCache::makeKey(frontmatterOnly), frontmatterOnly);
-    const auto fallbackScene = std::dynamic_pointer_cast<const muffin::mermaid::packet::PacketScene>(fallback.scene);
+    const auto fallbackScene = std::dynamic_pointer_cast<const mufpen::mermaid::packet::PacketScene>(fallback.scene);
     require(fallback.status == kReady && fallbackScene && fallbackScene->title == QLatin1String("Frontmatter Packet") &&
                 fallback.metadata.title.isEmpty() && fallback.metadata.titleHeight == 0.0,
             QStringLiteral("Packet frontmatter title fallback drifted"));
@@ -577,7 +577,7 @@ int main(int argc, char** argv) {
     const QString titled = QStringLiteral("---\ntitle: Invisible board title\n---\n") + body;
     const MermaidRenderEntry base = cache.getSync(MermaidRenderCache::makeKey(body), body);
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(titled), titled);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::kanban::KanbanScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::kanban::KanbanScene>(entry.scene);
     require(base.status == kReady && entry.status == kReady && scene && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
                 entry.metadata.titleHeight == 0.0 && entry.naturalSize == base.naturalSize,
@@ -639,7 +639,7 @@ int main(int argc, char** argv) {
     const QString titled = QStringLiteral("---\ntitle: Invisible mindmap title\n---\n") + body;
     const MermaidRenderEntry base = cache.getSync(MermaidRenderCache::makeKey(body), body);
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(titled), titled);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::mindmap::MindmapScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::mindmap::MindmapScene>(entry.scene);
     require(base.status == kReady && entry.status == kReady && scene && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
                 entry.metadata.titleHeight == 0.0 && entry.naturalSize == base.naturalSize,
@@ -655,7 +655,7 @@ int main(int argc, char** argv) {
                                         "block-beta\ncolumns 2\na[\"Alpha\"] b(\"Beta\")\na --> b");
     const QString titled = QStringLiteral("---\ntitle: Invisible block title\n---\n") + body;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(titled), titled);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::block::BlockScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::block::BlockScene>(entry.scene);
     require(entry.status == kReady && scene && scene->nodes.size() == 2 && !scene->useMaxWidth &&
                 !entry.metadata.svgUseMaxWidth && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
@@ -673,7 +673,7 @@ int main(int argc, char** argv) {
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
     require(entry.status == kReady && entry.scene != nullptr,
             QStringLiteral("swimlane-beta must render through the native adapter"));
-    const auto* scene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(entry.scene.get());
+    const auto* scene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(entry.scene.get());
     require(scene != nullptr && scene->nodes.size() == 4 && scene->edges.size() == 3,
             QStringLiteral("swimlane must expose the shared FlowScene semantic content"));
     int lanes = 0;
@@ -694,7 +694,7 @@ int main(int argc, char** argv) {
                                           "accDescr: Delivery schedule\ndateFormat YYYY-MM-DD\n"
                                           "todayMarker off\nTask :task, 2024-01-01, 2d");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::gantt::GanttScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::gantt::GanttScene>(entry.scene);
     require(entry.status == kReady && scene && scene->title == QLatin1String("Inline Gantt") &&
                 entry.metadata.title.isEmpty() && entry.metadata.accessibleTitle == QLatin1String("Accessible plan") &&
                 entry.metadata.accessibleDescription == QLatin1String("Delivery schedule") &&
@@ -711,7 +711,7 @@ int main(int argc, char** argv) {
                                                                  "accTitle: AT\naccDescr: AD")),
                       QStringLiteral("---\ntitle: Front\n---\ninfo\ntitle Inline\n"
                                      "accTitle: AT\naccDescr: AD"));
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::info::InfoScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::info::InfoScene>(entry.scene);
     require(entry.status == kReady && scene && entry.naturalSize == QSize(400, 150) &&
                 scene->text == QLatin1String("v11.16.0") && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
@@ -728,7 +728,7 @@ int main(int argc, char** argv) {
                                           "accTitle: Accessible tree\naccDescr: Tree description\n"
                                           "project/\n  README.md");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::treeview::TreeViewScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::treeview::TreeViewScene>(entry.scene);
     require(entry.status == kReady && scene && scene->nodes.size() == 3 && entry.naturalSize.width() > 0 &&
                 entry.naturalSize.height() > 0 && entry.metadata.title.isEmpty() && entry.metadata.titleHeight == 0.0 &&
                 entry.metadata.accessibleTitle == QLatin1String("Accessible tree") &&
@@ -743,7 +743,7 @@ int main(int argc, char** argv) {
     const QString source = QStringLiteral("---\ntitle: Invisible event title\n---\n"
                                           "eventmodeling\ntf 1 evt Created");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::eventmodeling::EventModelingScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::eventmodeling::EventModelingScene>(entry.scene);
     require(entry.status == kReady && scene && scene->boxes.size() == 1 && entry.naturalSize.width() > 0 &&
                 entry.naturalSize.height() > 0 && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
@@ -759,7 +759,7 @@ int main(int argc, char** argv) {
     const QString titled = QStringLiteral("---\ntitle: Invisible Ishikawa title\n---\n") + body;
     const MermaidRenderEntry base = cache.getSync(MermaidRenderCache::makeKey(body), body);
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(titled), titled);
-    const auto scene = std::dynamic_pointer_cast<const muffin::mermaid::ishikawa::IshikawaScene>(entry.scene);
+    const auto scene = std::dynamic_pointer_cast<const mufpen::mermaid::ishikawa::IshikawaScene>(entry.scene);
     require(base.status == kReady && entry.status == kReady && scene && entry.metadata.title.isEmpty() &&
                 entry.metadata.accessibleTitle.isEmpty() && entry.metadata.accessibleDescription.isEmpty() &&
                 !entry.metadata.svgEmitAccessibleTitle && entry.metadata.titleHeight == 0.0 &&
@@ -922,7 +922,7 @@ int main(int argc, char** argv) {
     MermaidRenderCache cache;
     const MermaidRenderKey key = MermaidRenderCache::makeKey(sequence);
     const MermaidRenderEntry e = cache.getSync(key, sequence);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(e.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(e.scene.get());
     require(e.status == kReady && sequenceScene != nullptr,
             QStringLiteral("sequenceDiagram should be Ready (got %1)").arg((int)e.status));
     require(sequenceScene->participants.size() == 2 && sequenceScene->messages.size() == 1 &&
@@ -934,7 +934,7 @@ int main(int argc, char** argv) {
   {
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(gitGraph), gitGraph);
-    const auto* scene = dynamic_cast<const muffin::mermaid::gitgraph::GitGraphScene*>(entry.scene.get());
+    const auto* scene = dynamic_cast<const mufpen::mermaid::gitgraph::GitGraphScene*>(entry.scene.get());
     require(entry.status == kReady && scene && !scene->primitives.isEmpty() && entry.naturalSize.width() > 0 &&
                 entry.naturalSize.height() > 0,
             QStringLiteral("gitGraph should produce a native scene"));
@@ -944,7 +944,7 @@ int main(int argc, char** argv) {
   {
     MermaidRenderCache cache;
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(c4Diagram), c4Diagram);
-    const auto* scene = dynamic_cast<const muffin::mermaid::c4::C4Scene*>(entry.scene.get());
+    const auto* scene = dynamic_cast<const mufpen::mermaid::c4::C4Scene*>(entry.scene.get());
     require(entry.status == kReady && scene && !scene->primitives.isEmpty() &&
                 entry.metadata.cssClass == QLatin1String("c4") && entry.naturalSize.width() > 0 &&
                 entry.naturalSize.height() > 0,
@@ -968,7 +968,7 @@ int main(int argc, char** argv) {
     MermaidRenderCache cache;
     for (const QString& source : sources) {
       const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-      const auto* scene = dynamic_cast<const muffin::mermaid::railroad::RailroadScene*>(entry.scene.get());
+      const auto* scene = dynamic_cast<const mufpen::mermaid::railroad::RailroadScene*>(entry.scene.get());
       require(entry.status == kReady && scene && !scene->rules.isEmpty() &&
                   entry.metadata.cssClass == QLatin1String("railroad") && entry.naturalSize.width() > 0 &&
                   entry.naturalSize.height() > 0,
@@ -981,15 +981,15 @@ int main(int argc, char** argv) {
     MermaidRenderCache cache;
     const QString source = QStringLiteral("sequenceDiagram\nA->>B: $$\\frac{\\sqrt{x}}{y^2}$$");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(entry.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(entry.scene.get());
     require(entry.status == kReady && sequenceScene && sequenceScene->messageLabels.size() == 1,
             QStringLiteral("sequence MathML cache case must render"));
     const auto& math = sequenceScene->messageLabels.first().richText.math;
     require(math.size() == 1 && math.front().prepared,
             QStringLiteral("sequence scene must own a prepared MathML operation"));
     const auto* prepared = math.front().prepared.get();
-    const QImage first = muffin::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
-    const QImage second = muffin::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
+    const QImage first = mufpen::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
+    const QImage second = mufpen::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
     require(!first.isNull() && first == second && math.front().prepared.get() == prepared,
             QStringLiteral("repaint must reuse the immutable MathML operation"));
   }
@@ -1003,43 +1003,43 @@ int main(int argc, char** argv) {
             QStringLiteral("async sequence MathML request must start loading"));
     require(waitForReady(cache, key), QStringLiteral("async sequence MathML renderReady must fire"));
     const MermaidRenderEntry entry = cache.request(key, source);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(entry.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(entry.scene.get());
     require(entry.status == kReady && sequenceScene && !sequenceScene->messageLabels.isEmpty() &&
                 sequenceScene->messageLabels.first().richText.math.front().prepared,
             QStringLiteral("worker-built MathML scene must retain operations"));
-    const QImage image = muffin::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
+    const QImage image = mufpen::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, 0.0);
     require(!image.isNull(), QStringLiteral("worker-built MathML operations must paint on GUI thread"));
   }
 
   // --- preparation is idempotent and strict scene assembly preserves identity ---
   {
-    auto label = muffin::mermaid::sequence::parseSequenceLabel(QStringLiteral("$$\\frac{x}{y}$$"),
-                                                               muffin::mermaid::sequence::SequenceLabelKind::Message);
-    require(muffin::mermaid::flowchart::prepareFlowLabelMath(label.richText, 16.0) == 1,
+    auto label = mufpen::mermaid::sequence::parseSequenceLabel(QStringLiteral("$$\\frac{x}{y}$$"),
+                                                               mufpen::mermaid::sequence::SequenceLabelKind::Message);
+    require(mufpen::mermaid::flowchart::prepareFlowLabelMath(label.richText, 16.0) == 1,
             QStringLiteral("first MathML preparation must build one operation"));
     const auto* first = label.richText.math.front().prepared.get();
-    require(muffin::mermaid::flowchart::prepareFlowLabelMath(label.richText, 16.0) == 0 &&
+    require(mufpen::mermaid::flowchart::prepareFlowLabelMath(label.richText, 16.0) == 0 &&
                 label.richText.math.front().prepared.get() == first,
             QStringLiteral("same-font preparation must reuse the operation"));
-    require(muffin::mermaid::flowchart::prepareFlowLabelMath(label.richText, 20.0) == 1 &&
+    require(mufpen::mermaid::flowchart::prepareFlowLabelMath(label.richText, 20.0) == 1 &&
                 label.richText.math.front().prepared.get() != first,
             QStringLiteral("font-size changes must rebuild the operation"));
 
-    muffin::mermaid::sequence::SequenceLayoutResult layout;
-    muffin::mermaid::sequence::SequenceLayoutMessage message;
+    mufpen::mermaid::sequence::SequenceLayoutResult layout;
+    mufpen::mermaid::sequence::SequenceLayoutMessage message;
     message.messageIndex = 7;
     message.label = label.richText.text;
     layout.messages.append(message);
-    muffin::mermaid::sequence::SequencePreparedLabels labels;
+    mufpen::mermaid::sequence::SequencePreparedLabels labels;
     labels.messagesByIndex.insert(7, label);
     const auto* prepared = label.richText.math.front().prepared.get();
-    const auto scene = muffin::mermaid::sequence::buildSequenceScene(layout, {}, labels, true);
+    const auto scene = mufpen::mermaid::sequence::buildSequenceScene(layout, {}, labels, true);
     require(scene.messageLabels.size() == 1 &&
                 scene.messageLabels.front().richText.math.front().prepared.get() == prepared,
             QStringLiteral("scene assembly must preserve prepared identity"));
     bool rejectedMissing = false;
     try {
-      (void)muffin::mermaid::sequence::buildSequenceScene(layout, {}, {}, true);
+      (void)mufpen::mermaid::sequence::buildSequenceScene(layout, {}, {}, true);
     } catch (const std::logic_error&) {
       rejectedMissing = true;
     }
@@ -1054,8 +1054,8 @@ int main(int argc, char** argv) {
     const QString large = QStringLiteral("%%{init: {\"themeVariables\": {\"fontSize\": \"20px\"}}}%%\n") + body;
     const auto normal = cache.getSync(MermaidRenderCache::makeKey(body), body);
     const auto enlarged = cache.getSync(MermaidRenderCache::makeKey(large), large);
-    const auto* normalScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(normal.scene.get());
-    const auto* enlargedScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(enlarged.scene.get());
+    const auto* normalScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(normal.scene.get());
+    const auto* enlargedScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(enlarged.scene.get());
     require(normal.status == kReady && normalScene && enlarged.status == kReady && enlargedScene,
             QStringLiteral("sequence font-size comparison must render"));
     require(normalScene->style.fontSize == 16.0 && enlargedScene->style.fontSize == 20.0 &&
@@ -1083,7 +1083,7 @@ int main(int argc, char** argv) {
                                               "end\n"
                                               "A->>B:call");
     const MermaidRenderEntry e = cache.getSync(MermaidRenderCache::makeKey(configured), configured);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(e.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(e.scene.get());
     require(e.status == kReady && sequenceScene != nullptr, QStringLiteral("configured sequence must render"));
     require(sequenceScene->participants.size() == 2 && sequenceScene->boxes.size() == 1,
             QStringLiteral("sequence hideUnusedParticipants/box config must reach the scene"));
@@ -1096,15 +1096,15 @@ int main(int argc, char** argv) {
             QStringLiteral("sequence box title must be measured and retained"));
     // The custom viewport margins are digested at build time into the scene's
     // resolved viewportRect (the entry no longer carries SequenceViewportOptions).
-    muffin::mermaid::sequence::SequenceViewportOptions viewportOptions;
+    mufpen::mermaid::sequence::SequenceViewportOptions viewportOptions;
     viewportOptions.diagramMarginX = 31.0;
     viewportOptions.diagramMarginY = 23.0;
     viewportOptions.boxMargin = 14.0;
     viewportOptions.bottomMarginAdj = 7.0;
     viewportOptions.mirrorActors = false;
-    const QRectF viewport = muffin::mermaid::sequence::sequenceViewportRect(*sequenceScene, viewportOptions);
+    const QRectF viewport = mufpen::mermaid::sequence::sequenceViewportRect(*sequenceScene, viewportOptions);
     const QImage viewportImage =
-        muffin::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, viewportOptions);
+        mufpen::mermaid::sequence::renderSequenceSceneToImage(*sequenceScene, 1.0, viewportOptions);
     require(sequenceScene->viewportRect == viewport &&
                 e.naturalSize == QSize(qCeil(viewport.width()), qCeil(viewport.height())) &&
                 viewportImage.size() == e.naturalSize,
@@ -1161,9 +1161,9 @@ int main(int argc, char** argv) {
     const MermaidRenderKey kc = MermaidRenderCache::makeKey(c);
     cache.getSync(ka, a); // [a]
     const auto resourceA = cache.resourceKey(ka);
-    auto& resources = muffin::LayoutResources::instance();
+    auto& resources = mufpen::LayoutResources::instance();
     auto versionA = resources.read(resourceA);
-    muffin::LayoutResourceDependencies liveLayout{{resourceA, versionA}};
+    mufpen::LayoutResourceDependencies liveLayout{{resourceA, versionA}};
     cache.getSync(kb, b); // [a,b]
     require(cache.size() == 2, QStringLiteral("size after 2 inserts = %1").arg(cache.size()));
     cache.getSync(kc, c); // [b,c]  (a evicted — least recently used)
@@ -1199,13 +1199,13 @@ int main(int argc, char** argv) {
                        "flowchart LR\nA[\"`**Bold** label`\"] --> B[Beta]");
     const MermaidRenderEntry e = cache.getSync(MermaidRenderCache::makeKey(configured), configured);
     require(e.status == kReady && e.scene != nullptr, QStringLiteral("configured flowchart must render"));
-    const auto* flowScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(e.scene.get());
+    const auto* flowScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(e.scene.get());
     require(flowScene != nullptr, QStringLiteral("configured flowchart must expose a FlowScene"));
     require(!flowScene->nodes.isEmpty() && flowScene->nodes.first().fill == QLatin1String("#123456"),
             QStringLiteral("themeVariables.mainBkg must reach the rendered scene"));
     require(flowScene->nodes.first().label.fontSize == QLatin1String("14px"),
             QStringLiteral("themeVariables.fontSize must reach labels"));
-    require(flowScene->look == muffin::mermaid::flowchart::FlowLook::Neo,
+    require(flowScene->look == mufpen::mermaid::flowchart::FlowLook::Neo,
             QStringLiteral("top-level look must reach the rendered scene"));
     require(flowScene->nodes.first().label.fontFamily.contains(QLatin1String("Noto Sans")),
             QStringLiteral("default Mermaid labels must use the bundled Noto stack"));
@@ -1215,15 +1215,15 @@ int main(int argc, char** argv) {
 
   // --- structured labels: markers/tags affect formatting, not visible text ---
   {
-    using muffin::mermaid::flowchart::parseFlowLabel;
-    using muffin::mermaid::flowchart::parseFlowSvgLabel;
+    using mufpen::mermaid::flowchart::parseFlowLabel;
+    using mufpen::mermaid::flowchart::parseFlowSvgLabel;
     const auto markdown = parseFlowLabel(QStringLiteral("**Bold** and `code`<br/>next"), QStringLiteral("markdown"));
     require(markdown.text == QLatin1String("Bold and code\nnext"),
             QStringLiteral("markdown markers and br must be consumed by the label model"));
     require(markdown.formats.size() == 2 && markdown.formats.first().format.fontWeight() == QFont::Bold,
             QStringLiteral("markdown bold/code formatting must be represented structurally"));
     const auto markdownMetrics =
-        muffin::mermaid::flowchart::layoutFlowLabel(markdown, QStringLiteral("Noto Sans"), 16.0, 22.0);
+        mufpen::mermaid::flowchart::layoutFlowLabel(markdown, QStringLiteral("Noto Sans"), 16.0, 22.0);
     const auto& formattedRuns = markdownMetrics.lines.first().runs;
     require(!formattedRuns.isEmpty() &&
                 std::all_of(formattedRuns.cbegin(), formattedRuns.cend(),
@@ -1234,14 +1234,14 @@ int main(int argc, char** argv) {
     const auto html = parseFlowLabel(QStringLiteral("<b>Bold</b><br><i>italic</i>"), QStringLiteral("string"));
     require(html.text == QLatin1String("Bold\nitalic") && html.formats.size() == 2 && html.direction == Qt::LeftToRight,
             QStringLiteral("safe inline HTML must use the same native label model"));
-    const auto htmlMetrics = muffin::mermaid::flowchart::layoutFlowLabel(html, QStringLiteral("Noto Sans"), 16.0, 22.0);
+    const auto htmlMetrics = mufpen::mermaid::flowchart::layoutFlowLabel(html, QStringLiteral("Noto Sans"), 16.0, 22.0);
     require(std::any_of(htmlMetrics.lines.at(1).runs.cbegin(), htmlMetrics.lines.at(1).runs.cend(),
                         [](const auto& run) { return run.fontItalic; }),
             QStringLiteral("italic labels must retain the synthetic style face"));
     const auto svgHtml = parseFlowSvgLabel(QStringLiteral("<b>Bold</b><br><i>italic</i>"), QStringLiteral("string"));
     require(svgHtml.text == QLatin1String("<b> Bold </b>\n<i> italic </i>") && svgHtml.formats.isEmpty() &&
                 svgHtml.formattingContext ==
-                    muffin::mermaid::flowchart::FlowLabelFormattingContext::FlowSvgFormattedText,
+                    mufpen::mermaid::flowchart::FlowLabelFormattingContext::FlowSvgFormattedText,
             QStringLiteral("SVG formatted text must retain visible HTML tags"));
     const auto svgMarkdown = parseFlowSvgLabel(QStringLiteral("**Bold** next"), QStringLiteral("markdown"));
     require(svgMarkdown.text == QLatin1String("Bold next") && svgMarkdown.formats.size() == 1 &&
@@ -1255,12 +1255,12 @@ int main(int argc, char** argv) {
     const QString source = QStringLiteral("flowchart TB\nsubgraph S[\"<b>Group \u4e2d\u6587</b> "
                                           "\u0645\u0631\u062d\u0628\u0627 \u05e9\u05dc\u05d5\u05dd\"]\nA[Inside]\nend");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* flowScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(entry.scene.get());
+    const auto* flowScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(entry.scene.get());
     require(entry.status == kReady && entry.scene && flowScene && flowScene->clusters.size() == 1,
             QStringLiteral("wide cluster title must render"));
     const auto& cluster = flowScene->clusters.first();
     const auto titleLayout =
-        muffin::mermaid::flowchart::layoutFlowLabel(cluster.label.richText, cluster.label.fontFamily, 16.0, 17.0);
+        mufpen::mermaid::flowchart::layoutFlowLabel(cluster.label.richText, cluster.label.fontFamily, 16.0, 17.0);
     require(cluster.width + 0.001 >= titleLayout.size.width() + 8.0,
             QStringLiteral("cluster width must include the SVG title inset"));
   }
@@ -1271,7 +1271,7 @@ int main(int argc, char** argv) {
     const QString source = QStringLiteral("flowchart LR\nA[Start] -->|\"A deliberately long edge label that "
                                           "wraps at the upstream limit\"| B[Finish]");
     const MermaidRenderEntry entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* flowScene = dynamic_cast<const muffin::mermaid::flowscene::FlowScene*>(entry.scene.get());
+    const auto* flowScene = dynamic_cast<const mufpen::mermaid::flowscene::FlowScene*>(entry.scene.get());
     require(entry.status == kReady && entry.scene && flowScene && flowScene->edges.size() == 1,
             QStringLiteral("wrapped edge label must render"));
     const auto& edge = flowScene->edges.first();
@@ -1281,16 +1281,16 @@ int main(int argc, char** argv) {
                 edge.labelSize.width() > 0.0 && edge.labelSize.height() > 0.0,
             QStringLiteral("edge wrapping must reach the immutable scene"));
     const auto metrics =
-        muffin::mermaid::flowchart::layoutFlowLabel(edge.label.richText, edge.label.fontFamily, 16.0, 24.0);
-    const auto fontMetrics = muffin::mermaid::flowchart::flowLabelFontBoundingMetrics(edge.label.fontFamily, 16.0);
+        mufpen::mermaid::flowchart::layoutFlowLabel(edge.label.richText, edge.label.fontFamily, 16.0, 24.0);
+    const auto fontMetrics = mufpen::mermaid::flowchart::flowLabelFontBoundingMetrics(edge.label.fontFamily, 16.0);
     require(metrics.lines.size() == 3 && qAbs(metrics.lines.first().baseline - fontMetrics.ascent) < 0.001,
             QStringLiteral("wrapped SVG lines must use the font-table baseline"));
   }
 
   // --- sequence labels share structured HTML/Markdown/Math/bidi metrics ---
   {
-    using muffin::mermaid::sequence::layoutSequenceLabel;
-    using muffin::mermaid::sequence::parseSequenceLabel;
+    using mufpen::mermaid::sequence::layoutSequenceLabel;
+    using mufpen::mermaid::sequence::parseSequenceLabel;
     const auto html = parseSequenceLabel(QStringLiteral("\u4e2d\u6587 <b>bold</b><br/>"
                                                         "\u0645\u0631\u062d\u0628\u0627 "
                                                         "\u05e9\u05dc\u05d5\u05dd"));
@@ -1322,7 +1322,7 @@ int main(int argc, char** argv) {
                         }),
         QStringLiteral("sequence bidi runs must retain complete full-line glyph shaping"));
     const auto markdownMath = parseSequenceLabel(QStringLiteral("`**\u901f\u5ea6** $$x^2$$`"),
-                                                 muffin::mermaid::sequence::SequenceLabelKind::Note);
+                                                 mufpen::mermaid::sequence::SequenceLabelKind::Note);
     const auto mathMetrics = layoutSequenceLabel(markdownMath, QStringLiteral("Noto Sans"), 16.0, 22.0);
     require(!markdownMath.markdown && !markdownMath.richText.math.isEmpty() &&
                 markdownMath.richText.text.startsWith(QLatin1String("`**")) && mathMetrics.size.width() > 0.0,
@@ -1342,7 +1342,7 @@ int main(int argc, char** argv) {
                                           "note over A,B:\u8bf4\u660e<br/>$$x^2$$\n"
                                           "B-->>A:after");
     const MermaidRenderEntry e = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(e.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(e.scene.get());
     require(e.status == kReady && sequenceScene != nullptr && sequenceScene->messages.size() == 2 &&
                 sequenceScene->notes.size() == 1,
             QStringLiteral("structured sequence labels must render end-to-end"));
@@ -1363,7 +1363,7 @@ int main(int argc, char** argv) {
                                           "A->>B:wrap:alpha beta gamma delta epsilon zeta\n"
                                           "Note over A,B:wrap:alpha beta gamma delta epsilon zeta");
     const MermaidRenderEntry e = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(e.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(e.scene.get());
     require(e.status == kReady && sequenceScene != nullptr && sequenceScene->participants.size() == 2 &&
                 sequenceScene->messages.size() == 1 && sequenceScene->notes.size() == 1,
             QStringLiteral("wrapped sequence labels must render end-to-end"));
@@ -1396,7 +1396,7 @@ int main(int argc, char** argv) {
                        "\"sequenceNumberColor\": \"#123456\"}}}%%\n"
                        "sequenceDiagram\nautonumber\nA->>+B:call\nNote over A,B:note\nalt branch\nB-->>-A:return\nend");
     const auto entry = cache.getSync(MermaidRenderCache::makeKey(source), source);
-    const auto* sequenceScene = dynamic_cast<const muffin::mermaid::sequence::SequenceScene*>(entry.scene.get());
+    const auto* sequenceScene = dynamic_cast<const mufpen::mermaid::sequence::SequenceScene*>(entry.scene.get());
     require(entry.status == kReady && sequenceScene, QStringLiteral("sequence themeVariables case must render"));
     const auto& style = sequenceScene->style;
     require(style.actorFill == QLatin1String("#101112") && style.actorStroke == QLatin1String("#202122") &&
@@ -1598,7 +1598,7 @@ int main(int argc, char** argv) {
   //     so a directly-constructed scene does not degrade the generic rasterizer
   //     to a 1x1 canvas. ---
   {
-    muffin::mermaid::sequence::SequenceScene scene;
+    mufpen::mermaid::sequence::SequenceScene scene;
     scene.bounds = QRectF(10.0, 20.0, 100.0, 50.0); // viewportRect intentionally null
     require(scene.renderBounds() == scene.sceneBounds() && scene.renderBounds() == QRectF(10.0, 20.0, 100.0, 50.0),
             QStringLiteral("SequenceScene with unset viewportRect must fall back to sceneBounds"));

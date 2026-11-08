@@ -13,7 +13,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 
 struct MindmapConfig {
   QJsonValue padding = 10.0;
@@ -137,4 +137,4 @@ struct MindmapScene : MermaidScene {
 
 MindmapScene buildMindmapScene(const MindmapData& data, MindmapConfig config, MindmapSceneStyle style);
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

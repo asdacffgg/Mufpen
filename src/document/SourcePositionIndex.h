@@ -7,7 +7,7 @@
 #include <array>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 struct SourcePositionDelta {
   qsizetype bytes = 0;
@@ -65,4 +65,4 @@ private:
   quint32 randomState_ = 0x9e3779b9U;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -17,10 +17,10 @@
 #include <QTemporaryDir>
 #include <cmath>
 
-using namespace muffin;
-using namespace muffin::mermaid;
-using namespace muffin::mermaid::flowchart;
-namespace mermaid_editor = muffin::mermaid::editor;
+using namespace mufpen;
+using namespace mufpen::mermaid;
+using namespace mufpen::mermaid::flowchart;
+namespace mermaid_editor = mufpen::mermaid::editor;
 using mermaid_editor::MermaidRenderCache;
 
 namespace {
@@ -178,7 +178,7 @@ QStringList diagramSources() {
       QString::fromUtf8(
           "gantt\ndateFormat YYYY-MM-DD\ntodayMarker off\nsection 中文计划\nA long task label :a, 2024-01-01, 3d"),
       QString::fromUtf8(
-          "C4Context\nPerson(user, \"中文用户\", \"A long description\")\nSystem(app, \"Muffin\")\nRel(user, app, \"Uses\")"),
+          "C4Context\nPerson(user, \"中文用户\", \"A long description\")\nSystem(app, \"Mufpen\")\nRel(user, app, \"Uses\")"),
       QString::fromUtf8("journey\ntitle 中文旅程\nsection Work\nA long label with many words: 5: Me"),
       QString::fromUtf8("venn-beta\nset A[中文标签]: 10"),
       QString::fromUtf8("mindmap\n  root((中文主题))\n    A long child label\n    Another child"),
@@ -245,9 +245,9 @@ void cacheAndDocument() {
 }
 
 void benchmark() {
-  if (!qEnvironmentVariableIsSet("MUFFIN_TEXT_BENCH"))
+  if (!qEnvironmentVariableIsSet("MUFPEN_TEXT_BENCH"))
     return;
-  const bool cjkDense = qEnvironmentVariable("MUFFIN_TEXT_BENCH_WORKLOAD") == "cjk";
+  const bool cjkDense = qEnvironmentVariable("MUFPEN_TEXT_BENCH_WORKLOAD") == "cjk";
   const auto family = MermaidFontRegistry::cssFamilyStack();
   QVector<FlowLabelDocument> labels;
   resetFlowLabelLayoutCacheStats();
@@ -337,7 +337,7 @@ int main(int argc, char** argv) {
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings.path());
-  QCoreApplication::setOrganizationName("Muffin");
+  QCoreApplication::setOrganizationName("Mufpen");
   QCoreApplication::setApplicationName("MermaidTextBackendTest");
   MermaidFontRegistry::ensureLoaded();
   runTest("glyphCoordinates", glyphCoordinates);

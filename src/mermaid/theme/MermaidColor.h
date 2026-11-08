@@ -17,7 +17,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::color {
+namespace mufpen::mermaid::color {
 
 // Mirrors khroma's `Channels` class: r/g/b and h/s/l are independently
 // "populated" (std::optional = khroma's `undefined`); the Type flag records
@@ -126,7 +126,7 @@ QColor toQColor(const QString& color);
 // True iff `color` is a recognized CSS color (hex / rgb() / hsl() / named
 // keyword). Mirrors what parse() accepts before falling back to the opaque
 // original-string round-trip. Used by diagram style resolution to detect
-// invalid inline values that mermaid's SVG would drop (so Muffin can apply the
+// invalid inline values that mermaid's SVG would drop (so Mufpen can apply the
 // upstream fallback: invalid fill → inherited foreground, invalid stroke → none).
 bool isParsableColor(const QString& color);
 
@@ -156,4 +156,4 @@ inline QColor cssColor(const QString& value, const QColor& fallback = QColor(Qt:
   return isParsableColor(value) ? toQColor(value) : fallback;
 }
 
-} // namespace muffin::mermaid::color
+} // namespace mufpen::mermaid::color

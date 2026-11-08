@@ -5,7 +5,7 @@
 #include <QInputMethodEvent>
 #include <QMimeData>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 struct Harness {

@@ -6,7 +6,7 @@
 //
 //   clang++ -std=c++20 -fsanitize=fuzzer,address -I src \
 //     tests/mermaid/MermaidFuzzHarness.cpp src/mermaid/flowchart/Flowchart.cpp \
-//     <MuffinCore object files> $(qt-libs) -o mermaid_fuzz
+//     <MufpenCore object files> $(qt-libs) -o mermaid_fuzz
 //   ./mermaid_fuzz -max_total_time=120
 //
 // The invariant is the same as MermaidFuzzTest: LLVMFuzzerTestOneInput must
@@ -20,12 +20,12 @@
 #include <QtGlobal>
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
-  // Default Muffin limits apply (safety boundary); LIMIT-exceeded throws are
+  // Default Mufpen limits apply (safety boundary); LIMIT-exceeded throws are
   // expected and not crashes.
   const QString source = QString::fromUtf8(reinterpret_cast<const char*>(data), static_cast<int>(size));
   try {
-    muffin::mermaid::flowchart::Flowchart::parse(source);
-  } catch (const muffin::mermaid::flowchart::FlowchartParseError&) {
+    mufpen::mermaid::flowchart::Flowchart::parse(source);
+  } catch (const mufpen::mermaid::flowchart::FlowchartParseError&) {
     // expected for malformed/over-limit input
   }
   return 0;

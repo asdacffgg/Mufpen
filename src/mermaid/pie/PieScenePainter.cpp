@@ -20,7 +20,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 namespace {
 
@@ -240,4 +240,4 @@ void paintPieScene(const PieScene& scene, QPainter& painter, const MermaidPaintO
   painter.restore();
 }
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

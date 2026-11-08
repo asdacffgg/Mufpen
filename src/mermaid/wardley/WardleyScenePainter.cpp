@@ -12,7 +12,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::wardley {
+namespace mufpen::mermaid::wardley {
 namespace {
 
 color::SvgPaint fillPaint(const QString& value) {
@@ -131,4 +131,4 @@ void paintWardleyScene(const WardleyScene& scene, QPainter& painter, const Merma
   painter.restore();
 }
 
-} // namespace muffin::mermaid::wardley
+} // namespace mufpen::mermaid::wardley

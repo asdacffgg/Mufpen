@@ -8,7 +8,7 @@
 // rule and presses Enter repeatedly; the top-level block count must NEVER drop (a drop = the
 // collapse class regressed, in whatever form).
 //
-//   cmake --build . --config Release --target MuffinSplitAfterRuleProbe
+//   cmake --build . --config Release --target MufpenSplitAfterRuleProbe
 //   ctest -C Release -R SplitAfterRuleProbe --output-on-failure  (or copy exe next to Qt DLLs)
 #include "../editor/EditorTestUtils.h"
 
@@ -20,9 +20,9 @@
 
 namespace {
 
-muffin::MarkdownNode* firstThematicBreak(muffin::MarkdownNode& root) {
+mufpen::MarkdownNode* firstThematicBreak(mufpen::MarkdownNode& root) {
   for (const auto& c : root.children()) {
-    if (c->type() == muffin::BlockType::ThematicBreak) {
+    if (c->type() == mufpen::BlockType::ThematicBreak) {
       return c.get();
     }
   }
@@ -39,9 +39,9 @@ int main(int argc, char** argv) {
 
   // rule + 3 blank lines + a paragraph — the gap the old VEP inhabited, now served by afterBlock.
   const QString doc = QStringLiteral("Intro\n\n---\n\n\n\nAfter\n\nEnd\n");
-  muffin::DocumentSession session;
-  muffin::EditorView view;
-  muffin::EditorController controller;
+  mufpen::DocumentSession session;
+  mufpen::EditorView view;
+  mufpen::EditorController controller;
   controller.attach(&session, &view);
   session.setMarkdownText(doc, false);
   view.setDocument(session.document());
@@ -50,10 +50,10 @@ int main(int argc, char** argv) {
   view.setFocus();
   QCoreApplication::processEvents();
 
-  muffin::MarkdownNode* hr = firstThematicBreak(session.document().root());
+  mufpen::MarkdownNode* hr = firstThematicBreak(session.document().root());
   require(hr != nullptr, "document should contain a thematic break");
-  muffin::HitTestResult hit;
-  hit.zone = muffin::HitTestResult::Zone::BlockAfter;
+  mufpen::HitTestResult hit;
+  hit.zone = mufpen::HitTestResult::Zone::BlockAfter;
   hit.blockId = hr->id();
   hit.textNodeId = hr->id();
   controller.activateHit(hit);

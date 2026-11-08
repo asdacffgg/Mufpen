@@ -8,7 +8,7 @@
 #include <QMimeData>
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 SourceEditorBackend::SourceEditorBackend(SourceEditorWidget* editor) : editor_(editor) {
 }
@@ -220,4 +220,4 @@ QString SourceEditorBackend::cursorStatusText() const {
   return QStringLiteral("%1:%2").arg(editor_->cursorLine()).arg(editor_->cursorColumn());
 }
 
-} // namespace muffin
+} // namespace mufpen

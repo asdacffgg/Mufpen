@@ -10,7 +10,7 @@
 #include "editor/SelectionController.h"
 #include "parser/MarkdownSerializer.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 QString defaultLiteralFor(FrontMatterFormat format) {
@@ -86,4 +86,4 @@ bool insertFrontMatter(const EditorContext& ctx, LiteralBlockController& ctrl, F
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -2,7 +2,7 @@
 
 #include "document/SourceRangeUtil.h"
 
-namespace muffin {
+namespace mufpen {
 
 class PieceTable;
 
@@ -52,4 +52,4 @@ const MarkdownNode* nextListItemInRun(const PieceTable& markdown, const Markdown
 QString renumberListItems(const PieceTable& markdown, InlineRange source, const MarkdownNode* first, int nextNumber,
                           bool sequential);
 
-} // namespace muffin
+} // namespace mufpen

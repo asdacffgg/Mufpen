@@ -5,7 +5,7 @@
 #include <limits>
 #include <QSet>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 QString sequenceMenuLabelKey(const QString& actorId, const QString& label) {
   return actorId + QChar(0x1f) + label;
@@ -992,4 +992,4 @@ SequenceLayoutResult layoutSequence(const SequenceData& data, const SequenceLayo
   return result;
 }
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

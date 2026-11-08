@@ -4,10 +4,10 @@
 
 class QPainter;
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 
 struct VennScene;
 
 void paintVennScene(const VennScene& scene, QPainter& painter, const MermaidPaintOptions& options = {});
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

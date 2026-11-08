@@ -11,7 +11,7 @@
 
 #include <QString>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 
 // Marker type names matching mermaid's marker ids (`{diagramId}_flowchart-v2-{name}`).
 // "pointEnd"/"pointStart", "circleEnd"/"circleStart", "crossEnd"/"crossStart".
@@ -32,4 +32,4 @@ struct MarkerGeometry {
 };
 MarkerGeometry markerGeometry(const QString& type);
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

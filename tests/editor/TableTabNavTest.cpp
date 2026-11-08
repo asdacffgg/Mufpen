@@ -14,7 +14,7 @@
 
 #include <vector>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

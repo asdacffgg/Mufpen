@@ -3,7 +3,7 @@
 #include <QString>
 #include <QStringView>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -31,4 +31,4 @@ InlineSplitPlan inlineSplitPlanForRange(const MarkdownNode& editableNode, QStrin
 // of the middle of a repeated delimiter token. May modify source in place.
 qsizetype normalizeSplitOffset(QString& source, qsizetype offset);
 
-} // namespace muffin
+} // namespace mufpen

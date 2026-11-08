@@ -17,7 +17,7 @@ extern "C" {
 #include <limits>
 #include <random>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

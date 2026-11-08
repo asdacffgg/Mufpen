@@ -2,14 +2,14 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 
 struct RadarScene;
 
 void paintRadarScene(const RadarScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

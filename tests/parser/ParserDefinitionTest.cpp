@@ -8,7 +8,7 @@
 #include <QCoreApplication>
 #include <QProcess>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testDefinitionBlocks() {
   CmarkGfmParser parser;
@@ -422,11 +422,11 @@ int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
   require(argc == 2, QStringLiteral("Missing cmark footnote oracle path"));
   // Keep the raw cmark oracle in its own process. Linking another static copy
-  // beside MuffinCore lets ELF interpose public functions across separate
+  // beside MufpenCore lets ELF interpose public functions across separate
   // private registries and node-type globals.
   QProcess oracle;
   oracle.setProcessChannelMode(QProcess::ForwardedChannels);
-  oracle.start(QStringLiteral(MUFFIN_CMARK_ORACLE_PATH), {QString::fromLocal8Bit(argv[1])});
+  oracle.start(QStringLiteral(MUFPEN_CMARK_ORACLE_PATH), {QString::fromLocal8Bit(argv[1])});
   require(oracle.waitForStarted() && oracle.waitForFinished(60000) && oracle.exitStatus() == QProcess::NormalExit &&
               oracle.exitCode() == 0,
           "Isolated cmark AST/HTML/source-coordinate oracle passes");

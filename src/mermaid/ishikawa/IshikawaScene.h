@@ -14,7 +14,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 
 struct IshikawaConfig {
   QJsonValue useMaxWidth = true;
@@ -180,4 +180,4 @@ struct IshikawaScene final : MermaidScene {
 
 IshikawaScene buildIshikawaScene(const IshikawaData& data, IshikawaConfig config, IshikawaSceneStyle style);
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

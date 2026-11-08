@@ -9,7 +9,7 @@
 
 #include <cstdio>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 using namespace sankey_test;
 
 int main(int argc, char** argv) {

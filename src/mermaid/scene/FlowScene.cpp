@@ -14,7 +14,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 namespace {
 
 qreal r3(qreal v) {
@@ -1180,4 +1180,4 @@ SvgMarkerProjection FlowScene::svgMarkerProjection() const {
   return projection;
 }
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

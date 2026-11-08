@@ -15,10 +15,10 @@
 #include <QElapsedTimer>
 #include <QLoggingCategory>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(inputEditPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(inputEditPerf, "mufpen.perf", QtWarningMsg)
 
 struct PerfTimer : diag::ScopedPerfProbe {
   explicit PerfTimer(const char* label) : diag::ScopedPerfProbe(label, inputEditPerf()) {}
@@ -385,4 +385,4 @@ void InputController::applyEdit(EditTransaction::Kind kind, const QString& label
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

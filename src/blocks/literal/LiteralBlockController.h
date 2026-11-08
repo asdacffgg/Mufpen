@@ -10,7 +10,7 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -85,4 +85,4 @@ private:
   int editingIndex_ = -1;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -7,7 +7,7 @@
 #include <numeric>
 #include <tuple>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 using Kind = CssGridBreadthKind;
 struct ExpandedTemplate {
@@ -1205,4 +1205,4 @@ CssFormattingResult layoutGridItems(const ThemeElementStyle& container, const st
                                     const CssGridInheritance& inherited) {
   return solveGrid(container, items, contentWidth, contentHeight, scale, inherited, false);
 }
-} // namespace muffin
+} // namespace mufpen

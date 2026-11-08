@@ -1,6 +1,6 @@
 #include "app/FileTreeModel.h"
 
-#include "io/MuffinMime.h"
+#include "io/MufpenMime.h"
 
 #include <QDateTime>
 #include <QDir>
@@ -16,7 +16,7 @@ protected:
   QMimeData* mimeData(const QModelIndexList& indexes) const override {
     auto* data = QFileSystemModel::mimeData(indexes);
     if (data)
-      data->setData(muffin::kMuffinFileTreeDragMime, {});
+      data->setData(mufpen::kMufpenFileTreeDragMime, {});
     return data;
   }
 };
@@ -26,7 +26,7 @@ template <typename T> int compare(const T& a, const T& b) {
 }
 } // namespace
 
-muffin::FileTreeModel::FileTreeModel(QObject* parent) : QSortFilterProxyModel(parent) {
+mufpen::FileTreeModel::FileTreeModel(QObject* parent) : QSortFilterProxyModel(parent) {
   // The C-locale collator ignores numericMode, even with the ICU backend.
   if (collator_.locale().language() == QLocale::C)
     collator_.setLocale(QLocale(QLocale::English));
@@ -37,7 +37,7 @@ muffin::FileTreeModel::FileTreeModel(QObject* parent) : QSortFilterProxyModel(pa
   sort(0, Qt::AscendingOrder);
 }
 
-void muffin::FileTreeModel::replaceSource() {
+void mufpen::FileTreeModel::replaceSource() {
   auto* previous = files_;
   loadedDirectories_.clear();
   files_ = new FileSourceModel(this);
@@ -53,31 +53,31 @@ void muffin::FileTreeModel::replaceSource() {
   }
 }
 
-QModelIndex muffin::FileTreeModel::index(const QString& path) const {
+QModelIndex mufpen::FileTreeModel::index(const QString& path) const {
   return mapFromSource(files_->index(path));
 }
 
-QModelIndex muffin::FileTreeModel::setRootPath(const QString& path) {
+QModelIndex mufpen::FileTreeModel::setRootPath(const QString& path) {
   return mapFromSource(files_->setRootPath(path));
 }
 
-QString muffin::FileTreeModel::filePath(const QModelIndex& index) const {
+QString mufpen::FileTreeModel::filePath(const QModelIndex& index) const {
   return files_->filePath(mapToSource(index));
 }
 
-QString muffin::FileTreeModel::fileName(const QModelIndex& index) const {
+QString mufpen::FileTreeModel::fileName(const QModelIndex& index) const {
   return files_->fileName(mapToSource(index));
 }
 
-bool muffin::FileTreeModel::isDir(const QModelIndex& index) const {
+bool mufpen::FileTreeModel::isDir(const QModelIndex& index) const {
   return files_->isDir(mapToSource(index));
 }
 
-bool muffin::FileTreeModel::isDirectoryLoaded(const QModelIndex& index) const {
+bool mufpen::FileTreeModel::isDirectoryLoaded(const QModelIndex& index) const {
   return index.isValid() && loadedDirectories_.contains(QPersistentModelIndex(mapToSource(index)));
 }
 
-void muffin::FileTreeModel::setSortBy(SortBy field, Qt::SortOrder order) {
+void mufpen::FileTreeModel::setSortBy(SortBy field, Qt::SortOrder order) {
   if (sortBy_ != field) {
     sortBy_ = field;
     invalidate();
@@ -85,12 +85,12 @@ void muffin::FileTreeModel::setSortBy(SortBy field, Qt::SortOrder order) {
   sort(0, order);
 }
 
-QModelIndex muffin::FileTreeModel::refresh(const QString& root) {
+QModelIndex mufpen::FileTreeModel::refresh(const QString& root) {
   replaceSource();
   return setRootPath(root);
 }
 
-bool muffin::FileTreeModel::lessThan(const QModelIndex& left, const QModelIndex& right) const {
+bool mufpen::FileTreeModel::lessThan(const QModelIndex& left, const QModelIndex& right) const {
   const auto a = files_->fileInfo(left), b = files_->fileInfo(right);
   // QSortFilterProxyModel reverses the comparison in descending order. Keep
   // directories ahead of files in either direction, on every platform.

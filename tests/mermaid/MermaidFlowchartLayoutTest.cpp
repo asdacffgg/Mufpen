@@ -25,7 +25,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid::flowchart;
+using namespace mufpen::mermaid::flowchart;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -49,7 +49,7 @@ qreal cssNumber(const QString& value) {
 bool sameColor(const QString& native, const QString& upstream) {
   if (native.isEmpty() || upstream.isEmpty() || upstream == QLatin1String("none"))
     return native.isEmpty() || upstream == QLatin1String("none");
-  return muffin::mermaid::color::toQColor(native) == muffin::mermaid::color::toQColor(upstream);
+  return mufpen::mermaid::color::toQColor(native) == mufpen::mermaid::color::toQColor(upstream);
 }
 QString normalizedDash(QString value) {
   value = value.trimmed();
@@ -182,7 +182,7 @@ int main(int argc, char** argv) {
 #endif
   require(argc == 2, QStringLiteral("Expected flowchart geometry fixture path"));
 
-  using muffin::mermaid::flowchart::d3curve::generateRoundedPath;
+  using mufpen::mermaid::flowchart::d3curve::generateRoundedPath;
   require(generateRoundedPath({}).isEmpty() &&
               generateRoundedPath({QPointF(0, 0), QPointF(10, 0)}) == QLatin1String("M0,0L10,0"),
           QStringLiteral("Rounded path endpoint contract drifted"));
@@ -218,7 +218,7 @@ int main(int argc, char** argv) {
     // real Arial. Other platforms substitute the face (Linux has no Arial) or
     // vary its metrics via a different renderer (DirectWrite on ARM, CoreText
     // on macOS), so text-derived sizes drift several px. The strict bundled-
-    // font oracle (MuffinMermaidFlowchartLabelOracleTest) remains the tight
+    // font oracle (MufpenMermaidFlowchartLabelOracleTest) remains the tight
     // fidelity gate; geometry coordinates (0.002) and SVG structure are still
     // exact here. Linux CI also installs fonts-liberation (Arial-metric) so
     // its drift is sub-px, but the slack covers renderer variance everywhere.
@@ -250,8 +250,8 @@ int main(int argc, char** argv) {
       }
     }
     const FlowLayoutResult actual = layoutFlowchartNodes(chart.data(), sizes, layoutOptions);
-    const auto theme = muffin::mermaid::flowtheme::resolveFlowTheme(muffin::mermaid::flowtheme::FlowThemeId::Default);
-    const auto scene = muffin::mermaid::flowscene::buildFlowScene(chart.data(), actual, theme);
+    const auto theme = mufpen::mermaid::flowtheme::resolveFlowTheme(mufpen::mermaid::flowtheme::FlowThemeId::Default);
+    const auto scene = mufpen::mermaid::flowscene::buildFlowScene(chart.data(), actual, theme);
     const QJsonObject expectedSvg =
         fixture.value(QStringLiteral("expected")).toObject().value(QStringLiteral("svg")).toObject();
     require(expectedSvg.value(QStringLiteral("class")).toString() == QLatin1String("flowchart") &&
@@ -260,7 +260,7 @@ int main(int argc, char** argv) {
                 expectedSvg.value(QStringLiteral("role")).toString() == QLatin1String("graphics-document document") &&
                 expectedSvg.value(QStringLiteral("aria-roledescription")).toString() == QLatin1String("flowchart-v2"),
             QStringLiteral("Flowchart SVG root structure %1 mismatch").arg(id));
-    if (qEnvironmentVariable("MUFFIN_GEOMETRY_DEBUG") == id) {
+    if (qEnvironmentVariable("MUFPEN_GEOMETRY_DEBUG") == id) {
       for (const FlowLayoutNode& node : actual.nodes)
         qDebug().noquote() << "node" << node.id << node.x << node.y << node.width << node.height;
       for (const FlowLayoutCluster& cluster : actual.clusters)
@@ -482,7 +482,7 @@ int main(int argc, char** argv) {
       }
       const auto sceneNode = std::find_if(
           scene.nodes.cbegin(), scene.nodes.cend(),
-          [&](const muffin::mermaid::flowscene::FlowSceneNode& candidate) { return candidate.id == nodeId; });
+          [&](const mufpen::mermaid::flowscene::FlowSceneNode& candidate) { return candidate.id == nodeId; });
       const QString shapeTag =
           expected.value(QStringLiteral("shape")).toObject().value(QStringLiteral("tag")).toString();
       if (sceneNode != scene.nodes.cend() && !shapeTag.isEmpty() && shapeTag != QLatin1String("g")) {

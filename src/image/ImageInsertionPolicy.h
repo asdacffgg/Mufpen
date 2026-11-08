@@ -8,7 +8,7 @@
 class QSettings;
 class QWidget;
 
-namespace muffin {
+namespace mufpen {
 
 // One image being brought into the document. Exactly one of `sourcePath` /
 // `pastedImage` carries the payload: file picks and drops set `sourcePath` (a
@@ -37,10 +37,10 @@ struct ImageInsertResult {
 // rules: the configured ImageInsertAction, the applyToLocal/applyToNetwork gates,
 // the frontmatter upload override, and the path-formatting checkboxes. Performs
 // the file-copy / network-download / uploader side effects. tr()-free — callers
-// own user-facing messages, so this unit stays out of MUFFIN_TRANSLATABLE_SOURCES.
+// own user-facing messages, so this unit stays out of MUFPEN_TRANSLATABLE_SOURCES.
 class ImageInsertionPolicy {
 public:
   static ImageInsertResult resolveHref(const ImageInsertRequest& request, QSettings& settings, QWidget* parent);
 };
 
-} // namespace muffin
+} // namespace mufpen

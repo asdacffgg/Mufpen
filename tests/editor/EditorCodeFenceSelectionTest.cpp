@@ -22,7 +22,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testClipboardBlockSelectionFallback (lines 742-760)
 void testClipboardBlockSelectionFallback() {
@@ -60,7 +60,7 @@ void testCodeFenceSelectionCopyUsesLiteralOffsets() {
 
   const QString code = QStringLiteral("#include <iostream>\n\n"
                                       "int main() {\n"
-                                      "  const auto message = \"Hello from Muffin\";\n"
+                                      "  const auto message = \"Hello from Mufpen\";\n"
                                       "  std::cout << message << '\\n';\n"
                                       "  return 0;\n"
                                       "}\n");

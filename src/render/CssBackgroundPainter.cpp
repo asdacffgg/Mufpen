@@ -10,9 +10,9 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(maskPerf, "muffin.perf.paint", QtWarningMsg)
+Q_LOGGING_CATEGORY(maskPerf, "mufpen.perf.paint", QtWarningMsg)
 using Repeat = ThemeBackgroundLayer::Repeat;
 QRectF boxRect(const LayoutBox& box, const QString& name, QPointF offset) {
   return (name == "padding-box"   ? box.paddingBox
@@ -277,4 +277,4 @@ void applyCssMasks(QImage& image, QPointF imageOrigin, const LayoutBox& box, con
   painter.setCompositionMode(QPainter::CompositionMode_DestinationIn);
   painter.drawImage(QPointF(), mask);
 }
-} // namespace muffin
+} // namespace mufpen

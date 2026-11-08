@@ -2,7 +2,7 @@
 
 #include "blocks/code/CodeFenceScrollController.h"
 
-namespace muffin {
+namespace mufpen {
 
 QPointF BlockLayout::TableCellLayout::textOrigin() const {
   const QRectF contentRect = box.contentBox;
@@ -535,4 +535,4 @@ QRectF BlockLayout::tableCellRect(int row, int column) const {
   return tableRow.cells.at(static_cast<size_t>(column)).rect;
 }
 
-} // namespace muffin
+} // namespace mufpen

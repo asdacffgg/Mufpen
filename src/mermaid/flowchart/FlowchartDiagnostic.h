@@ -3,7 +3,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 enum class FlowchartErrorCategory {
   Syntax,
@@ -63,4 +63,4 @@ QString flowchartErrorStageName(FlowchartErrorStage stage);
 QString flowchartErrorCodeName(FlowchartErrorCode code);
 QString formatFlowchartDiagnostic(const FlowchartDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

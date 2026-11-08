@@ -12,10 +12,10 @@
 #include <QScopedValueRollback>
 #include <QTimer>
 
-namespace muffin {
+namespace mufpen {
 
-Q_LOGGING_CATEGORY(actionProbe, "muffin.perf", QtWarningMsg)
-Q_LOGGING_CATEGORY(actionDetailProbe, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(actionProbe, "mufpen.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(actionDetailProbe, "mufpen.perf.detail", QtWarningMsg)
 
 namespace {
 void updateCommandHint(QAction* action, const CommandDeclaration& declaration, const MainWindow& window) {
@@ -364,4 +364,4 @@ void MainWindow::restorePersistentActionStates() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

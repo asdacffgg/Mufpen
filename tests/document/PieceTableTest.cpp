@@ -19,7 +19,7 @@
 #include <random>
 #include <limits>
 
-using namespace muffin;
+using namespace mufpen;
 
 static void testIndexedSourceRangeLookups() {
   QString text = QStringLiteral("第一行🙂\n\nlast\n");

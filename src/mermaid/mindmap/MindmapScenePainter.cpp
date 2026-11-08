@@ -12,7 +12,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 namespace {
 
 color::SvgPaint rootPaint(const QString& value) {
@@ -142,4 +142,4 @@ void paintMindmapScene(const MindmapScene& scene, QPainter& painter, const Merma
   }
 }
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

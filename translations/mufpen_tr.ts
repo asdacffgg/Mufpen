@@ -1,198 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="vi_VN">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>EditorView</name>
     <message>
         <source>Markdown editor</source>
-        <translation type="vanished">Trình soạn thảo Markdown</translation>
+        <translation type="vanished">Markdown düzenleyici</translation>
     </message>
     <message>
         <source>Rendered Markdown document</source>
-        <translation type="vanished">Tài liệu Markdown đã kết xuất</translation>
+        <translation type="vanished">İşlenmiş Markdown belgesi</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>New</source>
-        <translation type="obsolete">Mới</translation>
+        <translation type="obsolete">Yeni</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="obsolete">Cửa sổ mới</translation>
+        <translation type="obsolete">Yeni Pencere</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="obsolete">Mở thư mục...</translation>
+        <translation type="obsolete">Klasör Aç...</translation>
     </message>
     <message>
         <source>Open...</source>
-        <translation type="obsolete">Mở...</translation>
+        <translation type="obsolete">Aç...</translation>
     </message>
     <message>
         <source>Quick Open...</source>
-        <translation type="obsolete">Mở nhanh...</translation>
+        <translation type="obsolete">Hızlı Aç...</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="obsolete">Lưu</translation>
+        <translation type="obsolete">Kaydet</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation type="obsolete">Lưu thành...</translation>
+        <translation type="obsolete">Farklı Kaydet...</translation>
     </message>
     <message>
         <source>Move To...</source>
-        <translation type="obsolete">Di chuyển đến...</translation>
+        <translation type="obsolete">Şuraya Taşı...</translation>
     </message>
     <message>
         <source>Save All Open Files...</source>
-        <translation type="obsolete">Lưu tất cả tệp đang mở...</translation>
+        <translation type="obsolete">Tüm Açık Dosyaları Kaydet...</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="obsolete">Thuộc tính</translation>
+        <translation type="obsolete">Özellikler</translation>
     </message>
     <message>
         <source>Show in File Manager...</source>
-        <translation type="obsolete">Hiện trong trình quản lý tệp...</translation>
+        <translation type="obsolete">Dosya Yöneticisinde Göster...</translation>
     </message>
     <message>
         <source>Show in Sidebar</source>
-        <translation type="obsolete">Hiện trong thanh bên</translation>
+        <translation type="obsolete">Kenar Çubuğunda Göster</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation type="obsolete">Xóa...</translation>
+        <translation type="obsolete">Sil...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="obsolete">Nhập...</translation>
+        <translation type="obsolete">İçe Aktar...</translation>
     </message>
     <message>
         <source>Print...</source>
-        <translation type="obsolete">In...</translation>
+        <translation type="obsolete">Yazdır...</translation>
     </message>
     <message>
         <source>Preferences...</source>
-        <translation type="obsolete">Tùy chọn...</translation>
+        <translation type="obsolete">Tercihler...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">Đóng</translation>
+        <translation type="obsolete">Kapat</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="obsolete">Hoàn tác</translation>
+        <translation type="obsolete">Geri Al</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="obsolete">Làm lại</translation>
+        <translation type="obsolete">Yinele</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="obsolete">Cắt</translation>
+        <translation type="obsolete">Kes</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="obsolete">Sao chép</translation>
+        <translation type="obsolete">Kopyala</translation>
     </message>
     <message>
         <source>Copy Image</source>
-        <translation type="obsolete">Sao chép ảnh</translation>
+        <translation type="obsolete">Görüntüyü Kopyala</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="obsolete">Dán</translation>
+        <translation type="obsolete">Yapıştır</translation>
     </message>
     <message>
         <source>Copy as Plain Text</source>
-        <translation type="obsolete">Sao chép dạng văn bản thuần</translation>
+        <translation type="obsolete">Düz Metin Olarak Kopyala</translation>
     </message>
     <message>
         <source>Copy as Markdown</source>
-        <translation type="obsolete">Sao chép dạng Markdown</translation>
+        <translation type="obsolete">Markdown Olarak Kopyala</translation>
     </message>
     <message>
         <source>Copy as HTML</source>
-        <translation type="obsolete">Sao chép dạng HTML</translation>
+        <translation type="obsolete">HTML Olarak Kopyala</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
-        <translation type="obsolete">Dán dạng văn bản thuần</translation>
+        <translation type="obsolete">Düz Metin Olarak Yapıştır</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="obsolete">Chọn tất cả</translation>
+        <translation type="obsolete">Tümünü Seç</translation>
     </message>
     <message>
         <source>Select Paragraph or Block</source>
-        <translation type="obsolete">Chọn đoạn hoặc khối</translation>
+        <translation type="obsolete">Paragraf veya blok seç</translation>
     </message>
     <message>
         <source>Select Current Line or Sentence</source>
-        <translation type="obsolete">Chọn dòng hoặc câu hiện tại</translation>
+        <translation type="obsolete">Geçerli satır veya cümleyi seç</translation>
     </message>
     <message>
         <source>Select Current Format Text</source>
-        <translation type="obsolete">Chọn văn bản có định dạng hiện tại</translation>
+        <translation type="obsolete">Geçerli Biçim Metnini Seç</translation>
     </message>
     <message>
         <source>Select Current Word</source>
-        <translation type="obsolete">Chọn từ hiện tại</translation>
+        <translation type="obsolete">Geçerli sözcüğü seç</translation>
     </message>
     <message>
         <source>Jump to Start of Document</source>
-        <translation type="obsolete">Chuyển về đầu tài liệu</translation>
+        <translation type="obsolete">Belge başına atla</translation>
     </message>
     <message>
         <source>Jump to Selection</source>
-        <translation type="obsolete">Chuyển đến vùng chọn</translation>
+        <translation type="obsolete">Seçime atla</translation>
     </message>
     <message>
         <source>Jump to End of Document</source>
-        <translation type="obsolete">Chuyển về cuối tài liệu</translation>
+        <translation type="obsolete">Belge sonuna atla</translation>
     </message>
     <message>
         <source>Jump to Start of Line</source>
-        <translation type="obsolete">Chuyển về đầu dòng</translation>
+        <translation type="obsolete">Satır başına atla</translation>
     </message>
     <message>
         <source>Jump to End of Line</source>
-        <translation type="obsolete">Chuyển về cuối dòng</translation>
+        <translation type="obsolete">Satır sonuna atla</translation>
     </message>
     <message>
         <source>Move Line Up</source>
-        <translation type="obsolete">Di chuyển dòng lên</translation>
+        <translation type="obsolete">Satırı Yukarı Taşı</translation>
     </message>
     <message>
         <source>Move Line Down</source>
-        <translation type="obsolete">Di chuyển dòng xuống</translation>
+        <translation type="obsolete">Satırı Aşağı Taşı</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="obsolete">Xóa</translation>
+        <translation type="obsolete">Sil</translation>
     </message>
     <message>
         <source>Delete Block</source>
-        <translation type="obsolete">Xóa khối</translation>
+        <translation type="obsolete">Bloğu sil</translation>
     </message>
     <message>
         <source>Delete Current Line</source>
-        <translation type="obsolete">Xóa dòng hiện tại</translation>
+        <translation type="obsolete">Geçerli satırı sil</translation>
     </message>
     <message>
         <source>Delete Current Format Text</source>
-        <translation type="obsolete">Xóa văn bản định dạng hiện tại</translation>
+        <translation type="obsolete">Geçerli biçimli metni sil</translation>
     </message>
     <message>
         <source>Delete Current Word</source>
-        <translation type="obsolete">Xóa từ hiện tại</translation>
+        <translation type="obsolete">Geçerli sözcüğü sil</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="obsolete">Kiểm tra chính tả...</translation>
+        <translation type="obsolete">Yazım Denetimi...</translation>
     </message>
     <message>
         <source>Windows (CRLF)</source>
@@ -204,83 +204,83 @@
     </message>
     <message>
         <source>Ensure Trailing Newline on Save</source>
-        <translation type="obsolete">Đảm bảo dòng mới cuối tệp khi lưu</translation>
+        <translation type="obsolete">Kaydederken sondaki yeni satırı sağla</translation>
     </message>
     <message>
         <source>Find...</source>
-        <translation type="obsolete">Tìm kiếm...</translation>
+        <translation type="obsolete">Bul...</translation>
     </message>
     <message>
         <source>Replace...</source>
-        <translation type="obsolete">Thay thế...</translation>
+        <translation type="obsolete">Değiştir...</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation type="obsolete">Tìm tiếp</translation>
+        <translation type="obsolete">Sonrakini bul</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation type="obsolete">Tìm trước</translation>
+        <translation type="obsolete">Öncekini bul</translation>
     </message>
     <message>
         <source>Paragraph</source>
-        <translation type="obsolete">Đoạn văn</translation>
+        <translation type="obsolete">Paragraf(&amp;P)</translation>
     </message>
     <message>
         <source>Promote Heading</source>
-        <translation type="obsolete">Tăng cấp tiêu đề</translation>
+        <translation type="obsolete">Başlığı Yükselt</translation>
     </message>
     <message>
         <source>Demote Heading</source>
-        <translation type="obsolete">Giảm cấp tiêu đề</translation>
+        <translation type="obsolete">Başlığı Düşür</translation>
     </message>
     <message>
         <source>Formula Block</source>
-        <translation type="obsolete">Khối công thức</translation>
+        <translation type="obsolete">Formül Bloğu</translation>
     </message>
     <message>
         <source>Code Block</source>
-        <translation type="obsolete">Khối mã</translation>
+        <translation type="obsolete">Kod Bloğu</translation>
     </message>
     <message>
         <source>Quote</source>
-        <translation type="obsolete">Trích dẫn</translation>
+        <translation type="obsolete">Alıntı</translation>
     </message>
     <message>
         <source>Ordered List</source>
-        <translation type="obsolete">Danh sách có thứ tự</translation>
+        <translation type="obsolete">Sıralı Liste</translation>
     </message>
     <message>
         <source>Unordered List</source>
-        <translation type="obsolete">Danh sách không thứ tự</translation>
+        <translation type="obsolete">Sırasız Liste</translation>
     </message>
     <message>
         <source>Task List</source>
-        <translation type="obsolete">Danh sách tác vụ</translation>
+        <translation type="obsolete">Görev Listesi</translation>
     </message>
     <message>
         <source>Insert Paragraph Before</source>
-        <translation type="obsolete">Chèn đoạn văn trước</translation>
+        <translation type="obsolete">Öncesine Paragraf Ekle</translation>
     </message>
     <message>
         <source>Insert Paragraph After</source>
-        <translation type="obsolete">Chèn đoạn văn sau</translation>
+        <translation type="obsolete">Sonrasına Paragraf Ekle</translation>
     </message>
     <message>
         <source>Link Reference</source>
-        <translation type="obsolete">Tham chiếu liên kết</translation>
+        <translation type="obsolete">Bağlantı Başvurusu</translation>
     </message>
     <message>
         <source>Footnote</source>
-        <translation type="obsolete">Chú thích cuối trang</translation>
+        <translation type="obsolete">Dipnot</translation>
     </message>
     <message>
         <source>Horizontal Rule</source>
-        <translation type="obsolete">Đường ngang</translation>
+        <translation type="obsolete">Yatay Çizgi</translation>
     </message>
     <message>
         <source>Table of Contents</source>
-        <translation type="obsolete">Mục lục</translation>
+        <translation type="obsolete">İçindekiler</translation>
     </message>
     <message>
         <source>YAML</source>
@@ -296,99 +296,99 @@
     </message>
     <message>
         <source>Insert Row Above</source>
-        <translation type="obsolete">Chèn hàng phía trên</translation>
+        <translation type="obsolete">Üste Satır Ekle</translation>
     </message>
     <message>
         <source>Insert Row Below</source>
-        <translation type="obsolete">Chèn hàng phía dưới</translation>
+        <translation type="obsolete">Alta Satır Ekle</translation>
     </message>
     <message>
         <source>Insert Column Left</source>
-        <translation type="obsolete">Chèn cột bên trái</translation>
+        <translation type="obsolete">Sola Sütun Ekle</translation>
     </message>
     <message>
         <source>Insert Column Right</source>
-        <translation type="obsolete">Chèn cột bên phải</translation>
+        <translation type="obsolete">Sağa Sütun Ekle</translation>
     </message>
     <message>
         <source>Move Row Up</source>
-        <translation type="obsolete">Di chuyển hàng lên</translation>
+        <translation type="obsolete">Satırı Yukarı Taşı</translation>
     </message>
     <message>
         <source>Move Row Down</source>
-        <translation type="obsolete">Di chuyển hàng xuống</translation>
+        <translation type="obsolete">Satırı Aşağı Taşı</translation>
     </message>
     <message>
         <source>Move Column Left</source>
-        <translation type="obsolete">Di chuyển cột sang trái</translation>
+        <translation type="obsolete">Sütunu Sola Taşı</translation>
     </message>
     <message>
         <source>Move Column Right</source>
-        <translation type="obsolete">Di chuyển cột sang phải</translation>
+        <translation type="obsolete">Sütunu Sağa Taşı</translation>
     </message>
     <message>
         <source>Delete Row</source>
-        <translation type="obsolete">Xóa hàng</translation>
+        <translation type="obsolete">Satırı Sil</translation>
     </message>
     <message>
         <source>Delete Column</source>
-        <translation type="obsolete">Xóa cột</translation>
+        <translation type="obsolete">Sütunu Sil</translation>
     </message>
     <message>
         <source>Copy Table</source>
-        <translation type="obsolete">Sao chép bảng</translation>
+        <translation type="obsolete">Tabloyu kopyala</translation>
     </message>
     <message>
         <source>Format Table Source</source>
-        <translation type="obsolete">Định dạng mã nguồn bảng</translation>
+        <translation type="obsolete">Tablo kaynağını biçimlendir</translation>
     </message>
     <message>
         <source>Delete Table</source>
-        <translation type="obsolete">Xóa bảng</translation>
+        <translation type="obsolete">Tabloyu Sil</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="obsolete">Căn trái</translation>
+        <translation type="obsolete">Sola Hizala</translation>
     </message>
     <message>
         <source>Align Center</source>
-        <translation type="obsolete">Căn giữa</translation>
+        <translation type="obsolete">Ortala</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="obsolete">Căn phải</translation>
+        <translation type="obsolete">Sağa Hizala</translation>
     </message>
     <message>
         <source>Clear Alignment</source>
-        <translation type="obsolete">Xóa căn chỉnh</translation>
+        <translation type="obsolete">Hizalamayı Temizle</translation>
     </message>
     <message>
         <source>Enter Edit</source>
-        <translation type="obsolete">Vào chỉnh sửa</translation>
+        <translation type="obsolete">Düzenlemeye Gir</translation>
     </message>
     <message>
         <source>Exit Edit</source>
-        <translation type="obsolete">Thoát chỉnh sửa</translation>
+        <translation type="obsolete">Düzenlemeden Çık</translation>
     </message>
     <message>
         <source>Set Language...</source>
-        <translation type="obsolete">Đặt ngôn ngữ...</translation>
+        <translation type="obsolete">Dili Ayarla...</translation>
     </message>
     <message>
         <source>Code Language</source>
-        <translation type="obsolete">Ngôn ngữ mã</translation>
+        <translation type="obsolete">Kod Dili</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="obsolete">Ngôn ngữ:</translation>
+        <translation type="obsolete">Dil:</translation>
     </message>
     <message>
         <source>Set HTML...</source>
-        <translation type="obsolete">Đặt HTML...</translation>
+        <translation type="obsolete">HTML Ayarla...</translation>
     </message>
     <message>
         <source>HTML Source</source>
-        <translation type="obsolete">Nguồn HTML</translation>
+        <translation type="obsolete">HTML Kaynağı</translation>
     </message>
     <message>
         <source>HTML:</source>
@@ -396,11 +396,11 @@
     </message>
     <message>
         <source>Set TeX...</source>
-        <translation type="obsolete">Đặt TeX...</translation>
+        <translation type="obsolete">TeX Ayarla...</translation>
     </message>
     <message>
         <source>Math TeX</source>
-        <translation type="obsolete">TeX toán học</translation>
+        <translation type="obsolete">Matematik TeX</translation>
     </message>
     <message>
         <source>TeX:</source>
@@ -408,131 +408,131 @@
     </message>
     <message>
         <source>Bold</source>
-        <translation type="obsolete">Đậm</translation>
+        <translation type="obsolete">Kalın</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="obsolete">Nghiêng</translation>
+        <translation type="obsolete">İtalik</translation>
     </message>
     <message>
         <source>Underline</source>
-        <translation type="obsolete">Gạch chân</translation>
+        <translation type="obsolete">Altı Çizili</translation>
     </message>
     <message>
         <source>Inline Code</source>
-        <translation type="obsolete">Mã nội tuyến</translation>
+        <translation type="obsolete">Satır İçi Kod</translation>
     </message>
     <message>
         <source>Inline Formula</source>
-        <translation type="obsolete">Công thức nội tuyến</translation>
+        <translation type="obsolete">Satır İçi Formül</translation>
     </message>
     <message>
         <source>Strikethrough</source>
-        <translation type="obsolete">Gạch ngang</translation>
+        <translation type="obsolete">Üstü Çizili</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation type="obsolete">Chú thích</translation>
+        <translation type="obsolete">Yorum</translation>
     </message>
     <message>
         <source>Hyperlink</source>
-        <translation type="obsolete">Siêu liên kết</translation>
+        <translation type="obsolete">Köprü</translation>
     </message>
     <message>
         <source>Clear Style</source>
-        <translation type="obsolete">Xóa kiểu</translation>
+        <translation type="obsolete">Stili Temizle</translation>
     </message>
     <message>
         <source>Insert Image...</source>
-        <translation type="obsolete">Chèn hình ảnh...</translation>
+        <translation type="obsolete">Resim ekle...</translation>
     </message>
     <message>
         <source>Insert Local Image...</source>
-        <translation type="obsolete">Chèn hình ảnh cục bộ...</translation>
+        <translation type="obsolete">Yerel resim ekle...</translation>
     </message>
     <message>
         <source>Open Image Location...</source>
-        <translation type="obsolete">Mở vị trí hình ảnh...</translation>
+        <translation type="obsolete">Resim konumunu aç...</translation>
     </message>
     <message>
         <source>Delete Image File</source>
-        <translation type="obsolete">Xóa tệp hình ảnh</translation>
+        <translation type="obsolete">Resim dosyasını sil</translation>
     </message>
     <message>
         <source>Delete Image</source>
-        <translation type="obsolete">Xóa hình ảnh</translation>
+        <translation type="obsolete">Resmi sil</translation>
     </message>
     <message>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation type="obsolete">Xóa tệp hình ảnh &quot;%1&quot;?
-Hành động này không thể hoàn tác.</translation>
+        <translation type="obsolete">&quot;%1&quot; resim dosyası silinsin mi?
+Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <source>Copy Image To...</source>
-        <translation type="obsolete">Sao chép hình ảnh đến...</translation>
+        <translation type="obsolete">Resmi şuraya kopyala...</translation>
     </message>
     <message>
         <source>Copy Image To</source>
-        <translation type="obsolete">Sao chép hình ảnh đến</translation>
+        <translation type="obsolete">Resmi şuraya kopyala</translation>
     </message>
     <message>
         <source>Rename / Move Image To...</source>
-        <translation type="obsolete">Đổi tên / Di chuyển hình ảnh đến...</translation>
+        <translation type="obsolete">Resmi yeniden adlandır / şuraya taşı...</translation>
     </message>
     <message>
         <source>Move Image To</source>
-        <translation type="obsolete">Di chuyển hình ảnh đến</translation>
+        <translation type="obsolete">Resmi şuraya taşı</translation>
     </message>
     <message>
         <source>Upload Image</source>
-        <translation type="obsolete">Tải lên hình ảnh</translation>
+        <translation type="obsolete">Resmi yükle</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="obsolete">Tải lên hình ảnh chưa được cấu hình.
-Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
+        <translation type="obsolete">Resim yükleme henüz yapılandırılmamış.
+Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
     </message>
     <message>
         <source>Upload All Local Images</source>
-        <translation type="obsolete">Tải lên tất cả hình ảnh cục bộ</translation>
+        <translation type="obsolete">Tüm yerel resimleri yükle</translation>
     </message>
     <message>
         <source>Upload All Images</source>
-        <translation type="obsolete">Tải lên tất cả hình ảnh</translation>
+        <translation type="obsolete">Tüm resimleri yükle</translation>
     </message>
     <message>
         <source>Reload All Images</source>
-        <translation type="obsolete">Tải lại tất cả hình ảnh</translation>
+        <translation type="obsolete">Tüm resimleri yeniden yükle</translation>
     </message>
     <message>
         <source>25%</source>
-        <translation type="obsolete">25%</translation>
+        <translation type="obsolete">%25</translation>
     </message>
     <message>
         <source>50%</source>
-        <translation type="obsolete">50%</translation>
+        <translation type="obsolete">%50</translation>
     </message>
     <message>
         <source>75%</source>
-        <translation type="obsolete">75%</translation>
+        <translation type="obsolete">%75</translation>
     </message>
     <message>
         <source>100%</source>
-        <translation type="obsolete">100%</translation>
+        <translation type="obsolete">%100</translation>
     </message>
     <message>
         <source>150%</source>
-        <translation type="obsolete">150%</translation>
+        <translation type="obsolete">%150</translation>
     </message>
     <message>
         <source>Custom...</source>
-        <translation type="obsolete">Tùy chỉnh...</translation>
+        <translation type="obsolete">Özel...</translation>
     </message>
     <message>
         <source>Standard Markdown ![](url)</source>
-        <translation type="obsolete">Markdown chuẩn ![](url)</translation>
+        <translation type="obsolete">Standart Markdown ![](url)</translation>
     </message>
     <message>
         <source>HTML &lt;img&gt;</source>
@@ -540,151 +540,151 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="obsolete">Chèn đường dẫn tương đối</translation>
+        <translation type="obsolete">Göreli yol ekle</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="obsolete">Chèn đường dẫn tuyệt đối</translation>
+        <translation type="obsolete">Mutlak yol ekle</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="obsolete">Sao chép vào thư mục tùy chỉnh</translation>
+        <translation type="obsolete">Özel klasöre kopyala</translation>
     </message>
     <message>
         <source>Copy All Images To...</source>
-        <translation type="obsolete">Sao chép tất cả hình ảnh đến...</translation>
+        <translation type="obsolete">Tüm resimleri şuraya kopyala...</translation>
     </message>
     <message>
         <source>Copy All Images To</source>
-        <translation type="obsolete">Sao chép tất cả hình ảnh đến</translation>
+        <translation type="obsolete">Tüm resimleri şuraya kopyala</translation>
     </message>
     <message>
         <source>Copy All Images</source>
-        <translation type="obsolete">Sao chép tất cả hình ảnh</translation>
+        <translation type="obsolete">Tüm resimleri kopyala</translation>
     </message>
     <message>
         <source>Copied %1 of %2 image(s).</source>
-        <translation type="obsolete">Đã sao chép %1/%2 hình ảnh.</translation>
+        <translation type="obsolete">%2 resmin %1&apos;i kopyalandı.</translation>
     </message>
     <message>
         <source>Move All Images To...</source>
-        <translation type="obsolete">Di chuyển tất cả hình ảnh đến...</translation>
+        <translation type="obsolete">Tüm resimleri şuraya taşı...</translation>
     </message>
     <message>
         <source>Move All Images To</source>
-        <translation type="obsolete">Di chuyển tất cả hình ảnh đến</translation>
+        <translation type="obsolete">Tüm resimleri şuraya taşı</translation>
     </message>
     <message>
         <source>Move All Images</source>
-        <translation type="obsolete">Di chuyển tất cả hình ảnh</translation>
+        <translation type="obsolete">Tüm resimleri taşı</translation>
     </message>
     <message>
         <source>Moved %1 image(s).</source>
-        <translation type="obsolete">Đã di chuyển %1 hình ảnh.</translation>
+        <translation type="obsolete">%1 resim taşındı.</translation>
     </message>
     <message>
         <source>Global Image Settings...</source>
-        <translation type="obsolete">Cài đặt hình ảnh toàn cầu...</translation>
+        <translation type="obsolete">Genel resim ayarları...</translation>
     </message>
     <message>
         <source>Show / Hide Sidebar</source>
-        <translation type="vanished">Hiện / ẩn thanh bên</translation>
+        <translation type="vanished">Kenar Çubuğunu Göster / Gizle</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation type="obsolete">Dàn ý</translation>
+        <translation type="obsolete">Ana Hat</translation>
     </message>
     <message>
         <source>File Tree</source>
-        <translation type="obsolete">Cây tệp</translation>
+        <translation type="obsolete">Dosya Ağacı</translation>
     </message>
     <message>
         <source>Source Code Mode</source>
-        <translation type="obsolete">Chế độ mã nguồn</translation>
+        <translation type="obsolete">Kaynak Kod Modu</translation>
     </message>
     <message>
         <source>Word Wrap</source>
-        <translation type="obsolete">Tự động xuống dòng</translation>
+        <translation type="obsolete">Sözcük Kaydırma</translation>
     </message>
     <message>
         <source>Focus Mode</source>
-        <translation type="obsolete">Chế độ tập trung</translation>
+        <translation type="obsolete">Odak Modu</translation>
     </message>
     <message>
         <source>Typewriter Mode</source>
-        <translation type="obsolete">Chế độ máy đánh chữ</translation>
+        <translation type="obsolete">Daktilo Modu</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="obsolete">Hiện thanh trạng thái</translation>
+        <translation type="obsolete">Durum Çubuğunu Göster</translation>
     </message>
     <message>
         <source>Word Count Window</source>
-        <translation type="obsolete">Cửa sổ đếm từ</translation>
+        <translation type="obsolete">Sözcük Sayımı Penceresi</translation>
     </message>
     <message>
         <source>Toggle Full Screen</source>
-        <translation type="obsolete">Bật/tắt toàn màn hình</translation>
+        <translation type="obsolete">Tam Ekranı Aç/Kapat</translation>
     </message>
     <message>
         <source>Always on Top</source>
-        <translation type="obsolete">Luôn ở trên cùng</translation>
+        <translation type="obsolete">Her Zaman Üstte</translation>
     </message>
     <message>
         <source>Actual Size</source>
-        <translation type="obsolete">Kích thước thực</translation>
+        <translation type="obsolete">Gerçek Boyut</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="obsolete">Phóng to</translation>
+        <translation type="obsolete">Yakınlaştır</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="obsolete">Thu nhỏ</translation>
+        <translation type="obsolete">Uzaklaştır</translation>
     </message>
     <message>
         <source>Switch Windows</source>
-        <translation type="obsolete">Chuyển cửa sổ</translation>
+        <translation type="obsolete">Pencereler Arasında Geç</translation>
     </message>
     <message>
         <source>Quick Start</source>
-        <translation type="obsolete">Bắt đầu nhanh</translation>
+        <translation type="obsolete">Hızlı Başlangıç</translation>
     </message>
     <message>
         <source>Markdown Reference</source>
-        <translation type="obsolete">Tham khảo Markdown</translation>
+        <translation type="obsolete">Markdown Başvurusu</translation>
     </message>
     <message>
         <source>Custom Themes</source>
-        <translation type="obsolete">Chủ đề tùy chỉnh</translation>
+        <translation type="obsolete">Özel Temalar</translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="obsolete">Lời cảm ơn</translation>
+        <translation type="obsolete">Teşekkürler</translation>
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="obsolete">Nhật ký thay đổi</translation>
+        <translation type="obsolete">Değişiklik Günlüğü</translation>
     </message>
     <message>
         <source>Official Website</source>
-        <translation type="obsolete">Trang web chính thức</translation>
+        <translation type="obsolete">Resmî Web Sitesi</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="obsolete">Phản hồi</translation>
+        <translation type="obsolete">Geri Bildirim</translation>
     </message>
     <message>
         <source>Check for Updates...</source>
-        <translation type="obsolete">Kiểm tra cập nhật...</translation>
+        <translation type="obsolete">Güncellemeleri Denetle...</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="obsolete">Giới thiệu</translation>
+        <translation type="obsolete">Hakkında</translation>
     </message>
     <message>
         <source>About Mufpen</source>
-        <translation type="obsolete">Giới thiệu Mufpen</translation>
+        <translation type="obsolete">Mufpen Hakkında</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -692,131 +692,123 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="obsolete">Mufpen %1
 
-Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằng C++ và Qt 6 Widgets.</translation>
+C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyici.</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="obsolete">Tệp</translation>
+        <translation type="obsolete">Dosya(&amp;F)</translation>
     </message>
     <message>
         <source>Open Recent</source>
-        <translation type="obsolete">Mở gần đây</translation>
+        <translation type="obsolete">Son Kullanılanları Aç</translation>
     </message>
     <message>
         <source>Reopen with Encoding</source>
-        <translation type="obsolete">Mở lại với mã hóa</translation>
+        <translation type="obsolete">Kodlamayla Yeniden Aç</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="obsolete">Xuất</translation>
+        <translation type="obsolete">Dışa Aktar</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="obsolete">Sửa</translation>
+        <translation type="obsolete">Düzenle(&amp;E)</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="obsolete">Chọn</translation>
+        <translation type="obsolete">Seç</translation>
     </message>
     <message>
         <source>Delete Range</source>
-        <translation type="obsolete">Xóa phạm vi</translation>
+        <translation type="obsolete">Aralığı Sil</translation>
     </message>
     <message>
         <source>Math Tools</source>
-        <translation type="obsolete">Công cụ toán học</translation>
+        <translation type="obsolete">Matematik Araçları</translation>
     </message>
     <message>
         <source>Smart Punctuation</source>
-        <translation type="obsolete">Dấu câu thông minh</translation>
+        <translation type="obsolete">Akıllı Noktalama</translation>
     </message>
     <message>
         <source>Line Breaks</source>
-        <translation type="obsolete">Ngắt dòng</translation>
+        <translation type="obsolete">Satır Sonları</translation>
     </message>
     <message>
         <source>Find and Replace</source>
-        <translation type="obsolete">Tìm và thay thế</translation>
+        <translation type="obsolete">Bul ve Değiştir</translation>
     </message>
     <message>
         <source>Table</source>
-        <translation type="obsolete">Bảng</translation>
+        <translation type="obsolete">Tablo(&amp;B)</translation>
     </message>
     <message>
         <source>Code Tools</source>
-        <translation type="obsolete">Công cụ mã</translation>
+        <translation type="obsolete">Kod Araçları</translation>
     </message>
     <message>
         <source>Alert</source>
-        <translation type="obsolete">Cảnh báo</translation>
+        <translation type="obsolete">Uyarı</translation>
     </message>
     <message>
         <source>Task Status</source>
-        <translation type="obsolete">Trạng thái tác vụ</translation>
+        <translation type="obsolete">Görev Durumu</translation>
     </message>
     <message>
         <source>List Indent</source>
-        <translation type="obsolete">Thụt lề danh sách</translation>
+        <translation type="obsolete">Liste Girintisi</translation>
     </message>
     <message>
         <source>Front Matter</source>
-        <translation type="obsolete">Front Matter</translation>
+        <translation type="obsolete">Ön Bilgi</translation>
     </message>
     <message>
         <source>Code</source>
-        <translation type="obsolete">Mã</translation>
+        <translation type="obsolete">Kod(&amp;C)</translation>
     </message>
     <message>
         <source>Math</source>
-        <translation type="obsolete">Toán học</translation>
+        <translation type="obsolete">Matematik(&amp;M)</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="obsolete">Định dạng</translation>
+        <translation type="obsolete">Biçim(&amp;O)</translation>
     </message>
     <message>
         <source>Link Actions</source>
-        <translation type="obsolete">Thao tác liên kết</translation>
-    </message>
-    <message>
-        <source>Image</source>
-        <translation type="obsolete">Hình ảnh</translation>
+        <translation type="obsolete">Bağlantı Eylemleri</translation>
     </message>
     <message>
         <source>Resize Image</source>
-        <translation type="obsolete">Thay đổi kích thước hình ảnh</translation>
+        <translation type="obsolete">Resmi yeniden boyutlandır</translation>
     </message>
     <message>
         <source>Convert Image Syntax</source>
-        <translation type="obsolete">Chuyển đổi cú pháp hình ảnh</translation>
+        <translation type="obsolete">Resim sözdizimini dönüştür</translation>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="obsolete">Khi chèn hình ảnh cục bộ</translation>
+        <translation type="obsolete">Yerel resim eklenirken</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="obsolete">Xem</translation>
-    </message>
-    <message>
-        <source>Theme</source>
-        <translation type="obsolete">Chủ đề</translation>
+        <translation type="obsolete">Görünüm(&amp;V)</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="obsolete">Trợ giúp</translation>
+        <translation type="obsolete">Yardım(&amp;H)</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="obsolete">bảng %1:%2 vị trí %3</translation>
+        <translation type="obsolete">tablo %1:%2 ofset %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="obsolete">%1 từ</translation>
+        <translation type="obsolete">%1 sözcük</translation>
     </message>
     <message>
         <source>Insert Table</source>
-        <translation type="obsolete">Chèn bảng</translation>
+        <translation type="obsolete">Tablo Ekle</translation>
     </message>
     <message>
         <source>Unicode</source>
@@ -836,329 +828,329 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
     </message>
     <message>
         <source>Western</source>
-        <translation type="vanished">Tây Âu</translation>
+        <translation type="vanished">Batı</translation>
     </message>
     <message>
         <source>Western (Windows-1252)</source>
-        <translation type="vanished">Tây Âu (Windows-1252)</translation>
+        <translation type="vanished">Batı (Windows-1252)</translation>
     </message>
     <message>
         <source>Cyrillic</source>
-        <translation type="vanished">Kirin</translation>
+        <translation type="vanished">Kiril</translation>
     </message>
     <message>
         <source>Cyrillic (Windows-1251)</source>
-        <translation type="vanished">Kirin (Windows-1251)</translation>
+        <translation type="vanished">Kiril (Windows-1251)</translation>
     </message>
     <message>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation type="vanished">Kirin (ISO-8859-5)</translation>
+        <translation type="vanished">Kiril (ISO-8859-5)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM866)</source>
-        <translation type="vanished">Kirin (IBM866)</translation>
+        <translation type="vanished">Kiril (IBM866)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM855)</source>
-        <translation type="vanished">Kirin (IBM855)</translation>
+        <translation type="vanished">Kiril (IBM855)</translation>
     </message>
     <message>
         <source>Cyrillic (KOI8-R)</source>
-        <translation type="vanished">Kirin (KOI8-R)</translation>
+        <translation type="vanished">Kiril (KOI8-R)</translation>
     </message>
     <message>
         <source>Cyrillic (Mac)</source>
-        <translation type="vanished">Kirin (Mac)</translation>
+        <translation type="vanished">Kiril (Mac)</translation>
     </message>
     <message>
         <source>Central European</source>
-        <translation type="vanished">Trung Âu</translation>
+        <translation type="vanished">Orta Avrupa</translation>
     </message>
     <message>
         <source>Central European (Windows-1250)</source>
-        <translation type="vanished">Trung Âu (Windows-1250)</translation>
+        <translation type="vanished">Orta Avrupa (Windows-1250)</translation>
     </message>
     <message>
         <source>Central European (ISO-8859-2)</source>
-        <translation type="vanished">Trung Âu (ISO-8859-2)</translation>
+        <translation type="vanished">Orta Avrupa (ISO-8859-2)</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="vanished">Hy Lạp</translation>
+        <translation type="vanished">Yunan</translation>
     </message>
     <message>
         <source>Greek (Windows-1253)</source>
-        <translation type="vanished">Hy Lạp (Windows-1253)</translation>
+        <translation type="vanished">Yunan (Windows-1253)</translation>
     </message>
     <message>
         <source>Greek (ISO-8859-7)</source>
-        <translation type="vanished">Hy Lạp (ISO-8859-7)</translation>
+        <translation type="vanished">Yunan (ISO-8859-7)</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="vanished">Do Thái</translation>
+        <translation type="vanished">İbranice</translation>
     </message>
     <message>
         <source>Hebrew (Windows-1255)</source>
-        <translation type="vanished">Do Thái (Windows-1255)</translation>
+        <translation type="vanished">İbranice (Windows-1255)</translation>
     </message>
     <message>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation type="vanished">Do Thái (ISO-8859-8)</translation>
+        <translation type="vanished">İbranice (ISO-8859-8)</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="vanished">Tiếng Trung giản thể</translation>
+        <translation type="vanished">Basitleştirilmiş Çince</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB2312)</source>
-        <translation type="vanished">Tiếng Trung giản thể (GB2312)</translation>
+        <translation type="vanished">Basitleştirilmiş Çince (GB2312)</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB18030)</source>
-        <translation type="vanished">Tiếng Trung giản thể (GB18030)</translation>
+        <translation type="vanished">Basitleştirilmiş Çince (GB18030)</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="vanished">Tiếng Trung phồn thể</translation>
+        <translation type="vanished">Geleneksel Çince</translation>
     </message>
     <message>
         <source>Chinese Traditional (Big5)</source>
-        <translation type="vanished">Tiếng Trung phồn thể (Big5)</translation>
+        <translation type="vanished">Geleneksel Çince (Big5)</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="vanished">Tiếng Nhật</translation>
+        <translation type="vanished">Japonca</translation>
     </message>
     <message>
         <source>Japanese (Shift_JIS)</source>
-        <translation type="vanished">Tiếng Nhật (Shift_JIS)</translation>
+        <translation type="vanished">Japonca (Shift_JIS)</translation>
     </message>
     <message>
         <source>Japanese (EUC-JP)</source>
-        <translation type="vanished">Tiếng Nhật (EUC-JP)</translation>
+        <translation type="vanished">Japonca (EUC-JP)</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="vanished">Tiếng Hàn</translation>
+        <translation type="vanished">Korece</translation>
     </message>
     <message>
         <source>Korean (EUC-KR)</source>
-        <translation type="vanished">Tiếng Hàn (EUC-KR)</translation>
+        <translation type="vanished">Korece (EUC-KR)</translation>
     </message>
     <message>
         <source>Thai</source>
-        <translation type="vanished">Tiếng Thái</translation>
+        <translation type="vanished">Tayca</translation>
     </message>
     <message>
         <source>Thai (TIS-620)</source>
-        <translation type="vanished">Tiếng Thái (TIS-620)</translation>
+        <translation type="vanished">Tayca (TIS-620)</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Chuyển đổi chế độ nguồn / kết xuất</translation>
+        <translation type="vanished">Kaynak / işlenmiş modu değiştir</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="obsolete">Thay thế</translation>
+        <translation type="obsolete">Değiştir</translation>
     </message>
 </context>
 <context>
     <name>VirtualSourceEdit</name>
     <message>
         <source>Markdown source editor</source>
-        <translation type="vanished">Trình soạn thảo mã nguồn Markdown</translation>
+        <translation type="vanished">Markdown kaynak kodu düzenleyici</translation>
     </message>
     <message>
         <source>Plain-text Markdown source</source>
-        <translation type="vanished">Mã nguồn Markdown dạng văn bản thuần</translation>
+        <translation type="vanished">Düz metin Markdown kaynak kodu</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>A fast native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">Trình soạn thảo Markdown gốc nhanh được xây dựng bằng C++ và Qt 6 Widgets.</translation>
+        <translation type="vanished">C++ ve Qt 6 Widgets ile oluşturulmuş hızlı bir yerel Markdown düzenleyici.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
         <source>Cannot write to the portable data folder.</source>
-        <translation>Không thể ghi vào thư mục dữ liệu của phiên bản di động.</translation>
+        <translation>Taşınabilir veri klasörüne yazılamıyor.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
         <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
-        <translation>Không thể tải dữ liệu ICU đi kèm. Vui lòng cài đặt lại Mufpen.</translation>
+        <translation>Birlikte gelen ICU verileri yüklenemiyor. Lütfen Mufpen&apos;i yeniden yükleyin.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
         <source>A fast, lightweight, native Markdown editor built with C++ and Qt 6.</source>
-        <translation>Một trình chỉnh sửa Markdown gốc, nhanh và nhẹ được xây dựng bằng C++ và Qt 6.</translation>
+        <translation>C++ ve Qt 6 ile oluşturulmuş hızlı, hafif, yerel bir Markdown düzenleyici.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="149"/>
         <source>Open &lt;folder&gt; in the sidebar file browser.</source>
-        <translation>Mở &lt;folder&gt; trong trình duyệt tệp ở thanh bên.</translation>
+        <translation>Kenar çubuğundaki dosya tarayıcısında &lt;folder&gt; klasörünü aç.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="159"/>
         <source>Markdown or text file (or folder) to open.</source>
-        <translation>Tệp Markdown, tệp văn bản hoặc thư mục cần mở.</translation>
+        <translation>Açılacak Markdown veya metin dosyası (ya da klasör).</translation>
     </message>
     <message>
         <source>Default Markdown editor</source>
-        <translation type="vanished">Trình soạn thảo Markdown mặc định</translation>
+        <translation type="vanished">Varsayılan Markdown düzenleyicisi</translation>
     </message>
     <message>
         <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Mufpen đã được đăng ký làm trình soạn thảo cho các tệp Markdown.
-Đặt làm trình soạn thảo mặc định ngay bây giờ?</translation>
+        <translation type="vanished">Mufpen, Markdown dosyaları için düzenleyici olarak kayıtlı.
+Şimdi varsayılan düzenleyiciniz yapılsın mı?</translation>
     </message>
     <message>
         <source>Markdown or text file to open.</source>
-        <translation type="vanished">Tệp Markdown hoặc văn bản cần mở.</translation>
+        <translation type="vanished">Açılacak Markdown veya metin dosyası.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::BlockLayoutBuilder</name>
+    <name>mufpen::BlockLayoutBuilder</name>
     <message>
         <location filename="../src/render/BlockLayoutBuilder.cpp" line="504"/>
         <source>Start writing...</source>
-        <translation>Bắt đầu viết...</translation>
+        <translation>Yazmaya başlayın...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::CustomCommandUploader</name>
+    <name>mufpen::CustomCommandUploader</name>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="25"/>
         <source>no upload command configured</source>
-        <translation>chưa cấu hình lệnh tải lên</translation>
+        <translation>yükleme komutu yapılandırılmamış</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="34"/>
         <source>empty upload command</source>
-        <translation>lệnh tải lên trống</translation>
+        <translation>yükleme komutu boş</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="92"/>
         <source>uploader exited with code %1</source>
-        <translation>trình tải lên đã thoát với mã %1</translation>
+        <translation>yükleme programı %1 koduyla sonlandı</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="109"/>
         <source>uploader produced no URLs</source>
-        <translation>trình tải lên không trả về URL nào</translation>
+        <translation>yükleme programı hiçbir URL döndürmedi</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentSession</name>
+    <name>mufpen::DocumentSession</name>
     <message>
         <location filename="../src/document/DocumentSession.cpp" line="872"/>
         <source>Untitled</source>
-        <translation>Chưa đặt tên</translation>
+        <translation>Adsız</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentTab</name>
+    <name>mufpen::DocumentTab</name>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="116"/>
         <location filename="../src/app/DocumentTab.cpp" line="444"/>
         <source>Markdown source</source>
-        <translation>Mã nguồn Markdown</translation>
+        <translation>Markdown kaynağı</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="119"/>
         <location filename="../src/app/DocumentTab.cpp" line="445"/>
         <source>Read-only preview</source>
-        <translation>Xem trước chỉ đọc</translation>
+        <translation>Salt okunur önizleme</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="123"/>
         <location filename="../src/app/DocumentTab.cpp" line="446"/>
         <source>Synchronized scrolling</source>
-        <translation>Cuộn đồng bộ</translation>
+        <translation>Eşzamanlı kaydırma</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="147"/>
         <location filename="../src/app/DocumentTab.cpp" line="452"/>
         <source>Side by side</source>
-        <translation>Cạnh nhau</translation>
+        <translation>Yan yana</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="148"/>
         <location filename="../src/app/DocumentTab.cpp" line="453"/>
         <source>Top and bottom</source>
-        <translation>Trên và dưới</translation>
+        <translation>Alt alta</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="157"/>
         <location filename="../src/app/DocumentTab.cpp" line="454"/>
         <source>Swap source and preview</source>
-        <translation>Đổi vị trí mã nguồn và bản xem trước</translation>
+        <translation>Kaynak ve önizlemenin yerini değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="449"/>
         <source>Split layout</source>
-        <translation>Bố cục chia đôi</translation>
+        <translation>Bölünmüş görünüm düzeni</translation>
     </message>
 </context>
 <context>
-    <name>muffin::EditorView</name>
+    <name>mufpen::EditorView</name>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="115"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1659"/>
         <source>(no spelling suggestions)</source>
-        <translation>(không có gợi ý chính tả)</translation>
+        <translation>(yazım önerisi yok)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="131"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1670"/>
         <source>Ignore &quot;%1&quot;</source>
-        <translation>Bỏ qua &quot;%1&quot;</translation>
+        <translation>&quot;%1&quot; öğesini yoksay</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorViewPaint.cpp" line="56"/>
         <source>Loading…</source>
-        <translation>Đang tải…</translation>
+        <translation>Yükleniyor…</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="818"/>
         <source>Markdown editor</source>
-        <translation>Trình soạn thảo Markdown</translation>
+        <translation>Markdown düzenleyici</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="819"/>
         <source>Rendered Markdown document</source>
-        <translation>Tài liệu Markdown đã kết xuất</translation>
+        <translation>İşlenmiş Markdown belgesi</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileController</name>
+    <name>mufpen::FileController</name>
     <message>
         <location filename="../src/io/FileController.cpp" line="367"/>
         <source>Open</source>
-        <translation>Mở</translation>
+        <translation>Aç</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="368"/>
         <source>Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)</source>
-        <translation>Tệp Markdown và văn bản (*.md *.markdown *.mdown *.txt);;Tất cả tệp (*.*)</translation>
+        <translation>Markdown ve metin dosyaları (*.md *.markdown *.mdown *.txt);;Tüm dosyalar (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Save As</source>
-        <translation>Lưu thành</translation>
+        <translation>Farklı Kaydet</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="603"/>
         <source>The document cannot be encoded as %1.</source>
-        <translation>Không thể mã hóa tài liệu dưới dạng %1.</translation>
+        <translation>Belge %1 olarak kodlanamıyor.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Markdown files (*.md);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Tệp Markdown (*.md);;Tệp văn bản (*.txt);;Tất cả tệp (*.*)</translation>
+        <translation>Markdown dosyaları (*.md);;Metin dosyaları (*.txt);;Tüm dosyalar (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
@@ -1169,213 +1161,213 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Markdown files (*.md *.markdown);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Tệp Markdown (*.md *.markdown);;Tệp văn bản (*.txt);;Tất cả tệp (*.*)</translation>
+        <translation>Markdown dosyaları (*.md *.markdown);;Metin dosyaları (*.txt);;Tüm dosyalar (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Tài liệu hiện tại có thay đổi chưa lưu.</translation>
+        <translation>Geçerli belgede kaydedilmemiş değişiklikler var.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="529"/>
         <source>File Missing</source>
-        <translation>Không tìm thấy tệp</translation>
+        <translation>Dosya Bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="530"/>
         <source>The file &quot;%1&quot; no longer exists on disk. Use Save As to write it to a new location.</source>
-        <translation>Tệp &quot;%1&quot; không còn trên đĩa. Dùng Lưu thành để lưu tệp vào vị trí mới.</translation>
+        <translation>&quot;%1&quot; dosyası artık diskte bulunmuyor. Yeni bir konuma kaydetmek için Farklı Kaydet seçeneğini kullanın.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="538"/>
         <source>File Changed on Disk</source>
-        <translation>Tệp trên đĩa đã thay đổi</translation>
+        <translation>Dosya Diskte Değiştirildi</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
         <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
-        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Mufpen. Bạn có muốn ghi đè không?</translation>
+        <translation>&quot;%1&quot; dosyası Mufpen dışında değiştirilmiş. Üzerine yazılsın mı?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
         <location filename="../src/io/FileController.cpp" line="636"/>
         <source>Open Failed</source>
-        <translation>Mở thất bại</translation>
+        <translation>Açma Başarısız</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <source>Could not detect a lossless text encoding for this file.</source>
-        <translation>Không thể xác định bảng mã văn bản cho phép đọc tệp này mà không mất dữ liệu.</translation>
+        <translation>Bu dosya için kayıpsız bir metin kodlaması belirlenemedi.</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="574"/>
         <location filename="../src/io/FileController.cpp" line="611"/>
         <location filename="../src/io/FileController.cpp" line="616"/>
         <source>Save Failed</source>
-        <translation>Lưu thất bại</translation>
+        <translation>Kaydetme Başarısız</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <location filename="../src/io/FileController.cpp" line="602"/>
         <location filename="../src/io/FileController.cpp" line="642"/>
         <source>Encoding Error</source>
-        <translation>Lỗi mã hóa</translation>
+        <translation>Kodlama hatası</translation>
     </message>
     <message>
         <source>Unsupported encoding: %1</source>
-        <translation type="vanished">Mã hóa không được hỗ trợ: %1</translation>
+        <translation type="vanished">Desteklenmeyen kodlama: %1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="643"/>
         <source>Failed to decode file with encoding: %1</source>
-        <translation>Không thể giải mã tệp với mã hóa: %1</translation>
+        <translation>Dosya %1 kodlamasıyla çözülemedi</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="658"/>
         <source>The document has unsaved changes. Save before reopening with a new encoding?</source>
-        <translation>Tài liệu có thay đổi chưa lưu. Lưu trước khi mở lại với mã hóa mới?</translation>
+        <translation>Belgede kaydedilmemiş değişiklikler var. Yeni kodlamayla yeniden açmadan önce kaydedilsin mi?</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Move To</source>
-        <translation>Di chuyển đến</translation>
+        <translation>Şuraya taşı</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Move Failed</source>
-        <translation>Di chuyển thất bại</translation>
+        <translation>Taşıma başarısız</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Could not move file to:
 %1</source>
-        <translation>Không thể di chuyển tệp đến:
+        <translation>Dosya şuraya taşınamadı:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileOpenConfirmation</name>
+    <name>mufpen::FileOpenConfirmation</name>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="84"/>
         <source>Open this file?</source>
-        <translation>Mở tệp này?</translation>
+        <translation>Bu dosya açılsın mı?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="85"/>
         <source>This file is not a Markdown or text file. Are you sure you want to open it?</source>
-        <translation>Tệp này không phải là tệp Markdown hoặc văn bản. Bạn có chắc muốn mở không?</translation>
+        <translation>Bu dosya bir Markdown veya metin dosyası değil. Açmak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="87"/>
         <source>Opening this large file may take a long time and use a lot of memory. Are you sure you want to open it?</source>
-        <translation>Việc mở tệp lớn này có thể mất nhiều thời gian và sử dụng nhiều bộ nhớ. Bạn có chắc muốn mở không?</translation>
+        <translation>Bu büyük dosyayı açmak uzun sürebilir ve çok fazla bellek kullanabilir. Açmak istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FilePathOps</name>
+    <name>mufpen::FilePathOps</name>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="182"/>
         <source>path does not exist</source>
-        <translation>đường dẫn không tồn tại</translation>
+        <translation>yol mevcut değil</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="23"/>
         <source>operation failed</source>
-        <translation>thao tác thất bại</translation>
+        <translation>işlem başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="31"/>
         <source>file already exists</source>
-        <translation>tệp đã tồn tại</translation>
+        <translation>dosya zaten var</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="38"/>
         <source>could not create parent directory</source>
-        <translation>không thể tạo thư mục cha</translation>
+        <translation>üst dizin oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="56"/>
         <source>path already exists</source>
-        <translation>đường dẫn đã tồn tại</translation>
+        <translation>yol zaten var</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="62"/>
         <source>could not create folder</source>
-        <translation>không thể tạo thư mục</translation>
+        <translation>klasör oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="84"/>
         <source>could not rename (target may exist or the move crosses volumes)</source>
-        <translation>không thể đổi tên (đích có thể đã tồn tại hoặc thao tác di chuyển qua các phân vùng)</translation>
+        <translation>yeniden adlandırılamadı (hedef zaten var olabilir veya taşıma farklı birimler arasında yapılıyor olabilir)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="93"/>
         <source>could not rename (case-change intermediate step failed)</source>
-        <translation>không thể đổi tên (bước trung gian để đổi chữ hoa/chữ thường thất bại)</translation>
+        <translation>yeniden adlandırılamadı (büyük/küçük harf değiştirme işleminin ara adımı başarısız oldu)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="103"/>
         <source>could not rename (case-change final step failed)</source>
-        <translation>không thể đổi tên (bước cuối để đổi chữ hoa/chữ thường thất bại)</translation>
+        <translation>yeniden adlandırılamadı (büyük/küçük harf değiştirme işleminin son adımı başarısız oldu)</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="137"/>
         <source>could not create destination directory</source>
-        <translation>không thể tạo thư mục đích</translation>
+        <translation>hedef dizin oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="143"/>
         <source>could not copy (destination may already exist)</source>
-        <translation>không thể sao chép (đích có thể đã tồn tại)</translation>
+        <translation>kopyalanamadı (hedef zaten var olabilir)</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FindBarWidget</name>
+    <name>mufpen::FindBarWidget</name>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="104"/>
         <source>Find</source>
-        <translation>Tìm kiếm</translation>
+        <translation>Bul</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="105"/>
         <source>Previous</source>
-        <translation>Trước</translation>
+        <translation>Önceki</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="106"/>
         <source>Next</source>
-        <translation>Tiếp</translation>
+        <translation>Sonraki</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
         <source>Close</source>
-        <translation>Đóng</translation>
+        <translation>Kapat</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="108"/>
         <location filename="../src/editor/FindBarWidget.cpp" line="109"/>
         <source>Replace</source>
-        <translation>Thay thế</translation>
+        <translation>Değiştir</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="110"/>
         <source>Replace All</source>
-        <translation>Thay thế tất cả</translation>
+        <translation>Tümünü değiştir</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="111"/>
         <source>Regex</source>
-        <translation>Biểu thức chính quy</translation>
+        <translation>Düzenli İfade</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="112"/>
         <source>Match Case</source>
-        <translation>Phân biệt hoa thường</translation>
+        <translation>Büyük/Küçük Harfe Duyarlı</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="154"/>
         <source>Not found</source>
-        <translation>Không tìm thấy</translation>
+        <translation>Bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="156"/>
@@ -1384,199 +1376,199 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::HelpViewerDialog</name>
+    <name>mufpen::HelpViewerDialog</name>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
         <source>%1 — Mufpen Help</source>
-        <translation>Trợ giúp Mufpen — %1</translation>
+        <translation>%1 — Mufpen Yardımı</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
         <source>Go back</source>
-        <translation>Lùi lại</translation>
+        <translation>Geri</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="161"/>
         <source>Go forward</source>
-        <translation>Tiến tới</translation>
+        <translation>İleri</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="162"/>
         <source>Scroll to top</source>
-        <translation>Về đầu trang</translation>
+        <translation>Başa dön</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="190"/>
         <source>Quick Start</source>
-        <translation>Bắt đầu nhanh</translation>
+        <translation>Hızlı Başlangıç</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="192"/>
         <source>Markdown Reference</source>
-        <translation>Tham khảo Markdown</translation>
+        <translation>Markdown Başvurusu</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="194"/>
         <source>Acknowledgements</source>
-        <translation>Lời cảm ơn</translation>
+        <translation>Teşekkürler</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="211"/>
         <source>This page is not available.</source>
-        <translation>Trang này không có sẵn.</translation>
+        <translation>Bu sayfa kullanılamıyor.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::ImageFileOps</name>
+    <name>mufpen::ImageFileOps</name>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="216"/>
         <source>source or destination directory is unavailable</source>
-        <translation>không thể truy cập thư mục nguồn hoặc thư mục đích</translation>
+        <translation>kaynak veya hedef dizine erişilemiyor</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="250"/>
         <source>could not locate an image destination in the document source</source>
-        <translation>không thể tìm thấy đường dẫn ảnh trong mã nguồn tài liệu</translation>
+        <translation>belgenin kaynak kodunda bir görselin yolu bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="269"/>
         <source>could not move %1</source>
-        <translation>không thể di chuyển %1</translation>
+        <translation>%1 taşınamadı</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="271"/>
         <source>; rollback failed for %1</source>
-        <translation>; không thể khôi phục %1 về vị trí ban đầu</translation>
+        <translation>; %1 için geri alma başarısız oldu</translation>
     </message>
 </context>
 <context>
-    <name>muffin::LanguageManager</name>
+    <name>mufpen::LanguageManager</name>
     <message>
         <location filename="../src/app/LanguageManager.cpp" line="17"/>
         <source>System Default</source>
-        <translation>Mặc định hệ thống</translation>
+        <translation>Sistem Varsayılanı</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MainWindow</name>
+    <name>mufpen::MainWindow</name>
     <message>
         <source>Parse %1 ms</source>
-        <translation type="vanished">Phân tích %1 ms</translation>
+        <translation type="vanished">Ayrıştırma %1 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="431"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="933"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="937"/>
         <source> (Editing Locked)</source>
-        <translation> (Đã khóa chỉnh sửa)</translation>
+        <translation> (Düzenleme kilitli)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Unlock Editing</source>
-        <translation>Mở khóa chỉnh sửa</translation>
+        <translation>Düzenleme kilidini aç</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="647"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Lock Editing</source>
-        <translation>Khóa chỉnh sửa</translation>
+        <translation>Düzenlemeyi kilitle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="493"/>
         <source>This pane is a read-only preview. Edit the Markdown source on the left.</source>
-        <translation>Ngăn này là bản xem trước chỉ đọc. Hãy chỉnh sửa mã nguồn Markdown ở bên trái.</translation>
+        <translation>Bu bölme salt okunur bir önizlemedir. Markdown kaynağını solda düzenleyin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="495"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="932"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="936"/>
         <source>Editing is locked. Unlock editing to change this document.</source>
-        <translation>Chỉnh sửa đã bị khóa. Hãy mở khóa để thay đổi tài liệu này.</translation>
+        <translation>Düzenleme kilitli. Bu belgeyi değiştirmek için düzenleme kilidini açın.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="497"/>
         <source>The document is still loading.</source>
-        <translation>Tài liệu vẫn đang được tải.</translation>
+        <translation>Belge hâlâ yükleniyor.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="688"/>
         <source>Open Folder</source>
-        <translation>Mở thư mục</translation>
+        <translation>Klasör Aç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1933"/>
         <source>Show / Hide Sidebar</source>
-        <translation>Hiện / ẩn thanh bên</translation>
+        <translation>Kenar Çubuğunu Göster / Gizle</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Chuyển đổi chế độ nguồn / kết xuất</translation>
+        <translation type="vanished">Kaynak / işlenmiş modu değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2170"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>File</source>
-        <translation>Tệp</translation>
+        <translation>Dosya(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="114"/>
         <source>New</source>
-        <translation>Mới</translation>
+        <translation>Yeni</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="119"/>
         <source>New Window</source>
-        <translation>Cửa sổ mới</translation>
+        <translation>Yeni Pencere</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="128"/>
         <source>Open...</source>
-        <translation>Mở...</translation>
+        <translation>Aç...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="124"/>
         <source>Open Folder...</source>
-        <translation>Mở thư mục...</translation>
+        <translation>Klasör Aç...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="133"/>
         <source>Quick Open...</source>
-        <translation>Mở nhanh...</translation>
+        <translation>Hızlı Aç...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="144"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2178"/>
         <source>Open Recent</source>
-        <translation>Mở gần đây</translation>
+        <translation>Son Kullanılanları Aç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2182"/>
         <source>Reopen with Encoding</source>
-        <translation>Mở lại với mã hóa</translation>
+        <translation>Kodlamayla Yeniden Aç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="162"/>
         <source>Save</source>
-        <translation>Lưu</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="176"/>
         <source>Save As...</source>
-        <translation>Lưu thành...</translation>
+        <translation>Farklı Kaydet...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="187"/>
         <source>Move To...</source>
-        <translation>Di chuyển đến...</translation>
+        <translation>Şuraya Taşı...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="193"/>
         <source>Save All Open Files...</source>
-        <translation>Lưu tất cả tệp đang mở...</translation>
+        <translation>Tüm Açık Dosyaları Kaydet...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="199"/>
@@ -1584,199 +1576,199 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="402"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1223"/>
         <source>Properties</source>
-        <translation>Thuộc tính</translation>
+        <translation>Özellikler</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="204"/>
         <source>Show in File Manager...</source>
-        <translation>Hiện trong trình quản lý tệp...</translation>
+        <translation>Dosya Yöneticisinde Göster...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="209"/>
         <source>Show in Sidebar</source>
-        <translation>Hiện trong thanh bên</translation>
+        <translation>Kenar Çubuğunda Göster</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="215"/>
         <source>Delete...</source>
-        <translation>Xóa...</translation>
+        <translation>Sil...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="221"/>
         <source>Import...</source>
-        <translation>Nhập...</translation>
+        <translation>İçe Aktar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1914"/>
         <source>Could not move images:
 %1</source>
-        <translation>Không thể di chuyển hình ảnh:
+        <translation>Görüntüler taşınamadı:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1968"/>
         <source>Source and Preview</source>
-        <translation>Mã nguồn và xem trước</translation>
+        <translation>Kaynak ve Önizleme</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Geliştirici:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Lisans:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Web sitesi:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
         <source>Export</source>
-        <translation>Xuất</translation>
+        <translation>Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="227"/>
         <source>Print...</source>
-        <translation>In...</translation>
+        <translation>Yazdır...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="324"/>
         <source>Preferences...</source>
-        <translation>Tùy chọn...</translation>
+        <translation>Tercihler...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Đóng</translation>
+        <translation type="vanished">Kapat</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2233"/>
         <source>Edit</source>
-        <translation>Sửa</translation>
+        <translation>Düzenle(&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="366"/>
         <source>Undo</source>
-        <translation>Hoàn tác</translation>
+        <translation>Geri Al</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="372"/>
         <source>Redo</source>
-        <translation>Làm lại</translation>
+        <translation>Yinele</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="378"/>
         <source>Cut</source>
-        <translation>Cắt</translation>
+        <translation>Kes</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="383"/>
         <source>Copy</source>
-        <translation>Sao chép</translation>
+        <translation>Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1559"/>
         <source>Copy Image</source>
-        <translation>Sao chép ảnh</translation>
+        <translation>Görüntüyü Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="420"/>
         <source>Paste</source>
-        <translation>Dán</translation>
+        <translation>Yapıştır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="425"/>
         <source>Copy as Plain Text</source>
-        <translation>Sao chép dạng văn bản thuần</translation>
+        <translation>Düz Metin Olarak Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="431"/>
         <source>Copy as Markdown</source>
-        <translation>Sao chép dạng Markdown</translation>
+        <translation>Markdown Olarak Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="438"/>
         <source>Copy as HTML</source>
-        <translation>Sao chép dạng HTML</translation>
+        <translation>HTML Olarak Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="445"/>
         <source>Paste as Plain Text</source>
-        <translation>Dán dạng văn bản thuần</translation>
+        <translation>Düz Metin Olarak Yapıştır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2250"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="232"/>
         <source>Select</source>
-        <translation>Chọn</translation>
+        <translation>Seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="450"/>
         <source>Select All</source>
-        <translation>Chọn tất cả</translation>
+        <translation>Tümünü Seç</translation>
     </message>
     <message>
         <source>Select Current Line</source>
-        <translation type="vanished">Chọn dòng hiện tại</translation>
+        <translation type="vanished">Geçerli Satırı Seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="469"/>
         <source>Select Current Format Text</source>
-        <translation>Chọn văn bản có định dạng hiện tại</translation>
+        <translation>Geçerli Biçim Metnini Seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="518"/>
         <source>Move Line Up</source>
-        <translation>Di chuyển dòng lên</translation>
+        <translation>Satırı Yukarı Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="526"/>
         <source>Move Line Down</source>
-        <translation>Di chuyển dòng xuống</translation>
+        <translation>Satırı Aşağı Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="546"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="349"/>
         <source>Delete</source>
-        <translation>Xóa</translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2272"/>
         <source>Delete Range</source>
-        <translation>Xóa phạm vi</translation>
+        <translation>Aralığı Sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="553"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="56"/>
         <source>Delete Block</source>
-        <translation>Xóa khối</translation>
+        <translation>Bloğu sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="560"/>
         <source>Delete Current Line</source>
-        <translation>Xóa dòng hiện tại</translation>
+        <translation>Geçerli satırı sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="567"/>
         <source>Delete Current Format Text</source>
-        <translation>Xóa văn bản định dạng hiện tại</translation>
+        <translation>Geçerli biçimli metni sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="574"/>
         <source>Delete Current Word</source>
-        <translation>Xóa từ hiện tại</translation>
+        <translation>Geçerli sözcüğü sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2281"/>
         <source>Math Tools</source>
-        <translation>Công cụ toán học</translation>
+        <translation>Matematik Araçları</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2287"/>
         <source>Smart Punctuation</source>
-        <translation>Dấu câu thông minh</translation>
+        <translation>Akıllı Noktalama</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2301"/>
         <source>Line Breaks</source>
-        <translation>Ngắt dòng</translation>
+        <translation>Satır Sonları</translation>
     </message>
     <message>
         <source>Spaces and Line Breaks</source>
-        <translation type="vanished">Khoảng trắng và ngắt dòng</translation>
+        <translation type="vanished">Boşluklar ve Satır Sonları</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="592"/>
@@ -1791,16 +1783,16 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="614"/>
         <source>Ensure Trailing Newline on Save</source>
-        <translation>Đảm bảo dòng mới cuối tệp khi lưu</translation>
+        <translation>Kaydederken dosya sonunda satır sonu olmasını sağla</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="vanished">Kiểm tra chính tả...</translation>
+        <translation type="vanished">Yazım Denetimi...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2311"/>
         <source>Find and Replace</source>
-        <translation>Tìm và thay thế</translation>
+        <translation>Bul ve Değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="739"/>
@@ -1808,117 +1800,117 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="59"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="214"/>
         <source>Paragraph</source>
-        <translation>Đoạn văn</translation>
+        <translation>Paragraf(&amp;P)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="61"/>
         <source>Heading %1</source>
-        <translation>Tiêu đề %1</translation>
+        <translation>Başlık %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="749"/>
         <source>Promote Heading</source>
-        <translation>Tăng cấp tiêu đề</translation>
+        <translation>Başlığı Yükselt</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="761"/>
         <source>Demote Heading</source>
-        <translation>Giảm cấp tiêu đề</translation>
+        <translation>Başlığı Düşür</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2367"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2448"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="171"/>
         <source>Table</source>
-        <translation>Bảng</translation>
+        <translation>Tablo(&amp;B)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="773"/>
         <source>Formula Block</source>
-        <translation>Khối công thức</translation>
+        <translation>Formül Bloğu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="785"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="66"/>
         <source>Code Block</source>
-        <translation>Khối mã</translation>
+        <translation>Kod Bloğu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2394"/>
         <source>Code Tools</source>
-        <translation>Công cụ mã</translation>
+        <translation>Kod Araçları</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2407"/>
         <source>Alert</source>
-        <translation>Cảnh báo</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="797"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="65"/>
         <source>Quote</source>
-        <translation>Trích dẫn</translation>
+        <translation>Alıntı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="805"/>
         <source>Ordered List</source>
-        <translation>Danh sách có thứ tự</translation>
+        <translation>Sıralı Liste</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="813"/>
         <source>Unordered List</source>
-        <translation>Danh sách không thứ tự</translation>
+        <translation>Sırasız Liste</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="821"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="64"/>
         <source>Task List</source>
-        <translation>Danh sách tác vụ</translation>
+        <translation>Görev Listesi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2349"/>
         <source>Task Status</source>
-        <translation>Trạng thái tác vụ</translation>
+        <translation>Görev Durumu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2355"/>
         <source>List Indent</source>
-        <translation>Thụt lề danh sách</translation>
+        <translation>Liste Girintisi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="877"/>
         <source>Insert Paragraph Before</source>
-        <translation>Chèn đoạn văn trước</translation>
+        <translation>Öncesine Paragraf Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="888"/>
         <source>Insert Paragraph After</source>
-        <translation>Chèn đoạn văn sau</translation>
+        <translation>Sonrasına Paragraf Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="899"/>
         <source>Link Reference</source>
-        <translation>Tham chiếu liên kết</translation>
+        <translation>Bağlantı Başvurusu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="906"/>
         <source>Footnote</source>
-        <translation>Chú thích cuối trang</translation>
+        <translation>Dipnot</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="913"/>
         <source>Horizontal Rule</source>
-        <translation>Đường ngang</translation>
+        <translation>Yatay Çizgi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="921"/>
         <source>Table of Contents</source>
-        <translation>Mục lục</translation>
+        <translation>İçindekiler</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2420"/>
         <source>Front Matter</source>
-        <translation>Front Matter</translation>
+        <translation>Ön Bilgi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="928"/>
@@ -1938,153 +1930,153 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2485"/>
         <source>Format</source>
-        <translation>Định dạng</translation>
+        <translation>Biçim(&amp;O)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1297"/>
         <source>Bold</source>
-        <translation>Đậm</translation>
+        <translation>Kalın</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1309"/>
         <source>Italic</source>
-        <translation>Nghiêng</translation>
+        <translation>İtalik</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1321"/>
         <source>Underline</source>
-        <translation>Gạch chân</translation>
+        <translation>Altı Çizili</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1343"/>
         <source>Inline Code</source>
-        <translation>Mã nội tuyến</translation>
+        <translation>Satır İçi Kod</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1355"/>
         <source>Inline Formula</source>
-        <translation>Công thức nội tuyến</translation>
+        <translation>Satır İçi Formül</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1368"/>
         <source>Strikethrough</source>
-        <translation>Gạch ngang</translation>
+        <translation>Üstü Çizili</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1381"/>
         <source>Comment</source>
-        <translation>Chú thích</translation>
+        <translation>Yorum</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1386"/>
         <source>Hyperlink</source>
-        <translation>Siêu liên kết</translation>
+        <translation>Köprü</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2217"/>
         <source>Export Presets</source>
-        <translation>Cấu hình xuất</translation>
+        <translation>Dışa Aktarma Ön Ayarları</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2435"/>
         <source>Paragraph Alignment</source>
-        <translation>Căn chỉnh đoạn văn</translation>
+        <translation>Paragraf Hizalaması</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2497"/>
         <source>Link Actions</source>
-        <translation>Thao tác liên kết</translation>
+        <translation>Bağlantı Eylemleri</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2504"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="155"/>
         <source>Image</source>
-        <translation>Hình ảnh</translation>
+        <translation>Görüntü</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1533"/>
         <source>Insert Image...</source>
-        <translation>Chèn hình ảnh...</translation>
+        <translation>Resim ekle...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1540"/>
         <source>Insert Local Image...</source>
-        <translation>Chèn hình ảnh cục bộ...</translation>
+        <translation>Yerel resim ekle...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1545"/>
         <source>Open Image Location...</source>
-        <translation>Mở vị trí hình ảnh...</translation>
+        <translation>Resim konumunu aç...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1579"/>
         <source>Delete Image File</source>
-        <translation>Xóa tệp hình ảnh</translation>
+        <translation>Resim dosyasını sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1605"/>
         <source>Copy Image To...</source>
-        <translation>Sao chép hình ảnh đến...</translation>
+        <translation>Resmi şuraya kopyala...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1639"/>
         <source>Rename / Move Image To...</source>
-        <translation>Đổi tên / Di chuyển hình ảnh đến...</translation>
+        <translation>Resmi yeniden adlandır / şuraya taşı...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1713"/>
         <source>Upload All Local Images</source>
-        <translation>Tải lên tất cả hình ảnh cục bộ</translation>
+        <translation>Tüm yerel resimleri yükle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1772"/>
         <source>Reload All Images</source>
-        <translation>Tải lại tất cả hình ảnh</translation>
+        <translation>Tüm resimleri yeniden yükle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2521"/>
         <source>Resize Image</source>
-        <translation>Thay đổi kích thước hình ảnh</translation>
+        <translation>Resmi yeniden boyutlandır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1783"/>
         <source>25%</source>
-        <translation>25%</translation>
+        <translation>%25</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1793"/>
         <source>50%</source>
-        <translation>50%</translation>
+        <translation>%50</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1803"/>
         <source>75%</source>
-        <translation>75%</translation>
+        <translation>%75</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1813"/>
         <source>100%</source>
-        <translation>100%</translation>
+        <translation>%100</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1824"/>
         <source>150%</source>
-        <translation>150%</translation>
+        <translation>%150</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1834"/>
         <source>Custom...</source>
-        <translation>Tùy chỉnh...</translation>
+        <translation>Özel...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2533"/>
         <source>Convert Image Syntax</source>
-        <translation>Chuyển đổi cú pháp hình ảnh</translation>
+        <translation>Resim sözdizimini dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1856"/>
         <source>Standard Markdown ![](url)</source>
-        <translation>Markdown chuẩn ![](url)</translation>
+        <translation>Standart Markdown ![](url)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1863"/>
@@ -2093,201 +2085,201 @@ Make it your default editor now?</source>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="vanished">Khi chèn hình ảnh cục bộ</translation>
+        <translation type="vanished">Yerel resim eklenirken</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="vanished">Chèn đường dẫn tương đối</translation>
+        <translation type="vanished">Göreli yol ekle</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="vanished">Chèn đường dẫn tuyệt đối</translation>
+        <translation type="vanished">Mutlak yol ekle</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="vanished">Sao chép vào thư mục tùy chỉnh</translation>
+        <translation type="vanished">Özel klasöre kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1870"/>
         <source>Copy All Images To...</source>
-        <translation>Sao chép tất cả hình ảnh đến...</translation>
+        <translation>Tüm resimleri şuraya kopyala...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1897"/>
         <source>Move All Images To...</source>
-        <translation>Di chuyển tất cả hình ảnh đến...</translation>
+        <translation>Tüm resimleri şuraya taşı...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1927"/>
         <source>Global Image Settings...</source>
-        <translation>Cài đặt hình ảnh toàn cầu...</translation>
+        <translation>Genel resim ayarları...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1412"/>
         <source>Clear Style</source>
-        <translation>Xóa kiểu</translation>
+        <translation>Stili Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1017"/>
         <location filename="../src/app/MainWindowActions.cpp" line="165"/>
         <source>Insert Table</source>
-        <translation>Chèn bảng</translation>
+        <translation>Tablo Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1024"/>
         <source>Insert Row Above</source>
-        <translation>Chèn hàng phía trên</translation>
+        <translation>Üste Satır Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1030"/>
         <source>Insert Row Below</source>
-        <translation>Chèn hàng phía dưới</translation>
+        <translation>Alta Satır Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1076"/>
         <source>Delete Row</source>
-        <translation>Xóa hàng</translation>
+        <translation>Satırı Sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1050"/>
         <source>Move Row Up</source>
-        <translation>Di chuyển hàng lên</translation>
+        <translation>Satırı Yukarı Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1056"/>
         <source>Move Row Down</source>
-        <translation>Di chuyển hàng xuống</translation>
+        <translation>Satırı Aşağı Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1038"/>
         <source>Insert Column Left</source>
-        <translation>Chèn cột bên trái</translation>
+        <translation>Sola Sütun Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1044"/>
         <source>Insert Column Right</source>
-        <translation>Chèn cột bên phải</translation>
+        <translation>Sağa Sütun Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1084"/>
         <source>Delete Column</source>
-        <translation>Xóa cột</translation>
+        <translation>Sütunu Sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1062"/>
         <source>Move Column Left</source>
-        <translation>Di chuyển cột sang trái</translation>
+        <translation>Sütunu Sola Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1069"/>
         <source>Move Column Right</source>
-        <translation>Di chuyển cột sang phải</translation>
+        <translation>Sütunu Sağa Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1107"/>
         <source>Align Left</source>
-        <translation>Căn trái</translation>
+        <translation>Sola Hizala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1113"/>
         <source>Align Center</source>
-        <translation>Căn giữa</translation>
+        <translation>Ortala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1119"/>
         <source>Align Right</source>
-        <translation>Căn phải</translation>
+        <translation>Sağa Hizala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1125"/>
         <source>Clear Alignment</source>
-        <translation>Xóa căn chỉnh</translation>
+        <translation>Hizalamayı Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1101"/>
         <source>Delete Table</source>
-        <translation>Xóa bảng</translation>
+        <translation>Tabloyu Sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="455"/>
         <source>Select Paragraph or Block</source>
-        <translation>Chọn đoạn hoặc khối</translation>
+        <translation>Paragraf veya blok seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="462"/>
         <source>Select Current Line or Sentence</source>
-        <translation>Chọn dòng hoặc câu hiện tại</translation>
+        <translation>Geçerli satır veya cümleyi seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="476"/>
         <source>Select Current Word</source>
-        <translation>Chọn từ hiện tại</translation>
+        <translation>Geçerli sözcüğü seç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="483"/>
         <source>Jump to Start of Document</source>
-        <translation>Chuyển về đầu tài liệu</translation>
+        <translation>Belge başına atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="490"/>
         <source>Jump to Selection</source>
-        <translation>Chuyển đến vùng chọn</translation>
+        <translation>Seçime atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="496"/>
         <source>Jump to End of Document</source>
-        <translation>Chuyển về cuối tài liệu</translation>
+        <translation>Belge sonuna atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="503"/>
         <source>Jump to Start of Line</source>
-        <translation>Chuyển về đầu dòng</translation>
+        <translation>Satır başına atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="510"/>
         <source>Jump to End of Line</source>
-        <translation>Chuyển về cuối dòng</translation>
+        <translation>Satır sonuna atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1089"/>
         <source>Copy Table</source>
-        <translation>Sao chép bảng</translation>
+        <translation>Tabloyu kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1095"/>
         <source>Format Table Source</source>
-        <translation>Định dạng mã nguồn bảng</translation>
+        <translation>Tablo kaynağını biçimlendir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1679"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1719"/>
         <source>No upload command is configured.
 Set up a custom upload command in Preferences → Images.</source>
-        <translation>Chưa cấu hình lệnh tải lên.
-Hãy thiết lập lệnh tải lên tùy chỉnh trong Tùy chọn → Hình ảnh.</translation>
+        <translation>Hiç yükleme komutu yapılandırılmamış.
+Tercihler → Resimler bölümünden özel bir yükleme komutu ayarlayın.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1695"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1751"/>
         <source>Upload failed:
 %1</source>
-        <translation>Tải lên thất bại:
+        <translation>Yükleme başarısız:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1741"/>
         <source>There are no local images to upload.</source>
-        <translation>Không có hình ảnh cục bộ nào để tải lên.</translation>
+        <translation>Yüklenecek yerel resim yok.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1753"/>
         <source>the uploader did not return one URL per image</source>
-        <translation>trình tải lên không trả về một URL cho mỗi ảnh</translation>
+        <translation>yükleme programı her görsel için bir URL döndürmedi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1767"/>
         <source>Uploaded %1 image(s).</source>
-        <translation>Đã tải lên %1 hình ảnh.</translation>
+        <translation>%1 resim yüklendi.</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2295,214 +2287,214 @@ Hãy thiết lập lệnh tải lên tùy chỉnh trong Tùy chọn → Hình �
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Xem trước trực tiếp và chỉnh sửa mã nguồn; xuất sang PDF, HTML và nhiều định dạng khác thông qua Pandoc; chèn hình ảnh với sao chép vào thư mục và tải lên bằng lệnh tùy chỉnh; kiểm tra chính tả; chủ đề; tìm và thay thế; dàn ý; mở nhanh; và khôi phục bản nháp chống sự cố.</translation>
+        <translation type="vanished">Canlı önizleme ve kaynak düzenleme; Pandoc aracılığıyla PDF, HTML ve çok daha fazla biçime dışa aktarma; klasöre kopyalama ve özel komut yüklemesi ile resim ekleme; yazım denetimi; temalar; bul ve değiştir; ana hat; hızlı aç; ve çökmeye dayanıklı taslak kurtarma.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2458"/>
         <source>Code</source>
-        <translation>Mã</translation>
+        <translation>Kod(&amp;C)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1133"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1223"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1260"/>
         <source>Enter Edit</source>
-        <translation>Vào chỉnh sửa</translation>
+        <translation>Düzenlemeye Gir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1141"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1231"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1268"/>
         <source>Exit Edit</source>
-        <translation>Thoát chỉnh sửa</translation>
+        <translation>Düzenlemeden Çık</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1150"/>
         <source>Set Language...</source>
-        <translation>Đặt ngôn ngữ...</translation>
+        <translation>Dili Ayarla...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2476"/>
         <source>Math</source>
-        <translation>Toán học</translation>
+        <translation>Matematik(&amp;M)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1277"/>
         <source>Set TeX...</source>
-        <translation>Đặt TeX...</translation>
+        <translation>TeX Ayarla...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1240"/>
         <source>Set HTML...</source>
-        <translation>Đặt HTML...</translation>
+        <translation>HTML Ayarla...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2548"/>
         <source>View</source>
-        <translation>Xem</translation>
+        <translation>Görünüm(&amp;V)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1944"/>
         <source>Outline</source>
-        <translation>Dàn ý</translation>
+        <translation>Ana Hat</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1949"/>
         <source>File Tree</source>
-        <translation>Cây tệp</translation>
+        <translation>Dosya Ağacı</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="vanished">Tìm kiếm</translation>
+        <translation type="vanished">Ara</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1954"/>
         <source>Source Code Mode</source>
-        <translation>Chế độ mã nguồn</translation>
+        <translation>Kaynak Kod Modu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1981"/>
         <source>Word Wrap</source>
-        <translation>Tự động xuống dòng</translation>
+        <translation>Sözcük Kaydırma</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1994"/>
         <source>Focus Mode</source>
-        <translation>Chế độ tập trung</translation>
+        <translation>Odak Modu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2005"/>
         <source>Typewriter Mode</source>
-        <translation>Chế độ máy đánh chữ</translation>
+        <translation>Daktilo Modu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2016"/>
         <source>Show Status Bar</source>
-        <translation>Hiện thanh trạng thái</translation>
+        <translation>Durum Çubuğunu Göster</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2027"/>
         <source>Word Count Window</source>
-        <translation>Cửa sổ đếm từ</translation>
+        <translation>Sözcük Sayımı Penceresi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2031"/>
         <source>Toggle Full Screen</source>
-        <translation>Bật/tắt toàn màn hình</translation>
+        <translation>Tam Ekranı Aç/Kapat</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2036"/>
         <source>Always on Top</source>
-        <translation>Luôn ở trên cùng</translation>
+        <translation>Her Zaman Üstte</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2047"/>
         <source>Actual Size</source>
-        <translation>Kích thước thực</translation>
+        <translation>Gerçek Boyut</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2056"/>
         <source>Zoom In</source>
-        <translation>Phóng to</translation>
+        <translation>Yakınlaştır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2065"/>
         <source>Zoom Out</source>
-        <translation>Thu nhỏ</translation>
+        <translation>Uzaklaştır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2074"/>
         <source>Switch Windows</source>
-        <translation>Chuyển cửa sổ</translation>
+        <translation>Pencereler Arasında Geç</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Nền tảng:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Tác giả:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Giấy phép:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Trang web:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Geliştirici:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Lisans:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Web sitesi:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
         <source>Insert</source>
-        <translation>Chèn</translation>
+        <translation>Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2578"/>
         <source>Theme</source>
-        <translation>Chủ đề</translation>
+        <translation>Tema(&amp;T)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2580"/>
         <source>Help</source>
-        <translation>Trợ giúp</translation>
+        <translation>Yardım(&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2086"/>
         <source>Quick Start</source>
-        <translation>Bắt đầu nhanh</translation>
+        <translation>Hızlı Başlangıç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2090"/>
         <source>Markdown Reference</source>
-        <translation>Tham khảo Markdown</translation>
+        <translation>Markdown Başvurusu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2094"/>
         <source>Custom Themes</source>
-        <translation>Chủ đề tùy chỉnh</translation>
+        <translation>Özel Temalar</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2098"/>
         <source>Acknowledgements</source>
-        <translation>Lời cảm ơn</translation>
+        <translation>Teşekkürler</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2102"/>
         <source>Changelog</source>
-        <translation>Nhật ký thay đổi</translation>
+        <translation>Değişiklik Günlüğü</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2110"/>
         <source>Official Website</source>
-        <translation>Trang web chính thức</translation>
+        <translation>Resmî Web Sitesi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2115"/>
         <source>Feedback</source>
-        <translation>Phản hồi</translation>
+        <translation>Geri Bildirim</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2122"/>
         <source>Check for Updates...</source>
-        <translation>Kiểm tra cập nhật...</translation>
+        <translation>Güncellemeleri Denetle...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2130"/>
         <source>About</source>
-        <translation>Giới thiệu</translation>
+        <translation>Hakkında</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1589"/>
         <source>Delete Image</source>
-        <translation>Xóa hình ảnh</translation>
+        <translation>Resmi sil</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="155"/>
         <source>Reopen Closed File</source>
-        <translation>Mở lại tệp vừa đóng</translation>
+        <translation>Kapatılan Dosyayı Yeniden Aç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="171"/>
         <source>Document is still loading…</source>
-        <translation>Tài liệu vẫn đang được tải…</translation>
+        <translation>Belge hâlâ yükleniyor…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="234"/>
         <source>Export with Previous Settings...</source>
-        <translation>Xuất với cài đặt trước đó...</translation>
+        <translation>Önceki Ayarlarla Dışa Aktar...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="240"/>
         <source>Export and Overwrite Previous</source>
-        <translation>Xuất và ghi đè tệp trước đó</translation>
+        <translation>Dışa Aktar ve Önceki Dosyanın Üzerine Yaz</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="246"/>
@@ -2518,12 +2510,12 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="258"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (không có kiểu dáng)</translation>
+        <translation>HTML (Biçemler olmadan)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="264"/>
         <source>Image (PNG)</source>
-        <translation>Hình ảnh (PNG)</translation>
+        <translation>Görüntü (PNG)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="270"/>
@@ -2576,98 +2568,98 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="554"/>
         <source>Close Tab</source>
-        <translation>Đóng thẻ</translation>
+        <translation>Sekmeyi kapat</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="334"/>
         <source>Quit</source>
-        <translation>Thoát</translation>
+        <translation>Çıkış</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="341"/>
         <source>Next Tab</source>
-        <translation>Thẻ tiếp theo</translation>
+        <translation>Sonraki sekme</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="346"/>
         <source>Previous Tab</source>
-        <translation>Thẻ trước</translation>
+        <translation>Önceki sekme</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="353"/>
         <source>Back</source>
-        <translation>Quay lại</translation>
+        <translation>Geri</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="359"/>
         <source>Forward</source>
-        <translation>Tiến tới</translation>
+        <translation>İleri</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="388"/>
         <source>Open Link</source>
-        <translation>Mở liên kết</translation>
+        <translation>Bağlantıyı aç</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="404"/>
         <source>Copy Link Address</source>
-        <translation>Sao chép địa chỉ liên kết</translation>
+        <translation>Bağlantı adresini kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="534"/>
         <source>Skip Closing Symbol</source>
-        <translation>Bỏ qua ký hiệu đóng</translation>
+        <translation>Kapanış Simgesini Atla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="580"/>
         <source>Spell Check</source>
-        <translation>Kiểm tra chính tả</translation>
+        <translation>Yazım Denetimi</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="634"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="357"/>
         <source>Find in Folder…</source>
-        <translation>Tìm trong thư mục…</translation>
+        <translation>Klasörde Bul…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="639"/>
         <source>Replace in Folder…</source>
-        <translation>Thay thế trong thư mục…</translation>
+        <translation>Klasörde Değiştir…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="685"/>
         <source>Heading 1</source>
-        <translation>Tiêu đề 1</translation>
+        <translation>Başlık 1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="694"/>
         <source>Heading 2</source>
-        <translation>Tiêu đề 2</translation>
+        <translation>Başlık 2</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="703"/>
         <source>Heading 3</source>
-        <translation>Tiêu đề 3</translation>
+        <translation>Başlık 3</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="712"/>
         <source>Heading 4</source>
-        <translation>Tiêu đề 4</translation>
+        <translation>Başlık 4</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="721"/>
         <source>Heading 5</source>
-        <translation>Tiêu đề 5</translation>
+        <translation>Başlık 5</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="730"/>
         <source>Heading 6</source>
-        <translation>Tiêu đề 6</translation>
+        <translation>Başlık 6</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="829"/>
         <source>Align Paragraph Left</source>
-        <translation>Căn trái đoạn văn</translation>
+        <translation>Paragrafı Sola Hizala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="835"/>
@@ -2675,179 +2667,179 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/CommandDeclarations.cpp" line="859"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="871"/>
         <source>Place the caret in a top-level paragraph or heading in live editing mode.</source>
-        <translation>Đặt con trỏ trong một đoạn văn hoặc tiêu đề cấp cao nhất ở chế độ chỉnh sửa trực tiếp.</translation>
+        <translation>Canlı düzenleme modunda imleci en üst düzeydeki bir paragrafın veya başlığın içine yerleştirin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="841"/>
         <source>Center Paragraph</source>
-        <translation>Căn giữa đoạn văn</translation>
+        <translation>Paragrafı Ortala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="853"/>
         <source>Align Paragraph Right</source>
-        <translation>Căn phải đoạn văn</translation>
+        <translation>Paragrafı Sağa Hizala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="865"/>
         <source>Justify Paragraph</source>
-        <translation>Căn đều đoạn văn</translation>
+        <translation>Paragrafı İki Yana Yasla</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="945"/>
         <source>Note</source>
-        <translation>Ghi chú</translation>
+        <translation>Not</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="952"/>
         <source>Tip</source>
-        <translation>Mẹo</translation>
+        <translation>İpucu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="959"/>
         <source>Important</source>
-        <translation>Quan trọng</translation>
+        <translation>Önemli</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="966"/>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="973"/>
         <source>Caution</source>
-        <translation>Chú ý</translation>
+        <translation>Dikkat</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="983"/>
         <source>Toggle Task Status</source>
-        <translation>Chuyển đổi trạng thái tác vụ</translation>
+        <translation>Görev Durumunu Değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="995"/>
         <source>Indent</source>
-        <translation>Tăng thụt lề</translation>
+        <translation>Girintiyi Artır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1005"/>
         <source>Outdent</source>
-        <translation>Giảm thụt lề</translation>
+        <translation>Girintiyi Azalt</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1168"/>
         <source>Copy Code Block Content</source>
-        <translation>Sao chép nội dung khối mã</translation>
+        <translation>Kod bloğu içeriğini kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1183"/>
         <source>Indent Selection</source>
-        <translation>Tăng thụt lề vùng chọn</translation>
+        <translation>Seçim girintisini artır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1193"/>
         <source>Dedent Selection</source>
-        <translation>Giảm thụt lề vùng chọn</translation>
+        <translation>Seçim girintisini azalt</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1203"/>
         <source>Indent Whole Block</source>
-        <translation>Tăng thụt lề toàn khối</translation>
+        <translation>Tüm bloğun girintisini artır</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1212"/>
         <source>Dedent Whole Block</source>
-        <translation>Giảm thụt lề toàn khối</translation>
+        <translation>Tüm bloğun girintisini azalt</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1336"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1425"/>
         <source>Switch to live editing to use this formatting command.</source>
-        <translation>Chuyển sang chỉnh sửa trực tiếp để sử dụng lệnh định dạng này.</translation>
+        <translation>Bu biçimlendirme komutunu kullanmak için canlı düzenlemeye geçin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1337"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1406"/>
         <source>Select text within a single paragraph or table cell, or place the caret in editable text.</source>
-        <translation>Chọn văn bản trong cùng một đoạn hoặc ô bảng, hoặc đặt con trỏ trong văn bản có thể chỉnh sửa.</translation>
+        <translation>Tek bir paragraf veya tablo hücresi içinde metin seçin ya da imleci düzenlenebilir metne yerleştirin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1402"/>
         <source>Wait for the document to finish loading.</source>
-        <translation>Đợi tài liệu tải xong.</translation>
+        <translation>Belgenin yüklenmesinin tamamlanmasını bekleyin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1404"/>
         <source>Select text within one line, or place the caret where you want to insert the link.</source>
-        <translation>Chọn văn bản trong cùng một dòng, hoặc đặt con trỏ tại vị trí muốn chèn liên kết.</translation>
+        <translation>Tek bir satır içinde metin seçin ya da imleci bağlantıyı eklemek istediğiniz yere yerleştirin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1426"/>
         <source>Place the caret in the paragraph or table cell whose formatting you want to clear.</source>
-        <translation>Đặt con trỏ trong đoạn hoặc ô bảng mà bạn muốn xóa định dạng.</translation>
+        <translation>İmleci biçimlendirmesini temizlemek istediğiniz paragrafa veya tablo hücresine yerleştirin.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1433"/>
         <source>Refresh All Math</source>
-        <translation>Làm mới tất cả công thức</translation>
+        <translation>Tüm formülleri yenile</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1442"/>
         <source>Convert on Input</source>
-        <translation>Chuyển đổi khi nhập</translation>
+        <translation>Girdide Dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1463"/>
         <source>Convert on Rendering</source>
-        <translation>Chuyển đổi khi kết xuất</translation>
+        <translation>Görüntülerken dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1484"/>
         <source>Smart Quotes</source>
-        <translation>Dấu trích dẫn thông minh</translation>
+        <translation>Akıllı Tırnak İşaretleri</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1498"/>
         <source>Smart Dashes</source>
-        <translation>Dấu gạch ngang thông minh</translation>
+        <translation>Akıllı Tireler</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1512"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Ánh xạ lại dấu câu Unicode khi phân tích</translation>
+        <translation>Ayrıştırırken Unicode noktalamayı yeniden eşle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1526"/>
         <source>More Options...</source>
-        <translation>Tùy chọn khác...</translation>
+        <translation>Diğer seçenekler...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1590"/>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation>Xóa tệp hình ảnh &quot;%1&quot;?
-Hành động này không thể hoàn tác.</translation>
+        <translation>&quot;%1&quot; resim dosyası silinsin mi?
+Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1616"/>
         <source>Copy Image To</source>
-        <translation>Sao chép hình ảnh đến</translation>
+        <translation>Resmi şuraya kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1650"/>
         <source>Move Image To</source>
-        <translation>Di chuyển hình ảnh đến</translation>
+        <translation>Resmi şuraya taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1672"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1678"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1694"/>
         <source>Upload Image</source>
-        <translation>Tải lên hình ảnh</translation>
+        <translation>Resmi yükle</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="vanished">Tải lên hình ảnh chưa được cấu hình.
-Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
+        <translation type="vanished">Resim yükleme henüz yapılandırılmamış.
+Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1718"/>
@@ -2856,64 +2848,64 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
         <location filename="../src/app/CommandDeclarations.cpp" line="1765"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1766"/>
         <source>Upload All Images</source>
-        <translation>Tải lên tất cả hình ảnh</translation>
+        <translation>Tüm resimleri yükle</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Image Size</source>
-        <translation>Kích thước hình ảnh</translation>
+        <translation>Görüntü Boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Zoom percent:</source>
-        <translation>Tỷ lệ phóng to:</translation>
+        <translation>Yakınlaştırma yüzdesi:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1878"/>
         <source>Copy All Images To</source>
-        <translation>Sao chép tất cả hình ảnh đến</translation>
+        <translation>Tüm resimleri şuraya kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1890"/>
         <source>Copy All Images</source>
-        <translation>Sao chép tất cả hình ảnh</translation>
+        <translation>Tüm resimleri kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1891"/>
         <source>Copied %1 of %2 image(s).</source>
-        <translation>Đã sao chép %1/%2 hình ảnh.</translation>
+        <translation>%2 resmin %1&apos;i kopyalandı.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1905"/>
         <source>Move All Images To</source>
-        <translation>Di chuyển tất cả hình ảnh đến</translation>
+        <translation>Tüm resimleri şuraya taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1913"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1919"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1921"/>
         <source>Move All Images</source>
-        <translation>Di chuyển tất cả hình ảnh</translation>
+        <translation>Tüm resimleri taşı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1922"/>
         <source>Moved %1 image(s).</source>
-        <translation>Đã di chuyển %1 hình ảnh.</translation>
+        <translation>%1 resim taşındı.</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1155"/>
         <source>Code Language</source>
-        <translation>Ngôn ngữ mã</translation>
+        <translation>Kod Dili</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1156"/>
         <source>Language:</source>
-        <translation>Ngôn ngữ:</translation>
+        <translation>Dil:</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1244"/>
         <source>HTML Source</source>
-        <translation>Nguồn HTML</translation>
+        <translation>HTML Kaynağı</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1245"/>
@@ -2923,7 +2915,7 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1281"/>
         <source>Math TeX</source>
-        <translation>TeX toán học</translation>
+        <translation>Matematik TeX</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1282"/>
@@ -2933,7 +2925,7 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
         <source>About Mufpen</source>
-        <translation>Giới thiệu Mufpen</translation>
+        <translation>Mufpen Hakkında</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2941,43 +2933,43 @@ Thiết lập trình tải lên trong Tùy chọn → Hình ảnh.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="vanished">Mufpen %1
 
-Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằng C++ và Qt 6 Widgets.</translation>
+C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyici.</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="vanished">bảng %1:%2 vị trí %3</translation>
+        <translation type="vanished">tablo %1:%2 ofset %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="vanished">%1 từ</translation>
+        <translation type="vanished">%1 sözcük</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="181"/>
         <source>Rows:</source>
-        <translation>Số hàng:</translation>
+        <translation>Satırlar:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="182"/>
         <source>Columns:</source>
-        <translation>Số cột:</translation>
+        <translation>Sütunlar:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="185"/>
         <location filename="../src/app/MainWindowActions.cpp" line="227"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Tamam</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="186"/>
         <location filename="../src/app/MainWindowActions.cpp" line="228"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>Hủy</translation>
+        <translation>İptal</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="207"/>
         <source>Insert Image</source>
-        <translation>Chèn hình ảnh</translation>
+        <translation>Resim ekle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="214"/>
@@ -2987,12 +2979,12 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="217"/>
         <source>Alternative text</source>
-        <translation>Văn bản thay thế</translation>
+        <translation>Alternatif metin</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="220"/>
         <source>Title (optional)</source>
-        <translation>Tiêu đề (tùy chọn)</translation>
+        <translation>Başlık (isteğe bağlı)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="222"/>
@@ -3002,37 +2994,37 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="223"/>
         <source>Alt Text:</source>
-        <translation>Văn bản thay thế:</translation>
+        <translation>Alternatif metin:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="224"/>
         <source>Title:</source>
-        <translation>Tiêu đề:</translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="258"/>
         <source>Images (%1)</source>
-        <translation>Hình ảnh (%1)</translation>
+        <translation>Resimler (%1)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="259"/>
         <source>Select Image</source>
-        <translation>Chọn hình ảnh</translation>
+        <translation>Resim seç</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="89"/>
         <source>Clear Recent Files</source>
-        <translation>Xóa tệp gần đây</translation>
+        <translation>Son Kullanılan Dosyaları Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="145"/>
         <source>Import Theme...</source>
-        <translation>Nhập chủ đề...</translation>
+        <translation>Tema içe aktar…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="147"/>
         <source>Open Themes Folder</source>
-        <translation>Mở thư mục chủ đề</translation>
+        <translation>Tema klasörünü aç</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
@@ -3043,43 +3035,43 @@ Một trình soạn thảo Markdown gốc nhanh, nhẹ được xây dựng bằ
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Import Theme</source>
-        <translation>Nhập chủ đề</translation>
+        <translation>Tema içe aktar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
         <source>Theme Files (*.css *.json)</source>
-        <translation>Tệp chủ đề (*.css *.json)</translation>
+        <translation>Tema dosyaları (*.css *.json)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="196"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <source>Could not read the selected file.</source>
-        <translation>Không thể đọc tệp đã chọn.</translation>
+        <translation>Seçilen dosya okunamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="202"/>
         <source>The selected file is not a valid theme.</source>
-        <translation>Tệp đã chọn không phải là chủ đề hợp lệ.</translation>
+        <translation>Seçilen dosya geçerli bir tema değil.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="184"/>
         <source>A built-in theme named &quot;%1&quot; already exists; choose a different file name.</source>
-        <translation>Đã có chủ đề tích hợp sẵn tên &quot;%1&quot;; hãy chọn tên tệp khác.</translation>
+        <translation>&quot;%1&quot; adında yerleşik bir tema zaten var; başka bir dosya adı seçin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="119"/>
         <source>Clear Recent Folders</source>
-        <translation>Xóa danh sách thư mục gần đây</translation>
+        <translation>Son Klasörleri Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="209"/>
         <source>The theme file is missing required colours (background and text).</source>
-        <translation>Tệp chủ đề thiếu các màu bắt buộc (nền và chữ).</translation>
+        <translation>Tema dosyasında gerekli renkler (arka plan ve metin) eksik.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Could not copy the theme into the themes folder.</source>
-        <translation>Không thể sao chép chủ đề vào thư mục chủ đề.</translation>
+        <translation>Tema, tema klasörüne kopyalanamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="392"/>
@@ -3089,121 +3081,121 @@ Size: %3 bytes
 Modified: %4
 Words: %5
 Parse time: %6 ms</source>
-        <translation>Tên: %1
-Vị trí: %2
-Kích thước: %3 byte
-Sửa đổi: %4
-Từ: %5
-Thời gian phân tích: %6 ms</translation>
+        <translation>Ad: %1
+Konum: %2
+Boyut: %3 bayt
+Değiştirilme: %4
+Kelime: %5
+Ayrıştırma süresi: %6 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="580"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="591"/>
         <source>Unsaved Drafts Found</source>
-        <translation>Tìm thấy bản nháp chưa lưu</translation>
+        <translation>Kaydedilmemiş Taslak Bulundu</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
         <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Mufpen tìm thấy %n bản nháp chưa lưu từ phiên trước. Khôi phục một bản vào cửa sổ này, hủy tất cả, hoặc giữ lại để dùng sau.</numerusform>
+            <numerusform>Mufpen, önceki oturumdan %n kaydedilmemiş taslak buldu. Birini bu pencereye geri yükleyin, tamamını atın veya daha sonra için saklayın.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="597"/>
         <location filename="../src/app/MainWindowExport.cpp" line="94"/>
         <source>Untitled</source>
-        <translation>Chưa đặt tên</translation>
+        <translation>Adsız</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="598"/>
         <source>%1  —  %2  (%n char(s))</source>
         <translation>
-            <numerusform>%1  —  %2  (%n ký tự)</numerusform>
+            <numerusform>%1  —  %2  (%n karakter)</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="606"/>
         <source>Restore</source>
-        <translation>Khôi phục</translation>
+        <translation>Geri Yükle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="607"/>
         <source>Discard All</source>
-        <translation>Hủy tất cả</translation>
+        <translation>Tümünü At</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="608"/>
         <source>Later</source>
-        <translation>Để sau</translation>
+        <translation>Daha sonra</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="689"/>
         <source>No files to open</source>
-        <translation>Không có tệp nào để mở</translation>
+        <translation>Açılacak dosya yok</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="711"/>
         <source>Import</source>
-        <translation>Nhập</translation>
+        <translation>İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="712"/>
         <source>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;All files (*)</source>
-        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Tất cả tệp (*)</translation>
+        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Tüm dosyalar (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="729"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="746"/>
         <source>Import Failed</source>
-        <translation>Nhập thất bại</translation>
+        <translation>İçe Aktarma Başarısız</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="730"/>
         <location filename="../src/app/MainWindowExport.cpp" line="184"/>
         <source>Pandoc was not found. Install Pandoc or set its path in Preferences → Export.</source>
-        <translation>Không tìm thấy Pandoc. Hãy cài đặt Pandoc hoặc đặt đường dẫn trong Tùy chọn → Xuất.</translation>
+        <translation>Pandoc bulunamadı. Pandoc&apos;u yükleyin veya Tercihler → Dışa Aktar bölümünde yolunu ayarlayın.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="734"/>
         <source>Importing %1…</source>
-        <translation>Đang nhập %1…</translation>
+        <translation>%1 içe aktarılıyor…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="747"/>
         <source>Pandoc could not convert the file.</source>
-        <translation>Pandoc không thể chuyển đổi tệp.</translation>
+        <translation>Pandoc dosyayı dönüştüremedi.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="756"/>
         <source>Imported %1</source>
-        <translation>Đã nhập %1</translation>
+        <translation>%1 içe aktarıldı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="119"/>
         <source>Nothing to export</source>
-        <translation>Không có gì để xuất</translation>
+        <translation>Dışa aktarılacak bir şey yok</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="264"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="299"/>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>Export As</source>
-        <translation>Xuất thành</translation>
+        <translation>Farklı Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>%1 files (*%2)</source>
-        <translation>Tệp %1 (*%2)</translation>
+        <translation>%1 dosyaları (*%2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="164"/>
         <source>Exporting %1…</source>
-        <translation>Đang xuất %1…</translation>
+        <translation>%1 dışa aktarılıyor…</translation>
     </message>
     <message>
         <source>Pandoc failed:</source>
-        <translation type="vanished">Pandoc thất bại:</translation>
+        <translation type="vanished">Pandoc başarısız oldu:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="280"/>
@@ -3214,31 +3206,31 @@ Thời gian phân tích: %6 ms</translation>
         <location filename="../src/app/MainWindowExport.cpp" line="168"/>
         <location filename="../src/app/MainWindowExport.cpp" line="236"/>
         <source>Export Failed</source>
-        <translation>Xuất thất bại</translation>
+        <translation>Dışa Aktarma Başarısız</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="283"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="321"/>
         <location filename="../src/app/MainWindowExport.cpp" line="243"/>
         <source>Exported to %1</source>
-        <translation>Đã xuất ra %1</translation>
+        <translation>%1 konumuna dışa aktarıldı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="895"/>
         <source>Save All</source>
-        <translation>Lưu tất cả</translation>
+        <translation>Tümünü kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="896"/>
         <source>Saved %1 file(s). %2 file(s) could not be saved.</source>
-        <translation>Đã lưu %1 tệp. %2 tệp không thể lưu.</translation>
+        <translation>%1 dosya kaydedildi. %2 dosya kaydedilemedi.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="926"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="952"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete File</source>
-        <translation>Xóa tệp</translation>
+        <translation>Dosyayı sil</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="927"/>
@@ -3246,9 +3238,9 @@ Thời gian phân tích: %6 ms</translation>
         <source>Are you sure you want to move &quot;%1&quot; to the trash?
 
 This action cannot be undone.</source>
-        <translation>Bạn có chắc muốn chuyển &quot;%1&quot; vào thùng rác không?
+        <translation>&quot;%1&quot; dosyasını çöpe taşımak istediğinizden emin misiniz?
 
-Hành động này không thể hoàn tác.</translation>
+Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="953"/>
@@ -3256,37 +3248,37 @@ Hành động này không thể hoàn tác.</translation>
         <source>Could not move to trash. Permanently delete &quot;%1&quot;?
 
 This action cannot be undone.</source>
-        <translation>Không thể chuyển vào thùng rác. Xóa vĩnh viễn &quot;%1&quot;?
+        <translation>Çöpe taşınamadı. &quot;%1&quot; kalıcı olarak silinsin mi?
 
-Hành động này không thể hoàn tác.</translation>
+Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Delete Failed</source>
-        <translation>Xóa thất bại</translation>
+        <translation>Silme başarısız</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <source>Could not delete file:
 %1</source>
-        <translation>Không thể xóa tệp:
+        <translation>Dosya silinemedi:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1073"/>
         <source>Name cannot be empty.</source>
-        <translation>Tên không được để trống.</translation>
+        <translation>Ad boş olamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1087"/>
         <source>An item named &quot;%1&quot; already exists.</source>
-        <translation>Một mục có tên &quot;%1&quot; đã tồn tại.</translation>
+        <translation>&quot;%1&quot; adlı bir öğe zaten var.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1109"/>
         <source>Could not rename: %1</source>
-        <translation>Không thể đổi tên: %1</translation>
+        <translation>Yeniden adlandırılamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1026"/>
@@ -3294,7 +3286,7 @@ Hành động này không thể hoàn tác.</translation>
 %1
 
 %2</source>
-        <translation>Không thể tạo tệp:
+        <translation>Dosya oluşturulamadı:
 %1
 
 %2</translation>
@@ -3302,53 +3294,53 @@ Hành động này không thể hoàn tác.</translation>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="53"/>
         <source>Manage Export Presets...</source>
-        <translation>Quản lý cấu hình xuất...</translation>
+        <translation>Dışa Aktarma Ön Ayarlarını Yönet...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="90"/>
         <source>Enter a valid output extension in the export preset.</source>
-        <translation>Nhập phần mở rộng đầu ra hợp lệ trong cấu hình xuất.</translation>
+        <translation>Dışa aktarma ön ayarına geçerli bir çıktı uzantısı girin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="114"/>
         <location filename="../src/app/MainWindowExport.cpp" line="211"/>
         <source>The export destination is an open document. Choose another file.</source>
-        <translation>Tệp đích xuất là một tài liệu đang mở. Hãy chọn tệp khác.</translation>
+        <translation>Dışa aktarma hedefi açık bir belgedir. Başka bir dosya seçin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="136"/>
         <source>Could not create a temporary export file.</source>
-        <translation>Không thể tạo tệp xuất tạm thời.</translation>
+        <translation>Geçici dışa aktarma dosyası oluşturulamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="147"/>
         <source>PDF export failed: the printer device could not be opened.</source>
-        <translation>Xuất PDF thất bại: không thể mở thiết bị máy in.</translation>
+        <translation>PDF dışa aktarımı başarısız oldu: yazıcı aygıtı açılamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="152"/>
         <source>Image export failed. The image must fit within 64 million pixels and 32,767 pixels in height. Try a smaller width or scale, or export as PDF.</source>
-        <translation>Xuất hình ảnh thất bại. Hình ảnh không được vượt quá 64 triệu điểm ảnh và chiều cao 32,767 điểm ảnh. Hãy thử giảm chiều rộng hoặc tỷ lệ, hoặc xuất thành PDF.</translation>
+        <translation>Görüntü dışa aktarılamadı. Görüntü 64 milyon pikseli ve 32,767 piksel yüksekliği aşmamalıdır. Daha küçük bir genişlik veya ölçek deneyin ya da PDF olarak dışa aktarın.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="179"/>
         <source>Configure an executable and arguments containing ${outputPath}. Supported variables: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Thiết lập tệp thực thi và các đối số có chứa ${outputPath}. Các biến được hỗ trợ: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Bir yürütülebilir dosya ve ${outputPath} içeren bağımsız değişkenler yapılandırın. Desteklenen değişkenler: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="188"/>
         <source>Export resource was not found: %1</source>
-        <translation>Không tìm thấy tài nguyên xuất: %1</translation>
+        <translation>Dışa aktarma kaynağı bulunamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="192"/>
         <source>Additional arguments cannot override the input format, output format, output path, or defaults file.</source>
-        <translation>Các tham số bổ sung không được ghi đè định dạng đầu vào, định dạng đầu ra, đường dẫn đầu ra hoặc tệp tùy chọn mặc định.</translation>
+        <translation>Ek bağımsız değişkenler girdi biçimini, çıktı biçimini, çıktı yolunu veya varsayılan ayarlar dosyasını geçersiz kılamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="205"/>
         <source>Export command failed:</source>
-        <translation>Lệnh xuất thất bại:</translation>
+        <translation>Dışa aktarma komutu başarısız oldu:</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="778"/>
@@ -3373,157 +3365,157 @@ Hành động này không thể hoàn tác.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="784"/>
         <source>Western</source>
-        <translation>Tây Âu</translation>
+        <translation>Batı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="786"/>
         <source>Western (Windows-1252)</source>
-        <translation>Tây Âu (Windows-1252)</translation>
+        <translation>Batı (Windows-1252)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="788"/>
         <source>Cyrillic</source>
-        <translation>Kirin</translation>
+        <translation>Kiril</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="790"/>
         <source>Cyrillic (Windows-1251)</source>
-        <translation>Kirin (Windows-1251)</translation>
+        <translation>Kiril (Windows-1251)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="791"/>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation>Kirin (ISO-8859-5)</translation>
+        <translation>Kiril (ISO-8859-5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="792"/>
         <source>Cyrillic (IBM866)</source>
-        <translation>Kirin (IBM866)</translation>
+        <translation>Kiril (IBM866)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="793"/>
         <source>Cyrillic (IBM855)</source>
-        <translation>Kirin (IBM855)</translation>
+        <translation>Kiril (IBM855)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="794"/>
         <source>Cyrillic (KOI8-R)</source>
-        <translation>Kirin (KOI8-R)</translation>
+        <translation>Kiril (KOI8-R)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="795"/>
         <source>Cyrillic (Mac)</source>
-        <translation>Kirin (Mac)</translation>
+        <translation>Kiril (Mac)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="797"/>
         <source>Central European</source>
-        <translation>Trung Âu</translation>
+        <translation>Orta Avrupa</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="799"/>
         <source>Central European (Windows-1250)</source>
-        <translation>Trung Âu (Windows-1250)</translation>
+        <translation>Orta Avrupa (Windows-1250)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="800"/>
         <source>Central European (ISO-8859-2)</source>
-        <translation>Trung Âu (ISO-8859-2)</translation>
+        <translation>Orta Avrupa (ISO-8859-2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="802"/>
         <source>Greek</source>
-        <translation>Hy Lạp</translation>
+        <translation>Yunanca</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="804"/>
         <source>Greek (Windows-1253)</source>
-        <translation>Hy Lạp (Windows-1253)</translation>
+        <translation>Yunanca (Windows-1253)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="805"/>
         <source>Greek (ISO-8859-7)</source>
-        <translation>Hy Lạp (ISO-8859-7)</translation>
+        <translation>Yunanca (ISO-8859-7)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="807"/>
         <source>Hebrew</source>
-        <translation>Do Thái</translation>
+        <translation>İbranice</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="809"/>
         <source>Hebrew (Windows-1255)</source>
-        <translation>Do Thái (Windows-1255)</translation>
+        <translation>İbranice (Windows-1255)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="810"/>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation>Do Thái (ISO-8859-8)</translation>
+        <translation>İbranice (ISO-8859-8)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="812"/>
         <source>Chinese Simplified</source>
-        <translation>Tiếng Trung giản thể</translation>
+        <translation>Basitleştirilmiş Çince</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="814"/>
         <source>Chinese Simplified (GB2312)</source>
-        <translation>Tiếng Trung giản thể (GB2312)</translation>
+        <translation>Basitleştirilmiş Çince (GB2312)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="815"/>
         <source>Chinese Simplified (GB18030)</source>
-        <translation>Tiếng Trung giản thể (GB18030)</translation>
+        <translation>Basitleştirilmiş Çince (GB18030)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="817"/>
         <source>Chinese Traditional</source>
-        <translation>Tiếng Trung phồn thể</translation>
+        <translation>Geleneksel Çince</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="819"/>
         <source>Chinese Traditional (Big5)</source>
-        <translation>Tiếng Trung phồn thể (Big5)</translation>
+        <translation>Geleneksel Çince (Big5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="821"/>
         <source>Japanese</source>
-        <translation>Tiếng Nhật</translation>
+        <translation>Japonca</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="823"/>
         <source>Japanese (Shift_JIS)</source>
-        <translation>Tiếng Nhật (Shift_JIS)</translation>
+        <translation>Japonca (Shift_JIS)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="824"/>
         <source>Japanese (EUC-JP)</source>
-        <translation>Tiếng Nhật (EUC-JP)</translation>
+        <translation>Japonca (EUC-JP)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="826"/>
         <source>Korean</source>
-        <translation>Tiếng Hàn</translation>
+        <translation>Korece</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="828"/>
         <source>Korean (EUC-KR)</source>
-        <translation>Tiếng Hàn (EUC-KR)</translation>
+        <translation>Korece (EUC-KR)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="830"/>
         <source>Thai</source>
-        <translation>Tiếng Thái</translation>
+        <translation>Tayca</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="832"/>
         <source>Thai (TIS-620)</source>
-        <translation>Tiếng Thái (TIS-620)</translation>
+        <translation>Tayca (TIS-620)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <source>Markdown Files (*.md *.markdown);;All Files (*)</source>
-        <translation>Tệp Markdown (*.md *.markdown);;Tất cả tệp (*)</translation>
+        <translation>Markdown Dosyaları (*.md *.markdown);;Tüm Dosyalar (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1045"/>
@@ -3531,7 +3523,7 @@ Hành động này không thể hoàn tác.</translation>
 %1
 
 %2</source>
-        <translation>Không thể tạo thư mục:
+        <translation>Klasör oluşturulamadı:
 %1
 
 %2</translation>
@@ -3542,7 +3534,7 @@ Hành động này không thể hoàn tác.</translation>
 %1
 
 %2</source>
-        <translation>Không thể tạo bản sao:
+        <translation>Kopya oluşturulamadı:
 %1
 
 %2</translation>
@@ -3550,40 +3542,40 @@ Hành động này không thể hoàn tác.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete Folder</source>
-        <translation>Xóa thư mục</translation>
+        <translation>Klasörü Sil</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1157"/>
         <source>Are you sure you want to move &quot;%1&quot; and all its contents to the trash?
 
 This action cannot be undone.</source>
-        <translation>Bạn có chắc muốn chuyển &quot;%1&quot; và toàn bộ nội dung của nó vào thùng rác không?
+        <translation>&quot;%1&quot; ve tüm içeriğini çöp kutusuna taşımak istediğinizden emin misiniz?
 
-Không thể hoàn tác thao tác này.</translation>
+Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Could not delete:
 %1</source>
-        <translation>Không thể xóa:
+        <translation>Silinemedi:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>Folder</source>
-        <translation>Thư mục</translation>
+        <translation>Klasör</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>File</source>
         <comment>properties: entry type</comment>
-        <translation>Tệp</translation>
+        <translation>Dosya</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1219"/>
         <source>Size: %1 bytes
 </source>
-        <translation>Kích thước: %1 byte
+        <translation>Boyut: %1 bayt
 </translation>
     </message>
     <message>
@@ -3592,16 +3584,16 @@ Không thể hoàn tác thao tác này.</translation>
 Type: %2
 Location: %3
 %4Modified: %5</source>
-        <translation>Tên: %1
-Loại: %2
-Vị trí: %3
-%4Sửa đổi: %5</translation>
+        <translation>Ad: %1
+Tür: %2
+Konum: %3
+%4Değiştirilme: %5</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1240"/>
         <source>Could not reveal:
 %1</source>
-        <translation>Không thể hiển thị vị trí tệp:
+        <translation>Dosya yöneticisinde gösterilemedi:
 %1</translation>
     </message>
     <message>
@@ -3614,225 +3606,225 @@ Vị trí: %3
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Tài liệu hiện tại có thay đổi chưa lưu.</translation>
+        <translation>Geçerli belgede kaydedilmemiş değişiklikler var.</translation>
     </message>
     <message>
         <source>Open Failed</source>
-        <translation type="vanished">Mở thất bại</translation>
+        <translation type="vanished">Açma Başarısız</translation>
     </message>
     <message>
         <source>Render Diagnostics</source>
-        <translation type="vanished">Chẩn đoán kết xuất</translation>
+        <translation type="vanished">İşleme Tanıları</translation>
     </message>
     <message>
         <source>Developer Tools</source>
-        <translation type="vanished">Công cụ nhà phát triển</translation>
+        <translation type="vanished">Geliştirici Araçları</translation>
     </message>
     <message>
         <source>What&apos;s New...</source>
-        <translation type="vanished">Có gì mới...</translation>
+        <translation type="vanished">Yenilikler...</translation>
     </message>
     <message>
         <source>Install and Use Pandoc</source>
-        <translation type="vanished">Cài đặt và sử dụng Pandoc</translation>
+        <translation type="vanished">Pandoc Kur ve Kullan</translation>
     </message>
     <message>
         <source>Use Images in Mufpen</source>
-        <translation type="vanished">Sử dụng hình ảnh trong Mufpen</translation>
+        <translation type="vanished">Mufpen&apos;de Görüntü Kullan</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
-        <translation type="vanished">Khôi phục dữ liệu và quản lý phiên bản</translation>
+        <translation type="vanished">Veri Kurtarma ve Sürüm Kontrolü</translation>
     </message>
     <message>
         <source>More Themes...</source>
-        <translation type="vanished">Thêm chủ đề...</translation>
+        <translation type="vanished">Daha Fazla Tema...</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="vanished">Chính sách quyền riêng tư</translation>
+        <translation type="vanished">Gizlilik Politikası</translation>
     </message>
     <message>
         <source>My License...</source>
-        <translation type="vanished">Giấy phép của tôi...</translation>
+        <translation type="vanished">Lisansım...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="624"/>
         <source>Find...</source>
-        <translation>Tìm kiếm...</translation>
+        <translation>Bul...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="629"/>
         <source>Replace...</source>
-        <translation>Thay thế...</translation>
+        <translation>Değiştir...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="660"/>
         <source>Find Next</source>
-        <translation>Tìm tiếp</translation>
+        <translation>Sonrakini bul</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="671"/>
         <source>Find Previous</source>
-        <translation>Tìm trước</translation>
+        <translation>Öncekini bul</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="254"/>
         <source>File Already Open</source>
-        <translation>Tệp đã được mở</translation>
+        <translation>Dosya zaten açık</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="255"/>
         <source>This file is already open in another tab. Switch to that tab to edit or save it.</source>
-        <translation>Tệp này đã được mở trong một thẻ khác. Hãy chuyển sang thẻ đó để chỉnh sửa hoặc lưu tệp.</translation>
+        <translation>Bu dosya başka bir sekmede zaten açık. Düzenlemek veya kaydetmek için o sekmeye geçin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="406"/>
         <source>File Changed on Disk</source>
-        <translation>Tệp trên đĩa đã thay đổi</translation>
+        <translation>Dosya Diskte Değiştirildi</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
         <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>Tệp &quot;%1&quot; đã được thay đổi bên ngoài Mufpen. Bạn có muốn tải lại không?
-Các thay đổi chưa lưu trong trình soạn thảo sẽ bị mất.</translation>
+        <translation>&quot;%1&quot; dosyası Mufpen dışında değiştirilmiş. Yeniden yüklensin mi?
+Düzenleyicideki kaydedilmemiş değişiklikler kaybolacak.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="491"/>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="503"/>
         <source>Update Available</source>
-        <translation>Có bản cập nhật mới</translation>
+        <translation>Güncelleme mevcut</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
         <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Có phiên bản Mufpen mới (%1).
+        <translation>Yeni bir Mufpen sürümü (%1) mevcut.
 
-Bạn có muốn mở trang tải xuống không?</translation>
+İndirme sayfasını açmak ister misiniz?</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
         <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Mufpen %1 đã có sẵn. Sử dụng Trợ giúp &gt; Kiểm tra cập nhật để tải xuống.</translation>
+        <translation>Mufpen %1 mevcut. İndirmek için Yardım &gt; Güncellemeleri Denetle&apos;yi kullanın.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
         <source>Up to Date</source>
-        <translation>Đã cập nhật</translation>
+        <translation>Güncel</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Bạn đang sử dụng phiên bản mới nhất của Mufpen.</translation>
+        <translation>Mufpen&apos;in en son sürümünü kullanıyorsunuz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
         <source>Update Check Failed</source>
-        <translation>Kiểm tra cập nhật thất bại</translation>
+        <translation>Güncelleme denetimi başarısız</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="529"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Không thể kiểm tra cập nhật:
+        <translation>Güncellemeler denetlenemedi:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="143"/>
         <source>Export Mermaid as SVG...</source>
-        <translation>Xuất Mermaid dưới dạng SVG...</translation>
+        <translation>Mermaid&apos;i SVG olarak dışa aktar...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="145"/>
         <source>Export Mermaid as PNG...</source>
-        <translation>Xuất Mermaid dưới dạng PNG...</translation>
+        <translation>Mermaid&apos;i PNG olarak dışa aktar...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="158"/>
         <source>Resize</source>
-        <translation>Thay đổi kích thước</translation>
+        <translation>Yeniden boyutlandır</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="162"/>
         <source>Convert</source>
-        <translation>Chuyển đổi</translation>
+        <translation>Dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="196"/>
         <source>Copy as</source>
-        <translation>Sao chép dạng</translation>
+        <translation>Farklı kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="340"/>
         <source>Open</source>
-        <translation>Mở</translation>
+        <translation>Aç</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="153"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="341"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="358"/>
         <source>Open in New Window</source>
-        <translation>Mở trong cửa sổ mới</translation>
+        <translation>Yeni Pencerede Aç</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="50"/>
         <source>Insert Block Above</source>
-        <translation>Chèn khối phía trên</translation>
+        <translation>Üstüne blok ekle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="51"/>
         <source>Insert Block Below</source>
-        <translation>Chèn khối phía dưới</translation>
+        <translation>Altına blok ekle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="53"/>
         <source>Copy Block</source>
-        <translation>Sao chép khối</translation>
+        <translation>Bloğu kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="54"/>
         <source>Cut Block</source>
-        <translation>Cắt khối</translation>
+        <translation>Bloğu kes</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="55"/>
         <source>Duplicate Block</source>
-        <translation>Nhân đôi khối</translation>
+        <translation>Bloğu çoğalt</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="57"/>
         <source>Turn Into</source>
-        <translation>Chuyển thành</translation>
+        <translation>Dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="62"/>
         <source>Bulleted List</source>
-        <translation>Danh sách dấu đầu dòng</translation>
+        <translation>Madde işaretli liste</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="63"/>
         <source>Numbered List</source>
-        <translation>Danh sách đánh số</translation>
+        <translation>Numaralı liste</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="68"/>
         <source>Move Block Up</source>
-        <translation>Di chuyển khối lên</translation>
+        <translation>Bloğu yukarı taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="69"/>
         <source>Move Block Down</source>
-        <translation>Di chuyển khối xuống</translation>
+        <translation>Bloğu aşağı taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="343"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="360"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1025"/>
         <source>New File</source>
-        <translation>Tệp mới</translation>
+        <translation>Yeni Dosya</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="344"/>
@@ -3840,32 +3832,32 @@ Bạn có muốn mở trang tải xuống không?</translation>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1038"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1044"/>
         <source>New Folder</source>
-        <translation>Thư mục mới</translation>
+        <translation>Yeni Klasör</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="346"/>
         <source>Rename</source>
-        <translation>Đổi tên</translation>
+        <translation>Yeniden Adlandır</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="347"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="31"/>
         <source>Move To</source>
-        <translation>Di chuyển đến</translation>
+        <translation>Şuraya taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="348"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1140"/>
         <source>Duplicate</source>
-        <translation>Tạo bản sao</translation>
+        <translation>Kopyasını Oluştur</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="353"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="363"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="596"/>
         <source>Copy Path</source>
-        <translation>Sao chép đường dẫn</translation>
+        <translation>Yolu Kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="354"/>
@@ -3873,253 +3865,253 @@ Bạn có muốn mở trang tải xuống không?</translation>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1239"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="602"/>
         <source>Reveal in File Manager</source>
-        <translation>Hiển thị trong trình quản lý tệp</translation>
+        <translation>Dosya Yöneticisinde Göster</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="149"/>
         <location filename="../src/app/MainWindowFind.cpp" line="193"/>
         <location filename="../src/app/MainWindowFind.cpp" line="242"/>
         <source>Invalid regular expression: %1</source>
-        <translation>Biểu thức chính quy không hợp lệ: %1</translation>
+        <translation>Geçersiz düzenli ifade: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="208"/>
         <source>Replace</source>
-        <translation>Thay thế</translation>
+        <translation>Değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="258"/>
         <source>Replace All</source>
-        <translation>Thay thế tất cả</translation>
+        <translation>Tümünü değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="240"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Unpin Tab</source>
-        <translation>Bỏ ghim thẻ</translation>
+        <translation>Sekmenin sabitlemesini kaldır</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="263"/>
         <source>Open Documents</source>
-        <translation>Tài liệu đang mở</translation>
+        <translation>Açık belgeler</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="267"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="270"/>
         <source>New Tab</source>
-        <translation>Thẻ mới</translation>
+        <translation>Yeni sekme</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="580"/>
         <source>Close Others</source>
-        <translation>Đóng các thẻ khác</translation>
+        <translation>Diğer sekmeleri kapat</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="581"/>
         <source>Close Tabs to the Right</source>
-        <translation>Đóng các thẻ bên phải</translation>
+        <translation>Sağdaki sekmeleri kapat</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="582"/>
         <source>Close Saved Tabs</source>
-        <translation>Đóng các thẻ đã lưu</translation>
+        <translation>Kaydedilmiş sekmeleri kapat</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="583"/>
         <source>Close All Tabs</source>
-        <translation>Đóng tất cả thẻ</translation>
+        <translation>Tüm sekmeleri kapat</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Pin Tab</source>
-        <translation>Ghim thẻ</translation>
+        <translation>Sekmeyi sabitle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="598"/>
         <source>Reveal in Finder</source>
-        <translation>Hiển thị trong Finder</translation>
+        <translation>Finder’da göster</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="600"/>
         <source>Reveal in File Explorer</source>
-        <translation>Hiển thị trong File Explorer</translation>
+        <translation>Dosya Gezgini’nde göster</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="606"/>
         <source>Move Tab to New Window</source>
-        <translation>Chuyển thẻ sang cửa sổ mới</translation>
+        <translation>Sekmeyi yeni pencereye taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="609"/>
         <source>Copy Tab to New Window</source>
-        <translation>Sao chép thẻ sang cửa sổ mới</translation>
+        <translation>Sekmeyi yeni pencereye kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="166"/>
         <source>This file changed. Search again to update its matches.</source>
-        <translation>Tệp này đã thay đổi. Hãy tìm lại để cập nhật các kết quả khớp.</translation>
+        <translation>Bu dosya değişti. Eşleşmelerini güncellemek için yeniden arayın.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="216"/>
         <source>This match cannot be selected precisely in live preview. Showing it in source mode.</source>
-        <translation>Không thể chọn chính xác kết quả khớp này trong chế độ xem trước trực tiếp. Đang hiển thị kết quả trong chế độ mã nguồn.</translation>
+        <translation>Bu eşleşme canlı önizlemede tam olarak seçilemiyor. Kaynak modunda gösteriliyor.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="241"/>
         <source>Preview Folder Replacement</source>
-        <translation>Xem trước thay thế trong thư mục</translation>
+        <translation>Klasörde Değiştirmeyi Önizle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="245"/>
         <source>Folder: %1
 Find: %2
 Replace with: %3</source>
-        <translation>Thư mục: %1
-Tìm: %2
-Thay bằng: %3</translation>
+        <translation>Klasör: %1
+Bul: %2
+Şununla değiştir: %3</translation>
     </message>
     <message>
         <source>Include paths: %1 · Exclude paths: %2 · Match case: %3 · Regular expression: %4</source>
-        <translation type="vanished">Đường dẫn bao gồm: %1 · Đường dẫn loại trừ: %2 · Phân biệt chữ hoa/thường: %3 · Biểu thức chính quy: %4</translation>
+        <translation type="vanished">Dahil edilecek yollar: %1 · Hariç tutulacak yollar: %2 · Büyük/küçük harf duyarlı: %3 · Düzenli ifade: %4</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>Yes</source>
-        <translation>Có</translation>
+        <translation>Evet</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>No</source>
-        <translation>Không</translation>
+        <translation>Hayır</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>Matches</source>
-        <translation>Kết quả khớp</translation>
+        <translation>Eşleşmeler</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="43"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="216"/>
         <source>Rename / Move</source>
-        <translation>Đổi tên / Di chuyển</translation>
+        <translation>Yeniden Adlandır / Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="44"/>
         <source>The destination already exists or is inside the folder being moved.</source>
-        <translation>Đích đã tồn tại hoặc nằm trong thư mục đang được di chuyển.</translation>
+        <translation>Hedef zaten var veya taşınan klasörün içinde bulunuyor.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Checking links…</source>
-        <translation>Đang kiểm tra liên kết…</translation>
+        <translation>Bağlantılar denetleniyor…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="70"/>
         <source>Preview Link Updates</source>
-        <translation>Xem trước cập nhật liên kết</translation>
+        <translation>Bağlantı Güncellemelerini Önizle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="73"/>
         <source>%1 → %2
 Search folder: %3</source>
         <translation>%1 → %2
-Thư mục tìm kiếm: %3</translation>
+Arama klasörü: %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <source>Links</source>
-        <translation>Liên kết</translation>
+        <translation>Bağlantılar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="90"/>
         <source> (unsaved)</source>
-        <translation> (chưa lưu)</translation>
+        <translation> (kaydedilmemiş)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="97"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="275"/>
         <source>Skipped</source>
-        <translation>Đã bỏ qua</translation>
+        <translation>Atlananlar</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="123"/>
         <source>Updates Markdown links, reference definitions and Markdown images in this folder. Code and external URLs are excluded. Unsaved notes stay unsaved and can be undone. Disk originals are backed up.
 Hidden folders, build folders, symbolic links, unreadable files and files over 8 MB are excluded; links outside this folder are not scanned.</source>
-        <translation>Cập nhật các liên kết Markdown, định nghĩa tham chiếu và hình ảnh Markdown trong thư mục này. Mã và URL bên ngoài được loại trừ. Ghi chú chưa lưu vẫn giữ trạng thái chưa lưu và có thể hoàn tác cập nhật. Các tệp gốc trên đĩa được sao lưu.
-Thư mục ẩn, thư mục bản dựng, liên kết tượng trưng, tệp không đọc được và tệp lớn hơn 8 MB được loại trừ; các liên kết bên ngoài thư mục này không được quét.</translation>
+        <translation>Bu klasördeki Markdown bağlantılarını, başvuru tanımlarını ve Markdown görsellerini günceller. Kod ve harici URL’ler kapsam dışıdır. Kaydedilmemiş notlar kaydedilmez ve değişiklikler geri alınabilir. Diskteki asıllar yedeklenir.
+Gizli klasörler, derleme klasörleri, sembolik bağlantılar, okunamayan dosyalar ve 8 MB’tan büyük dosyalar kapsam dışıdır; bu klasörün dışındaki bağlantılar taranmaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="129"/>
         <source>Some files could not be checked. Their links may need manual updates.</source>
-        <translation>Không thể kiểm tra một số tệp. Có thể cần cập nhật thủ công các liên kết trong những tệp đó.</translation>
+        <translation>Bazı dosyalar denetlenemedi. Bağlantılarının elle güncellenmesi gerekebilir.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="134"/>
         <source>Rename / Move Only</source>
-        <translation>Chỉ đổi tên / di chuyển</translation>
+        <translation>Yalnızca Yeniden Adlandır / Taşı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="136"/>
         <source>Update Links</source>
-        <translation>Cập nhật liên kết</translation>
+        <translation>Bağlantıları Güncelle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="165"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="169"/>
         <source>A note changed after the preview. Please try again.</source>
-        <translation>Một ghi chú đã thay đổi sau khi xem trước. Vui lòng thử lại.</translation>
+        <translation>Önizlemeden sonra bir not değişti. Lütfen yeniden deneyin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="174"/>
         <source>A file changed on disk after the preview. Please try again.</source>
-        <translation>Một tệp trên đĩa đã thay đổi sau khi xem trước. Vui lòng thử lại.</translation>
+        <translation>Önizlemeden sonra diskteki bir dosya değişti. Lütfen yeniden deneyin.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="186"/>
         <source>
 Some originals could not be restored. Backups: %1</source>
         <translation>
-Không thể khôi phục một số tệp gốc. Bản sao lưu: %1</translation>
+Bazı asıllar geri yüklenemedi. Yedekler: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="191"/>
         <source>Link updates could not be completed. The path was not changed.</source>
-        <translation>Không thể hoàn tất cập nhật liên kết. Đường dẫn chưa được thay đổi.</translation>
+        <translation>Bağlantı güncellemeleri tamamlanamadı. Yol değiştirilmedi.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="206"/>
         <source>Could not rename or move: %1</source>
-        <translation>Không thể đổi tên hoặc di chuyển: %1</translation>
+        <translation>Yeniden adlandırılamadı veya taşınamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="244"/>
         <source>Update Note Links</source>
-        <translation>Cập nhật liên kết ghi chú</translation>
+        <translation>Not Bağlantılarını Güncelle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="274"/>
         <source>Links updated. Originals backed up in %1</source>
-        <translation>Đã cập nhật liên kết. Các tệp gốc được sao lưu tại %1</translation>
+        <translation>Bağlantılar güncellendi. Asıllar %1 konumuna yedeklendi</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="277"/>
         <source>Unsaved, changed, unreadable, oversized, mixed line endings, or not losslessly writable.</source>
-        <translation>Chưa lưu, đã thay đổi, không đọc được, quá lớn, có kiểu xuống dòng hỗn hợp hoặc không thể ghi mà không mất dữ liệu.</translation>
+        <translation>Kaydedilmemiş, değiştirilmiş, okunamıyor, çok büyük, karışık satır sonları içeriyor veya kayıpsız yazılamıyor.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="281"/>
         <source>Replacement preview</source>
-        <translation>Xem trước thay thế</translation>
+        <translation>Değiştirme önizlemesi</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="287"/>
         <source>
 … Preview truncated; the full file will be processed.</source>
         <translation>
-… Bản xem trước đã được rút gọn; toàn bộ tệp sẽ được xử lý.</translation>
+… Önizleme kısaltıldı; dosyanın tamamı işlenecek.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="290"/>
@@ -4128,32 +4120,32 @@ Không thể khôi phục một số tệp gốc. Bản sao lưu: %1</translatio
 
 After:
 %2</source>
-        <translation>Trước:
+        <translation>Önce:
 %1
 
-Sau:
+Sonra:
 %2</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="295"/>
         <source>Files with unsaved changes are skipped. Originals are backed up for recovery. Files changed since this preview will not be overwritten.</source>
-        <translation>Các tệp có thay đổi chưa lưu sẽ được bỏ qua. Bản gốc được sao lưu để có thể khôi phục. Các tệp thay đổi sau bản xem trước này sẽ không bị ghi đè.</translation>
+        <translation>Kaydedilmemiş değişiklikleri olan dosyalar atlanır. Özgün dosyalar kurtarma için yedeklenir. Bu önizlemeden sonra değiştirilen dosyaların üzerine yazılmaz.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="309"/>
         <source>Replace %1 matches in %2 files</source>
-        <translation>Thay thế %1 kết quả khớp trong %2 tệp</translation>
+        <translation>%2 dosyadaki %1 eşleşmeyi değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="341"/>
         <source>Folder Replacement</source>
-        <translation>Thay thế trong thư mục</translation>
+        <translation>Klasörde Değiştirme</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="342"/>
         <source>%1 files changed; %2 skipped.
 %3</source>
-        <translation>Đã thay đổi %1 tệp; bỏ qua %2 tệp.
+        <translation>%1 dosya değiştirildi; %2 dosya atlandı.
 %3</translation>
     </message>
     <message>
@@ -4161,7 +4153,7 @@ Sau:
         <source>
 Recovery folder: %1</source>
         <translation>
-Thư mục khôi phục: %1</translation>
+Kurtarma klasörü: %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="656"/>
@@ -4169,12 +4161,12 @@ Thư mục khôi phục: %1</translation>
         <location filename="../src/app/MainWindowSearch.cpp" line="357"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="376"/>
         <source>Undo Folder Replacement</source>
-        <translation>Hoàn tác thay thế trong thư mục</translation>
+        <translation>Klasörde Değiştirmeyi Geri Al</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="353"/>
         <source>No folder replacement is available to restore.</source>
-        <translation>Không có thao tác thay thế trong thư mục nào để khôi phục.</translation>
+        <translation>Geri alınabilecek bir klasörde değiştirme işlemi yok.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="358"/>
@@ -4182,1243 +4174,1243 @@ Thư mục khôi phục: %1</translation>
 %1
 
 Files edited afterward or containing unsaved changes will be skipped.</source>
-        <translation>Khôi phục các tệp gốc trước lần thay thế này?
+        <translation>Bu değiştirme işleminden önceki özgün dosyalar geri yüklensin mi?
 %1
 
-Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu sẽ được bỏ qua.</translation>
+Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atlanır.</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="361"/>
         <source>Restore Originals</source>
-        <translation>Khôi phục bản gốc</translation>
+        <translation>Özgün Dosyaları Geri Yükle</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="362"/>
         <source>Open Recovery Folder</source>
-        <translation>Mở thư mục khôi phục</translation>
+        <translation>Kurtarma Klasörünü Aç</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="377"/>
         <source>%1 files restored; %2 skipped.
 %3</source>
-        <translation>Đã khôi phục %1 tệp; bỏ qua %2 tệp.
+        <translation>%1 dosya geri yüklendi; %2 dosya atlandı.
 %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Updating files…</source>
-        <translation>Đang cập nhật tệp…</translation>
+        <translation>Dosyalar güncelleniyor…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Stop after current file</source>
-        <translation>Dừng sau tệp hiện tại</translation>
+        <translation>Geçerli dosyadan sonra durdur</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="32"/>
         <source>Linked file not found: %1</source>
-        <translation>Không tìm thấy tệp được liên kết: %1</translation>
+        <translation>Bağlantılı dosya bulunamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="114"/>
         <source>Heading not found: %1</source>
-        <translation>Không tìm thấy tiêu đề: %1</translation>
+        <translation>Başlık bulunamadı: %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MarkdownSourceEdit</name>
+    <name>mufpen::MarkdownSourceEdit</name>
     <message>
         <source>(no spelling suggestions)</source>
-        <translation type="vanished">(không có gợi ý chính tả)</translation>
+        <translation type="vanished">(yazım önerisi yok)</translation>
     </message>
     <message>
         <source>Ignore &quot;%1&quot;</source>
-        <translation type="vanished">Bỏ qua &quot;%1&quot;</translation>
+        <translation type="vanished">&quot;%1&quot; öğesini yoksay</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PreferencesDialog</name>
+    <name>mufpen::PreferencesDialog</name>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="223"/>
         <location filename="../src/app/PreferencesDialog.cpp" line="225"/>
         <source>Preferences</source>
-        <translation>Tùy chỉnh</translation>
+        <translation>Tercihler</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Files</source>
-        <translation>Tệp</translation>
+        <translation>Dosyalar</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Editor</source>
-        <translation>Trình soạn thảo</translation>
+        <translation>Düzenleyici</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="63"/>
         <source>Categories</source>
-        <translation>Danh mục</translation>
+        <translation>Kategoriler</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Image</source>
-        <translation>Hình ảnh</translation>
+        <translation>Resim</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Export</source>
-        <translation>Xuất</translation>
+        <translation>Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Appearance</source>
-        <translation>Giao diện</translation>
+        <translation>Görünüm</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>General</source>
-        <translation>Chung</translation>
+        <translation>Genel</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Phím tắt</translation>
+        <translation>Klavye kısayolları</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Search</source>
-        <translation>Tìm kiếm</translation>
+        <translation>Arama</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="256"/>
         <source>No settings available.</source>
-        <translation>Không có cài đặt nào.</translation>
+        <translation>Kullanılabilir ayar yok.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="vanished">Ngôn ngữ</translation>
+        <translation type="vanished">Dil</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="vanished">Cập nhật</translation>
+        <translation type="vanished">Güncelleme</translation>
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation type="vanished">Kiểm tra cập nhật</translation>
+        <translation type="vanished">Güncellemeleri Denetle</translation>
     </message>
     <message>
         <source>Automatically check for updates</source>
-        <translation type="vanished">Tự động kiểm tra cập nhật</translation>
+        <translation type="vanished">Güncellemeleri otomatik denetle</translation>
     </message>
     <message>
         <source>Include beta updates</source>
-        <translation type="vanished">Bao gồm bản cập nhật beta</translation>
+        <translation type="vanished">Beta güncellemeleri dahil et</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Nâng cao</translation>
+        <translation type="vanished">Gelişmiş</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Bật chế độ gỡ lỗi</translation>
+        <translation type="vanished">Hata ayıklama modunu etkinleştir</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Gửi dữ liệu sử dụng ẩn danh</translation>
+        <translation type="vanished">Anonim kullanım verileri gönder</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Mở cài đặt nâng cao</translation>
+        <translation type="vanished">Gelişmiş Ayarları Aç</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Đặt lại cài đặt nâng cao</translation>
+        <translation type="vanished">Gelişmiş Ayarları Sıfırla</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="vanished">Chủ đề</translation>
+        <translation type="vanished">Tema</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation type="vanished">Thu phóng</translation>
+        <translation type="vanished">Yakınlaştırma</translation>
     </message>
     <message>
         <source>Text Size</source>
-        <translation type="vanished">Cỡ chữ</translation>
+        <translation type="vanished">Metin boyutu</translation>
     </message>
     <message>
         <source>Status Bar</source>
-        <translation type="vanished">Thanh trạng thái</translation>
+        <translation type="vanished">Durum çubuğu</translation>
     </message>
     <message>
         <source>Show status bar</source>
-        <translation type="vanished">Hiển thị thanh trạng thái</translation>
+        <translation type="vanished">Durum çubuğunu göster</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsAppearancePage</name>
+    <name>mufpen::PrefsAppearancePage</name>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="143"/>
         <source>Theme</source>
-        <translation>Chủ đề</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="144"/>
         <source>Zoom</source>
-        <translation>Thu phóng</translation>
+        <translation>Yakınlaştırma</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="145"/>
         <source>Reset</source>
-        <translation>Đặt lại</translation>
+        <translation>Sıfırla</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="146"/>
         <source>Text Size</source>
-        <translation>Cỡ chữ</translation>
+        <translation>Metin Boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="147"/>
         <source>Content Width</source>
-        <translation>Chiều rộng nội dung</translation>
+        <translation>İçerik Genişliği</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="148"/>
         <source>Theme Default</source>
-        <translation>Mặc định của chủ đề</translation>
+        <translation>Tema Varsayılanı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="149"/>
         <source>Comfortable (1024 px)</source>
-        <translation>Thoải mái (1024 px)</translation>
+        <translation>Rahat (1024 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="150"/>
         <source>Wide (1200 px)</source>
-        <translation>Rộng (1200 px)</translation>
+        <translation>Geniş (1200 px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="151"/>
         <source>Full Width</source>
-        <translation>Toàn bộ chiều rộng</translation>
+        <translation>Tam Genişlik</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="152"/>
         <source>Status Bar</source>
-        <translation>Thanh trạng thái</translation>
+        <translation>Durum Çubuğu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="153"/>
         <source>Show status bar</source>
-        <translation>Hiển thị thanh trạng thái</translation>
+        <translation>Durum çubuğunu göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="155"/>
         <source>Import Theme...</source>
-        <translation>Nhập chủ đề...</translation>
+        <translation>Tema içe aktar…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsEditorPage</name>
+    <name>mufpen::PrefsEditorPage</name>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="215"/>
         <source>Default Indent</source>
-        <translation>Thụt lề mặc định</translation>
+        <translation>Varsayılan Girinti</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="216"/>
         <source>Only effective for references and lists generated via menu bar or shortcuts</source>
-        <translation>Chỉ có hiệu lực với tham chiếu và danh sách được tạo qua thanh menu hoặc phím tắt</translation>
+        <translation>Yalnızca menü çubuğu veya kısayollarla oluşturulan başvurular ve listeler için geçerlidir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="218"/>
         <source>Align Indent</source>
-        <translation>Thụt lề căn chỉnh</translation>
+        <translation>Hizalama Girintisi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="220"/>
         <source>Use Paired Symbols</source>
-        <translation>Sử dụng ký hiệu đóng mở</translation>
+        <translation>Eşli Semboller Kullan</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="221"/>
         <source>Match brackets and quotes</source>
-        <translation>Kết hợp ngoặc và dấu trích dẫn</translation>
+        <translation>Köşeli ayraçları ve tırnak işaretlerini eşleştir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="222"/>
         <source>Match Markdown characters</source>
-        <translation>Kết hợp ký tự Markdown</translation>
+        <translation>Markdown karakterlerini eşleştir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="224"/>
         <source>Autocomplete</source>
-        <translation>Tự động hoàn thành</translation>
+        <translation>Otomatik Tamamlama</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="225"/>
         <source>Enable Emoji autocomplete</source>
-        <translation>Bật tự động hoàn thành Emoji</translation>
+        <translation>Emoji otomatik tamamlamayı etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="227"/>
         <source>Live Rendering</source>
-        <translation>Kết xuất trực tiếp</translation>
+        <translation>Canlı İşleme</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="228"/>
         <source>Show Markdown source of the current block element</source>
-        <translation>Hiển thị mã nguồn Markdown của phần tử khối hiện tại</translation>
+        <translation>Geçerli blok öğesinin Markdown kaynağını göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="229"/>
         <source>Show block handles</source>
-        <translation>Hiển thị tay nắm khối</translation>
+        <translation>Blok tutamaçlarını göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="230"/>
         <source>Hover to open a block menu or drag to move the complete block.</source>
-        <translation>Di chuột lên để mở menu khối hoặc kéo để di chuyển toàn bộ khối.</translation>
+        <translation>Blok menüsünü açmak için imleci üzerine getirin veya tüm bloğu taşımak için sürükleyin.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="231"/>
         <source>Show Mermaid diagrams as source code instead of rendering</source>
-        <translation>Hiển thị sơ đồ Mermaid dưới dạng mã nguồn thay vì kết xuất</translation>
+        <translation>Mermaid diyagramlarını işlemek yerine kaynak kodu olarak göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="233"/>
         <source>Default Copy Behavior</source>
-        <translation>Hành vi sao chép mặc định</translation>
+        <translation>Varsayılan Kopyalama Davranışı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="234"/>
         <source>Copy Markdown source when copying plain text</source>
-        <translation>Sao chép mã nguồn Markdown khi sao chép văn bản thuần</translation>
+        <translation>Düz metin kopyalanırken Markdown kaynağını kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="235"/>
         <source>Copy or cut the entire line when no text is selected</source>
-        <translation>Sao chép hoặc cắt toàn bộ dòng khi không có văn bản nào được chọn</translation>
+        <translation>Metin seçili olmadığında tüm satırı kopyala veya kes</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="237"/>
         <source>Default Line Break</source>
-        <translation>Ngắt dòng mặc định</translation>
+        <translation>Varsayılan Satır Sonu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="238"/>
         <source>Default line break for new files</source>
-        <translation>Ký tự ngắt dòng mặc định cho tệp mới</translation>
+        <translation>Yeni dosyalar için varsayılan satır sonu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="239"/>
         <source>LF (Unix Style)</source>
-        <translation>LF (Kiểu Unix)</translation>
+        <translation>LF (Unix Tarzı)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="240"/>
         <source>CRLF (Windows Style)</source>
-        <translation>CRLF (Kiểu Windows)</translation>
+        <translation>CRLF (Windows Tarzı)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="248"/>
         <source>Spell Check</source>
-        <translation>Kiểm tra chính tả</translation>
+        <translation>Yazım Denetimi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="249"/>
         <source>Enable spell checking</source>
-        <translation>Bật kiểm tra chính tả</translation>
+        <translation>Yazım denetimini etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="250"/>
         <source>Language</source>
-        <translation>Ngôn ngữ</translation>
+        <translation>Dil</translation>
     </message>
     <message>
         <source>Auto-detect language</source>
-        <translation type="vanished">Tự động nhận diện ngôn ngữ</translation>
+        <translation type="vanished">Dili otomatik algıla</translation>
     </message>
     <message>
         <source>Chinese (Simplified)</source>
-        <translation type="vanished">Tiếng Trung (Giản thể)</translation>
+        <translation type="vanished">Çince (Basitleştirilmiş)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="252"/>
         <source>Typewriter Mode</source>
-        <translation>Chế độ máy đánh chữ</translation>
+        <translation>Daktilo Modu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="253"/>
         <source>Always keep the cursor in the middle of the screen</source>
-        <translation>Luôn giữ con trỏ ở giữa màn hình</translation>
+        <translation>İmleci her zaman ekranın ortasında tut</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="254"/>
         <source>Disable Typewriter / Focus Mode</source>
-        <translation>Tắt chế độ máy đánh chữ / tập trung</translation>
+        <translation>Daktilo / Odak Modunu devre dışı bırak</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="242"/>
         <source>Locked Editing</source>
-        <translation>Khóa chỉnh sửa</translation>
+        <translation>Düzenleme kilidi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="243"/>
         <source>Read-only reading mode: hides the caret and inline popups, rejects typing</source>
-        <translation>Chế độ chỉ đọc: ẩn con trỏ văn bản và cửa sổ bật lên nội tuyến, chặn nhập văn bản</translation>
+        <translation>Salt okunur mod: metin imlecini ve satır içi açılır pencereleri gizler, yazmayı engeller</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="244"/>
         <source>Enable locked editing</source>
-        <translation>Bật khóa chỉnh sửa</translation>
+        <translation>Düzenleme kilidini etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="245"/>
         <source>Each tab locks on its own</source>
-        <translation>Khóa riêng từng thẻ</translation>
+        <translation>Her sekmeyi ayrı kilitle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="246"/>
         <source>One lock for the whole window</source>
-        <translation>Một khóa cho toàn bộ cửa sổ</translation>
+        <translation>Tüm pencere için tek kilit</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsExportPage</name>
+    <name>mufpen::PrefsExportPage</name>
     <message>
         <source>Select Pandoc Executable</source>
-        <translation type="vanished">Chọn tệp thực thi Pandoc</translation>
+        <translation type="vanished">Pandoc Çalıştırılabilir Dosyasını Seç</translation>
     </message>
     <message>
         <source>Executables (*.exe);;All Files (*)</source>
-        <translation type="vanished">Tệp thực thi (*.exe);;Tất cả tệp (*)</translation>
+        <translation type="vanished">Çalıştırılabilir dosyalar (*.exe);;Tüm Dosyalar (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>General</source>
-        <translation>Chung</translation>
+        <translation>Genel</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (không có kiểu dáng)</translation>
+        <translation>HTML (Biçemler olmadan)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>Image</source>
-        <translation>Hình ảnh</translation>
+        <translation>Resim</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="93"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="106"/>
         <source>Formats</source>
-        <translation>Định dạng</translation>
+        <translation>Biçimler</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="246"/>
         <source>Default Export Folder</source>
-        <translation>Thư mục xuất mặc định</translation>
+        <translation>Varsayılan Dışa Aktarma Klasörü</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="vanished">Tự động</translation>
+        <translation type="vanished">Otomatik</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="242"/>
         <source>Same folder as current file</source>
-        <translation>Cùng thư mục với tệp hiện tại</translation>
+        <translation>Geçerli dosya ile aynı klasör</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="243"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Custom...</source>
-        <translation>Tùy chỉnh...</translation>
+        <translation>Özel...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <source>Pandoc Path</source>
-        <translation>Đường dẫn Pandoc</translation>
+        <translation>Pandoc Yolu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="259"/>
         <source>(Auto-detect)</source>
-        <translation>(Tự động nhận diện)</translation>
+        <translation>(Otomatik algıla)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="178"/>
         <source>Browse...</source>
-        <translation>Duyệt...</translation>
+        <translation>Gözat...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="94"/>
         <source>New...</source>
-        <translation>Tạo mới...</translation>
+        <translation>Yeni...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="95"/>
         <source>Duplicate</source>
-        <translation>Tạo bản sao</translation>
+        <translation>Kopyasını Oluştur</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="96"/>
         <source>Rename...</source>
-        <translation>Đổi tên...</translation>
+        <translation>Yeniden Adlandır...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="97"/>
         <source>Remove</source>
-        <translation>Xóa</translation>
+        <translation>Kaldır</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="98"/>
         <source>Up</source>
-        <translation>Lên</translation>
+        <translation>Yukarı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="99"/>
         <source>Down</source>
-        <translation>Xuống</translation>
+        <translation>Aşağı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="239"/>
         <source>Shared defaults for all export formats. Select a format to configure its own options.</source>
-        <translation>Thiết lập mặc định dùng chung cho tất cả định dạng xuất. Chọn một định dạng để cấu hình các tùy chọn riêng.</translation>
+        <translation>Tüm dışa aktarma biçimleri için ortak varsayılan ayarlar. Biçime özel seçenekleri ayarlamak için bir biçim seçin.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="249"/>
         <source>Custom Folder</source>
-        <translation>Thư mục tùy chỉnh</translation>
+        <translation>Özel klasör</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="256"/>
         <source>Untitled documents use the Documents folder.</source>
-        <translation>Tài liệu chưa có tên sử dụng thư mục Tài liệu.</translation>
+        <translation>Adsız belgeler Belgeler klasörünü kullanır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>All Files (*)</source>
-        <translation>Tất cả tệp (*)</translation>
+        <translation>Tüm dosyalar (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="260"/>
         <source>Auto-detect</source>
-        <translation>Tự động phát hiện</translation>
+        <translation>Otomatik algıla</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
         <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML và hình ảnh sử dụng bộ kết xuất của Mufpen. Các định dạng khác cần Pandoc.</translation>
+        <translation>PDF, HTML ve görüntüler Mufpen&apos;in işleme motorunu kullanır. Diğer biçimler Pandoc gerektirir.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
         <source>Used when exporting as %1. Changes are saved immediately.</source>
-        <translation>Được sử dụng khi xuất thành %1. Các thay đổi được lưu ngay lập tức.</translation>
+        <translation>%1 olarak dışa aktarırken kullanılır. Değişiklikler hemen kaydedilir.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Theme</source>
-        <translation>Chủ đề</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Current theme</source>
-        <translation>Chủ đề hiện tại</translation>
+        <translation>Geçerli tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Default light theme</source>
-        <translation>Chủ đề sáng mặc định</translation>
+        <translation>Varsayılan açık tema</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>Executable</source>
-        <translation>Tệp thực thi</translation>
+        <translation>Yürütülebilir Dosya</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="284"/>
         <source>Arguments</source>
-        <translation>Đối số</translation>
+        <translation>Bağımsız Değişkenler</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="285"/>
         <source>Output Extension</source>
-        <translation>Phần mở rộng đầu ra</translation>
+        <translation>Çıktı Uzantısı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="286"/>
         <source>Arguments must contain ${outputPath}. ${inputPath} is a temporary Markdown copy including unsaved edits. Also available: ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Đối số phải chứa ${outputPath}. ${inputPath} là bản sao Markdown tạm thời bao gồm cả các chỉnh sửa chưa lưu. Các biến khác có thể dùng: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>Bağımsız değişkenler ${outputPath} içermelidir. ${inputPath}, kaydedilmemiş düzenlemeleri de içeren geçici bir Markdown kopyasıdır. Diğer kullanılabilir değişkenler: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="288"/>
         <source>Quote arguments containing spaces. Variables are expanded after splitting arguments; no command shell is used.</source>
-        <translation>Đặt các đối số có khoảng trắng trong dấu ngoặc kép. Các biến được thay thế sau khi tách đối số; không sử dụng trình thông dịch lệnh.</translation>
+        <translation>Boşluk içeren bağımsız değişkenleri tırnak içine alın. Değişkenler, bağımsız değişkenler ayrıldıktan sonra genişletilir; komut kabuğu kullanılmaz.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="290"/>
         <source>The command must create one file at ${outputPath}. Failed or canceled exports keep the existing destination.</source>
-        <translation>Lệnh phải tạo một tệp tại ${outputPath}. Nếu quá trình xuất thất bại hoặc bị hủy, tệp đích hiện có sẽ được giữ nguyên.</translation>
+        <translation>Komut, ${outputPath} konumunda tek bir dosya oluşturmalıdır. Başarısız olan veya iptal edilen dışa aktarma işlemlerinde mevcut hedef dosya korunur.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Page Size</source>
-        <translation>Khổ giấy</translation>
+        <translation>Sayfa boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="295"/>
         <source>Width</source>
-        <translation>Chiều rộng</translation>
+        <translation>Genişlik</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="296"/>
         <source>Height</source>
-        <translation>Chiều cao</translation>
+        <translation>Yükseklik</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="318"/>
         <source>Landscape</source>
-        <translation>Ngang</translation>
+        <translation>Yatay</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="319"/>
         <source>Page Margins</source>
-        <translation>Lề trang</translation>
+        <translation>Sayfa kenar boşlukları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="321"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="340"/>
         <source>Font Size (px)</source>
-        <translation>Cỡ chữ (px)</translation>
+        <translation>Yazı tipi boyutu (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="322"/>
         <source>Start each level-one heading on a new page</source>
-        <translation>Bắt đầu mỗi tiêu đề cấp một trên một trang mới</translation>
+        <translation>Her birinci düzey başlığı yeni sayfada başlat</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="323"/>
         <source>Header</source>
-        <translation>Đầu trang</translation>
+        <translation>Üstbilgi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="324"/>
         <source>Footer</source>
-        <translation>Chân trang</translation>
+        <translation>Altbilgi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="326"/>
         <source>Show page numbers</source>
-        <translation>Hiển thị số trang</translation>
+        <translation>Sayfa numaralarını göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="327"/>
         <source>Header and footer variables: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Space is reserved automatically so they do not overlap the document.</source>
-        <translation>Biến cho đầu trang và chân trang: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Không gian được dành sẵn tự động để chúng không chồng lên nội dung tài liệu.</translation>
+        <translation>Üstbilgi ve altbilgi değişkenleri: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Belgeyle üst üste gelmemeleri için otomatik olarak yer ayrılır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="330"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="358"/>
         <source>Include a table of contents</source>
-        <translation>Bao gồm mục lục</translation>
+        <translation>İçindekiler tablosu ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="333"/>
         <source>Add to &lt;head&gt;</source>
-        <translation>Thêm vào &lt;head&gt;</translation>
+        <translation>&lt;head&gt; bölümüne ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="334"/>
         <source>Add before document content</source>
-        <translation>Thêm trước nội dung tài liệu</translation>
+        <translation>Belge içeriğinden önce ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
         <source>Mufpen adds no theme stylesheet to this format.</source>
-        <translation>Mufpen không thêm biểu định kiểu chủ đề vào định dạng này.</translation>
+        <translation>Mufpen bu biçime tema stil sayfası eklemez.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
         <source>Width (px)</source>
-        <translation>Chiều rộng (px)</translation>
+        <translation>Genişlik (px)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="339"/>
         <source>Output Scale</source>
-        <translation>Tỷ lệ đầu ra</translation>
+        <translation>Çıktı ölçeği</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="342"/>
         <source>Exports one PNG. Maximum: 64 million pixels and 32,767 pixels in height. Use PDF for longer documents.</source>
-        <translation>Xuất một tệp PNG. Tối đa: 64 triệu điểm ảnh và chiều cao 32,767 điểm ảnh. Dùng PDF cho tài liệu dài hơn.</translation>
+        <translation>Tek bir PNG dışa aktarır. Üst sınır: 64 milyon piksel ve 32,767 piksel yükseklik. Daha uzun belgeler için PDF kullanın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="344"/>
         <source>Requires Pandoc. Configure its path under General.</source>
-        <translation>Cần Pandoc. Cấu hình đường dẫn trong phần Chung.</translation>
+        <translation>Pandoc gerektirir. Yolunu Genel bölümünde ayarlayın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="346"/>
         <source>Reference Document</source>
-        <translation>Tài liệu tham chiếu</translation>
+        <translation>Referans belge</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="349"/>
         <source>Custom CSS</source>
-        <translation>CSS tùy chỉnh</translation>
+        <translation>Özel CSS</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="352"/>
         <source>Title</source>
-        <translation>Tiêu đề</translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="325"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="354"/>
         <source>Author</source>
-        <translation>Tác giả</translation>
+        <translation>Yazar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="359"/>
         <source>TOC Depth</source>
-        <translation>Số cấp mục lục</translation>
+        <translation>İçindekiler düzey sayısı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="364"/>
         <source>Number sections</source>
-        <translation>Đánh số các phần</translation>
+        <translation>Bölümleri numaralandır</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Line Wrapping</source>
-        <translation>Ngắt dòng</translation>
+        <translation>Satır kaydırma</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Do not wrap</source>
-        <translation>Không ngắt dòng</translation>
+        <translation>Satırları kaydırma</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Automatic</source>
-        <translation>Tự động</translation>
+        <translation>Otomatik</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Preserve source wrapping</source>
-        <translation>Giữ nguyên cách ngắt dòng của nguồn</translation>
+        <translation>Kaynak satır sonlarını koru</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="369"/>
         <source>Additional Pandoc Arguments</source>
-        <translation>Tham số Pandoc bổ sung</translation>
+        <translation>Ek Pandoc bağımsız değişkenleri</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
         <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
-        <translation>Đặt đường dẫn chứa dấu cách trong dấu ngoặc kép. Mufpen quản lý định dạng đầu vào, định dạng đầu ra và đường dẫn đầu ra.</translation>
+        <translation>Boşluk içeren yolları tırnak içine alın. Girdi biçimini, çıktı biçimini ve çıktı yolunu Mufpen yönetir.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
         <source>After Export</source>
-        <translation>Sau khi xuất</translation>
+        <translation>Dışa Aktarmadan Sonra</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="375"/>
         <source>Open the exported file directory</source>
-        <translation>Mở thư mục tệp đã xuất</translation>
+        <translation>Dışa aktarılan dosyanın dizinini aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="377"/>
         <source>Open the exported file</source>
-        <translation>Mở tệp đã xuất</translation>
+        <translation>Dışa aktarılan dosyayı aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="414"/>
         <source>New Export Preset</source>
-        <translation>Tạo cấu hình xuất mới</translation>
+        <translation>Yeni Dışa Aktarma Ön Ayarı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="419"/>
         <source>%1 (copy)</source>
-        <translation>%1 (bản sao)</translation>
+        <translation>%1 (kopya)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="420"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <source>Name</source>
-        <translation>Tên</translation>
+        <translation>Ad</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="425"/>
         <source>Custom Command</source>
-        <translation>Lệnh tùy chỉnh</translation>
+        <translation>Özel Komut</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="428"/>
         <source>Format</source>
-        <translation>Định dạng</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="439"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Enter a non-empty, unique preset name.</source>
-        <translation>Nhập tên cấu hình không để trống và không trùng lặp.</translation>
+        <translation>Boş olmayan, benzersiz bir ön ayar adı girin.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Rename Export Preset</source>
-        <translation>Đổi tên cấu hình xuất</translation>
+        <translation>Dışa Aktarma Ön Ayarını Yeniden Adlandır</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="505"/>
         <source>Using: %1</source>
-        <translation>Đang dùng: %1</translation>
+        <translation>Kullanılıyor: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="506"/>
         <source>Not a valid executable; will auto-detect.</source>
-        <translation>Không phải tệp thực thi hợp lệ; sẽ tự động phát hiện.</translation>
+        <translation>Geçerli bir yürütülebilir dosya değil; otomatik algılanacak.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="513"/>
         <source>Detected: %1</source>
-        <translation>Đã phát hiện: %1</translation>
+        <translation>Algılandı: %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="512"/>
         <source>Pandoc was not found. Install it, or click Browse to locate.</source>
-        <translation>Không tìm thấy Pandoc. Hãy cài đặt nó hoặc nhấp vào «Duyệt» để xác định vị trí.</translation>
+        <translation>Pandoc bulunamadı. Yükleyin ya da bulmak için «Gözat»a tıklayın.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsFilesPage</name>
+    <name>mufpen::PrefsFilesPage</name>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="462"/>
         <source>Startup</source>
-        <translation>Khi khởi động</translation>
+        <translation>Başlangıç</translation>
     </message>
     <message>
         <source>Open new file</source>
-        <translation type="vanished">Mở tệp mới</translation>
+        <translation type="vanished">Yeni dosya aç</translation>
     </message>
     <message>
         <source>Reopen last file</source>
-        <translation type="vanished">Mở lại tệp gần nhất</translation>
+        <translation type="vanished">Son dosyayı yeniden aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="448"/>
         <source>File Open Protection</source>
-        <translation>Bảo vệ khi mở tệp</translation>
+        <translation>Dosya Açma Koruması</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="449"/>
         <source>Extension protection</source>
-        <translation>Bảo vệ theo phần mở rộng</translation>
+        <translation>Uzantı koruması</translation>
     </message>
     <message>
         <source>Text file extensions (open without a warning)</source>
-        <translation type="vanished">Phần mở rộng của tệp văn bản (mở không cần cảnh báo)</translation>
+        <translation type="vanished">Metin dosyası uzantıları (uyarı vermeden açılır)</translation>
     </message>
     <message>
         <source>Separate extensions with commas, spaces, or semicolons. You can add or remove extensions.</source>
-        <translation type="vanished">Phân cách các phần mở rộng bằng dấu phẩy, dấu cách hoặc dấu chấm phẩy. Bạn có thể thêm hoặc xóa phần mở rộng.</translation>
+        <translation type="vanished">Uzantıları virgül, boşluk veya noktalı virgülle ayırın. Uzantı ekleyebilir veya kaldırabilirsiniz.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="450"/>
         <source>Allowed file extensions</source>
-        <translation>Phần mở rộng được phép mở trực tiếp</translation>
+        <translation>İzin verilen dosya uzantıları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="451"/>
         <source>Ask before opening files with extensions outside this list.</source>
-        <translation>Hỏi trước khi mở tệp có phần mở rộng không nằm trong danh sách này.</translation>
+        <translation>Uzantısı bu listede olmayan dosyaları açmadan önce sor.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="452"/>
         <source>e.g. .txt, .log</source>
-        <translation>Ví dụ: .txt, .log</translation>
+        <translation>Örn. .txt, .log</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="453"/>
         <source>Add</source>
-        <translation>Thêm</translation>
+        <translation>Ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="454"/>
         <source>Restore Defaults</source>
-        <translation>Khôi phục mặc định</translation>
+        <translation>Varsayılanları geri yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="455"/>
         <source>File size protection</source>
-        <translation>Bảo vệ theo kích thước tệp</translation>
+        <translation>Dosya boyutu koruması</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="456"/>
         <source>Large files may take longer to open and use more memory.</source>
-        <translation>Tệp lớn có thể mất nhiều thời gian hơn để mở và sử dụng nhiều bộ nhớ hơn.</translation>
+        <translation>Büyük dosyaların açılması daha uzun sürebilir ve daha fazla bellek kullanabilir.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="457"/>
         <source>Warn before opening files larger than</source>
-        <translation>Cảnh báo trước khi mở tệp lớn hơn</translation>
+        <translation>Şu boyuttan büyük dosyaları açmadan önce uyar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="460"/>
         <source>File size unit</source>
-        <translation>Đơn vị kích thước tệp</translation>
+        <translation>Dosya boyutu birimi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="463"/>
         <source>Opening Files</source>
-        <translation>Mở tệp</translation>
+        <translation>Dosya Açma</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="464"/>
         <source>Open files in tabs by default</source>
-        <translation>Mặc định mở tệp trong thẻ</translation>
+        <translation>Dosyaları varsayılan olarak sekmelerde aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
         <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
-        <translation>Các tệp được mở từ trình quản lý tệp hoặc dòng lệnh sẽ dùng cửa sổ Mufpen hiện có. Tắt tùy chọn này để mở tệp trong cửa sổ mới.</translation>
+        <translation>Dosya yöneticisinden veya komut satırından açılan dosyalar mevcut Mufpen penceresinde açılır. Dosyaları yeni bir pencerede açmak için bu seçeneği kapatın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
         <source>Always start fresh</source>
-        <translation>Luôn bắt đầu mới</translation>
+        <translation>Her zaman yeni başla</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="472"/>
         <source>Restore previous session</source>
-        <translation>Khôi phục phiên trước</translation>
+        <translation>Önceki oturumu geri yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="478"/>
         <source>Outline</source>
-        <translation>Dàn ý</translation>
+        <translation>Ana Hat</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="479"/>
         <source>Allow collapsing and expanding the outline view in the sidebar</source>
-        <translation>Cho phép thu gọn và mở rộng chế độ xem dàn ý trong thanh bên</translation>
+        <translation>Kenar çubuğundaki ana hat görünümünü daraltmaya ve genişletmeye izin ver</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="481"/>
         <source>Default File Type / Extension</source>
-        <translation>Loại tệp / phần mở rộng mặc định</translation>
+        <translation>Varsayılan Dosya Türü / Uzantısı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="488"/>
         <source>Plain Text (.txt)</source>
-        <translation>Văn bản thuần (.txt)</translation>
+        <translation>Düz Metin (.txt)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="494"/>
         <source>Save &amp; Restore</source>
-        <translation>Lưu &amp; Khôi phục</translation>
+        <translation>Kaydet ve Geri Yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="495"/>
         <source>Auto Save</source>
-        <translation>Tự động lưu</translation>
+        <translation>Otomatik Kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="496"/>
         <source>Auto-save changes to the previous file when switching files</source>
-        <translation>Tự động lưu thay đổi của tệp trước khi chuyển sang tệp khác</translation>
+        <translation>Dosyalar arasında geçiş yaparken önceki dosyadaki değişiklikleri otomatik kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="497"/>
         <source>Restore Unsaved Drafts</source>
-        <translation>Khôi phục bản nháp chưa lưu</translation>
+        <translation>Kaydedilmemiş Taslakları Geri Yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="499"/>
         <source>Recently Used Files</source>
-        <translation>Tệp đã dùng gần đây</translation>
+        <translation>Son Kullanılan Dosyalar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="500"/>
         <source>Record history files and folders</source>
-        <translation>Ghi lại lịch sử tệp và thư mục</translation>
+        <translation>Geçmiş dosyalarını ve klasörlerini kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="501"/>
         <source>Clear History</source>
-        <translation>Xóa lịch sử</translation>
+        <translation>Geçmişi Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="503"/>
         <source>When dragging files/folders into the window</source>
-        <translation>Khi kéo tệp/thư mục vào cửa sổ</translation>
+        <translation>Dosyalar/klasörler pencereye sürüklendiğinde</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="504"/>
         <source>When dragging a folder</source>
-        <translation>Khi kéo một thư mục</translation>
+        <translation>Bir klasör sürüklendiğinde</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
         <source>Open in Mufpen</source>
-        <translation>Mở trong Mufpen</translation>
+        <translation>Mufpen ile Aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
         <source>Open in File Manager</source>
-        <translation>Mở trong trình quản lý tệp</translation>
+        <translation>Dosya Yöneticisinde Aç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="515"/>
         <source>When dragging a Markdown file</source>
-        <translation>Khi kéo một tệp Markdown</translation>
+        <translation>Bir Markdown dosyası sürüklendiğinde</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="521"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="531"/>
         <source>Import File</source>
-        <translation>Nhập tệp</translation>
+        <translation>Dosyayı İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="526"/>
         <source>When dragging an importable file</source>
-        <translation>Khi kéo một tệp có thể nhập</translation>
+        <translation>İçe aktarılabilir bir dosya sürüklendiğinde</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="539"/>
         <source>Windows Integration</source>
-        <translation>Tích hợp Windows</translation>
+        <translation>Windows Entegrasyonu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
         <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
-        <translation>Thêm &quot;Mở bằng Mufpen&quot; vào menu chuột phải của tệp và thư mục trong File Explorer</translation>
+        <translation>Dosya ve klasörler için Dosya Gezgini bağlam menüsüne &quot;Mufpen ile Aç&quot; seçeneğini ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
         <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Đăng ký Mufpen làm trình soạn thảo cho tệp Markdown (.md, .markdown, .mdx, .mkd, .mdown)</translation>
+        <translation>Mufpen&apos;i Markdown dosyaları (.md, .markdown, .mdx, .mkd, .mdown) için düzenleyici olarak kaydet</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
         <source>Set Mufpen as Default…</source>
-        <translation>Đặt Mufpen làm ứng dụng mặc định…</translation>
+        <translation>Mufpen&apos;i Varsayılan Yap…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
         <source>Remove .%1</source>
-        <translation>Xóa .%1</translation>
+        <translation>.%1 uzantısını kaldır</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsGeneralPage</name>
+    <name>mufpen::PrefsGeneralPage</name>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="126"/>
         <source>Checking...</source>
-        <translation>Đang kiểm tra...</translation>
+        <translation>Denetleniyor...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="98"/>
         <source>Update Available</source>
-        <translation>Có bản cập nhật mới</translation>
+        <translation>Güncelleme mevcut</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
         <source>A new version of Mufpen (%1) is available.</source>
-        <translation>Có phiên bản Mufpen mới (%1).</translation>
+        <translation>Yeni bir Mufpen sürümü (%1) mevcut.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>Up to Date</source>
-        <translation>Đã cập nhật</translation>
+        <translation>Güncel</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Bạn đang sử dụng phiên bản mới nhất của Mufpen.</translation>
+        <translation>Mufpen&apos;in en son sürümünü kullanıyorsunuz.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Update Check Failed</source>
-        <translation>Kiểm tra cập nhật thất bại</translation>
+        <translation>Güncelleme denetimi başarısız</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Không thể kiểm tra cập nhật:
+        <translation>Güncellemeler denetlenemedi:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="139"/>
         <source>Language</source>
-        <translation>Ngôn ngữ</translation>
+        <translation>Dil</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="140"/>
         <source>Update</source>
-        <translation>Cập nhật</translation>
+        <translation>Güncelleme</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="141"/>
         <source>Check for Updates</source>
-        <translation>Kiểm tra cập nhật</translation>
+        <translation>Güncellemeleri Denetle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="142"/>
         <source>Automatically check for updates</source>
-        <translation>Tự động kiểm tra cập nhật</translation>
+        <translation>Güncellemeleri otomatik denetle</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Nâng cao</translation>
+        <translation type="vanished">Gelişmiş</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Bật chế độ gỡ lỗi</translation>
+        <translation type="vanished">Hata ayıklama modunu etkinleştir</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Gửi dữ liệu sử dụng ẩn danh</translation>
+        <translation type="vanished">Anonim kullanım verileri gönder</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Mở cài đặt nâng cao</translation>
+        <translation type="vanished">Gelişmiş Ayarları Aç</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Đặt lại cài đặt nâng cao</translation>
+        <translation type="vanished">Gelişmiş Ayarları Sıfırla</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsImagePage</name>
+    <name>mufpen::PrefsImagePage</name>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="185"/>
         <source>When Inserting Images</source>
-        <translation>Khi chèn hình ảnh</translation>
+        <translation>Resim Eklenirken</translation>
     </message>
     <message>
         <source>Learn more...</source>
-        <translation type="vanished">Tìm hiểu thêm...</translation>
+        <translation type="vanished">Daha fazla bilgi...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="190"/>
         <source>No special operation</source>
-        <translation>Không có thao tác đặc biệt</translation>
+        <translation>Özel işlem yok</translation>
     </message>
     <message>
         <source>Copy to custom folder</source>
-        <translation type="vanished">Sao chép vào thư mục tùy chỉnh</translation>
+        <translation type="vanished">Özel klasöre kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="191"/>
         <source>Copy image to current folder (./)</source>
-        <translation>Sao chép hình ảnh vào thư mục hiện tại (./)</translation>
+        <translation>Resmi geçerli klasöre kopyala (./)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="192"/>
         <source>Copy image to ./assets folder</source>
-        <translation>Sao chép hình ảnh vào thư mục ./assets</translation>
+        <translation>Resmi ./assets klasörüne kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="193"/>
         <source>Copy image to ./%1 folder</source>
-        <translation>Sao chép hình ảnh vào thư mục ./%1</translation>
+        <translation>Resmi ./%1 klasörüne kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="194"/>
         <source>Upload image</source>
-        <translation>Tải lên hình ảnh</translation>
+        <translation>Resmi yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="195"/>
         <source>Copy to specified path</source>
-        <translation>Sao chép vào đường dẫn đã chỉ định</translation>
+        <translation>Belirtilen yola kopyala</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="200"/>
         <source>Destination folder for copied images</source>
-        <translation>Thư mục đích cho hình ảnh đã sao chép</translation>
+        <translation>Kopyalanan resimler için hedef klasör</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="201"/>
         <source>Browse...</source>
-        <translation>Duyệt...</translation>
+        <translation>Göz at...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="202"/>
         <source>Apply the above rules to local images</source>
-        <translation>Áp dụng quy tắc trên cho hình ảnh cục bộ</translation>
+        <translation>Yukarıdaki kuralları yerel resimlere uygula</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="203"/>
         <source>Apply the above rules to network images</source>
-        <translation>Áp dụng quy tắc trên cho hình ảnh từ mạng</translation>
+        <translation>Yukarıdaki kuralları ağ resimlerine uygula</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="204"/>
         <source>Allow automatic image upload based on YAML settings</source>
-        <translation>Cho phép tự động tải lên hình ảnh dựa trên cài đặt YAML</translation>
+        <translation>YAML ayarlarına göre otomatik resim yüklemeye izin ver</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="207"/>
         <source>Image Syntax Preferences</source>
-        <translation>Tùy chọn cú pháp hình ảnh</translation>
+        <translation>Resim Sözdizimi Tercihleri</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="208"/>
         <source>Prefer relative paths</source>
-        <translation>Ưu tiên đường dẫn tương đối</translation>
+        <translation>Göreli yolları tercih et</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="209"/>
         <source>Add / to relative paths</source>
-        <translation>Thêm / vào đường dẫn tương đối</translation>
+        <translation>Göreli yollara / ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="210"/>
         <source>Auto-escape image URLs on insertion</source>
-        <translation>Tự động mã hóa ký tự đặc biệt trong URL hình ảnh khi chèn</translation>
+        <translation>Ekleme sırasında resim URL&apos;lerini otomatik olarak kaçış karakteri ile kodla</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="213"/>
         <source>Upload Service Settings</source>
-        <translation>Cài đặt dịch vụ tải lên</translation>
+        <translation>Yükleme Hizmeti Ayarları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="214"/>
         <source>Upload Service</source>
-        <translation>Dịch vụ tải lên</translation>
+        <translation>Yükleme Hizmeti</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="219"/>
         <source>None</source>
-        <translation>Không</translation>
+        <translation>Yok</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="220"/>
         <source>Custom Command</source>
-        <translation>Lệnh tùy chỉnh</translation>
+        <translation>Özel Komut</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="225"/>
         <source>e.g. picgo upload or uPic -m upload</source>
-        <translation>vd. picgo upload hoặc uPic -m upload</translation>
+        <translation>örn. picgo upload veya uPic -m upload</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="226"/>
         <source>Test</source>
-        <translation>Kiểm tra</translation>
+        <translation>Sına</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="293"/>
         <source>Select Image Folder</source>
-        <translation>Chọn thư mục hình ảnh</translation>
+        <translation>Resim Klasörü Seç</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
@@ -5427,83 +5419,83 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Test Upload</source>
-        <translation>Kiểm tra tải lên</translation>
+        <translation>Yüklemeyi Sına</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
         <source>Enter an upload command first.</source>
-        <translation>Hãy nhập lệnh tải lên trước.</translation>
+        <translation>Önce bir yükleme komutu girin.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="310"/>
         <source>Could not create a test image.</source>
-        <translation>Không thể tạo hình ảnh kiểm tra.</translation>
+        <translation>Bir sınama resmi oluşturulamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="316"/>
         <source>Upload canceled.</source>
-        <translation>Đã hủy tải lên.</translation>
+        <translation>Yükleme iptal edildi.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <source>Upload succeeded. Returned URL:
 %1</source>
-        <translation>Tải lên thành công. URL trả về:
+        <translation>Yükleme başarılı. Döndürülen URL:
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Upload failed:
 %1</source>
-        <translation>Tải lên thất bại:
+        <translation>Yükleme başarısız:
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsMarkdownPage</name>
+    <name>mufpen::PrefsMarkdownPage</name>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="256"/>
         <source>Markdown Syntax Preferences</source>
-        <translation>Tùy chọn cú pháp Markdown</translation>
+        <translation>Markdown Sözdizimi Tercihleri</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="257"/>
         <source>Strict Mode</source>
-        <translation>Chế độ nghiêm ngặt</translation>
+        <translation>Katı Mod</translation>
     </message>
     <message>
         <source>Strict Mode turns off tables, strikethrough, task lists, auto links and formulas for plain CommonMark output.</source>
-        <translation type="vanished">Chế độ nghiêm ngặt tắt bảng, gạch ngang, danh sách tác vụ, liên kết tự động và công thức để tạo kết xuất CommonMark thuần.</translation>
+        <translation type="vanished">Sıkı Mod, düz CommonMark çıktısı için tabloları, üstü çiziliyi, görev listelerini, otomatik bağlantıları ve formülleri devre dışı bırakır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="258"/>
         <source>Strict Mode turns off tables, strikethrough and task lists for plain CommonMark structure. Inline extensions (formulas, auto links, sub/superscript, etc.) always follow their own switches and are not affected by Strict Mode.</source>
-        <translation>Chế độ nghiêm ngặt tắt bảng, gạch ngang và danh sách công việc để dùng cấu trúc CommonMark thuần. Các phần mở rộng nội dòng (công thức, liên kết tự động, chỉ số dưới/trên, v.v.) luôn tuân theo tùy chọn riêng và không bị ảnh hưởng bởi chế độ nghiêm ngặt.</translation>
+        <translation>Katı Mod, standart CommonMark yapısı için tabloları, üstü çizili metni ve görev listelerini kapatır. Satır içi uzantılar (formüller, otomatik bağlantılar, alt/üst simgeler vb.) her zaman kendi ayarlarına uyar ve Katı Mod&apos;dan etkilenmez.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="261"/>
         <source>Break on Single Newline</source>
-        <translation>Xuống dòng tại mỗi ký tự xuống dòng đơn</translation>
+        <translation>Tek satır sonunda satır kır</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="263"/>
         <source>Render a single line break as a new line. Turn off for strict CommonMark, which joins soft-wrapped lines into one paragraph.</source>
-        <translation>Hiển thị mỗi ký tự xuống dòng đơn thành một dòng mới. Tắt để dùng CommonMark nghiêm ngặt, vốn gộp các dòng ngắt mềm thành một đoạn văn.</translation>
+        <translation>Her tek satır sonunu yeni bir satır olarak göster. Yumuşak kaydırılan satırları tek paragrafta birleştiren katı CommonMark için kapatın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="265"/>
         <source>Heading Style</source>
-        <translation>Kiểu tiêu đề</translation>
+        <translation>Başlık Stili</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="267"/>
         <source>Unordered List</source>
-        <translation>Danh sách không thứ tự</translation>
+        <translation>Sırasız Liste</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="269"/>
         <source>Ordered List</source>
-        <translation>Danh sách có thứ tự</translation>
+        <translation>Sıralı Liste</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="270"/>
@@ -5518,1090 +5510,1090 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="273"/>
         <source>Markdown Extended Syntax</source>
-        <translation>Cú pháp mở rộng Markdown</translation>
+        <translation>Markdown Genişletilmiş Sözdizimi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="274"/>
         <source>Auto Recognize Links</source>
-        <translation>Tự động nhận diện liên kết</translation>
+        <translation>Bağlantıları Otomatik Tanı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="275"/>
         <source>Inline Formula</source>
-        <translation>Công thức nội tuyến</translation>
+        <translation>Satır İçi Formül</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="276"/>
         <source>Allow Spaces Inside Formula Delimiters</source>
-        <translation>Cho phép khoảng trắng bên trong dấu phân cách công thức</translation>
+        <translation>Formül Sınırlayıcılarının İçindeki Boşluklara İzin Ver</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="278"/>
         <source>Accept spaces or tabs next to inline formula delimiters. Turn this off for Pandoc-style parsing that avoids ambiguous currency text.</source>
-        <translation>Chấp nhận dấu cách hoặc tab bên cạnh dấu phân cách công thức nội tuyến. Tắt tùy chọn này để phân tích theo kiểu Pandoc, tránh văn bản tiền tệ mơ hồ.</translation>
+        <translation>Satır içi formül sınırlayıcılarının yanında boşluk veya sekmeleri kabul eder. Belirsiz para birimi ifadelerini önleyen Pandoc tarzı ayrıştırma için bunu kapatın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="280"/>
         <source>Subscript</source>
-        <translation>Chỉ số dưới</translation>
+        <translation>Alt Simge</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="281"/>
         <source>Superscript</source>
-        <translation>Chỉ số trên</translation>
+        <translation>Üst Simge</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="282"/>
         <source>Highlight</source>
-        <translation>Nổi bật</translation>
+        <translation>Vurgula</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="283"/>
         <source>Render Emoji Shortcodes</source>
-        <translation>Kết xuất mã ngắn emoji</translation>
+        <translation>Emoji Kısa Kodlarını İşle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="285"/>
         <source>Convert GitHub-style shortcodes like :smile: and :heart: into emoji glyphs when rendering. Turn off to keep the literal :shortcode: text (e.g. for technical documentation).</source>
-        <translation>Chuyển các mã ngắn kiểu GitHub như :smile: và :heart: thành ký tự emoji khi kết xuất. Tắt để giữ nguyên văn bản :shortcode: (ví dụ trong tài liệu kỹ thuật).</translation>
+        <translation>İşleme sırasında :smile: ve :heart: gibi GitHub tarzı kısa kodları emoji karakterlerine dönüştür. :shortcode: metnini olduğu gibi korumak için kapatın (ör. teknik belgelerde).</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="287"/>
         <source>Github Style Alert Box</source>
-        <translation>Hộp cảnh báo kiểu Github</translation>
+        <translation>GitHub Tarzı Uyarı Kutusu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="288"/>
         <source>Mermaid Diagrams</source>
-        <translation>Sơ đồ Mermaid</translation>
+        <translation>Mermaid Diyagramları</translation>
     </message>
     <message>
         <source>Diagrams (Sequence, Flowchart, Mermaid)</source>
-        <translation type="vanished">Sơ đồ (Sequence, Flowchart, Mermaid)</translation>
+        <translation type="vanished">Diyagramlar (Sıra, Akış Çizelgesi, Mermaid)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="289"/>
         <source>Diagram Options</source>
-        <translation>Tùy chọn sơ đồ</translation>
+        <translation>Diyagram Seçenekleri</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="292"/>
         <source>Smart Punctuation</source>
-        <translation>Dấu câu thông minh</translation>
+        <translation>Akıllı Noktalama</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="293"/>
         <source>Convert on Input</source>
-        <translation>Chuyển đổi khi nhập</translation>
+        <translation>Girdide Dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>No conversion</source>
-        <translation>Không chuyển đổi</translation>
+        <translation>Dönüşüm yok</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>When typing</source>
-        <translation>Khi gõ</translation>
+        <translation>Yazarken</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Always</source>
-        <translation>Luôn luôn</translation>
+        <translation>Her zaman</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="295"/>
         <source>Smart Quotes</source>
-        <translation>Dấu trích dẫn thông minh</translation>
+        <translation>Akıllı Tırnak İşaretleri</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="304"/>
         <source>Smart Dashes</source>
-        <translation>Dấu gạch ngang thông minh</translation>
+        <translation>Akıllı Tireler</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="305"/>
         <source>Convert on Rendering</source>
-        <translation>Chuyển đổi khi kết xuất</translation>
+        <translation>Görüntülerken dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="306"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Ánh xạ lại dấu câu Unicode khi phân tích</translation>
+        <translation>Ayrıştırırken Unicode noktalamayı yeniden eşle</translation>
     </message>
     <message>
         <source>Allow and convert Unicode punctuation when parsing Markdown</source>
-        <translation type="vanished">Cho phép và chuyển đổi dấu câu Unicode khi phân tích Markdown</translation>
+        <translation type="vanished">Markdown ayrıştırılırken Unicode noktalama işaretlerine izin ver ve dönüştür</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="309"/>
         <source>Code Blocks</source>
-        <translation>Khối mã</translation>
+        <translation>Kod Blokları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="310"/>
         <source>Show Line Numbers</source>
-        <translation>Hiển thị số dòng</translation>
+        <translation>Satır Numaralarını Göster</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="311"/>
         <source>Code Blocks Auto Wrap</source>
-        <translation>Tự động ngắt dòng trong khối mã</translation>
+        <translation>Kod Bloklarında Otomatik Kaydırma</translation>
     </message>
     <message>
         <source>Use Shift+Tab to auto adjust indent of selected code</source>
-        <translation type="vanished">Sử dụng Shift+Tab để tự động điều chỉnh thụt lề của mã đã chọn</translation>
+        <translation type="vanished">Seçili kodun girintisini otomatik ayarlamak için Shift+Tab kullan</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="312"/>
         <source>Code Indent</source>
-        <translation>Thụt lề mã</translation>
+        <translation>Kod Girintisi</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="314"/>
         <source>Default Code Block Language</source>
-        <translation>Ngôn ngữ khối mã mặc định</translation>
+        <translation>Varsayılan Kod Bloğu Dili</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="315"/>
         <source>(empty)</source>
-        <translation>(trống)</translation>
+        <translation>(boş)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="317"/>
         <source>Automatically add code block language</source>
-        <translation>Tự động thêm ngôn ngữ cho khối mã</translation>
+        <translation>Kod bloğu dilini otomatik olarak ekle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>When inserting code blocks via Markdown code</source>
-        <translation>Khi chèn khối mã thông qua mã Markdown</translation>
+        <translation>Markdown kodu aracılığıyla kod blokları eklenirken</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Never</source>
-        <translation>Không bao giờ</translation>
+        <translation>Asla</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsSearchPage</name>
+    <name>mufpen::PrefsSearchPage</name>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="120"/>
         <source>Search scope</source>
-        <translation>Phạm vi tìm kiếm</translation>
+        <translation>Arama kapsamı</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="121"/>
         <source>Applies to folder search and Quick Open. Changes take effect on the next search.</source>
-        <translation>Áp dụng cho tìm kiếm trong thư mục và Mở nhanh. Thay đổi có hiệu lực từ lần tìm kiếm tiếp theo.</translation>
+        <translation>Klasörde arama ve Hızlı Aç için geçerlidir. Değişiklikler bir sonraki aramada uygulanır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="122"/>
         <source>File extensions to search</source>
-        <translation>Phần mở rộng tệp cần tìm kiếm</translation>
+        <translation>Aranacak dosya uzantıları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="123"/>
         <source>Separate extensions with commas, for example: md, txt. Use * for all file types; leave empty to search no files.</source>
-        <translation>Phân tách các phần mở rộng bằng dấu phẩy, ví dụ: md, txt. Dùng * cho mọi loại tệp; để trống để không tìm kiếm tệp nào.</translation>
+        <translation>Uzantıları virgülle ayırın, örneğin: md, txt. Tüm dosya türleri için * kullanın; hiçbir dosyada arama yapmamak için boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="125"/>
         <source>Ignored files and folders</source>
-        <translation>Tệp và thư mục bị bỏ qua</translation>
+        <translation>Yok sayılan dosya ve klasörler</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="126"/>
         <source>One rule per line: build/ ignores folders, *.bak ignores files, /drafts/ matches the search root, and ! includes a match again. Uses gitignore-style wildcards.</source>
-        <translation>Mỗi dòng một quy tắc: build/ bỏ qua thư mục, *.bak bỏ qua tệp, /drafts/ đối chiếu từ thư mục gốc tìm kiếm, và ! đưa mục khớp trở lại phạm vi tìm kiếm. Sử dụng ký tự đại diện theo kiểu gitignore.</translation>
+        <translation>Her satıra bir kural yazın: build/ klasörleri, *.bak dosyaları yok sayar; /drafts/ arama kökünden itibaren eşleşir ve ! bir eşleşmeyi yeniden dahil eder. gitignore tarzı joker karakterler kullanılır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="128"/>
         <source>Include hidden files and folders</source>
-        <translation>Bao gồm tệp và thư mục ẩn</translation>
+        <translation>Gizli dosya ve klasörleri dahil et</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="129"/>
         <source>Read .gitignore files automatically</source>
-        <translation>Tự động đọc tệp .gitignore</translation>
+        <translation>.gitignore dosyalarını otomatik oku</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="130"/>
         <source>Read .ignore files automatically</source>
-        <translation>Tự động đọc tệp .ignore</translation>
+        <translation>.ignore dosyalarını otomatik oku</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="131"/>
         <source>Reads rules in the search root and its subfolders. .ignore takes priority over .gitignore; the rules above take priority over both. Ignored folders are not traversed. Symbolic links are always skipped.</source>
-        <translation>Đọc các quy tắc trong thư mục gốc tìm kiếm và các thư mục con. .ignore được ưu tiên hơn .gitignore; các quy tắc ở trên được ưu tiên hơn cả hai. Không duyệt vào các thư mục bị bỏ qua. Luôn bỏ qua liên kết tượng trưng.</translation>
+        <translation>Arama kökündeki ve alt klasörlerindeki kuralları okur. .ignore, .gitignore dosyasından önceliklidir; yukarıdaki kurallar her ikisinden de önceliklidir. Yok sayılan klasörlerin içine girilmez. Sembolik bağlantılar her zaman atlanır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="133"/>
         <source>Content search limits</source>
-        <translation>Giới hạn tìm kiếm nội dung</translation>
+        <translation>İçerik arama sınırları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="134"/>
         <source>Maximum file size</source>
-        <translation>Kích thước tệp tối đa</translation>
+        <translation>En büyük dosya boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="135"/>
         <source>Maximum file size for regex</source>
-        <translation>Kích thước tệp tối đa khi tìm bằng biểu thức chính quy</translation>
+        <translation>Düzenli ifadeler için en büyük dosya boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="136"/>
         <source>Regex searches obey both limits. File size does not restrict Quick Open. Folder replacement keeps its separate 8 MiB safety limit. File opening protection is configured on the Files page.</source>
-        <translation>Tìm kiếm bằng biểu thức chính quy tuân theo cả hai giới hạn. Kích thước tệp không hạn chế Mở nhanh. Thay thế trong thư mục vẫn có giới hạn an toàn riêng là 8 MiB. Thiết lập bảo vệ khi mở tệp nằm trên trang Tệp.</translation>
+        <translation>Düzenli ifadeyle aramalar her iki sınıra da uyar. Dosya boyutu Hızlı Aç işlevini sınırlamaz. Klasörde değiştirme işleminin ayrı 8 MiB güvenlik sınırı korunur. Dosya açma koruması Dosyalar sayfasında yapılandırılır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="138"/>
         <source>Restore search defaults</source>
-        <translation>Khôi phục mặc định tìm kiếm</translation>
+        <translation>Varsayılan arama ayarlarını geri yükle</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsShortcutsPage</name>
+    <name>mufpen::PrefsShortcutsPage</name>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="115"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Phím tắt</translation>
+        <translation>Klavye kısayolları</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <source>Restore all default shortcuts?</source>
-        <translation>Khôi phục tất cả phím tắt mặc định?</translation>
+        <translation>Tüm varsayılan kısayollar geri yüklensin mi?</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="101"/>
         <source>All custom shortcuts will be removed. This cannot be undone.</source>
-        <translation>Tất cả phím tắt tùy chỉnh sẽ bị xóa. Không thể hoàn tác thao tác này.</translation>
+        <translation>Tüm özel kısayollar kaldırılacak. Bu işlem geri alınamaz.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="102"/>
         <source>Restore Defaults</source>
-        <translation>Khôi phục mặc định</translation>
+        <translation>Varsayılanları geri yükle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="116"/>
         <source>Select a command and press a key combination. Changes apply to all windows immediately.</source>
-        <translation>Chọn một lệnh rồi nhấn tổ hợp phím. Các thay đổi được áp dụng ngay cho tất cả cửa sổ.</translation>
+        <translation>Bir komut seçin ve bir tuş birleşimine basın. Değişiklikler tüm pencerelere hemen uygulanır.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="117"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="118"/>
         <source>Search commands or shortcuts…</source>
-        <translation>Tìm lệnh hoặc phím tắt…</translation>
+        <translation>Komut veya kısayol ara…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Command</source>
-        <translation>Lệnh</translation>
+        <translation>Komut</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="120"/>
         <source>Shortcut</source>
-        <translation>Phím tắt</translation>
+        <translation>Kısayol</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Default</source>
-        <translation>Mặc định</translation>
+        <translation>Varsayılan</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="121"/>
         <source>Clear</source>
-        <translation>Xóa</translation>
+        <translation>Temizle</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="122"/>
         <source>Use Default</source>
-        <translation>Dùng mặc định</translation>
+        <translation>Varsayılanı kullan</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="123"/>
         <source>Restore All Defaults…</source>
-        <translation>Khôi phục tất cả mặc định…</translation>
+        <translation>Tüm varsayılanları geri yükle…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="168"/>
         <source>No matching commands.</source>
-        <translation>Không có lệnh phù hợp.</translation>
+        <translation>Eşleşen komut yok.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Apply</source>
-        <translation>Áp dụng</translation>
+        <translation>Uygula</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Reassign</source>
-        <translation>Gán lại</translation>
+        <translation>Yeniden ata</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="214"/>
         <source>This key is reserved for text entry or cursor navigation. Use a modifier key or a function key.</source>
-        <translation>Phím này được dành cho việc nhập văn bản hoặc di chuyển con trỏ. Hãy dùng phím bổ trợ hoặc phím chức năng.</translation>
+        <translation>Bu tuş metin girişi veya imleç hareketi için ayrılmıştır. Bir değiştirici tuş ya da işlev tuşu kullanın.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="220"/>
         <source>Used by: %1. Reassigning will clear those shortcuts.</source>
-        <translation>Đang được dùng bởi: %1. Việc gán lại sẽ xóa các phím tắt đó.</translation>
+        <translation>Kullanan: %1. Yeniden atama bu kısayolları temizler.</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="222"/>
         <source>Clear and Apply removes the shortcut. Use Default and Apply restores it.</source>
-        <translation>Nhấn Xóa rồi Áp dụng để xóa phím tắt. Nhấn Dùng mặc định rồi Áp dụng để khôi phục.</translation>
+        <translation>Kısayolu kaldırmak için Temizle ve Uygula&apos;ya basın. Geri yüklemek için Varsayılanı kullan ve Uygula&apos;ya basın.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::QuickOpenDialog</name>
+    <name>mufpen::QuickOpenDialog</name>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="82"/>
         <location filename="../src/app/QuickOpenDialog.cpp" line="294"/>
         <source>Quick Open</source>
-        <translation>Mở nhanh</translation>
+        <translation>Hızlı Aç</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="89"/>
         <source>Matching files</source>
-        <translation>Tệp khớp</translation>
+        <translation>Eşleşen dosyalar</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="253"/>
         <source>Scanning folder…</source>
-        <translation>Đang quét thư mục…</translation>
+        <translation>Klasör taranıyor…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="254"/>
         <source>No matching files</source>
-        <translation>Không có tệp phù hợp</translation>
+        <translation>Eşleşen dosya yok</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="255"/>
         <source>%1 matching files</source>
-        <translation>%1 tệp phù hợp</translation>
+        <translation>%1 eşleşen dosya</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="257"/>
         <source> · Showing the first %1; type to narrow results</source>
-        <translation> · Hiển thị %1 kết quả đầu tiên; nhập thêm để thu hẹp kết quả</translation>
+        <translation> · İlk %1 sonuç gösteriliyor; sonuçları daraltmak için yazın</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="259"/>
         <source> · File limit reached; results are incomplete</source>
-        <translation> · Đã đạt giới hạn số tệp; kết quả chưa đầy đủ</translation>
+        <translation> · Dosya sınırına ulaşıldı; sonuçlar eksik</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="261"/>
         <source> · %1 unreadable folders skipped</source>
-        <translation> · Đã bỏ qua %1 thư mục không đọc được</translation>
+        <translation> · Okunamayan %1 klasör atlandı</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="295"/>
         <source>Search file names or paths…</source>
-        <translation>Tìm tên tệp hoặc đường dẫn…</translation>
+        <translation>Dosya adlarında veya yollarda ara…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="296"/>
         <source>Open and recent files</source>
-        <translation>Tệp đang mở và tệp gần đây</translation>
+        <translation>Açık ve son kullanılan dosyalar</translation>
     </message>
     <message>
         <source>Type to filter files…</source>
-        <translation type="vanished">Nhập để lọc tệp…</translation>
+        <translation type="vanished">Dosyaları süzmek için yazın…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SearchPanelWidget</name>
+    <name>mufpen::SearchPanelWidget</name>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="305"/>
         <source> · Unsaved</source>
-        <translation> · Chưa lưu</translation>
+        <translation> · Kaydedilmemiş</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="325"/>
         <source>Open a folder to search its contents.</source>
-        <translation>Mở một thư mục để tìm kiếm nội dung trong đó.</translation>
+        <translation>İçeriğinde arama yapmak için bir klasör açın.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="327"/>
         <source>Search failed: %1</source>
-        <translation>Tìm kiếm thất bại: %1</translation>
+        <translation>Arama başarısız: %1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="329"/>
         <source>Search text files in this folder and its subfolders.</source>
-        <translation>Tìm trong các tệp văn bản của thư mục này và các thư mục con.</translation>
+        <translation>Bu klasördeki ve alt klasörlerindeki metin dosyalarında arama yapın.</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="331"/>
         <source>%1 matches in %2 files</source>
-        <translation>%1 kết quả khớp trong %2 tệp</translation>
+        <translation>%2 dosyada %1 eşleşme</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="333"/>
         <source> · Searching…</source>
-        <translation> · Đang tìm kiếm…</translation>
+        <translation> · Aranıyor…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="335"/>
         <source> · Incomplete results; search again before replacing</source>
-        <translation> · Kết quả chưa đầy đủ; hãy tìm lại trước khi thay thế</translation>
+        <translation> · Sonuçlar eksik; değiştirmeden önce yeniden arayın</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="337"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="353"/>
         <source>%1 files searched</source>
-        <translation>Đã tìm kiếm trong %1 tệp</translation>
+        <translation>%1 dosyada arama yapıldı</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="339"/>
         <source> · %1 files or folders skipped</source>
-        <translation> · Đã bỏ qua %1 tệp hoặc thư mục</translation>
+        <translation> · %1 dosya veya klasör atlandı</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="341"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="400"/>
         <source>Result limit reached</source>
-        <translation>Đã đạt giới hạn số kết quả</translation>
+        <translation>Sonuç sınırına ulaşıldı</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="344"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="350"/>
         <source>Search details</source>
-        <translation>Chi tiết tìm kiếm</translation>
+        <translation>Arama ayrıntıları</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Path</source>
-        <translation>Đường dẫn</translation>
+        <translation>Yol</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Reason</source>
-        <translation>Lý do</translation>
+        <translation>Neden</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="364"/>
         <source>File size exceeds %1 MiB</source>
-        <translation>Kích thước tệp vượt quá %1 MiB</translation>
+        <translation>Dosya boyutu %1 MiB sınırını aşıyor</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="367"/>
         <source>Regular expression search is limited to %1 MiB per file</source>
-        <translation>Tìm kiếm bằng biểu thức chính quy được giới hạn ở %1 MiB cho mỗi tệp</translation>
+        <translation>Düzenli ifadeyle arama, dosya başına %1 MiB ile sınırlıdır</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="371"/>
         <source>File is loading or has conflicting unsaved versions</source>
-        <translation>Tệp đang tải hoặc có các phiên bản chưa lưu xung đột với nhau</translation>
+        <translation>Dosya yükleniyor veya çakışan kaydedilmemiş sürümleri var</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="374"/>
         <source>Cannot read file or folder</source>
-        <translation>Không thể đọc tệp hoặc thư mục</translation>
+        <translation>Dosya veya klasör okunamıyor</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="377"/>
         <source>Unsupported encoding or binary content</source>
-        <translation>Mã hóa không được hỗ trợ hoặc nội dung là dữ liệu nhị phân</translation>
+        <translation>Desteklenmeyen kodlama veya ikili içerik</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="380"/>
         <source>File changed during search</source>
-        <translation>Tệp đã thay đổi trong khi tìm kiếm</translation>
+        <translation>Dosya arama sırasında değişti</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="383"/>
         <source>Search exceeded its resource limit</source>
-        <translation>Tìm kiếm đã vượt quá giới hạn tài nguyên</translation>
+        <translation>Arama kaynak sınırını aştı</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="386"/>
         <source>Ignored directory</source>
-        <translation>Thư mục bị bỏ qua</translation>
+        <translation>Yok sayılan dizin</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="389"/>
         <source>Excluded by search ignore rules</source>
-        <translation>Bị loại trừ theo quy tắc bỏ qua khi tìm kiếm</translation>
+        <translation>Arama yok sayma kuralları tarafından dışlandı</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="392"/>
         <source>Cannot read ignore rules (UTF-8, up to 4 MiB)</source>
-        <translation>Không thể đọc quy tắc bỏ qua (UTF-8, tối đa 4 MiB)</translation>
+        <translation>Yok sayma kuralları okunamıyor (UTF-8, en fazla 4 MiB)</translation>
     </message>
     <message>
         <source>No folder open</source>
-        <translation type="vanished">Chưa mở thư mục nào</translation>
+        <translation type="vanished">Açık klasör yok</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="408"/>
         <source>Search contents…</source>
-        <translation>Tìm nội dung…</translation>
+        <translation>İçerikte ara…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="409"/>
         <source>Search contents</source>
-        <translation>Tìm nội dung</translation>
+        <translation>İçerikte ara</translation>
     </message>
     <message>
         <source>Include paths (words or path segments)</source>
-        <translation type="vanished">Đường dẫn bao gồm (từ hoặc đoạn đường dẫn)</translation>
+        <translation type="vanished">Dahil edilecek yollar (sözcükler veya yol bölümleri)</translation>
     </message>
     <message>
         <source>Exclude paths (words or path segments)</source>
-        <translation type="vanished">Đường dẫn loại trừ (từ hoặc đoạn đường dẫn)</translation>
+        <translation type="vanished">Hariç tutulacak yollar (sözcükler veya yol bölümleri)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="252"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="412"/>
         <source>Match case</source>
-        <translation>Phân biệt chữ hoa/thường</translation>
+        <translation>Büyük/küçük harf duyarlı</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="254"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="414"/>
         <source>Regular expression</source>
-        <translation>Biểu thức chính quy</translation>
+        <translation>Düzenli ifade</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="416"/>
         <source>Replace with…</source>
-        <translation>Thay bằng…</translation>
+        <translation>Şununla değiştir…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="417"/>
         <source>Replace with</source>
-        <translation>Thay bằng</translation>
+        <translation>Şununla değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="418"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="419"/>
         <source>Replace</source>
-        <translation>Thay thế</translation>
+        <translation>Değiştir</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="420"/>
         <source>Preview folder replacement…</source>
-        <translation>Xem trước thay thế trong thư mục…</translation>
+        <translation>Klasörde değiştirmeyi önizle…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="421"/>
         <source>Search</source>
-        <translation>Tìm kiếm</translation>
+        <translation>Ara</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="422"/>
         <source>Stop</source>
-        <translation>Dừng</translation>
+        <translation>Durdur</translation>
     </message>
     <message>
         <source>Undo folder replacement…</source>
-        <translation type="vanished">Hoàn tác thay thế trong thư mục…</translation>
+        <translation type="vanished">Klasörde değiştirmeyi geri al…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="423"/>
         <source>Content search results</source>
-        <translation>Kết quả tìm kiếm nội dung</translation>
+        <translation>İçerik arama sonuçları</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SidebarWidget</name>
+    <name>mufpen::SidebarWidget</name>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="323"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1143"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1172"/>
         <source>Files</source>
-        <translation>Tệp</translation>
+        <translation>Dosyalar</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="475"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1146"/>
         <source>Outline</source>
-        <translation>Dàn ý</translation>
+        <translation>Ana Hat</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="736"/>
         <source>Directory pinned — click to follow the active tab</source>
-        <translation>Đã ghim thư mục — nhấp để theo thẻ đang hoạt động</translation>
+        <translation>Dizin sabitlendi — etkin sekmeyi takip etmek için tıklayın</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="737"/>
         <source>Following active tab — click to pin this directory</source>
-        <translation>Đang theo thẻ đang hoạt động — nhấp để ghim thư mục này</translation>
+        <translation>Etkin sekme takip ediliyor — bu dizini sabitlemek için tıklayın</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1123"/>
         <source>No folder open</source>
-        <translation>Chưa mở thư mục nào</translation>
+        <translation>Açık klasör yok</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1129"/>
         <source>New File</source>
-        <translation>Tệp mới</translation>
+        <translation>Yeni Dosya</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1130"/>
         <source>New Folder</source>
-        <translation>Thư mục mới</translation>
+        <translation>Yeni Klasör</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1132"/>
         <source>Refresh Files</source>
-        <translation>Làm mới tệp</translation>
+        <translation>Dosyaları Yenile</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1133"/>
         <source>Sort Files</source>
-        <translation>Sắp xếp tệp</translation>
+        <translation>Dosyaları Sırala</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1134"/>
         <source>File Name</source>
-        <translation>Tên tệp</translation>
+        <translation>Dosya Adı</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1135"/>
         <source>Date Modified</source>
-        <translation>Ngày sửa đổi</translation>
+        <translation>Değiştirilme Tarihi</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1136"/>
         <source>Date Created</source>
-        <translation>Ngày tạo</translation>
+        <translation>Oluşturulma Tarihi</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1137"/>
         <source>File Type</source>
-        <translation>Loại tệp</translation>
+        <translation>Dosya Türü</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1138"/>
         <source>File Size</source>
-        <translation>Kích thước tệp</translation>
+        <translation>Dosya Boyutu</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1139"/>
         <source>Ascending</source>
-        <translation>Tăng dần</translation>
+        <translation>Artan</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1140"/>
         <source>Descending</source>
-        <translation>Giảm dần</translation>
+        <translation>Azalan</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1149"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1173"/>
         <source>Search</source>
-        <translation>Tìm kiếm</translation>
+        <translation>Ara</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="369"/>
         <source>Expand All Folders</source>
-        <translation>Mở rộng tất cả thư mục</translation>
+        <translation>Tüm Klasörleri Genişlet</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="370"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1131"/>
         <source>Collapse All Folders</source>
-        <translation>Thu gọn tất cả thư mục</translation>
+        <translation>Tüm Klasörleri Daralt</translation>
     </message>
     <message>
         <source>Folder Actions</source>
-        <translation type="vanished">Thao tác thư mục</translation>
+        <translation type="vanished">Klasör İşlemleri</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="vanished">Mở thư mục...</translation>
+        <translation type="vanished">Klasör Aç...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="371"/>
         <source>Close Folder</source>
-        <translation>Đóng thư mục</translation>
+        <translation>Klasörü Kapat</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
-        <translation>Không có tiêu đề</translation>
+        <translation>Başlık Yok</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SourceEditorWidget</name>
+    <name>mufpen::SourceEditorWidget</name>
     <message>
         <location filename="../src/editor/SourceEditorWidget.cpp" line="224"/>
         <source>Start writing...</source>
-        <translation>Bắt đầu viết...</translation>
+        <translation>Yazmaya başlayın...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::StatusBarWidget</name>
+    <name>mufpen::StatusBarWidget</name>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="233"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="590"/>
         <source>%1 words</source>
-        <translation>%1 từ</translation>
+        <translation>%1 sözcük</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="397"/>
         <source>Click to view document statistics</source>
-        <translation>Nhấp để xem thống kê tài liệu</translation>
+        <translation>Belge istatistiklerini görüntülemek için tıklayın</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Click to change the spell-check language</source>
-        <translation>Nhấp để đổi ngôn ngữ kiểm tra chính tả</translation>
+        <translation>Yazım denetimi dilini değiştirmek için tıklayın</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Spell check is off — click to enable</source>
-        <translation>Kiểm tra chính tả đang tắt — nhấp để bật</translation>
+        <translation>Yazım denetimi kapalı — etkinleştirmek için tıklayın</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="403"/>
         <source>Cursor position (line : column)</source>
-        <translation>Vị trí con trỏ (dòng : cột)</translation>
+        <translation>İmleç konumu (satır : sütun)</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="406"/>
         <source>File encoding · line ending</source>
-        <translation>Mã hóa tệp · kết thúc dòng</translation>
+        <translation>Dosya kodlaması · satır sonu</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="539"/>
         <source>Spell Check</source>
-        <translation>Kiểm tra chính tả</translation>
+        <translation>Yazım denetimi</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="558"/>
         <source>Words</source>
-        <translation>Từ</translation>
+        <translation>Sözcükler</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="559"/>
         <source>Characters</source>
-        <translation>Ký tự</translation>
+        <translation>Karakterler</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="560"/>
         <source>Lines</source>
-        <translation>Dòng</translation>
+        <translation>Satır</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>Reading time</source>
-        <translation>Thời gian đọc</translation>
+        <translation>Okuma süresi</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>&lt; 1 min</source>
-        <translation>&lt; 1 phút</translation>
+        <translation>&lt; 1 dk</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>%1 min</source>
-        <translation>%1 phút</translation>
+        <translation>%1 dk</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <source>Selected</source>
-        <translation>Đã chọn</translation>
+        <translation>Seçili</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Hide sidebar</source>
-        <translation>Ẩn thanh bên</translation>
+        <translation>Kenar çubuğunu gizle</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Show sidebar</source>
-        <translation>Hiện thanh bên</translation>
+        <translation>Kenar çubuğunu göster</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to rendered mode</source>
-        <translation>Chuyển sang chế độ kết xuất</translation>
+        <translation>İşlenmiş görünüme geç</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to source mode</source>
-        <translation>Chuyển sang chế độ mã nguồn</translation>
+        <translation>Kaynak kodu moduna geç</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Exit split view</source>
-        <translation>Thoát chế độ xem chia đôi</translation>
+        <translation>Bölünmüş görünümden çık</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Source and preview side by side</source>
-        <translation>Hiển thị mã nguồn và bản xem trước cạnh nhau</translation>
+        <translation>Kaynak ve önizleme yan yana</translation>
     </message>
 </context>
 <context>
-    <name>muffin::TableToolbar</name>
+    <name>mufpen::TableToolbar</name>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="319"/>
         <source>Resize Table</source>
-        <translation>Thay đổi kích thước bảng</translation>
+        <translation>Tabloyu Yeniden Boyutlandır</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="320"/>
         <source>Align Left</source>
-        <translation>Căn trái</translation>
+        <translation>Sola Hizala</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="321"/>
         <source>Align Center</source>
-        <translation>Căn giữa</translation>
+        <translation>Ortala</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="322"/>
         <source>Align Right</source>
-        <translation>Căn phải</translation>
+        <translation>Sağa Hizala</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="323"/>
         <source>More Actions</source>
-        <translation>Thao tác khác</translation>
+        <translation>Diğer İşlemler</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="324"/>
         <source>Delete Table</source>
-        <translation>Xóa bảng</translation>
+        <translation>Tabloyu Sil</translation>
     </message>
 </context>
 <context>
-    <name>muffin::UpdateChecker</name>
+    <name>mufpen::UpdateChecker</name>
     <message>
         <source>The update server returned an invalid version.</source>
-        <translation type="vanished">Máy chủ cập nhật đã trả về phiên bản không hợp lệ.</translation>
+        <translation type="vanished">Güncelleme sunucusu geçersiz bir sürüm döndürdü.</translation>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
         <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
-        <translation>Không thể kết nối với dịch vụ cập nhật. Vui lòng thử lại sau hoặc tải Mufpen từ trang phát hành chính thức.</translation>
+        <translation>Güncelleme hizmetine ulaşılamadı. Lütfen daha sonra tekrar deneyin veya Mufpen&apos;i resmî sürüm sayfasından indirin.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::VirtualSourceEdit</name>
+    <name>mufpen::VirtualSourceEdit</name>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="310"/>
         <source>Markdown source editor</source>
-        <translation>Trình soạn thảo mã nguồn Markdown</translation>
+        <translation>Markdown kaynak kodu düzenleyici</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="311"/>
         <source>Plain-text Markdown source</source>
-        <translation>Mã nguồn Markdown dạng văn bản thuần</translation>
+        <translation>Düz metin Markdown kaynak kodu</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1679"/>
         <source>Undo</source>
-        <translation>Hoàn tác</translation>
+        <translation>Geri Al</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1681"/>
         <source>Redo</source>
-        <translation>Làm lại</translation>
+        <translation>Yinele</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1685"/>
         <source>Cut</source>
-        <translation>Cắt</translation>
+        <translation>Kes</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1691"/>
         <source>Copy</source>
-        <translation>Sao chép</translation>
+        <translation>Kopyala</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1695"/>
         <source>Paste</source>
-        <translation>Dán</translation>
+        <translation>Yapıştır</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1706"/>
         <source>Select All</source>
-        <translation>Chọn tất cả</translation>
+        <translation>Tümünü Seç</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsIntegration</name>
+    <name>mufpen::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
         <source>Open with Mufpen</source>
-        <translation>Mở bằng Mufpen</translation>
+        <translation>Mufpen ile Aç</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
         <source>Mufpen Markdown Document</source>
-        <translation>Tài liệu Markdown Mufpen</translation>
+        <translation>Mufpen Markdown Belgesi</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
         <source>Open</source>
-        <translation>Mở</translation>
+        <translation>Aç</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsUpdater</name>
+    <name>mufpen::WindowsUpdater</name>
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
         <source>Update Mufpen</source>
-        <translation>Cập nhật Mufpen</translation>
+        <translation>Mufpen&apos;i güncelle</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
         <source>The update was canceled or could not be installed (code %1). Your session has been restored. You can try again from Help &gt; Check for Updates.</source>
-        <translation>Bản cập nhật đã bị hủy hoặc không thể cài đặt (mã %1). Phiên làm việc của bạn đã được khôi phục. Bạn có thể thử lại từ Trợ giúp &gt; Kiểm tra cập nhật.</translation>
+        <translation>Güncelleme iptal edildi veya yüklenemedi (kod %1). Oturumunuz geri yüklendi. Yardım &gt; Güncellemeleri Denetle bölümünden yeniden deneyebilirsiniz.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="211"/>
         <source>Cancel</source>
-        <translation>Hủy</translation>
+        <translation>İptal</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
         <source>Downloading Mufpen %1… You can continue writing.</source>
-        <translation>Đang tải Mufpen %1… Bạn có thể tiếp tục viết.</translation>
+        <translation>Mufpen %1 indiriliyor… Yazmaya devam edebilirsiniz.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
         <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Mufpen %1 đã sẵn sàng. Các tài liệu sẽ được kiểm tra thay đổi chưa lưu trước khi khởi động lại. Windows có thể yêu cầu quyền quản trị viên.</translation>
+        <translation>Mufpen %1 hazır. Yeniden başlatmadan önce belgelerinizde kaydedilmemiş değişiklik olup olmadığı denetlenecek. Windows yönetici izni isteyebilir.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
         <source>Preparing to restart…</source>
-        <translation>Đang chuẩn bị khởi động lại…</translation>
+        <translation>Yeniden başlatmaya hazırlanılıyor…</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
         <source>Mufpen %1 is available. Download the update now?</source>
-        <translation>Đã có Mufpen %1. Tải bản cập nhật ngay bây giờ?</translation>
+        <translation>Mufpen %1 kullanılabilir. Güncelleme şimdi indirilsin mi?</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Restart and Update</source>
-        <translation>Khởi động lại và cập nhật</translation>
+        <translation>Yeniden başlat ve güncelle</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Download Update</source>
-        <translation>Tải bản cập nhật</translation>
+        <translation>Güncellemeyi indir</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Cancel Download</source>
-        <translation>Hủy tải xuống</translation>
+        <translation>İndirmeyi iptal et</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Later</source>
-        <translation>Để sau</translation>
+        <translation>Daha sonra</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="294"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="320"/>
         <source>The update download could not be saved or exceeded its expected size.</source>
-        <translation>Không thể lưu bản cập nhật tải xuống hoặc dung lượng đã vượt mức dự kiến.</translation>
+        <translation>İndirilen güncelleme kaydedilemedi veya beklenen boyutu aştı.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="302"/>
         <source>The update manifest is too large.</source>
-        <translation>Tệp kê khai bản cập nhật quá lớn.</translation>
+        <translation>Güncelleme bildirimi çok büyük.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="328"/>
         <source>Could not download the update: %1</source>
-        <translation>Không thể tải bản cập nhật: %1</translation>
+        <translation>Güncelleme indirilemedi: %1</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="351"/>
         <source>The update signature is invalid or the package does not match this version of Windows. Nothing was installed.</source>
-        <translation>Chữ ký bản cập nhật không hợp lệ hoặc gói không tương thích với phiên bản Windows này. Chưa có gì được cài đặt.</translation>
+        <translation>Güncelleme imzası geçersiz veya paket bu Windows sürümüyle uyumlu değil. Hiçbir şey yüklenmedi.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="363"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="368"/>
         <source>Could not create the update download folder.</source>
-        <translation>Không thể tạo thư mục tải bản cập nhật.</translation>
+        <translation>Güncelleme indirme klasörü oluşturulamadı.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="377"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="467"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="476"/>
         <source>The downloaded update is incomplete or has been modified. Nothing was installed.</source>
-        <translation>Bản cập nhật tải xuống chưa đầy đủ hoặc đã bị sửa đổi. Chưa có gì được cài đặt.</translation>
+        <translation>İndirilen güncelleme eksik veya değiştirilmiş. Hiçbir şey yüklenmedi.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
         <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Hãy đóng các phiên bản Mufpen khác đang chạy trước khi cập nhật. Chỉ bản đã cài đặt mới có thể cập nhật trong ứng dụng.</translation>
+        <translation>Güncellemeden önce çalışan diğer Mufpen örneklerini kapatın. Yalnızca kurulu kopyalar uygulama içinden güncellenebilir.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="581"/>
         <source>Could not save the session before updating.</source>
-        <translation>Không thể lưu phiên làm việc trước khi cập nhật.</translation>
+        <translation>Güncellemeden önce oturum kaydedilemedi.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="545"/>
         <source>Could not start the update installer. Your current version is unchanged.</source>
-        <translation>Không thể khởi chạy trình cài đặt bản cập nhật. Phiên bản hiện tại của bạn không thay đổi.</translation>
+        <translation>Güncelleme yükleyicisi başlatılamadı. Mevcut sürümünüz değişmedi.</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
         <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
-        <translation>Trình cài đặt chưa sẵn sàng. Mufpen sẽ tiếp tục mở; vui lòng thử lại.</translation>
+        <translation>Yükleyici hazır duruma gelmedi. Mufpen açık kalacak; lütfen yeniden deneyin.</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceReplace</name>
+    <name>mufpen::WorkspaceReplace</name>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="171"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="183"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="204"/>
         <source>Could not create recovery folder</source>
-        <translation>Không thể tạo thư mục khôi phục</translation>
+        <translation>Kurtarma klasörü oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="176"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="280"/>
         <source>Another folder replacement is running</source>
-        <translation>Một thao tác thay thế trong thư mục khác đang chạy</translation>
+        <translation>Başka bir klasörde değiştirme işlemi çalışıyor</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="285"/>
         <source>Could not read recovery journal</source>
-        <translation>Không thể đọc nhật ký khôi phục</translation>
+        <translation>Kurtarma günlüğü okunamadı</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="291"/>
         <source>Invalid recovery journal</source>
-        <translation>Nhật ký khôi phục không hợp lệ</translation>
+        <translation>Geçersiz kurtarma günlüğü</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceSearch</name>
+    <name>mufpen::WorkspaceSearch</name>
     <message>
         <location filename="../src/app/WorkspaceSearch.cpp" line="381"/>
         <source>Folder is unavailable</source>
-        <translation>Thư mục không khả dụng</translation>
+        <translation>Klasör kullanılamıyor</translation>
     </message>
     <message>
         <source>Regular expression exceeded its resource limit</source>
-        <translation type="vanished">Biểu thức chính quy đã vượt quá giới hạn tài nguyên</translation>
+        <translation type="vanished">Düzenli ifade kaynak sınırını aştı</translation>
     </message>
 </context>
 </TS>

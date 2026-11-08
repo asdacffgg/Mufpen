@@ -13,7 +13,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testInputEnterAtParagraphEdgesCreatesEditableEmptyParagraph (lines 435-537)
 void testInputEnterAtParagraphEdgesCreatesEditableEmptyParagraph() {

@@ -58,14 +58,14 @@ bool readExact(const QString& path, const QByteArray& expected) {
          file.error() == QFileDevice::NoError;
 }
 bool ordinaryPath(const QString& root, const QString& path) {
-  if (!muffin::WorkspaceFileIndex::contains(root, path))
+  if (!mufpen::WorkspaceFileIndex::contains(root, path))
     return false;
   QString current = QFileInfo(path).absoluteFilePath();
   while (true) {
     const QFileInfo info(current);
     if (info.isSymLink() || info.isJunction())
       return false;
-    if (muffin::WorkspaceFileIndex::pathKey(current) == muffin::WorkspaceFileIndex::pathKey(root))
+    if (mufpen::WorkspaceFileIndex::pathKey(current) == mufpen::WorkspaceFileIndex::pathKey(root))
       break;
     const auto parent = info.absolutePath();
     if (parent == current)
@@ -76,7 +76,7 @@ bool ordinaryPath(const QString& root, const QString& path) {
 }
 }
 
-QVector<muffin::WorkspaceChange> muffin::WorkspaceReplace::prepare(const WorkspaceSearchResult& result,
+QVector<mufpen::WorkspaceChange> mufpen::WorkspaceReplace::prepare(const WorkspaceSearchResult& result,
                                                                    const QString& replacement, QStringList* skipped) {
   QVector<WorkspaceChange> changes;
   qint64 retainedBytes = 0;
@@ -160,7 +160,7 @@ QVector<muffin::WorkspaceChange> muffin::WorkspaceReplace::prepare(const Workspa
   return changes;
 }
 
-muffin::WorkspaceReplaceReport muffin::WorkspaceReplace::apply(const QString& root,
+mufpen::WorkspaceReplaceReport mufpen::WorkspaceReplace::apply(const QString& root,
                                                                const QVector<WorkspaceChange>& changes,
                                                                const QString& recoveryRoot,
                                                                const SearchCancellation& cancel) {
@@ -168,19 +168,19 @@ muffin::WorkspaceReplaceReport muffin::WorkspaceReplace::apply(const QString& ro
   if (changes.isEmpty())
     return report;
   if (!QDir().mkpath(recoveryRoot)) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Could not create recovery folder");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Could not create recovery folder");
     return report;
   }
   QLockFile lock(QDir(recoveryRoot).filePath("operation.lock"));
   if (!lock.tryLock(0)) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Another folder replacement is running");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Another folder replacement is running");
     return report;
   }
   const QString id = QDateTime::currentDateTimeUtc().toString("yyyyMMdd-HHmmsszzz-") +
                      QUuid::createUuid().toString(QUuid::WithoutBraces);
   const QString directory = QDir(recoveryRoot).filePath(id);
   if (!QDir().mkpath(directory)) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Could not create recovery folder");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Could not create recovery folder");
     return report;
   }
   report.backupDirectory = directory;
@@ -201,7 +201,7 @@ muffin::WorkspaceReplaceReport muffin::WorkspaceReplace::apply(const QString& ro
       {"version", 1}, {"root", QFileInfo(root).absoluteFilePath()}, {"files", entries}, {"restored", false}};
   const QString manifest = QDir(directory).filePath("manifest.json");
   if (QJsonDocument(journal).toJson().size() > 4 * 1024 * 1024) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Could not create recovery folder");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Could not create recovery folder");
     return report;
   }
   if (!writeAtomic(manifest, QJsonDocument(journal).toJson(), &report.error))
@@ -251,7 +251,7 @@ muffin::WorkspaceReplaceReport muffin::WorkspaceReplace::apply(const QString& ro
   return report;
 }
 
-QString muffin::WorkspaceReplace::latestRecovery(const QString& recoveryRoot) {
+QString mufpen::WorkspaceReplace::latestRecovery(const QString& recoveryRoot) {
   const auto directories = QDir(recoveryRoot).entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name | QDir::Reversed);
   for (const auto& name : directories) {
     const auto directory = QDir(recoveryRoot).filePath(name);
@@ -270,25 +270,25 @@ QString muffin::WorkspaceReplace::latestRecovery(const QString& recoveryRoot) {
   return {};
 }
 
-muffin::WorkspaceReplaceReport muffin::WorkspaceReplace::restore(const QString& directory,
+mufpen::WorkspaceReplaceReport mufpen::WorkspaceReplace::restore(const QString& directory,
                                                                  const OpenSearchBuffers& buffers,
                                                                  const SearchCancellation& cancel) {
   WorkspaceReplaceReport report;
   report.backupDirectory = directory;
   QLockFile lock(QDir(QFileInfo(directory).absolutePath()).filePath("operation.lock"));
   if (!lock.tryLock(0)) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Another folder replacement is running");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Another folder replacement is running");
     return report;
   }
   QFile manifest(QDir(directory).filePath("manifest.json"));
   if (!manifest.open(QIODevice::ReadOnly) || manifest.size() > 4 * 1024 * 1024) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Could not read recovery journal");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Could not read recovery journal");
     return report;
   }
   auto journal = QJsonDocument::fromJson(manifest.readAll()).object();
   manifest.close();
   if (journal.value("version").toInt() != 1 || journal.value("root").toString().isEmpty()) {
-    report.error = QCoreApplication::translate("muffin::WorkspaceReplace", "Invalid recovery journal");
+    report.error = QCoreApplication::translate("mufpen::WorkspaceReplace", "Invalid recovery journal");
     return report;
   }
   const auto root = journal.value("root").toString();

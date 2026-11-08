@@ -6,7 +6,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::ishikawa {
+namespace mufpen::mermaid::ishikawa {
 namespace {
 
 struct StackEntry {
@@ -174,4 +174,4 @@ IshikawaData IshikawaDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::ishikawa
+} // namespace mufpen::mermaid::ishikawa

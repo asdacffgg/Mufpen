@@ -15,7 +15,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::c4 {
+namespace mufpen::mermaid::c4 {
 namespace {
 
 QColor paintColor(const QString& value, const QColor& fallback = Qt::black) {
@@ -196,4 +196,4 @@ void paintC4Scene(const C4Scene& scene, QPainter& painter, const MermaidPaintOpt
   }
 }
 
-} // namespace muffin::mermaid::c4
+} // namespace mufpen::mermaid::c4

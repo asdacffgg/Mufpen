@@ -6,7 +6,7 @@
 #include <optional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 struct CssFilterOperation {
   enum class Kind { Blur, Brightness, Contrast, Grayscale, Sepia, HueRotate, Opacity, Invert, Saturate, DropShadow };
   Kind kind = Kind::Blur;
@@ -20,4 +20,4 @@ struct CssFilterOperation {
 std::optional<std::vector<CssFilterOperation>>
 parseCssFilters(const QString& value, const CssLengthContext& context = {}, QColor currentColor = Qt::black);
 CssFilterOperation identityCssFilter(CssFilterOperation::Kind kind);
-} // namespace muffin
+} // namespace mufpen

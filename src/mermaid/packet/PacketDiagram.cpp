@@ -12,7 +12,7 @@
 #include <string>
 #include <utility>
 
-namespace muffin::mermaid::packet {
+namespace mufpen::mermaid::packet {
 
 PacketParseError::PacketParseError(const QString& message, int line, int column, PacketErrorKind kind)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column), kind(kind) {
@@ -565,4 +565,4 @@ PacketData PacketDiagram::parse(const QString& source, const QJsonValue& rawBits
   return data;
 }
 
-} // namespace muffin::mermaid::packet
+} // namespace mufpen::mermaid::packet

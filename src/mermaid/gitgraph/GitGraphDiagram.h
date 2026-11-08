@@ -7,7 +7,7 @@
 #include <optional>
 #include <stdexcept>
 
-namespace muffin::mermaid::gitgraph {
+namespace mufpen::mermaid::gitgraph {
 
 enum class GitGraphErrorKind { Lexer, Parser, Runtime };
 
@@ -64,4 +64,4 @@ public:
   static GitGraphData parse(const QString& source, const GitGraphParseConfig& config = {});
 };
 
-} // namespace muffin::mermaid::gitgraph
+} // namespace mufpen::mermaid::gitgraph

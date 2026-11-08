@@ -2,7 +2,7 @@
 
 #include "document/MarkdownNode.h"
 
-namespace muffin {
+namespace mufpen {
 
 // The sibling that follows `node` in document order, climbing out of containers: `node`'s next
 // sibling if it has one, else the next sibling of the nearest ancestor that has one. null at the
@@ -37,4 +37,4 @@ inline MarkdownNode* previousSiblingAcrossContainers(MarkdownNode& node) {
   return nullptr;
 }
 
-} // namespace muffin
+} // namespace mufpen

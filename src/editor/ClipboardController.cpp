@@ -21,7 +21,7 @@ QString clipboardHtmlMarkdown(QString html) {
   const auto last = html.indexOf(QStringLiteral("<!--EndFragment-->"));
   if (first >= 0 && last > first)
     html = html.mid(first + 20, last - first - 20);
-  return muffin::importHtmlMarkdown(html);
+  return mufpen::importHtmlMarkdown(html);
 }
 
 QString clipboardTableMarkdown(QString text) {
@@ -83,7 +83,7 @@ QString clipboardTableMarkdown(QString text) {
 }
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 
 ClipboardController::ClipboardController(QObject* parent) : QObject(parent) {
 }
@@ -106,7 +106,7 @@ bool ClipboardController::copy() {
   }
 
   // Plain-text preference only controls plain targets. Rich editors receive
-  // HTML, while Muffin-to-Muffin paste always retains the exact Markdown.
+  // HTML, while Mufpen-to-Mufpen paste always retains the exact Markdown.
   const bool preferMarkdown = QSettings().value(QStringLiteral("editor/copyAsMarkdown"), true).toBool();
   auto* mimeData = new QMimeData();
   if (!markdown.text.isEmpty())
@@ -175,12 +175,12 @@ bool ClipboardController::paste() {
   if (mimeData && mimeData->hasImage() && ctx_.hasSession()) {
     const QImage image = qvariant_cast<QImage>(mimeData->imageData());
     if (!image.isNull()) {
-      muffin::ImageInsertRequest req;
+      mufpen::ImageInsertRequest req;
       req.pastedImage = image;
       req.documentPath = ctx_.session->filePath();
       req.documentText = ctx_.session->markdownText().toString();
       QSettings settings;
-      const muffin::ImageInsertResult res = muffin::ImageInsertionPolicy::resolveHref(req, settings, nullptr);
+      const mufpen::ImageInsertResult res = mufpen::ImageInsertionPolicy::resolveHref(req, settings, nullptr);
       if (res.ok) {
         return inputController_->insertText(image_syntax::markdownImage(QStringLiteral("image"), res.href));
       }
@@ -256,4 +256,4 @@ bool ClipboardController::pasteAsPlainText() {
   return text.isEmpty() ? false : inputController_->insertText(text);
 }
 
-} // namespace muffin
+} // namespace mufpen

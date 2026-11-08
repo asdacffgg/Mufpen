@@ -6,7 +6,7 @@
 #include <QMarginsF>
 #include <array>
 
-namespace muffin {
+namespace mufpen {
 
 // Convert a CSS absolute length to px using the spec's fixed 96px/in ratio.
 // Recognises px, pt, pc, in, cm, mm and Q (passed lower-cased as "q").
@@ -89,4 +89,4 @@ CssLengthResult resolveCssLengthToPx(QStringView value, const CssLengthContext& 
 // result to distinguish invalid from a valid zero. Variables must be resolved.
 qreal evalCalcPx(const QString& expression, qreal emPx, qreal rootPx, qreal containingPx);
 
-} // namespace muffin
+} // namespace mufpen

@@ -31,14 +31,14 @@ int segmentScore(const QString& needle, const QString& haystack) {
   return matched == needle.size() ? 200 - qMin<qsizetype>(last - first, 150) : -1;
 }
 }
-QStringList muffin::WorkspaceFileIndex::textExtensions() {
+QStringList mufpen::WorkspaceFileIndex::textExtensions() {
   return SearchSettings::load().extensions;
 }
-QString muffin::WorkspaceScanOptions::defaultIgnorePatterns() {
+QString mufpen::WorkspaceScanOptions::defaultIgnorePatterns() {
   return QStringLiteral(
       ".git/\n.hg/\n.svn/\nnode_modules/\nbuild/\ndist/\nout/\ntarget/\n.cache/\n.conan/\n.venv/\n__pycache__/");
 }
-QString muffin::WorkspaceFileIndex::pathKey(const QString& path) {
+QString mufpen::WorkspaceFileIndex::pathKey(const QString& path) {
   if (path.isEmpty())
     return {};
   const QFileInfo info(path);
@@ -50,13 +50,13 @@ QString muffin::WorkspaceFileIndex::pathKey(const QString& path) {
 #endif
   return QDir::cleanPath(key);
 }
-bool muffin::WorkspaceFileIndex::contains(const QString& root, const QString& path) {
+bool mufpen::WorkspaceFileIndex::contains(const QString& root, const QString& path) {
   if (root.isEmpty() || path.isEmpty())
     return false;
   const QString base = pathKey(root), candidate = pathKey(path);
   return candidate == base || candidate.startsWith(base.endsWith('/') ? base : base + '/');
 }
-muffin::WorkspaceFiles muffin::WorkspaceFileIndex::scan(const QString& root, const QStringList& extensions,
+mufpen::WorkspaceFiles mufpen::WorkspaceFileIndex::scan(const QString& root, const QStringList& extensions,
                                                         const SearchCancellation& cancel, int limit) {
   // Reference maintenance (e.g. renaming a linked note) must not inherit the
   // user's search scope or newly added project ignore files.
@@ -64,7 +64,7 @@ muffin::WorkspaceFiles muffin::WorkspaceFileIndex::scan(const QString& root, con
   options.readGitIgnore = options.readIgnore = false;
   return scan(root, extensions, cancel, options, limit);
 }
-muffin::WorkspaceFiles muffin::WorkspaceFileIndex::scan(const QString& root, const QStringList& extensions,
+mufpen::WorkspaceFiles mufpen::WorkspaceFileIndex::scan(const QString& root, const QStringList& extensions,
                                                         const SearchCancellation& cancel,
                                                         const WorkspaceScanOptions& options, int limit) {
   WorkspaceFiles result;
@@ -162,7 +162,7 @@ muffin::WorkspaceFiles muffin::WorkspaceFileIndex::scan(const QString& root, con
   }
   return result;
 }
-int muffin::PathMatcher::score(const QString& query, const QString& relativePath) {
+int mufpen::PathMatcher::score(const QString& query, const QString& relativePath) {
   QString normalizedQuery = query.trimmed().toCaseFolded();
   normalizedQuery.replace('\\', '/');
   if (normalizedQuery.isEmpty())

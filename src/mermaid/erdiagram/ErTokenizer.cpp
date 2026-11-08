@@ -76,7 +76,7 @@ bool atErLineStart(const QString& source, qsizetype offset) {
 }
 } // namespace
 
-void muffin::mermaid::er::ErTokenizer::advance(QStringView text) {
+void mufpen::mermaid::er::ErTokenizer::advance(QStringView text) {
   // Line tracking that survives all three newline spellings. `\r\n` bumps the
   // line once (the CR is absorbed by the following LF); a lone `\r` (old Mac)
   // or lone `\n` each bump once. Embedded newlines inside a quoted string are
@@ -100,7 +100,7 @@ void muffin::mermaid::er::ErTokenizer::advance(QStringView text) {
   offset_ += text.size();
 }
 
-muffin::mermaid::er::ErToken muffin::mermaid::er::ErTokenizer::make(ErTokenKind kind, qsizetype length,
+mufpen::mermaid::er::ErToken mufpen::mermaid::er::ErTokenizer::make(ErTokenKind kind, qsizetype length,
                                                                     bool stripDelimiters) {
   const qsizetype start = offset_;
   const int line = line_;
@@ -120,18 +120,18 @@ muffin::mermaid::er::ErToken muffin::mermaid::er::ErTokenizer::make(ErTokenKind 
   return token;
 }
 
-muffin::mermaid::er::ErToken muffin::mermaid::er::ErTokenizer::makeInvalid(qsizetype length) {
+mufpen::mermaid::er::ErToken mufpen::mermaid::er::ErTokenizer::makeInvalid(qsizetype length) {
   return make(ErTokenKind::Invalid, length);
 }
 
-QChar muffin::mermaid::er::ErTokenizer::peek(qsizetype ahead) const {
+QChar mufpen::mermaid::er::ErTokenizer::peek(qsizetype ahead) const {
   const qsizetype index = offset_ + ahead;
   if (index < source_.size())
     return source_[index];
   return QChar();
 }
 
-muffin::mermaid::er::ErToken muffin::mermaid::er::ErTokenizer::next() {
+mufpen::mermaid::er::ErToken mufpen::mermaid::er::ErTokenizer::next() {
   if (offset_ >= source_.size()) {
     ErToken token;
     token.kind = ErTokenKind::Eof;
@@ -282,7 +282,7 @@ muffin::mermaid::er::ErToken muffin::mermaid::er::ErTokenizer::next() {
   return makeInvalid(1);
 }
 
-QVector<muffin::mermaid::er::ErToken> muffin::mermaid::er::ErTokenizer::tokenize() {
+QVector<mufpen::mermaid::er::ErToken> mufpen::mermaid::er::ErTokenizer::tokenize() {
   QVector<ErToken> result;
   do {
     result.append(next());
@@ -290,44 +290,44 @@ QVector<muffin::mermaid::er::ErToken> muffin::mermaid::er::ErTokenizer::tokenize
   return result;
 }
 
-muffin::mermaid::er::ErTokenCursor::ErTokenCursor(const QVector<ErToken>& tokens, qsizetype begin, qsizetype end)
+mufpen::mermaid::er::ErTokenCursor::ErTokenCursor(const QVector<ErToken>& tokens, qsizetype begin, qsizetype end)
     : tokens_(&tokens), position_(begin), end_(end < 0 ? tokens.size() : std::min(end, tokens.size())) {
 }
 
-const muffin::mermaid::er::ErToken& muffin::mermaid::er::ErTokenCursor::peek(qsizetype lookahead) const {
+const mufpen::mermaid::er::ErToken& mufpen::mermaid::er::ErTokenCursor::peek(qsizetype lookahead) const {
   const qsizetype index = position_ + lookahead;
   if (!tokens_ || index < 0 || index >= end_)
     throw std::out_of_range("er token cursor reached the end");
   return (*tokens_)[index];
 }
 
-const muffin::mermaid::er::ErToken& muffin::mermaid::er::ErTokenCursor::consume() {
+const mufpen::mermaid::er::ErToken& mufpen::mermaid::er::ErTokenCursor::consume() {
   const ErToken& token = peek();
   ++position_;
   return token;
 }
 
-bool muffin::mermaid::er::ErTokenCursor::match(ErTokenKind kind) {
+bool mufpen::mermaid::er::ErTokenCursor::match(ErTokenKind kind) {
   if (atEnd() || peek().kind != kind)
     return false;
   consume();
   return true;
 }
 
-bool muffin::mermaid::er::ErTokenCursor::matchWord(QStringView word) {
+bool mufpen::mermaid::er::ErTokenCursor::matchWord(QStringView word) {
   if (atEnd() || peek().kind != ErTokenKind::Identifier || peek().text != word)
     return false;
   consume();
   return true;
 }
 
-const muffin::mermaid::er::ErToken& muffin::mermaid::er::ErTokenCursor::expect(ErTokenKind kind) {
+const mufpen::mermaid::er::ErToken& mufpen::mermaid::er::ErTokenCursor::expect(ErTokenKind kind) {
   if (atEnd() || peek().kind != kind)
     throw std::invalid_argument("unexpected er diagram token");
   return consume();
 }
 
-muffin::mermaid::er::ErTokenCursor muffin::mermaid::er::ErTokenCursor::consumeLine() {
+mufpen::mermaid::er::ErTokenCursor mufpen::mermaid::er::ErTokenCursor::consumeLine() {
   const qsizetype begin = position_;
   while (!atEnd() && peek().kind != ErTokenKind::Newline && peek().kind != ErTokenKind::Eof)
     ++position_;
@@ -337,11 +337,11 @@ muffin::mermaid::er::ErTokenCursor muffin::mermaid::er::ErTokenCursor::consumeLi
   return ErTokenCursor(*tokens_, begin, end);
 }
 
-QString muffin::mermaid::er::ErTokenCursor::raw(const QString& source) const {
+QString mufpen::mermaid::er::ErTokenCursor::raw(const QString& source) const {
   return rawFrom(source, position_);
 }
 
-QString muffin::mermaid::er::ErTokenCursor::rawFrom(const QString& source, qsizetype position) const {
+QString mufpen::mermaid::er::ErTokenCursor::rawFrom(const QString& source, qsizetype position) const {
   if (!tokens_ || position < 0 || position >= end_)
     return {};
   const ErToken& first = (*tokens_)[position];
@@ -350,7 +350,7 @@ QString muffin::mermaid::er::ErTokenCursor::rawFrom(const QString& source, qsize
   return source.mid(first.offset, length).trimmed();
 }
 
-QString muffin::mermaid::er::erTokenName(ErTokenKind kind) {
+QString mufpen::mermaid::er::erTokenName(ErTokenKind kind) {
   switch (kind) {
   case ErTokenKind::Eof:
     return QStringLiteral("EOF");

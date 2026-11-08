@@ -1,7 +1,7 @@
 // Render-layer memory bench: parse a large file then build DocumentLayout (the render index + slot
 // path the GUI runs AFTER parse), to measure how much the render layer adds on top of the parse
-// tree and isolate whether a large file OOMs at parse or at layout. Links MuffinUi; runs offscreen.
-//   MUFFIN_BENCH_FILE=<abs> ctest --preset conan-release -R OpenRenderMemBench --extra-verbose
+// tree and isolate whether a large file OOMs at parse or at layout. Links MufpenUi; runs offscreen.
+//   MUFPEN_BENCH_FILE=<abs> ctest --preset conan-release -R OpenRenderMemBench --extra-verbose
 #include "diagnostics/ProcessMemory.h"
 #include "document/DocumentSession.h"
 #include "document/MarkdownNode.h"
@@ -18,11 +18,11 @@
 namespace {
 
 void logWs(const char* label) {
-  std::fprintf(stdout, "[mem] %-30s ws=%lldMB\n", label, static_cast<long long>(muffin::diag::workingSetBytes() >> 20));
+  std::fprintf(stdout, "[mem] %-30s ws=%lldMB\n", label, static_cast<long long>(mufpen::diag::workingSetBytes() >> 20));
   std::fflush(stdout);
 }
 
-void countTree(const muffin::MarkdownNode& node, long long& blocks, long long& inlines) {
+void countTree(const mufpen::MarkdownNode& node, long long& blocks, long long& inlines) {
   ++blocks;
   inlines += static_cast<long long>(node.inlines().size());
   for (const auto& child : node.children()) {
@@ -40,9 +40,9 @@ int main(int argc, char** argv) {
   // glyph metrics differ offscreen, and this bench measures working set, not rendering geometry.
   qputenv("QT_QPA_PLATFORM", "offscreen");
   QApplication app(argc, argv);
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf.debug=true"));
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf.debug=true"));
 
-  QString path = QString::fromLocal8Bit(qgetenv("MUFFIN_BENCH_FILE"));
+  QString path = QString::fromLocal8Bit(qgetenv("MUFPEN_BENCH_FILE"));
   if (path.isEmpty() && argc > 1) {
     path = QString::fromLocal8Bit(argv[1]);
   }
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
   std::fprintf(stdout, "file: %s  (%lld chars)\n", path.toUtf8().constData(), static_cast<long long>(text.size()));
   logWs("start");
 
-  muffin::DocumentSession session;
+  mufpen::DocumentSession session;
   session.setMarkdownText(text, false);
   logWs("after parse (DocumentSession)");
 
@@ -73,9 +73,9 @@ int main(int argc, char** argv) {
   std::fprintf(stdout, "tree: %lld top-level, %lld nodes, %lld inlines\n",
                static_cast<long long>(session.document().root().children().size()), blocks, inlines);
 
-  muffin::RenderTheme theme = muffin::RenderTheme::github();
-  muffin::DocumentLayout layout;
-  layout.rebuild(session.document(), theme, 800.0, {}, {}, muffin::DocumentLayout::BuildPolicy::Lazy);
+  mufpen::RenderTheme theme = mufpen::RenderTheme::github();
+  mufpen::DocumentLayout layout;
+  layout.rebuild(session.document(), theme, 800.0, {}, {}, mufpen::DocumentLayout::BuildPolicy::Lazy);
   logWs("after DocumentLayout.rebuild (Lazy)");
 
   // promote the first few slots the way ensureVisibleBuilt would, to measure a visible window.

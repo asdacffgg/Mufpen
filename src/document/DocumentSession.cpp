@@ -20,8 +20,8 @@
 
 namespace {
 
-Q_LOGGING_CATEGORY(sessionPerf, "muffin.perf", QtWarningMsg)
-Q_LOGGING_CATEGORY(sessionLog, "muffin.session", QtWarningMsg)
+Q_LOGGING_CATEGORY(sessionPerf, "mufpen.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(sessionLog, "mufpen.session", QtWarningMsg)
 
 class PerfTimer {
 public:
@@ -34,7 +34,7 @@ public:
   ~PerfTimer() {
     if (enabled_) {
       qCDebug(sessionPerf).nospace() << label_ << " " << timer_.nsecsElapsed() / 1000000.0
-                                     << " ms ws=" << (muffin::diag::workingSetBytes() >> 20) << "MB";
+                                     << " ms ws=" << (mufpen::diag::workingSetBytes() >> 20) << "MB";
     }
   }
 
@@ -59,7 +59,7 @@ void warnLocalEditRejected(const char* reason, qsizetype sourceStart, qsizetype 
   qCWarning(sessionLog).nospace() << "Rejected local document edit: " << reason << " sourceStart=" << sourceStart
                                   << " sourceEnd=" << sourceEnd << " replacementLength=" << replacementLength
                                   << " documentSize=" << documentSize;
-  // Mirror to the perf category (captured by MUFFIN_PERF_LOG) so a localized-edit rejection —
+  // Mirror to the perf category (captured by MUFPEN_PERF_LOG) so a localized-edit rejection —
   // the trigger for the catastrophic full-reparse fallback on huge docs (Ctrl+Z ~20s) — is visible
   // in the perf trace, not just the (uncaptured) session log.
   qCDebug(sessionPerf).nospace() << "localEdit.rejected reason=" << reason << " start=" << sourceStart
@@ -81,7 +81,7 @@ void warnLocalEditSliceRejected(const char* reason, qsizetype sourceStart, qsize
                                  << slice.sourceEnd << "]";
 }
 
-muffin::SourceRange usableRange(const muffin::MarkdownNode& node) {
+mufpen::SourceRange usableRange(const mufpen::MarkdownNode& node) {
   return node.sourceRange();
 }
 
@@ -89,9 +89,9 @@ muffin::SourceRange usableRange(const muffin::MarkdownNode& node) {
 // to the block's byteEnd is a line terminator. Such a block's CONTENT is entirely before editStart,
 // so a deletion beginning there leaves the block unchanged (cmark re-assigns the trailing newline
 // from the new following context) — chooseTopLevelSlice skips it to keep its original node/range.
-bool editStartInTrailingNewlines(const muffin::PieceTable& text, const muffin::MarkdownNode& block,
+bool editStartInTrailingNewlines(const mufpen::PieceTable& text, const mufpen::MarkdownNode& block,
                                  qsizetype editStart) {
-  const muffin::SourceRange r = block.sourceRange();
+  const mufpen::SourceRange r = block.sourceRange();
   if (r.byteStart < 0 || editStart < r.byteStart || editStart >= r.byteEnd) {
     return false;
   }
@@ -104,9 +104,9 @@ bool editStartInTrailingNewlines(const muffin::PieceTable& text, const muffin::M
   return true;
 }
 
-bool isVirtualEmptyParagraph(const muffin::MarkdownNode& node) {
-  const muffin::SourceRange range = node.sourceRange();
-  return node.type() == muffin::BlockType::Paragraph && range.byteStart >= 0 && range.byteEnd == range.byteStart;
+bool isVirtualEmptyParagraph(const mufpen::MarkdownNode& node) {
+  const mufpen::SourceRange range = node.sourceRange();
+  return node.type() == mufpen::BlockType::Paragraph && range.byteStart >= 0 && range.byteEnd == range.byteStart;
 }
 
 // A slice is parsed in isolation, so insertVirtualEmptyParagraphs can synthesize a virtual empty
@@ -118,10 +118,10 @@ bool isVirtualEmptyParagraph(const muffin::MarkdownNode& node) {
 // renders stale neighbor source (e.g. a phantom "---" after a thematic break). Such separator VEPs
 // are dropped. A leading VEP that is itself the intended content (the slice yields only VEPs, e.g.
 // the new empty paragraph created by insertParagraphBefore/After) is kept.
-void stripSeparatorVirtualEmptyParagraphs(std::vector<std::unique_ptr<muffin::MarkdownNode>>& replacements) {
+void stripSeparatorVirtualEmptyParagraphs(std::vector<std::unique_ptr<mufpen::MarkdownNode>>& replacements) {
   const bool hasRealContent =
       std::any_of(replacements.begin(), replacements.end(),
-                  [](const std::unique_ptr<muffin::MarkdownNode>& node) { return !isVirtualEmptyParagraph(*node); });
+                  [](const std::unique_ptr<mufpen::MarkdownNode>& node) { return !isVirtualEmptyParagraph(*node); });
   if (!hasRealContent) {
     return;
   }
@@ -154,8 +154,8 @@ int countNewlines(QStringView text) {
   return count;
 }
 
-void demotePendingMarkersInSubtree(const QString& markdown, muffin::MarkdownNode& node) {
-  muffin::demotePendingMarkerToParagraph(markdown, node);
+void demotePendingMarkersInSubtree(const QString& markdown, mufpen::MarkdownNode& node) {
+  mufpen::demotePendingMarkerToParagraph(markdown, node);
   for (const auto& child : node.children()) {
     if (child) {
       demotePendingMarkersInSubtree(markdown, *child);
@@ -163,9 +163,9 @@ void demotePendingMarkersInSubtree(const QString& markdown, muffin::MarkdownNode
   }
 }
 
-bool demotePendingMarkerAtOffset(const QString& markdown, muffin::MarkdownNode& node, qsizetype offset) {
-  const muffin::SourceRange range = node.sourceRange();
-  if (node.type() != muffin::BlockType::Document && (range.byteStart > offset || range.byteEnd < offset)) {
+bool demotePendingMarkerAtOffset(const QString& markdown, mufpen::MarkdownNode& node, qsizetype offset) {
+  const mufpen::SourceRange range = node.sourceRange();
+  if (node.type() != mufpen::BlockType::Document && (range.byteStart > offset || range.byteEnd < offset)) {
     return false;
   }
   for (const auto& child : node.children()) {
@@ -173,8 +173,8 @@ bool demotePendingMarkerAtOffset(const QString& markdown, muffin::MarkdownNode& 
       return true;
     }
   }
-  const muffin::BlockType beforeType = node.type();
-  muffin::demotePendingMarkerToParagraph(markdown, node);
+  const mufpen::BlockType beforeType = node.type();
+  mufpen::demotePendingMarkerToParagraph(markdown, node);
   return node.type() != beforeType;
 }
 
@@ -183,7 +183,7 @@ bool demotePendingMarkerAtOffset(const QString& markdown, muffin::MarkdownNode& 
 // ``` ``` ```, `$$`/`\[`) as paragraphs even when the local-edit path was rejected. The search is
 // recursive so pending markers behave the same inside block quotes and list items as they do at
 // document root.
-void demotePendingMarkersAtOffsets(const QString& markdown, muffin::MarkdownNode& root,
+void demotePendingMarkersAtOffsets(const QString& markdown, mufpen::MarkdownNode& root,
                                    const QVector<qsizetype>& offsets) {
   for (const qsizetype offset : offsets) {
     if (offset < 0) {
@@ -193,7 +193,7 @@ void demotePendingMarkersAtOffsets(const QString& markdown, muffin::MarkdownNode
   }
 }
 
-TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsizetype editStart, qsizetype editEnd,
+TopLevelSlice chooseTopLevelSlice(const mufpen::MarkdownDocument& document, qsizetype editStart, qsizetype editEnd,
                                   bool blankLineStructuralEdit, bool isPureDeletion) {
   TopLevelSlice slice;
   const auto& blocks = document.root().children();
@@ -269,13 +269,13 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
     slice.count = end - first;
     slice.sourceStart = first == 0
                             ? 0
-                            : muffin::lineStartOffset(document.pieceText(),
+                            : mufpen::lineStartOffset(document.pieceText(),
                                                       blocks.at(static_cast<size_t>(first))->sourceRange().byteStart);
     if (end == static_cast<qsizetype>(blocks.size())) {
       slice.sourceEnd = slice.parseEnd = document.pieceText().size();
     } else {
-      const muffin::SourceRange contextRange = blocks.at(static_cast<size_t>(end))->sourceRange();
-      slice.sourceEnd = muffin::lineStartOffset(document.pieceText(), contextRange.byteStart);
+      const mufpen::SourceRange contextRange = blocks.at(static_cast<size_t>(end))->sourceRange();
+      slice.sourceEnd = mufpen::lineStartOffset(document.pieceText(), contextRange.byteStart);
       slice.parseEnd = contextRange.byteEnd;
     }
     return slice;
@@ -294,10 +294,10 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
   // + range stays correct. If the skipped block would become the last block (nothing follows), its
   // range would shrink and the original would go stale — so don't skip in that case (re-parse it).
   if (isPureDeletion && hiExcl < static_cast<qsizetype>(blocks.size())) {
-    const muffin::PieceTable& src = document.pieceText();
+    const mufpen::PieceTable& src = document.pieceText();
     while (lo < hiExcl) {
-      const muffin::MarkdownNode& blk = *blocks.at(static_cast<size_t>(lo));
-      const muffin::SourceRange r = usableRange(blk);
+      const mufpen::MarkdownNode& blk = *blocks.at(static_cast<size_t>(lo));
+      const mufpen::SourceRange r = usableRange(blk);
       if (editEnd < r.byteEnd || !editStartInTrailingNewlines(src, blk, editStart)) {
         break;
       }
@@ -317,8 +317,8 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
   // stale divider node + duplicates; the refuse-and-full-reparse was the workaround. Including
   // them is the fundamental fix — guarded by testDeleteRuleFromNestedListItemKeepsLiveTreeConsistent.)
   for (qsizetype i = lo; i < hiExcl; ++i) {
-    const muffin::MarkdownNode& block = *blocks.at(static_cast<size_t>(i));
-    const muffin::SourceRange range = usableRange(block);
+    const mufpen::MarkdownNode& block = *blocks.at(static_cast<size_t>(i));
+    const mufpen::SourceRange range = usableRange(block);
     if (range.byteStart < 0 || range.byteEnd < range.byteStart) {
       continue; // skip only invalid ranges — NOT non-editable blocks (see comment above)
     }
@@ -353,7 +353,7 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
   if (slice.first >= 0) {
     // Snap the slice start to the line boundary (shared helper) so block-leading indentation —
     // notably indented-code blocks, whose node range begins at the content — is re-parsed intact.
-    slice.sourceStart = muffin::lineStartOffset(document.pieceText(), slice.sourceStart);
+    slice.sourceStart = mufpen::lineStartOffset(document.pieceText(), slice.sourceStart);
     if (sliceStartsAtEditStart) {
       // Override the snap: the edit began in a skipped block's trailing whitespace, not at a
       // re-parseable line boundary. The slice must still cover editStart, so start exactly there.
@@ -368,7 +368,7 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
   }
 
   for (qsizetype i = 0; i < static_cast<qsizetype>(blocks.size()); ++i) {
-    const muffin::SourceRange range = usableRange(*blocks.at(static_cast<size_t>(i)));
+    const mufpen::SourceRange range = usableRange(*blocks.at(static_cast<size_t>(i)));
     if (editStart < range.byteStart) {
       slice.first = i;
       slice.count = 0;
@@ -390,7 +390,7 @@ TopLevelSlice chooseTopLevelSlice(const muffin::MarkdownDocument& document, qsiz
 // See tryApplyTopLevelLocalEdit's suffix loop. Slice nodes are made block-relative via
 // MarkdownNode::relativizeDescendants + an own-range absolutize (no recursive shift).
 
-void inheritIdsByStructure(const muffin::MarkdownNode& oldNode, muffin::MarkdownNode& newNode) {
+void inheritIdsByStructure(const mufpen::MarkdownNode& oldNode, mufpen::MarkdownNode& newNode) {
   if (oldNode.type() != newNode.type()) {
     return;
   }
@@ -402,24 +402,24 @@ void inheritIdsByStructure(const muffin::MarkdownNode& oldNode, muffin::Markdown
   }
 }
 
-muffin::MarkdownNode* nodeAtSourceOffset(muffin::MarkdownNode& node, const muffin::LocalEditNodeHint& hint) {
+mufpen::MarkdownNode* nodeAtSourceOffset(mufpen::MarkdownNode& node, const mufpen::LocalEditNodeHint& hint) {
   if (hint.targetSourceOffset < 0) {
     return nullptr;
   }
-  const muffin::SourceRange range = node.sourceRange();
-  if ((hint.type == muffin::BlockType::Unknown || node.type() == hint.type) &&
+  const mufpen::SourceRange range = node.sourceRange();
+  if ((hint.type == mufpen::BlockType::Unknown || node.type() == hint.type) &&
       range.byteStart <= hint.targetSourceOffset && range.byteEnd >= hint.targetSourceOffset) {
     return &node;
   }
   for (const auto& child : node.children()) {
-    if (muffin::MarkdownNode* found = nodeAtSourceOffset(*child, hint)) {
+    if (mufpen::MarkdownNode* found = nodeAtSourceOffset(*child, hint)) {
       return found;
     }
   }
   return nullptr;
 }
 
-muffin::SourceRange stableRangeAfterEdit(muffin::SourceRange range, qsizetype editStart, qsizetype editEnd,
+mufpen::SourceRange stableRangeAfterEdit(mufpen::SourceRange range, qsizetype editStart, qsizetype editEnd,
                                          qsizetype editDelta) {
   if (range.byteEnd <= editStart) {
     return range;
@@ -434,19 +434,19 @@ muffin::SourceRange stableRangeAfterEdit(muffin::SourceRange range, qsizetype ed
   return range;
 }
 
-bool sameStableRange(const muffin::SourceRange& oldRange, const muffin::SourceRange& newRange) {
+bool sameStableRange(const mufpen::SourceRange& oldRange, const mufpen::SourceRange& newRange) {
   return oldRange.byteStart >= 0 && oldRange.byteEnd >= oldRange.byteStart &&
          oldRange.byteStart == newRange.byteStart && oldRange.byteEnd == newRange.byteEnd;
 }
 
-void inheritIdsForUnchangedTopLevelBlocks(const muffin::MarkdownDocument& document, const TopLevelSlice& slice,
-                                          const std::vector<std::unique_ptr<muffin::MarkdownNode>>& replacements,
+void inheritIdsForUnchangedTopLevelBlocks(const mufpen::MarkdownDocument& document, const TopLevelSlice& slice,
+                                          const std::vector<std::unique_ptr<mufpen::MarkdownNode>>& replacements,
                                           qsizetype editStart, qsizetype editEnd, qsizetype editDelta) {
   const auto& oldBlocks = document.root().children();
   for (qsizetype oldIndex = slice.first;
        oldIndex < slice.first + slice.count && oldIndex < static_cast<qsizetype>(oldBlocks.size()); ++oldIndex) {
-    const muffin::MarkdownNode& oldNode = *oldBlocks.at(static_cast<size_t>(oldIndex));
-    const muffin::SourceRange expectedRange =
+    const mufpen::MarkdownNode& oldNode = *oldBlocks.at(static_cast<size_t>(oldIndex));
+    const mufpen::SourceRange expectedRange =
         stableRangeAfterEdit(oldNode.sourceRange(), editStart, editEnd, editDelta);
     for (const auto& replacement : replacements) {
       if (replacement->type() == oldNode.type() && sameStableRange(expectedRange, replacement->sourceRange())) {
@@ -457,19 +457,19 @@ void inheritIdsForUnchangedTopLevelBlocks(const muffin::MarkdownDocument& docume
   }
 }
 
-void applyNodeHints(const muffin::MarkdownDocument& document,
-                    std::vector<std::unique_ptr<muffin::MarkdownNode>>& replacements,
-                    const QVector<muffin::LocalEditNodeHint>& nodeHints) {
-  for (const muffin::LocalEditNodeHint& hint : nodeHints) {
+void applyNodeHints(const mufpen::MarkdownDocument& document,
+                    std::vector<std::unique_ptr<mufpen::MarkdownNode>>& replacements,
+                    const QVector<mufpen::LocalEditNodeHint>& nodeHints) {
+  for (const mufpen::LocalEditNodeHint& hint : nodeHints) {
     if (!hint.nodeId.isValid()) {
       continue;
     }
-    muffin::MarkdownNode* oldNode = document.node(hint.nodeId);
+    mufpen::MarkdownNode* oldNode = document.node(hint.nodeId);
     if (!oldNode) {
       continue;
     }
     for (auto& replacement : replacements) {
-      muffin::MarkdownNode* candidate = nodeAtSourceOffset(*replacement, hint);
+      mufpen::MarkdownNode* candidate = nodeAtSourceOffset(*replacement, hint);
       if (candidate && candidate->type() == oldNode->type()) {
         inheritIdsByStructure(*oldNode, *candidate);
         break;
@@ -478,10 +478,10 @@ void applyNodeHints(const muffin::MarkdownDocument& document,
   }
 }
 
-muffin::MarkdownNode* tableByIdOrIndex(muffin::MarkdownDocument& document, muffin::NodeId tableId, int tableIndex) {
+mufpen::MarkdownNode* tableByIdOrIndex(mufpen::MarkdownDocument& document, mufpen::NodeId tableId, int tableIndex) {
   if (tableId.isValid()) {
-    if (muffin::MarkdownNode* table = document.node(tableId)) {
-      if (table->type() == muffin::BlockType::Table) {
+    if (mufpen::MarkdownNode* table = document.node(tableId)) {
+      if (table->type() == mufpen::BlockType::Table) {
         return table;
       }
     }
@@ -492,15 +492,15 @@ muffin::MarkdownNode* tableByIdOrIndex(muffin::MarkdownDocument& document, muffi
   }
 
   int index = 0;
-  const auto visit = [&](const auto& self, muffin::MarkdownNode& node) -> muffin::MarkdownNode* {
-    if (node.type() == muffin::BlockType::Table) {
+  const auto visit = [&](const auto& self, mufpen::MarkdownNode& node) -> mufpen::MarkdownNode* {
+    if (node.type() == mufpen::BlockType::Table) {
       if (index == tableIndex) {
         return &node;
       }
       ++index;
     }
     for (const auto& child : node.children()) {
-      if (muffin::MarkdownNode* found = self(self, *child)) {
+      if (mufpen::MarkdownNode* found = self(self, *child)) {
         return found;
       }
     }
@@ -509,14 +509,14 @@ muffin::MarkdownNode* tableByIdOrIndex(muffin::MarkdownDocument& document, muffi
   return visit(visit, document.root());
 }
 
-bool topLevelStructureChanged(const std::vector<std::unique_ptr<muffin::MarkdownNode>>& oldBlocks, qsizetype first,
-                              qsizetype count, const std::vector<std::unique_ptr<muffin::MarkdownNode>>& replacements) {
+bool topLevelStructureChanged(const std::vector<std::unique_ptr<mufpen::MarkdownNode>>& oldBlocks, qsizetype first,
+                              qsizetype count, const std::vector<std::unique_ptr<mufpen::MarkdownNode>>& replacements) {
   if (count != static_cast<qsizetype>(replacements.size())) {
     return true;
   }
   for (qsizetype i = 0; i < count; ++i) {
-    const muffin::MarkdownNode& oldNode = *oldBlocks.at(static_cast<size_t>(first + i));
-    const muffin::MarkdownNode& newNode = *replacements.at(static_cast<size_t>(i));
+    const mufpen::MarkdownNode& oldNode = *oldBlocks.at(static_cast<size_t>(first + i));
+    const mufpen::MarkdownNode& newNode = *replacements.at(static_cast<size_t>(i));
     if (oldNode.id() != newNode.id() || oldNode.type() != newNode.type()) {
       return true;
     }
@@ -524,13 +524,13 @@ bool topLevelStructureChanged(const std::vector<std::unique_ptr<muffin::Markdown
   return false;
 }
 
-muffin::MarkdownNode* nodeByTypeIndex(muffin::MarkdownDocument& document, muffin::BlockType type, int targetIndex) {
-  if (type == muffin::BlockType::Unknown || targetIndex < 0) {
+mufpen::MarkdownNode* nodeByTypeIndex(mufpen::MarkdownDocument& document, mufpen::BlockType type, int targetIndex) {
+  if (type == mufpen::BlockType::Unknown || targetIndex < 0) {
     return nullptr;
   }
 
   int index = 0;
-  const auto visit = [&](const auto& self, muffin::MarkdownNode& node) -> muffin::MarkdownNode* {
+  const auto visit = [&](const auto& self, mufpen::MarkdownNode& node) -> mufpen::MarkdownNode* {
     if (node.type() == type) {
       if (index == targetIndex) {
         return &node;
@@ -538,7 +538,7 @@ muffin::MarkdownNode* nodeByTypeIndex(muffin::MarkdownDocument& document, muffin
       ++index;
     }
     for (const auto& child : node.children()) {
-      if (muffin::MarkdownNode* found = self(self, *child)) {
+      if (mufpen::MarkdownNode* found = self(self, *child)) {
         return found;
       }
     }
@@ -547,10 +547,10 @@ muffin::MarkdownNode* nodeByTypeIndex(muffin::MarkdownDocument& document, muffin
   return visit(visit, document.root());
 }
 
-muffin::MarkdownNode* nodeByIdOrTypeIndex(muffin::MarkdownDocument& document, muffin::NodeId nodeId,
-                                          muffin::BlockType type, int nodeIndex) {
+mufpen::MarkdownNode* nodeByIdOrTypeIndex(mufpen::MarkdownDocument& document, mufpen::NodeId nodeId,
+                                          mufpen::BlockType type, int nodeIndex) {
   if (nodeId.isValid()) {
-    if (muffin::MarkdownNode* node = document.node(nodeId)) {
+    if (mufpen::MarkdownNode* node = document.node(nodeId)) {
       if (node->type() == type) {
         return node;
       }
@@ -561,7 +561,7 @@ muffin::MarkdownNode* nodeByIdOrTypeIndex(muffin::MarkdownDocument& document, mu
 
 } // namespace
 
-struct muffin::DocumentSession::LocalParseInput {
+struct mufpen::DocumentSession::LocalParseInput {
   TopLevelSlice slice;
   TextDelta delta;
   QString markdown;
@@ -569,7 +569,7 @@ struct muffin::DocumentSession::LocalParseInput {
   ParseResult parsed;
 };
 
-struct muffin::DocumentSession::AsyncParseResult {
+struct mufpen::DocumentSession::AsyncParseResult {
   ParseResult parsed;
   std::unique_ptr<MarkdownDocument::PreparedState> state;
   QVector<qsizetype> pendingMarkers;
@@ -589,8 +589,8 @@ struct muffin::DocumentSession::AsyncParseResult {
   }
 };
 
-std::shared_ptr<muffin::DocumentSession::AsyncParseResult>
-muffin::DocumentSession::prepareParse(PieceTable text, ParseOptions options, QVector<qsizetype> markers, bool metrics,
+std::shared_ptr<mufpen::DocumentSession::AsyncParseResult>
+mufpen::DocumentSession::prepareParse(PieceTable text, ParseOptions options, QVector<qsizetype> markers, bool metrics,
                                       BatchCancellation cancel) {
   const auto canceled = [&] { return cancel && cancel->load(); };
   if (canceled())
@@ -617,14 +617,14 @@ muffin::DocumentSession::prepareParse(PieceTable text, ParseOptions options, QVe
   return canceled() ? nullptr : result;
 }
 
-void muffin::DocumentSession::cancelBatch() {
+void mufpen::DocumentSession::cancelBatch() {
   if (auto cancel = std::exchange(batchCancellation_, {})) {
     cancel->store(true);
     emit batchEditFinished(false);
   }
 }
 
-void muffin::DocumentSession::applyBatchAsync(PieceTable target, QString label, qsizetype beforeAnchor,
+void mufpen::DocumentSession::applyBatchAsync(PieceTable target, QString label, qsizetype beforeAnchor,
                                               qsizetype beforeCursor, qsizetype afterAnchor, qsizetype afterCursor,
                                               ViewportPosition beforeViewport, ViewportPosition afterViewport,
                                               SourceTextChange sourceChange) {
@@ -644,7 +644,7 @@ void muffin::DocumentSession::applyBatchAsync(PieceTable target, QString label, 
   prepareBatch(std::move(command), std::move(label), 0);
 }
 
-bool muffin::DocumentSession::replayBatchAsync(bool undo) {
+bool mufpen::DocumentSession::replayBatchAsync(bool undo) {
   const auto* transaction = undo ? undoStack_.peekUndo() : undoStack_.peekRedo();
   if (!isEditingAllowed() || !transaction || !transaction->isBatchTextCommand())
     return false;
@@ -653,8 +653,8 @@ bool muffin::DocumentSession::replayBatchAsync(bool undo) {
   return true;
 }
 
-std::shared_ptr<muffin::DocumentSession::LocalParseInput>
-muffin::DocumentSession::batchLocalInput(const TextDelta& delta) const {
+std::shared_ptr<mufpen::DocumentSession::LocalParseInput>
+mufpen::DocumentSession::batchLocalInput(const TextDelta& delta) const {
   // This bounded optimization shares the ordinary local edit parser and splice.
   // Reference definitions, HTML boundaries and large structural windows require
   // document-wide context, so they always use the complete worker parse.
@@ -682,7 +682,7 @@ muffin::DocumentSession::batchLocalInput(const TextDelta& delta) const {
   return input;
 }
 
-void muffin::DocumentSession::prepareBatch(std::shared_ptr<BatchTextCommand> command, QString label, int direction,
+void mufpen::DocumentSession::prepareBatch(std::shared_ptr<BatchTextCommand> command, QString label, int direction,
                                            std::shared_ptr<LocalParseInput> local, bool allowLocal) {
   cancelBatch();
   const auto cancel = batchCancellation_ = std::make_shared<std::atomic_bool>(false);
@@ -841,7 +841,7 @@ void muffin::DocumentSession::prepareBatch(std::shared_ptr<BatchTextCommand> com
   emit batchEditStarted();
 }
 
-muffin::DocumentSession::DocumentSession(QObject* parent) : QObject(parent) {
+mufpen::DocumentSession::DocumentSession(QObject* parent) : QObject(parent) {
   connect(this, &DocumentSession::documentAboutToBeReplaced, &undoStack_, &UndoStack::clear);
   connect(&document_, &MarkdownDocument::modifiedChanged, this, [this](bool modified) {
     if (!modified)
@@ -855,53 +855,53 @@ muffin::DocumentSession::DocumentSession(QObject* parent) : QObject(parent) {
   connect(fileWatcher_, &QFileSystemWatcher::directoryChanged, this, &DocumentSession::onFileChanged);
 }
 
-muffin::MarkdownDocument& muffin::DocumentSession::document() {
+mufpen::MarkdownDocument& mufpen::DocumentSession::document() {
   return document_;
 }
 
-const muffin::MarkdownDocument& muffin::DocumentSession::document() const {
+const mufpen::MarkdownDocument& mufpen::DocumentSession::document() const {
   return document_;
 }
 
-QString muffin::DocumentSession::filePath() const {
+QString mufpen::DocumentSession::filePath() const {
   return filePath_;
 }
 
-QString muffin::DocumentSession::displayName() const {
+QString mufpen::DocumentSession::displayName() const {
   if (filePath_.isEmpty()) {
     return tr("Untitled");
   }
   return QFileInfo(filePath_).fileName();
 }
 
-qint64 muffin::DocumentSession::lastParseElapsedMs() const {
+qint64 mufpen::DocumentSession::lastParseElapsedMs() const {
   return lastParseElapsedMs_;
 }
 
-void muffin::DocumentSession::setFullParsePerformanceMetricsEnabled(bool enabled) {
+void mufpen::DocumentSession::setFullParsePerformanceMetricsEnabled(bool enabled) {
   fullParsePerformanceMetricsEnabled_ = enabled;
   if (!enabled) {
     lastFullParsePerformanceMetrics_ = {};
   }
 }
 
-const muffin::ParsePerformanceMetrics& muffin::DocumentSession::lastFullParsePerformanceMetrics() const {
+const mufpen::ParsePerformanceMetrics& mufpen::DocumentSession::lastFullParsePerformanceMetrics() const {
   return lastFullParsePerformanceMetrics_;
 }
 
-bool muffin::DocumentSession::lastParseWasLocalEdit() const {
+bool mufpen::DocumentSession::lastParseWasLocalEdit() const {
   return lastParseWasLocalEdit_;
 }
 
-bool muffin::DocumentSession::lastLocalEditChangedTopLevelStructure() const {
+bool mufpen::DocumentSession::lastLocalEditChangedTopLevelStructure() const {
   return lastLocalEditChangedTopLevelStructure_;
 }
 
-muffin::TopLevelRangeChange muffin::DocumentSession::lastLocalTopLevelRangeChange() const {
+mufpen::TopLevelRangeChange mufpen::DocumentSession::lastLocalTopLevelRangeChange() const {
   return lastLocalTopLevelRangeChange_;
 }
 
-void muffin::DocumentSession::newDocument() {
+void mufpen::DocumentSession::newDocument() {
   emit documentAboutToBeReplaced();
   if (fileWatcher_ && !filePath_.isEmpty()) {
     fileWatcher_->removePath(filePath_);
@@ -920,7 +920,7 @@ void muffin::DocumentSession::newDocument() {
   emit documentTextChanged(QString());
 }
 
-void muffin::DocumentSession::setFilePath(QString path) {
+void mufpen::DocumentSession::setFilePath(QString path) {
   if (filePath_ == path) {
     return;
   }
@@ -938,7 +938,7 @@ void muffin::DocumentSession::setFilePath(QString path) {
   emit filePathChanged(filePath_);
 }
 
-void muffin::DocumentSession::copyFileStateFrom(const DocumentSession& other) {
+void mufpen::DocumentSession::copyFileStateFrom(const DocumentSession& other) {
   setFilePath(other.filePath_);
   fileFormat_ = other.fileFormat_;
   baselineMtime_ = other.baselineMtime_;
@@ -948,7 +948,7 @@ void muffin::DocumentSession::copyFileStateFrom(const DocumentSession& other) {
   refreshFileWatch();
 }
 
-void muffin::DocumentSession::recordFileBaseline() {
+void mufpen::DocumentSession::recordFileBaseline() {
   if (filePath_.isEmpty()) {
     baselineMtime_ = QDateTime();
     baselineSize_ = -1;
@@ -964,7 +964,7 @@ void muffin::DocumentSession::recordFileBaseline() {
   refreshFileWatch();
 }
 
-void muffin::DocumentSession::refreshFileWatch() {
+void mufpen::DocumentSession::refreshFileWatch() {
   if (!fileWatcher_ || filePath_.isEmpty()) {
     return;
   }
@@ -994,7 +994,7 @@ void muffin::DocumentSession::refreshFileWatch() {
 #endif
 }
 
-void muffin::DocumentSession::onFileChanged() {
+void mufpen::DocumentSession::onFileChanged() {
   // Atomic writers replace the watched inode/file entry. Re-arm before any
   // early return; the directory watch keeps this callback alive even when the
   // file watch itself was dropped by the platform backend.
@@ -1018,12 +1018,12 @@ void muffin::DocumentSession::onFileChanged() {
   }
 }
 
-void muffin::DocumentSession::replaceDocument(QString text) {
+void mufpen::DocumentSession::replaceDocument(QString text) {
   emit documentAboutToBeReplaced();
   setMarkdownText(std::move(text), false);
 }
 
-void muffin::DocumentSession::setMarkdownText(QString text, bool modified) {
+void mufpen::DocumentSession::setMarkdownText(QString text, bool modified) {
   undoStack_.clear();
   parseAndStore(std::move(text), modified);
   if (modified)
@@ -1033,7 +1033,7 @@ void muffin::DocumentSession::setMarkdownText(QString text, bool modified) {
   emit documentTextChanged(document_.markdownText().toString());
 }
 
-void muffin::DocumentSession::acceptSavedText(const QString& text) {
+void mufpen::DocumentSession::acceptSavedText(const QString& text) {
   const auto& old = markdownText();
   qsizetype prefix = 0;
   bool matching = true;
@@ -1076,11 +1076,11 @@ void muffin::DocumentSession::acceptSavedText(const QString& text) {
   document_.setModified(false);
 }
 
-void muffin::DocumentSession::updateFromEditor(QString text) {
+void mufpen::DocumentSession::updateFromEditor(QString text) {
   applyMarkdownText(std::move(text), true);
 }
 
-void muffin::DocumentSession::setEditingReadOnly(bool readOnly) {
+void mufpen::DocumentSession::setEditingReadOnly(bool readOnly) {
   if (editingReadOnly_ == readOnly)
     return;
   cancelBatch();
@@ -1088,7 +1088,7 @@ void muffin::DocumentSession::setEditingReadOnly(bool readOnly) {
   emit editingAvailabilityChanged(isEditingAllowed());
 }
 
-bool muffin::DocumentSession::applyMarkdownText(QString text, bool modified, QVector<qsizetype> demoteAtOffsets) {
+bool mufpen::DocumentSession::applyMarkdownText(QString text, bool modified, QVector<qsizetype> demoteAtOffsets) {
   if (!isEditingAllowed())
     return false;
   parseAndStore(std::move(text), modified, std::move(demoteAtOffsets));
@@ -1096,22 +1096,22 @@ bool muffin::DocumentSession::applyMarkdownText(QString text, bool modified, QVe
   return true;
 }
 
-bool muffin::DocumentSession::isAsyncParseInProgress() const {
+bool mufpen::DocumentSession::isAsyncParseInProgress() const {
   return asyncParsePending_;
 }
 
-bool muffin::DocumentSession::isOpenInProgress() const {
+bool mufpen::DocumentSession::isOpenInProgress() const {
   return asyncParsePending_ || openConfirmationPending_;
 }
 
-void muffin::DocumentSession::setOpenConfirmationPending(bool pending) {
+void mufpen::DocumentSession::setOpenConfirmationPending(bool pending) {
   if (openConfirmationPending_ == pending)
     return;
   openConfirmationPending_ = pending;
   emit parseBusy(isOpenInProgress());
 }
 
-bool muffin::DocumentSession::applyTextDelta(qsizetype sourceStart, qsizetype removedLength, QString insertedText,
+bool mufpen::DocumentSession::applyTextDelta(qsizetype sourceStart, qsizetype removedLength, QString insertedText,
                                              bool modified, QVector<LocalEditNodeHint> nodeHints) {
   // Reject edits before touching history or parseGeneration_. During an async open the current
   // document is still the old buffer; superseding the worker here would discard the opened file.
@@ -1145,7 +1145,7 @@ bool muffin::DocumentSession::applyTextDelta(qsizetype sourceStart, qsizetype re
   return true;
 }
 
-bool muffin::DocumentSession::applyTableSnapshot(NodeId tableId, int tableIndex, const MarkdownNode& tableSnapshot,
+bool mufpen::DocumentSession::applyTableSnapshot(NodeId tableId, int tableIndex, const MarkdownNode& tableSnapshot,
                                                  bool modified) {
   if (!isEditingAllowed()) {
     return false; // 锁定编辑: table structure/content changes are user edits
@@ -1172,7 +1172,7 @@ bool muffin::DocumentSession::applyTableSnapshot(NodeId tableId, int tableIndex,
                         std::move(nodeHints));
 }
 
-bool muffin::DocumentSession::applyNodeSnapshot(NodeId nodeId, BlockType nodeType, int nodeIndex,
+bool mufpen::DocumentSession::applyNodeSnapshot(NodeId nodeId, BlockType nodeType, int nodeIndex,
                                                 const MarkdownNode& nodeSnapshot, bool modified) {
   if (!isEditingAllowed()) {
     return false; // 锁定编辑: block rewrites are user edits
@@ -1199,7 +1199,7 @@ bool muffin::DocumentSession::applyNodeSnapshot(NodeId nodeId, BlockType nodeTyp
                         std::move(nodeHints));
 }
 
-bool muffin::DocumentSession::applyInsertedNode(NodeId nodeId, BlockType nodeType, qsizetype sourceStart,
+bool mufpen::DocumentSession::applyInsertedNode(NodeId nodeId, BlockType nodeType, qsizetype sourceStart,
                                                 qsizetype targetSourceOffset, qsizetype removedLength,
                                                 QString insertedText, bool modified) {
   if (!isEditingAllowed()) {
@@ -1216,7 +1216,7 @@ bool muffin::DocumentSession::applyInsertedNode(NodeId nodeId, BlockType nodeTyp
   return applyTextDelta(sourceStart, removedLength, std::move(insertedText), modified, std::move(nodeHints));
 }
 
-void muffin::DocumentSession::parseAndStore(QString text, bool modified, QVector<qsizetype> demoteAtOffsets,
+void mufpen::DocumentSession::parseAndStore(QString text, bool modified, QVector<qsizetype> demoteAtOffsets,
                                             bool async) {
   cancelBatch();
   lastChangeWasBatch_ = false;
@@ -1239,7 +1239,7 @@ void muffin::DocumentSession::parseAndStore(QString text, bool modified, QVector
     emit parseBusy(true);
     watcher->setFuture(QtConcurrent::run([text = std::move(text), options, collectPerformanceMetrics,
                                           demoteOffsets]() mutable -> std::shared_ptr<AsyncParseResult> {
-      muffin::diag::OpenPerfScope workerScope("open.worker");
+      mufpen::diag::OpenPerfScope workerScope("open.worker");
       return prepareParse(PieceTable(std::move(text)), options, demoteOffsets, collectPerformanceMetrics);
     }));
     return;
@@ -1290,9 +1290,9 @@ void muffin::DocumentSession::parseAndStore(QString text, bool modified, QVector
     emit parseBusy(isOpenInProgress());
 }
 
-void muffin::DocumentSession::finishAsyncParse(QFutureWatcher<std::shared_ptr<AsyncParseResult>>* watcher,
+void mufpen::DocumentSession::finishAsyncParse(QFutureWatcher<std::shared_ptr<AsyncParseResult>>* watcher,
                                                quint64 generation) {
-  muffin::diag::OpenPerfScope installScope("open.install");
+  mufpen::diag::OpenPerfScope installScope("open.install");
   // Consume both successful and obsolete results. A finished watcher must not
   // keep an old AST/source alive for the lifetime of the session.
   auto prepared = watcher->future().takeResult();
@@ -1325,7 +1325,7 @@ void muffin::DocumentSession::finishAsyncParse(QFutureWatcher<std::shared_ptr<As
   pendingMarkerOffsets_ = std::move(prepared->pendingMarkers);
   asyncParsePending_ = false;
   {
-    muffin::diag::OpenPerfScope scope("open.publish");
+    mufpen::diag::OpenPerfScope scope("open.publish");
     emit parsed(lastParseElapsedMs_);
     if (generation != parseGeneration_)
       return;
@@ -1335,14 +1335,14 @@ void muffin::DocumentSession::finishAsyncParse(QFutureWatcher<std::shared_ptr<As
   }
 }
 
-void muffin::DocumentSession::openDocumentAsync(QString text) {
+void mufpen::DocumentSession::openDocumentAsync(QString text) {
   emit documentAboutToBeReplaced();
   // Async open: document_ isn't updated until finishAsyncParse, so documentTextChanged is emitted
   // there (not here) to avoid broadcasting stale text. filePath is set by the caller (FileController).
   parseAndStore(std::move(text), false, {}, /*async=*/true);
 }
 
-void muffin::DocumentSession::setParseOptions(ParseOptions options) {
+void mufpen::DocumentSession::setParseOptions(ParseOptions options) {
   if (options == parseOptions_) {
     return;
   }
@@ -1360,7 +1360,7 @@ void muffin::DocumentSession::setParseOptions(ParseOptions options) {
   parseAndStore(document_.markdownText().toString(), document_.isModified());
 }
 
-bool muffin::DocumentSession::tryApplyTopLevelLocalEdit(qsizetype sourceStart, qsizetype sourceEnd,
+bool mufpen::DocumentSession::tryApplyTopLevelLocalEdit(qsizetype sourceStart, qsizetype sourceEnd,
                                                         const QString& replacementText, bool modified,
                                                         const QVector<LocalEditNodeHint>& nodeHints,
                                                         std::shared_ptr<LocalParseInput> prepared) {

@@ -2,7 +2,7 @@
 
 #include "document/NodeId.h"
 
-namespace muffin {
+namespace mufpen {
 
 struct TextPosition {
   NodeId nodeId;
@@ -61,4 +61,4 @@ struct SelectionRange {
   qsizetype endOffset() const { return qMax(anchor.text.textOffset, focus.text.textOffset); }
 };
 
-} // namespace muffin
+} // namespace mufpen

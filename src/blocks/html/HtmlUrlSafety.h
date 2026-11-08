@@ -4,7 +4,7 @@
 #include <QStringList>
 #include <QStringView>
 
-namespace muffin {
+namespace mufpen {
 
 // Single source of truth for whether a URL may be emitted into HTML, shared by the on-screen
 // render path (HtmlSanitizer) and the HTML export path (MarkdownHtmlSerializer). The two used to
@@ -15,7 +15,7 @@ namespace muffin {
 // before analysis, so "java\tscript:" / "java\nscript:" can't smuggle a scheme past the check.
 //
 // `allowDataImage`:
-//   • image `src` (and the preview's URL attributes) accept `data:image/*` — Muffin embeds images
+//   • image `src` (and the preview's URL attributes) accept `data:image/*` — Mufpen embeds images
 //     as data URIs. `data:image/svg*` is ALWAYS rejected (SVG can carry <script>).
 //   • link `href` rejects ALL `data:` URIs (data:text/html is an XSS vector).
 inline bool isSafeUrl(QStringView url, bool allowDataImage) noexcept {
@@ -82,4 +82,4 @@ inline bool isSafeUrl(QStringView url, bool allowDataImage) noexcept {
   return false;
 }
 
-} // namespace muffin
+} // namespace mufpen

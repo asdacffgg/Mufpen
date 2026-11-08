@@ -3,7 +3,7 @@
 #include <QString>
 #include <QTextBoundaryFinder>
 
-namespace muffin {
+namespace mufpen {
 
 struct GraphemeDeletion {
   qsizetype start;
@@ -26,4 +26,4 @@ inline GraphemeDeletion graphemeDeletion(const QString& text, qsizetype offset, 
   return {start, end - start};
 }
 
-} // namespace muffin
+} // namespace mufpen

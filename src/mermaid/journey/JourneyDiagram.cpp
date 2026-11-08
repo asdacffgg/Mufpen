@@ -7,7 +7,7 @@
 
 #include <utility>
 
-namespace muffin::mermaid::journey {
+namespace mufpen::mermaid::journey {
 
 JourneyParseError::JourneyParseError(const QString& message, int line)
     : std::runtime_error(message.toUtf8().constData()), line(line) {
@@ -192,4 +192,4 @@ JourneyData JourneyDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::journey
+} // namespace mufpen::mermaid::journey

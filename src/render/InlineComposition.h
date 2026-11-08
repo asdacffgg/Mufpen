@@ -4,7 +4,7 @@
 #include <QString>
 #include <QTextLayout>
 
-namespace muffin {
+namespace mufpen {
 
 // A shaping snapshot: source/display offsets remain pristine while preedit
 // text and its formatting are spliced into the same output value.
@@ -28,4 +28,4 @@ InlineComposition composeInlineText(QString text, QVector<QTextLayout::FormatRan
                                     const QString& preeditText, const QVector<QTextLayout::FormatRange>& preeditFormats,
                                     QColor baseForeground);
 
-} // namespace muffin
+} // namespace mufpen

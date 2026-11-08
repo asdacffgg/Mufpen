@@ -12,7 +12,7 @@
 
 #include <cmath>
 
-namespace muffin::math {
+namespace mufpen::math {
 namespace {
 
 QString renderKindName(MathRenderKind kind) {
@@ -552,4 +552,4 @@ std::unique_ptr<MathRenderNode> cloneNode(const MathRenderNode& node) {
   return copy;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

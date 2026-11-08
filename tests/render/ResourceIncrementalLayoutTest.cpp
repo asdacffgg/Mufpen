@@ -27,7 +27,7 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 namespace {
 int failures = 0;
 void require(bool value, const char* message) {
@@ -384,7 +384,7 @@ void hiddenEditorResources() {
           QString::fromUtf8("Font fallback 中英文 **bold** *italic* and wrapping words. ").repeated(12),
       false);
   const auto definition = CssThemeMapper::fromCss(
-      "#write{max-width:none;padding:0;margin:0}p{font:16px MuffinDeferredFixture,monospace;margin:0}",
+      "#write{max-width:none;padding:0;margin:0}p{font:16px MufpenDeferredFixture,monospace;margin:0}",
       "deferred-resource-font", {});
   const auto imageId = session.document().root().children()[0]->id();
   const auto textId = session.document().root().children()[1]->id();
@@ -410,9 +410,9 @@ void hiddenEditorResources() {
   require(view.nodeRect(imageId).height() == originalHeight, "queued visible refresh defers if hidden before dispatch");
   loader.store(url, image({60, 120}, Qt::green));
   loader.store(url, image({60, 160}, Qt::blue));
-  QFile font(QStringLiteral(MUFFIN_BINARY_DIR "/theme-fonts/github/open-sans-v17-latin-ext_latin-regular.ttf"));
+  QFile font(QStringLiteral(MUFPEN_BINARY_DIR "/theme-fonts/github/open-sans-v17-latin-ext_latin-regular.ttf"));
   require(font.open(QIODevice::ReadOnly), "read fixed native font for deferred registration");
-  const auto native = isolateThemeFont(font.readAll(), "MuffinDeferredFixture", 400, false);
+  const auto native = isolateThemeFont(font.readAll(), "MufpenDeferredFixture", 400, false);
   const int fontId = QFontDatabase::addApplicationFontFromData(native);
   require(fontId >= 0, "register new private family while editor is hidden");
   QCoreApplication::processEvents();
@@ -620,7 +620,7 @@ void fontsAndMermaid() {
   const auto before = resources.read(LayoutResources::fontKey());
   // A real application-font database notification exercises versioning even if
   // the test's Arial text happens not to use the newly registered face.
-  QDirIterator fonts(QStringLiteral(MUFFIN_BINARY_DIR "/theme-fonts"), {"*.ttf"}, QDir::Files,
+  QDirIterator fonts(QStringLiteral(MUFPEN_BINARY_DIR "/theme-fonts"), {"*.ttf"}, QDir::Files,
                      QDirIterator::Subdirectories);
   if (fonts.hasNext()) {
     const int id = QFontDatabase::addApplicationFont(fonts.next());
@@ -762,13 +762,13 @@ QJsonObject timing(const std::vector<double>& values) {
 }
 void performance() {
   const int count = qBound(20,
-                           qEnvironmentVariableIntValue("MUFFIN_LAYOUT_BENCH_BLOCKS") > 0
-                               ? qEnvironmentVariableIntValue("MUFFIN_LAYOUT_BENCH_BLOCKS")
+                           qEnvironmentVariableIntValue("MUFPEN_LAYOUT_BENCH_BLOCKS") > 0
+                               ? qEnvironmentVariableIntValue("MUFPEN_LAYOUT_BENCH_BLOCKS")
                                : 120,
                            10000);
   const int iterations = qBound(2,
-                                qEnvironmentVariableIntValue("MUFFIN_LAYOUT_BENCH_ITERS") > 0
-                                    ? qEnvironmentVariableIntValue("MUFFIN_LAYOUT_BENCH_ITERS")
+                                qEnvironmentVariableIntValue("MUFPEN_LAYOUT_BENCH_ITERS") > 0
+                                    ? qEnvironmentVariableIntValue("MUFPEN_LAYOUT_BENCH_ITERS")
                                     : 4,
                                 100);
   QString source;
@@ -841,7 +841,7 @@ void performance() {
                      {"image_full_reference", timing(fullLoads)}};
   const auto bytes = QJsonDocument(result).toJson();
   std::cout << bytes.toStdString();
-  const auto output = qEnvironmentVariable("MUFFIN_LAYOUT_BENCH_OUTPUT");
+  const auto output = qEnvironmentVariable("MUFPEN_LAYOUT_BENCH_OUTPUT");
   if (!output.isEmpty()) {
     QFile file(output);
     require(file.open(QIODevice::WriteOnly), "open benchmark report");
@@ -851,7 +851,7 @@ void performance() {
 } // namespace
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
-  QCoreApplication::setOrganizationName("MuffinResourceTests");
+  QCoreApplication::setOrganizationName("MufpenResourceTests");
   QCoreApplication::setApplicationName("ResourceIncrementalLayout");
   QTemporaryDir settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);

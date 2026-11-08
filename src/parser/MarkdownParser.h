@@ -7,7 +7,7 @@
 
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 struct ParseDiagnostic {
   QString message;
@@ -69,4 +69,4 @@ public:
   virtual ParseResult parseBlock(QStringView markdown, BlockType context, const ParseOptions& options) = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

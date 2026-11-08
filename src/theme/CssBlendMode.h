@@ -5,7 +5,7 @@
 #include <QString>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 enum class CssBlendMode {
   Normal,
   Multiply,

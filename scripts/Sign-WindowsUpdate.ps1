@@ -14,17 +14,17 @@ $expectedName = "Mufpen-Setup-$Version-windows-$Architecture.exe"
 if ([IO.Path]::GetFileName($installerPath) -cne $expectedName) {
     throw "Installer must be named $expectedName"
 }
-if (-not $env:MUFFIN_UPDATE_SIGNING_KEY) {
-    throw 'MUFFIN_UPDATE_SIGNING_KEY is required. Never publish an unsigned in-app update.'
+if (-not $env:MUFPEN_UPDATE_SIGNING_KEY) {
+    throw 'MUFPEN_UPDATE_SIGNING_KEY is required. Never publish an unsigned in-app update.'
 }
 $key = [Security.Cryptography.CngKey]::Import(
-    [Convert]::FromBase64String($env:MUFFIN_UPDATE_SIGNING_KEY),
+    [Convert]::FromBase64String($env:MUFPEN_UPDATE_SIGNING_KEY),
     [Security.Cryptography.CngKeyBlobFormat]::EccPrivateBlob)
 $signer = [Security.Cryptography.ECDsaCng]::new($key)
 try {
     $actualPublic = ([BitConverter]::ToString($key.Export([Security.Cryptography.CngKeyBlobFormat]::EccPublicBlob))).Replace('-', '').ToLowerInvariant()
     if ($actualPublic -cne ([IO.File]::ReadAllText((Resolve-Path -LiteralPath $PublicKey).Path).Trim())) {
-        throw 'Signing key does not match the public key embedded in Muffin.'
+        throw 'Signing key does not match the public key embedded in Mufpen.'
     }
     $payload = [ordered]@{
         schema = 1

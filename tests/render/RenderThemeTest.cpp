@@ -31,7 +31,7 @@
 
 #include "RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -755,7 +755,7 @@ void testLatexScreenPageGeometry(const MarkdownDocument& document) {
   require(qAbs(layout.pageWidth() - (a4Width - horizontalPadding * 2.0)) < 0.01,
           QStringLiteral("content width should subtract both 2cm page paddings"));
   require(qAbs(layout.pageRect(theme, 1000.0).top()) < 0.01,
-          QStringLiteral("screen padding should suppress Muffin's legacy 30px page margin"));
+          QStringLiteral("screen padding should suppress Mufpen's legacy 30px page margin"));
   require(!layout.promotedBlocks().isEmpty() &&
               layout.promotedBlocks().front()->rect().top() >= 1.8 * 96.0 / 2.54 - 0.01,
           QStringLiteral("first rendered block should begin below the 1.8cm top padding"));

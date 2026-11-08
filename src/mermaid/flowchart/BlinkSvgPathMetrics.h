@@ -2,7 +2,7 @@
 
 #include <QRectF>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct BlinkFloatPoint {
   float x = 0.0f;
@@ -25,4 +25,4 @@ struct BlinkPathBounds {
 void addBlinkSvgArcBounds(BlinkPathBounds& bounds, BlinkFloatPoint start, BlinkFloatPoint end, qreal radiusX,
                           qreal radiusY, qreal rotationDegrees, bool large, bool sweep);
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

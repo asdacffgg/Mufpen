@@ -57,7 +57,7 @@ QString glob(QStringView pattern) {
 }
 }
 
-void muffin::WorkspaceIgnoreRules::append(QStringView text, const QString& base) {
+void mufpen::WorkspaceIgnoreRules::append(QStringView text, const QString& base) {
   for (auto line : text.split(u'\n')) {
     if (line.endsWith(u'\r'))
       line.chop(1);
@@ -99,7 +99,7 @@ void muffin::WorkspaceIgnoreRules::append(QStringView text, const QString& base)
   }
 }
 
-bool muffin::WorkspaceIgnoreRules::ignored(const QString& relativePath, bool directory, bool previous) const {
+bool mufpen::WorkspaceIgnoreRules::ignored(const QString& relativePath, bool directory, bool previous) const {
   for (const auto& rule : rules_) {
     if ((!rule.directoryOnly || directory) && relativePath.startsWith(rule.base) &&
         rule.pattern.matchView(QStringView(relativePath).mid(rule.base.size())).hasMatch())

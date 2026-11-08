@@ -11,7 +11,7 @@
 #include <QClipboard>
 #include <QSettings>
 
-using namespace muffin;
+using namespace mufpen;
 
 // editor/indentSize maps a combo index {0,1,2} to space counts {2,4,8}. These tests pin the
 // mapping end-to-end through the list indent/outdent/exit builders, which previously hardcoded 2.
@@ -105,9 +105,9 @@ int main(int argc, char** argv) {
   if (qgetenv("QT_QPA_PLATFORM").isEmpty()) {
     qputenv("QT_QPA_PLATFORM", "offscreen");
   }
-  // Throwaway org/app + INI format so the test's QSettings never touches the real Muffin store
+  // Throwaway org/app + INI format so the test's QSettings never touches the real Mufpen store
   // (e.g. the Windows registry) and round-trips reliably within the process. Mirrors SpellCheckerTest.
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("InputIndentSizeTest"));
   QSettings::setDefaultFormat(QSettings::IniFormat);
   QApplication app(argc, argv);

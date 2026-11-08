@@ -5,7 +5,7 @@
 #include <functional>
 #include <stdexcept>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 
 using K = FlowTokenKind;
@@ -682,4 +682,4 @@ QVector<FlowToken> FlowchartTokenizer::tokenize() {
   return result;
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

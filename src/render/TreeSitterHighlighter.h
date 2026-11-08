@@ -5,7 +5,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class TreeSitterHighlighter {
 public:
@@ -13,4 +13,4 @@ public:
   bool supportsLanguage(const QString& language) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

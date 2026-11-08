@@ -1,14 +1,14 @@
 // Benchmark: per-keystroke phase breakdown when typing inside a paragraph of a large document.
 //
-// Links MuffinCore only (pure Qt Core — no GUI, no RESOURCE_LOCK). It drives
+// Links MufpenCore only (pure Qt Core — no GUI, no RESOURCE_LOCK). It drives
 // DocumentSession::applyTextDelta on a synthetic document rich in inline formatting (so the
 // node/inline count — and thus the shiftRanges suffix cost — is realistic), captures the
-// muffin.perf probes emitted by DocumentSession/MarkdownDocument, and reports median/max/sum
+// mufpen.perf probes emitted by DocumentSession/MarkdownDocument, and reports median/max/sum
 // per phase.
 //
 // Defaults are deliberately tiny so the registered ctest stays a fast smoke check that the
 // harness compiles and runs. For a real measurement, override the env vars:
-//   MUFFIN_BENCH_SIZE_MB=20 MUFFIN_BENCH_ITERS=400 ctest -R TypingPerfBench --output-on-failure
+//   MUFPEN_BENCH_SIZE_MB=20 MUFPEN_BENCH_ITERS=400 ctest -R TypingPerfBench --output-on-failure
 //
 // Scenarios:
 //   NEAR TOP — insert at offset 0 every keystroke. The whole document suffix must be shifted
@@ -43,7 +43,7 @@ QMutex g_perfMutex;
 QStringList g_perfLines;
 
 void perfCapture(QtMsgType, const QMessageLogContext& ctx, const QString& msg) {
-  if (QString::fromUtf8(ctx.category) != QLatin1String("muffin.perf")) {
+  if (QString::fromUtf8(ctx.category) != QLatin1String("mufpen.perf")) {
     return;
   }
   QMutexLocker locker(&g_perfMutex);
@@ -111,7 +111,7 @@ void report(const char* scenario, qsizetype docBytes, qsizetype blockCount, qsiz
   std::fflush(stdout);
 }
 
-void countTree(const muffin::MarkdownNode& node, qsizetype& blocks, qsizetype& inlines) {
+void countTree(const mufpen::MarkdownNode& node, qsizetype& blocks, qsizetype& inlines) {
   ++blocks;
   inlines += static_cast<qsizetype>(node.inlines().size());
   for (const auto& child : node.children()) {
@@ -121,7 +121,7 @@ void countTree(const muffin::MarkdownNode& node, qsizetype& blocks, qsizetype& i
   }
 }
 
-void typeAt(muffin::DocumentSession& session, qsizetype offset, int iters) {
+void typeAt(mufpen::DocumentSession& session, qsizetype offset, int iters) {
   g_perfLines.clear();
   for (int k = 0; k < iters; ++k) {
     session.applyTextDelta(offset, 0, QStringLiteral("x"), true);
@@ -133,25 +133,25 @@ void typeAt(muffin::DocumentSession& session, qsizetype offset, int iters) {
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
 
-  const QByteArray sizeEnv = qgetenv("MUFFIN_BENCH_SIZE_MB");
+  const QByteArray sizeEnv = qgetenv("MUFPEN_BENCH_SIZE_MB");
   const qsizetype sizeMb = sizeEnv.isEmpty() ? 1 : sizeEnv.toLongLong();
-  const QByteArray itersEnv = qgetenv("MUFFIN_BENCH_ITERS");
+  const QByteArray itersEnv = qgetenv("MUFPEN_BENCH_ITERS");
   const int iters = itersEnv.isEmpty() ? 30 : itersEnv.toInt();
 
-  QLoggingCategory::setFilterRules(QStringLiteral("muffin.perf.debug=true"));
+  QLoggingCategory::setFilterRules(QStringLiteral("mufpen.perf.debug=true"));
   qInstallMessageHandler(perfCapture);
 
-  muffin::DocumentSession session;
-  // MUFFIN_BENCH_FILE: parse a real on-disk file (tables/code/math/lists) instead of the synthetic
+  mufpen::DocumentSession session;
+  // MUFPEN_BENCH_FILE: parse a real on-disk file (tables/code/math/lists) instead of the synthetic
   // inline-dense paragraph doc. Measures the true open path on the actual file the user opens.
   const QString doc = [&] {
-    const QByteArray fileEnv = qgetenv("MUFFIN_BENCH_FILE");
+    const QByteArray fileEnv = qgetenv("MUFPEN_BENCH_FILE");
     if (fileEnv.isEmpty()) {
-      return muffin::test::makeInlineDenseMarkdown(sizeMb * 1024 * 1024);
+      return mufpen::test::makeInlineDenseMarkdown(sizeMb * 1024 * 1024);
     }
     QFile f(QString::fromLocal8Bit(fileEnv));
     if (!f.open(QIODevice::ReadOnly)) {
-      qFatal("Could not open MUFFIN_BENCH_FILE: %s", qPrintable(f.errorString()));
+      qFatal("Could not open MUFPEN_BENCH_FILE: %s", qPrintable(f.errorString()));
     }
     QString t = QString::fromUtf8(f.readAll());
     t.replace(QStringLiteral("\r\n"), QStringLiteral("\n"));
@@ -193,14 +193,14 @@ int main(int argc, char** argv) {
   // here prevents its O(document) cost from being mistaken for current typing behavior.
   {
     const QString md = session.markdownText().toString();
-    const muffin::MarkdownNode& root = session.document().root();
+    const mufpen::MarkdownNode& root = session.document().root();
     const int reps = 5;
 
     double pendingMin = 1e9;
     for (int i = 0; i < reps; ++i) {
       QElapsedTimer t;
       t.start();
-      volatile auto offsets = muffin::collectPendingMarkerOffsets(md, root);
+      volatile auto offsets = mufpen::collectPendingMarkerOffsets(md, root);
       (void)offsets;
       pendingMin = std::min(pendingMin, t.elapsed() / 1.0);
     }

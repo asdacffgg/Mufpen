@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 class HtmlDocument;
 
@@ -29,4 +29,4 @@ private:
   bool preserveWhitespace_ = false;
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

@@ -19,7 +19,7 @@
 // only the BUILT-IN redux-color/redux-dark-color palette is honored via %%{init}%%.
 // User-supplied borderColorArray/bkgColorArray are IGNORED by upstream mermaid
 // 11.16.0 through %%{init}%% (only the external mermaid.initialize() API honors
-// them), so Muffin does NOT whitelist/consume them — that would be an extension,
+// them), so Mufpen does NOT whitelist/consume them — that would be an extension,
 // not parity. THEME_COLOR_LIMIT IS a legit %%{init}%% source config and is honored
 // with full JS Number()+ceil semantics (null/absent -> default 12).
 //
@@ -43,7 +43,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -581,9 +581,9 @@ int main(int argc, char** argv) {
 
   // ===== 14. Source-entry custom arrays are IGNORED (regression guard, review-fix 4) =====
   // Upstream ignores user borderColorArray/bkgColorArray via %%{init}%% (only the
-  // external initialize() API honors them). Muffin must match: a custom array does
+  // external initialize() API honors them). Mufpen must match: a custom array does
   // NOT activate colorIndex under default, and does NOT replace the built-in redux
-  // palette. (Muffin's preprocessor drops the non-whitelisted keys, so they never
+  // palette. (Mufpen's preprocessor drops the non-whitelisted keys, so they never
   // reach the adapter; thematically this is parity with the source entry.)
   {
     // default + custom arrays -> default behavior (no cycling, all base).

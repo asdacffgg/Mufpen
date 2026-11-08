@@ -8,11 +8,11 @@
 
 #include <QLoggingCategory>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(renderCommandLog, "muffin.renderCommands", QtWarningMsg)
-Q_LOGGING_CATEGORY(renderCommandDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(renderCommandLog, "mufpen.renderCommands", QtWarningMsg)
+Q_LOGGING_CATEGORY(renderCommandDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 } // namespace
 
@@ -438,4 +438,4 @@ CursorCommandState RenderCommandFacade::currentCursorState() const {
   return canRun() ? editorController_.queryCursorCommandState() : CursorCommandState{};
 }
 
-} // namespace muffin
+} // namespace mufpen

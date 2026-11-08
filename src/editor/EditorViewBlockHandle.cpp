@@ -10,7 +10,7 @@
 #include <QTimer>
 #include <QCoreApplication>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 const BlockLayout* nestedBlockAt(const BlockLayout* block, QPointF point) {
   if (!block)
@@ -82,7 +82,7 @@ void EditorView::updateBlockHandleHover(QPointF point) {
     blockDragPosition_ = point;
     viewport()->setCursor(Qt::OpenHandCursor);
     viewport()->setToolTip(QCoreApplication::translate(
-        "muffin::PrefsEditorPage", "Hover to open a block menu or drag to move the complete block."));
+        "mufpen::PrefsEditorPage", "Hover to open a block menu or drag to move the complete block."));
     viewport()->update();
     return;
   }
@@ -224,4 +224,4 @@ void EditorView::paintBlockHandle(QPainter& painter) const {
   }
   painter.restore();
 }
-} // namespace muffin
+} // namespace mufpen

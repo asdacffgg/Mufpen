@@ -1,6 +1,6 @@
 # 基础编辑连续操作验收
 
-这轮验收以真实窗口和编辑控件串起操作，正文、选区、历史记录和阅读位置都参与断言。用例位于 `tests/app/DocumentTabsTest.cpp`，随完整 CTest 套件运行，也可用 `MuffinDocumentTabsTest.exe --editing-workflow` 单独执行。
+这轮验收以真实窗口和编辑控件串起操作，正文、选区、历史记录和阅读位置都参与断言。用例位于 `tests/app/DocumentTabsTest.cpp`，随完整 CTest 套件运行，也可用 `MufpenDocumentTabsTest.exe --editing-workflow` 单独执行。
 
 2026-10-21 本地验证：Release 完整构建成功，`ctest --preset conan-release --output-on-failure` 的 343 项测试全部通过，`dist` 目标打包成功。
 

@@ -4,8 +4,8 @@
 // become edges. See IMPLEMENTATION_SPEC.md §4 for the projection rules.
 //
 // Per CLAUDE.md / IMPLEMENTATION_SPEC.md this .cpp contains NO `namespace
-// muffin {}` block (the lupdate convention, kept even though the module has no
-// tr()). Functions are defined with fully-qualified `muffin::mermaid::er::`
+// mufpen {}` block (the lupdate convention, kept even though the module has no
+// tr()). Functions are defined with fully-qualified `mufpen::mermaid::er::`
 // names; file-local helpers live in an anonymous namespace at file scope.
 
 #include "mermaid/erdiagram/ErLayout.h"
@@ -21,15 +21,15 @@ namespace {
 // ErCardinality → enum name string. Spec §3: cardinality serializes as the enum
 // name ("ExactlyOne" etc.), matching ErDiagram::toJson. Used by the layout
 // golden only.
-QString erCardinalityName(muffin::mermaid::er::ErCardinality card) {
+QString erCardinalityName(mufpen::mermaid::er::ErCardinality card) {
   switch (card) {
-  case muffin::mermaid::er::ErCardinality::ExactlyOne:
+  case mufpen::mermaid::er::ErCardinality::ExactlyOne:
     return QStringLiteral("ExactlyOne");
-  case muffin::mermaid::er::ErCardinality::ZeroOrOne:
+  case mufpen::mermaid::er::ErCardinality::ZeroOrOne:
     return QStringLiteral("ZeroOrOne");
-  case muffin::mermaid::er::ErCardinality::OneOrMore:
+  case mufpen::mermaid::er::ErCardinality::OneOrMore:
     return QStringLiteral("OneOrMore");
-  case muffin::mermaid::er::ErCardinality::ZeroOrMore:
+  case mufpen::mermaid::er::ErCardinality::ZeroOrMore:
     return QStringLiteral("ZeroOrMore");
   }
   return QString{};
@@ -38,15 +38,15 @@ QString erCardinalityName(muffin::mermaid::er::ErCardinality card) {
 // Short key token placed in the formatted attribute line. Spec §4 uses the
 // short PK/FK/UK form (NOT the enum name); ErScene re-parses these tokens back
 // into ErSceneAttribute.keyType (which is "" / "PK" / "FK" / "UK").
-QString erAttributeKeyShortName(muffin::mermaid::er::ErAttributeKeyType key) {
+QString erAttributeKeyShortName(mufpen::mermaid::er::ErAttributeKeyType key) {
   switch (key) {
-  case muffin::mermaid::er::ErAttributeKeyType::PrimaryKey:
+  case mufpen::mermaid::er::ErAttributeKeyType::PrimaryKey:
     return QStringLiteral("PK");
-  case muffin::mermaid::er::ErAttributeKeyType::ForeignKey:
+  case mufpen::mermaid::er::ErAttributeKeyType::ForeignKey:
     return QStringLiteral("FK");
-  case muffin::mermaid::er::ErAttributeKeyType::UniqueKey:
+  case mufpen::mermaid::er::ErAttributeKeyType::UniqueKey:
     return QStringLiteral("UK");
-  case muffin::mermaid::er::ErAttributeKeyType::None:
+  case mufpen::mermaid::er::ErAttributeKeyType::None:
     break;
   }
   return QString{};
@@ -57,7 +57,7 @@ QString erAttributeKeyShortName(muffin::mermaid::er::ErAttributeKeyType key) {
 //   " (\"comment\")" comment marker. The two paren forms are disjoint — a key
 // marker is a bare PK/FK/UK token, a comment is always double-quoted — so
 // ErScene can re-split each line back into text / keyType / comment.
-QString formatErAttributeLine(const muffin::mermaid::er::ErAttribute& attr) {
+QString formatErAttributeLine(const mufpen::mermaid::er::ErAttribute& attr) {
   QString line = attr.attributeType + QLatin1Char(' ') + attr.attributeName;
   const QString key = erAttributeKeyShortName(attr.keyType);
   if (!key.isEmpty())
@@ -75,7 +75,7 @@ QJsonArray strings(const QStringList& values) {
 }
 } // namespace
 
-muffin::mermaid::er::ErLayoutInput muffin::mermaid::er::buildErLayoutInput(const ErDiagramData& data) {
+mufpen::mermaid::er::ErLayoutInput mufpen::mermaid::er::buildErLayoutInput(const ErDiagramData& data) {
   ErLayoutInput input;
   // erDb defaults direction to "TB"; the erDiagram grammar exposes no keyword
   // to change it, so this is the only value ever emitted.
@@ -113,8 +113,8 @@ muffin::mermaid::er::ErLayoutInput muffin::mermaid::er::buildErLayoutInput(const
   return input;
 }
 
-muffin::mermaid::er::ErLayoutMeasurements
-muffin::mermaid::er::measureErLayoutInput(const ErLayoutInput& input, QString fontFamily, qreal fontSize,
+mufpen::mermaid::er::ErLayoutMeasurements
+mufpen::mermaid::er::measureErLayoutInput(const ErLayoutInput& input, QString fontFamily, qreal fontSize,
                                           qreal minEntityWidth, qreal diagramPadding, qreal entityPadding,
                                           qreal relationshipFontSize) {
   ErLayoutMeasurements result;
@@ -196,8 +196,8 @@ muffin::mermaid::er::measureErLayoutInput(const ErLayoutInput& input, QString fo
   return result;
 }
 
-muffin::mermaid::er::ErPlacementResult
-muffin::mermaid::er::layoutErDiagramDagre(const ErLayoutInput& input, const ErLayoutMeasurements& measurements,
+mufpen::mermaid::er::ErPlacementResult
+mufpen::mermaid::er::layoutErDiagramDagre(const ErLayoutInput& input, const ErLayoutMeasurements& measurements,
                                           qreal entitySpacing, qreal rankSpacing) {
   ErPlacementResult result;
   if (input.entities.isEmpty())
@@ -251,7 +251,7 @@ muffin::mermaid::er::layoutErDiagramDagre(const ErLayoutInput& input, const ErLa
   return result;
 }
 
-QJsonObject muffin::mermaid::er::erLayoutInputToJson(const ErLayoutInput& input) {
+QJsonObject mufpen::mermaid::er::erLayoutInputToJson(const ErLayoutInput& input) {
   QJsonArray entities;
   for (const ErLayoutEntityInput& entity : input.entities) {
     entities.append(QJsonObject{{QStringLiteral("id"), entity.id},

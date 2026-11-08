@@ -5,7 +5,7 @@
 
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 struct WrapperSyntax {
@@ -136,4 +136,4 @@ qsizetype normalizeSplitOffset(QString& source, qsizetype offset) {
   return offset;
 }
 
-} // namespace muffin
+} // namespace mufpen

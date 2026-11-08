@@ -7,7 +7,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::radar {
+namespace mufpen::mermaid::radar {
 
 struct RadarAxis {
   QString name;
@@ -49,4 +49,4 @@ public:
   static RadarData parse(const QString& source);
 };
 
-} // namespace muffin::mermaid::radar
+} // namespace mufpen::mermaid::radar

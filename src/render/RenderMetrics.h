@@ -2,7 +2,7 @@
 
 #include <QtGlobal> // qreal
 
-namespace muffin {
+namespace mufpen {
 
 // Per-line height multiplier applied to TextFontMetrics::height() for the fallback/estimated line
 // height when a theme declares no explicit line-spacing. Shared by BlockLayout (literal/code line
@@ -20,4 +20,4 @@ inline qreal cssLineHeightPx(qreal pointSizeF, qreal multiplier) {
   return pointSize * (96.0 / 72.0) * multiplier;
 }
 
-} // namespace muffin
+} // namespace mufpen

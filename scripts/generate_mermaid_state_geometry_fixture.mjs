@@ -8,7 +8,7 @@ import { pathToFileURL } from "node:url";
 // source, last = target) to the nearest state node centre — state edges do NOT
 // carry a LS-/LE- class encoding (unlike flowchart), so endpoints are matched by
 // position. Node ids line up directly: mermaid's root_start/root_end/<name>
-// match Muffin's StateScene node ids exactly.
+// match Mufpen's StateScene node ids exactly.
 //
 // Output schema matches classdiagram::StateScene::toJsonObject's comparable
 // fields. node height is font-independent (asserted downstream); width + the
@@ -163,7 +163,7 @@ try {
         "node sizes + transition topology. Transition from/to recovered by matching " +
         "each edge's data-points endpoints (first=source, last=target) to the nearest " +
         "node centre — state edges carry no LS-/LE- class encoding. Node ids match " +
-        "Muffin directly (root_start/root_end/<name>). width/height are font-coupled; " +
+        "Mufpen directly (root_start/root_end/<name>). width/height are font-coupled; " +
         "compare against state::StateScene::toJsonObject (nodes id/height/width, " +
         "edges start/end/markerEnd).",
     },

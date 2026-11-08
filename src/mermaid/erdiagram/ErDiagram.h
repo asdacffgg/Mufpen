@@ -8,9 +8,9 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::er {
+namespace mufpen::mermaid::er {
 
-// Error taxonomy mirrors muffin::mermaid::classdiagram (ClassDiagram.h). The
+// Error taxonomy mirrors mufpen::mermaid::classdiagram (ClassDiagram.h). The
 // stage identifies which pipeline phase raised; the code is machine-readable
 // for test assertions. ErSourceSpan is 1-based line / 0-based column to match
 // ClassSourceSpan, so token spans map directly onto diagnostic spans.
@@ -137,4 +137,4 @@ QString erErrorStageName(ErErrorStage stage);
 QString erErrorCodeName(ErErrorCode code);
 QString formatErDiagnostic(const ErDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid::er
+} // namespace mufpen::mermaid::er

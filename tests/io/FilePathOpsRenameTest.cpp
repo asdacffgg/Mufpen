@@ -9,14 +9,14 @@
 #include <QString>
 #include <QStringList>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Builds a unique temp working directory for a test and tears it down on scope exit. The
 // collision/rename helpers resolve canonicalFilePath, so they need real entries on disk.
 class WorkDir {
 public:
   WorkDir() {
-    path_ = QDir(QDir::tempPath()).filePath(QStringLiteral("muffin-rename-test-%1").arg(counter_++));
+    path_ = QDir(QDir::tempPath()).filePath(QStringLiteral("mufpen-rename-test-%1").arg(counter_++));
     QDir().mkpath(path_);
   }
   ~WorkDir() { QDir(path_).removeRecursively(); }

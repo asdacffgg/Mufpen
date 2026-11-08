@@ -7,7 +7,7 @@
 
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 WordSegment findWordSegment(const QString& text, qsizetype offset) {
   if (text.isEmpty()) {
@@ -60,4 +60,4 @@ WordSegment findWordSegment(const QString& text, qsizetype offset) {
   return {static_cast<qsizetype>(segStart), static_cast<qsizetype>(segEnd), isWord};
 }
 
-} // namespace muffin
+} // namespace mufpen

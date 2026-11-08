@@ -5,14 +5,14 @@
 // so the AST stays faithful to upstream. Consumers (the editor + HTML/PDF/image
 // export in milestone I) consult this policy to decide what to emit.
 //
-// Mirrors mermaid's securityLevel (strict/loose/sandbox/antiscript). Muffin
+// Mirrors mermaid's securityLevel (strict/loose/sandbox/antiscript). Mufpen
 // defaults to Strict and NEVER executes callback JavaScript — there is no JS
 // runtime in-process (milestone I forbids Node/Chromium/JS-engine deps), so
 // allowCallbackExecution() is a constant false regardless of level.
 
 #include <QString>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 enum class MermaidSecurityLevel { Strict, Loose, Sandbox, Antiscript };
 
@@ -32,9 +32,9 @@ struct MermaidSecurityPolicy {
   // depth; the editor's HTML sanitizer is applied at the render boundary).
   bool sanitizeHtmlLabels() const { return true; }
 
-  // Muffin never executes mermaid callback JavaScript — no JS runtime exists.
+  // Mufpen never executes mermaid callback JavaScript — no JS runtime exists.
   // Callback NAMES are kept as data (a Qt signal / data attribute) only.
   bool allowCallbackExecution() const { return false; }
 };
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

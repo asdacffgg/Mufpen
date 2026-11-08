@@ -25,7 +25,7 @@ const classGrammarByVersion = {
 
 function download(url, redirects = 4) {
   return new Promise((resolve, reject) => {
-    https.get(url, { headers: { "user-agent": "Muffin grammar fixture generator" } }, (response) => {
+    https.get(url, { headers: { "user-agent": "Mufpen grammar fixture generator" } }, (response) => {
       if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location && redirects > 0) {
         response.resume();
         resolve(download(new URL(response.headers.location, url), redirects - 1));

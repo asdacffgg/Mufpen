@@ -31,13 +31,13 @@ extern "C" {
 #include "cmark-gfm-core-extensions.h"
 }
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(parsePerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(parsePerf, "mufpen.perf", QtWarningMsg)
 
 // RAII per-phase timer for parseDocument. Emits "label <ms>" on scope exit via the
-// muffin.perf category, which MUFFIN_PERF_LOG captures. No-op (single branch) when the
+// mufpen.perf category, which MUFPEN_PERF_LOG captures. No-op (single branch) when the
 // category's debug level is disabled.
 class ParsePerfTimer {
 public:
@@ -51,7 +51,7 @@ public:
   ~ParsePerfTimer() {
     if (enabled_) {
       const qint64 elapsedNs = timer_.nsecsElapsed();
-      const qint64 workingSetBytes = muffin::diag::workingSetBytes();
+      const qint64 workingSetBytes = mufpen::diag::workingSetBytes();
       if (metrics_) {
         metrics_->phases.append(ParsePhasePerformance{QString::fromLatin1(label_), elapsedNs, workingSetBytes});
       }
@@ -535,7 +535,7 @@ struct DelimToken {
 // memory queries. Counts describe our containers, not allocator internals.
 struct DelimiterProfile {
   enum Phase { Candidates, Tokenize, Match, Materialize, Compact, Commit, PhaseCount };
-  bool enabled = qEnvironmentVariableIsSet("MUFFIN_DELIMITER_PROFILE");
+  bool enabled = qEnvironmentVariableIsSet("MUFPEN_DELIMITER_PROFILE");
   std::array<qint64, PhaseCount> ns{};
   qint64 tokens = 0, pairs = 0, shiftedTokens = 0, segments = 0, committed = 0;
 
@@ -551,7 +551,7 @@ struct DelimiterProfile {
   void report(const DelimitedInlineSpec& spec) const {
     if (!enabled)
       return;
-    static const QLoggingCategory category("muffin.delimiter", QtInfoMsg);
+    static const QLoggingCategory category("mufpen.delimiter", QtInfoMsg);
     const QJsonObject row{{"marker", spec.markerString},
                           {"token_size_bytes", qint64(sizeof(DelimToken))},
                           {"tokens", tokens},
@@ -1100,7 +1100,7 @@ void restoreTopLevelSourceOrder(MarkdownNode& root) {
   }
 
   // cmark collects footnote definitions at the end of its document tree even when their source
-  // lines occur in the middle of the file. Muffin's source-position index and incremental suffix
+  // lines occur in the middle of the file. Mufpen's source-position index and incremental suffix
   // shifts operate in top-level tree order, so retain source order in the editor AST. Export still
   // hoists footnotes into its trailing section independently.
   std::vector<std::unique_ptr<MarkdownNode>> ordered;
@@ -1292,7 +1292,7 @@ FrontMatterScanResult scanFrontMatter(QStringView markdown) {
   return scanJsonFrontMatter(markdown);
 }
 
-using muffin::shiftInlineSourcePositions;
+using mufpen::shiftInlineSourcePositions;
 
 // cmark-gfm decodes an escaped pipe `\|` to `|` inside a table cell (see
 // unescape_pipes in extensions/table.c) but reports the inline node's source range as
@@ -1538,7 +1538,7 @@ ParseResult CmarkGfmParser::parseDocumentImpl(QStringView markdown, const ParseO
   ParsePerformanceMetrics performanceMetrics;
   ParsePerformanceMetrics* metrics = collectPerformanceMetrics ? &performanceMetrics : nullptr;
   if (metrics) {
-    metrics->workingSetBytesBefore = muffin::diag::workingSetBytes();
+    metrics->workingSetBytesBefore = mufpen::diag::workingSetBytes();
   }
 
   FrontMatterScanResult frontMatter;
@@ -1635,7 +1635,7 @@ ParseResult CmarkGfmParser::parseDocumentImpl(QStringView markdown, const ParseO
   {
     ParsePerfTimer t("parse.convertBlock", metrics);
     const bool perf = parsePerf().isDebugEnabled();
-    CmarkNodeAdapter::setPerfEnabled(perf || qEnvironmentVariableIsSet("MUFFIN_AST_PROFILE"));
+    CmarkNodeAdapter::setPerfEnabled(perf || qEnvironmentVariableIsSet("MUFPEN_AST_PROFILE"));
     CmarkNodeAdapter::resetPerfCounters();
     LineStartOffsetCache::setByteColPerfEnabled(perf);
     LineStartOffsetCache::resetByteColPerf();
@@ -1647,7 +1647,7 @@ ParseResult CmarkGfmParser::parseDocumentImpl(QStringView markdown, const ParseO
       qCDebug(parsePerf).nospace() << "lineOffset.byteColumn " << LineStartOffsetCache::byteColPerfMs() << " ms";
     }
   }
-  // The Muffin tree (result.root) is fully built; every remaining pass reads only it +
+  // The Mufpen tree (result.root) is fully built; every remaining pass reads only it +
   // markdownToParse + lineOffsets — never the cmark tree. Free document + parser here instead of
   // carrying them and any spare pool pages through the annotation passes.
   {
@@ -1749,7 +1749,7 @@ ParseResult CmarkGfmParser::parseDocumentImpl(QStringView markdown, const ParseO
   result.elapsedMs = totalElapsedNs / 1000000;
   if (metrics) {
     metrics->totalElapsedNs = totalElapsedNs;
-    metrics->workingSetBytesAfter = muffin::diag::workingSetBytes();
+    metrics->workingSetBytesAfter = mufpen::diag::workingSetBytes();
     result.performanceMetrics = std::move(performanceMetrics);
   }
   // cmark document + parser freed right after convertBlock above; nothing past that point touches
@@ -2054,4 +2054,4 @@ std::unique_ptr<MarkdownNode> CmarkGfmParser::createVirtualEmptyParagraph(int li
   return paragraph;
 }
 
-} // namespace muffin
+} // namespace mufpen

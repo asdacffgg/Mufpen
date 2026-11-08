@@ -12,9 +12,9 @@
 
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(contextDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(contextDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 // markdown/* smart punctuation for the render path (Convert on Rendering). Mirrors the same-named
 // helper in BlockLayoutBuilder.cpp so the editing projection and the painted projection apply the
@@ -528,4 +528,4 @@ qsizetype BlockEditContextResolver::literalContentStartOffset(const MarkdownNode
   return literalContentStartOffsetOf(session_->markdownText(), node);
 }
 
-} // namespace muffin
+} // namespace mufpen

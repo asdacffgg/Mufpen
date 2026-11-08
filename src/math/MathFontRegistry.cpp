@@ -7,7 +7,7 @@ static void initKatexFontsResource() {
   Q_INIT_RESOURCE(katex_fonts);
 }
 
-namespace muffin::math {
+namespace mufpen::math {
 
 void MathFontRegistry::ensureLoaded() {
   static bool loaded = false;
@@ -41,4 +41,4 @@ void MathFontRegistry::ensureLoaded() {
   loaded = true;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

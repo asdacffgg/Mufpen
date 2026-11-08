@@ -2,7 +2,7 @@
 
 #include <QAtomicInteger>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QAtomicInteger<quint64> nextNodeId = 1;
 }
@@ -51,4 +51,4 @@ uint qHash(const NodeId& id, uint seed) {
   return seed ^ static_cast<quint32>(id.id_) ^ static_cast<quint32>(id.id_ >> 32);
 }
 
-} // namespace muffin
+} // namespace mufpen

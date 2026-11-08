@@ -29,7 +29,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 struct RequirementSceneStyle {
   QString boxFill = QStringLiteral("#ECECFF");   // theme mainBkg
@@ -244,4 +244,4 @@ RequirementScene buildRequirementScene(const RequirementLayoutInput& input,
                                        const RequirementLayoutMeasurements& measurements,
                                        const RequirementPlacementResult& placement, RequirementSceneStyle style = {});
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

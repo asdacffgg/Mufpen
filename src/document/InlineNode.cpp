@@ -4,7 +4,7 @@
 #include <limits>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 const std::array<QString, 13>& commonMarkers() {
   static const std::array<QString, 13> markers{QString(),
@@ -461,4 +461,4 @@ void shiftInlineSourcePositions(QVector<InlineNode>& inlines, qsizetype delta) {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

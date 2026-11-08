@@ -8,7 +8,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 namespace {
 
 bool asciiAlpha(QChar ch) {
@@ -458,4 +458,4 @@ VennData VennDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

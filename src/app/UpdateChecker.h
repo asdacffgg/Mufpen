@@ -6,7 +6,7 @@
 #include <QString>
 #include "app/UpdatePackage.h"
 
-namespace muffin {
+namespace mufpen {
 
 /// Async update checker using static CNB release metadata, with a GitHub asset fallback.
 /// Compares the latest release version with the running application version
@@ -52,4 +52,4 @@ private:
   QList<QUrl> sources_;
 };
 
-} // namespace muffin
+} // namespace mufpen

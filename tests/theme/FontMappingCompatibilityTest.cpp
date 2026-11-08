@@ -18,7 +18,7 @@
 #include "theme/FontRendering.h"
 #include "theme/ThemeFontDecoder.h"
 #include "theme/ThemeManager.h"
-using namespace muffin;
+using namespace mufpen;
 namespace {
 void write(const QString& path, const QByteArray& bytes) {
   QFile file(path);
@@ -29,7 +29,7 @@ QString faceCss(const QJsonArray& faces) {
   for (const auto& value : faces) {
     const auto f = value.toObject();
     css += QString("@font-face{font-family:'%1';src:url('%2/%3');font-weight:%4;font-style:%5}")
-               .arg(f["family"].toString(), QStringLiteral(MUFFIN_SOURCE_DIR), f["file"].toString())
+               .arg(f["family"].toString(), QStringLiteral(MUFPEN_SOURCE_DIR), f["file"].toString())
                .arg(f["weight"].toInt())
                .arg(f["style"].toString());
   }
@@ -76,7 +76,7 @@ void isolationAndReload() {
   const auto rule = [](const QString& filename) {
     return QString("@font-face{font-family:'Shared "
                    "Alias';src:url('%1/tests/fixtures/theme/fonts/%2')}p{font-family:'Shared Alias';font-size:20px}")
-        .arg(MUFFIN_SOURCE_DIR, filename)
+        .arg(MUFPEN_SOURCE_DIR, filename)
         .toUtf8();
   };
   write(path, rule("latex-regular.woff2"));
@@ -122,7 +122,7 @@ void descriptorMatching() {
   require(match(900, true) == "heavy", "missing italic face falls back to the matching normal weight");
 }
 void preparedFontChecksumsAndIdentity() {
-  QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
+  QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
   require(file.open(QIODevice::ReadOnly), "open font checksum fixture");
   const auto source = file.readAll();
   const auto prepared = prepareThemeFont(source);
@@ -183,15 +183,15 @@ void preparedFontChecksumsAndIdentity() {
       glyphs[i] = char((i * 37 + 127) % 256);
     extended += glyphs;
     const auto original = extended;
-    verify(isolateThemeFont(extended, "MuffinChecksum", 700, true));
+    verify(isolateThemeFont(extended, "MufpenChecksum", 700, true));
     require(extended == original, "private table views never modify the original font bytes");
   }
   const auto before = prepared.native;
-  verify(isolateThemeFont(prepared.native, "MuffinPrepared", 400, false));
-  verify(isolateThemeFont(prepared.native, "MuffinPrepared", 700, true));
+  verify(isolateThemeFont(prepared.native, "MufpenPrepared", 400, false));
+  verify(isolateThemeFont(prepared.native, "MufpenPrepared", 700, true));
   require(prepared.native == before, "descriptor/name rewrites keep prepared font source immutable");
-  const auto registered = registerPrivateFont(prepared, "MuffinPrepared", 400, false);
-  require(!registered.isEmpty() && registerPrivateFont(source, "MuffinPrepared", 400, false) == registered,
+  const auto registered = registerPrivateFont(prepared, "MufpenPrepared", 400, false);
+  require(!registered.isEmpty() && registerPrivateFont(source, "MufpenPrepared", 400, false) == registered,
           "raw and prepared registration paths use the same content identity");
 }
 
@@ -221,10 +221,10 @@ void conditionalFontsAndAssets() {
   const auto path = dir.filePath("conditional.css");
   const auto firstFace =
       QString("@font-face{font-family:'Conditional';src:url('%1/tests/fixtures/theme/fonts/latex-regular.woff2')}")
-          .arg(MUFFIN_SOURCE_DIR);
+          .arg(MUFPEN_SOURCE_DIR);
   const auto secondFace =
       QString("@font-face{font-family:'Conditional';src:url('%1/tests/fixtures/theme/fonts/abyss.woff2')}")
-          .arg(MUFFIN_SOURCE_DIR);
+          .arg(MUFPEN_SOURCE_DIR);
   write(path, (firstFace + "@media(max-width:500px){" + secondFace + "}p{font-family:Conditional}").toUtf8());
   auto theme = RenderTheme::fromDefinition(ThemeDefinition::fromCss(path, "conditional"));
   const auto wide = theme.fontAliases();
@@ -233,7 +233,7 @@ void conditionalFontsAndAssets() {
   require(theme.updateForViewport(800, 600) && theme.fontAliases() == wide,
           "leaving font media bucket restores its previous family");
   const auto copy = [&](const QString& name) {
-    QFile file(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/fonts/") + name);
+    QFile file(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/fonts/") + name);
     require(file.open(QIODevice::ReadOnly), "reload source font");
     write(dir.filePath("font.woff2"), file.readAll());
   };
@@ -246,7 +246,7 @@ void conditionalFontsAndAssets() {
   copy("abyss.woff2");
   require(manager.setTheme("reload") && manager.currentDefinition().fontAliases != first,
           "font content changes invalidate cached theme even when CSS path and text stay the same");
-  QFile nativeSource(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
+  QFile nativeSource(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
   require(nativeSource.open(QIODevice::ReadOnly), "read font for same-size replacement");
   const auto native = decodeThemeWebFont(nativeSource.readAll());
   const auto faceA = isolateThemeFont(native, "RevisionA", 400, false);
@@ -266,7 +266,7 @@ void conditionalFontsAndAssets() {
   require(afterReplacement.sourceSheet != beforeReplacement.sourceSheet &&
               afterReplacement.fontAliases != beforeReplacement.fontAliases,
           "independent reads detect same-size same-time font edits and replace private family identities");
-  QFile source(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
+  QFile source(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/fonts/latex-regular.woff2"));
   require(source.open(QIODevice::ReadOnly), "embedded font source");
   write(path, "@font-face{font-family:Embedded;src:url(data:font/woff2;base64," + source.readAll().toBase64() +
                   ")}p{font-family:Embedded}");
@@ -281,7 +281,7 @@ int main(int argc, char** argv) {
   require(file.open(QIODevice::ReadOnly), "read font browser fixture");
   const auto root = QJsonDocument::fromJson(file.readAll()).object(), hashes = root["hashes"].toObject();
   for (auto it = hashes.begin(); it != hashes.end(); ++it) {
-    QFile source(QStringLiteral(MUFFIN_SOURCE_DIR "/") + it.key());
+    QFile source(QStringLiteral(MUFPEN_SOURCE_DIR "/") + it.key());
     require(source.open(QIODevice::ReadOnly), "fixed font source exists");
     require(QString::fromLatin1(QCryptographicHash::hash(source.readAll(), QCryptographicHash::Sha256).toHex()) ==
                 it.value().toString(),

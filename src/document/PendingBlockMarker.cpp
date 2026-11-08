@@ -4,7 +4,7 @@
 
 #include <QRegularExpression>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 QStringView sourceForNode(QStringView markdown, const MarkdownNode& node) {
@@ -364,4 +364,4 @@ QVector<qsizetype> shiftPendingMarkerOffsets(const QVector<qsizetype>& preEditOf
   return shifted;
 }
 
-} // namespace muffin
+} // namespace mufpen

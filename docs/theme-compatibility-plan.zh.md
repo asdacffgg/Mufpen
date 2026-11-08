@@ -1,6 +1,6 @@
 # CSS 主题兼容与性能计划
 
-这份计划记录 Muffin 对社区 CSS 主题的兼容目标、实施顺序和验证方式。目标是让主题依赖稳定的 Markdown 语义结构和明确的 CSS 能力矩阵，而不是为某一个主题加入临时选择器特判。
+这份计划记录 Mufpen 对社区 CSS 主题的兼容目标、实施顺序和验证方式。目标是让主题依赖稳定的 Markdown 语义结构和明确的 CSS 能力矩阵，而不是为某一个主题加入临时选择器特判。
 
 ## 当前差异和根因
 
@@ -25,7 +25,7 @@
 ### 第二阶段：条件规则和兼容诊断（条件解析与离线诊断首轮已完成）
 
 1. 解析嵌套 `@supports`，支持 `and`、`or`、`not` 和声明能力查询。
-2. 能力判断以 Muffin 实际可绘制的属性为准；暂不支持的能力不会误应用。
+2. 能力判断以 Mufpen 实际可绘制的属性为准；暂不支持的能力不会误应用。
 3. 将条件保存在 `CssRule` 中，并在环境切换时重新评估，避免把条件规则静默丢弃。
 4. 已增加按需运行的离线主题兼容性报告，统计未支持的 at-rule、选择器、属性值和资源，并将字体存在性与实际注册结果分开。
 
@@ -67,7 +67,7 @@
 
 ## 首轮回归检查
 
-固定样例位于 `tests/fixtures/theme/vlook-fancy-dark/`；运行 `MuffinVlookFancyCompatibilityTest` 会在测试可执行文件旁输出 `vlook-fancy-dark-regression.png`。
+固定样例位于 `tests/fixtures/theme/vlook-fancy-dark/`；运行 `MufpenVlookFancyCompatibilityTest` 会在测试可执行文件旁输出 `vlook-fancy-dark-regression.png`。
 
 | 项目 | 自动检查 |
 | --- | --- |
@@ -97,7 +97,7 @@
 | 告警 | 标题映射独立 `md-alert-text-container` / `md-alert-text-*`；主题决定卡片渐变与边框，缺少专属样式时保留内置配色；预览显示 NOTE 等语义标题，进入标题时展开原始标记 |
 | 编辑坐标 | 告警标题和续行引用前缀通过保留原始范围的显示替换实现；原文不变；测试覆盖正文点击坐标和进入/退出标题 |
 
-新增 `MuffinThemePaintCompatibilityTest` 检查背景合成像素、层列表重复、`none`、底色裁剪、位图尺寸、动画、属性内容和失效、表格布局、告警及光标映射。`MuffinVlookFancyCompatibilityTest` 继续使用固定原始快照，增加实际语言标签、告警标题/正文和表格容器断言。
+新增 `MufpenThemePaintCompatibilityTest` 检查背景合成像素、层列表重复、`none`、底色裁剪、位图尺寸、动画、属性内容和失效、表格布局、告警及光标映射。`MufpenVlookFancyCompatibilityTest` 继续使用固定原始快照，增加实际语言标签、告警标题/正文和表格容器断言。
 
 背景规则遵循 [CSS Backgrounds Level 3](https://www.w3.org/TR/css-backgrounds-3/#layering)。本轮的多层合成为普通 alpha 合成；外部图片资源、SVG 背景资源、非 normal 的 blend mode、`space/round` 平铺、数字/单位型 `attr()`、通用计数器作用域、表格 auto/intrinsic 尺寸、完整告警伪元素及复杂 `:has()` 仍未完成。
 
@@ -110,11 +110,11 @@
 
 ## 第三轮：按需兼容诊断
 
-新增公共 `CssCompatibilityReport` API 和开发工具 `muffin-theme-report`，复用解析器、选择器编译器、条件求值及声明能力校验。报告不会在启动或列举主题时执行；不启动 GUI，不注册字体，不访问远程资源。
+新增公共 `CssCompatibilityReport` API 和开发工具 `mufpen-theme-report`，复用解析器、选择器编译器、条件求值及声明能力校验。报告不会在启动或列举主题时执行；不启动 GUI，不注册字体，不访问远程资源。
 
 ```powershell
-cmake --build --preset conan-release --target muffin-theme-report
-.\build\Release\muffin-theme-report.exe --dark --width 960 --height 900 `
+cmake --build --preset conan-release --target mufpen-theme-report
+.\build\Release\mufpen-theme-report.exe --dark --width 960 --height 900 `
   --output build\vlook-compatibility.json `
   tests\fixtures\theme\vlook-fancy-dark\vlook-fancy-dark.css
 ```
@@ -125,7 +125,7 @@ cmake --build --preset conan-release --target muffin-theme-report
 
 报告明确区分“已知不支持”“尚无完整校验”和“需要元素上下文”：`font-family`、`box-shadow` 等已有绘制路径但未纳入完整能力校验的属性不会被误报为不支持；`var()` 不按全局变量表猜测结果。字体报告仅检查资源路径，不宣称字体解码、注册或回退已通过。完整 CSS 语法校验、关键帧属性审计和最终文档几何/像素仍需对应回归。
 
-新增 `MuffinCssCompatibilityReportTest`，验证导入与嵌套规则来源、条件隔离、选择器排除、属性误报边界、资源解析及输出上限，并通过实际 CLI 生成固定 VLOOK 报告 `build/Release/vlook-fancy-dark-compatibility.json`。下一项继续资源加载与背景平铺/混合模式的公共能力。
+新增 `MufpenCssCompatibilityReportTest`，验证导入与嵌套规则来源、条件隔离、选择器排除、属性误报边界、资源解析及输出上限，并通过实际 CLI 生成固定 VLOOK 报告 `build/Release/vlook-fancy-dark-compatibility.json`。下一项继续资源加载与背景平铺/混合模式的公共能力。
 
 固定快照在 dark、960×900 环境下含 2,258 条规则，其中 2,194 条通过条件、64 条未通过；436 个选择器属于明确排除的宿主编辑器/导出结构。报告识别出 3 个未加载的远程字体样式导入、204 个编译器无法评估的选择器，以及 `display:contents`、`filter:drop-shadow(...)`、固定/粘性定位等能力差距。选择器统计包括 VLOOK 自身组件和宿主界面，并不表示这些规则都会影响当前 Markdown。变量依赖和未完成校验项单独记录，不能将这些数量解释为视觉错误数量或兼容率。
 
@@ -146,7 +146,7 @@ cmake --build --preset conan-release --target muffin-theme-report
 | 公共绘制路径 | 页面、块、行内和伪元素背景使用同一绘制器；普通背景继续直接绘制，混合背景只为可见交集分配临时图层；SVG 背景不再同时作为 content 图标重复绘制 |
 | 条件和诊断 | `@supports` 能识别新增能力，非法 repeat/blend 声明保留前一个有效声明；诊断报告删除已补齐的限制，远程资源和 `mix-blend-mode` 继续明确记录 |
 
-新增 `scripts/probe_background_css.mjs` 和固定 `background-browser.json`，通过实际 Chromium 为 43 个 CSS 场景生成 1、1.25、2 倍 DPR 的 129 组物理像素样例。`MuffinCssBackgroundCompatibilityTest` 比较平铺、定位、SVG、16 种混合及半透明背景；排除锐利边缘附近一个物理像素的抗锯齿差异，内部颜色和渐变允许最多 4/255 的通道误差。另验证资源缓存、导入变量路径、动画切换，以及 ThemeManager 的真实资源更新失效路径。
+新增 `scripts/probe_background_css.mjs` 和固定 `background-browser.json`，通过实际 Chromium 为 43 个 CSS 场景生成 1、1.25、2 倍 DPR 的 129 组物理像素样例。`MufpenCssBackgroundCompatibilityTest` 比较平铺、定位、SVG、16 种混合及半透明背景；排除锐利边缘附近一个物理像素的抗锯齿差异，内部颜色和渐变允许最多 4/255 的通道误差。另验证资源缓存、导入变量路径、动画切换，以及 ThemeManager 的真实资源更新失效路径。
 
 资源仍不联网加载；SVG 内部外部子资源、滤镜及 CSS 受 QtSvg 能力限制。位图仅使用首次解码帧；单个源文件最多 32 MiB、固有图片最多 16M 像素，派生纹理每轴最多 4096 像素。`mix-blend-mode` 涉及元素/子树与后景的合成，并不等同于本轮的背景组混合，尚未实现。告警标题图标、完整遮罩/滤镜、计数器作用域和字体/隐藏标签页性能仍按后续优先级推进。
 
@@ -164,7 +164,7 @@ cmake --build --preset conan-release --target muffin-theme-report
 | 编辑映射 | 图标和前后缀只占显示空间，不计入原文或可编辑文本；点击生成内容回到所属语义边界；链接内部后代生成内容保留 href；进入告警标题仍展开原始 `[!TYPE]` |
 | 样式失效 | 行内伪元素快照保留来源叶节点与祖先深度，区分同名嵌套 span；SVG 及 path 样式指纹参与复用判断；文档样式失效后重新取得来源元素，不保留旧树指针 |
 
-新增 `scripts/probe_inline_semantics.mjs` 与固定 `inline-semantics-browser.json`，使用同一份固定字体，通过 Chromium 比较嵌套语义层、相邻元素、换行图形、链接后代和五类告警。`MuffinInlineSemanticContentTest` 在 100%、125%、200% 下执行 30 组文字/图标几何及光标映射检查，另检查绘制颜色、祖先透明度、逐元素动画和结构失效；默认及 fractional 文本后端均运行。固定 VLOOK 原始 CSS 新增 `alerts.md`，覆盖全部五类告警，并生成 `build/Release/vlook-fancy-dark-alerts.png` 供视觉检查。
+新增 `scripts/probe_inline_semantics.mjs` 与固定 `inline-semantics-browser.json`，使用同一份固定字体，通过 Chromium 比较嵌套语义层、相邻元素、换行图形、链接后代和五类告警。`MufpenInlineSemanticContentTest` 在 100%、125%、200% 下执行 30 组文字/图标几何及光标映射检查，另检查绘制颜色、祖先透明度、逐元素动画和结构失效；默认及 fractional 文本后端均运行。固定 VLOOK 原始 CSS 新增 `alerts.md`，覆盖全部五类告警，并生成 `build/Release/vlook-fancy-dark-alerts.png` 供视觉检查。
 
 本轮范围是 Markdown 语义行内元素的普通流生成内容。任意嵌入 HTML 的空元素/复杂后代、行内绝对定位伪元素、完整 flex 排版、任意 SVG 子树样式及伪元素完整子树滤镜仍需后续专项兼容；不据此声明与浏览器完整等价。下一项按优先级核对遮罩、滤镜、计数器作用域和有限定位的边界回归。
 
@@ -202,7 +202,7 @@ cmake --build --preset conan-release --target muffin-theme-report
 2. 补充带真实文档元素上下文的兼容诊断，定位仍被跳过的行内绝对定位、SVG 片段资源和独立 HTML 子树能力。
 3. 再推进表格固有尺寸、复杂行内 HTML、完整定位包含块与剩余布局差异，并持续扩展真实主题的固定浏览器样例。
 
-本轮验证：Release 完整构建通过；新增效果回归及普通/fractional 文本后端相关回归全部通过；完整 CTest **335/336** 通过。唯一失败项为 `MuffinMermaidThemeCssTest` 的 `flow-label-size/client/width-delta`（246 与 221 不一致），使用本轮修改前 `dist` 中的核心 DLL 也能复现，未放宽断言或修改 Mermaid 参考数据。完整日志为 `build/theme-effects-ctest-verified.log`，旧 DLL 对照日志为 `build/theme-css-baseline-probe.log`。`dist` 已刷新，`git diff --check` 无错误。
+本轮验证：Release 完整构建通过；新增效果回归及普通/fractional 文本后端相关回归全部通过；完整 CTest **335/336** 通过。唯一失败项为 `MufpenMermaidThemeCssTest` 的 `flow-label-size/client/width-delta`（246 与 221 不一致），使用本轮修改前 `dist` 中的核心 DLL 也能复现，未放宽断言或修改 Mermaid 参考数据。完整日志为 `build/theme-effects-ctest-verified.log`，旧 DLL 对照日志为 `build/theme-css-baseline-probe.log`。`dist` 已刷新，`git diff --check` 无错误。
 
 ## 第七轮：字体基线与通用字体映射
 
@@ -210,7 +210,7 @@ cmake --build --preset conan-release --target muffin-theme-report
 
 ### Mermaid 基线根因
 
-Windows 安装的 Noto Sans Bold 与应用固定的 Noto Sans Regular 同名。Qt 在请求粗体时选中了系统 Bold，浏览器参考则只加载固定 Regular 文件并合成粗体，二者的 advance 不同。采用私有字体族隔离固定资源后，原有 `MuffinMermaidThemeCssTest` 通过，未改变参考数据和容差。
+Windows 安装的 Noto Sans Bold 与应用固定的 Noto Sans Regular 同名。Qt 在请求粗体时选中了系统 Bold，浏览器参考则只加载固定 Regular 文件并合成粗体，二者的 advance 不同。采用私有字体族隔离固定资源后，原有 `MufpenMermaidThemeCssTest` 通过，未改变参考数据和容差。
 
 私有身份由字体内容决定，只修改内存中的 SFNT 名称及匹配元数据，原始字体文件不变。静态字体导出中残留的 STAT 实例枚举不参与私有静态字形匹配；轮廓、advance、字距和整形表保持原样。Mermaid 和文档回退共用同一套固定 Noto 资源及注册结果。
 
@@ -236,7 +236,7 @@ Windows 安装的 Noto Sans Bold 与应用固定的 Noto Sans Regular 同名。Q
 - 缺失主题字体时仍会使用平台通用字体及固定 Noto 回退；固定回归通过不代表缺少原始字体时仍能与完整主题的参考渲染完全相同。
 - 下一批次先实现 VLOOK 超远 `drop-shadow` 的稀疏区域合成，随后分段测量大型文档的 CSS、计数器、排版、绘制和隐藏标签页开销。
 
-本轮验证：Release 完整构建通过，完整 CTest **338/338** 通过（原有 336 项及新增的普通/fractional 字体映射测试）；17 组固定浏览器字体样例在两种文本后端均通过。完整日志为 `build/font-stage-all-green-ctest.log`，构建日志为 `build/font-stage-primary-face-build.log`。`dist` 已刷新，Muffin.exe、MuffinCore.dll 和 MuffinUi.dll 的 SHA-256 与 Release 产物一致；`git diff --check` 无错误。
+本轮验证：Release 完整构建通过，完整 CTest **338/338** 通过（原有 336 项及新增的普通/fractional 字体映射测试）；17 组固定浏览器字体样例在两种文本后端均通过。完整日志为 `build/font-stage-all-green-ctest.log`，构建日志为 `build/font-stage-primary-face-build.log`。`dist` 已刷新，Mufpen.exe、MufpenCore.dll 和 MufpenUi.dll 的 SHA-256 与 Release 产物一致；`git diff --check` 无错误。
 
 ## 第八轮：超远阴影稀疏合成与大型文档测量
 
@@ -248,7 +248,7 @@ VLOOK 使用 `drop-shadow(12345px 0 ...)` 将远处的图形着色后移回视�
 
 固定浏览器效果样例增加正负远距离平移、模糊、滤镜链和遮罩组合，共 28 类 × DPR 1/1.25/2，即 84 组像素样例。原生回归另比较 12,345 与 1,000,001 像素偏移：相同亚像素相位下像素和分配量完全相同；跨越 512 像素边界的有序模糊链与原有整图计算逐像素一致。高页面阴影覆盖顶部和滚动后视口。
 
-另补真实 QWidget 绘制回归：窗口尺寸为逻辑像素，QImage/QPixmap 尺寸为物理像素，公共设备裁剪先统一单位再反变换。`QT_SCALE_FACTOR=1.25` 下原路径会裁掉窗口右侧/底部效果，修复后通过；该配置独立注册为 `MuffinHighDpiCssEffectsCompatibilityTest`。
+另补真实 QWidget 绘制回归：窗口尺寸为逻辑像素，QImage/QPixmap 尺寸为物理像素，公共设备裁剪先统一单位再反变换。`QT_SCALE_FACTOR=1.25` 下原路径会裁掉窗口右侧/底部效果，修复后通过；该配置独立注册为 `MufpenHighDpiCssEffectsCompatibilityTest`。
 
 ### 测量中修复的公共开销
 
@@ -259,7 +259,7 @@ VLOOK 使用 `drop-shadow(12345px 0 ...)` 将远处的图形着色后移回视�
 
 ### 可复现的分段测量
 
-新增按需构建的 `MuffinThemePerformanceProbe`，分别记录 CSS、计数器、排版、绘制的独占时间、调用次数、计数器节点数和工作集。嵌套阶段扣除子阶段时间，不能将 CSS 耗时再次算入排版或计数器。诊断默认关闭，不进入普通 CTest 的延时断言。
+新增按需构建的 `MufpenThemePerformanceProbe`，分别记录 CSS、计数器、排版、绘制的独占时间、调用次数、计数器节点数和工作集。嵌套阶段扣除子阶段时间，不能将 CSS 耗时再次算入排版或计数器。诊断默认关闭，不进入普通 CTest 的延时断言。
 
 Windows / Intel i7-10700 / Conan Release，Qt offscreen、96 DPI、960×900 DPR 1。每个大小用新进程顺序测量一次；ASCII Markdown 每约 64 KiB 一个标题，段落混合加粗、斜体、删除线、代码和链接。`parse` 包含生成样例和同步解析；工作集为阶段结束时的值，不是峰值。固定 CSS SHA-256 与完整数据保存在 [测量记录](benchmarks/vlook-theme-performance-2026-10-14.json)。这些数据用于定位开销，不代表所有主题、文档和机器的交互延迟。
 
@@ -280,12 +280,12 @@ Windows / Intel i7-10700 / Conan Release，Qt offscreen、96 DPI、960×900 DPR 
 复现命令（先完成 Release 构建，并加载与 CTest 相同的 Conan Qt 环境）：
 
 ```powershell
-cmake --build --preset conan-release --target MuffinThemePerformanceProbe
+cmake --build --preset conan-release --target MufpenThemePerformanceProbe
 $probePresets = Get-Content build/generators/CMakePresets.json -Raw | ConvertFrom-Json
 $env:QT_PLUGIN_PATH = $probePresets.testPresets[0].environment.QT_PLUGIN_PATH
 $env:PATH = $probePresets.configurePresets[0].environment.QT_HOST_PATH + '\bin;' + $env:PATH
 $env:QT_FONT_DPI = '96'
-.\build\Release\MuffinThemePerformanceProbe.exe build/theme-perf-30MiB.json 30
+.\build\Release\MufpenThemePerformanceProbe.exe build/theme-perf-30MiB.json 30
 ```
 
 ### 下一步优先级
@@ -294,7 +294,7 @@ $env:QT_FONT_DPI = '96'
 2. 计数器发现仍会检查普通 AST 与局部变量候选，大文档编辑后会重新发现。继续用块标签、行内类型及结构索引收窄范围，验证局部编辑和后续编号失效。
 3. 已有视口绘制约 80 毫秒，需继续拆分纹理、页面阴影和文字绘制，评估按几何/样式复用阴影栅格；另补真实 GUI 下的多标签页和大文件打开、滚动、编辑连续操作测量。
 
-本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过（新增独立的 125% 窗口效果回归，既有浏览器样例容差未修改）；构建日志为 `build/sparse-effects-release-build.log`，测试日志为 `build/sparse-effects-all-ctest.log`。`dist` 已刷新，Muffin.exe、MuffinCore.dll 和 MuffinUi.dll 的 SHA-256 与 Release 一致；`git diff --check` 无错误。
+本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过（新增独立的 125% 窗口效果回归，既有浏览器样例容差未修改）；构建日志为 `build/sparse-effects-release-build.log`，测试日志为 `build/sparse-effects-all-ctest.log`。`dist` 已刷新，Mufpen.exe、MufpenCore.dll 和 MufpenUi.dll 的 SHA-256 与 Release 一致；`git diff --check` 无错误。
 
 ## 第九轮：CSS 交互状态计算
 
@@ -332,7 +332,7 @@ $env:QT_FONT_DPI = '96'
 
 本轮没有改善已有视口绘制；复测为 88–90 毫秒。大文档仍受计数器发现与相关静态 CSS 查询拖累：30 MiB 编辑中的计数器独占时间约 2.95 秒，CSS 约 4.16 秒。下一步优先建立计数器候选的块/行内类型索引及增量失效范围，然后继续拆分纹理、阴影和文字绘制；约 0.9 秒的主题原型/视口快照也仍有独立优化空间。
 
-本轮验证：Release 完整构建通过；完整 CTest **339/339** 通过，耗时 469.28 秒，日志为 `build/css-state-all-ctest.log`，构建日志为 `build/css-state-release-build.log`。最终交互测试另行构建和复验通过；`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
+本轮验证：Release 完整构建通过；完整 CTest **339/339** 通过，耗时 469.28 秒，日志为 `build/css-state-all-ctest.log`，构建日志为 `build/css-state-release-build.log`。最终交互测试另行构建和复验通过；`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
 
 ## 第十轮：计数器增量更新、绘制与原型快照
 
@@ -379,7 +379,7 @@ $env:QT_FONT_DPI = '96'
 
 后续优先缩小普通编辑触发的视口样式失效（目前完整相关块布局仍约 0.4 秒）、压缩计数器快照内存，再进行真实 GUI 连续滚动、编辑和多标签页测量。首次绘制的阴影栅格化仍要发生；本轮缓存主要改善暖视口。
 
-本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过，耗时 579.24 秒。构建日志为 `build/counter-shadow-snapshot-release-build.log`，测试日志为 `build/counter-shadow-snapshot-all-ctest.log`；固定浏览器样例及容差未修改。`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
+本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过，耗时 579.24 秒。构建日志为 `build/counter-shadow-snapshot-release-build.log`，测试日志为 `build/counter-shadow-snapshot-all-ctest.log`；固定浏览器样例及容差未修改。`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
 
 ## 第十一轮：普通编辑的局部样式失效与快照内存
 
@@ -420,11 +420,11 @@ $env:QT_FONT_DPI = '96'
 
 下一步按计划补真实 GUI 连续操作测量：固定窗口、主题、字体、文档和标签页数量，分别记录连续输入、方向键移动、滚动、主题切换的 p50/p95/p99、最长停顿和前后工作集；检查隐藏标签页的活动。用这些结果决定是否继续优化首次绘制或结构编辑，不将 offscreen 单次结果作为实际手感结论。
 
-本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过，耗时 452.92 秒；构建日志为 `build/local-style-release-build.log`，测试日志为 `build/local-style-all-ctest.log`。既有性能断言、固定浏览器样例及容差未放宽。`dist` 已刷新，Muffin.exe、MuffinCore.dll 和 MuffinUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
+本轮验证：Release 完整构建通过，完整 CTest **339/339** 通过，耗时 452.92 秒；构建日志为 `build/local-style-release-build.log`，测试日志为 `build/local-style-all-ctest.log`。既有性能断言、固定浏览器样例及容差未放宽。`dist` 已刷新，Mufpen.exe、MufpenCore.dll 和 MufpenUi.dll 的 SHA-256 与 Release 一致，`git diff --check` 无错误。
 
 ## 第十二轮：原生 GUI 连续操作基线
 
-新增手动目标 `MuffinGuiPerformanceProbe`，复用真实 MainWindow、DocumentTab、EditorView 和命令绑定，在原生 Windows 窗口中测量 1/10/30 MiB、单页/三页六组配置。独立线程按固定节奏投递 Qt 输入，保留正常动画和恢复草稿定时器，分别记录同步处理、排队至绘制、p50/p95/p99/最大值、8 ms GUI 心跳和 20 ms 工作集采样。每种配置使用独立新进程，测量期间没有并发构建/测试。
+新增手动目标 `MufpenGuiPerformanceProbe`，复用真实 MainWindow、DocumentTab、EditorView 和命令绑定，在原生 Windows 窗口中测量 1/10/30 MiB、单页/三页六组配置。独立线程按固定节奏投递 Qt 输入，保留正常动画和恢复草稿定时器，分别记录同步处理、排队至绘制、p50/p95/p99/最大值、8 ms GUI 心跳和 20 ms 工作集采样。每种配置使用独立新进程，测量期间没有并发构建/测试。
 
 该测量包含实际 GUI 事件循环和绘制，输入仍是 Qt 合成事件，绘制完成指 QWidget Paint 事件返回，不能等同于硬件输入至屏幕呈现。每个连续阶段 80 次，主题切换 12 次，隐藏页首次应用主题 2 次；样本量不足以推断稳定的总体 p99。失焦运行排除并补测。详细口径、六组分布、内存表和复现命令见 [GUI 测量报告](benchmarks/vlook-native-gui-performance-2026-10-15.md)，逐次记录见 [原始数据](benchmarks/vlook-native-gui-performance-2026-10-15.json)。
 
@@ -438,7 +438,7 @@ $env:QT_FONT_DPI = '96'
 
 本轮建立测量工具和诊断基线，未修改运行时编辑逻辑。下一轮按“冷区域同步工作与缓存驻留 → 热视口文字绘制 → 活动页主题全量更新”的顺序推进，继续保留普通编辑长尾与全量计算对照。
 
-本轮验证：手动 GUI 目标构建并完成六组有效测量，汇总时校验原生窗口状态、阶段完整性、逐次样本与绘制覆盖；另从原始样本重算全部同步/排队/绘制分位数，与输出一致。Release 完整构建通过，完整 CTest **339/339** 通过，耗时 444.00 秒；日志为 `build/native-gui-release-build.log`、`build/native-gui-all-ctest.log`。PowerShell 语法、C++ 格式和 `git diff --check` 检查通过。`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 一致。
+本轮验证：手动 GUI 目标构建并完成六组有效测量，汇总时校验原生窗口状态、阶段完整性、逐次样本与绘制覆盖；另从原始样本重算全部同步/排队/绘制分位数，与输出一致。Release 完整构建通过，完整 CTest **339/339** 通过，耗时 444.00 秒；日志为 `build/native-gui-release-build.log`、`build/native-gui-all-ctest.log`。PowerShell 语法、C++ 格式和 `git diff --check` 检查通过。`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 一致。
 
 ## 第十三轮：冷区域选择器索引、分批预取与缓存驻留
 
@@ -446,7 +446,7 @@ $env:QT_FONT_DPI = '96'
 
 新块的相同 CSS 结果原先仍按元素身份分别保存，交互配方也分别投影。本轮先按完整匹配规则、继承值和根状态共享最终样式，并共享完整八状态输入一致的不可变配方。哈希只选择候选桶，完整输入必须相等；每个元素仍使用独立动画时间线。
 
-第一次 GUI 对照中，冷滚动的 CSS 实际求值次数已降至零，但 CSS 路径仍约 10 秒。可单独开启的 `muffin.perf.css` 计时发现：一组 80 次冷滚动中，选择器首次筛选累计约 8.98 秒，匹配规则查询约 9.11 秒（包含筛选），指纹约 225 ms，最终结果查找约 274 ms（包含其内部指纹）；这些嵌套计时不能相加。只观察求值次数会漏掉主要开销。
+第一次 GUI 对照中，冷滚动的 CSS 实际求值次数已降至零，但 CSS 路径仍约 10 秒。可单独开启的 `mufpen.perf.css` 计时发现：一组 80 次冷滚动中，选择器首次筛选累计约 8.98 秒，匹配规则查询约 9.11 秒（包含筛选），指纹约 225 ms，最终结果查找约 274 ms（包含其内部指纹）；这些嵌套计时不能相加。只观察求值次数会漏掉主要开销。
 
 ### 按语义目标预编译候选组
 
@@ -526,11 +526,11 @@ $env:QT_FONT_DPI = '96'
 
 本轮验证：完整 Release 构建通过，完整 CTest **339/339** 通过（445.07 秒），日志为 `build/hot-text-release-build.log`、`build/hot-text-all-ctest.log`。六组汇总校验通过，独立重算 1080 个同步/投递/排队/绘制分位数，与原始输出一致；Python/PowerShell 语法、手动基准 C++ 格式和 `git diff --check` 检查通过。
 
-`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 均与 Release 一致，打包日志为 `build/hot-text-dist.log`。
+`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 均与 Release 一致，打包日志为 `build/hot-text-dist.log`。
 
 ## 第十五轮：投影重建与 GUI 排队归因
 
-本轮补默认关闭的 `muffin.perf.detail` 计时及原生 GUI 时间线，记录投递、分发、同步处理、绘制、慢 Timer/MetaCall/UpdateRequest、编辑上下文、主题签名和草稿 I/O。父子作用域与嵌套 Qt 事件保留区间，不相加；全部六组时间线没有截断。对 30 MiB 单页顺序运行三对正常/仅跳过临时文档草稿回调的独立新进程，窗口、主题、字体和输入节奏均一致，期间不并发构建或测试。
+本轮补默认关闭的 `mufpen.perf.detail` 计时及原生 GUI 时间线，记录投递、分发、同步处理、绘制、慢 Timer/MetaCall/UpdateRequest、编辑上下文、主题签名和草稿 I/O。父子作用域与嵌套 Qt 事件保留区间，不相加；全部六组时间线没有截断。对 30 MiB 单页顺序运行三对正常/仅跳过临时文档草稿回调的独立新进程，窗口、主题、字体和输入节奏均一致，期间不并发构建或测试。
 
 完整证据与复现命令见[诊断报告](benchmarks/vlook-projection-queue-diagnostic-2026-10-15.md)，全部原始操作和时间线见[JSON](benchmarks/vlook-projection-queue-diagnostic-2026-10-15.json)。最初一次更少计时的探索运行留在 `build/projection-diagnostic-normal-1/`，未混入正式三对。最后一对增加主题签名、编辑上下文和草稿写入子阶段，因此本轮只做归因，不把各对混成一个优化收益指标。
 
@@ -551,7 +551,7 @@ $env:QT_FONT_DPI = '96'
 
 本轮验证：完整 Release 构建通过，完整 CTest **339/339** 通过（437.60 秒），日志为 `build/projection-release-build.log`、`build/projection-release-confirm.log`、`build/projection-all-ctest.log`。六组诊断校验通过，独立重算 540 个分位数与输入时钟差，汇总 raw 与原输入逐组一致；验证工具能拒绝时钟错误、截断时间线和错误分位数。Python/PowerShell 语法、基准 C++ 格式、`git diff --check` 检查通过。
 
-`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 全部一致，日志为 `build/projection-dist.log`、`build/projection-dist-hashes.json`。
+`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 全部一致，日志为 `build/projection-dist.log`、`build/projection-dist-hashes.json`。
 
 ## 第十六轮：异步草稿、主题签名保留与格式查询共享
 
@@ -595,7 +595,7 @@ $env:QT_FONT_DPI = '96'
 
 最终验证：完整 Release 构建通过，完整 CTest **339/339** 通过（428.56 秒），日志 `build/async-draft-release-build.log`、`build/async-draft-all-ctest.log`。详细三对诊断独立复算 540 个分位数，完整矩阵独立复算 1080 个，后台版本确认、输入时钟、环境和隐藏页状态均核对；Python/PowerShell 语法、基准和新 worker C++ 格式及 `git diff --check` 通过。
 
-`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 一致，日志 `build/async-draft-dist.log`、`build/async-draft-dist-hashes.json`。本轮未提交、未推送。
+`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 一致，日志 `build/async-draft-dist.log`、`build/async-draft-dist-hashes.json`。本轮未提交、未推送。
 
 ## 第十七轮：活动页主题切换复用投影与文档语义
 
@@ -669,11 +669,11 @@ computer-use 连续连接失败，重置后仍无法初始化。带保护的原�
 
 本轮修改后的 Qt active/exposed 可以为真，Win32 foreground 却为假；新基准及汇总将这两个条件分开验证。修改前及历史记录没有 Win32 前台观察的字段，含义是 unknown，不能倒推为已验证。此次十二份记录仅用于合成事件处理链路诊断，**没有新的真实键盘/原生 GUI 验收结论**。其中一份 minimal 在上下阶段 Qt 失焦，也整份标记，不采纳早期阶段充当有效验收。
 
-`MUFFIN_GUI_NATIVE_INPUT=1` 已加入手动基准，用 SendInput 虚拟键进入 Windows 输入队列，再关联 spontaneous Qt key handler；每次发送前检查选定窗口前台，数量/内容/失焦不符即标记不完整。这仍是软件注入，不能代替物理键盘与 IME 验收；本轮实际发送路径因前台不可用尚未验证。完整 **1/10/30 MiB × 单页/三页** GUI 矩阵需恢复可用交互桌面后补测，未在已知无前台的条件下重复制造无效验收。
+`MUFPEN_GUI_NATIVE_INPUT=1` 已加入手动基准，用 SendInput 虚拟键进入 Windows 输入队列，再关联 spontaneous Qt key handler；每次发送前检查选定窗口前台，数量/内容/失焦不符即标记不完整。这仍是软件注入，不能代替物理键盘与 IME 验收；本轮实际发送路径因前台不可用尚未验证。完整 **1/10/30 MiB × 单页/三页** GUI 矩阵需恢复可用交互桌面后补测，未在已知无前台的条件下重复制造无效验收。
 
 后续先补 Windows 键盘队列与 Qt 合成队列的有效对照，再定位异常区间内的排版/行内样式及窗口刷新；暂不调整事件优先级，也不引入强制 repaint。原始数据独立复算 **432** 个分位数，以独立端点扫描核对 **1040** 条区间覆盖，核对全部 **18** 份原始记录、完整样本/时间线、82/82 草稿和全部阻止发送记录。Python/PowerShell 语法、基准 C++ 格式和 `git diff --check` 通过。
 
-完整 Release 构建通过，完整 CTest **339/339** 全绿（**444.99 秒**），日志 `build/input-tail-release-build.log`、`build/input-tail-all-ctest.log`。`dist` 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 的 SHA-256 与 Release 一致，见 `build/input-tail-dist.log`、`build/input-tail-dist-hashes.json`。此后仅调整手动工具和文档，产品代码未再修改。本轮未提交、未推送。
+完整 Release 构建通过，完整 CTest **339/339** 全绿（**444.99 秒**），日志 `build/input-tail-release-build.log`、`build/input-tail-all-ctest.log`。`dist` 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 的 SHA-256 与 Release 一致，见 `build/input-tail-dist.log`、`build/input-tail-dist-hashes.json`。此后仅调整手动工具和文档，产品代码未再修改。本轮未提交、未推送。
 
 ## 第二十轮：原生/合成输入对照的前台预检与复现入口
 
@@ -783,7 +783,7 @@ VLOOK 快照减少三处重复：完整变量图的缓存检查移到大字符�
 
 共采用 **75** 份有效进程，另保留 **33** 份探索记录及不完整记录的失败原因。手动 probe 补齐内置 CSS/字体资源，重新构建修改前基线，旧 fallback 记录不混入正式对照。**81 组**前后像素、块几何和光标命中完全一致，独立解码 **54 张**最终 PNG，全部全量编号和生成内容指纹一致。新增独立 SFNT 校验和参考、大表与四种尾长、通用无 OS/2 字体、变量依赖/已计算图及源码/媒体失效回归。30 MiB 采样工作集没有一致下降，VLOOK **1155.82→1163.55MiB**，保留编译模板驻留成本。
 
-最终完整 Release 构建通过，受影响五项 **5/5**，完整 CTest **339/339** 全绿（**471.73 秒**），见 `build/theme-load-release-build-final.log`、`build/theme-load-focused-ctest-final.log`、`build/theme-load-all-ctest.log`。dist 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 与 Release SHA-256 一致，测量二进制与最终 Release 一致，见 `build/theme-load-dist.log`、`build/theme-load-dist-hashes.json`。资源/统计/全部视觉对照、Python 语法、新增 C++ 范围格式和 `git diff --check` 通过。本轮未 commit、未 push，没有恢复暂缓的原生键盘长尾调查。
+最终完整 Release 构建通过，受影响五项 **5/5**，完整 CTest **339/339** 全绿（**471.73 秒**），见 `build/theme-load-release-build-final.log`、`build/theme-load-focused-ctest-final.log`、`build/theme-load-all-ctest.log`。dist 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 与 Release SHA-256 一致，测量二进制与最终 Release 一致，见 `build/theme-load-dist.log`、`build/theme-load-dist-hashes.json`。资源/统计/全部视觉对照、Python 语法、新增 C++ 范围格式和 `git diff --check` 通过。本轮未 commit、未 push，没有恢复暂缓的原生键盘长尾调查。
 
 ## 第二十七轮：资源内容校验的操作内共享与 Windows 摘要
 
@@ -797,11 +797,11 @@ VLOOK 同步切回 **14.14→7.32ms**，交错 **17.25→9.03ms**；其冷选择
 
 采用 **78 份**有效进程，另保留 **45 份**最终格式整理/重新链接之前的探索记录。完整文档前后各十八份，覆盖三主题 **1/10/30 MiB × 两轮**，加详细前后各三份；**63 组**像素/块几何/光标命中完全一致，独立解码 **42 张**最终 PNG，全部全量编号及生成内容指纹一致。新增标准 SHA 向量/分块边界/中文资源路径、同大小同时间戳的有效字体替换、同步/排队/嵌套选择和重载通知边界回归。生命周期工作集约增加 **0.4–0.5MiB**，大型文档无一致下降，不宣称总内存节省。
 
-完整 Release 构建通过，三项重点测试 **3/3**，完整 CTest **339/339** 全绿（**510.61 秒**），见 `build/theme-validation-release-build.log`、`build/theme-validation-focused-ctest.log`、`build/theme-validation-all-ctest.log`。全部原始记录与 **72** 项正式/交错统计独立复核通过，C++ 范围格式、Python 语法和 `git diff --check` 通过。dist 已刷新，Muffin.exe、MuffinCore.dll、MuffinUi.dll 与 Release SHA-256 一致，最终测量二进制一致，固定 CSS/字体摘要未变；见 `build/theme-validation-dist.log`、`build/theme-validation-dist-hashes.json`、`build/theme-validation-final-verification.log`。本轮未 commit、未 push，没有恢复暂缓的原生键盘长尾调查。
+完整 Release 构建通过，三项重点测试 **3/3**，完整 CTest **339/339** 全绿（**510.61 秒**），见 `build/theme-validation-release-build.log`、`build/theme-validation-focused-ctest.log`、`build/theme-validation-all-ctest.log`。全部原始记录与 **72** 项正式/交错统计独立复核通过，C++ 范围格式、Python 语法和 `git diff --check` 通过。dist 已刷新，Mufpen.exe、MufpenCore.dll、MufpenUi.dll 与 Release SHA-256 一致，最终测量二进制一致，固定 CSS/字体摘要未变；见 `build/theme-validation-dist.log`、`build/theme-validation-dist-hashes.json`、`build/theme-validation-final-verification.log`。本轮未 commit、未 push，没有恢复暂缓的原生键盘长尾调查。
 
 ## 第二十八轮：字体内存摘要与完整主题阶段验收
 
-解码字体的 SHA-256 已接入与文件资源校验相同的 CNG 后端：共享 provider、每次独立 hash state，借用 QByteArrayView 按最多 256 KiB 切片处理，不复制/保留整份输入。其他平台及 Windows 原生失败重试继续使用完整 Qt SHA-256；字体族名与注册键的小摘要保持原输入及算法，生成身份完全不变。共享实现、导出和 Windows bcrypt 依赖移至 MuffinCore，避免字体解码反向依赖 MuffinUi。不新增磁盘或跨操作内容缓存，字体/样式更新失效规则不变。见[测量报告](benchmarks/font-content-digest-2026-10-16.md)及[全部原始数据](benchmarks/font-content-digest-2026-10-16.json)。
+解码字体的 SHA-256 已接入与文件资源校验相同的 CNG 后端：共享 provider、每次独立 hash state，借用 QByteArrayView 按最多 256 KiB 切片处理，不复制/保留整份输入。其他平台及 Windows 原生失败重试继续使用完整 Qt SHA-256；字体族名与注册键的小摘要保持原输入及算法，生成身份完全不变。共享实现、导出和 Windows bcrypt 依赖移至 MufpenCore，避免字体解码反向依赖 MufpenUi。不新增磁盘或跨操作内容缓存，字体/样式更新失效规则不变。见[测量报告](benchmarks/font-content-digest-2026-10-16.md)及[全部原始数据](benchmarks/font-content-digest-2026-10-16.json)。
 
 Phycat 详细样本字体内容摘要 **123.06→51.23ms**，字体准备 **168.53→96.97ms**；转换与 SFNT 校验和耗时基本不变。独立 ThemeManager 生命周期矩阵冷选择 **342.39→268.79ms**；重复选择 **60.06→61.33ms**，没有冷字体准备时本轮不取得提速。共享路径还减少共同 Mermaid 字体的首次准备：一份 VLOOK 详细样本内容摘要 **85.78→34.32ms**、首次行高度量 **211.73→152.04ms**；不将这段初始化当作每次切换成本。
 
@@ -942,7 +942,7 @@ cmark 产品算法与第三方源码未修改；独立手动诊断目标编译�
 
 ## 1 GiB 解析：独立分配器接入（2026-10-18）
 
-已先修复脚注定义释放后仍被后续引用读取的问题，再以 RAII 通过 cmark 的公开分配器接口接入每次解析独立的分页分配器，及时回收已消费块的空页；完整解析和局部重解析共用，不引入延迟排版或滚动估算。按维护边界偏好，撤回本轮新增的全部第三方源码修改，最终由 Muffin 的 `CmarkRuntime` 在公开 API 边界保护 finish 和图片解析，避免 cmark 全局字符表竞争；读取、解码和 AST 转换仍可并行，多个 finish 调用串行执行。
+已先修复脚注定义释放后仍被后续引用读取的问题，再以 RAII 通过 cmark 的公开分配器接口接入每次解析独立的分页分配器，及时回收已消费块的空页；完整解析和局部重解析共用，不引入延迟排版或滚动估算。按维护边界偏好，撤回本轮新增的全部第三方源码修改，最终由 Mufpen 的 `CmarkRuntime` 在公开 API 边界保护 finish 和图片解析，避免 cmark 全局字符表竞争；读取、解码和 AST 转换仍可并行，多个 finish 调用串行执行。
 
 第一版在改为公开 API 同步封装之前，同一个 Release 测量程序加载旧/新 Core DLL，1/10/30/100 MiB 和 1 GiB 三轮正反交错，共 30 份；AST、源码坐标和共享文本校验一致。1 GiB 完整解析中位数 **28261.36→24035.20ms（减少约 15%）**，其中 cmark **8604.40→5810.42ms**、AST 转换 **11643.24→10686.36ms**。峰值私有内存增加约 **223.09 MiB**；保留这些历史数据，不将它们视为最终封装版本的复测，也不将阶段收益当作 GUI 打开或滚动体验的验收。
 

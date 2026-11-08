@@ -4,7 +4,7 @@
 
 ## 状态来源
 
-安装程序和应用共用 `HKCU\Software\Muffin\Muffin\integration` 下的两个 DWORD：
+安装程序和应用共用 `HKCU\Software\Mufpen\Mufpen\integration` 下的两个 DWORD：
 
 | 名称 | 值 | 含义 |
 | --- | --- | --- |
@@ -23,8 +23,8 @@
 
 ## 自动验证
 
-- `MuffinWindowsIntegrationTest` 将测试进程的 HKCU 重定向到独立临时注册表树，使用实际 C++ 注册表写入逻辑验证四种组合、再次取消及 DWORD 格式，不修改用户的真实文件关联。
-- `MuffinInstallerOptionsTest` 在独立注册表树中验证首次安装、旧安装、便携版集成、显式取消及损坏记录回退，并检查检测过程不创建状态。
+- `MufpenWindowsIntegrationTest` 将测试进程的 HKCU 重定向到独立临时注册表树，使用实际 C++ 注册表写入逻辑验证四种组合、再次取消及 DWORD 格式，不修改用户的真实文件关联。
+- `MufpenInstallerOptionsTest` 在独立注册表树中验证首次安装、旧安装、便携版集成、显式取消及损坏记录回退，并检查检测过程不创建状态。
 - 对构建好的 MSI 运行 `build/installer-options-test/IntegrationOptionsTest.exe <MSI路径>`：只打开包并计算条件，不执行安装；使用 Windows Installer 的条件求值器验证 128 种组合与安装界面一致，并检查最终选择的事务写入格式。
 
 ## 安装验收

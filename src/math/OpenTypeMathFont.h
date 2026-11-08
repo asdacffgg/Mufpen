@@ -11,7 +11,7 @@
 
 #include <optional>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 struct MathFontConstants {
   qreal scriptPercentScaleDown = 0.0;
@@ -180,4 +180,4 @@ private:
   QHash<quint32, qint16> horizontalAssemblyCorrections_;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -7,7 +7,7 @@
 // drawing fails while `suppressErrorRendering` is false (the default; the
 // key sits in the frontmatter sanitizer's secure set, so the Markdown source
 // API cannot turn it off — only external initialize() can, which is outside
-// Muffin's API).
+// Mufpen's API).
 //
 // The renderer emits a fixed `viewBox="0 0 2412 512"` with six lightbulb
 // `.error-icon` paths (fill errorBkgColor, stroke none by default) and two
@@ -23,7 +23,7 @@
 // canonicalizes to that quantized client box and paints the viewBox-space
 // geometry under the 512/2412 scale; raster extents follow the browser
 // nearest-pixel rule (108.68325 -> 109). The exported SVG root carries
-// Muffin's client-box viewBox via svgClientViewBox() — "0 0 512 108.671875",
+// Mufpen's client-box viewBox via svgClientViewBox() — "0 0 512 108.671875",
 // so the intrinsic height matches the browser's replaced-element box exactly
 // — while the immutable scene keeps the upstream viewBox geometry for the
 // oracles.
@@ -37,7 +37,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::error {
+namespace mufpen::mermaid::error {
 
 struct ErrorTextStyle {
   // The base stylesheet's `#id{font-family;font-size;fill}` rule targets the
@@ -115,4 +115,4 @@ QStringList errorIconPathData();
 
 ErrorScene buildErrorScene(ErrorTextStyle style);
 
-} // namespace muffin::mermaid::error
+} // namespace mufpen::mermaid::error

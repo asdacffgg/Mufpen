@@ -14,10 +14,10 @@
 #include <tuple>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 ThemeFontRegistrationStats registrationStats;
-Q_LOGGING_CATEGORY(fontLoadPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(fontLoadPerf, "mufpen.perf.detail", QtWarningMsg)
 constexpr qsizetype maxFontBytes = 64 * 1024 * 1024;
 void put16(QByteArray& bytes, qsizetype offset, quint16 value) {
   qToBigEndian(value, bytes.data() + offset);
@@ -313,7 +313,7 @@ QByteArray isolateThemeFont(const QByteArray& native, const QString& family, std
 }
 PreparedThemeFont prepareThemeFont(const QByteArray& source, std::optional<int> weight, std::optional<bool> italic) {
   auto native = decodeThemeWebFont(source);
-  if (transformThemeFont(native, "MuffinValidation", weight, italic, true).isEmpty())
+  if (transformThemeFont(native, "MufpenValidation", weight, italic, true).isEmpty())
     return {};
   diag::ScopedPerfProbe perf("font.contentDigest", fontLoadPerf());
   auto digest = themeContentDigest(native);
@@ -352,4 +352,4 @@ QString registerPrivateFont(const QByteArray& source, const QString& family, std
                             std::optional<bool> italic) {
   return registerPrivateFont(prepareThemeFont(source, weight, italic), family, weight, italic);
 }
-} // namespace muffin
+} // namespace mufpen

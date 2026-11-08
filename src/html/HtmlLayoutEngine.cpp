@@ -13,7 +13,7 @@
 #include <cmath>
 #include <numeric>
 
-namespace muffin::html {
+namespace mufpen::html {
 namespace {
 
 constexpr qreal kDefaultImageWidth = 100.0;
@@ -1018,4 +1018,4 @@ void HtmlLayoutEngine::readLayoutBack(HtmlBox& box, YGNode* node) {
   // (The measurement callback should have returned the correct size already.)
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

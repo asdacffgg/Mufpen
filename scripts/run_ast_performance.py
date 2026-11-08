@@ -26,13 +26,13 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     directories = {"before": args.before.resolve(), "after": args.after.resolve()}
     pins = {str(directory / name): digest(directory / name) for directory in directories.values()
-            for name in ("MuffinCore.dll", "MuffinAstPerformanceProbe.exe")}
-    assert pins[str(directories['before'] / 'MuffinAstPerformanceProbe.exe')] == pins[
-        str(directories['after'] / 'MuffinAstPerformanceProbe.exe')]
-    env = {k: v for k, v in os.environ.items() if not k.startswith("MUFFIN_")}
+            for name in ("MufpenCore.dll", "MufpenAstPerformanceProbe.exe")}
+    assert pins[str(directories['before'] / 'MufpenAstPerformanceProbe.exe')] == pins[
+        str(directories['after'] / 'MufpenAstPerformanceProbe.exe')]
+    env = {k: v for k, v in os.environ.items() if not k.startswith("MUFPEN_")}
     env["PATH"] = str(root / "build/dist") + os.pathsep + env["PATH"]
     if args.details:
-        env["MUFFIN_AST_PROFILE"] = "1"
+        env["MUFPEN_AST_PROFILE"] = "1"
     cases = [(30, "ascii"), (1, "escaped")] if args.details else [
         (1, "ascii"), (10, "ascii"), (30, "ascii"), (1, "unicode"), (1, "escaped")]
     records = []
@@ -40,7 +40,7 @@ def main():
         for mib, workload in (cases if repeat % 2 else list(reversed(cases))):
             for label in (("before", "after") if repeat % 2 else ("after", "before")):
                 output = args.output / f"{label}-{mib}MiB-{workload}-r{repeat}.json"
-                process = subprocess.run([str(directories[label] / "MuffinAstPerformanceProbe.exe"), str(mib), workload],
+                process = subprocess.run([str(directories[label] / "MufpenAstPerformanceProbe.exe"), str(mib), workload],
                                          env=env, cwd=root, capture_output=True, check=True, timeout=180)
                 output.write_bytes(process.stdout)
                 output.with_suffix(".log").write_bytes(process.stderr)

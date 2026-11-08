@@ -1,7 +1,7 @@
 #pragma once
 #include <QtTypes>
 
-namespace muffin {
+namespace mufpen {
 // A reading anchor survives a new AST, wrapping and theme changes.
 struct ViewportPosition {
   qsizetype sourceOffset = -1;
@@ -10,4 +10,4 @@ struct ViewportPosition {
   bool textAnchor = false;
   bool atStart = false;
 };
-} // namespace muffin
+} // namespace mufpen

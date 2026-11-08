@@ -9,7 +9,7 @@
 #include <QSizeF>
 #include <QVector>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 
 struct FlowShapeGeometry {
   QString kind;
@@ -55,4 +55,4 @@ QPainterPath flowShapeHorizontalCylinderPath(const QRectF& bounds, qreal radiusX
 FlowShapeGeometry flowShapeGeometry(const FlowVertex& vertex, const QSizeF& size, FlowLook look = FlowLook::Classic,
                                     qreal shapeRadius = 5.0);
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

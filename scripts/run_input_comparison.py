@@ -12,24 +12,24 @@ from summarize_input_comparison import collect, inspect_run
 
 def probe_environment(presets, original, wait_seconds):
     environment = dict(original)
-    for name in ("MUFFIN_GUI_NATIVE_INPUT", "MUFFIN_GUI_TRACE", "MUFFIN_GUI_SCHEDULER_SAMPLES",
-                 "MUFFIN_GUI_SKIP_DRAFT_SNAPSHOT", "MUFFIN_CSS_DEEP_PROFILE"):
+    for name in ("MUFPEN_GUI_NATIVE_INPUT", "MUFPEN_GUI_TRACE", "MUFPEN_GUI_SCHEDULER_SAMPLES",
+                 "MUFPEN_GUI_SKIP_DRAFT_SNAPSHOT", "MUFPEN_CSS_DEEP_PROFILE"):
         environment.pop(name, None)
     qt = presets["configurePresets"][0]["environment"]
     environment.update({
         "PATH": qt["QT_HOST_PATH"] + "\\bin;" + original.get("PATH", ""),
         "QT_PLUGIN_PATH": presets["testPresets"][0]["environment"]["QT_PLUGIN_PATH"],
-        "QT_QPA_PLATFORM": "windows", "MUFFIN_GUI_INPUT_ONLY": "1", "MUFFIN_GUI_TYPING_ONLY": "1",
-        "MUFFIN_GUI_PIN_WINDOW": "1", "MUFFIN_GUI_REQUIRE_FOREGROUND": "1",
-        "MUFFIN_GUI_FOREGROUND_WAIT_MS": str(wait_seconds * 1000),
+        "QT_QPA_PLATFORM": "windows", "MUFPEN_GUI_INPUT_ONLY": "1", "MUFPEN_GUI_TYPING_ONLY": "1",
+        "MUFPEN_GUI_PIN_WINDOW": "1", "MUFPEN_GUI_REQUIRE_FOREGROUND": "1",
+        "MUFPEN_GUI_FOREGROUND_WAIT_MS": str(wait_seconds * 1000),
     })
     return environment
 
 
 def run_comparison(workspace, destination, samples, repetitions, wait_seconds):
-    probe = workspace / "build/Release/MuffinGuiPerformanceProbe.exe"
+    probe = workspace / "build/Release/MufpenGuiPerformanceProbe.exe"
     if not probe.is_file():
-        raise ValueError("Build MuffinGuiPerformanceProbe with the conan-release preset first")
+        raise ValueError("Build MufpenGuiPerformanceProbe with the conan-release preset first")
     presets = json.loads((workspace / "build/generators/CMakePresets.json").read_text(encoding="utf-8"))
     environment = probe_environment(presets, os.environ, wait_seconds)
     # Never overwrite earlier raw observations, even when repeating a failed run.
@@ -42,13 +42,13 @@ def run_comparison(workspace, destination, samples, repetitions, wait_seconds):
             kinds = ("native", "qt") if repeat % 2 else ("qt", "native")
             sequence.extend((kind, mode, str(repeat), samples) for mode in modes for kind in kinds)
         for kind, mode, suffix, count in sequence:
-            child_env = dict(environment, MUFFIN_GUI_PROFILE=mode)
+            child_env = dict(environment, MUFPEN_GUI_PROFILE=mode)
             if kind == "native":
-                child_env["MUFFIN_GUI_NATIVE_INPUT"] = "1"
+                child_env["MUFPEN_GUI_NATIVE_INPUT"] = "1"
             if mode == "detailed":
-                child_env["MUFFIN_GUI_TRACE"] = "1"
+                child_env["MUFPEN_GUI_TRACE"] = "1"
             output = destination / f"input-{kind}-{mode}-{suffix}.json"
-            print(f"Next: {kind}/{mode}/{suffix}; keep the temporary Muffin editor in the foreground", flush=True)
+            print(f"Next: {kind}/{mode}/{suffix}; keep the temporary Mufpen editor in the foreground", flush=True)
             with Path(str(output) + ".log").open("wb") as log:
                 process = subprocess.run([str(probe), str(output), "1", "1", str(count)],
                                          cwd=workspace, env=child_env, stdout=log, stderr=subprocess.STDOUT,

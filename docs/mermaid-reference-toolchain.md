@@ -4,7 +4,7 @@ The committed mermaid fixtures under `tests/fixtures/mermaid/` (`*-geometry.json
 `*-layout.json`, `*-db.json`, `golden-pixel/`, `flowchart-dagre-snapshots.json`,
 `config-effect-matrix.json`) are **real mermaid 11.16.0 output**, captured by
 driving headless Chrome through `mermaid.render()` / dagre. They are the parity
-ground truth Muffin's native renderer is checked against.
+ground truth Mufpen's native renderer is checked against.
 
 The capture scripts in `scripts/generate_mermaid_*.mjs` are **developer-run** (not
 CI). They depend on a sibling checkout at `<repo>/../mermaid-cli` whose
@@ -66,7 +66,7 @@ references.
 ## What it unlocks
 
 - **Real-mermaid geometry oracles** — fail-on-divergence tests that assert
-  Muffin's native geometry against captured mermaid 11.16.0 output, splitting
+  Mufpen's native geometry against captured mermaid 11.16.0 output, splitting
   font-independent parity (asserted) from font-coupled deltas (reported). All
   thirty-one native families are covered: flowchart (dagre-snapshots + geometry), ER
   (`er-geometry.json` + `MermaidErGeometryOracleTest`), class
@@ -88,7 +88,7 @@ Flowchart: `geometry`, `scene`, `db`, `label`, `pixel` (`golden-pixel`),
 `dagre-snapshots`, `differential-fuzz`, `style-cascade`, `theme`, `diagnostic-coverage`.
 Class: `db`, `layout`, `label`, `pixel`, `differential-fuzz`, `geometry`.
 Sequence / state: `db`, `layout`, `label`, `pixel`, `differential-fuzz`,
-`geometry` (sequence also `mathml-box`). ER: `geometry` (+ Muffin self-snapshot
+`geometry` (sequence also `mathml-box`). ER: `geometry` (+ Mufpen self-snapshot
 `er-scene`). Requirement, pie, quadrant, journey, radar, XYChart, Timeline,
 Packet, Kanban, Mindmap, Treemap, and Cynefin add their own parser,
 geometry, structure, and pixel fixtures; the journey and radar generators pin Chrome

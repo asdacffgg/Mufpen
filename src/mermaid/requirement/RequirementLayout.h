@@ -25,7 +25,7 @@
 
 #include <optional>
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 // One text row of a requirementBox: the text + whether it is the bold name line.
 struct RequirementLayoutRow {
@@ -175,4 +175,4 @@ RequirementPlacementResult layoutRequirementDiagramDagre(const RequirementLayout
 QSizeF requirementSvgEdgeLabelSize(const flowchart::FlowLabelDocument& document, const QString& fontFamily,
                                    qreal fontSize);
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

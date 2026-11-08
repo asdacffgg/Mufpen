@@ -7,7 +7,7 @@ class QComboBox;
 class QLabel;
 class QPushButton;
 
-namespace muffin {
+namespace mufpen {
 
 class PrefsMarkdownPage final : public PreferencesPage {
   Q_OBJECT
@@ -67,4 +67,4 @@ private:
   QComboBox* autoLangCombo_ = nullptr;
 };
 
-} // namespace muffin
+} // namespace mufpen

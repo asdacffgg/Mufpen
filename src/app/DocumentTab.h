@@ -24,7 +24,7 @@ class QToolButton;
 class QTimer;
 class QAction;
 
-namespace muffin {
+namespace mufpen {
 
 class EditorView;
 class FindBarWidget;
@@ -160,4 +160,4 @@ private:
   QList<int> splitSizes_{1, 1};
 };
 
-} // namespace muffin
+} // namespace mufpen

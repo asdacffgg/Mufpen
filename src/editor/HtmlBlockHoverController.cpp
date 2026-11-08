@@ -7,7 +7,7 @@
 #include <QFont>
 #include <QPainter>
 
-namespace muffin {
+namespace mufpen {
 
 QRectF HtmlBlockHoverController::overlayViewportRect(const Inputs& inputs) const {
   if (!inputs.layout) {
@@ -94,4 +94,4 @@ HtmlBlockHoverController::Dirty HtmlBlockHoverController::clear(const Inputs& in
   return {oldRect, {}};
 }
 
-} // namespace muffin
+} // namespace mufpen

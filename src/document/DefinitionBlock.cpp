@@ -1,6 +1,6 @@
 #include "document/DefinitionBlock.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 bool isHorizontalSpace(QChar ch) {
@@ -402,4 +402,4 @@ DefinitionParseResult parseDefinitionBlockLine(QStringView line, qsizetype sourc
   return result.isRecognized() ? result : DefinitionParseResult{};
 }
 
-} // namespace muffin
+} // namespace mufpen

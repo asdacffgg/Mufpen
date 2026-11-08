@@ -8,7 +8,7 @@
 #include <optional>
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 class CssImageResources;
 
 // One `property: value` pair, with !important peeled off. `value` is raw —
@@ -136,7 +136,7 @@ public:
   bool sameActiveRules(const CssEnvironment& before, const CssEnvironment& after) const;
   bool hasViewportUnits() const;
   static bool mediaMatches(const QString& query, const CssEnvironment& environment);
-  // Evaluate a conservative @supports query against the properties Muffin's
+  // Evaluate a conservative @supports query against the properties Mufpen's
   // CSS projection and painters understand. Unsupported branches stay out of
   // the cascade instead of being applied optimistically.
   static bool supportsMatches(const QString& query);
@@ -218,4 +218,4 @@ public:
   static QStringList localResourcePaths(const QString& text, const QString& baseDir, bool includeMissing = false);
 };
 
-} // namespace muffin
+} // namespace mufpen

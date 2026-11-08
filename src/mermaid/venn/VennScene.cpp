@@ -16,7 +16,7 @@
 #include <numbers>
 #include <utility>
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 namespace {
 
 QJsonValue scalar(const QJsonValue& value, const QJsonValue& fallback) {
@@ -445,4 +445,4 @@ VennScene buildVennScene(const VennData& data, VennConfig config, VennSceneStyle
   return scene;
 }
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

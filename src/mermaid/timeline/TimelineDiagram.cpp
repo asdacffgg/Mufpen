@@ -8,7 +8,7 @@
 #include <optional>
 #include <utility>
 
-namespace muffin::mermaid::timeline {
+namespace mufpen::mermaid::timeline {
 
 TimelineParseError::TimelineParseError(const QString& message, int line, int column, TimelineErrorKind kind)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column), kind(kind) {
@@ -387,4 +387,4 @@ TimelineData TimelineDiagram::parse(const QString& source) {
   }
 }
 
-} // namespace muffin::mermaid::timeline
+} // namespace mufpen::mermaid::timeline

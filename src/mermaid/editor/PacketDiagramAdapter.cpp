@@ -15,7 +15,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue packetScalar(const QJsonObject& object, const char* key, const QJsonValue& fallback) {
@@ -66,7 +66,7 @@ struct PacketDiagramImpl : Diagram {
     style.blockStrokeWidth = themeVars.packet.blockStrokeWidth;
     style.blockFillColor = themeVars.packet.blockFillColor;
 
-    // Apply themeCSS via the cascade ONLY when it is present. Muffin preserves
+    // Apply themeCSS via the cascade ONLY when it is present. Mufpen preserves
     // the raw themeVariables paint declarations (none/inherit/empty) on the scene
     // for the painter to resolve at paint time (resolveSvgPaint with the
     // inherited fallback); the cascade resolves CSS-wide keywords against the
@@ -188,4 +188,4 @@ const Diagram& packetDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

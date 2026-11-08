@@ -10,7 +10,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::GradientPainter {
+namespace mufpen::GradientPainter {
 namespace {
 QColor interpolate(QColor a, QColor b, qreal t) {
   const qreal alpha = a.alphaF() * (1 - t) + b.alphaF() * t;
@@ -143,4 +143,4 @@ QBrush makeBrush(const GradientSpec& spec, const QRectF& target, qreal lengthSca
   return brush;
 }
 
-} // namespace muffin::GradientPainter
+} // namespace mufpen::GradientPainter

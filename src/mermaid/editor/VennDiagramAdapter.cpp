@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QFont::Style cssFontStyle(const QString& value) {
@@ -275,4 +275,4 @@ const Diagram& vennDiagramAdapter() {
   return adapter;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

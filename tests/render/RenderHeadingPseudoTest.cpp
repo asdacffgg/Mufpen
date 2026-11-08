@@ -23,7 +23,7 @@
 #include "RenderTestUtils.h"
 #include "../theme/BrowserLayoutFont.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -334,7 +334,7 @@ void testContentNoneIsNotLiteralText() {
 void testBrowserInlinePseudoGeometryAndEditing() {
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/inline-pseudos-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/inline-pseudos-browser.json")).toUtf8())
           .object();
   const auto aliases = browserLayoutFont(reference);
   const auto family = aliases.value(QStringLiteral("muffinfixturesans"));
@@ -470,7 +470,7 @@ void testSyntheticBoldPreservesCssAdvances() {
   // Only register the bundled light face: requesting bold must synthesize ink
   // instead of silently testing a real bold face installed by another fixture.
   const auto id =
-      QFontDatabase::addApplicationFont(QStringLiteral(MUFFIN_BINARY_DIR "/theme-fonts/pixyll/lato-v14-latin-300.ttf"));
+      QFontDatabase::addApplicationFont(QStringLiteral(MUFPEN_BINARY_DIR "/theme-fonts/pixyll/lato-v14-latin-300.ttf"));
   const auto families = QFontDatabase::applicationFontFamilies(id);
   require(id >= 0 && !families.isEmpty(), "load the original single-face typography fixture");
   QFont normal(families.front());
@@ -509,7 +509,7 @@ void testSyntheticBoldPreservesCssAdvances() {
 void testLivePositionedPseudosAndInvalidation() {
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/live-pseudos-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/live-pseudos-browser.json")).toUtf8())
           .object();
   const auto family = browserLayoutFont(reference).value("muffinfixturesans");
   QJsonObject entry;
@@ -597,7 +597,7 @@ int main(int argc, char** argv) {
   QApplication app(argc, argv);
   const auto reference =
       QJsonDocument::fromJson(
-          readFixture(QStringLiteral(MUFFIN_SOURCE_DIR "/tests/fixtures/theme/inline-pseudos-browser.json")).toUtf8())
+          readFixture(QStringLiteral(MUFPEN_SOURCE_DIR "/tests/fixtures/theme/inline-pseudos-browser.json")).toUtf8())
           .object();
   kBase = QStringLiteral("#write { color:#000000; font-family:'%1'; }")
               .arg(browserLayoutFont(reference).value("muffinfixturesans"));

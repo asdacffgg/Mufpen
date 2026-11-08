@@ -13,7 +13,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::venn {
+namespace mufpen::mermaid::venn {
 
 struct VennConfig {
   QJsonValue width = 800.0;
@@ -129,4 +129,4 @@ struct VennScene final : MermaidScene {
 
 VennScene buildVennScene(const VennData& data, VennConfig config, VennSceneStyle style);
 
-} // namespace muffin::mermaid::venn
+} // namespace mufpen::mermaid::venn

@@ -2,7 +2,7 @@
 
 #include "mermaid/dagre/DagreUtil.h"
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -98,4 +98,4 @@ void undoNormalize(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

@@ -4,7 +4,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 // Family-neutral diagnostic carried from a native Mermaid parser to the editor.
 // line/column are always 1-based and offset/length address the original code
@@ -36,4 +36,4 @@ QString formatMermaidDiagnosticBody(const MermaidDiagnostic& diagnostic);
 QString formatMermaidDiagnostic(const MermaidDiagnostic& diagnostic);
 QJsonObject mermaidDiagnosticToJson(const MermaidDiagnostic& diagnostic);
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

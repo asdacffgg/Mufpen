@@ -2,9 +2,9 @@
 """Render logo.svg into the raster icon assets the build embeds.
 
 Outputs (written next to this repo's resources/app-icons/):
-  muffin-{16,24,32,48,64,128,256,512,1024}.png   crisp per-size PNGs
+  mufpen-{16,24,32,48,64,128,256,512,1024}.png   crisp per-size PNGs
   mufpen.ico                                        multi-resolution Windows icon
-  muffin.icns                                        Apple icon set (from the 1024 PNG)
+  mufpen.icns                                        Apple icon set (from the 1024 PNG)
 
 Rendering uses PySide6's QSvgRenderer — the *same* Qt SVG engine the application
 links against — so the produced icons match what the app renders at runtime.

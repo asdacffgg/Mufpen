@@ -30,16 +30,16 @@
 #include <initializer_list>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
-// themeWarn (muffin.theme.warn) is declared in theme/CssValueParser.h and defined in
+// themeWarn (mufpen.theme.warn) is declared in theme/CssValueParser.h and defined in
 // CssValueParser.cpp alongside extractColor, the funnel that emits its warnings.
 
 // cssColor lives in theme/CssValueParser.h (shared with HtmlBoxBuilder so hex-alpha colours
 // parse identically in theme CSS and HTML inline styles).
 
 namespace {
-Q_LOGGING_CATEGORY(mapperLoadPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(mapperLoadPerf, "mufpen.perf.detail", QtWarningMsg)
 
 constexpr qreal kUnboundedPageWidth = 100000.0;
 
@@ -1070,100 +1070,100 @@ ThemeDefinition CssThemeMapper::fromSheet(const CssThemeSheet& source, const QSt
     gap(&ThemeColors::codeBlockBackground, {"--code-block-bg"});
     gap(&ThemeColors::selection, {"--select-text-bg-color"});
     gap(&ThemeColors::accent, {"--primary-color"});
-    // Chrome palette — the conventional UI-control vocabulary maps directly onto Muffin's
+    // Chrome palette — the conventional UI-control vocabulary maps directly onto Mufpen's
     // chrome tokens, so a stock CSS theme lights up the whole chrome for free
-    // (previously only reachable via --muffin-*).
+    // (previously only reachable via --mufpen-*).
     gap(&ThemeColors::chromeBackground, {"--side-bar-bg-color"});
     gap(&ThemeColors::surface, {"--side-bar-bg-color"});
     // Typora's --control-text-color is secondary UI ink (sidebar controls and
     // captions), not primary navigation text. Mapping it to chromeText made the
     // GitHub menu #777 instead of its primary #333. Leave chromeText unset so
     // deriveChromeDefaults takes the document's primary text; a theme that needs
-    // a distinct primary chrome colour can declare --muffin-chrome-text.
+    // a distinct primary chrome colour can declare --mufpen-chrome-text.
     gap(&ThemeColors::chromeMuted, {"--control-text-color", "--text-color-secondary", "--text-color-tertiary"});
     gap(&ThemeColors::hover, {"--item-hover-bg-color"});
     gap(&ThemeColors::selected, {"--active-file-bg-color"});
   }
 
-  // --- Tier 3: Muffin-specific extension variables (--muffin-*). Highest
-  // authority — explicit Muffin intent wins over both cascade and the
+  // --- Tier 3: Mufpen-specific extension variables (--mufpen-*). Highest
+  // authority — explicit Mufpen intent wins over both cascade and the
   // conventional vocabulary.
-  if (QColor cb = varColor(vars, "--muffin-background"); cb.isValid()) {
+  if (QColor cb = varColor(vars, "--mufpen-background"); cb.isValid()) {
     k.background = cb;
   }
-  if (QColor ct = varColor(vars, "--muffin-text"); ct.isValid()) {
+  if (QColor ct = varColor(vars, "--mufpen-text"); ct.isValid()) {
     k.text = ct;
   }
-  if (QColor cl = varColor(vars, "--muffin-link"); cl.isValid()) {
+  if (QColor cl = varColor(vars, "--mufpen-link"); cl.isValid()) {
     k.link = cl;
   }
-  if (QColor cc = varColor(vars, "--muffin-code-background"); cc.isValid()) {
+  if (QColor cc = varColor(vars, "--mufpen-code-background"); cc.isValid()) {
     k.codeBackground = cc;
   }
-  if (QColor ccb = varColor(vars, "--muffin-code-block-background"); ccb.isValid()) {
+  if (QColor ccb = varColor(vars, "--mufpen-code-block-background"); ccb.isValid()) {
     k.codeBlockBackground = ccb;
   }
-  if (QColor ch = varColor(vars, "--muffin-highlight"); ch.isValid()) {
+  if (QColor ch = varColor(vars, "--mufpen-highlight"); ch.isValid()) {
     k.highlight = ch;
   }
-  if (QColor cs = varColor(vars, "--muffin-selection"); cs.isValid()) {
+  if (QColor cs = varColor(vars, "--mufpen-selection"); cs.isValid()) {
     k.selection = cs;
   }
-  if (QColor cq = varColor(vars, "--muffin-quote-border"); cq.isValid()) {
+  if (QColor cq = varColor(vars, "--mufpen-quote-border"); cq.isValid()) {
     k.quoteBorder = cq;
   }
-  if (QColor cqb = varColor(vars, "--muffin-blockquote-background"); cqb.isValid()) {
+  if (QColor cqb = varColor(vars, "--mufpen-blockquote-background"); cqb.isValid()) {
     k.blockquoteBackground = cqb;
   }
-  if (QColor ct2 = varColor(vars, "--muffin-table-border"); ct2.isValid()) {
+  if (QColor ct2 = varColor(vars, "--mufpen-table-border"); ct2.isValid()) {
     k.tableBorder = ct2;
   }
-  if (QColor cth = varColor(vars, "--muffin-table-header-background"); cth.isValid()) {
+  if (QColor cth = varColor(vars, "--mufpen-table-header-background"); cth.isValid()) {
     k.tableHeaderBackground = cth;
   }
-  if (QColor cta = varColor(vars, "--muffin-table-alternate-background"); cta.isValid()) {
+  if (QColor cta = varColor(vars, "--mufpen-table-alternate-background"); cta.isValid()) {
     k.tableAlternateBackground = cta;
   }
-  if (QColor cbr = varColor(vars, "--muffin-code-border"); cbr.isValid()) {
+  if (QColor cbr = varColor(vars, "--mufpen-code-border"); cbr.isValid()) {
     k.codeBorder = cbr;
   }
-  if (QColor cha = varColor(vars, "--muffin-heading-accent"); cha.isValid()) {
+  if (QColor cha = varColor(vars, "--mufpen-heading-accent"); cha.isValid()) {
     k.headingAccentColor = cha;
   }
-  // Chrome palette — no CSS equivalent, so only via --muffin-*. These are
-  // guarded (not bare assignment) so an absent --muffin-* leaves a tier-2 value
+  // Chrome palette — no CSS equivalent, so only via --mufpen-*. These are
+  // guarded (not bare assignment) so an absent --mufpen-* leaves a tier-2 value
   // intact instead of clobbering it back to invalid.
-  if (QColor cm = varColor(vars, "--muffin-muted"); cm.isValid()) {
+  if (QColor cm = varColor(vars, "--mufpen-muted"); cm.isValid()) {
     k.muted = cm;
   }
-  if (QColor ccb = varColor(vars, "--muffin-chrome-background"); ccb.isValid()) {
+  if (QColor ccb = varColor(vars, "--mufpen-chrome-background"); ccb.isValid()) {
     k.chromeBackground = ccb;
   }
-  if (QColor cct = varColor(vars, "--muffin-chrome-text"); cct.isValid()) {
+  if (QColor cct = varColor(vars, "--mufpen-chrome-text"); cct.isValid()) {
     k.chromeText = cct;
   }
-  if (QColor ccm = varColor(vars, "--muffin-chrome-muted"); ccm.isValid()) {
+  if (QColor ccm = varColor(vars, "--mufpen-chrome-muted"); ccm.isValid()) {
     k.chromeMuted = ccm;
   }
-  if (QColor cs = varColor(vars, "--muffin-surface"); cs.isValid()) {
+  if (QColor cs = varColor(vars, "--mufpen-surface"); cs.isValid()) {
     k.surface = cs;
   }
-  if (QColor cc = varColor(vars, "--muffin-canvas"); cc.isValid()) {
+  if (QColor cc = varColor(vars, "--mufpen-canvas"); cc.isValid()) {
     k.canvas = cc;
   }
-  if (QColor cb = varColor(vars, "--muffin-border"); cb.isValid()) {
+  if (QColor cb = varColor(vars, "--mufpen-border"); cb.isValid()) {
     k.border = cb;
   }
-  if (QColor ch = varColor(vars, "--muffin-hover"); ch.isValid()) {
+  if (QColor ch = varColor(vars, "--mufpen-hover"); ch.isValid()) {
     k.hover = ch;
   }
-  if (QColor cs2 = varColor(vars, "--muffin-selected"); cs2.isValid()) {
+  if (QColor cs2 = varColor(vars, "--mufpen-selected"); cs2.isValid()) {
     k.selected = cs2;
   }
-  if (QColor ca = varColor(vars, "--muffin-accent"); ca.isValid()) {
+  if (QColor ca = varColor(vars, "--mufpen-accent"); ca.isValid()) {
     k.accent = ca;
   }
-  if (truthy(varValue(vars, "--muffin-serif-body"))) {
+  if (truthy(varValue(vars, "--mufpen-serif-body"))) {
     k.serifBody = true;
   }
 
@@ -1172,7 +1172,7 @@ ThemeDefinition CssThemeMapper::fromSheet(const CssThemeSheet& source, const QSt
   // luminance so isDark and chrome derivation stay sane — mirrors a browser's
   // default white/dark page when CSS specifies none.
   // Typora themes may only paint #write and rely on the browser/host sheet's
-  // inherited text colour. Muffin has no UA sheet beneath imported CSS, so
+  // inherited text colour. Mufpen has no UA sheet beneath imported CSS, so
   // materialise a contrast-safe equivalent before validating the palette.
   if (!k.text.isValid() && k.background.isValid()) {
     k.text = typoraHostInk(k.background);
@@ -1200,15 +1200,15 @@ ThemeDefinition CssThemeMapper::fromSheet(const CssThemeSheet& source, const QSt
   if (!k.chromeMuted.isValid()) {
     k.chromeMuted = k.muted;
   }
-  const QString darkFlag = varValue(vars, "--muffin-dark");
+  const QString darkFlag = varValue(vars, "--mufpen-dark");
   if (!darkFlag.isEmpty()) {
     k.isDark = truthy(darkFlag);
   } else {
     k.isDark = k.background.isValid() ? (k.background.lightness() < 128) : false;
   }
 
-  // Label: explicit --muffin-label wins, else a presentable title-cased id.
-  const QString labelVar = varValue(vars, "--muffin-label");
+  // Label: explicit --mufpen-label wins, else a presentable title-cased id.
+  const QString labelVar = varValue(vars, "--mufpen-label");
   if (!labelVar.isEmpty()) {
     d.label = labelVar;
     if (d.label.size() >= 2 && d.label.front() == QLatin1Char('"') && d.label.back() == QLatin1Char('"')) {
@@ -1234,4 +1234,4 @@ ThemeElementStyle CssThemeMapper::projectComputedStyle(const QString& key, const
   return makeElementStyleForComputed(key, style);
 }
 
-} // namespace muffin
+} // namespace mufpen

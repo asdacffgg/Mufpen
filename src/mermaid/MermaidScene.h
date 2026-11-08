@@ -22,7 +22,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 
 // A hit/interaction region in scene coordinates. Consumers (SVG export, editor
 // hit-test) iterate these without knowing the diagram family. Each region is
@@ -148,4 +148,4 @@ struct MermaidScene {
   virtual bool menusAlwaysOpen() const { return false; }
 };
 
-} // namespace muffin::mermaid
+} // namespace mufpen::mermaid

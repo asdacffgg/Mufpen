@@ -2,7 +2,7 @@
 
 #include "app/EditorBackend.h"
 
-namespace muffin {
+namespace mufpen {
 
 class ClipboardController;
 class DocumentSession;
@@ -70,4 +70,4 @@ private:
   EditorView* view_;
 };
 
-} // namespace muffin
+} // namespace mufpen

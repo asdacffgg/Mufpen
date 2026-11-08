@@ -14,7 +14,7 @@
 
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 struct QuadrantDiagramImpl : Diagram {
@@ -248,4 +248,4 @@ const Diagram& quadrantDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

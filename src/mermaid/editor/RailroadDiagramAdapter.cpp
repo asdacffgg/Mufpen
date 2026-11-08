@@ -17,7 +17,7 @@
 #include <memory>
 #include <utility>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 qreal sanitizedNumber(const QJsonValue& value, qreal fallback, bool positive = false) {
@@ -134,7 +134,7 @@ railroad::RailroadConfig railroadConfig(const MermaidPreprocessResult& pre, cons
   // Mermaid's source-entry config sanitizer removes compactMode,
   // vertical/horizontalSeparation, arcRadius, showMarkers, and markerRadius.
   // They remain renderer API fields upstream, but are intentionally inert for
-  // %%init/frontmatter input, which is Muffin's exposed configuration surface.
+  // %%init/frontmatter input, which is Mufpen's exposed configuration surface.
   const QJsonValue maxWidth = raw.value(QStringLiteral("useMaxWidth"));
   config.useMaxWidth = maxWidth.isUndefined() || maxWidth.isNull() ? true : truthyConfigValue(maxWidth);
   return config;
@@ -354,4 +354,4 @@ const Diagram& railroadPegDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

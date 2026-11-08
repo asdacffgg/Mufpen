@@ -7,7 +7,7 @@
 #include <QHash>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 // A borrowed rendering topology, never a second editable AST. Matched HTML
 // boundary blocks become containers; every text node and source range remains
@@ -44,4 +44,4 @@ private:
   QHash<NodeId, const MarkdownNode*> closing_;
 };
 
-} // namespace muffin
+} // namespace mufpen

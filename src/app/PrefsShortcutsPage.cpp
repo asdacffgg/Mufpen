@@ -14,7 +14,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
-muffin::PrefsShortcutsPage::PrefsShortcutsPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsShortcutsPage::PrefsShortcutsPage(QWidget* parent) : PreferencesPage(parent) {
   auto* layout = new QVBoxLayout(this);
   layout->setContentsMargins(22, 26, 22, 26);
   layout->setSpacing(12);
@@ -111,7 +111,7 @@ muffin::PrefsShortcutsPage::PrefsShortcutsPage(QWidget* parent) : PreferencesPag
   retranslateUi();
 }
 
-void muffin::PrefsShortcutsPage::retranslateUi() {
+void mufpen::PrefsShortcutsPage::retranslateUi() {
   title_->setText(tr("Keyboard Shortcuts"));
   explanation_->setText(tr("Select a command and press a key combination. Changes apply to all windows immediately."));
   filter_->setPlaceholderText(tr("Search commands or shortcuts…"));
@@ -124,7 +124,7 @@ void muffin::PrefsShortcutsPage::retranslateUi() {
   rebuild();
 }
 
-void muffin::PrefsShortcutsPage::rebuild() {
+void mufpen::PrefsShortcutsPage::rebuild() {
   const auto* current = commands_->currentItem();
   const auto selected = current ? current->data(0, Qt::UserRole).toString() : QString();
   const int scroll = commands_->verticalScrollBar()->value();
@@ -162,7 +162,7 @@ void muffin::PrefsShortcutsPage::rebuild() {
   selectionChanged();
 }
 
-void muffin::PrefsShortcutsPage::selectionChanged() {
+void mufpen::PrefsShortcutsPage::selectionChanged() {
   const auto* item = commands_->currentItem();
   const auto* command = item ? commandDeclaration(item->data(0, Qt::UserRole).toString()) : nullptr;
   selectedCommand_->setText(command ? QString(command->text).remove('&') : tr("No matching commands."));
@@ -175,7 +175,7 @@ void muffin::PrefsShortcutsPage::selectionChanged() {
   validate();
 }
 
-QStringList muffin::PrefsShortcutsPage::conflicts() const {
+QStringList mufpen::PrefsShortcutsPage::conflicts() const {
   QStringList result;
   const auto* selected = commands_->currentItem();
   const auto sequence = sequence_->keySequence();
@@ -200,7 +200,7 @@ QStringList muffin::PrefsShortcutsPage::conflicts() const {
   return result;
 }
 
-void muffin::PrefsShortcutsPage::validate() {
+void mufpen::PrefsShortcutsPage::validate() {
   const auto* selected = commands_->currentItem();
   const auto* command = selected ? commandDeclaration(selected->data(0, Qt::UserRole).toString()) : nullptr;
   const auto sequence = sequence_->keySequence();
@@ -222,7 +222,7 @@ void muffin::PrefsShortcutsPage::validate() {
     message_->setText(tr("Clear and Apply removes the shortcut. Use Default and Apply restores it."));
 }
 
-void muffin::PrefsShortcutsPage::apply() {
+void mufpen::PrefsShortcutsPage::apply() {
   const auto* selected = commands_->currentItem();
   if (!selected || !apply_->isEnabled())
     return;

@@ -2,7 +2,7 @@
 
 #include <QRegularExpression>
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 namespace {
 
 struct Cursor {
@@ -220,4 +220,4 @@ InfoData InfoDiagram::parse(const QString& source) {
   return data;
 }
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

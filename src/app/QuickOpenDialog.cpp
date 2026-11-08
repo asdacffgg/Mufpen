@@ -1,8 +1,8 @@
 // NOTE: This file contains tr() calls and therefore MUST NOT contain any
-// `namespace muffin { }` block — lupdate loses the namespace prefix otherwise
-// and generates context `QuickOpenDialog` instead of `muffin::QuickOpenDialog`,
+// `namespace mufpen { }` block — lupdate loses the namespace prefix otherwise
+// and generates context `QuickOpenDialog` instead of `mufpen::QuickOpenDialog`,
 // so translations never match at runtime (see CLAUDE.md). All QuickOpenDialog
-// methods use fully-qualified `muffin::` names; tr()-free helpers live in an
+// methods use fully-qualified `mufpen::` names; tr()-free helpers live in an
 // anonymous namespace at file scope (which the rule permits).
 
 #include "app/QuickOpenDialog.h"
@@ -66,7 +66,7 @@ public:
 
 } // namespace
 
-muffin::QuickOpenDialog::QuickOpenDialog(QWidget* parent) : QDialog(parent) {
+mufpen::QuickOpenDialog::QuickOpenDialog(QWidget* parent) : QDialog(parent) {
   setObjectName("QuickOpenDialog");
   setMinimumSize(560, 360);
   resize(640, 420);
@@ -106,12 +106,12 @@ muffin::QuickOpenDialog::QuickOpenDialog(QWidget* parent) : QDialog(parent) {
   setThemeDefinition(ThemeDefinition::builtIn(QStringLiteral("github")).value());
 }
 
-muffin::QuickOpenDialog::~QuickOpenDialog() {
+mufpen::QuickOpenDialog::~QuickOpenDialog() {
   if (cancel_)
     cancel_->store(true);
 }
 
-void muffin::QuickOpenDialog::setWorkspace(const QString& root, const QStringList& extensions) {
+void mufpen::QuickOpenDialog::setWorkspace(const QString& root, const QStringList& extensions) {
   if (cancel_)
     cancel_->store(true);
   root_ = root;
@@ -154,7 +154,7 @@ void muffin::QuickOpenDialog::setWorkspace(const QString& root, const QStringLis
   retranslateUi();
 }
 
-void muffin::QuickOpenDialog::setCandidates(QStringList paths) {
+void mufpen::QuickOpenDialog::setCandidates(QStringList paths) {
   candidates_.clear();
   QSet<QString> seen;
   for (const auto& path : paths) {
@@ -172,14 +172,14 @@ void muffin::QuickOpenDialog::setCandidates(QStringList paths) {
   filterEdit_->selectAll();
 }
 
-QString muffin::QuickOpenDialog::selectedPath() const {
+QString mufpen::QuickOpenDialog::selectedPath() const {
   if (const QListWidgetItem* item = list_->currentItem()) {
     return item->data(Qt::UserRole).toString();
   }
   return {};
 }
 
-bool muffin::QuickOpenDialog::eventFilter(QObject* watched, QEvent* event) {
+bool mufpen::QuickOpenDialog::eventFilter(QObject* watched, QEvent* event) {
   if (watched == filterEdit_ && event->type() == QEvent::KeyPress) {
     auto* keyEvent = static_cast<QKeyEvent*>(event);
     const int key = keyEvent->key();
@@ -213,14 +213,14 @@ bool muffin::QuickOpenDialog::eventFilter(QObject* watched, QEvent* event) {
   return QDialog::eventFilter(watched, event);
 }
 
-void muffin::QuickOpenDialog::changeEvent(QEvent* event) {
+void mufpen::QuickOpenDialog::changeEvent(QEvent* event) {
   QDialog::changeEvent(event);
   if (event->type() == QEvent::LanguageChange) {
     retranslateUi();
   }
 }
 
-void muffin::QuickOpenDialog::applyFilter(const QString& text) {
+void mufpen::QuickOpenDialog::applyFilter(const QString& text) {
   const QString selected = text == lastFilter_ ? selectedPath() : QString();
   lastFilter_ = text;
   list_->clear();
@@ -262,7 +262,7 @@ void muffin::QuickOpenDialog::applyFilter(const QString& text) {
   statusLabel_->setText(status);
 }
 
-void muffin::QuickOpenDialog::addPathItem(const QString& path) {
+void mufpen::QuickOpenDialog::addPathItem(const QString& path) {
   auto* item = new QListWidgetItem(QFileInfo(path).fileName(), list_);
   item->setData(Qt::UserRole, path);
   QString parent =
@@ -274,7 +274,7 @@ void muffin::QuickOpenDialog::addPathItem(const QString& path) {
   item->setToolTip(QDir::toNativeSeparators(path));
 }
 
-void muffin::QuickOpenDialog::setThemeDefinition(const ThemeDefinition& definition) {
+void mufpen::QuickOpenDialog::setThemeDefinition(const ThemeDefinition& definition) {
   const auto& colors = definition.colors;
   auto palette = this->palette();
   palette.setColor(QPalette::Window, colors.canvas);
@@ -290,7 +290,7 @@ void muffin::QuickOpenDialog::setThemeDefinition(const ThemeDefinition& definiti
   list_->setPalette(palette);
 }
 
-void muffin::QuickOpenDialog::retranslateUi() {
+void mufpen::QuickOpenDialog::retranslateUi() {
   setWindowTitle(tr("Quick Open"));
   filterEdit_->setPlaceholderText(tr("Search file names or paths…"));
   scopeLabel_->setText(root_.isEmpty() ? tr("Open and recent files") : QDir::toNativeSeparators(root_));

@@ -1,6 +1,6 @@
 #pragma once
 
-// Cheap process working-set query for muffin.perf probes, so each parse/layout phase can log its
+// Cheap process working-set query for mufpen.perf probes, so each parse/layout phase can log its
 // memory footprint alongside timing. No allocation; safe to call from perf destructors.
 // Returns bytes, or 0 if unavailable on the platform.
 
@@ -20,7 +20,7 @@
 #include <sys/resource.h>
 #endif
 
-namespace muffin::diag {
+namespace mufpen::diag {
 
 inline qint64 workingSetBytes() {
 #if defined(Q_OS_WIN)
@@ -48,4 +48,4 @@ inline qint64 workingSetBytes() {
 #endif
 }
 
-} // namespace muffin::diag
+} // namespace mufpen::diag

@@ -15,7 +15,7 @@
 
 新快照为 `<key>.draft`，通过一次 `QSaveFile` 提交：
 
-1. 固定首行 `MUFFIN-DRAFT 1`。
+1. 固定首行 `MUFPEN-DRAFT 1`。
 2. 单行 JSON 元数据，包含来源、时间、字符数及正文 UTF-8 字节数。
 3. 原始 UTF-8 正文。
 
@@ -42,7 +42,7 @@
 
 ### 大文档专项测量
 
-`MuffinBatchEditTest` 使用标题、中文段落、粗体和链接构成的文档，执行批量替换提交、撤销、重做、输入取消、锁定取消与关闭会话。5 ms 定时器记录事件循环间隔，使用惰性原生布局。目标 PieceTable 预先准备，模拟真实搜索后台任务的交接；下表“提交至布局完成”包含后台解析、索引构造、状态提交和布局，不包含匹配与生成替换文本的时间。
+`MufpenBatchEditTest` 使用标题、中文段落、粗体和链接构成的文档，执行批量替换提交、撤销、重做、输入取消、锁定取消与关闭会话。5 ms 定时器记录事件循环间隔，使用惰性原生布局。目标 PieceTable 预先准备，模拟真实搜索后台任务的交接；下表“提交至布局完成”包含后台解析、索引构造、状态提交和布局，不包含匹配与生成替换文本的时间。
 
 2026-11-01，Windows Release，编译结束后独立运行：
 
@@ -50,7 +50,7 @@
 | --- | --- | --- | --- |
 | 49,000,000 个 UTF-16 代码单元，100 万个标题及 100 万个正文块 | 36,119 ms | 113 ms | 46 ms |
 
-命令：设置 `MUFFIN_BATCH_TEST_REPEATS=1000000` 后执行 `ctest --preset conan-release -R '^MuffinBatchEditTest$' -V`。专项测试共耗时 138.00 秒，日志为 `build/batch-stress-isolated.log`。字符规模指内存中的 UTF-16 代码单元，不代表同样大小的磁盘文件；本次为单机一次测量，不是所有主题、单块类型或机器的延迟保证。并行编译的高负载下，该用例曾记录到约 1.7 秒间隔并触发响应性断言，说明调度预算不能替代系统资源条件。
+命令：设置 `MUFPEN_BATCH_TEST_REPEATS=1000000` 后执行 `ctest --preset conan-release -R '^MufpenBatchEditTest$' -V`。专项测试共耗时 138.00 秒，日志为 `build/batch-stress-isolated.log`。字符规模指内存中的 UTF-16 代码单元，不代表同样大小的磁盘文件；本次为单机一次测量，不是所有主题、单块类型或机器的延迟保证。并行编译的高负载下，该用例曾记录到约 1.7 秒间隔并触发响应性断言，说明调度预算不能替代系统资源条件。
 
 ## 入口一致性
 
@@ -106,7 +106,7 @@ HTML 容器无法局部拼接时，直接进入可取消的布局管线。容器
 - `cmake --build --preset conan-release --parallel 8`：复审修正后成功。日志：`build/batch-review-full-build.log`。
 - `ctest --preset conan-release --output-on-failure`：复审修正后 356/356 通过，耗时 658.85 秒。日志：`build/batch-review-full-tests.log`。
 - `python scripts/format_cpp.py --check`：1,206 个已跟踪的 C/C++ 文件通过 clang-format 21.1.8 检查；另行对本轮新增的三个 C++ 文件执行同版本的 `--dry-run --Werror`，也通过。`git diff --check` 通过。
-- `cmake --build --preset conan-release --target dist --parallel 8`：成功。日志：`build/batch-review-dist.log`。`build/dist` 中的 `Muffin.exe`、`MuffinCore.dll`、`MuffinUi.dll` 与 `build/Release` 的 SHA-256 一致。
+- `cmake --build --preset conan-release --target dist --parallel 8`：成功。日志：`build/batch-review-dist.log`。`build/dist` 中的 `Mufpen.exe`、`MufpenCore.dll`、`MufpenUi.dll` 与 `build/Release` 的 SHA-256 一致。
 
 上述结果来自本地自动化验收，不代替不同操作系统上的 CI 或实际用户长时间编辑验收。
 
@@ -120,7 +120,7 @@ HTML 容器无法局部拼接时，直接进入可取消的布局管线。容器
 
 - Release 全量构建成功。全量回归中的 361 项通过，翻译资源检查因旧 QM 未重新嵌入而失败；编译全部翻译并重新构建后，翻译资源、语言切换、Windows 集成、分屏和源码编辑器 5 项复测全部通过。日志：`build/split-arrange-full-tests.log`、`build/split-arrange-translated-build.log`、`build/split-arrange-final-tests.log`。
 - Windows 原生窗口下的分屏整合测试通过，覆盖拖动分隔条、上下分栏、交换顺序及恢复会话。日志：`build/split-arrange-native.log`。
-- 格式检查与 `git diff --check` 通过。`dist` 已刷新，`Muffin.exe`、`MuffinCore.dll` 和 `MuffinUi.dll` 的 SHA-256 与 Release 输出一致。
+- 格式检查与 `git diff --check` 通过。`dist` 已刷新，`Mufpen.exe`、`MufpenCore.dll` 和 `MufpenUi.dll` 的 SHA-256 与 Release 输出一致。
 
 同日补充验证分屏中的打字机与专注模式：
 

@@ -8,7 +8,7 @@
 #include <limits>
 #include <tuple>
 
-namespace muffin::mermaid::flowchart::routing {
+namespace mufpen::mermaid::flowchart::routing {
 namespace {
 
 constexpr qreal kEps = 1e-6;
@@ -645,4 +645,4 @@ QVector<QVector<QPointF>> routeOrthogonalEdges(const QVector<Node>& nodes, const
   return OrthogonalRouter(nodes, edges).run();
 }
 
-} // namespace muffin::mermaid::flowchart::routing
+} // namespace mufpen::mermaid::flowchart::routing

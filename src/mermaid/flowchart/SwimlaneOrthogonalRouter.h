@@ -4,7 +4,7 @@
 #include <QPointF>
 #include <QSizeF>
 
-namespace muffin::mermaid::flowchart::routing {
+namespace mufpen::mermaid::flowchart::routing {
 
 enum class OrthogonalSide { Top, Bottom, Left, Right };
 
@@ -21,4 +21,4 @@ struct Node {
 QVector<QVector<QPointF>> routeOrthogonalEdges(const QVector<Node>& nodes, const QVector<FlowEdge>& edges);
 QVector<QPointF> simplifyRouterPoints(QVector<QPointF> points);
 
-} // namespace muffin::mermaid::flowchart::routing
+} // namespace mufpen::mermaid::flowchart::routing

@@ -8,7 +8,7 @@
 
 #include <utility>
 
-namespace muffin::mermaid::info {
+namespace mufpen::mermaid::info {
 namespace {
 
 QJsonObject rectJson(const QRectF& rect) {
@@ -66,4 +66,4 @@ InfoScene buildInfoScene(InfoSceneStyle style) {
   return scene;
 }
 
-} // namespace muffin::mermaid::info
+} // namespace mufpen::mermaid::info

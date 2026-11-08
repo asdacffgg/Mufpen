@@ -9,7 +9,7 @@
 #include <QString>
 #include <QVector>
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 
 struct CynefinConfig {
   QJsonValue useMaxWidth = true;
@@ -180,4 +180,4 @@ struct CynefinScene final : MermaidScene {
 CynefinScene buildCynefinScene(const CynefinData& data, CynefinConfig config, CynefinSceneStyle style,
                                const CynefinCssOverrides* css = nullptr);
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

@@ -15,7 +15,7 @@
 #include <iostream>
 #include <variant>
 
-using namespace muffin;
+using namespace mufpen;
 
 // testInputEmptyCodeFenceBackspaceRemovesBlock (lines 1312-1364)
 void testInputEmptyCodeFenceBackspaceRemovesBlock() {

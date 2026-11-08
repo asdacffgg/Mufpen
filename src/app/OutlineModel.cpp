@@ -4,7 +4,7 @@
 
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 
 OutlineModel::OutlineModel(QObject* parent) : QAbstractItemModel(parent) {
 }
@@ -166,4 +166,4 @@ void OutlineModel::rebuildLinks() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -52,7 +52,7 @@ QString codeFenceOpen() {
 
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 
 ParagraphController::ParagraphController(QObject* parent) : QObject(parent) {
 }
@@ -1080,4 +1080,4 @@ bool ParagraphController::toggleFormulaBlock() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

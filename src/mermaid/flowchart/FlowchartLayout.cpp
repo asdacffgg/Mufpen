@@ -15,10 +15,10 @@
 #include <numeric>
 #include <optional>
 
-namespace muffin::mermaid::flowchart {
+namespace mufpen::mermaid::flowchart {
 namespace {
 
-namespace d = muffin::mermaid::dagre; // visible to the anon-namespace helpers below
+namespace d = mufpen::mermaid::dagre; // visible to the anon-namespace helpers below
 
 void clipMarker(QVector<QPointF>& points, qreal distance) {
   if (points.size() < 2)
@@ -492,4 +492,4 @@ FlowLayoutResult layoutFlowchartNodes(const FlowchartData& data, const QMap<QStr
   return layoutFlowchartNodesDagre(data, measuredNodes, options);
 }
 
-} // namespace muffin::mermaid::flowchart
+} // namespace mufpen::mermaid::flowchart

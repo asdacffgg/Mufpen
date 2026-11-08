@@ -20,7 +20,7 @@
 #include <functional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -470,4 +470,4 @@ std::vector<AnimationDef> extractAnimations(const ComputedDecorationStyles& styl
   return out;
 }
 
-} // namespace muffin
+} // namespace mufpen

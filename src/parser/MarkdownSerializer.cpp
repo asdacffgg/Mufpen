@@ -5,7 +5,7 @@
 
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 QString repeated(QString value, int count) {
@@ -317,4 +317,4 @@ QString MarkdownSerializer::tableDelimiter(TableAlignment alignment) const {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

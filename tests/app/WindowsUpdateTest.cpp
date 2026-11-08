@@ -50,22 +50,22 @@ QJsonObject releaseJson() {
 
 void assetSelection() {
   auto json = releaseJson();
-  require(muffin::UpdatePackage::release(json, QStringLiteral("x64")).has_value(),
+  require(mufpen::UpdatePackage::release(json, QStringLiteral("x64")).has_value(),
           "exact version and architecture selected");
-  require(!muffin::UpdatePackage::release(json, QStringLiteral("arm64")),
+  require(!mufpen::UpdatePackage::release(json, QStringLiteral("arm64")),
           "never fall back to an incompatible architecture");
   auto duplicate = json.value(QStringLiteral("assets")).toArray();
   duplicate.append(duplicate.first());
   json.insert(QStringLiteral("assets"), duplicate);
-  require(!muffin::UpdatePackage::release(json, QStringLiteral("x64")), "ambiguous update assets rejected");
+  require(!mufpen::UpdatePackage::release(json, QStringLiteral("x64")), "ambiguous update assets rejected");
   for (const auto& bad : {QStringLiteral("v9.8.7-beta"), QStringLiteral("v9.8.7junk"), QStringLiteral("v09.8.7")}) {
     json = releaseJson();
     json.insert(QStringLiteral("tag_name"), bad);
-    require(!muffin::UpdatePackage::release(json, QStringLiteral("x64")), "nonstable and malformed versions rejected");
+    require(!mufpen::UpdatePackage::release(json, QStringLiteral("x64")), "nonstable and malformed versions rejected");
   }
   json = releaseJson();
   json.insert(QStringLiteral("html_url"), QStringLiteral("https://github.com/attacker/Mufpen/releases/tag/v9.8.7"));
-  require(!muffin::UpdatePackage::release(json, QStringLiteral("x64")),
+  require(!mufpen::UpdatePackage::release(json, QStringLiteral("x64")),
           "release must belong to the official repository");
   // Updates come from this repository's GitHub releases only: a mirror would carry a
   // different signature contract, so any other host is rejected outright.
@@ -74,7 +74,7 @@ void assetSelection() {
                                             .replace("https://github.com/asdacffgg/Mufpen/releases/",
                                                      "https://mirror.example/asdacffgg/Mufpen/releases/"))
                     .object();
-  require(!muffin::UpdatePackage::release(mirror, QStringLiteral("x64")), "mirror hosts cannot supply update packages");
+  require(!mufpen::UpdatePackage::release(mirror, QStringLiteral("x64")), "mirror hosts cannot supply update packages");
   auto foreignAsset = releaseJson();
   auto assets = foreignAsset.value("assets").toArray();
   auto asset = assets[0].toObject();
@@ -82,7 +82,7 @@ void assetSelection() {
                "https://github.com/attacker/Mufpen/releases/download/v9.8.7/Mufpen-Setup-9.8.7-windows-x64.exe");
   assets[0] = asset;
   foreignAsset.insert("assets", assets);
-  require(!muffin::UpdatePackage::release(foreignAsset, "x64"), "foreign repositories cannot supply update packages");
+  require(!mufpen::UpdatePackage::release(foreignAsset, "x64"), "foreign repositories cannot supply update packages");
 }
 
 #ifdef Q_OS_WIN
@@ -97,7 +97,7 @@ void signatureValidation() {
   require(BCryptExportKey(key, nullptr, BCRYPT_ECCPUBLIC_BLOB, reinterpret_cast<PUCHAR>(publicKey.data()),
                           ULONG(publicKey.size()), &size, 0) >= 0,
           "export test public key");
-  const auto release = *muffin::UpdatePackage::release(releaseJson(), QStringLiteral("x64"));
+  const auto release = *mufpen::UpdatePackage::release(releaseJson(), QStringLiteral("x64"));
   const QJsonObject metadata{{QStringLiteral("schema"), 1},
                              {QStringLiteral("version"), release.version},
                              {QStringLiteral("architecture"), QStringLiteral("x64")},
@@ -117,11 +117,11 @@ void signatureValidation() {
                                      {QStringLiteral("signature"), QString::fromLatin1(signature.toBase64())}})
         .toJson(QJsonDocument::Compact);
   };
-  require(muffin::UpdatePackage::verify(envelope(metadata), release, QStringLiteral("x64"), publicKey).has_value(),
+  require(mufpen::UpdatePackage::verify(envelope(metadata), release, QStringLiteral("x64"), publicKey).has_value(),
           "valid CNG P1363 signature accepted");
-  require(!muffin::UpdatePackage::verify(envelope(metadata, true), release, QStringLiteral("x64"), publicKey),
+  require(!mufpen::UpdatePackage::verify(envelope(metadata, true), release, QStringLiteral("x64"), publicKey),
           "even a whitespace mutation of signed bytes rejected");
-  require(!muffin::UpdatePackage::verify(envelope(metadata), release, QStringLiteral("x64")),
+  require(!mufpen::UpdatePackage::verify(envelope(metadata), release, QStringLiteral("x64")),
           "a valid signature from a different publisher is rejected");
   for (const auto& field : {QStringLiteral("version"), QStringLiteral("architecture"), QStringLiteral("fileName"),
                             QStringLiteral("sha256"), QStringLiteral("size"), QStringLiteral("schema")}) {
@@ -129,7 +129,7 @@ void signatureValidation() {
     bad.insert(field, field == QStringLiteral("size") || field == QStringLiteral("schema")
                           ? QJsonValue(2)
                           : QJsonValue(QStringLiteral("wrong")));
-    require(!muffin::UpdatePackage::verify(envelope(bad), release, QStringLiteral("x64"), publicKey),
+    require(!mufpen::UpdatePackage::verify(envelope(bad), release, QStringLiteral("x64"), publicKey),
             "correctly signed but inconsistent metadata rejected");
   }
   BCryptDestroyKey(key);
@@ -166,7 +166,7 @@ public:
 };
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 struct UpdateCheckerTestAccess {
   static void catalogs() {
     QSettings settings;
@@ -382,18 +382,18 @@ struct WindowsUpdaterTestAccess {
     require(!completed && updater.state_ == WindowsUpdater::State::Available, "cancel cannot race into installation");
   }
 };
-} // namespace muffin
+} // namespace mufpen
 
 int runWindowsUpdateHandoffTest() {
-  return muffin::WindowsUpdaterTestAccess::handoffChild();
+  return mufpen::WindowsUpdaterTestAccess::handoffChild();
 }
 
 void runWindowsUpdateTests() {
-  runTest("staticCatalogsAndBackoff", muffin::UpdateCheckerTestAccess::catalogs);
+  runTest("staticCatalogsAndBackoff", mufpen::UpdateCheckerTestAccess::catalogs);
   runTest("assetSelection", assetSelection);
 #ifdef Q_OS_WIN
   runTest("signatureValidation", signatureValidation);
 #endif
-  runTest("downloads", muffin::WindowsUpdaterTestAccess::downloads);
-  runTest("handoffExit", muffin::WindowsUpdaterTestAccess::handoffExit);
+  runTest("downloads", mufpen::WindowsUpdaterTestAccess::downloads);
+  runTest("handoffExit", mufpen::WindowsUpdaterTestAccess::handoffExit);
 }

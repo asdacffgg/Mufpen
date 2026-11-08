@@ -32,7 +32,7 @@ def run(args):
     destination.mkdir(parents=True, exist_ok=False)
     phycat = args.phycat.resolve()
     files = [root / f"build/Release/{n}" for n in
-             ("MuffinGuiPerformanceProbe.exe", "Muffin.exe", "MuffinCore.dll", "MuffinUi.dll")]
+             ("MufpenGuiPerformanceProbe.exe", "Mufpen.exe", "MufpenCore.dll", "MufpenUi.dll")]
     files += [root / "tests/fixtures/theme/vlook-fancy-dark/vlook-fancy-dark.css",
               root / "resources/themes/github.css", root / "resources/themes/night.css",
               root / "resources/themes/document-base.css", phycat, phycat.parent / "phycat/phycat.dark.css",
@@ -45,12 +45,12 @@ def run(args):
     plan.write_text(json.dumps({"schema": 1, "executable": str(files[0]), "jobs": jobs}, indent=2) + "\n", encoding="utf-8")
     env = environment(root, phycat, "minimal", args.foreground_wait_seconds)
     if args.memory_census:
-        env["MUFFIN_GUI_MEMORY_CENSUS"] = "1"
+        env["MUFPEN_GUI_MEMORY_CENSUS"] = "1"
     if args.open_profile:
-        env["MUFFIN_GUI_OPEN_PROFILE"] = args.open_profile
+        env["MUFPEN_GUI_OPEN_PROFILE"] = args.open_profile
     if args.static_visual_audit:
-        env["MUFFIN_GUI_STATIC_VISUAL_AUDIT"] = "1"
-    env.update(MUFFIN_GUI_CHAIN_FILE=str(plan), MUFFIN_GUI_CHAIN_INDEX="0")
+        env["MUFPEN_GUI_STATIC_VISUAL_AUDIT"] = "1"
+    env.update(MUFPEN_GUI_CHAIN_FILE=str(plan), MUFPEN_GUI_CHAIN_INDEX="0")
     handles = {}
     states = []
     failure = None
@@ -205,7 +205,7 @@ def main():
     parser.add_argument("--open-profile", choices=("off", "stages", "legacy"),
                         help="Opening diagnostics: disabled, coarse phases, or existing per-inline timers")
     parser.add_argument("--phycat", type=Path, default=Path(os.environ.get("APPDATA", ".")) /
-                        "Muffin/Muffin/themes/phycat-abyss.css")
+                        "Mufpen/Mufpen/themes/phycat-abyss.css")
     args = parser.parse_args()
     if sys.platform != "win32" or not (4 <= args.cycles <= 60 and 1 <= args.repetitions <= 10 and
                                       1 <= args.foreground_wait_seconds <= 3600):

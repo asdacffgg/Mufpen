@@ -10,7 +10,7 @@
 
 #include <QCoreApplication>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testLoneBulletMarkerIsParagraphNotList() {
   CmarkGfmParser parser;

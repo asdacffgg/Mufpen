@@ -7,7 +7,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::state {
+namespace mufpen::mermaid::state {
 namespace {
 struct CachedNode {
   QString id;
@@ -559,4 +559,4 @@ QJsonObject stateLayoutInputToJson(const StateLayoutInput& input) {
           {QStringLiteral("edges"), edges}};
 }
 
-} // namespace muffin::mermaid::state
+} // namespace mufpen::mermaid::state

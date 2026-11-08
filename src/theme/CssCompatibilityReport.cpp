@@ -17,7 +17,7 @@
 #include <algorithm>
 #include <tuple>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 // Bound examples, including minified SVG/base64 values. The full-value digest
@@ -383,4 +383,4 @@ CssCompatibilityReport CssCompatibilityReport::analyze(const CssThemeSheet& shee
   return result;
 }
 
-} // namespace muffin
+} // namespace mufpen

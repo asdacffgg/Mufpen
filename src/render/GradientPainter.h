@@ -5,7 +5,7 @@
 class QBrush;
 class QRectF;
 
-namespace muffin {
+namespace mufpen {
 
 // Builds a Qt brush from a parsed CSS GradientSpec against a target rect.
 // Gradients are rect-relative, so this is called at paint time per element (a
@@ -24,4 +24,4 @@ QBrush makeBrush(const GradientSpec& spec, const QRectF& target, qreal lengthSca
 
 } // namespace GradientPainter
 
-} // namespace muffin
+} // namespace mufpen

@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 // The first top-level block of a list document is the List; its children are the items.

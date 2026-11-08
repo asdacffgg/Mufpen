@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 
 // Only external file-open requests cross this boundary. Explicit new-window
 // commands and folder workspaces keep their existing independent lifetimes.
@@ -35,4 +35,4 @@ private:
   qsizetype pendingFileRequests_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -12,7 +12,7 @@
 #include <cmath>
 #include <limits>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -376,4 +376,4 @@ QHash<QString, qreal> positionX(DagreGraph& g) {
   return balance(xss, align);
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

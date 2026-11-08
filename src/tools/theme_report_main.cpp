@@ -14,7 +14,7 @@
 // of the editor's language/settings and without a GUI or theme font loading.
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  app.setApplicationName("muffin-theme-report");
+  app.setApplicationName("mufpen-theme-report");
   QCommandLineParser parser;
   parser.setApplicationDescription(
       "Audit native CSS theme capabilities offline; JSON output does not imply browser pixel parity.");
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
   parser.process(app);
   if (parser.positionalArguments().size() != 1)
     parser.showHelp(2);
-  muffin::CssEnvironment environment;
+  mufpen::CssEnvironment environment;
   bool widthOk = false, heightOk = false;
   environment.viewportWidth = parser.value(width).toDouble(&widthOk);
   environment.viewportHeight = parser.value(height).toDouble(&heightOk);
@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
     QTextStream(stderr) << "Cannot read CSS: " << input.errorString() << '\n';
     return 2;
   }
-  const auto sheet = muffin::CssThemeParser::parse(QString::fromUtf8(input.readAll()), source.absolutePath(),
+  const auto sheet = mufpen::CssThemeParser::parse(QString::fromUtf8(input.readAll()), source.absolutePath(),
                                                    source.absoluteFilePath());
-  const auto report = muffin::CssCompatibilityReport::analyze(sheet, source.absolutePath(), environment);
+  const auto report = mufpen::CssCompatibilityReport::analyze(sheet, source.absolutePath(), environment);
   const auto json = QJsonDocument(report.toJson()).toJson(QJsonDocument::Indented);
   if (parser.isSet(output)) {
     QSaveFile file(parser.value(output));

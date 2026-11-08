@@ -2,7 +2,7 @@
 
 #include <QString>
 
-namespace muffin::html {
+namespace mufpen::html {
 
 class HtmlDocument {
 public:
@@ -29,4 +29,4 @@ private:
   QString error_;
 };
 
-} // namespace muffin::html
+} // namespace mufpen::html

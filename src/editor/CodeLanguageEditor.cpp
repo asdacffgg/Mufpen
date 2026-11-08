@@ -12,7 +12,7 @@
 #include <QListView>
 #include <QStringListModel>
 
-namespace muffin {
+namespace mufpen {
 
 CodeLanguageEditor::CodeLanguageEditor(QWidget* viewport, QObject* parent) : QObject(parent), viewport_(viewport) {
 }
@@ -177,4 +177,4 @@ void CodeLanguageEditor::show(const BlockLayout& block, const MarkdownDocument& 
   updating_ = false;
 }
 
-} // namespace muffin
+} // namespace mufpen

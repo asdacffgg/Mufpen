@@ -6,7 +6,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::er {
+namespace mufpen::mermaid::er {
 
 struct ErScene;
 
@@ -19,4 +19,4 @@ void paintErScene(const ErScene& scene, QPainter& painter, const MermaidPaintOpt
 // device pixels of margin. Used by the render cache for the "er" dispatch.
 QImage renderErSceneToImage(const ErScene& scene, qreal dpr = 1.0, qreal padding = 16.0);
 
-} // namespace muffin::mermaid::er
+} // namespace mufpen::mermaid::er

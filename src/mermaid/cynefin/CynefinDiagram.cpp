@@ -7,7 +7,7 @@
 
 #include <utility>
 
-namespace muffin::mermaid::cynefin {
+namespace mufpen::mermaid::cynefin {
 namespace {
 
 bool horizontal(QChar c) {
@@ -367,4 +367,4 @@ CynefinData CynefinDiagram::parse(const QString& source) {
   return Parser(source).run();
 }
 
-} // namespace muffin::mermaid::cynefin
+} // namespace mufpen::mermaid::cynefin

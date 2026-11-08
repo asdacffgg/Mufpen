@@ -19,7 +19,7 @@
 #include <algorithm>
 
 namespace {
-Q_LOGGING_CATEGORY(draftPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(draftPerf, "mufpen.perf.detail", QtWarningMsg)
 
 // True for names produced by DraftRecovery::keyFor(): "untitled" or a 16-char
 // lowercase hex digest. pruneOrphaned() only touches files whose stem matches,
@@ -40,7 +40,7 @@ bool isDraftKey(const QString& stem) {
   return true;
 }
 
-const QByteArray snapshotMagic = QByteArrayLiteral("MUFFIN-DRAFT 1\n");
+const QByteArray snapshotMagic = QByteArrayLiteral("MUFPEN-DRAFT 1\n");
 
 bool readSnapshotHeader(QFile& file, QJsonObject& meta) {
   if (!file.open(QIODevice::ReadOnly) || file.read(snapshotMagic.size()) != snapshotMagic)
@@ -58,7 +58,7 @@ bool readSnapshotHeader(QFile& file, QJsonObject& meta) {
 
 } // namespace
 
-namespace muffin {
+namespace mufpen {
 
 DraftRecovery::DraftRecovery(QString directory) : directory_(std::move(directory)) {
   if (directory_.isEmpty()) {
@@ -100,14 +100,14 @@ QString DraftRecovery::snapshotPath(const QString& key) const {
 }
 
 bool DraftRecovery::snapshot(const QString& markdownText, const QString& sourceFilePath, const QString& draftKey) {
-  muffin::diag::ScopedPerfProbe perf("draft.writeSnapshot", draftPerf());
+  mufpen::diag::ScopedPerfProbe perf("draft.writeSnapshot", draftPerf());
   if (directory_.isEmpty() || !QDir().mkpath(directory_)) {
     return false;
   }
   const QString key = keyFor(sourceFilePath, draftKey);
 
   const QByteArray bytes = [&] {
-    muffin::diag::ScopedPerfProbe perf("draft.encodeUtf8", draftPerf());
+    mufpen::diag::ScopedPerfProbe perf("draft.encodeUtf8", draftPerf());
     return markdownText.toUtf8();
   }();
   QJsonObject meta;
@@ -234,15 +234,15 @@ void DraftRecovery::pruneOrphaned() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen
 
-bool muffin::DraftRecovery::snapshotSession(const DocumentSession& session, const QString& draftKey) {
-  muffin::diag::ScopedPerfProbe perf("draft.snapshotSession", draftPerf());
+bool mufpen::DraftRecovery::snapshotSession(const DocumentSession& session, const QString& draftKey) {
+  mufpen::diag::ScopedPerfProbe perf("draft.snapshotSession", draftPerf());
   if (session.isOpenInProgress() || !session.document().isModified()) {
     return false;
   }
   const QString text = [&] {
-    muffin::diag::ScopedPerfProbe perf("draft.materialize", draftPerf());
+    mufpen::diag::ScopedPerfProbe perf("draft.materialize", draftPerf());
     return session.markdownText().toString();
   }();
   return snapshot(text, session.filePath(), draftKey);

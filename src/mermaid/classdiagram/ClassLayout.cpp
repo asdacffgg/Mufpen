@@ -12,7 +12,7 @@
 
 #include <algorithm>
 
-namespace muffin::mermaid::classdiagram {
+namespace mufpen::mermaid::classdiagram {
 namespace {
 
 QString classifierStyle(const ClassMember& member) {
@@ -583,4 +583,4 @@ ClassPlacementResult layoutClassDiagramDagre(const ClassLayoutInput& input, cons
   }
 }
 
-} // namespace muffin::mermaid::classdiagram
+} // namespace mufpen::mermaid::classdiagram

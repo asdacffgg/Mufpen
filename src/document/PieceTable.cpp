@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <limits>
 
-namespace muffin {
+namespace mufpen {
 
 const PieceTable& PieceTable::empty() {
   static const PieceTable instance;
@@ -392,4 +392,4 @@ int PieceTable::wordCount() const {
   return static_cast<int>(qMin<qint64>(totalWords_, std::numeric_limits<int>::max()));
 }
 
-} // namespace muffin
+} // namespace mufpen

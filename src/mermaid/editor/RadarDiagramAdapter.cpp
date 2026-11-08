@@ -16,7 +16,7 @@
 #include <cmath>
 #include <memory>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 namespace {
 
 QJsonValue scalarConfig(const QJsonObject& object, QLatin1String key, const QJsonValue& fallback) {
@@ -387,4 +387,4 @@ const Diagram& radarDiagramAdapter() {
   return impl;
 }
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

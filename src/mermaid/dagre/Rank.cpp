@@ -10,7 +10,7 @@
 #include <functional>
 #include <limits>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -349,4 +349,4 @@ void rankGraph(DagreGraph& g) {
       n->rank = s.node(v)->rank;
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

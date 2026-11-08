@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin {
+namespace mufpen {
 using namespace layout_rules;
 
 void BlockHeightEstimator::beginPass(quint64 fontGeneration, bool codeBlockWrap, bool showLineNumbers) {
@@ -27,7 +27,7 @@ void BlockHeightEstimator::beginPass(quint64 fontGeneration, bool codeBlockWrap,
 }
 
 namespace {
-Q_LOGGING_CATEGORY(estimateDetailPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(estimateDetailPerf, "mufpen.perf.detail", QtWarningMsg)
 
 // Estimate wrapped line count from plain text and an average characters-per-line capacity,
 // respecting explicit newlines (a trailing '\n' yields one extra line, matching TextLayout).
@@ -461,4 +461,4 @@ BlockHeightEstimator::estimateDefinition(const MarkdownNode& node, const RenderT
   return {height, true};
 }
 
-} // namespace muffin
+} // namespace mufpen

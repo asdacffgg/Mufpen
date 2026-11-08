@@ -2,7 +2,7 @@
 // project nodes + edges into flowchart::FlowchartData, call the shared dagre
 // pipeline, map FlowLayoutResult back.
 //
-// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace muffin {}`
+// Per CLAUDE.md / the lupdate convention this .cpp has NO `namespace mufpen {}`
 // block; helpers live in an anonymous namespace and public functions use
 // fully-qualified names.
 
@@ -27,7 +27,7 @@ constexpr qreal kGap = 20.0;     // gap between name and body (upstream hardcode
 
 } // namespace
 
-namespace muffin::mermaid::requirement {
+namespace mufpen::mermaid::requirement {
 
 qreal requirementEffectiveFontSize(const RequirementTextStyle& style, qreal themeFontSize) {
   return style.fontSizePx >= 0.0 ? style.fontSizePx : themeFontSize;
@@ -364,4 +364,4 @@ QSizeF requirementSvgEdgeLabelSize(const flowchart::FlowLabelDocument& document,
   return QSizeF(advanceWidth + 4.0, height);
 }
 
-} // namespace muffin::mermaid::requirement
+} // namespace mufpen::mermaid::requirement

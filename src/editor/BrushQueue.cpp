@@ -3,7 +3,7 @@
 #include <QSet>
 #include <QTimer>
 
-namespace muffin {
+namespace mufpen {
 
 BrushQueue::BrushQueue(QObject* parent) : QObject(parent) {
 }
@@ -112,4 +112,4 @@ void BrushQueue::scheduleFlush() {
   QTimer::singleShot(0, this, [this] { flush(); });
 }
 
-} // namespace muffin
+} // namespace mufpen

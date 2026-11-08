@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace muffin::mermaid::mindmap {
+namespace mufpen::mermaid::mindmap {
 
 enum class MindmapErrorKind { Lexer, Parser, Runtime };
 
@@ -98,4 +98,4 @@ public:
   static MindmapData parse(const QString& source, const MindmapParseConfig& config = {});
 };
 
-} // namespace muffin::mermaid::mindmap
+} // namespace mufpen::mermaid::mindmap

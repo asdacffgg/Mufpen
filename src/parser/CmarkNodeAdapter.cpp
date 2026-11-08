@@ -18,13 +18,13 @@ extern "C" {
 #include "table.h"
 }
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
-Q_LOGGING_CATEGORY(adapterPerf, "muffin.perf", QtWarningMsg)
+Q_LOGGING_CATEGORY(adapterPerf, "mufpen.perf", QtWarningMsg)
 
 // Aggregate convertBlock breakdown counters (single-threaded parse). Enabled only while
-// muffin.perf debug is on, so the fromUtf8/annotate hot paths pay just a branch in normal builds.
+// mufpen.perf debug is on, so the fromUtf8/annotate hot paths pay just a branch in normal builds.
 thread_local qint64 g_fromUtf8Ns = 0, g_annotateNs = 0, g_inlineChildrenNs = 0, g_blockLocalNs = 0;
 thread_local qint64 g_coordinatesNs = 0, g_clampNs = 0, g_freeNs = 0, g_leafNs = 0;
 thread_local qint64 g_inlineCount = 0, g_utf8Calls = 0, g_utf8Bytes = 0, g_freeCalls = 0;
@@ -267,7 +267,7 @@ std::unique_ptr<MarkdownNode> CmarkNodeAdapter::convertBlock(cmark_node* node) {
 
   // Convert and free each consumed block subtree, returning allocations to the
   // parse-local pool (or default allocator) so empty pages can be reclaimed while
-  // the Muffin tree is built. Save `next` BEFORE freeing: cmark_node_free
+  // the Mufpen tree is built. Save `next` BEFORE freeing: cmark_node_free
   // unlinks the node (mutating the sibling/parent chain). A block's inline children were read in
   // Phase 2 above and ride inside its subtree, freed here with it.
   cmark_node* child = cmark_node_first_child(node);
@@ -651,19 +651,19 @@ QVector<InlineNode> CmarkNodeAdapter::convertInlineChildren(cmark_node* node) {
   return children;
 }
 
-void CmarkNodeAdapter::readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& muffinNode) {
-  switch (muffinNode.type()) {
+void CmarkNodeAdapter::readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& mufpenNode) {
+  switch (mufpenNode.type()) {
   case BlockType::Heading:
-    muffinNode.setHeadingLevel(cmark_node_get_heading_level(cmarkNode));
+    mufpenNode.setHeadingLevel(cmark_node_get_heading_level(cmarkNode));
     // cmark-gfm only emits Setext headings for levels 1-2, and a Setext heading
     // always spans two source lines (text + underline) whereas ATX is single-line.
-    muffinNode.setSetext(muffinNode.sourceRange().lineEnd > muffinNode.sourceRange().lineStart);
+    mufpenNode.setSetext(mufpenNode.sourceRange().lineEnd > mufpenNode.sourceRange().lineStart);
     break;
   case BlockType::List:
-    muffinNode.setListKind(cmark_node_get_list_type(cmarkNode) == CMARK_ORDERED_LIST ? ListKind::Ordered
+    mufpenNode.setListKind(cmark_node_get_list_type(cmarkNode) == CMARK_ORDERED_LIST ? ListKind::Ordered
                                                                                      : ListKind::Bullet);
-    muffinNode.setListStart(cmark_node_get_list_start(cmarkNode));
-    muffinNode.setListTight(cmark_node_get_list_tight(cmarkNode) != 0);
+    mufpenNode.setListStart(cmark_node_get_list_start(cmarkNode));
+    mufpenNode.setListTight(cmark_node_get_list_tight(cmarkNode) != 0);
     break;
   case BlockType::ListItem:
     // The tasklist extension reports type string "tasklist" for genuine task
@@ -671,16 +671,16 @@ void CmarkNodeAdapter::readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& mu
     // both an unchecked task item and a regular item, so it cannot tell them
     // apart. Capture task-item identity here so the serializer can round-trip
     // the checkbox faithfully.
-    muffinNode.setTaskItem(QString::fromUtf8(cmark_node_get_type_string(cmarkNode)) == QLatin1String("tasklist"));
-    muffinNode.setTaskChecked(cmark_gfm_extensions_get_tasklist_item_checked(cmarkNode));
+    mufpenNode.setTaskItem(QString::fromUtf8(cmark_node_get_type_string(cmarkNode)) == QLatin1String("tasklist"));
+    mufpenNode.setTaskChecked(cmark_gfm_extensions_get_tasklist_item_checked(cmarkNode));
     break;
   case BlockType::CodeFence: {
     QString codeLiteral = fromUtf8(cmark_node_get_literal(cmarkNode));
     if (codeLiteral.endsWith(QLatin1Char('\n'))) {
       codeLiteral.chop(1);
     }
-    muffinNode.setLiteral(codeLiteral);
-    muffinNode.setCodeLanguage(fromUtf8(cmark_node_get_fence_info(cmarkNode)).section(' ', 0, 0));
+    mufpenNode.setLiteral(codeLiteral);
+    mufpenNode.setCodeLanguage(fromUtf8(cmark_node_get_fence_info(cmarkNode)).section(' ', 0, 0));
     // cmark reports both fenced and indented code as CMARK_NODE_CODE_BLOCK, but it records the
     // original form in the node's authoritative `fenced` flag (set during parsing). That is the
     // only reliable signal: inspecting the source line breaks for a fence nested inside a
@@ -690,11 +690,11 @@ void CmarkNodeAdapter::readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& mu
     int fenceOffset = 0;
     char fenceChar = 0;
     const bool isFenced = cmark_node_get_fenced(cmarkNode, &fenceLength, &fenceOffset, &fenceChar) != 0;
-    muffinNode.setIndentedCode(!isFenced);
+    mufpenNode.setIndentedCode(!isFenced);
     break;
   }
   case BlockType::HtmlBlock:
-    muffinNode.setLiteral(fromUtf8(cmark_node_get_literal(cmarkNode)));
+    mufpenNode.setLiteral(fromUtf8(cmark_node_get_literal(cmarkNode)));
     break;
   case BlockType::MathBlock: {
     // cmark wraps the math body in newlines (opener/closer live on their own lines):
@@ -710,21 +710,21 @@ void CmarkNodeAdapter::readBlockMetadata(cmark_node* cmarkNode, MarkdownNode& mu
     if (mathLiteral.endsWith(QLatin1Char('\n'))) {
       mathLiteral.chop(1);
     }
-    muffinNode.setLiteral(mathLiteral);
+    mufpenNode.setLiteral(mathLiteral);
     break;
   }
   case BlockType::Table:
-    readTableMetadata(cmarkNode, muffinNode);
+    readTableMetadata(cmarkNode, mufpenNode);
     break;
   case BlockType::TableRow:
-    muffinNode.setTableRowIsHeader(cmark_gfm_extensions_get_table_row_is_header(cmarkNode) != 0);
+    mufpenNode.setTableRowIsHeader(cmark_gfm_extensions_get_table_row_is_header(cmarkNode) != 0);
     break;
   default:
     break;
   }
 }
 
-void CmarkNodeAdapter::readTableMetadata(cmark_node* cmarkNode, MarkdownNode& muffinNode) {
+void CmarkNodeAdapter::readTableMetadata(cmark_node* cmarkNode, MarkdownNode& mufpenNode) {
   const auto columns = cmark_gfm_extensions_get_table_columns(cmarkNode);
   const auto* alignments = cmark_gfm_extensions_get_table_alignments(cmarkNode);
   QVector<TableAlignment> converted;
@@ -732,7 +732,7 @@ void CmarkNodeAdapter::readTableMetadata(cmark_node* cmarkNode, MarkdownNode& mu
   for (uint16_t i = 0; i < columns; ++i) {
     converted.push_back(tableAlignmentFromCmark(alignments ? alignments[i] : 0));
   }
-  muffinNode.setTableAlignments(std::move(converted));
+  mufpenNode.setTableAlignments(std::move(converted));
 }
 
 void CmarkNodeAdapter::setPerfEnabled(bool enabled) {
@@ -750,8 +750,8 @@ void CmarkNodeAdapter::resetPerfCounters() {
 }
 
 void CmarkNodeAdapter::dumpConvertBreakdown() {
-  if (qEnvironmentVariableIsSet("MUFFIN_AST_PROFILE")) {
-    static const QLoggingCategory category("muffin.adapter", QtInfoMsg);
+  if (qEnvironmentVariableIsSet("MUFPEN_AST_PROFILE")) {
+    static const QLoggingCategory category("mufpen.adapter", QtInfoMsg);
     const QJsonObject row{{"from_utf8_ms", g_fromUtf8Ns / 1e6},
                           {"annotate_ms", g_annotateNs / 1e6},
                           {"inline_children_inclusive_ms", g_inlineChildrenNs / 1e6},
@@ -780,4 +780,4 @@ void CmarkNodeAdapter::dumpConvertBreakdown() {
                                  << " ms (construct+meta+byterange)";
 }
 
-} // namespace muffin
+} // namespace mufpen

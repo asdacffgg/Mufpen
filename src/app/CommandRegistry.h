@@ -6,7 +6,7 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 
 class CommandRegistry final : public QObject {
   Q_OBJECT
@@ -31,4 +31,4 @@ private:
   QHash<QString, std::function<void()>> handlers_;
 };
 
-} // namespace muffin
+} // namespace mufpen

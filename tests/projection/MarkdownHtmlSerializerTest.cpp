@@ -15,7 +15,7 @@
 #include <cstdlib>
 
 // Verifies MarkdownHtmlSerializer (the export path's MarkdownNode->HTML serializer) against
-// cmark-gfm's HTML output element-by-element, and — the point of P0-2 — that Muffin's custom
+// cmark-gfm's HTML output element-by-element, and — the point of P0-2 — that Mufpen's custom
 // inline features (==highlight== / ~sub~ / ^sup^ / GitHub Alerts / emoji) now survive export.
 //
 // Project test convention (no QTest): require() asserts that exit on failure, plain test
@@ -34,20 +34,20 @@ void require(bool condition, const QString& message) {
 
 // Parse `md` through the editor's parser and serialize to HTML. Default options mirror the export
 // defaults (all GFM ext + alertBox on; highlight/sub/sup OFF unless callers opt in).
-QString serialize(QStringView md, muffin::ParseOptions opts = {}, muffin::MarkdownHtmlOptions hopts = {}) {
-  muffin::CmarkGfmParser parser;
-  muffin::ParseResult result = parser.parseDocument(md, opts);
+QString serialize(QStringView md, mufpen::ParseOptions opts = {}, mufpen::MarkdownHtmlOptions hopts = {}) {
+  mufpen::CmarkGfmParser parser;
+  mufpen::ParseResult result = parser.parseDocument(md, opts);
   require(result.root != nullptr, QStringLiteral("parse should produce a root for: ") + md.toString());
-  return muffin::MarkdownHtmlSerializer::serializeTree(*result.root, hopts);
+  return mufpen::MarkdownHtmlSerializer::serializeTree(*result.root, hopts);
 }
 
-muffin::ParseOptions withHighlight() {
-  muffin::ParseOptions o;
+mufpen::ParseOptions withHighlight() {
+  mufpen::ParseOptions o;
   o.enableHighlight = true;
   return o;
 }
-muffin::ParseOptions withSubSup() {
-  muffin::ParseOptions o;
+mufpen::ParseOptions withSubSup() {
+  mufpen::ParseOptions o;
   o.enableSubscript = true;
   o.enableSuperscript = true;
   return o;
@@ -106,7 +106,7 @@ void testMermaidAccessibilityMetadata() {
   require(titleFallback.contains(QStringLiteral(">Title fallback</title>")),
           QStringLiteral("visible Mermaid title must be the SVG title fallback"));
 
-  muffin::MarkdownHtmlOptions absoluteOptions;
+  mufpen::MarkdownHtmlOptions absoluteOptions;
   absoluteOptions.documentUrl = QUrl::fromLocalFile(QStringLiteral("G:/exports/report.html"));
   const QString absoluteMarkers = serialize(QStringLiteral("```mermaid\n"
                                                            "%%{init: {\"arrowMarkerAbsolute\": true}}%%\n"
@@ -250,7 +250,7 @@ void testSoftBreakHardbreak() {
           QStringLiteral("soft break as <br> when breakOnSingleNewline"));
 }
 void testSoftBreakNewline() {
-  muffin::MarkdownHtmlOptions hopts;
+  mufpen::MarkdownHtmlOptions hopts;
   hopts.breakOnSingleNewline = false;
   require(serialize(QStringLiteral("a\nb"), {}, hopts) == QStringLiteral("<p>a\nb</p>\n"),
           QStringLiteral("soft break as newline when break off"));
@@ -380,12 +380,12 @@ void testEmoji() {
   // Compare against the map's glyph (a proper QString) rather than hardcoded UTF-8 bytes: QStringLiteral
   // interprets `\xNN` byte escapes per-platform (UTF-8 on MSVC, individual chars on GCC), which made a
   // byte-literal expectation fail under Linux ASan. Both the serializer and this lookup use the same map.
-  const QString smile = muffin::emojiShortcodeMap().value(QStringLiteral("smile"));
+  const QString smile = mufpen::emojiShortcodeMap().value(QStringLiteral("smile"));
   require(!smile.isEmpty(), QStringLiteral(":smile: must be in the emoji map"));
   const QString on = serialize(QStringLiteral(":smile:"));
   require(on.contains(smile), QStringLiteral("emoji shortcode decodes when renderEmoji on"));
   require(!on.contains(QStringLiteral(":smile:")), QStringLiteral("shortcode fully decoded when renderEmoji on"));
-  muffin::MarkdownHtmlOptions hopts;
+  mufpen::MarkdownHtmlOptions hopts;
   hopts.renderEmoji = false;
   require(serialize(QStringLiteral(":smile:"), {}, hopts).contains(QStringLiteral(":smile:")),
           QStringLiteral("emoji stays literal when renderEmoji off"));
@@ -396,7 +396,7 @@ void testSerializeSourceReadsSettings() {
   QSettings s;
   s.setValue(QStringLiteral("markdown/highlight"), true);
   s.setValue(QStringLiteral("markdown/renderEmoji"), false);
-  const QString out = muffin::MarkdownHtmlSerializer::serializeSource(QStringLiteral("==x== :smile:"));
+  const QString out = mufpen::MarkdownHtmlSerializer::serializeSource(QStringLiteral("==x== :smile:"));
   require(out.contains(QStringLiteral("<mark>x</mark>")), QStringLiteral("serializeSource honors markdown/highlight"));
   require(out.contains(QStringLiteral(":smile:")), QStringLiteral("serializeSource honors markdown/renderEmoji=off"));
   s.setValue(QStringLiteral("markdown/highlight"), false);
@@ -406,8 +406,8 @@ void testSerializeSourceReadsSettings() {
 } // namespace
 
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
-  QCoreApplication::setApplicationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
+  QCoreApplication::setApplicationName(QStringLiteral("MufpenTest"));
   QGuiApplication app(argc, argv);
 
   testHeading();

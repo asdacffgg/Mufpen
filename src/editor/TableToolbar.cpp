@@ -17,7 +17,7 @@
 
 #include <functional>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 enum class IconKind {
@@ -316,12 +316,12 @@ void TableToolbar::retranslateUi() {
     button->setToolTip(label);
     button->setAccessibleName(label);
   };
-  setLabel(resizeButton_, QCoreApplication::translate("muffin::TableToolbar", "Resize Table"));
-  setLabel(alignLeftButton_, QCoreApplication::translate("muffin::TableToolbar", "Align Left"));
-  setLabel(alignCenterButton_, QCoreApplication::translate("muffin::TableToolbar", "Align Center"));
-  setLabel(alignRightButton_, QCoreApplication::translate("muffin::TableToolbar", "Align Right"));
-  setLabel(moreButton_, QCoreApplication::translate("muffin::TableToolbar", "More Actions"));
-  setLabel(deleteButton_, QCoreApplication::translate("muffin::TableToolbar", "Delete Table"));
+  setLabel(resizeButton_, QCoreApplication::translate("mufpen::TableToolbar", "Resize Table"));
+  setLabel(alignLeftButton_, QCoreApplication::translate("mufpen::TableToolbar", "Align Left"));
+  setLabel(alignCenterButton_, QCoreApplication::translate("mufpen::TableToolbar", "Align Center"));
+  setLabel(alignRightButton_, QCoreApplication::translate("mufpen::TableToolbar", "Align Right"));
+  setLabel(moreButton_, QCoreApplication::translate("mufpen::TableToolbar", "More Actions"));
+  setLabel(deleteButton_, QCoreApplication::translate("mufpen::TableToolbar", "Delete Table"));
 }
 
 void TableToolbar::show(const BlockLayout& table, qreal scrollY, const QRect& viewportRect) {
@@ -435,4 +435,4 @@ QPair<int, int> TableToolbar::activeTableSize(const BlockLayout* table) const {
   return {qMax(1, rows), columns};
 }
 
-} // namespace muffin
+} // namespace mufpen

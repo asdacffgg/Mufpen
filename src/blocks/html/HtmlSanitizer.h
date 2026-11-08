@@ -2,7 +2,7 @@
 
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 class HtmlSanitizer final {
 public:
@@ -13,4 +13,4 @@ public:
   QString sanitizedMermaidText(QString html) const;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -1,4 +1,4 @@
-// Run MuffinRealThemeRegressionTest with MUFFIN_THEME_AUDIT_DIR first. An optional
+// Run MufpenRealThemeRegressionTest with MUFPEN_THEME_AUDIT_DIR first. An optional
 // JSON array [{id,css}] supplied to the executable includes locally imported themes.
 // This script uses the exported AST HTML and original CSS/font files; no font pin.
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const directory=path.resolve(process.argv[2]||'build/theme-audit/real');
 const native=JSON.parse(fs.readFileSync(path.join(directory,'native.json'),'utf8'));
 const documentHtml=fs.readFileSync(path.join(directory,'document.html'),'utf8');
-const moduleName=process.env.MUFFIN_PLAYWRIGHT_MODULE;
+const moduleName=process.env.MUFPEN_PLAYWRIGHT_MODULE;
 const {chromium}=await import(moduleName?pathToFileURL(path.resolve(moduleName)).href:'playwright');
 const browser=await chromium.launch({headless:true,...(process.env.CHROME_EXECUTABLE?{executablePath:process.env.CHROME_EXECUTABLE}:{})});
 const rows=[];

@@ -6,7 +6,7 @@
 #include <QColor>
 #include <QFont>
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathOptions {
 public:
@@ -42,4 +42,4 @@ private:
   MathSettings settings_;
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

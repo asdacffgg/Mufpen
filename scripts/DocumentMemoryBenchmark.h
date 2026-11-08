@@ -1,7 +1,7 @@
 #pragma once
 
 // Manual, fresh-process GUI benchmark. Run --document-memory with
-// MUFFIN_BENCH_FILE and MUFFIN_MEMORY_BENCH_OUTPUT. Census runs after sampling.
+// MUFPEN_BENCH_FILE and MUFPEN_MEMORY_BENCH_OUTPUT. Census runs after sampling.
 #include "MemoryAccounting.h"
 
 #include <QCryptographicHash>
@@ -15,7 +15,7 @@
 #include <chrono>
 #include <thread>
 
-namespace muffin::diag {
+namespace mufpen::diag {
 
 template <class Fixture> void runDocumentMemoryBenchmark() {
   Fixture f;
@@ -33,7 +33,7 @@ template <class Fixture> void runDocumentMemoryBenchmark() {
   });
   QElapsedTimer timer;
   timer.start();
-  const QString path = qEnvironmentVariable("MUFFIN_BENCH_FILE");
+  const QString path = qEnvironmentVariable("MUFPEN_BENCH_FILE");
   require(f.window.openFile(path), "benchmark file opens");
   auto* tab = f.current();
   while (tab->session.isAsyncParseInProgress() && timer.elapsed() < 120000) {
@@ -92,9 +92,9 @@ template <class Fixture> void runDocumentMemoryBenchmark() {
   QCryptographicHash hash(QCryptographicHash::Sha256);
   require(hash.addData(&input), "hash fixture");
   result["sha256"] = QString::fromLatin1(hash.result().toHex());
-  QFile output(qEnvironmentVariable("MUFFIN_MEMORY_BENCH_OUTPUT"));
+  QFile output(qEnvironmentVariable("MUFPEN_MEMORY_BENCH_OUTPUT"));
   require(output.open(QIODevice::WriteOnly), "benchmark output");
   output.write(QJsonDocument(result).toJson());
 }
 
-} // namespace muffin::diag
+} // namespace mufpen::diag

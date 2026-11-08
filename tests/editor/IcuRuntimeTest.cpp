@@ -21,19 +21,19 @@ int probe() {
   std::vector<std::thread> threads;
   for (int i = 0; i < 8; ++i)
     threads.emplace_back([&] {
-      if (!muffin::initializeIcuData())
+      if (!mufpen::initializeIcuData())
         succeeded = false;
     });
   for (auto& thread : threads)
     thread.join();
   require(qgetenv("ICU_DATA") == environment, "ICU initialization must not change the process environment");
   QString error;
-  if (!muffin::initializeIcuData(&error)) {
+  if (!mufpen::initializeIcuData(&error)) {
     QTextStream(stderr) << error << Qt::endl;
     return 3;
   }
   require(succeeded && error.isEmpty(), "concurrent initialization must use the same successful data mapping");
-  const auto word = muffin::findWordSegment(QStringLiteral("你好世界"), 3);
+  const auto word = mufpen::findWordSegment(QStringLiteral("你好世界"), 3);
   require(word.isWord && word.start == 2 && word.end == 4, "external ICU data must include dictionary segmentation");
   return 0;
 }
@@ -46,12 +46,12 @@ void isolatedDataLoading() {
   const auto executable = root.filePath(QFileInfo(QCoreApplication::applicationFilePath()).fileName());
   require(QFile::copy(QCoreApplication::applicationFilePath(), executable), "copy runtime probe");
   for (const auto& name : original.entryList(
-           {QStringLiteral("*Muffin*.dll"), QStringLiteral("*Muffin*.so"), QStringLiteral("*Muffin*.dylib")},
+           {QStringLiteral("*Mufpen*.dll"), QStringLiteral("*Mufpen*.so"), QStringLiteral("*Mufpen*.dylib")},
            QDir::Files))
     require(QFile::copy(original.filePath(name), root.filePath(name)), "copy project runtime library");
   require(root.mkpath(QStringLiteral("resources/icu")), "create isolated data directory");
   const auto dataPath =
-      root.filePath(QStringLiteral("resources/icu/") + QFileInfo(muffin::icuDataFilePath()).fileName());
+      root.filePath(QStringLiteral("resources/icu/") + QFileInfo(mufpen::icuDataFilePath()).fileName());
   const auto run = [&](bool success, const QByteArray& diagnostic) {
     QProcess process;
     auto environment = QProcessEnvironment::systemEnvironment();
@@ -59,7 +59,7 @@ void isolatedDataLoading() {
     environment.remove(QStringLiteral("ICU_DATA"));
 #else
     // A valid alternate directory must not rescue missing/corrupt bundled data.
-    environment.insert(QStringLiteral("ICU_DATA"), QFileInfo(muffin::icuDataFilePath()).absolutePath());
+    environment.insert(QStringLiteral("ICU_DATA"), QFileInfo(mufpen::icuDataFilePath()).absolutePath());
 #endif
     process.setProcessEnvironment(environment);
     process.setWorkingDirectory(QDir::tempPath());
@@ -71,7 +71,7 @@ void isolatedDataLoading() {
     require(diagnostic.isEmpty() || output.contains(diagnostic), "runtime failure must explain the affected data file");
   };
   run(false, QFileInfo(dataPath).fileName().toUtf8());
-  require(QFile::copy(muffin::icuDataFilePath(), dataPath), "copy matching ICU data");
+  require(QFile::copy(mufpen::icuDataFilePath(), dataPath), "copy matching ICU data");
   run(true, {});
   {
     QFile data(dataPath);

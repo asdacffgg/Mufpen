@@ -3,7 +3,7 @@
 #include <QElapsedTimer>
 #include <QTimer>
 
-namespace muffin {
+namespace mufpen {
 
 HoverAnimator::HoverAnimator(QObject* parent) : QObject(parent) {
   clock_.start();
@@ -78,4 +78,4 @@ void HoverAnimator::onTick() {
   }
 }
 
-} // namespace muffin
+} // namespace mufpen

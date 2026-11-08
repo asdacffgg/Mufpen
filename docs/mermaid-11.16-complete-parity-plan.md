@@ -23,13 +23,13 @@ A diagram ID is native only after all of these gates pass:
    matrix and exercised through the real source-entry path;
 7. family tests plus the complete Conan Release build and CTest suite.
 
-Unsupported input remains editable source. Muffin must not invent a substitute
+Unsupported input remains editable source. Mufpen must not invent a substitute
 algorithm. An upstream-defined fallback is reproduced only when the pinned
 Mermaid runtime itself takes that path and an oracle locks the behavior.
 
 ## Registered diagram inventory
 
-Mermaid 11.16.0 registers 38 IDs. Muffin implements all 38 IDs, including
+Mermaid 11.16.0 registers 38 IDs. Mufpen implements all 38 IDs, including
 all four Railroad grammar frontends:
 
 `flowchart-v2`, `flowchart`, `sequence`, `classDiagram`, `class`,

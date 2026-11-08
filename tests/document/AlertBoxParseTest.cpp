@@ -5,7 +5,7 @@
 
 #include <QCoreApplication>
 
-using namespace muffin;
+using namespace mufpen;
 
 // GitHub-style alerts: a blockquote whose first line is `[!NOTE]`/`[!TIP]`/`[!IMPORTANT]`/
 // `[!WARNING]`/`[!CAUTION]` is tagged with an AlertKind in a post-parse pass (gated on
@@ -92,7 +92,7 @@ void testAuthoredAlertMarkersOnly() {
   }
 }
 int main(int argc, char** argv) {
-  QCoreApplication::setOrganizationName(QStringLiteral("MuffinTest"));
+  QCoreApplication::setOrganizationName(QStringLiteral("MufpenTest"));
   QCoreApplication::setApplicationName(QStringLiteral("AlertBoxParseTest"));
   QCoreApplication app(argc, argv);
 #define RUN_TEST(test) runTest(#test, test)

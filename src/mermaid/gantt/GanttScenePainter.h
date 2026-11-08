@@ -2,14 +2,14 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::gantt {
+namespace mufpen::mermaid::gantt {
 
 struct GanttScene;
 
 void paintGanttScene(const GanttScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::gantt
+} // namespace mufpen::mermaid::gantt

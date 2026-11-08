@@ -8,7 +8,7 @@
 #include <memory>
 #include <mutex>
 
-namespace muffin::quicklook {
+namespace mufpen::quicklook {
 namespace {
 
 NSString* string(const char* utf8) {
@@ -295,4 +295,4 @@ NSAttributedString* renderMarkdown(NSData* data, NSError** error) {
   return [renderer.text copy];
 }
 
-} // namespace muffin::quicklook
+} // namespace mufpen::quicklook

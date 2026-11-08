@@ -11,13 +11,13 @@ def project_symbol(symbol):
         return True
     # RTTI for project types is needed by dynamic_cast across DLL boundaries.
     if symbol.startswith("??_R"):
-        return "@muffin@@" in symbol and "?$" not in symbol
+        return "@mufpen@@" in symbol and "?$" not in symbol
     # The first @@ terminates a non-template function's qualified name, before
-    # its parameter/return types. A Qt/STL function accepting a Muffin type is
+    # its parameter/return types. A Qt/STL function accepting a Mufpen type is
     # not part of our DLL API. Header-defined template instantiations belong to
     # their consumers; explicit Q_DECL_EXPORT directives remain authoritative.
     name = symbol.split("@@", 1)[0]
-    return name.endswith("@muffin") and "?$" not in name
+    return name.endswith("@mufpen") and "?$" not in name
 
 
 def filtered_definition(text):
@@ -27,7 +27,7 @@ def filtered_definition(text):
         if tokens and project_symbol(tokens[0]):
             lines.append(line)
     if not lines:
-        raise ValueError("No Muffin symbols found in generated DLL exports")
+        raise ValueError("No Mufpen symbols found in generated DLL exports")
     return "EXPORTS\n" + "\n".join(lines) + "\n", len(lines)
 
 
@@ -51,7 +51,7 @@ def main():
     # PRE_LINK also runs during incremental builds. Preserve the definition's
     # timestamp when the API is unchanged so consumers do not relink needlessly.
     write_definition(output, definition)
-    print(f"Muffin DLL exports: {len(original.splitlines()) - 1} scanned, {count} project symbols")
+    print(f"Mufpen DLL exports: {len(original.splitlines()) - 1} scanned, {count} project symbols")
 
 
 if __name__ == "__main__":

@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include <algorithm>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

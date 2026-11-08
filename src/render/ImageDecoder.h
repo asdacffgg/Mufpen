@@ -5,7 +5,7 @@
 #include <QSize>
 #include <QString>
 
-namespace muffin::image_decoder {
+namespace mufpen::image_decoder {
 
 /// Try to decode image data that Qt couldn't handle.
 /// Detects format by magic bytes and delegates to libwebp, libavif, or QSvgRenderer.
@@ -28,4 +28,4 @@ QImage decodeDataUri(const QString& uri);
 /// Returns an invalid QSize if detection fails.
 QSize detectSize(const QString& filePath);
 
-} // namespace muffin::image_decoder
+} // namespace mufpen::image_decoder

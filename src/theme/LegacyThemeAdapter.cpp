@@ -3,7 +3,7 @@
 #include "theme/CssThemeParser.h"
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 QString number(qreal value) {
   return QString::number(value, 'g', 14);
@@ -206,4 +206,4 @@ ThemeDefinition adaptLegacyTheme(const ThemeDefinition& input) {
     result.decorations = input.decorations;
   return result;
 }
-} // namespace muffin
+} // namespace mufpen

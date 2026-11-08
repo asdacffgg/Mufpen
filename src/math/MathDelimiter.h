@@ -4,7 +4,7 @@
 #include "math/MathParseNode.h"
 #include "math/MathRenderNode.h"
 
-namespace muffin::math {
+namespace mufpen::math {
 
 class MathDelimiter {
 public:
@@ -55,4 +55,4 @@ private:
   static void centerOnAxis(MathRenderNode& node, const MathOptions& options);
 };
 
-} // namespace muffin::math
+} // namespace mufpen::math

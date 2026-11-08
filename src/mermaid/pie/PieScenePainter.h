@@ -14,14 +14,14 @@ class QPainter;
 class QString;
 class QColor;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 struct PieScene;
 
 void paintPieScene(const PieScene& scene, QPainter& painter, const MermaidPaintOptions& options);
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

@@ -17,7 +17,7 @@
 #include <functional>
 #include <limits>
 
-namespace muffin::mermaid::treemap {
+namespace mufpen::mermaid::treemap {
 namespace {
 
 struct WorkNode {
@@ -636,4 +636,4 @@ TreemapScene buildTreemapScene(const TreemapData& data, TreemapConfig config, Tr
   return scene;
 }
 
-} // namespace muffin::mermaid::treemap
+} // namespace mufpen::mermaid::treemap

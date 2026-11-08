@@ -92,7 +92,7 @@ bool paintDeterministicCoverage(QPainter& target, const QPainterPath& logicalPat
 
 } // namespace
 
-namespace muffin::mermaid::math {
+namespace mufpen::mermaid::math {
 
 bool MathGlyphRasterizer::paintPath(QPainter& painter, const QPainterPath& path, QRectF clip, const QColor& color) {
   if (path.isEmpty() || clip.isEmpty())
@@ -109,7 +109,7 @@ bool MathGlyphRasterizer::paintStrikeGlyphFitBlock(QPainter& painter, quint32 gl
   const qreal deviceScale = std::hypot(toDevice.m11(), toDevice.m12());
   if (deviceScale <= 0.0)
     return false;
-  const QRawFont strikeFont = muffin::math::OpenTypeMathFont::instance().rasterFont(fontScale * deviceScale);
+  const QRawFont strikeFont = mufpen::math::OpenTypeMathFont::instance().rasterFont(fontScale * deviceScale);
   if (!strikeFont.isValid())
     return false;
   const QImage alpha = strikeFont.alphaMapForGlyph(glyphIndex, QRawFont::PixelAntialiasing);
@@ -149,7 +149,7 @@ bool MathGlyphRasterizer::paintOutlineRun(QPainter& painter, const QVector<quint
                                           QRectF clip, const QColor& color, bool deterministicCoverage) {
   if (glyphIndexes.isEmpty() || glyphIndexes.size() != positions.size() || clip.isEmpty() || fontScale <= 0.0)
     return false;
-  const muffin::math::OpenTypeMathFont& font = muffin::math::OpenTypeMathFont::instance();
+  const mufpen::math::OpenTypeMathFont& font = mufpen::math::OpenTypeMathFont::instance();
   QPainterPath path;
   for (qsizetype index = 0; index < glyphIndexes.size(); ++index) {
     const quint32 glyphIndex = glyphIndexes.at(index);
@@ -189,7 +189,7 @@ bool MathGlyphRasterizer::paintStrikeRun(QPainter& painter, const QVector<quint3
   const qreal deviceScale = std::hypot(toDevice.m11(), toDevice.m12());
   if (deviceScale <= 0.0)
     return false;
-  const muffin::math::OpenTypeMathFont& mathFont = muffin::math::OpenTypeMathFont::instance();
+  const mufpen::math::OpenTypeMathFont& mathFont = mufpen::math::OpenTypeMathFont::instance();
   const QRawFont strikeFont = mathFont.rasterFont(fontScale * deviceScale);
   if (!strikeFont.isValid())
     return false;
@@ -217,4 +217,4 @@ bool MathGlyphRasterizer::paintStrikeRun(QPainter& painter, const QVector<quint3
   return true;
 }
 
-} // namespace muffin::mermaid::math
+} // namespace mufpen::mermaid::math

@@ -3,5 +3,5 @@
 #import <AppKit/AppKit.h>
 #import <QuickLookUI/QuickLookUI.h>
 
-@interface MuffinPreviewController : NSViewController <QLPreviewingController>
+@interface MufpenPreviewController : NSViewController <QLPreviewingController>
 @end

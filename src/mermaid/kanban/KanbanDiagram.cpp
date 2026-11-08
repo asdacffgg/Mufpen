@@ -18,7 +18,7 @@
 #include <string>
 #include <utility>
 
-namespace muffin::mermaid::kanban {
+namespace mufpen::mermaid::kanban {
 
 KanbanParseError::KanbanParseError(const QString& message, int line, int column, KanbanErrorKind kind, QString token)
     : std::runtime_error(message.toUtf8().constData()), line(line), column(column), kind(kind),
@@ -632,4 +632,4 @@ KanbanData KanbanDiagram::parse(const QString& source, const KanbanParseConfig& 
   return Parser(source, config).parse();
 }
 
-} // namespace muffin::mermaid::kanban
+} // namespace mufpen::mermaid::kanban

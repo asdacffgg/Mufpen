@@ -10,7 +10,7 @@
 
 #include "RenderTestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 

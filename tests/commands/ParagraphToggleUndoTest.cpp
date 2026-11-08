@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-using namespace muffin;
+using namespace mufpen;
 
 void testToggleCodeBlockUndo() {
   DocumentSession session;

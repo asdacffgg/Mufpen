@@ -12,7 +12,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-using namespace muffin::mermaid::state;
+using namespace mufpen::mermaid::state;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {

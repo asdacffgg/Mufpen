@@ -9,7 +9,7 @@
 #include <new>
 #include <utility>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 constexpr size_t pageBytes = 256 * 1024;
 constexpr std::array<size_t, 23> sizes{16,  32,  48,  64,  80,  96,  112,  128,  160,  176,  192, 224,
@@ -212,4 +212,4 @@ void CmarkParseAllocator::trim() noexcept {
       releasePage(page);
 }
 
-} // namespace muffin
+} // namespace mufpen

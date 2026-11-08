@@ -9,12 +9,12 @@
 // on stale binaries.
 //
 // The target→source/lib mapping comes from the CONFIGURE-TIME manifest
-// (cmake/MuffinTestFunctions.cmake + MuffinTests.cmake append every
+// (cmake/MufpenTestFunctions.cmake + MufpenTests.cmake append every
 // registered test, both first-party libraries, and the app). The earlier
-// name-derivation ("MuffinX" → tests/mermaid/X.cpp) silently missed tests
+// name-derivation ("MufpenX" → tests/mermaid/X.cpp) silently missed tests
 // whose name deliberately differs from their source file
-// (MuffinMermaidC4EdgeParityTest compiles MermaidC4GeometryOracleTest.cpp)
-// and never covered the src/theme (and other) trees MuffinCore compiles.
+// (MufpenMermaidC4EdgeParityTest compiles MermaidC4GeometryOracleTest.cpp)
+// and never covered the src/theme (and other) trees MufpenCore compiles.
 //
 // Invariants (per dependency domain, so normal incremental builds pass):
 //   1. Each first-party .lib is newer than every listed source it compiles
@@ -84,10 +84,10 @@ qint64 sourceBarrierMs(const QStringList& sources, const QString& sourceRoot, QS
 
 int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
-  const QString sourceRoot = QStringLiteral(MUFFIN_SOURCE_ROOT);
+  const QString sourceRoot = QStringLiteral(MUFPEN_SOURCE_ROOT);
   const QDir exeDir(QCoreApplication::applicationDirPath());
 
-  QFile manifest(QStringLiteral(MUFFIN_BUILD_MANIFEST));
+  QFile manifest(QStringLiteral(MUFPEN_BUILD_MANIFEST));
   if (!manifest.open(QIODevice::ReadOnly | QIODevice::Text))
     return fail(QStringLiteral("build-freshness manifest missing: %1").arg(manifest.fileName()));
 
@@ -161,7 +161,7 @@ int main(int argc, char** argv) {
     qint64 barrierMs = sourceBarrierMs(entry.sources, sourceRoot, nullptr);
     QString barrierName = QStringLiteral("own sources");
     const QStringList linked =
-        isApp ? QStringList{QStringLiteral("MuffinCore"), QStringLiteral("MuffinUi")} : entry.links;
+        isApp ? QStringList{QStringLiteral("MufpenCore"), QStringLiteral("MufpenUi")} : entry.links;
     for (const QString& link : linked) {
       const auto lib = libs.constFind(link);
       if (lib == libs.constEnd())
@@ -188,6 +188,6 @@ int main(int argc, char** argv) {
   std::printf("MermaidBuildFreshnessTest: %d binaries fresh against %d libs "
               "(manifest %s)\n",
               checked, int(libs.size()),
-              qPrintable(formatTime(libs.value(QStringLiteral("MuffinCore")).artifact.lastModified())));
+              qPrintable(formatTime(libs.value(QStringLiteral("MufpenCore")).artifact.lastModified())));
   return 0;
 }

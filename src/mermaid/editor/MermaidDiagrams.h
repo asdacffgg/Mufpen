@@ -4,7 +4,7 @@
 
 #include <QString>
 
-namespace muffin::mermaid::editor {
+namespace mufpen::mermaid::editor {
 
 // Each family's render adapter lives in its own TU (<Family>DiagramAdapter.cpp)
 // and is exposed as a lazy singleton. findMermaidDiagram() is the single TU that
@@ -56,4 +56,4 @@ const Diagram& dashDiagramAdapter();
 // it instead of an if/else chain.
 const Diagram* findMermaidDiagram(const QString& type);
 
-} // namespace muffin::mermaid::editor
+} // namespace mufpen::mermaid::editor

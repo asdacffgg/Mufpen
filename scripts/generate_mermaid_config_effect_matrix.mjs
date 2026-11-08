@@ -409,7 +409,7 @@ const familyPolicies = {
     // Empty-entity width floor (mermaid clamps only the attribute-less path).
     minEntityWidth: parity(...layout),
     minEntityHeight: inert(
-      "Present in ErDiagramConfig but unused by mermaid erBox and Muffin.",
+      "Present in ErDiagramConfig but unused by mermaid erBox and Mufpen.",
     ),
     entityPadding: parity(...layout),
     nodeSpacing: parity(...interactiveLayout),
@@ -966,7 +966,7 @@ const shared = [
     path: "maxEdges",
     families: ["flowchart"],
     ...parity("parsed"),
-    note: "Mermaid's secure source config strips this key, so documents cannot lower or raise the default 500-edge boundary; Muffin retains the same source behavior.",
+    note: "Mermaid's secure source config strips this key, so documents cannot lower or raise the default 500-edge boundary; Mufpen retains the same source behavior.",
   },
   {
     path: "maxTextSize",

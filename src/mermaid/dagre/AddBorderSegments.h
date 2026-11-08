@@ -9,8 +9,8 @@
 
 #include "mermaid/dagre/DagreLabels.h"
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 void addBorderSegments(DagreGraph& g);
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

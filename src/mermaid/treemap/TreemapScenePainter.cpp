@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace muffin::mermaid::treemap {
+namespace mufpen::mermaid::treemap {
 namespace {
 
 QColor paintColor(const QString& value, const QColor& fallback) {
@@ -133,4 +133,4 @@ void paintTreemapScene(const TreemapScene& scene, QPainter& painter, const Merma
   }
 }
 
-} // namespace muffin::mermaid::treemap
+} // namespace mufpen::mermaid::treemap

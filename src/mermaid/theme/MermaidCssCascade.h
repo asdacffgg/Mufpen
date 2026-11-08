@@ -8,7 +8,7 @@
 #include <QStringList>
 #include <QVector>
 
-namespace muffin::mermaid::csscascade {
+namespace mufpen::mermaid::csscascade {
 
 struct ElementStyle {
   QString fill;
@@ -89,4 +89,4 @@ FlowchartProjection resolveFlowchart(const flowchart::FlowchartData& data, const
                                      const QString& themeCss, bool swimlane = false,
                                      const QString& look = QStringLiteral("classic"), bool htmlLabels = true);
 
-} // namespace muffin::mermaid::csscascade
+} // namespace mufpen::mermaid::csscascade

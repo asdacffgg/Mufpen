@@ -7,7 +7,7 @@
 #include <QRectF>
 #include <QSizeF>
 
-namespace muffin::mermaid::sequence {
+namespace mufpen::mermaid::sequence {
 
 struct SequenceLayoutMeasurements {
   QMap<QString, QSizeF> participants;
@@ -239,4 +239,4 @@ SequenceLayoutInput buildSequenceLayoutInput(const SequenceData& data,
 SequenceLayoutResult layoutSequence(const SequenceData& data, const SequenceLayoutMeasurements& measurements,
                                     SequenceLayoutOptions options = {});
 
-} // namespace muffin::mermaid::sequence
+} // namespace mufpen::mermaid::sequence

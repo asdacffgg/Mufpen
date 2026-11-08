@@ -4,7 +4,7 @@
 #include <QList>
 #include <QSet>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -65,4 +65,4 @@ void undoAcyclic(DagreGraph& g) {
   }
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

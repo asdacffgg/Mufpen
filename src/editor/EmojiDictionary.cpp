@@ -3,7 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 
-namespace muffin {
+namespace mufpen {
 
 const QHash<QString, QString>& emojiShortcodeMap() {
   static const QHash<QString, QString> map = [] {
@@ -58,4 +58,4 @@ qsizetype emojiShortcodeLengthAt(QStringView source, qsizetype i) {
   return emojiShortcodeMap().contains(name.toString()) ? total : 0;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -22,7 +22,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::flowscene {
+namespace mufpen::mermaid::flowscene {
 namespace {
 
 QColor qcolor(const QString& s) {
@@ -619,4 +619,4 @@ void FlowScene::paint(QPainter& painter, const MermaidPaintOptions& options) con
   paintFlowScene(*this, painter, MermaidFontRegistry::primaryFamily(), PaintMode::Color, options);
 }
 
-} // namespace muffin::mermaid::flowscene
+} // namespace mufpen::mermaid::flowscene

@@ -26,14 +26,14 @@
 #include <functional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 quint64 nextCssElementIdentity() {
   static std::atomic<quint64> next{1};
   return next.fetch_add(1, std::memory_order_relaxed);
 }
 namespace {
 
-Q_LOGGING_CATEGORY(cssDetailPerf, "muffin.perf.css", QtWarningMsg)
+Q_LOGGING_CATEGORY(cssDetailPerf, "mufpen.perf.css", QtWarningMsg)
 
 // SimpleSelector / SelectorPart / ParsedSelector now live in the header — the
 // engine caches a vector<ParsedSelector> built once in its constructor.
@@ -448,7 +448,7 @@ ParsedSelector parseSelector(const QString& selector) {
     parsed.parts.push_back(part);
   }
   // Mirror the flat mapper: a rule whose rightmost compound carries a Typora editor-only
-  // class (md-meta-block, ty-*, …) is editor chrome Muffin never renders — drop it at match
+  // class (md-meta-block, ty-*, …) is editor chrome Mufpen never renders — drop it at match
   // time so its hacks (e.g. pixyll's 2000px padding) never leak into computed styles.
   parsed.editorOnly = !parsed.parts.isEmpty() && parsed.parts.last().simple.editorOnly;
   parsed.valid = true;
@@ -2496,4 +2496,4 @@ CssComputedStyle CssComputedStyleEngine::styleFor(const CssElement& element, con
   }
   return style;
 }
-} // namespace muffin
+} // namespace mufpen

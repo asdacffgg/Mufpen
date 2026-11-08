@@ -6,7 +6,7 @@
 #include <limits>
 #include <stdexcept>
 
-namespace muffin::mermaid::railroad {
+namespace mufpen::mermaid::railroad {
 
 enum class RailroadDialect { Direct, Ebnf, Abnf, Peg };
 enum class RailroadErrorKind { Lexer, Parser, Runtime };
@@ -55,4 +55,4 @@ public:
   static RailroadData parse(const QString& source, RailroadDialect dialect);
 };
 
-} // namespace muffin::mermaid::railroad
+} // namespace mufpen::mermaid::railroad

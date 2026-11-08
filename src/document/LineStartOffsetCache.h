@@ -3,7 +3,7 @@
 #include <QStringView>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 class PieceTable; // applyEdit indexes the post-edit text via the piece-table (Phase 2)
 
@@ -51,4 +51,4 @@ private:
   qsizetype textSize_ = 0;
 };
 
-} // namespace muffin
+} // namespace mufpen

@@ -7,11 +7,11 @@
 
 class QPainter;
 
-namespace muffin::mermaid {
+namespace mufpen::mermaid {
 struct MermaidPaintOptions;
 }
 
-namespace muffin::mermaid::error {
+namespace mufpen::mermaid::error {
 
 struct ErrorScene;
 
@@ -24,4 +24,4 @@ void paintErrorScene(const ErrorScene& scene, QPainter& painter);
 // capture.
 void paintErrorIcon(const ErrorScene& scene, QPainter& painter, int index);
 
-} // namespace muffin::mermaid::error
+} // namespace mufpen::mermaid::error

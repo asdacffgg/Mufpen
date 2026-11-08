@@ -1,12 +1,12 @@
 using WixToolset.Mba.Core;
 
-namespace Muffin.Setup
+namespace Mufpen.Setup
 {
-    public class MuffinBaFactory : BaseBootstrapperApplicationFactory
+    public class MufpenBaFactory : BaseBootstrapperApplicationFactory
     {
         protected override IBootstrapperApplication Create(IEngine engine, IBootstrapperCommand command)
         {
-            return new MuffinBa(engine, command);
+            return new MufpenBa(engine, command);
         }
     }
 }

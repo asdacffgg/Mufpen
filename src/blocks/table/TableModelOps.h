@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -37,4 +37,4 @@ private:
   static std::unique_ptr<MarkdownNode> makeCell();
 };
 
-} // namespace muffin
+} // namespace mufpen

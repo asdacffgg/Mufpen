@@ -92,9 +92,9 @@ WebP images (require Qt WebP plugin):
 
 Embedded base64 image (data URI, RFC 2397) — fully self-contained, needs no network or local file:
 
-![Muffin icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADp0lEQVRYheVXPUhrSRT+ziSEkB9Zkijsvi3WImm0MHb2QRu1cbVIJ4JtUDapNJVWIqRKISkNyv68bQTtBDGwbGWRJikUBd0iEXY3uSHey52zxTND4s29Sdz3qvfBhfk538w3Z87MPQN87aB+jcxMAL4F4LHj6bruk1JGmDnCzGEhRJiZI1LKCBFFAIQBhJnZR0SPUsqDQCDwKxGxrRpmFsyckVL+w58ZUko2DOMjMwu7yckwjN8/98R9kO67BY1GY9Xv9/9MRDBNE5qmKSOPxwOv12vruX5ot9vQdV3V/X4/XC4XmPlfIvrGshWapv3ZkVipVDgajapvYWGBdV0feokvLy88Pz/fM0alUuk2+a4zr9oPZv5gt5rb21sUCoWhV18oFHB3d+dkooJbCSCiVre7EokE4vG4YuTzeTw8PAyc/P7+Hvl8XtXj8TgSiQT8fr8zUdO0P966slQq9bhxY2ODpZS2rpdS8vr6eg+nVCr1M/3B4gEAz4NWd3V1hYuLC9v+8/NzXF9fDxqmB90xUB+GsLe3h2azaWlvNBrY398fafIeAUKIoQTUajXkcjlLey6XQ61We78AInIUQEQYHx8HABwfH6NcLqu+crmMYrEIAJiYmABR3xveWYCU0jEGhBDIZDIdW2SzWZimCdM0kc1mIaUEAGQyGQjR/7btgs8igIgGBuHy8rI6muVyGaenpzg5OVHemJ2dxdLS0qBh0G63I52yu0vAwBggIuzu7mJlZQXMjMPDQ0vfMO5nZiVg5CCcnp7G6uoqAKDZbKoTsba2hqmpqWGGABGFLQI8Hk+rv7kV29vbCAaDqj42Noatra1h6WBmqwAA9onCG4RCIaRSKVVPpVIIhUJDCwBg3YJRkUwmEY1GEY1GkUwmR+J2x4DbydAJbrcbOzs7ICK4XK5R6f9fAADMzc29l6pioK+AWq2Go6MjPD09qTbTNNVdn06n4fH05qu6ruPg4EDZdlAsFnF5eYnNzU11k3afAnVoX3+RdwBQrVaxuLhoK//m5gY+n6+nrdVqYWZmxpZzdnaGWCwGANA07TEQCHwP9Aah3o/4JUBEj6rcKfCnt8DfAMba7bZjShWLxSyBZ5omqtWqLWdychJerxfMDE3T1oLB4C8WI2bODJ15vhOGYfz2ulgrmFkYhvHRKe16L14fO2l+8zCxKGFmajabPwohfmLmD0KIFjM/41PKVn/9adWJ6JmZn4mo7vV66wCcrnIdwF+Oz7KvFv8BqMB7r1rLBZEAAAAASUVORK5CYII=)
+![Mufpen icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADp0lEQVRYheVXPUhrSRT+ziSEkB9Zkijsvi3WImm0MHb2QRu1cbVIJ4JtUDapNJVWIqRKISkNyv68bQTtBDGwbGWRJikUBd0iEXY3uSHey52zxTND4s29Sdz3qvfBhfk538w3Z87MPQN87aB+jcxMAL4F4LHj6bruk1JGmDnCzGEhRJiZI1LKCBFFAIQBhJnZR0SPUsqDQCDwKxGxrRpmFsyckVL+w58ZUko2DOMjMwu7yckwjN8/98R9kO67BY1GY9Xv9/9MRDBNE5qmKSOPxwOv12vruX5ot9vQdV3V/X4/XC4XmPlfIvrGshWapv3ZkVipVDgajapvYWGBdV0feokvLy88Pz/fM0alUuk2+a4zr9oPZv5gt5rb21sUCoWhV18oFHB3d+dkooJbCSCiVre7EokE4vG4YuTzeTw8PAyc/P7+Hvl8XtXj8TgSiQT8fr8zUdO0P966slQq9bhxY2ODpZS2rpdS8vr6eg+nVCr1M/3B4gEAz4NWd3V1hYuLC9v+8/NzXF9fDxqmB90xUB+GsLe3h2azaWlvNBrY398fafIeAUKIoQTUajXkcjlLey6XQ61We78AInIUQEQYHx8HABwfH6NcLqu+crmMYrEIAJiYmABR3xveWYCU0jEGhBDIZDIdW2SzWZimCdM0kc1mIaUEAGQyGQjR/7btgs8igIgGBuHy8rI6muVyGaenpzg5OVHemJ2dxdLS0qBh0G63I52yu0vAwBggIuzu7mJlZQXMjMPDQ0vfMO5nZiVg5CCcnp7G6uoqAKDZbKoTsba2hqmpqWGGABGFLQI8Hk+rv7kV29vbCAaDqj42Noatra1h6WBmqwAA9onCG4RCIaRSKVVPpVIIhUJDCwBg3YJRkUwmEY1GEY1GkUwmR+J2x4DbydAJbrcbOzs7ICK4XK5R6f9fAADMzc29l6pioK+AWq2Go6MjPD09qTbTNNVdn06n4fH05qu6ruPg4EDZdlAsFnF5eYnNzU11k3afAnVoX3+RdwBQrVaxuLhoK//m5gY+n6+nrdVqYWZmxpZzdnaGWCwGANA07TEQCHwP9Aah3o/4JUBEj6rcKfCnt8DfAMba7bZjShWLxSyBZ5omqtWqLWdychJerxfMDE3T1oLB4C8WI2bODJ15vhOGYfz2ulgrmFkYhvHRKe16L14fO2l+8zCxKGFmajabPwohfmLmD0KIFjM/41PKVn/9adWJ6JmZn4mo7vV66wCcrnIdwF+Oz7KvFv8BqMB7r1rLBZEAAAAASUVORK5CYII=)
 
-A base64 image composes inline like any other image: the ![Muffin](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADp0lEQVRYheVXPUhrSRT+ziSEkB9Zkijsvi3WImm0MHb2QRu1cbVIJ4JtUDapNJVWIqRKISkNyv68bQTtBDGwbGWRJikUBd0iEXY3uSHey52zxTND4s29Sdz3qvfBhfk538w3Z87MPQN87aB+jcxMAL4F4LHj6bruk1JGmDnCzGEhRJiZI1LKCBFFAIQBhJnZR0SPUsqDQCDwKxGxrRpmFsyckVL+w58ZUko2DOMjMwu7yckwjN8/98R9kO67BY1GY9Xv9/9MRDBNE5qmKSOPxwOv12vruX5ot9vQdV3V/X4/XC4XmPlfIvrGshWapv3ZkVipVDgajapvYWGBdV0feokvLy88Pz/fM0alUuk2+a4zr9oPZv5gt5rb21sUCoWhV18oFHB3d+dkooJbCSCiVre7EokE4vG4YuTzeTw8PAyc/P7+Hvl8XtXj8TgSiQT8fr8zUdO0P966slQq9bhxY2ODpZS2rpdS8vr6eg+nVCr1M/3B4gEAz4NWd3V1hYuLC9v+8/NzXF9fDxqmB90xUB+GsLe3h2azaWlvNBrY398fafIeAUKIoQTUajXkcjlLey6XQ61We78AInIUQEQYHx8HABwfH6NcLqu+crmMYrEIAJiYmABR3xveWYCU0jEGhBDIZDIdW2SzWZimCdM0kc1mIaUEAGQyGQjR/7btgs8igIgGBuHy8rI6muVyGaenpzg5OVHemJ2dxdLS0qBh0G63I52yu0vAwBggIuzu7mJlZQXMjMPDQ0vfMO5nZiVg5CCcnp7G6uoqAKDZbKoTsba2hqmpqWGGABGFLQI8Hk+rv7kV29vbCAaDqj42Noatra1h6WBmqwAA9onCG4RCIaRSKVVPpVIIhUJDCwBg3YJRkUwmEY1GEY1GkUwmR+J2x4DbydAJbrcbOzs7ICK4XK5R6f9fAADMzc29l6pioK+AWq2Go6MjPD09qTbTNNVdn06n4fH05qu6ruPg4EDZdlAsFnF5eYnNzU11k3afAnVoX3+RdwBQrVaxuLhoK//m5gY+n6+nrdVqYWZmxpZzdnaGWCwGANA07TEQCHwP9Aah3o/4JUBEj6rcKfCnt8DfAMba7bZjShWLxSyBZ5omqtWqLWdychJerxfMDE3T1oLB4C8WI2bODJ15vhOGYfz2ulgrmFkYhvHRKe16L14fO2l+8zCxKGFmajabPwohfmLmD0KIFjM/41PKVn/9adWJ6JmZn4mo7vV66wCcrnIdwF+Oz7KvFv8BqMB7r1rLBZEAAAAASUVORK5CYII=) icon renders embedded in this sentence.
+A base64 image composes inline like any other image: the ![Mufpen](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADp0lEQVRYheVXPUhrSRT+ziSEkB9Zkijsvi3WImm0MHb2QRu1cbVIJ4JtUDapNJVWIqRKISkNyv68bQTtBDGwbGWRJikUBd0iEXY3uSHey52zxTND4s29Sdz3qvfBhfk538w3Z87MPQN87aB+jcxMAL4F4LHj6bruk1JGmDnCzGEhRJiZI1LKCBFFAIQBhJnZR0SPUsqDQCDwKxGxrRpmFsyckVL+w58ZUko2DOMjMwu7yckwjN8/98R9kO67BY1GY9Xv9/9MRDBNE5qmKSOPxwOv12vruX5ot9vQdV3V/X4/XC4XmPlfIvrGshWapv3ZkVipVDgajapvYWGBdV0feokvLy88Pz/fM0alUuk2+a4zr9oPZv5gt5rb21sUCoWhV18oFHB3d+dkooJbCSCiVre7EokE4vG4YuTzeTw8PAyc/P7+Hvl8XtXj8TgSiQT8fr8zUdO0P966slQq9bhxY2ODpZS2rpdS8vr6eg+nVCr1M/3B4gEAz4NWd3V1hYuLC9v+8/NzXF9fDxqmB90xUB+GsLe3h2azaWlvNBrY398fafIeAUKIoQTUajXkcjlLey6XQ61We78AInIUQEQYHx8HABwfH6NcLqu+crmMYrEIAJiYmABR3xveWYCU0jEGhBDIZDIdW2SzWZimCdM0kc1mIaUEAGQyGQjR/7btgs8igIgGBuHy8rI6muVyGaenpzg5OVHemJ2dxdLS0qBh0G63I52yu0vAwBggIuzu7mJlZQXMjMPDQ0vfMO5nZiVg5CCcnp7G6uoqAKDZbKoTsba2hqmpqWGGABGFLQI8Hk+rv7kV29vbCAaDqj42Noatra1h6WBmqwAA9onCG4RCIaRSKVVPpVIIhUJDCwBg3YJRkUwmEY1GEY1GkUwmR+J2x4DbydAJbrcbOzs7ICK4XK5R6f9fAADMzc29l6pioK+AWq2Go6MjPD09qTbTNNVdn06n4fH05qu6ruPg4EDZdlAsFnF5eYnNzU11k3afAnVoX3+RdwBQrVaxuLhoK//m5gY+n6+nrdVqYWZmxpZzdnaGWCwGANA07TEQCHwP9Aah3o/4JUBEj6rcKfCnt8DfAMba7bZjShWLxSyBZ5omqtWqLWdychJerxfMDE3T1oLB4C8WI2bODJ15vhOGYfz2ulgrmFkYhvHRKe16L14fO2l+8zCxKGFmajabPwohfmLmD0KIFjM/41PKVn/9adWJ6JmZn4mo7vV66wCcrnIdwF+Oz7KvFv8BqMB7r1rLBZEAAAAASUVORK5CYII=) icon renders embedded in this sentence.
 
 Image in a paragraph with surrounding text. The image ![icon](https://github.githubassets.com/favicons/favicon.png) appears inline.
 
@@ -124,7 +124,7 @@ int main(int argc, char** argv) {
 
 ```powershell
 cmake --build --preset conan-release --target dist
-.\build\dist\Muffin.exe example.md
+.\build\dist\Mufpen.exe example.md
 ```
 
 ## Table
@@ -174,7 +174,7 @@ $$
 <details>
 <summary>HTML block sample</summary>
 
-Muffin preserves raw HTML as Markdown source and routes preview-oriented behavior through an HTML sanitizer.
+Mufpen preserves raw HTML as Markdown source and routes preview-oriented behavior through an HTML sanitizer.
 
 </details>
 
@@ -364,7 +364,7 @@ First line.<br>Second line after a forced break.<br>Third line.
 
 ## HTML Sanitizer Fixture
 
-The raw HTML below is intentionally unsafe. Muffin should preserve it as source text, but a sanitized preview must remove scripts, event handlers, and `javascript:` URLs.
+The raw HTML below is intentionally unsafe. Mufpen should preserve it as source text, but a sanitized preview must remove scripts, event handlers, and `javascript:` URLs.
 
 <div onclick="alert('unsafe')">
   <a href="javascript:alert('xss')">unsafe link</a>
@@ -373,7 +373,7 @@ The raw HTML below is intentionally unsafe. Muffin should preserve it as source 
 
 ## Mermaid
 
-Muffin renders flowchart, sequence, class, and state diagrams through its native C++/Qt Mermaid pipeline. Unsupported Mermaid families remain editable source fences.
+Mufpen renders flowchart, sequence, class, and state diagrams through its native C++/Qt Mermaid pipeline. Unsupported Mermaid families remain editable source fences.
 
 ### Flowchart
 
@@ -417,7 +417,7 @@ This sequence diagram combines participants, an always-visible link menu, automa
 sequenceDiagram
     autonumber
     actor User
-    participant UI as Muffin Editor
+    participant UI as Mufpen Editor
     participant Cache as Mermaid Cache
     participant Painter as Qt Painter
     links UI: {"Qt":"https://www.qt.io","Mermaid":"https://mermaid.js.org"}

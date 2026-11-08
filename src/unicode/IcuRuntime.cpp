@@ -22,16 +22,16 @@ RuntimeData& runtimeData() {
 }
 } // namespace
 
-QString muffin::icuDataFilePath() {
+QString mufpen::icuDataFilePath() {
   const QDir executable(QCoreApplication::applicationDirPath());
 #ifdef Q_OS_MACOS
   if (executable.dirName() == QStringLiteral("MacOS"))
-    return executable.filePath(QStringLiteral("../Resources/icu/") + QStringLiteral(MUFFIN_ICU_DATA_FILE));
+    return executable.filePath(QStringLiteral("../Resources/icu/") + QStringLiteral(MUFPEN_ICU_DATA_FILE));
 #endif
-  return executable.filePath(QStringLiteral("resources/icu/") + QStringLiteral(MUFFIN_ICU_DATA_FILE));
+  return executable.filePath(QStringLiteral("resources/icu/") + QStringLiteral(MUFPEN_ICU_DATA_FILE));
 }
 
-bool muffin::initializeIcuData(QString* error) {
+bool mufpen::initializeIcuData(QString* error) {
   auto& data = runtimeData();
   std::call_once(data.once, [&data] {
     data.file.setFileName(icuDataFilePath());
@@ -39,7 +39,7 @@ bool muffin::initializeIcuData(QString* error) {
       data.error = data.file.fileName() + QStringLiteral(": ") + data.file.errorString();
       return;
     }
-    if (data.file.size() != MUFFIN_ICU_DATA_BYTES) {
+    if (data.file.size() != MUFPEN_ICU_DATA_BYTES) {
       data.error = data.file.fileName() + QStringLiteral(": unexpected ICU data size");
       return;
     }
@@ -49,7 +49,7 @@ bool muffin::initializeIcuData(QString* error) {
       return;
     }
     const auto bytes = QByteArrayView(reinterpret_cast<const char*>(mapping), data.file.size());
-    if (QCryptographicHash::hash(bytes, QCryptographicHash::Sha256).toHex() != MUFFIN_ICU_DATA_SHA256) {
+    if (QCryptographicHash::hash(bytes, QCryptographicHash::Sha256).toHex() != MUFPEN_ICU_DATA_SHA256) {
       data.error = data.file.fileName() + QStringLiteral(": ICU data checksum mismatch");
       data.file.unmap(mapping);
       return;

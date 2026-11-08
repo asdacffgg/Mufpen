@@ -12,7 +12,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace muffin {
+namespace mufpen {
 namespace {
 
 enum class SanitizationTarget { Preview, Clipboard, Mermaid };
@@ -95,7 +95,7 @@ const QSet<QString>& urlAttributes() {
   return attrs;
 }
 
-// URL scheme safety lives in HtmlUrlSafety.h (muffin::isSafeUrl), shared with the HTML export
+// URL scheme safety lives in HtmlUrlSafety.h (mufpen::isSafeUrl), shared with the HTML export
 // path so the on-screen preview and the exported file can't drift — one blocked a vector the
 // other let through (data:image/svg XSS, control-char scheme hiding, etc.).
 
@@ -257,4 +257,4 @@ QString HtmlSanitizer::sanitizedMermaidText(QString html) const {
   return sanitizeHtml(std::move(html), SanitizationTarget::Mermaid);
 }
 
-} // namespace muffin
+} // namespace mufpen

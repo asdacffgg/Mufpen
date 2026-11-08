@@ -51,7 +51,7 @@
 #include <algorithm>
 
 namespace {
-Q_LOGGING_CATEGORY(fileOpsPerf, "muffin.perf.detail", QtWarningMsg)
+Q_LOGGING_CATEGORY(fileOpsPerf, "mufpen.perf.detail", QtWarningMsg)
 
 QString elidedPath(const QString& path) {
   const QString nativePath = QDir::toNativeSeparators(path);
@@ -64,7 +64,7 @@ QString elidedPath(const QString& path) {
 
 } // namespace
 
-void muffin::MainWindow::rebuildRecentFilesMenu() {
+void mufpen::MainWindow::rebuildRecentFilesMenu() {
   if (!recentFilesMenu_) {
     return;
   }
@@ -124,7 +124,7 @@ void muffin::MainWindow::rebuildRecentFilesMenu() {
   }
 }
 
-void muffin::MainWindow::rebuildThemesMenu() {
+void mufpen::MainWindow::rebuildThemesMenu() {
   if (!themesMenu_) {
     return;
   }
@@ -148,7 +148,7 @@ void muffin::MainWindow::rebuildThemesMenu() {
   connect(folderAction, &QAction::triggered, this, [this] { openThemesFolder(); });
 }
 
-void muffin::MainWindow::updateThemeChecks() {
+void mufpen::MainWindow::updateThemeChecks() {
   if (!themesMenu_) {
     return;
   }
@@ -163,14 +163,14 @@ void muffin::MainWindow::updateThemeChecks() {
   }
 }
 
-void muffin::MainWindow::setThemeByName(const QString& name) {
+void mufpen::MainWindow::setThemeByName(const QString& name) {
   if (themeManager_.setTheme(name)) {
     saveAppearanceTheme(themeManager_.currentThemeName());
     rebuildThemesMenu(); // refresh the radio-style checks
   }
 }
 
-void muffin::MainWindow::importTheme() {
+void mufpen::MainWindow::importTheme() {
   const QString src =
       QFileDialog::getOpenFileName(this, tr("Import Theme"), QString(), tr("Theme Files (*.css *.json)"));
   if (src.isEmpty()) {
@@ -186,7 +186,7 @@ void muffin::MainWindow::importTheme() {
   }
   // Validate before copying so a malformed file never lands in the themes dir.
   // CSS themes go through the community-CSS interpreter; JSON themes use the
-  // native Muffin schema.
+  // native Mufpen schema.
   ThemeDefinition probe;
   if (src.endsWith(QStringLiteral(".css"), Qt::CaseInsensitive)) {
     probe = ThemeDefinition::fromCss(src, id);
@@ -240,13 +240,13 @@ void muffin::MainWindow::importTheme() {
   setThemeByName(id); // apply immediately so the user sees the imported theme
 }
 
-void muffin::MainWindow::openThemesFolder() {
+void mufpen::MainWindow::openThemesFolder() {
   const QString dir = ThemeManager::themesDirectory();
   QDir().mkpath(dir);
   QDesktopServices::openUrl(QUrl::fromLocalFile(dir));
 }
 
-void muffin::MainWindow::addRecentFile(QString path) {
+void mufpen::MainWindow::addRecentFile(QString path) {
   if (path.isEmpty()) {
     return;
   }
@@ -269,27 +269,27 @@ void muffin::MainWindow::addRecentFile(QString path) {
   rebuildRecentFilesMenu();
 }
 
-QStringList muffin::MainWindow::recentFiles() const {
+QStringList mufpen::MainWindow::recentFiles() const {
   QSettings settings;
   return settings.value(QStringLiteral("recentFiles")).toStringList();
 }
 
-void muffin::MainWindow::setRecentFiles(const QStringList& paths) const {
+void mufpen::MainWindow::setRecentFiles(const QStringList& paths) const {
   QSettings settings;
   settings.setValue(QStringLiteral("recentFiles"), paths);
 }
 
-QStringList muffin::MainWindow::recentFolders() const {
+QStringList mufpen::MainWindow::recentFolders() const {
   QSettings settings;
   return settings.value(QStringLiteral("recentFolders")).toStringList();
 }
 
-void muffin::MainWindow::setRecentFolders(const QStringList& paths) const {
+void mufpen::MainWindow::setRecentFolders(const QStringList& paths) const {
   QSettings settings;
   settings.setValue(QStringLiteral("recentFolders"), paths);
 }
 
-void muffin::MainWindow::addRecentFolder(QString path) {
+void mufpen::MainWindow::addRecentFolder(QString path) {
   if (path.isEmpty()) {
     return;
   }
@@ -310,11 +310,11 @@ void muffin::MainWindow::addRecentFolder(QString path) {
   rebuildRecentFilesMenu();
 }
 
-QString muffin::MainWindow::defaultSaveDirectory() const {
+QString mufpen::MainWindow::defaultSaveDirectory() const {
   return sidebarFolderRoot_;
 }
 
-void muffin::MainWindow::restoreStartupFile() {
+void mufpen::MainWindow::restoreStartupFile() {
   // 0 = always start fresh, 1 = restore the actual previous session (default).
   QSettings settings;
   if (settings.value(QStringLiteral("files/startupBehavior"), 1).toInt() != 1)
@@ -323,7 +323,7 @@ void muffin::MainWindow::restoreStartupFile() {
   restoreSessionState(snapshot);
 }
 
-void muffin::MainWindow::restoreSessionState(const QVariantMap& snapshot) {
+void mufpen::MainWindow::restoreSessionState(const QVariantMap& snapshot) {
   if (snapshot.value(QStringLiteral("version")).toInt() != 1)
     return;
   {
@@ -382,7 +382,7 @@ void muffin::MainWindow::restoreSessionState(const QVariantMap& snapshot) {
   saveSessionState();
 }
 
-void muffin::MainWindow::showDocumentProperties() {
+void mufpen::MainWindow::showDocumentProperties() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -402,7 +402,7 @@ void muffin::MainWindow::showDocumentProperties() {
   QMessageBox::information(this, tr("Properties"), message);
 }
 
-void muffin::MainWindow::showPreferences() {
+void mufpen::MainWindow::showPreferences() {
   PreferencesDialog dialog(this);
   // Build (id, label) pairs from the registry so custom themes show their
   // authored label. Captured as a lambda so the import handler can rebuild the
@@ -499,14 +499,14 @@ void muffin::MainWindow::showPreferences() {
   }
 }
 
-void muffin::MainWindow::revealCurrentFile() {
+void mufpen::MainWindow::revealCurrentFile() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
   revealPathInManager(tab_->session.filePath());
 }
 
-bool muffin::MainWindow::saveCurrentDocument() {
+bool mufpen::MainWindow::saveCurrentDocument() {
   if (tab_->fileController.save(tab_->session, this) == SaveOutcome::Saved) {
     addRecentFile(tab_->session.filePath());
     clearDraftSnapshot(tab_->session.filePath(), tab_->draftKey);
@@ -515,11 +515,11 @@ bool muffin::MainWindow::saveCurrentDocument() {
   return false;
 }
 
-int muffin::MainWindow::draftSnapshotIntervalMs(const DocumentTab* tab) const {
+int mufpen::MainWindow::draftSnapshotIntervalMs(const DocumentTab* tab) const {
   return qMax(3000, static_cast<int>(tab->session.markdownText().size() / 2048));
 }
 
-void muffin::MainWindow::performAutoSave(DocumentTab* tab) {
+void mufpen::MainWindow::performAutoSave(DocumentTab* tab) {
   if (updateClosePrepared_)
     return;
   // Silent write of a pathed, modified document when files/autoSave is on. Untitled
@@ -542,8 +542,8 @@ void muffin::MainWindow::performAutoSave(DocumentTab* tab) {
   }
 }
 
-void muffin::MainWindow::snapshotDraft(DocumentTab* tab) {
-  muffin::diag::ScopedPerfProbe perf("main.snapshotDraft", fileOpsPerf());
+void mufpen::MainWindow::snapshotDraft(DocumentTab* tab) {
+  mufpen::diag::ScopedPerfProbe perf("main.snapshotDraft", fileOpsPerf());
   // Persist a recovery snapshot while the document has unsaved content, so a
   // crash or forced exit can be restored on the next launch. Cleared on save.
   if (!tab->session.document().isModified()) {
@@ -563,11 +563,11 @@ void muffin::MainWindow::snapshotDraft(DocumentTab* tab) {
   tab->draftTimer->start(draftSnapshotIntervalMs(tab));
 }
 
-void muffin::MainWindow::clearDraftSnapshot(const QString& path, const QString& key) {
+void mufpen::MainWindow::clearDraftSnapshot(const QString& path, const QString& key) {
   draftWriter_.markClean(path, key);
 }
 
-bool muffin::MainWindow::offerDraftRecovery() {
+bool mufpen::MainWindow::offerDraftRecovery() {
   // Drop crash-leftover half-pairs; complete drafts with missing sources can
   // still be recovered into untitled documents.
   drafts_.pruneOrphaned();
@@ -633,7 +633,7 @@ bool muffin::MainWindow::offerDraftRecovery() {
   return restoredAny;
 }
 
-bool muffin::MainWindow::restoreDraft(const DraftRecovery::PendingDraft& draft) {
+bool mufpen::MainWindow::restoreDraft(const DraftRecovery::PendingDraft& draft) {
   bool loaded = false;
   const QString content = drafts_.loadDraft(draft, &loaded);
   if (!loaded) {
@@ -665,13 +665,13 @@ bool muffin::MainWindow::restoreDraft(const DraftRecovery::PendingDraft& draft) 
   return true;
 }
 
-bool muffin::MainWindow::isDocumentModified() const {
+bool mufpen::MainWindow::isDocumentModified() const {
   return tab_->session.document().isModified();
 }
 
 // ---- Quick Open -----------------------------------------------------------
 
-QStringList muffin::MainWindow::quickOpenCandidates() const {
+QStringList mufpen::MainWindow::quickOpenCandidates() const {
   QStringList candidates;
   if (!tab_->session.filePath().isEmpty())
     candidates.append(tab_->session.filePath());
@@ -683,7 +683,7 @@ QStringList muffin::MainWindow::quickOpenCandidates() const {
   return candidates;
 }
 
-void muffin::MainWindow::quickOpen() {
+void mufpen::MainWindow::quickOpen() {
   const QStringList candidates = quickOpenCandidates();
   if (candidates.isEmpty() && sidebar_->folderRoot().isEmpty()) {
     statusBar()->showMessage(tr("No files to open"), 4000);
@@ -703,7 +703,7 @@ void muffin::MainWindow::quickOpen() {
 
 // ---- Import (Pandoc → markdown) -------------------------------------------
 
-void muffin::MainWindow::importFile(QString sourcePath) {
+void mufpen::MainWindow::importFile(QString sourcePath) {
   const QString dir =
       tab_->session.filePath().isEmpty() ? QString() : QFileInfo(tab_->session.filePath()).absolutePath();
   if (sourcePath.isEmpty())
@@ -734,7 +734,7 @@ void muffin::MainWindow::importFile(QString sourcePath) {
   const QString importingMsg = tr("Importing %1…").arg(QFileInfo(sourcePath).fileName());
   statusBar()->showMessage(importingMsg, 0);
   // Pandoc infers the input format from the file extension; GFM output matches
-  // Muffin's cmark-gfm parser best.
+  // Mufpen's cmark-gfm parser best.
   const PandocResult result =
       PandocRunner::run(this, {QStringLiteral("-t"), QStringLiteral("gfm"), sourcePath},
                         {.workDir = QFileInfo(sourcePath).absolutePath(), .progressLabel = importingMsg});
@@ -756,7 +756,7 @@ void muffin::MainWindow::importFile(QString sourcePath) {
   statusBar()->showMessage(tr("Imported %1").arg(QFileInfo(sourcePath).fileName()), 4000);
 }
 
-void muffin::MainWindow::buildReopenEncodingMenu() {
+void mufpen::MainWindow::buildReopenEncodingMenu() {
   if (!reopenEncodingMenu_) {
     return;
   }
@@ -775,61 +775,61 @@ void muffin::MainWindow::buildReopenEncodingMenu() {
   };
 
   static const Group groups[] = {
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Unicode"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Unicode"),
        {
-           {"UTF-8", QT_TRANSLATE_NOOP("muffin::MainWindow", "UTF-8")},
-           {"UTF-16LE", QT_TRANSLATE_NOOP("muffin::MainWindow", "UTF-16 LE")},
-           {"UTF-16BE", QT_TRANSLATE_NOOP("muffin::MainWindow", "UTF-16 BE")},
+           {"UTF-8", QT_TRANSLATE_NOOP("mufpen::MainWindow", "UTF-8")},
+           {"UTF-16LE", QT_TRANSLATE_NOOP("mufpen::MainWindow", "UTF-16 LE")},
+           {"UTF-16BE", QT_TRANSLATE_NOOP("mufpen::MainWindow", "UTF-16 BE")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Western"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Western"),
        {
-           {"windows-1252", QT_TRANSLATE_NOOP("muffin::MainWindow", "Western (Windows-1252)")},
+           {"windows-1252", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Western (Windows-1252)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic"),
        {
-           {"windows-1251", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (Windows-1251)")},
-           {"ISO-8859-5", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (ISO-8859-5)")},
-           {"IBM866", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (IBM866)")},
-           {"IBM855", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (IBM855)")},
-           {"KOI8-R", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (KOI8-R)")},
-           {"x-mac-cyrillic", QT_TRANSLATE_NOOP("muffin::MainWindow", "Cyrillic (Mac)")},
+           {"windows-1251", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (Windows-1251)")},
+           {"ISO-8859-5", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (ISO-8859-5)")},
+           {"IBM866", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (IBM866)")},
+           {"IBM855", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (IBM855)")},
+           {"KOI8-R", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (KOI8-R)")},
+           {"x-mac-cyrillic", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Cyrillic (Mac)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Central European"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Central European"),
        {
-           {"windows-1250", QT_TRANSLATE_NOOP("muffin::MainWindow", "Central European (Windows-1250)")},
-           {"ISO-8859-2", QT_TRANSLATE_NOOP("muffin::MainWindow", "Central European (ISO-8859-2)")},
+           {"windows-1250", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Central European (Windows-1250)")},
+           {"ISO-8859-2", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Central European (ISO-8859-2)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Greek"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Greek"),
        {
-           {"windows-1253", QT_TRANSLATE_NOOP("muffin::MainWindow", "Greek (Windows-1253)")},
-           {"ISO-8859-7", QT_TRANSLATE_NOOP("muffin::MainWindow", "Greek (ISO-8859-7)")},
+           {"windows-1253", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Greek (Windows-1253)")},
+           {"ISO-8859-7", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Greek (ISO-8859-7)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Hebrew"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Hebrew"),
        {
-           {"windows-1255", QT_TRANSLATE_NOOP("muffin::MainWindow", "Hebrew (Windows-1255)")},
-           {"ISO-8859-8", QT_TRANSLATE_NOOP("muffin::MainWindow", "Hebrew (ISO-8859-8)")},
+           {"windows-1255", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Hebrew (Windows-1255)")},
+           {"ISO-8859-8", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Hebrew (ISO-8859-8)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Chinese Simplified"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Chinese Simplified"),
        {
-           {"GB2312", QT_TRANSLATE_NOOP("muffin::MainWindow", "Chinese Simplified (GB2312)")},
-           {"GB18030", QT_TRANSLATE_NOOP("muffin::MainWindow", "Chinese Simplified (GB18030)")},
+           {"GB2312", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Chinese Simplified (GB2312)")},
+           {"GB18030", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Chinese Simplified (GB18030)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Chinese Traditional"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Chinese Traditional"),
        {
-           {"Big5", QT_TRANSLATE_NOOP("muffin::MainWindow", "Chinese Traditional (Big5)")},
+           {"Big5", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Chinese Traditional (Big5)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Japanese"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Japanese"),
        {
-           {"Shift_JIS", QT_TRANSLATE_NOOP("muffin::MainWindow", "Japanese (Shift_JIS)")},
-           {"EUC-JP", QT_TRANSLATE_NOOP("muffin::MainWindow", "Japanese (EUC-JP)")},
+           {"Shift_JIS", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Japanese (Shift_JIS)")},
+           {"EUC-JP", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Japanese (EUC-JP)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Korean"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Korean"),
        {
-           {"EUC-KR", QT_TRANSLATE_NOOP("muffin::MainWindow", "Korean (EUC-KR)")},
+           {"EUC-KR", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Korean (EUC-KR)")},
        }},
-      {QT_TRANSLATE_NOOP("muffin::MainWindow", "Thai"),
+      {QT_TRANSLATE_NOOP("mufpen::MainWindow", "Thai"),
        {
-           {"TIS-620", QT_TRANSLATE_NOOP("muffin::MainWindow", "Thai (TIS-620)")},
+           {"TIS-620", QT_TRANSLATE_NOOP("mufpen::MainWindow", "Thai (TIS-620)")},
        }},
   };
 
@@ -843,7 +843,7 @@ void muffin::MainWindow::buildReopenEncodingMenu() {
   }
 }
 
-void muffin::MainWindow::reopenWithEncoding(const QString& encodingName) {
+void mufpen::MainWindow::reopenWithEncoding(const QString& encodingName) {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -853,7 +853,7 @@ void muffin::MainWindow::reopenWithEncoding(const QString& encodingName) {
   }
 }
 
-void muffin::MainWindow::moveToFile() {
+void mufpen::MainWindow::moveToFile() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -866,7 +866,7 @@ void muffin::MainWindow::moveToFile() {
   renameOrMoveWithLinks(oldPath, newPath);
 }
 
-void muffin::MainWindow::saveAllOpenFiles() {
+void mufpen::MainWindow::saveAllOpenFiles() {
   int savedCount = 0;
   int failedCount = 0;
 
@@ -897,7 +897,7 @@ void muffin::MainWindow::saveAllOpenFiles() {
   }
 }
 
-void muffin::MainWindow::showInSidebar() {
+void mufpen::MainWindow::showInSidebar() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -914,7 +914,7 @@ void muffin::MainWindow::showInSidebar() {
   sidebar_->setCurrentPath(path);
 }
 
-void muffin::MainWindow::deleteFile() {
+void mufpen::MainWindow::deleteFile() {
   if (tab_->session.filePath().isEmpty()) {
     return;
   }
@@ -981,7 +981,7 @@ void muffin::MainWindow::deleteFile() {
 // commands above which operate on tab_->session.filePath(). The filesystem work lives
 // in FilePathOps; here we only prompt + integrate with the editor/sidebar.
 
-void muffin::MainWindow::openFolderAtPath(QString path) {
+void mufpen::MainWindow::openFolderAtPath(QString path) {
   if (!QFileInfo(path).isDir())
     return;
   path = QFileInfo(path).absoluteFilePath();
@@ -995,21 +995,21 @@ void muffin::MainWindow::openFolderAtPath(QString path) {
   saveSessionState();
 }
 
-void muffin::MainWindow::openFileInNewWindow(QString path) {
+void mufpen::MainWindow::openFileInNewWindow(QString path) {
   auto* window = new MainWindow();
   window->setAttribute(Qt::WA_DeleteOnClose);
   window->openFile(path); // before show() so the document parses during construction
   window->show();
 }
 
-void muffin::MainWindow::openFolderInNewWindow(QString path) {
+void mufpen::MainWindow::openFolderInNewWindow(QString path) {
   auto* window = new MainWindow();
   window->setAttribute(Qt::WA_DeleteOnClose);
   window->openFolderAtPath(path);
   window->show();
 }
 
-void muffin::MainWindow::newFileInDirectory(QString dir) {
+void mufpen::MainWindow::newFileInDirectory(QString dir) {
   if (dir.isEmpty()) {
     return;
   }
@@ -1031,7 +1031,7 @@ void muffin::MainWindow::newFileInDirectory(QString dir) {
   }
 }
 
-void muffin::MainWindow::newFolderInDirectory(QString dir) {
+void mufpen::MainWindow::newFolderInDirectory(QString dir) {
   if (dir.isEmpty()) {
     return;
   }
@@ -1050,7 +1050,7 @@ void muffin::MainWindow::newFolderInDirectory(QString dir) {
   }
 }
 
-void muffin::MainWindow::renamePath(QString path) {
+void mufpen::MainWindow::renamePath(QString path) {
   if (path.isEmpty()) {
     return;
   }
@@ -1062,14 +1062,14 @@ void muffin::MainWindow::renamePath(QString path) {
 
 // Validate an inline name WITHOUT touching the filesystem — the delegate uses this to decide
 // whether to keep the editor open (Duplicate / Empty) or let the commit proceed.
-void muffin::MainWindow::onInlineValidate(muffin::InlineEditContext ctx, const QString& name,
-                                          muffin::InlineValidation* out) {
+void mufpen::MainWindow::onInlineValidate(mufpen::InlineEditContext ctx, const QString& name,
+                                          mufpen::InlineValidation* out) {
   if (!out) {
     return;
   }
   const QString trimmed = name.trimmed();
   if (trimmed.isEmpty()) {
-    out->kind = muffin::InlineValidation::Empty;
+    out->kind = mufpen::InlineValidation::Empty;
     out->errorText = tr("Name cannot be empty.");
     return;
   }
@@ -1078,22 +1078,22 @@ void muffin::MainWindow::onInlineValidate(muffin::InlineEditContext ctx, const Q
   const QString normalized =
       (ctx.pendingCreate && !ctx.isFolder) ? FilePathOps::normalizeMarkdownFileName(trimmed) : trimmed;
   if (normalized == QFileInfo(ctx.oldPath).fileName()) {
-    out->kind = muffin::InlineValidation::NoChange;
+    out->kind = mufpen::InlineValidation::NoChange;
     return;
   }
   const QString dir = QFileInfo(ctx.oldPath).absolutePath();
   if (FilePathOps::targetNameCollides(ctx.oldPath, dir, normalized)) {
-    out->kind = muffin::InlineValidation::Duplicate;
+    out->kind = mufpen::InlineValidation::Duplicate;
     out->errorText = tr("An item named \"%1\" already exists.").arg(normalized);
     return;
   }
-  out->kind = muffin::InlineValidation::Valid;
+  out->kind = mufpen::InlineValidation::Valid;
 }
 
 // Commit the inline edit: perform the rename, then run the preserved post-steps (select the
 // new path, open a newly-created file, sync the session when the renamed entry was the open
 // document). The name has already been validated.
-void muffin::MainWindow::onInlineCommit(muffin::InlineEditContext ctx, const QString& name) {
+void mufpen::MainWindow::onInlineCommit(mufpen::InlineEditContext ctx, const QString& name) {
   const QString trimmed = name.trimmed();
   const QString normalized =
       (ctx.pendingCreate && !ctx.isFolder) ? FilePathOps::normalizeMarkdownFileName(trimmed) : trimmed;
@@ -1120,7 +1120,7 @@ void muffin::MainWindow::onInlineCommit(muffin::InlineEditContext ctx, const QSt
 
 // Cancel a pending new-item create: the user pressed Escape or submitted an empty name, so
 // delete the temp entry that was provisionally created on disk. Renames have nothing to undo.
-void muffin::MainWindow::onInlineCancel(muffin::InlineEditContext ctx) {
+void mufpen::MainWindow::onInlineCancel(mufpen::InlineEditContext ctx) {
   if (!ctx.pendingCreate || ctx.oldPath.isEmpty()) {
     return;
   }
@@ -1130,7 +1130,7 @@ void muffin::MainWindow::onInlineCancel(muffin::InlineEditContext ctx) {
   }
 }
 
-void muffin::MainWindow::duplicateFile(QString path) {
+void mufpen::MainWindow::duplicateFile(QString path) {
   if (path.isEmpty() || !QFileInfo(path).isFile()) {
     return;
   }
@@ -1146,7 +1146,7 @@ void muffin::MainWindow::duplicateFile(QString path) {
   }
 }
 
-void muffin::MainWindow::deletePath(QString path) {
+void mufpen::MainWindow::deletePath(QString path) {
   if (path.isEmpty() || !QFileInfo::exists(path)) {
     return;
   }
@@ -1209,7 +1209,7 @@ void muffin::MainWindow::deletePath(QString path) {
   rebuildRecentFilesMenu();
 }
 
-void muffin::MainWindow::showPathProperties(QString path) {
+void mufpen::MainWindow::showPathProperties(QString path) {
   const QFileInfo info(path);
   if (!info.exists()) {
     return;
@@ -1223,14 +1223,14 @@ void muffin::MainWindow::showPathProperties(QString path) {
   QMessageBox::information(this, tr("Properties"), message);
 }
 
-void muffin::MainWindow::copyPathToClipboard(QString path) const {
+void mufpen::MainWindow::copyPathToClipboard(QString path) const {
   if (path.isEmpty()) {
     return;
   }
   QApplication::clipboard()->setText(QDir::toNativeSeparators(QFileInfo(path).absoluteFilePath()));
 }
 
-void muffin::MainWindow::revealPathInManager(QString path) {
+void mufpen::MainWindow::revealPathInManager(QString path) {
   if (path.isEmpty()) {
     return;
   }
@@ -1241,7 +1241,7 @@ void muffin::MainWindow::revealPathInManager(QString path) {
   }
 }
 
-QString muffin::MainWindow::defaultUntitledSuggestion() const {
+QString mufpen::MainWindow::defaultUntitledSuggestion() const {
   // Reuse the files/defaultExtension setting so the New File prompt matches the
   // Save As untitled name (.md/.markdown/.txt).
   switch (QSettings().value(QStringLiteral("files/defaultExtension"), 0).toInt()) {
@@ -1254,7 +1254,7 @@ QString muffin::MainWindow::defaultUntitledSuggestion() const {
   }
 }
 
-bool muffin::MainWindow::maybeSaveChanges() {
+bool mufpen::MainWindow::maybeSaveChanges() {
   if (!tab_->session.document().isModified()) {
     return true;
   }

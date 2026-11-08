@@ -8,7 +8,7 @@
 
 class QEvent;
 
-namespace muffin {
+namespace mufpen {
 
 class DocumentSession;
 class RenderTheme;
@@ -16,7 +16,7 @@ class VirtualSourceEdit;
 
 // Stable facade for source-mode commands. Positions are UTF-16 source offsets
 // into DocumentSession::PieceTable; no QTextDocument is exposed or retained.
-class MUFFIN_UI_EXPORT SourceEditorWidget final : public QWidget {
+class MUFPEN_UI_EXPORT SourceEditorWidget final : public QWidget {
   Q_OBJECT
 
 public:
@@ -100,4 +100,4 @@ private:
   int fontSizePx_ = 16;
 };
 
-} // namespace muffin
+} // namespace mufpen

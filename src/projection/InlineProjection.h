@@ -10,7 +10,7 @@
 
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 
 enum class InlineProjectionBias { Backward, Forward };
 
@@ -239,4 +239,4 @@ private:
   bool valid_ = false;
 };
 
-} // namespace muffin
+} // namespace mufpen

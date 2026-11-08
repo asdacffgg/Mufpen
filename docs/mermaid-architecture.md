@@ -14,7 +14,7 @@
 | **视觉** | 像素级在容差内一致 | golden pixel 对比 |
 | **配置** | 每个 config key 的效果与上游一致 | config-effect-matrix（533 行，逐 key 标 parity/partial/deferred） |
 
-**不追求「字节同」的 SVG**：Muffin 的 SVG 由 `QSvgGenerator`（经 painter）产出，再由 `MermaidSvgExporter` 归一化成 mermaid 形态。字节级与 mermaid 手写 SVG 不同是必然的；parity 以**视觉 + 结构 + 几何**为准。
+**不追求「字节同」的 SVG**：Mufpen 的 SVG 由 `QSvgGenerator`（经 painter）产出，再由 `MermaidSvgExporter` 归一化成 mermaid 形态。字节级与 mermaid 手写 SVG 不同是必然的；parity 以**视觉 + 结构 + 几何**为准。
 
 ---
 
@@ -106,7 +106,7 @@ scene 同时是 culling、hit-test、双后端的依据。给所有 Scene 一个
 
 把已有的种子（`flowchart-geometry.json`、`dagre-snapshots.json`、`config-effect-matrix.json`）泛化成跨所有图的 oracle：
 1. 跑 headless `mermaid-cli`（mmdc）对同一批 source 产 reference SVG/几何；
-2. Muffin 渲染同 source，做**语义 diff**（结构树 + 几何容差）；
+2. Mufpen 渲染同 source，做**语义 diff**（结构树 + 几何容差）；
 3. 每个 config key 在 matrix 里标 parity/partial/deferred，测试守护。
 
 **重构期间 golden 不变 = 行为零回归。** 这是整个路线的安全网。
@@ -353,7 +353,7 @@ Codex 复审第四轮后发现 5 项残留（4 P1 + 2 P2），本轮全部根因
   marker path computed），fixtureSha `c23036d3…` 双跑一致；state-pixel
   6→7 案（+neo-pseudostates，neo 两案 source 带 look+handDrawnSeed
   指令），fixtureSha `cf4ec676…` 双跑一致。pixel 测试加
-  `MUFFIN_SAVE_NATIVE` 落盘钩子（requirement 同款）。
+  `MUFPEN_SAVE_NATIVE` 落盘钩子（requirement 同款）。
 
 **State 图族第六轮审核修复（08-16，292/292，dist 已刷新，未提交）**：
 Codex 复审第五轮后的 4 P1 + 1 P2 全部根因收口：
@@ -590,7 +590,7 @@ Codex 复审第八轮后的 1 P0 + 5 P1 全收口：
 - **P0 陈旧 exe 假绿 + 6 个编译错误**：第八轮的「292/292」跑的是
   MSB8028 跳过重编的旧测试二进制——第八轮新增断言（flowchart
   viewBox oracle、state raster 锁）从未真正执行。修复 6 处编译错误
-  （`muffin::mermaid::rough::` 限定、`QColor::name(QColor::HexArgb)`
+  （`mufpen::mermaid::rough::` 限定、`QColor::name(QColor::HexArgb)`
   枚举重载、`renderSvg(...).svg` 漏取）后首次真跑，暴露并收口了
   flowchart client-box 的三重根因（见下）。另修两处被 qCritical 吞没
   的失败信息（SvgExportTest/LabelOracle 改 fprintf 直写 stderr）。
@@ -692,9 +692,9 @@ Codex 复审第九轮后的 4 P1 + 1 P2 全部收口：
   登记计数锁，并提供可选硬失败模式。该登记已在第十四轮根因关闭后
   删除；70 案现为默认硬失败。oracle 保持 Q_OS_WIN 门控（Windows 字体
   链录值；mac/Linux shaping 后端是已记录的平台工作流，防 CI 假红）。
-- **P2 构建新鲜度自动门禁**：新增 `MuffinBuildFreshnessTest`（第 293
-  个测试）——按依赖域校验：MuffinCore.lib ≥ 全部 src/mermaid 源、每个
-  mermaid 测试 exe ≥ 自己的源 + lib、Muffin.exe ≥ 双 lib；陈旧即 FAIL
+- **P2 构建新鲜度自动门禁**：新增 `MufpenBuildFreshnessTest`（第 293
+  个测试）——按依赖域校验：MufpenCore.lib ≥ 全部 src/mermaid 源、每个
+  mermaid 测试 exe ≥ 自己的源 + lib、Mufpen.exe ≥ 双 lib；陈旧即 FAIL
   并列出（跳过重编/跳过重链两条路径都实测触发：touch StateScene.h 不
   构建→FAIL，构建后→PASS）。改单个测试源只要求该测试重链（正常增量
   不误报；VS 增量图对无关子系统确实不重链，故门控范围收在 mermaid 套
@@ -726,7 +726,7 @@ Codex 复审第十轮后的 4 P1 + 1 P2 全收口：
 - **P1 DWrite RTL 检测分支不可达 + 换引擎**：原代码只跑 AnalyzeScript
   ——SetBidiLevel 由 AnalyzeBidi 产生，anyBidi 恒 false、粗体希伯来文
   被按 LTR shaping。修复走了根因路线：**styled-width 的 shaping 引擎
-  从 DWrite GetGlyphs/GetGlyphPlacements 换成 HarfBuzz**（MuffinCore
+  从 DWrite GetGlyphs/GetGlyphPlacements 换成 HarfBuzz**（MufpenCore
   本就链接 hb；经 `IDWriteFontFace::TryGetFontTable` 回调把同一 face
   的表喂给 `hb_face_create_for_tables`）。DWrite 管线的三处不等价就此
   消失：①AnalyzeScript 不产生 bidi 电平（现 AnalyzeScript+AnalyzeBidi
@@ -755,14 +755,14 @@ Codex 复审第十轮后的 4 P1 + 1 P2 全收口：
   恰 +1 letter 单元；NBSP 计入 word 分隔符。全部固化为 LabelOracle
   Q_OS_WIN 回归锁。
 - **P2 freshness 门禁盲区 + 平台门控**：①注册收进 `if(WIN32)`——
-  测试硬编码 MuffinCore.lib/MuffinUi.lib/*.exe，macOS/Linux CI 会因
+  测试硬编码 MufpenCore.lib/MufpenUi.lib/*.exe，macOS/Linux CI 会因
   找不到 .lib 直接红；②exe 名反推源码名漏掉
-  MuffinMermaidC4EdgeParityTest/MuffinMermaidRailroadEdgeParityTest
+  MufpenMermaidC4EdgeParityTest/MufpenMermaidRailroadEdgeParityTest
   （源码是 *GeometryOracleTest.cpp）且 lib 屏障只扫 src/mermaid（漏
-  src/theme 等 MuffinCore 编译的 9 棵树）。改为 **configure 期生成
-  manifest**（muffin_add_test 每次注册追加 TEST 行=name/sources/links；
-  文件尾追加 LIB MuffinCore（404 个 src 文件）/LIB MuffinUi/APP
-  Muffin 的精确源列表）——测试读 manifest 校验：lib≥其源列表、每个
+  src/theme 等 MufpenCore 编译的 9 棵树）。改为 **configure 期生成
+  manifest**（mufpen_add_test 每次注册追加 TEST 行=name/sources/links；
+  文件尾追加 LIB MufpenCore（404 个 src 文件）/LIB MufpenUi/APP
+  Mufpen 的精确源列表）——测试读 manifest 校验：lib≥其源列表、每个
   exe≥own 源+所链一方库、app≥双库。
 - 门禁：**293/293 三跑全绿**（186.54s/175s/——）、dist 刷新（21:00）、
   `git diff --check` 仅既有换行警告；当时的 8 个登记差异均稳定复现。
@@ -799,11 +799,11 @@ Codex 复审第十一轮后的 2 P1 + 1 P2 全收口：
   一次取整得 1756/64 = 27.4375 ≠ 实测。锁：plain 27.453125 +
   letter-spacing 30.453125（3 单元）。
 - **P1 freshness manifest 链接闭包**：manifest 只记直接 LINK——98
-  个 MuffinUi 测试实际经 Ui 的 PUBLIC 链接也链 Core；Core 更新+Ui
+  个 MufpenUi 测试实际经 Ui 的 PUBLIC 链接也链 Core；Core 更新+Ui
   .lib 不变+MSBuild 跳过某 Ui 测试重链时门禁会放行。CMake 端
-  `muffin_freshness_link_closure`（递归读 INTERFACE/LINK_LIBRARIES、
-  只展开 ^Muffin 目标、expanded 集防环）——98 个 Ui 测试现在记录
-  `MuffinUi;MuffinCore`，consumer 不变即生效。
+  `mufpen_freshness_link_closure`（递归读 INTERFACE/LINK_LIBRARIES、
+  只展开 ^Mufpen 目标、expanded 集防环）——98 个 Ui 测试现在记录
+  `MufpenUi;MufpenCore`，consumer 不变即生效。
 - 门禁：**293/293 双跑全绿**、dist 刷新（12:04）、`git diff --check`
   干净。
 
@@ -866,7 +866,7 @@ viewBox 分量全部根因关闭，登记表与可选严格模式删除，70 案
   compound/note rank 已在第十五轮关闭；fork+note、handDrawn ink 与
   rectWithTitle DOM 已在第十六轮关闭。
 - 门禁：Release 完整构建通过；**293/293 两轮全绿**（282.77s / 242.43s，
-  均含构建新鲜度测试）；dist 已刷新，Release/dist `Muffin.exe` 大小、
+  均含构建新鲜度测试）；dist 已刷新，Release/dist `Mufpen.exe` 大小、
   时间戳与 SHA-256 一致；`git diff --check` 无空白错误。
 
 **State 第十五轮 compound/note rank 收口（08-20）**：关闭第四轮登记的
@@ -893,7 +893,7 @@ viewBox 分量全部根因关闭，登记表与可选严格模式删除，70 案
 - **剩余开放项**：fork/join + note 的 zig-zag、handDrawn rough ink 外扩、
   handDrawn rectWithTitle 的单 foreignObject plain-shape quirk。
 - **门禁**：Release 完整构建通过；**293/293 全绿**（237.80s，含构建
-  新鲜度测试）；dist 已刷新，Release/dist `Muffin.exe` 的大小、时间戳与
+  新鲜度测试）；dist 已刷新，Release/dist `Mufpen.exe` 的大小、时间戳与
   SHA-256 一致；fixture 双跑字节一致，`git diff --check` 无空白错误。
 
 **State 第十六轮 zig-zag / handDrawn ink / titled DOM 收口（08-21）**：关闭
@@ -921,7 +921,7 @@ viewBox 分量全部根因关闭，登记表与可选严格模式删除，70 案
   语义/布局/DOM 开放项清零；PNG 仍受 Chromium/Qt 抗锯齿后端差异约束，
   不宣称字节级图像相等。
 - **门禁**：Release 完整构建通过；**293/293 全绿**（242.38s，含构建
-  新鲜度测试）；dist 已刷新，Release/dist `Muffin.exe` 大小、时间戳和
+  新鲜度测试）；dist 已刷新，Release/dist `Mufpen.exe` 大小、时间戳和
   SHA-256 一致；三套 fixture 串行双跑字节一致，`git diff --check` 无
   空白错误。
 
@@ -946,7 +946,7 @@ viewBox 分量全部根因关闭，登记表与可选严格模式删除，70 案
   Journey、GitGraph、C4 已在下一轮按各自浏览器 oracle 单独关闭。
 - **门禁**：Release 完整构建通过；class/requirement 15/15 与全量
   **293/293 全绿**（289.69s，含构建新鲜度测试）；dist 已刷新，Release/
-  dist `Muffin.exe` 大小、时间戳和 SHA-256 一致；两套 fixture 双跑字节
+  dist `Mufpen.exe` 大小、时间戳和 SHA-256 一致；两套 fixture 双跑字节
   一致，`git diff --check` 无空白错误。
 
 **Journey / GitGraph / C4 虚线收口（08-21 第十八轮）**：三族新增
@@ -976,7 +976,7 @@ Mermaid 11.16.0 浏览器 computed-style 与隔离墨迹 oracle。Journey task l
 
 **TreeView built-in icon / 文本基线收口（08-21 第十九轮）**：原
 `built-in-icons` pixel 案 alpha IoU 只有 0.465，并以专用 0.45 阈值放行。
-浏览器逐元素探针证明该名称具有误导性：在 Muffin 对齐的 strict
+浏览器逐元素探针证明该名称具有误导性：在 Mufpen 对齐的 strict
 source-entry 路径中，sanitizer 删除全部 `use.treeView-node-icon`，但保留
 folder/file 的两个 `<defs><g><svg viewBox="0 0 24 24" width="14"
 height="14"><path ...>`；布局仍为非空 icon 保留 18px，显式 `icon()`
@@ -1024,7 +1024,7 @@ height="14"><path ...>`；布局仍为非空 icon 保留 18px，显式 `icon()`
   **0.881/0.888**，旧位图路径两案都会失败。
 - **门禁**：Info 定向 4/4、完整 Release **293/293 全绿**（327.07s，含构建新鲜度
   测试）；geometry/pixel fixture 跨进程复跑字节一致；dist 已刷新，Release/dist
-  `Muffin.exe` 大小、时间戳和 SHA-256 完全一致。
+  `Mufpen.exe` 大小、时间戳和 SHA-256 完全一致。
 
 ---
 
@@ -1044,8 +1044,8 @@ height="14"><path ...>`；布局仍为非空 icon 保留 18px，显式 `icon()`
 | **state** | **state-geometry + StateGeometryOracleTest** | **✅** 断言 topology + **transition multiset（from→to）** + node height；报告 width |
 | **sequence** | **sequence-geometry + SequenceGeometryOracleTest** | **✅** 纯结构断言：participant multiset + message count + **ordered (from,to,dashed,markerEnd)** 元组列表 |
 
-class oracle 关键设计：edge 的 markerStart/markerEnd 在 mermaid 侧从 `marker-start`/`marker-end` url 提取 bare type 并丢弃 Start/End 后缀（字段位置已编码端侧），与 Muffin `markerName` 输出的 bare type 对齐；`none`/空/absent 三者归一为 null。断言的 edge-tuple multiset 证明 Muffin 对每种 class 关系（继承/实现/组合/聚合/关联/依赖，solid/dashed，单/双端）画出与 mermaid 完全相同的箭头。
+class oracle 关键设计：edge 的 markerStart/markerEnd 在 mermaid 侧从 `marker-start`/`marker-end` url 提取 bare type 并丢弃 Start/End 后缀（字段位置已编码端侧），与 Mufpen `markerName` 输出的 bare type 对齐；`none`/空/absent 三者归一为 null。断言的 edge-tuple multiset 证明 Mufpen 对每种 class 关系（继承/实现/组合/聚合/关联/依赖，solid/dashed，单/双端）画出与 mermaid 完全相同的箭头。
 
-state oracle 关键设计：state 边**无** `LS-/LE-` class 编码（区别于 flowchart），from/to 通过匹配每条边的 `data-points`（base64 dagre 路径点，首=源/末=目标）到最近节点中心恢复；节点 id（root_start/root_end/`<name>`）与 Muffin 直接对齐。断言的 transition multiset 覆盖分支/fork-join 扇出收敛/自环/start-end，证明 Muffin 复现 mermaid 的状态机结构。
+state oracle 关键设计：state 边**无** `LS-/LE-` class 编码（区别于 flowchart），from/to 通过匹配每条边的 `data-points`（base64 dagre 路径点，首=源/末=目标）到最近节点中心恢复；节点 id（root_start/root_end/`<name>`）与 Mufpen 直接对齐。断言的 transition multiset 覆盖分支/fork-join 扇出收敛/自环/start-end，证明 Mufpen 复现 mermaid 的状态机结构。
 
 sequence oracle 关键设计：sequence 用 legacy flat renderer，**位置**（actor anchorX / message lineY / lifeline Y）全是 font 耦合，故 oracle 是**纯结构**断言（不比几何）。mermaid 的 message `<line>` 带 `data-from`/`data-to`/`data-id`/`marker-end`/`style`，from/to/顺序/箭头/虚线直接读取（无需坐标匹配）。断言 participant multiset + message count + **有序** (from,to,dashed,markerEnd) 列表——顺序即对话流，故用有序列表而非 multiset。覆盖 `->>`/`-->>`/`->`/`-x`/`--x` 箭头种类。自环（`A->>A`）渲染为 loop path 而非 messageLine，暂排除。60 mermaid 测试全绿，**5 图族真-mermaid geometry oracle 全部完成**。

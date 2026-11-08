@@ -1,198 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR">
+<TS version="2.1" language="zh_TW">
 <context>
     <name>EditorView</name>
     <message>
         <source>Markdown editor</source>
-        <translation type="vanished">Markdown düzenleyici</translation>
+        <translation type="vanished">Markdown 編輯器</translation>
     </message>
     <message>
         <source>Rendered Markdown document</source>
-        <translation type="vanished">İşlenmiş Markdown belgesi</translation>
+        <translation type="vanished">渲染後的 Markdown 文件</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>New</source>
-        <translation type="obsolete">Yeni</translation>
+        <translation type="obsolete">新增</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="obsolete">Yeni Pencere</translation>
+        <translation type="obsolete">新視窗</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="obsolete">Klasör Aç...</translation>
+        <translation type="obsolete">開啟資料夾...</translation>
     </message>
     <message>
         <source>Open...</source>
-        <translation type="obsolete">Aç...</translation>
+        <translation type="obsolete">開啟...</translation>
     </message>
     <message>
         <source>Quick Open...</source>
-        <translation type="obsolete">Hızlı Aç...</translation>
+        <translation type="obsolete">快速開啟...</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="obsolete">Kaydet</translation>
+        <translation type="obsolete">儲存</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation type="obsolete">Farklı Kaydet...</translation>
+        <translation type="obsolete">另存新檔...</translation>
     </message>
     <message>
         <source>Move To...</source>
-        <translation type="obsolete">Şuraya Taşı...</translation>
+        <translation type="obsolete">移動到...</translation>
     </message>
     <message>
         <source>Save All Open Files...</source>
-        <translation type="obsolete">Tüm Açık Dosyaları Kaydet...</translation>
+        <translation type="obsolete">儲存所有開啟的檔案...</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="obsolete">Özellikler</translation>
+        <translation type="obsolete">內容</translation>
     </message>
     <message>
         <source>Show in File Manager...</source>
-        <translation type="obsolete">Dosya Yöneticisinde Göster...</translation>
+        <translation type="obsolete">在檔案管理器中顯示...</translation>
     </message>
     <message>
         <source>Show in Sidebar</source>
-        <translation type="obsolete">Kenar Çubuğunda Göster</translation>
+        <translation type="obsolete">在側邊欄中顯示</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation type="obsolete">Sil...</translation>
+        <translation type="obsolete">刪除...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="obsolete">İçe Aktar...</translation>
+        <translation type="obsolete">匯入...</translation>
     </message>
     <message>
         <source>Print...</source>
-        <translation type="obsolete">Yazdır...</translation>
+        <translation type="obsolete">列印...</translation>
     </message>
     <message>
         <source>Preferences...</source>
-        <translation type="obsolete">Tercihler...</translation>
+        <translation type="obsolete">偏好設定...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">Kapat</translation>
+        <translation type="obsolete">關閉</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="obsolete">Geri Al</translation>
+        <translation type="obsolete">復原</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="obsolete">Yinele</translation>
+        <translation type="obsolete">重做</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="obsolete">Kes</translation>
+        <translation type="obsolete">剪下</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="obsolete">Kopyala</translation>
+        <translation type="obsolete">複製</translation>
     </message>
     <message>
         <source>Copy Image</source>
-        <translation type="obsolete">Görüntüyü Kopyala</translation>
+        <translation type="obsolete">複製圖片</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="obsolete">Yapıştır</translation>
+        <translation type="obsolete">貼上</translation>
     </message>
     <message>
         <source>Copy as Plain Text</source>
-        <translation type="obsolete">Düz Metin Olarak Kopyala</translation>
+        <translation type="obsolete">以純文字複製</translation>
     </message>
     <message>
         <source>Copy as Markdown</source>
-        <translation type="obsolete">Markdown Olarak Kopyala</translation>
+        <translation type="obsolete">以 Markdown 複製</translation>
     </message>
     <message>
         <source>Copy as HTML</source>
-        <translation type="obsolete">HTML Olarak Kopyala</translation>
+        <translation type="obsolete">以 HTML 複製</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
-        <translation type="obsolete">Düz Metin Olarak Yapıştır</translation>
+        <translation type="obsolete">以純文字貼上</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="obsolete">Tümünü Seç</translation>
+        <translation type="obsolete">全部選取</translation>
     </message>
     <message>
         <source>Select Paragraph or Block</source>
-        <translation type="obsolete">Paragraf veya blok seç</translation>
+        <translation type="obsolete">選擇段落或區塊</translation>
     </message>
     <message>
         <source>Select Current Line or Sentence</source>
-        <translation type="obsolete">Geçerli satır veya cümleyi seç</translation>
+        <translation type="obsolete">選取目前行或句子</translation>
     </message>
     <message>
         <source>Select Current Format Text</source>
-        <translation type="obsolete">Geçerli Biçim Metnini Seç</translation>
+        <translation type="obsolete">選取目前格式文字</translation>
     </message>
     <message>
         <source>Select Current Word</source>
-        <translation type="obsolete">Geçerli sözcüğü seç</translation>
+        <translation type="obsolete">選取目前字詞</translation>
     </message>
     <message>
         <source>Jump to Start of Document</source>
-        <translation type="obsolete">Belge başına atla</translation>
+        <translation type="obsolete">跳至文件開頭</translation>
     </message>
     <message>
         <source>Jump to Selection</source>
-        <translation type="obsolete">Seçime atla</translation>
+        <translation type="obsolete">跳至選取範圍</translation>
     </message>
     <message>
         <source>Jump to End of Document</source>
-        <translation type="obsolete">Belge sonuna atla</translation>
+        <translation type="obsolete">跳至文件結尾</translation>
     </message>
     <message>
         <source>Jump to Start of Line</source>
-        <translation type="obsolete">Satır başına atla</translation>
+        <translation type="obsolete">跳至行首</translation>
     </message>
     <message>
         <source>Jump to End of Line</source>
-        <translation type="obsolete">Satır sonuna atla</translation>
+        <translation type="obsolete">跳至行尾</translation>
     </message>
     <message>
         <source>Move Line Up</source>
-        <translation type="obsolete">Satırı Yukarı Taşı</translation>
+        <translation type="obsolete">上移目前行</translation>
     </message>
     <message>
         <source>Move Line Down</source>
-        <translation type="obsolete">Satırı Aşağı Taşı</translation>
+        <translation type="obsolete">下移目前行</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="obsolete">Sil</translation>
+        <translation type="obsolete">刪除</translation>
     </message>
     <message>
         <source>Delete Block</source>
-        <translation type="obsolete">Bloğu sil</translation>
+        <translation type="obsolete">刪除區塊</translation>
     </message>
     <message>
         <source>Delete Current Line</source>
-        <translation type="obsolete">Geçerli satırı sil</translation>
+        <translation type="obsolete">刪除目前行</translation>
     </message>
     <message>
         <source>Delete Current Format Text</source>
-        <translation type="obsolete">Geçerli biçimli metni sil</translation>
+        <translation type="obsolete">刪除目前格式文字</translation>
     </message>
     <message>
         <source>Delete Current Word</source>
-        <translation type="obsolete">Geçerli sözcüğü sil</translation>
+        <translation type="obsolete">刪除目前字詞</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="obsolete">Yazım Denetimi...</translation>
+        <translation type="obsolete">拼字檢查...</translation>
     </message>
     <message>
         <source>Windows (CRLF)</source>
@@ -204,83 +204,83 @@
     </message>
     <message>
         <source>Ensure Trailing Newline on Save</source>
-        <translation type="obsolete">Kaydederken sondaki yeni satırı sağla</translation>
+        <translation type="obsolete">儲存時確保結尾有換行符號</translation>
     </message>
     <message>
         <source>Find...</source>
-        <translation type="obsolete">Bul...</translation>
+        <translation type="obsolete">尋找...</translation>
     </message>
     <message>
         <source>Replace...</source>
-        <translation type="obsolete">Değiştir...</translation>
+        <translation type="obsolete">取代...</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation type="obsolete">Sonrakini bul</translation>
+        <translation type="obsolete">尋找下一個</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation type="obsolete">Öncekini bul</translation>
+        <translation type="obsolete">尋找上一個</translation>
     </message>
     <message>
         <source>Paragraph</source>
-        <translation type="obsolete">Paragraf(&amp;P)</translation>
+        <translation type="obsolete">段落(&amp;P)</translation>
     </message>
     <message>
         <source>Promote Heading</source>
-        <translation type="obsolete">Başlığı Yükselt</translation>
+        <translation type="obsolete">提升標題層級</translation>
     </message>
     <message>
         <source>Demote Heading</source>
-        <translation type="obsolete">Başlığı Düşür</translation>
+        <translation type="obsolete">降低標題層級</translation>
     </message>
     <message>
         <source>Formula Block</source>
-        <translation type="obsolete">Formül Bloğu</translation>
+        <translation type="obsolete">公式區塊</translation>
     </message>
     <message>
         <source>Code Block</source>
-        <translation type="obsolete">Kod Bloğu</translation>
+        <translation type="obsolete">程式碼區塊</translation>
     </message>
     <message>
         <source>Quote</source>
-        <translation type="obsolete">Alıntı</translation>
+        <translation type="obsolete">引用</translation>
     </message>
     <message>
         <source>Ordered List</source>
-        <translation type="obsolete">Sıralı Liste</translation>
+        <translation type="obsolete">編號清單</translation>
     </message>
     <message>
         <source>Unordered List</source>
-        <translation type="obsolete">Sırasız Liste</translation>
+        <translation type="obsolete">項目符號清單</translation>
     </message>
     <message>
         <source>Task List</source>
-        <translation type="obsolete">Görev Listesi</translation>
+        <translation type="obsolete">工作清單</translation>
     </message>
     <message>
         <source>Insert Paragraph Before</source>
-        <translation type="obsolete">Öncesine Paragraf Ekle</translation>
+        <translation type="obsolete">在前方插入段落</translation>
     </message>
     <message>
         <source>Insert Paragraph After</source>
-        <translation type="obsolete">Sonrasına Paragraf Ekle</translation>
+        <translation type="obsolete">在後方插入段落</translation>
     </message>
     <message>
         <source>Link Reference</source>
-        <translation type="obsolete">Bağlantı Başvurusu</translation>
+        <translation type="obsolete">連結參照</translation>
     </message>
     <message>
         <source>Footnote</source>
-        <translation type="obsolete">Dipnot</translation>
+        <translation type="obsolete">註腳</translation>
     </message>
     <message>
         <source>Horizontal Rule</source>
-        <translation type="obsolete">Yatay Çizgi</translation>
+        <translation type="obsolete">水平分隔線</translation>
     </message>
     <message>
         <source>Table of Contents</source>
-        <translation type="obsolete">İçindekiler</translation>
+        <translation type="obsolete">目錄</translation>
     </message>
     <message>
         <source>YAML</source>
@@ -296,243 +296,243 @@
     </message>
     <message>
         <source>Insert Row Above</source>
-        <translation type="obsolete">Üste Satır Ekle</translation>
+        <translation type="obsolete">在上方插入列</translation>
     </message>
     <message>
         <source>Insert Row Below</source>
-        <translation type="obsolete">Alta Satır Ekle</translation>
+        <translation type="obsolete">在下方插入列</translation>
     </message>
     <message>
         <source>Insert Column Left</source>
-        <translation type="obsolete">Sola Sütun Ekle</translation>
+        <translation type="obsolete">在左側插入欄</translation>
     </message>
     <message>
         <source>Insert Column Right</source>
-        <translation type="obsolete">Sağa Sütun Ekle</translation>
+        <translation type="obsolete">在右側插入欄</translation>
     </message>
     <message>
         <source>Move Row Up</source>
-        <translation type="obsolete">Satırı Yukarı Taşı</translation>
+        <translation type="obsolete">上移列</translation>
     </message>
     <message>
         <source>Move Row Down</source>
-        <translation type="obsolete">Satırı Aşağı Taşı</translation>
+        <translation type="obsolete">下移列</translation>
     </message>
     <message>
         <source>Move Column Left</source>
-        <translation type="obsolete">Sütunu Sola Taşı</translation>
+        <translation type="obsolete">左移欄</translation>
     </message>
     <message>
         <source>Move Column Right</source>
-        <translation type="obsolete">Sütunu Sağa Taşı</translation>
+        <translation type="obsolete">右移欄</translation>
     </message>
     <message>
         <source>Delete Row</source>
-        <translation type="obsolete">Satırı Sil</translation>
+        <translation type="obsolete">刪除列</translation>
     </message>
     <message>
         <source>Delete Column</source>
-        <translation type="obsolete">Sütunu Sil</translation>
+        <translation type="obsolete">刪除欄</translation>
     </message>
     <message>
         <source>Copy Table</source>
-        <translation type="obsolete">Tabloyu kopyala</translation>
+        <translation type="obsolete">複製表格</translation>
     </message>
     <message>
         <source>Format Table Source</source>
-        <translation type="obsolete">Tablo kaynağını biçimlendir</translation>
+        <translation type="obsolete">格式化表格原始碼</translation>
     </message>
     <message>
         <source>Delete Table</source>
-        <translation type="obsolete">Tabloyu Sil</translation>
+        <translation type="obsolete">刪除表格</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="obsolete">Sola Hizala</translation>
+        <translation type="obsolete">靠左對齊</translation>
     </message>
     <message>
         <source>Align Center</source>
-        <translation type="obsolete">Ortala</translation>
+        <translation type="obsolete">置中對齊</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="obsolete">Sağa Hizala</translation>
+        <translation type="obsolete">靠右對齊</translation>
     </message>
     <message>
         <source>Clear Alignment</source>
-        <translation type="obsolete">Hizalamayı Temizle</translation>
+        <translation type="obsolete">清除對齊</translation>
     </message>
     <message>
         <source>Enter Edit</source>
-        <translation type="obsolete">Düzenlemeye Gir</translation>
+        <translation type="obsolete">進入編輯</translation>
     </message>
     <message>
         <source>Exit Edit</source>
-        <translation type="obsolete">Düzenlemeden Çık</translation>
+        <translation type="obsolete">結束編輯</translation>
     </message>
     <message>
         <source>Set Language...</source>
-        <translation type="obsolete">Dili Ayarla...</translation>
+        <translation type="obsolete">設定語言...</translation>
     </message>
     <message>
         <source>Code Language</source>
-        <translation type="obsolete">Kod Dili</translation>
+        <translation type="obsolete">程式碼語言</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="obsolete">Dil:</translation>
+        <translation type="obsolete">語言：</translation>
     </message>
     <message>
         <source>Set HTML...</source>
-        <translation type="obsolete">HTML Ayarla...</translation>
+        <translation type="obsolete">設定 HTML...</translation>
     </message>
     <message>
         <source>HTML Source</source>
-        <translation type="obsolete">HTML Kaynağı</translation>
+        <translation type="obsolete">HTML 原始碼</translation>
     </message>
     <message>
         <source>HTML:</source>
-        <translation type="obsolete">HTML:</translation>
+        <translation type="obsolete">HTML：</translation>
     </message>
     <message>
         <source>Set TeX...</source>
-        <translation type="obsolete">TeX Ayarla...</translation>
+        <translation type="obsolete">設定 TeX...</translation>
     </message>
     <message>
         <source>Math TeX</source>
-        <translation type="obsolete">Matematik TeX</translation>
+        <translation type="obsolete">數學 TeX</translation>
     </message>
     <message>
         <source>TeX:</source>
-        <translation type="obsolete">TeX:</translation>
+        <translation type="obsolete">TeX：</translation>
     </message>
     <message>
         <source>Bold</source>
-        <translation type="obsolete">Kalın</translation>
+        <translation type="obsolete">粗體</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="obsolete">İtalik</translation>
+        <translation type="obsolete">斜體</translation>
     </message>
     <message>
         <source>Underline</source>
-        <translation type="obsolete">Altı Çizili</translation>
+        <translation type="obsolete">底線</translation>
     </message>
     <message>
         <source>Inline Code</source>
-        <translation type="obsolete">Satır İçi Kod</translation>
+        <translation type="obsolete">行內程式碼</translation>
     </message>
     <message>
         <source>Inline Formula</source>
-        <translation type="obsolete">Satır İçi Formül</translation>
+        <translation type="obsolete">行內公式</translation>
     </message>
     <message>
         <source>Strikethrough</source>
-        <translation type="obsolete">Üstü Çizili</translation>
+        <translation type="obsolete">刪除線</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation type="obsolete">Yorum</translation>
+        <translation type="obsolete">註解</translation>
     </message>
     <message>
         <source>Hyperlink</source>
-        <translation type="obsolete">Köprü</translation>
+        <translation type="obsolete">超連結</translation>
     </message>
     <message>
         <source>Clear Style</source>
-        <translation type="obsolete">Stili Temizle</translation>
+        <translation type="obsolete">清除樣式</translation>
     </message>
     <message>
         <source>Insert Image...</source>
-        <translation type="obsolete">Resim ekle...</translation>
+        <translation type="obsolete">插入圖片...</translation>
     </message>
     <message>
         <source>Insert Local Image...</source>
-        <translation type="obsolete">Yerel resim ekle...</translation>
+        <translation type="obsolete">插入本機圖片...</translation>
     </message>
     <message>
         <source>Open Image Location...</source>
-        <translation type="obsolete">Resim konumunu aç...</translation>
+        <translation type="obsolete">開啟圖片位置...</translation>
     </message>
     <message>
         <source>Delete Image File</source>
-        <translation type="obsolete">Resim dosyasını sil</translation>
+        <translation type="obsolete">刪除圖片檔案</translation>
     </message>
     <message>
         <source>Delete Image</source>
-        <translation type="obsolete">Resmi sil</translation>
+        <translation type="obsolete">刪除圖片</translation>
     </message>
     <message>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation type="obsolete">&quot;%1&quot; resim dosyası silinsin mi?
-Bu işlem geri alınamaz.</translation>
+        <translation type="obsolete">刪除圖片檔案「%1」？
+此操作無法復原。</translation>
     </message>
     <message>
         <source>Copy Image To...</source>
-        <translation type="obsolete">Resmi şuraya kopyala...</translation>
+        <translation type="obsolete">複製圖片到...</translation>
     </message>
     <message>
         <source>Copy Image To</source>
-        <translation type="obsolete">Resmi şuraya kopyala</translation>
+        <translation type="obsolete">複製圖片到</translation>
     </message>
     <message>
         <source>Rename / Move Image To...</source>
-        <translation type="obsolete">Resmi yeniden adlandır / şuraya taşı...</translation>
+        <translation type="obsolete">重新命名 / 移動圖片到...</translation>
     </message>
     <message>
         <source>Move Image To</source>
-        <translation type="obsolete">Resmi şuraya taşı</translation>
+        <translation type="obsolete">移動圖片到</translation>
     </message>
     <message>
         <source>Upload Image</source>
-        <translation type="obsolete">Resmi yükle</translation>
+        <translation type="obsolete">上傳圖片</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="obsolete">Resim yükleme henüz yapılandırılmamış.
-Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
+        <translation type="obsolete">尚未設定圖片上傳。
+請在 偏好設定 → 圖片 中設定圖片上傳器。</translation>
     </message>
     <message>
         <source>Upload All Local Images</source>
-        <translation type="obsolete">Tüm yerel resimleri yükle</translation>
+        <translation type="obsolete">上傳所有本機圖片</translation>
     </message>
     <message>
         <source>Upload All Images</source>
-        <translation type="obsolete">Tüm resimleri yükle</translation>
+        <translation type="obsolete">上傳所有圖片</translation>
     </message>
     <message>
         <source>Reload All Images</source>
-        <translation type="obsolete">Tüm resimleri yeniden yükle</translation>
+        <translation type="obsolete">重新載入所有圖片</translation>
     </message>
     <message>
         <source>25%</source>
-        <translation type="obsolete">%25</translation>
+        <translation type="obsolete">25%</translation>
     </message>
     <message>
         <source>50%</source>
-        <translation type="obsolete">%50</translation>
+        <translation type="obsolete">50%</translation>
     </message>
     <message>
         <source>75%</source>
-        <translation type="obsolete">%75</translation>
+        <translation type="obsolete">75%</translation>
     </message>
     <message>
         <source>100%</source>
-        <translation type="obsolete">%100</translation>
+        <translation type="obsolete">100%</translation>
     </message>
     <message>
         <source>150%</source>
-        <translation type="obsolete">%150</translation>
+        <translation type="obsolete">150%</translation>
     </message>
     <message>
         <source>Custom...</source>
-        <translation type="obsolete">Özel...</translation>
+        <translation type="obsolete">自訂...</translation>
     </message>
     <message>
         <source>Standard Markdown ![](url)</source>
-        <translation type="obsolete">Standart Markdown ![](url)</translation>
+        <translation type="obsolete">標準 Markdown ![](url)</translation>
     </message>
     <message>
         <source>HTML &lt;img&gt;</source>
@@ -540,151 +540,151 @@ Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="obsolete">Göreli yol ekle</translation>
+        <translation type="obsolete">插入相對路徑</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="obsolete">Mutlak yol ekle</translation>
+        <translation type="obsolete">插入絕對路徑</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="obsolete">Özel klasöre kopyala</translation>
+        <translation type="obsolete">複製到自訂資料夾</translation>
     </message>
     <message>
         <source>Copy All Images To...</source>
-        <translation type="obsolete">Tüm resimleri şuraya kopyala...</translation>
+        <translation type="obsolete">複製所有圖片到...</translation>
     </message>
     <message>
         <source>Copy All Images To</source>
-        <translation type="obsolete">Tüm resimleri şuraya kopyala</translation>
+        <translation type="obsolete">複製所有圖片到</translation>
     </message>
     <message>
         <source>Copy All Images</source>
-        <translation type="obsolete">Tüm resimleri kopyala</translation>
+        <translation type="obsolete">複製所有圖片</translation>
     </message>
     <message>
         <source>Copied %1 of %2 image(s).</source>
-        <translation type="obsolete">%2 resmin %1&apos;i kopyalandı.</translation>
+        <translation type="obsolete">已複製 %1/%2 張圖片。</translation>
     </message>
     <message>
         <source>Move All Images To...</source>
-        <translation type="obsolete">Tüm resimleri şuraya taşı...</translation>
+        <translation type="obsolete">移動所有圖片到...</translation>
     </message>
     <message>
         <source>Move All Images To</source>
-        <translation type="obsolete">Tüm resimleri şuraya taşı</translation>
+        <translation type="obsolete">移動所有圖片到</translation>
     </message>
     <message>
         <source>Move All Images</source>
-        <translation type="obsolete">Tüm resimleri taşı</translation>
+        <translation type="obsolete">移動所有圖片</translation>
     </message>
     <message>
         <source>Moved %1 image(s).</source>
-        <translation type="obsolete">%1 resim taşındı.</translation>
+        <translation type="obsolete">已移動 %1 張圖片。</translation>
     </message>
     <message>
         <source>Global Image Settings...</source>
-        <translation type="obsolete">Genel resim ayarları...</translation>
+        <translation type="obsolete">全域圖片設定...</translation>
     </message>
     <message>
         <source>Show / Hide Sidebar</source>
-        <translation type="vanished">Kenar Çubuğunu Göster / Gizle</translation>
+        <translation type="vanished">顯示 / 隱藏側邊欄</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation type="obsolete">Ana Hat</translation>
+        <translation type="obsolete">大綱</translation>
     </message>
     <message>
         <source>File Tree</source>
-        <translation type="obsolete">Dosya Ağacı</translation>
+        <translation type="obsolete">檔案樹</translation>
     </message>
     <message>
         <source>Source Code Mode</source>
-        <translation type="obsolete">Kaynak Kod Modu</translation>
+        <translation type="obsolete">原始碼模式</translation>
     </message>
     <message>
         <source>Word Wrap</source>
-        <translation type="obsolete">Sözcük Kaydırma</translation>
+        <translation type="obsolete">自動換行</translation>
     </message>
     <message>
         <source>Focus Mode</source>
-        <translation type="obsolete">Odak Modu</translation>
+        <translation type="obsolete">專注模式</translation>
     </message>
     <message>
         <source>Typewriter Mode</source>
-        <translation type="obsolete">Daktilo Modu</translation>
+        <translation type="obsolete">打字機模式</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="obsolete">Durum Çubuğunu Göster</translation>
+        <translation type="obsolete">顯示狀態列</translation>
     </message>
     <message>
         <source>Word Count Window</source>
-        <translation type="obsolete">Sözcük Sayımı Penceresi</translation>
+        <translation type="obsolete">字數統計視窗</translation>
     </message>
     <message>
         <source>Toggle Full Screen</source>
-        <translation type="obsolete">Tam Ekranı Aç/Kapat</translation>
+        <translation type="obsolete">切換全螢幕</translation>
     </message>
     <message>
         <source>Always on Top</source>
-        <translation type="obsolete">Her Zaman Üstte</translation>
+        <translation type="obsolete">永遠置頂</translation>
     </message>
     <message>
         <source>Actual Size</source>
-        <translation type="obsolete">Gerçek Boyut</translation>
+        <translation type="obsolete">實際大小</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="obsolete">Yakınlaştır</translation>
+        <translation type="obsolete">放大</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="obsolete">Uzaklaştır</translation>
+        <translation type="obsolete">縮小</translation>
     </message>
     <message>
         <source>Switch Windows</source>
-        <translation type="obsolete">Pencereler Arasında Geç</translation>
+        <translation type="obsolete">切換視窗</translation>
     </message>
     <message>
         <source>Quick Start</source>
-        <translation type="obsolete">Hızlı Başlangıç</translation>
+        <translation type="obsolete">快速入門</translation>
     </message>
     <message>
         <source>Markdown Reference</source>
-        <translation type="obsolete">Markdown Başvurusu</translation>
+        <translation type="obsolete">Markdown 參考</translation>
     </message>
     <message>
         <source>Custom Themes</source>
-        <translation type="obsolete">Özel Temalar</translation>
+        <translation type="obsolete">自訂佈景主題</translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="obsolete">Teşekkürler</translation>
+        <translation type="obsolete">致謝</translation>
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="obsolete">Değişiklik Günlüğü</translation>
+        <translation type="obsolete">更新紀錄</translation>
     </message>
     <message>
         <source>Official Website</source>
-        <translation type="obsolete">Resmî Web Sitesi</translation>
+        <translation type="obsolete">官方網站</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="obsolete">Geri Bildirim</translation>
+        <translation type="obsolete">意見回饋</translation>
     </message>
     <message>
         <source>Check for Updates...</source>
-        <translation type="obsolete">Güncellemeleri Denetle...</translation>
+        <translation type="obsolete">檢查更新...</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="obsolete">Hakkında</translation>
+        <translation type="obsolete">關於</translation>
     </message>
     <message>
         <source>About Mufpen</source>
-        <translation type="obsolete">Mufpen Hakkında</translation>
+        <translation type="obsolete">關於 Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -692,123 +692,135 @@ Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="obsolete">Mufpen %1
 
-C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyici.</translation>
+一款使用 C++ 和 Qt 6 Widgets 建構的快速、輕量級原生 Markdown 編輯器。</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="obsolete">Dosya(&amp;F)</translation>
+        <translation type="obsolete">檔案(&amp;F)</translation>
     </message>
     <message>
         <source>Open Recent</source>
-        <translation type="obsolete">Son Kullanılanları Aç</translation>
+        <translation type="obsolete">開啟最近使用的檔案</translation>
     </message>
     <message>
         <source>Reopen with Encoding</source>
-        <translation type="obsolete">Kodlamayla Yeniden Aç</translation>
+        <translation type="obsolete">以指定編碼重新開啟</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="obsolete">Dışa Aktar</translation>
+        <translation type="obsolete">匯出</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="obsolete">Düzenle(&amp;E)</translation>
+        <translation type="obsolete">編輯(&amp;E)</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="obsolete">Seç</translation>
+        <translation type="obsolete">選取</translation>
     </message>
     <message>
         <source>Delete Range</source>
-        <translation type="obsolete">Aralığı Sil</translation>
+        <translation type="obsolete">刪除選取範圍</translation>
     </message>
     <message>
         <source>Math Tools</source>
-        <translation type="obsolete">Matematik Araçları</translation>
+        <translation type="obsolete">數學工具</translation>
     </message>
     <message>
         <source>Smart Punctuation</source>
-        <translation type="obsolete">Akıllı Noktalama</translation>
+        <translation type="obsolete">智慧標點</translation>
     </message>
     <message>
         <source>Line Breaks</source>
-        <translation type="obsolete">Satır Sonları</translation>
+        <translation type="obsolete">換行</translation>
     </message>
     <message>
         <source>Find and Replace</source>
-        <translation type="obsolete">Bul ve Değiştir</translation>
+        <translation type="obsolete">尋找與取代</translation>
     </message>
     <message>
         <source>Table</source>
-        <translation type="obsolete">Tablo(&amp;B)</translation>
+        <translation type="obsolete">表格(&amp;B)</translation>
     </message>
     <message>
         <source>Code Tools</source>
-        <translation type="obsolete">Kod Araçları</translation>
+        <translation type="obsolete">程式碼工具</translation>
     </message>
     <message>
         <source>Alert</source>
-        <translation type="obsolete">Uyarı</translation>
+        <translation type="obsolete">警示區塊</translation>
     </message>
     <message>
         <source>Task Status</source>
-        <translation type="obsolete">Görev Durumu</translation>
+        <translation type="obsolete">工作狀態</translation>
     </message>
     <message>
         <source>List Indent</source>
-        <translation type="obsolete">Liste Girintisi</translation>
+        <translation type="obsolete">清單縮排</translation>
     </message>
     <message>
         <source>Front Matter</source>
-        <translation type="obsolete">Ön Bilgi</translation>
+        <translation type="obsolete">文件前言</translation>
     </message>
     <message>
         <source>Code</source>
-        <translation type="obsolete">Kod(&amp;C)</translation>
+        <translation type="obsolete">程式碼(&amp;C)</translation>
     </message>
     <message>
         <source>Math</source>
-        <translation type="obsolete">Matematik(&amp;M)</translation>
+        <translation type="obsolete">數學(&amp;M)</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="obsolete">Biçim(&amp;O)</translation>
+        <translation type="obsolete">格式(&amp;O)</translation>
     </message>
     <message>
         <source>Link Actions</source>
-        <translation type="obsolete">Bağlantı Eylemleri</translation>
+        <translation type="obsolete">連結動作</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation type="obsolete">圖片</translation>
     </message>
     <message>
         <source>Resize Image</source>
-        <translation type="obsolete">Resmi yeniden boyutlandır</translation>
+        <translation type="obsolete">調整圖片大小</translation>
     </message>
     <message>
         <source>Convert Image Syntax</source>
-        <translation type="obsolete">Resim sözdizimini dönüştür</translation>
+        <translation type="obsolete">轉換圖片語法</translation>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="obsolete">Yerel resim eklenirken</translation>
+        <translation type="obsolete">插入本機圖片時</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="obsolete">Görünüm(&amp;V)</translation>
+        <translation type="obsolete">檢視(&amp;V)</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="obsolete">Yardım(&amp;H)</translation>
+        <translation type="obsolete">說明(&amp;H)</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="obsolete">tablo %1:%2 ofset %3</translation>
+        <translation type="obsolete">表格 %1:%2 偏移 %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="obsolete">%1 sözcük</translation>
+        <translation type="obsolete">%1 個字</translation>
     </message>
     <message>
         <source>Insert Table</source>
-        <translation type="obsolete">Tablo Ekle</translation>
+        <translation type="obsolete">插入表格</translation>
+    </message>
+    <message>
+        <source>Rows:</source>
+        <translation type="vanished">列數：</translation>
+    </message>
+    <message>
+        <source>Columns:</source>
+        <translation type="vanished">欄數：</translation>
     </message>
     <message>
         <source>Unicode</source>
@@ -828,329 +840,329 @@ C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyic
     </message>
     <message>
         <source>Western</source>
-        <translation type="vanished">Batı</translation>
+        <translation type="vanished">西歐語言</translation>
     </message>
     <message>
         <source>Western (Windows-1252)</source>
-        <translation type="vanished">Batı (Windows-1252)</translation>
+        <translation type="vanished">西歐語言 (Windows-1252)</translation>
     </message>
     <message>
         <source>Cyrillic</source>
-        <translation type="vanished">Kiril</translation>
+        <translation type="vanished">斯拉夫文</translation>
     </message>
     <message>
         <source>Cyrillic (Windows-1251)</source>
-        <translation type="vanished">Kiril (Windows-1251)</translation>
+        <translation type="vanished">斯拉夫文 (Windows-1251)</translation>
     </message>
     <message>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation type="vanished">Kiril (ISO-8859-5)</translation>
+        <translation type="vanished">斯拉夫文 (ISO-8859-5)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM866)</source>
-        <translation type="vanished">Kiril (IBM866)</translation>
+        <translation type="vanished">斯拉夫文 (IBM866)</translation>
     </message>
     <message>
         <source>Cyrillic (IBM855)</source>
-        <translation type="vanished">Kiril (IBM855)</translation>
+        <translation type="vanished">斯拉夫文 (IBM855)</translation>
     </message>
     <message>
         <source>Cyrillic (KOI8-R)</source>
-        <translation type="vanished">Kiril (KOI8-R)</translation>
+        <translation type="vanished">斯拉夫文 (KOI8-R)</translation>
     </message>
     <message>
         <source>Cyrillic (Mac)</source>
-        <translation type="vanished">Kiril (Mac)</translation>
+        <translation type="vanished">斯拉夫文 (Mac)</translation>
     </message>
     <message>
         <source>Central European</source>
-        <translation type="vanished">Orta Avrupa</translation>
+        <translation type="vanished">中歐語言</translation>
     </message>
     <message>
         <source>Central European (Windows-1250)</source>
-        <translation type="vanished">Orta Avrupa (Windows-1250)</translation>
+        <translation type="vanished">中歐語言 (Windows-1250)</translation>
     </message>
     <message>
         <source>Central European (ISO-8859-2)</source>
-        <translation type="vanished">Orta Avrupa (ISO-8859-2)</translation>
+        <translation type="vanished">中歐語言 (ISO-8859-2)</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="vanished">Yunan</translation>
+        <translation type="vanished">希臘文</translation>
     </message>
     <message>
         <source>Greek (Windows-1253)</source>
-        <translation type="vanished">Yunan (Windows-1253)</translation>
+        <translation type="vanished">希臘文 (Windows-1253)</translation>
     </message>
     <message>
         <source>Greek (ISO-8859-7)</source>
-        <translation type="vanished">Yunan (ISO-8859-7)</translation>
+        <translation type="vanished">希臘文 (ISO-8859-7)</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="vanished">İbranice</translation>
+        <translation type="vanished">希伯來文</translation>
     </message>
     <message>
         <source>Hebrew (Windows-1255)</source>
-        <translation type="vanished">İbranice (Windows-1255)</translation>
+        <translation type="vanished">希伯來文 (Windows-1255)</translation>
     </message>
     <message>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation type="vanished">İbranice (ISO-8859-8)</translation>
+        <translation type="vanished">希伯來文 (ISO-8859-8)</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation type="vanished">Basitleştirilmiş Çince</translation>
+        <translation type="vanished">簡體中文</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB2312)</source>
-        <translation type="vanished">Basitleştirilmiş Çince (GB2312)</translation>
+        <translation type="vanished">簡體中文 (GB2312)</translation>
     </message>
     <message>
         <source>Chinese Simplified (GB18030)</source>
-        <translation type="vanished">Basitleştirilmiş Çince (GB18030)</translation>
+        <translation type="vanished">簡體中文 (GB18030)</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation type="vanished">Geleneksel Çince</translation>
+        <translation type="vanished">繁體中文</translation>
     </message>
     <message>
         <source>Chinese Traditional (Big5)</source>
-        <translation type="vanished">Geleneksel Çince (Big5)</translation>
+        <translation type="vanished">繁體中文 (Big5)</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation type="vanished">Japonca</translation>
+        <translation type="vanished">日文</translation>
     </message>
     <message>
         <source>Japanese (Shift_JIS)</source>
-        <translation type="vanished">Japonca (Shift_JIS)</translation>
+        <translation type="vanished">日文 (Shift_JIS)</translation>
     </message>
     <message>
         <source>Japanese (EUC-JP)</source>
-        <translation type="vanished">Japonca (EUC-JP)</translation>
+        <translation type="vanished">日文 (EUC-JP)</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation type="vanished">Korece</translation>
+        <translation type="vanished">韓文</translation>
     </message>
     <message>
         <source>Korean (EUC-KR)</source>
-        <translation type="vanished">Korece (EUC-KR)</translation>
+        <translation type="vanished">韓文 (EUC-KR)</translation>
     </message>
     <message>
         <source>Thai</source>
-        <translation type="vanished">Tayca</translation>
+        <translation type="vanished">泰文</translation>
     </message>
     <message>
         <source>Thai (TIS-620)</source>
-        <translation type="vanished">Tayca (TIS-620)</translation>
+        <translation type="vanished">泰文 (TIS-620)</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Kaynak / işlenmiş modu değiştir</translation>
+        <translation type="vanished">切換原始碼 / 轉譯模式</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="obsolete">Değiştir</translation>
+        <translation type="obsolete">取代</translation>
     </message>
 </context>
 <context>
     <name>VirtualSourceEdit</name>
     <message>
         <source>Markdown source editor</source>
-        <translation type="vanished">Markdown kaynak kodu düzenleyici</translation>
+        <translation type="vanished">Markdown 原始碼編輯器</translation>
     </message>
     <message>
         <source>Plain-text Markdown source</source>
-        <translation type="vanished">Düz metin Markdown kaynak kodu</translation>
+        <translation type="vanished">純文字 Markdown 原始碼</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>A fast native Markdown editor built with C++ and Qt 6 Widgets.</source>
-        <translation type="vanished">C++ ve Qt 6 Widgets ile oluşturulmuş hızlı bir yerel Markdown düzenleyici.</translation>
+        <translation type="vanished">一款以 C++ 和 Qt 6 Widgets 建置的快速原生 Markdown 編輯器。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
         <source>Cannot write to the portable data folder.</source>
-        <translation>Taşınabilir veri klasörüne yazılamıyor.</translation>
+        <translation>無法寫入可攜版資料資料夾。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="104"/>
         <source>Cannot load the bundled ICU data. Please reinstall Mufpen.</source>
-        <translation>Birlikte gelen ICU verileri yüklenemiyor. Lütfen Mufpen&apos;i yeniden yükleyin.</translation>
+        <translation>無法載入隨附的 ICU 資料。請重新安裝 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="142"/>
         <source>A fast, lightweight, native Markdown editor built with C++ and Qt 6.</source>
-        <translation>C++ ve Qt 6 ile oluşturulmuş hızlı, hafif, yerel bir Markdown düzenleyici.</translation>
+        <translation>一款使用 C++ 和 Qt 6 建置的快速、輕量級原生 Markdown 編輯器。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="149"/>
         <source>Open &lt;folder&gt; in the sidebar file browser.</source>
-        <translation>Kenar çubuğundaki dosya tarayıcısında &lt;folder&gt; klasörünü aç.</translation>
+        <translation>在側邊欄檔案瀏覽器中開啟 &lt;folder&gt;。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="159"/>
         <source>Markdown or text file (or folder) to open.</source>
-        <translation>Açılacak Markdown veya metin dosyası (ya da klasör).</translation>
+        <translation>要開啟的 Markdown 或文字檔案（或資料夾）。</translation>
     </message>
     <message>
         <source>Default Markdown editor</source>
-        <translation type="vanished">Varsayılan Markdown düzenleyicisi</translation>
+        <translation type="vanished">預設 Markdown 編輯器</translation>
     </message>
     <message>
         <source>Mufpen is registered as an editor for Markdown files.
 Make it your default editor now?</source>
-        <translation type="vanished">Mufpen, Markdown dosyaları için düzenleyici olarak kayıtlı.
-Şimdi varsayılan düzenleyiciniz yapılsın mı?</translation>
+        <translation type="vanished">Mufpen 已註冊為 Markdown 檔案的編輯器。
+現在要將它設為你的預設編輯器嗎？</translation>
     </message>
     <message>
         <source>Markdown or text file to open.</source>
-        <translation type="vanished">Açılacak Markdown veya metin dosyası.</translation>
+        <translation type="vanished">要開啟的 Markdown 或文字檔。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::BlockLayoutBuilder</name>
+    <name>mufpen::BlockLayoutBuilder</name>
     <message>
         <location filename="../src/render/BlockLayoutBuilder.cpp" line="504"/>
         <source>Start writing...</source>
-        <translation>Yazmaya başlayın...</translation>
+        <translation>開始撰寫...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::CustomCommandUploader</name>
+    <name>mufpen::CustomCommandUploader</name>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="25"/>
         <source>no upload command configured</source>
-        <translation>yükleme komutu yapılandırılmamış</translation>
+        <translation>尚未設定上傳命令</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="34"/>
         <source>empty upload command</source>
-        <translation>yükleme komutu boş</translation>
+        <translation>上傳命令為空</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="92"/>
         <source>uploader exited with code %1</source>
-        <translation>yükleme programı %1 koduyla sonlandı</translation>
+        <translation>上傳程式已結束，結束代碼為 %1</translation>
     </message>
     <message>
         <location filename="../src/image/CustomCommandUploader.cpp" line="109"/>
         <source>uploader produced no URLs</source>
-        <translation>yükleme programı hiçbir URL döndürmedi</translation>
+        <translation>上傳程式未傳回任何 URL</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentSession</name>
+    <name>mufpen::DocumentSession</name>
     <message>
         <location filename="../src/document/DocumentSession.cpp" line="872"/>
         <source>Untitled</source>
-        <translation>Adsız</translation>
+        <translation>無標題</translation>
     </message>
 </context>
 <context>
-    <name>muffin::DocumentTab</name>
+    <name>mufpen::DocumentTab</name>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="116"/>
         <location filename="../src/app/DocumentTab.cpp" line="444"/>
         <source>Markdown source</source>
-        <translation>Markdown kaynağı</translation>
+        <translation>Markdown 原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="119"/>
         <location filename="../src/app/DocumentTab.cpp" line="445"/>
         <source>Read-only preview</source>
-        <translation>Salt okunur önizleme</translation>
+        <translation>唯讀預覽</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="123"/>
         <location filename="../src/app/DocumentTab.cpp" line="446"/>
         <source>Synchronized scrolling</source>
-        <translation>Eşzamanlı kaydırma</translation>
+        <translation>同步捲動</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="147"/>
         <location filename="../src/app/DocumentTab.cpp" line="452"/>
         <source>Side by side</source>
-        <translation>Yan yana</translation>
+        <translation>左右分欄</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="148"/>
         <location filename="../src/app/DocumentTab.cpp" line="453"/>
         <source>Top and bottom</source>
-        <translation>Alt alta</translation>
+        <translation>上下分欄</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="157"/>
         <location filename="../src/app/DocumentTab.cpp" line="454"/>
         <source>Swap source and preview</source>
-        <translation>Kaynak ve önizlemenin yerini değiştir</translation>
+        <translation>調換原始碼與預覽</translation>
     </message>
     <message>
         <location filename="../src/app/DocumentTab.cpp" line="449"/>
         <source>Split layout</source>
-        <translation>Bölünmüş görünüm düzeni</translation>
+        <translation>分割版面配置</translation>
     </message>
 </context>
 <context>
-    <name>muffin::EditorView</name>
+    <name>mufpen::EditorView</name>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="115"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1659"/>
         <source>(no spelling suggestions)</source>
-        <translation>(yazım önerisi yok)</translation>
+        <translation>(無拼寫建議)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="131"/>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1670"/>
         <source>Ignore &quot;%1&quot;</source>
-        <translation>&quot;%1&quot; öğesini yoksay</translation>
+        <translation>忽略「%1」</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorViewPaint.cpp" line="56"/>
         <source>Loading…</source>
-        <translation>Yükleniyor…</translation>
+        <translation>載入中…</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="818"/>
         <source>Markdown editor</source>
-        <translation>Markdown düzenleyici</translation>
+        <translation>Markdown 編輯器</translation>
     </message>
     <message>
         <location filename="../src/editor/EditorView.cpp" line="819"/>
         <source>Rendered Markdown document</source>
-        <translation>İşlenmiş Markdown belgesi</translation>
+        <translation>渲染後的 Markdown 文件</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileController</name>
+    <name>mufpen::FileController</name>
     <message>
         <location filename="../src/io/FileController.cpp" line="367"/>
         <source>Open</source>
-        <translation>Aç</translation>
+        <translation>開啟</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="368"/>
         <source>Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)</source>
-        <translation>Markdown ve metin dosyaları (*.md *.markdown *.mdown *.txt);;Tüm dosyalar (*.*)</translation>
+        <translation>Markdown 和文字檔 (*.md *.markdown *.mdown *.txt);;所有檔案 (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Save As</source>
-        <translation>Farklı Kaydet</translation>
+        <translation>另存新檔</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="603"/>
         <source>The document cannot be encoded as %1.</source>
-        <translation>Belge %1 olarak kodlanamıyor.</translation>
+        <translation>無法將文件編碼為 %1。</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Markdown files (*.md);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Markdown dosyaları (*.md);;Metin dosyaları (*.txt);;Tüm dosyalar (*.*)</translation>
+        <translation>Markdown 檔案 (*.md);;文字檔 (*.txt);;所有檔案 (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
@@ -1161,213 +1173,213 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/io/FileController.cpp" line="478"/>
         <source>Markdown files (*.md *.markdown);;Text files (*.txt);;All files (*.*)</source>
-        <translation>Markdown dosyaları (*.md *.markdown);;Metin dosyaları (*.txt);;Tüm dosyalar (*.*)</translation>
+        <translation>Markdown 檔案 (*.md *.markdown);;文字檔 (*.txt);;所有檔案 (*.*)</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="510"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Geçerli belgede kaydedilmemiş değişiklikler var.</translation>
+        <translation>目前文件有尚未儲存的變更。</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="529"/>
         <source>File Missing</source>
-        <translation>Dosya Bulunamadı</translation>
+        <translation>檔案不存在</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="530"/>
         <source>The file &quot;%1&quot; no longer exists on disk. Use Save As to write it to a new location.</source>
-        <translation>&quot;%1&quot; dosyası artık diskte bulunmuyor. Yeni bir konuma kaydetmek için Farklı Kaydet seçeneğini kullanın.</translation>
+        <translation>檔案「%1」已不在磁碟上。請使用「另存新檔」將其儲存到新位置。</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="538"/>
         <source>File Changed on Disk</source>
-        <translation>Dosya Diskte Değiştirildi</translation>
+        <translation>磁碟上的檔案已變更</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="539"/>
         <source>The file &quot;%1&quot; has been changed outside Mufpen. Overwrite it?</source>
-        <translation>&quot;%1&quot; dosyası Mufpen dışında değiştirilmiş. Üzerine yazılsın mı?</translation>
+        <translation>檔案「%1」已在 Mufpen 之外被修改。要覆寫嗎？</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="548"/>
         <location filename="../src/io/FileController.cpp" line="636"/>
         <source>Open Failed</source>
-        <translation>Açma Başarısız</translation>
+        <translation>開啟失敗</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <source>Could not detect a lossless text encoding for this file.</source>
-        <translation>Bu dosya için kayıpsız bir metin kodlaması belirlenemedi.</translation>
+        <translation>無法偵測出可無損讀取此檔案的文字編碼。</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="574"/>
         <location filename="../src/io/FileController.cpp" line="611"/>
         <location filename="../src/io/FileController.cpp" line="616"/>
         <source>Save Failed</source>
-        <translation>Kaydetme Başarısız</translation>
+        <translation>儲存失敗</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="563"/>
         <location filename="../src/io/FileController.cpp" line="602"/>
         <location filename="../src/io/FileController.cpp" line="642"/>
         <source>Encoding Error</source>
-        <translation>Kodlama hatası</translation>
+        <translation>編碼錯誤</translation>
     </message>
     <message>
         <source>Unsupported encoding: %1</source>
-        <translation type="vanished">Desteklenmeyen kodlama: %1</translation>
+        <translation type="vanished">不支援的編碼：%1</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="643"/>
         <source>Failed to decode file with encoding: %1</source>
-        <translation>Dosya %1 kodlamasıyla çözülemedi</translation>
+        <translation>使用編碼 %1 解碼檔案失敗</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="658"/>
         <source>The document has unsaved changes. Save before reopening with a new encoding?</source>
-        <translation>Belgede kaydedilmemiş değişiklikler var. Yeni kodlamayla yeniden açmadan önce kaydedilsin mi?</translation>
+        <translation>文件有未儲存的變更。是否在以新編碼重新開啟前儲存？</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="695"/>
         <source>Move To</source>
-        <translation>Şuraya taşı</translation>
+        <translation>移動到</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Move Failed</source>
-        <translation>Taşıma başarısız</translation>
+        <translation>移動失敗</translation>
     </message>
     <message>
         <location filename="../src/io/FileController.cpp" line="704"/>
         <source>Could not move file to:
 %1</source>
-        <translation>Dosya şuraya taşınamadı:
+        <translation>無法將檔案移動到：
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FileOpenConfirmation</name>
+    <name>mufpen::FileOpenConfirmation</name>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="84"/>
         <source>Open this file?</source>
-        <translation>Bu dosya açılsın mı?</translation>
+        <translation>開啟此檔案？</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="85"/>
         <source>This file is not a Markdown or text file. Are you sure you want to open it?</source>
-        <translation>Bu dosya bir Markdown veya metin dosyası değil. Açmak istediğinizden emin misiniz?</translation>
+        <translation>目前檔案不是 Markdown 或文字檔案，確定要開啟嗎？</translation>
     </message>
     <message>
         <location filename="../src/app/FileOpenConfirmation.cpp" line="87"/>
         <source>Opening this large file may take a long time and use a lot of memory. Are you sure you want to open it?</source>
-        <translation>Bu büyük dosyayı açmak uzun sürebilir ve çok fazla bellek kullanabilir. Açmak istediğinizden emin misiniz?</translation>
+        <translation>開啟此大型檔案可能需要很長的時間和大量記憶體，確定要開啟嗎？</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FilePathOps</name>
+    <name>mufpen::FilePathOps</name>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="182"/>
         <source>path does not exist</source>
-        <translation>yol mevcut değil</translation>
+        <translation>路徑不存在</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="23"/>
         <source>operation failed</source>
-        <translation>işlem başarısız oldu</translation>
+        <translation>操作失敗</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="31"/>
         <source>file already exists</source>
-        <translation>dosya zaten var</translation>
+        <translation>檔案已存在</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="38"/>
         <source>could not create parent directory</source>
-        <translation>üst dizin oluşturulamadı</translation>
+        <translation>無法建立上層目錄</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="56"/>
         <source>path already exists</source>
-        <translation>yol zaten var</translation>
+        <translation>路徑已存在</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="62"/>
         <source>could not create folder</source>
-        <translation>klasör oluşturulamadı</translation>
+        <translation>無法建立資料夾</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="84"/>
         <source>could not rename (target may exist or the move crosses volumes)</source>
-        <translation>yeniden adlandırılamadı (hedef zaten var olabilir veya taşıma farklı birimler arasında yapılıyor olabilir)</translation>
+        <translation>無法重新命名（目標可能已存在，或移動操作跨越磁碟區）</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="93"/>
         <source>could not rename (case-change intermediate step failed)</source>
-        <translation>yeniden adlandırılamadı (büyük/küçük harf değiştirme işleminin ara adımı başarısız oldu)</translation>
+        <translation>無法重新命名（變更大小寫的中間步驟失敗）</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="103"/>
         <source>could not rename (case-change final step failed)</source>
-        <translation>yeniden adlandırılamadı (büyük/küçük harf değiştirme işleminin son adımı başarısız oldu)</translation>
+        <translation>無法重新命名（變更大小寫的最後步驟失敗）</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="137"/>
         <source>could not create destination directory</source>
-        <translation>hedef dizin oluşturulamadı</translation>
+        <translation>無法建立目標目錄</translation>
     </message>
     <message>
         <location filename="../src/io/FilePathOps.cpp" line="143"/>
         <source>could not copy (destination may already exist)</source>
-        <translation>kopyalanamadı (hedef zaten var olabilir)</translation>
+        <translation>無法複製（目標可能已存在）</translation>
     </message>
 </context>
 <context>
-    <name>muffin::FindBarWidget</name>
+    <name>mufpen::FindBarWidget</name>
+    <message>
+        <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
+        <source>Close</source>
+        <translation>關閉</translation>
+    </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="104"/>
         <source>Find</source>
-        <translation>Bul</translation>
+        <translation>尋找</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="105"/>
         <source>Previous</source>
-        <translation>Önceki</translation>
+        <translation>上一個</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="106"/>
         <source>Next</source>
-        <translation>Sonraki</translation>
-    </message>
-    <message>
-        <location filename="../src/editor/FindBarWidget.cpp" line="107"/>
-        <source>Close</source>
-        <translation>Kapat</translation>
+        <translation>下一個</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="108"/>
         <location filename="../src/editor/FindBarWidget.cpp" line="109"/>
         <source>Replace</source>
-        <translation>Değiştir</translation>
+        <translation>取代</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="110"/>
         <source>Replace All</source>
-        <translation>Tümünü değiştir</translation>
+        <translation>全部取代</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="111"/>
         <source>Regex</source>
-        <translation>Düzenli İfade</translation>
+        <translation>正規表示式</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="112"/>
         <source>Match Case</source>
-        <translation>Büyük/Küçük Harfe Duyarlı</translation>
+        <translation>區分大小寫</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="154"/>
         <source>Not found</source>
-        <translation>Bulunamadı</translation>
+        <translation>找不到</translation>
     </message>
     <message>
         <location filename="../src/editor/FindBarWidget.cpp" line="156"/>
@@ -1376,199 +1388,199 @@ Make it your default editor now?</source>
     </message>
 </context>
 <context>
-    <name>muffin::HelpViewerDialog</name>
+    <name>mufpen::HelpViewerDialog</name>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="151"/>
         <location filename="../src/app/HelpViewerDialog.cpp" line="163"/>
         <source>%1 — Mufpen Help</source>
-        <translation>%1 — Mufpen Yardımı</translation>
+        <translation>%1 — Mufpen 說明</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="160"/>
         <source>Go back</source>
-        <translation>Geri</translation>
+        <translation>上一頁</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="161"/>
         <source>Go forward</source>
-        <translation>İleri</translation>
+        <translation>下一頁</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="162"/>
         <source>Scroll to top</source>
-        <translation>Başa dön</translation>
+        <translation>回到頂端</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="190"/>
         <source>Quick Start</source>
-        <translation>Hızlı Başlangıç</translation>
+        <translation>快速入門</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="192"/>
         <source>Markdown Reference</source>
-        <translation>Markdown Başvurusu</translation>
+        <translation>Markdown 參考</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="194"/>
         <source>Acknowledgements</source>
-        <translation>Teşekkürler</translation>
+        <translation>致謝</translation>
     </message>
     <message>
         <location filename="../src/app/HelpViewerDialog.cpp" line="211"/>
         <source>This page is not available.</source>
-        <translation>Bu sayfa kullanılamıyor.</translation>
+        <translation>此頁面暫不可用。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::ImageFileOps</name>
+    <name>mufpen::ImageFileOps</name>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="216"/>
         <source>source or destination directory is unavailable</source>
-        <translation>kaynak veya hedef dizine erişilemiyor</translation>
+        <translation>來源或目標目錄無法使用</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="250"/>
         <source>could not locate an image destination in the document source</source>
-        <translation>belgenin kaynak kodunda bir görselin yolu bulunamadı</translation>
+        <translation>無法在文件原始碼中找到圖片的目標路徑</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="269"/>
         <source>could not move %1</source>
-        <translation>%1 taşınamadı</translation>
+        <translation>無法移動 %1</translation>
     </message>
     <message>
         <location filename="../src/io/ImageFileOps.cpp" line="271"/>
         <source>; rollback failed for %1</source>
-        <translation>; %1 için geri alma başarısız oldu</translation>
+        <translation>；無法將 %1 還原至原位置</translation>
     </message>
 </context>
 <context>
-    <name>muffin::LanguageManager</name>
+    <name>mufpen::LanguageManager</name>
     <message>
         <location filename="../src/app/LanguageManager.cpp" line="17"/>
         <source>System Default</source>
-        <translation>Sistem Varsayılanı</translation>
+        <translation>系統預設</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MainWindow</name>
+    <name>mufpen::MainWindow</name>
     <message>
         <source>Parse %1 ms</source>
-        <translation type="vanished">Ayrıştırma %1 ms</translation>
+        <translation type="vanished">解析 %1 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="431"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="933"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="937"/>
         <source> (Editing Locked)</source>
-        <translation> (Düzenleme kilitli)</translation>
+        <translation> (編輯已鎖定)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Unlock Editing</source>
-        <translation>Düzenleme kilidini aç</translation>
+        <translation>解除編輯鎖定</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="488"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="647"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="587"/>
         <source>Lock Editing</source>
-        <translation>Düzenlemeyi kilitle</translation>
+        <translation>鎖定編輯</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="493"/>
         <source>This pane is a read-only preview. Edit the Markdown source on the left.</source>
-        <translation>Bu bölme salt okunur bir önizlemedir. Markdown kaynağını solda düzenleyin.</translation>
+        <translation>此窗格為唯讀預覽。請在左側編輯 Markdown 原始碼。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="495"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="932"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="936"/>
         <source>Editing is locked. Unlock editing to change this document.</source>
-        <translation>Düzenleme kilitli. Bu belgeyi değiştirmek için düzenleme kilidini açın.</translation>
+        <translation>編輯已鎖定。請解除編輯鎖定以變更此文件。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="497"/>
         <source>The document is still loading.</source>
-        <translation>Belge hâlâ yükleniyor.</translation>
+        <translation>文件仍在載入中。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindow.cpp" line="688"/>
         <source>Open Folder</source>
-        <translation>Klasör Aç</translation>
+        <translation>開啟資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1933"/>
         <source>Show / Hide Sidebar</source>
-        <translation>Kenar Çubuğunu Göster / Gizle</translation>
+        <translation>顯示 / 隱藏側邊欄</translation>
     </message>
     <message>
         <source>Toggle source / rendered mode</source>
-        <translation type="vanished">Kaynak / işlenmiş modu değiştir</translation>
+        <translation type="vanished">切換原始碼 / 轉譯模式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2170"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>File</source>
-        <translation>Dosya(&amp;F)</translation>
+        <translation>檔案(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="114"/>
         <source>New</source>
-        <translation>Yeni</translation>
+        <translation>新增</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="119"/>
         <source>New Window</source>
-        <translation>Yeni Pencere</translation>
+        <translation>新視窗</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="128"/>
         <source>Open...</source>
-        <translation>Aç...</translation>
+        <translation>開啟...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="124"/>
         <source>Open Folder...</source>
-        <translation>Klasör Aç...</translation>
+        <translation>開啟資料夾...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="133"/>
         <source>Quick Open...</source>
-        <translation>Hızlı Aç...</translation>
+        <translation>快速開啟...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="144"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2178"/>
         <source>Open Recent</source>
-        <translation>Son Kullanılanları Aç</translation>
+        <translation>開啟最近使用的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2182"/>
         <source>Reopen with Encoding</source>
-        <translation>Kodlamayla Yeniden Aç</translation>
+        <translation>以指定編碼重新開啟</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="162"/>
         <source>Save</source>
-        <translation>Kaydet</translation>
+        <translation>儲存</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="176"/>
         <source>Save As...</source>
-        <translation>Farklı Kaydet...</translation>
+        <translation>另存新檔...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="187"/>
         <source>Move To...</source>
-        <translation>Şuraya Taşı...</translation>
+        <translation>移動到...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="193"/>
         <source>Save All Open Files...</source>
-        <translation>Tüm Açık Dosyaları Kaydet...</translation>
+        <translation>儲存所有開啟的檔案...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="199"/>
@@ -1576,199 +1588,199 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="402"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1223"/>
         <source>Properties</source>
-        <translation>Özellikler</translation>
+        <translation>內容</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="204"/>
         <source>Show in File Manager...</source>
-        <translation>Dosya Yöneticisinde Göster...</translation>
+        <translation>在檔案管理器中顯示...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="209"/>
         <source>Show in Sidebar</source>
-        <translation>Kenar Çubuğunda Göster</translation>
+        <translation>在側邊欄中顯示</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="215"/>
         <source>Delete...</source>
-        <translation>Sil...</translation>
+        <translation>刪除...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="221"/>
         <source>Import...</source>
-        <translation>İçe Aktar...</translation>
+        <translation>匯入...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1914"/>
         <source>Could not move images:
 %1</source>
-        <translation>Görüntüler taşınamadı:
+        <translation>無法移動圖片：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1968"/>
         <source>Source and Preview</source>
-        <translation>Kaynak ve Önizleme</translation>
+        <translation>原始碼與預覽</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2134"/>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Geliştirici:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;Lisans:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Web sitesi:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; 夏寒&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2197"/>
         <source>Export</source>
-        <translation>Dışa Aktar</translation>
+        <translation>匯出</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="227"/>
         <source>Print...</source>
-        <translation>Yazdır...</translation>
+        <translation>列印...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="324"/>
         <source>Preferences...</source>
-        <translation>Tercihler...</translation>
+        <translation>偏好設定...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Kapat</translation>
+        <translation type="vanished">關閉</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2233"/>
         <source>Edit</source>
-        <translation>Düzenle(&amp;E)</translation>
+        <translation>編輯(&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="366"/>
         <source>Undo</source>
-        <translation>Geri Al</translation>
+        <translation>復原</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="372"/>
         <source>Redo</source>
-        <translation>Yinele</translation>
+        <translation>重做</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="378"/>
         <source>Cut</source>
-        <translation>Kes</translation>
+        <translation>剪下</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="383"/>
         <source>Copy</source>
-        <translation>Kopyala</translation>
+        <translation>複製</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1559"/>
         <source>Copy Image</source>
-        <translation>Görüntüyü Kopyala</translation>
+        <translation>複製圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="420"/>
         <source>Paste</source>
-        <translation>Yapıştır</translation>
+        <translation>貼上</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="425"/>
         <source>Copy as Plain Text</source>
-        <translation>Düz Metin Olarak Kopyala</translation>
+        <translation>以純文字複製</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="431"/>
         <source>Copy as Markdown</source>
-        <translation>Markdown Olarak Kopyala</translation>
+        <translation>以 Markdown 複製</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="438"/>
         <source>Copy as HTML</source>
-        <translation>HTML Olarak Kopyala</translation>
+        <translation>以 HTML 複製</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="445"/>
         <source>Paste as Plain Text</source>
-        <translation>Düz Metin Olarak Yapıştır</translation>
+        <translation>以純文字貼上</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2250"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="232"/>
         <source>Select</source>
-        <translation>Seç</translation>
+        <translation>選取</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="450"/>
         <source>Select All</source>
-        <translation>Tümünü Seç</translation>
+        <translation>全部選取</translation>
     </message>
     <message>
         <source>Select Current Line</source>
-        <translation type="vanished">Geçerli Satırı Seç</translation>
+        <translation type="vanished">選取目前行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="469"/>
         <source>Select Current Format Text</source>
-        <translation>Geçerli Biçim Metnini Seç</translation>
+        <translation>選取目前格式文字</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="518"/>
         <source>Move Line Up</source>
-        <translation>Satırı Yukarı Taşı</translation>
+        <translation>上移目前行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="526"/>
         <source>Move Line Down</source>
-        <translation>Satırı Aşağı Taşı</translation>
+        <translation>下移目前行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="546"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="349"/>
         <source>Delete</source>
-        <translation>Sil</translation>
+        <translation>刪除</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2272"/>
         <source>Delete Range</source>
-        <translation>Aralığı Sil</translation>
+        <translation>刪除選取範圍</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="553"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="56"/>
         <source>Delete Block</source>
-        <translation>Bloğu sil</translation>
+        <translation>刪除區塊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="560"/>
         <source>Delete Current Line</source>
-        <translation>Geçerli satırı sil</translation>
+        <translation>刪除目前行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="567"/>
         <source>Delete Current Format Text</source>
-        <translation>Geçerli biçimli metni sil</translation>
+        <translation>刪除目前格式文字</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="574"/>
         <source>Delete Current Word</source>
-        <translation>Geçerli sözcüğü sil</translation>
+        <translation>刪除目前字詞</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2281"/>
         <source>Math Tools</source>
-        <translation>Matematik Araçları</translation>
+        <translation>數學工具</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2287"/>
         <source>Smart Punctuation</source>
-        <translation>Akıllı Noktalama</translation>
+        <translation>智慧標點</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2301"/>
         <source>Line Breaks</source>
-        <translation>Satır Sonları</translation>
+        <translation>換行</translation>
     </message>
     <message>
         <source>Spaces and Line Breaks</source>
-        <translation type="vanished">Boşluklar ve Satır Sonları</translation>
+        <translation type="vanished">空格與換行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="592"/>
@@ -1783,16 +1795,16 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="614"/>
         <source>Ensure Trailing Newline on Save</source>
-        <translation>Kaydederken dosya sonunda satır sonu olmasını sağla</translation>
+        <translation>儲存時確保結尾有換行符號</translation>
     </message>
     <message>
         <source>Spell Check...</source>
-        <translation type="vanished">Yazım Denetimi...</translation>
+        <translation type="vanished">拼字檢查...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2311"/>
         <source>Find and Replace</source>
-        <translation>Bul ve Değiştir</translation>
+        <translation>尋找與取代</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="739"/>
@@ -1800,117 +1812,117 @@ Make it your default editor now?</source>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="59"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="214"/>
         <source>Paragraph</source>
-        <translation>Paragraf(&amp;P)</translation>
+        <translation>段落(&amp;P)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="61"/>
         <source>Heading %1</source>
-        <translation>Başlık %1</translation>
+        <translation>第 %1 級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="749"/>
         <source>Promote Heading</source>
-        <translation>Başlığı Yükselt</translation>
+        <translation>提升標題層級</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="761"/>
         <source>Demote Heading</source>
-        <translation>Başlığı Düşür</translation>
+        <translation>降低標題層級</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2367"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="2448"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="171"/>
         <source>Table</source>
-        <translation>Tablo(&amp;B)</translation>
+        <translation>表格(&amp;B)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="773"/>
         <source>Formula Block</source>
-        <translation>Formül Bloğu</translation>
+        <translation>公式區塊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="785"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="66"/>
         <source>Code Block</source>
-        <translation>Kod Bloğu</translation>
+        <translation>程式碼區塊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2394"/>
         <source>Code Tools</source>
-        <translation>Kod Araçları</translation>
+        <translation>程式碼工具</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2407"/>
         <source>Alert</source>
-        <translation>Uyarı</translation>
+        <translation>警示區塊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="797"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="65"/>
         <source>Quote</source>
-        <translation>Alıntı</translation>
+        <translation>引用</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="805"/>
         <source>Ordered List</source>
-        <translation>Sıralı Liste</translation>
+        <translation>編號清單</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="813"/>
         <source>Unordered List</source>
-        <translation>Sırasız Liste</translation>
+        <translation>項目符號清單</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="821"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="64"/>
         <source>Task List</source>
-        <translation>Görev Listesi</translation>
+        <translation>工作清單</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2349"/>
         <source>Task Status</source>
-        <translation>Görev Durumu</translation>
+        <translation>工作狀態</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2355"/>
         <source>List Indent</source>
-        <translation>Liste Girintisi</translation>
+        <translation>清單縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="877"/>
         <source>Insert Paragraph Before</source>
-        <translation>Öncesine Paragraf Ekle</translation>
+        <translation>在前方插入段落</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="888"/>
         <source>Insert Paragraph After</source>
-        <translation>Sonrasına Paragraf Ekle</translation>
+        <translation>在後方插入段落</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="899"/>
         <source>Link Reference</source>
-        <translation>Bağlantı Başvurusu</translation>
+        <translation>連結參照</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="906"/>
         <source>Footnote</source>
-        <translation>Dipnot</translation>
+        <translation>註腳</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="913"/>
         <source>Horizontal Rule</source>
-        <translation>Yatay Çizgi</translation>
+        <translation>水平分隔線</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="921"/>
         <source>Table of Contents</source>
-        <translation>İçindekiler</translation>
+        <translation>目錄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2420"/>
         <source>Front Matter</source>
-        <translation>Ön Bilgi</translation>
+        <translation>文件前言</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="928"/>
@@ -1930,153 +1942,153 @@ Make it your default editor now?</source>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2485"/>
         <source>Format</source>
-        <translation>Biçim(&amp;O)</translation>
+        <translation>格式(&amp;O)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1297"/>
         <source>Bold</source>
-        <translation>Kalın</translation>
+        <translation>粗體</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1309"/>
         <source>Italic</source>
-        <translation>İtalik</translation>
+        <translation>斜體</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1321"/>
         <source>Underline</source>
-        <translation>Altı Çizili</translation>
+        <translation>底線</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1343"/>
         <source>Inline Code</source>
-        <translation>Satır İçi Kod</translation>
+        <translation>行內程式碼</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1355"/>
         <source>Inline Formula</source>
-        <translation>Satır İçi Formül</translation>
+        <translation>行內公式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1368"/>
         <source>Strikethrough</source>
-        <translation>Üstü Çizili</translation>
+        <translation>刪除線</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1381"/>
         <source>Comment</source>
-        <translation>Yorum</translation>
+        <translation>註解</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1386"/>
         <source>Hyperlink</source>
-        <translation>Köprü</translation>
+        <translation>超連結</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2217"/>
         <source>Export Presets</source>
-        <translation>Dışa Aktarma Ön Ayarları</translation>
+        <translation>匯出預設組</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2435"/>
         <source>Paragraph Alignment</source>
-        <translation>Paragraf Hizalaması</translation>
+        <translation>段落對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2497"/>
         <source>Link Actions</source>
-        <translation>Bağlantı Eylemleri</translation>
+        <translation>連結動作</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2504"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="155"/>
         <source>Image</source>
-        <translation>Görüntü</translation>
+        <translation>圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1533"/>
         <source>Insert Image...</source>
-        <translation>Resim ekle...</translation>
+        <translation>插入圖片...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1540"/>
         <source>Insert Local Image...</source>
-        <translation>Yerel resim ekle...</translation>
+        <translation>插入本機圖片...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1545"/>
         <source>Open Image Location...</source>
-        <translation>Resim konumunu aç...</translation>
+        <translation>開啟圖片位置...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1579"/>
         <source>Delete Image File</source>
-        <translation>Resim dosyasını sil</translation>
+        <translation>刪除圖片檔案</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1605"/>
         <source>Copy Image To...</source>
-        <translation>Resmi şuraya kopyala...</translation>
+        <translation>複製圖片到...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1639"/>
         <source>Rename / Move Image To...</source>
-        <translation>Resmi yeniden adlandır / şuraya taşı...</translation>
+        <translation>重新命名 / 移動圖片到...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1713"/>
         <source>Upload All Local Images</source>
-        <translation>Tüm yerel resimleri yükle</translation>
+        <translation>上傳所有本機圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1772"/>
         <source>Reload All Images</source>
-        <translation>Tüm resimleri yeniden yükle</translation>
+        <translation>重新載入所有圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2521"/>
         <source>Resize Image</source>
-        <translation>Resmi yeniden boyutlandır</translation>
+        <translation>調整圖片大小</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1783"/>
         <source>25%</source>
-        <translation>%25</translation>
+        <translation>25%</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1793"/>
         <source>50%</source>
-        <translation>%50</translation>
+        <translation>50%</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1803"/>
         <source>75%</source>
-        <translation>%75</translation>
+        <translation>75%</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1813"/>
         <source>100%</source>
-        <translation>%100</translation>
+        <translation>100%</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1824"/>
         <source>150%</source>
-        <translation>%150</translation>
+        <translation>150%</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1834"/>
         <source>Custom...</source>
-        <translation>Özel...</translation>
+        <translation>自訂...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2533"/>
         <source>Convert Image Syntax</source>
-        <translation>Resim sözdizimini dönüştür</translation>
+        <translation>轉換圖片語法</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1856"/>
         <source>Standard Markdown ![](url)</source>
-        <translation>Standart Markdown ![](url)</translation>
+        <translation>標準 Markdown ![](url)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1863"/>
@@ -2085,201 +2097,201 @@ Make it your default editor now?</source>
     </message>
     <message>
         <source>When Inserting Local Image</source>
-        <translation type="vanished">Yerel resim eklenirken</translation>
+        <translation type="vanished">插入本機圖片時</translation>
     </message>
     <message>
         <source>Insert Relative Path</source>
-        <translation type="vanished">Göreli yol ekle</translation>
+        <translation type="vanished">插入相對路徑</translation>
     </message>
     <message>
         <source>Insert Absolute Path</source>
-        <translation type="vanished">Mutlak yol ekle</translation>
+        <translation type="vanished">插入絕對路徑</translation>
     </message>
     <message>
         <source>Copy to Custom Folder</source>
-        <translation type="vanished">Özel klasöre kopyala</translation>
+        <translation type="vanished">複製到自訂資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1870"/>
         <source>Copy All Images To...</source>
-        <translation>Tüm resimleri şuraya kopyala...</translation>
+        <translation>複製所有圖片到...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1897"/>
         <source>Move All Images To...</source>
-        <translation>Tüm resimleri şuraya taşı...</translation>
+        <translation>移動所有圖片到...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1927"/>
         <source>Global Image Settings...</source>
-        <translation>Genel resim ayarları...</translation>
+        <translation>全域圖片設定...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1412"/>
         <source>Clear Style</source>
-        <translation>Stili Temizle</translation>
+        <translation>清除樣式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1017"/>
         <location filename="../src/app/MainWindowActions.cpp" line="165"/>
         <source>Insert Table</source>
-        <translation>Tablo Ekle</translation>
+        <translation>插入表格</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1024"/>
         <source>Insert Row Above</source>
-        <translation>Üste Satır Ekle</translation>
+        <translation>在上方插入列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1030"/>
         <source>Insert Row Below</source>
-        <translation>Alta Satır Ekle</translation>
+        <translation>在下方插入列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1076"/>
         <source>Delete Row</source>
-        <translation>Satırı Sil</translation>
+        <translation>刪除列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1050"/>
         <source>Move Row Up</source>
-        <translation>Satırı Yukarı Taşı</translation>
+        <translation>上移列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1056"/>
         <source>Move Row Down</source>
-        <translation>Satırı Aşağı Taşı</translation>
+        <translation>下移列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1038"/>
         <source>Insert Column Left</source>
-        <translation>Sola Sütun Ekle</translation>
+        <translation>在左側插入欄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1044"/>
         <source>Insert Column Right</source>
-        <translation>Sağa Sütun Ekle</translation>
+        <translation>在右側插入欄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1084"/>
         <source>Delete Column</source>
-        <translation>Sütunu Sil</translation>
+        <translation>刪除欄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1062"/>
         <source>Move Column Left</source>
-        <translation>Sütunu Sola Taşı</translation>
+        <translation>左移欄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1069"/>
         <source>Move Column Right</source>
-        <translation>Sütunu Sağa Taşı</translation>
+        <translation>右移欄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1107"/>
         <source>Align Left</source>
-        <translation>Sola Hizala</translation>
+        <translation>靠左對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1113"/>
         <source>Align Center</source>
-        <translation>Ortala</translation>
+        <translation>置中對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1119"/>
         <source>Align Right</source>
-        <translation>Sağa Hizala</translation>
+        <translation>靠右對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1125"/>
         <source>Clear Alignment</source>
-        <translation>Hizalamayı Temizle</translation>
+        <translation>清除對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1101"/>
         <source>Delete Table</source>
-        <translation>Tabloyu Sil</translation>
+        <translation>刪除表格</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="455"/>
         <source>Select Paragraph or Block</source>
-        <translation>Paragraf veya blok seç</translation>
+        <translation>選擇段落或區塊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="462"/>
         <source>Select Current Line or Sentence</source>
-        <translation>Geçerli satır veya cümleyi seç</translation>
+        <translation>選取目前行或句子</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="476"/>
         <source>Select Current Word</source>
-        <translation>Geçerli sözcüğü seç</translation>
+        <translation>選取目前字詞</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="483"/>
         <source>Jump to Start of Document</source>
-        <translation>Belge başına atla</translation>
+        <translation>跳至文件開頭</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="490"/>
         <source>Jump to Selection</source>
-        <translation>Seçime atla</translation>
+        <translation>跳至選取範圍</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="496"/>
         <source>Jump to End of Document</source>
-        <translation>Belge sonuna atla</translation>
+        <translation>跳至文件結尾</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="503"/>
         <source>Jump to Start of Line</source>
-        <translation>Satır başına atla</translation>
+        <translation>跳至行首</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="510"/>
         <source>Jump to End of Line</source>
-        <translation>Satır sonuna atla</translation>
+        <translation>跳至行尾</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1089"/>
         <source>Copy Table</source>
-        <translation>Tabloyu kopyala</translation>
+        <translation>複製表格</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1095"/>
         <source>Format Table Source</source>
-        <translation>Tablo kaynağını biçimlendir</translation>
+        <translation>格式化表格原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1679"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1719"/>
         <source>No upload command is configured.
 Set up a custom upload command in Preferences → Images.</source>
-        <translation>Hiç yükleme komutu yapılandırılmamış.
-Tercihler → Resimler bölümünden özel bir yükleme komutu ayarlayın.</translation>
+        <translation>尚未設定上傳命令。
+請在 偏好設定 → 圖片 中設定自訂上傳命令。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1695"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1751"/>
         <source>Upload failed:
 %1</source>
-        <translation>Yükleme başarısız:
+        <translation>上傳失敗：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1741"/>
         <source>There are no local images to upload.</source>
-        <translation>Yüklenecek yerel resim yok.</translation>
+        <translation>沒有可上傳的本機圖片。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1753"/>
         <source>the uploader did not return one URL per image</source>
-        <translation>yükleme programı her görsel için bir URL döndürmedi</translation>
+        <translation>上傳程式未為每張圖片傳回一個 URL</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1767"/>
         <source>Uploaded %1 image(s).</source>
-        <translation>%1 resim yüklendi.</translation>
+        <translation>已上傳 %1 張圖片。</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2287,214 +2299,218 @@ Tercihler → Resimler bölümünden özel bir yükleme komutu ayarlayın.</tran
 A fast, lightweight, native Markdown editor built with C++ and Qt 6.
 
 Live preview and source editing; export to PDF, HTML, and many more formats via Pandoc; image insertion with copy-to-folder and custom-command upload; spell checking; themes; find &amp; replace; outline; quick open; and crash-safe draft recovery.</source>
-        <translation type="vanished">Canlı önizleme ve kaynak düzenleme; Pandoc aracılığıyla PDF, HTML ve çok daha fazla biçime dışa aktarma; klasöre kopyalama ve özel komut yüklemesi ile resim ekleme; yazım denetimi; temalar; bul ve değiştir; ana hat; hızlı aç; ve çökmeye dayanıklı taslak kurtarma.</translation>
+        <translation type="vanished">Mufpen %1
+
+一款使用 C++ 和 Qt 6 建置的快速、輕量級原生 Markdown 編輯器。
+
+即時預覽與原始碼編輯；透過 Pandoc 匯出為 PDF、HTML 及更多格式；圖片插入（複製到資料夾 / 自訂命令上傳）；拼字檢查；佈景主題；尋找與取代；大綱；快速開啟；以及崩潰安全的草稿復原。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2458"/>
         <source>Code</source>
-        <translation>Kod(&amp;C)</translation>
+        <translation>程式碼(&amp;C)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1133"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1223"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1260"/>
         <source>Enter Edit</source>
-        <translation>Düzenlemeye Gir</translation>
+        <translation>進入編輯</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1141"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1231"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1268"/>
         <source>Exit Edit</source>
-        <translation>Düzenlemeden Çık</translation>
+        <translation>結束編輯</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1150"/>
         <source>Set Language...</source>
-        <translation>Dili Ayarla...</translation>
+        <translation>設定語言...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2476"/>
         <source>Math</source>
-        <translation>Matematik(&amp;M)</translation>
+        <translation>數學(&amp;M)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1277"/>
         <source>Set TeX...</source>
-        <translation>TeX Ayarla...</translation>
+        <translation>設定 TeX...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1240"/>
         <source>Set HTML...</source>
-        <translation>HTML Ayarla...</translation>
+        <translation>設定 HTML...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2548"/>
         <source>View</source>
-        <translation>Görünüm(&amp;V)</translation>
+        <translation>檢視(&amp;V)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1944"/>
         <source>Outline</source>
-        <translation>Ana Hat</translation>
+        <translation>大綱</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1949"/>
         <source>File Tree</source>
-        <translation>Dosya Ağacı</translation>
+        <translation>檔案樹</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="vanished">Ara</translation>
+        <translation type="vanished">搜尋</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1954"/>
         <source>Source Code Mode</source>
-        <translation>Kaynak Kod Modu</translation>
+        <translation>原始碼模式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1981"/>
         <source>Word Wrap</source>
-        <translation>Sözcük Kaydırma</translation>
+        <translation>自動換行</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1994"/>
         <source>Focus Mode</source>
-        <translation>Odak Modu</translation>
+        <translation>專注模式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2005"/>
         <source>Typewriter Mode</source>
-        <translation>Daktilo Modu</translation>
+        <translation>打字機模式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2016"/>
         <source>Show Status Bar</source>
-        <translation>Durum Çubuğunu Göster</translation>
+        <translation>顯示狀態列</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2027"/>
         <source>Word Count Window</source>
-        <translation>Sözcük Sayımı Penceresi</translation>
+        <translation>字數統計視窗</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2031"/>
         <source>Toggle Full Screen</source>
-        <translation>Tam Ekranı Aç/Kapat</translation>
+        <translation>切換全螢幕</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2036"/>
         <source>Always on Top</source>
-        <translation>Her Zaman Üstte</translation>
+        <translation>永遠置頂</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2047"/>
         <source>Actual Size</source>
-        <translation>Gerçek Boyut</translation>
+        <translation>實際大小</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2056"/>
         <source>Zoom In</source>
-        <translation>Yakınlaştır</translation>
+        <translation>放大</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2065"/>
         <source>Zoom Out</source>
-        <translation>Uzaklaştır</translation>
+        <translation>縮小</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2074"/>
         <source>Switch Windows</source>
-        <translation>Pencereler Arasında Geç</translation>
+        <translation>切換視窗</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Geliştirici:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;Lisans:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Web sitesi:&lt;/b&gt; https://github.com/jstzwj/Mufpen&lt;/p&gt;</translation>
+        <source>&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Platform:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Author:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;License:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;Website:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Mufpen %1&lt;/h3&gt;&lt;p&gt;&lt;b&gt;平台:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;作者:&lt;/b&gt; jstzwj&lt;br&gt;&lt;b&gt;授權條款:&lt;/b&gt; MIT License&lt;br&gt;&lt;b&gt;網站:&lt;/b&gt; https://github.com/asdacffgg/Mufpen&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2364"/>
         <source>Insert</source>
-        <translation>Ekle</translation>
+        <translation>插入</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2578"/>
         <source>Theme</source>
-        <translation>Tema(&amp;T)</translation>
+        <translation>佈景主題(&amp;T)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2580"/>
         <source>Help</source>
-        <translation>Yardım(&amp;H)</translation>
+        <translation>說明(&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2086"/>
         <source>Quick Start</source>
-        <translation>Hızlı Başlangıç</translation>
+        <translation>快速入門</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2090"/>
         <source>Markdown Reference</source>
-        <translation>Markdown Başvurusu</translation>
+        <translation>Markdown 參考</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2094"/>
         <source>Custom Themes</source>
-        <translation>Özel Temalar</translation>
+        <translation>自訂佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2098"/>
         <source>Acknowledgements</source>
-        <translation>Teşekkürler</translation>
+        <translation>致謝</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2102"/>
         <source>Changelog</source>
-        <translation>Değişiklik Günlüğü</translation>
+        <translation>更新紀錄</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2110"/>
         <source>Official Website</source>
-        <translation>Resmî Web Sitesi</translation>
+        <translation>官方網站</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2115"/>
         <source>Feedback</source>
-        <translation>Geri Bildirim</translation>
+        <translation>意見回饋</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2122"/>
         <source>Check for Updates...</source>
-        <translation>Güncellemeleri Denetle...</translation>
+        <translation>檢查更新...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2130"/>
         <source>About</source>
-        <translation>Hakkında</translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1589"/>
         <source>Delete Image</source>
-        <translation>Resmi sil</translation>
+        <translation>刪除圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="155"/>
         <source>Reopen Closed File</source>
-        <translation>Kapatılan Dosyayı Yeniden Aç</translation>
+        <translation>重新開啟已關閉的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="171"/>
         <source>Document is still loading…</source>
-        <translation>Belge hâlâ yükleniyor…</translation>
+        <translation>文件仍在載入中…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="234"/>
         <source>Export with Previous Settings...</source>
-        <translation>Önceki Ayarlarla Dışa Aktar...</translation>
+        <translation>使用上次設定匯出...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="240"/>
         <source>Export and Overwrite Previous</source>
-        <translation>Dışa Aktar ve Önceki Dosyanın Üzerine Yaz</translation>
+        <translation>匯出並覆寫上次輸出</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="246"/>
@@ -2510,12 +2526,12 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="258"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (Biçemler olmadan)</translation>
+        <translation>HTML (不含樣式)</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="264"/>
         <source>Image (PNG)</source>
-        <translation>Görüntü (PNG)</translation>
+        <translation>圖片（PNG）</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="270"/>
@@ -2568,98 +2584,98 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="554"/>
         <source>Close Tab</source>
-        <translation>Sekmeyi kapat</translation>
+        <translation>關閉分頁</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="334"/>
         <source>Quit</source>
-        <translation>Çıkış</translation>
+        <translation>結束</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="341"/>
         <source>Next Tab</source>
-        <translation>Sonraki sekme</translation>
+        <translation>下一個分頁</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="346"/>
         <source>Previous Tab</source>
-        <translation>Önceki sekme</translation>
+        <translation>上一個分頁</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="353"/>
         <source>Back</source>
-        <translation>Geri</translation>
+        <translation>上一頁</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="359"/>
         <source>Forward</source>
-        <translation>İleri</translation>
+        <translation>下一頁</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="388"/>
         <source>Open Link</source>
-        <translation>Bağlantıyı aç</translation>
+        <translation>開啟連結</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="404"/>
         <source>Copy Link Address</source>
-        <translation>Bağlantı adresini kopyala</translation>
+        <translation>複製連結位址</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="534"/>
         <source>Skip Closing Symbol</source>
-        <translation>Kapanış Simgesini Atla</translation>
+        <translation>跳出閉合符號</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="580"/>
         <source>Spell Check</source>
-        <translation>Yazım Denetimi</translation>
+        <translation>拼字檢查</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="634"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="357"/>
         <source>Find in Folder…</source>
-        <translation>Klasörde Bul…</translation>
+        <translation>在資料夾中搜尋…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="639"/>
         <source>Replace in Folder…</source>
-        <translation>Klasörde Değiştir…</translation>
+        <translation>在資料夾中取代…</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="685"/>
         <source>Heading 1</source>
-        <translation>Başlık 1</translation>
+        <translation>一級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="694"/>
         <source>Heading 2</source>
-        <translation>Başlık 2</translation>
+        <translation>二級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="703"/>
         <source>Heading 3</source>
-        <translation>Başlık 3</translation>
+        <translation>三級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="712"/>
         <source>Heading 4</source>
-        <translation>Başlık 4</translation>
+        <translation>四級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="721"/>
         <source>Heading 5</source>
-        <translation>Başlık 5</translation>
+        <translation>五級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="730"/>
         <source>Heading 6</source>
-        <translation>Başlık 6</translation>
+        <translation>六級標題</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="829"/>
         <source>Align Paragraph Left</source>
-        <translation>Paragrafı Sola Hizala</translation>
+        <translation>段落靠左對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="835"/>
@@ -2667,179 +2683,179 @@ Live preview and source editing; export to PDF, HTML, and many more formats via 
         <location filename="../src/app/CommandDeclarations.cpp" line="859"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="871"/>
         <source>Place the caret in a top-level paragraph or heading in live editing mode.</source>
-        <translation>Canlı düzenleme modunda imleci en üst düzeydeki bir paragrafın veya başlığın içine yerleştirin.</translation>
+        <translation>請在即時編輯模式下，將游標置於頂層段落或標題中。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="841"/>
         <source>Center Paragraph</source>
-        <translation>Paragrafı Ortala</translation>
+        <translation>段落置中</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="853"/>
         <source>Align Paragraph Right</source>
-        <translation>Paragrafı Sağa Hizala</translation>
+        <translation>段落靠右對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="865"/>
         <source>Justify Paragraph</source>
-        <translation>Paragrafı İki Yana Yasla</translation>
+        <translation>段落左右對齊</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="945"/>
         <source>Note</source>
-        <translation>Not</translation>
+        <translation>備註</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="952"/>
         <source>Tip</source>
-        <translation>İpucu</translation>
+        <translation>提示</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="959"/>
         <source>Important</source>
-        <translation>Önemli</translation>
+        <translation>重要</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="966"/>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="973"/>
         <source>Caution</source>
-        <translation>Dikkat</translation>
+        <translation>注意</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="983"/>
         <source>Toggle Task Status</source>
-        <translation>Görev Durumunu Değiştir</translation>
+        <translation>切換工作狀態</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="995"/>
         <source>Indent</source>
-        <translation>Girintiyi Artır</translation>
+        <translation>增加縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1005"/>
         <source>Outdent</source>
-        <translation>Girintiyi Azalt</translation>
+        <translation>減少縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1168"/>
         <source>Copy Code Block Content</source>
-        <translation>Kod bloğu içeriğini kopyala</translation>
+        <translation>複製程式碼區塊內容</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1183"/>
         <source>Indent Selection</source>
-        <translation>Seçim girintisini artır</translation>
+        <translation>增加選取縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1193"/>
         <source>Dedent Selection</source>
-        <translation>Seçim girintisini azalt</translation>
+        <translation>減少選取縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1203"/>
         <source>Indent Whole Block</source>
-        <translation>Tüm bloğun girintisini artır</translation>
+        <translation>增加整塊縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1212"/>
         <source>Dedent Whole Block</source>
-        <translation>Tüm bloğun girintisini azalt</translation>
+        <translation>減少整塊縮排</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1336"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1425"/>
         <source>Switch to live editing to use this formatting command.</source>
-        <translation>Bu biçimlendirme komutunu kullanmak için canlı düzenlemeye geçin.</translation>
+        <translation>請切換至即時編輯模式以使用此格式命令。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1337"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1406"/>
         <source>Select text within a single paragraph or table cell, or place the caret in editable text.</source>
-        <translation>Tek bir paragraf veya tablo hücresi içinde metin seçin ya da imleci düzenlenebilir metne yerleştirin.</translation>
+        <translation>請在同一段落或表格儲存格內選取文字，或將游標置於可編輯的文字中。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1402"/>
         <source>Wait for the document to finish loading.</source>
-        <translation>Belgenin yüklenmesinin tamamlanmasını bekleyin.</translation>
+        <translation>請等待文件載入完成。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1404"/>
         <source>Select text within one line, or place the caret where you want to insert the link.</source>
-        <translation>Tek bir satır içinde metin seçin ya da imleci bağlantıyı eklemek istediğiniz yere yerleştirin.</translation>
+        <translation>請在同一行內選取文字，或將游標置於要插入連結的位置。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1426"/>
         <source>Place the caret in the paragraph or table cell whose formatting you want to clear.</source>
-        <translation>İmleci biçimlendirmesini temizlemek istediğiniz paragrafa veya tablo hücresine yerleştirin.</translation>
+        <translation>請將游標置於要清除格式的段落或表格儲存格中。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1433"/>
         <source>Refresh All Math</source>
-        <translation>Tüm formülleri yenile</translation>
+        <translation>重新整理所有數學公式</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1442"/>
         <source>Convert on Input</source>
-        <translation>Girdide Dönüştür</translation>
+        <translation>輸入時轉換</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1463"/>
         <source>Convert on Rendering</source>
-        <translation>Görüntülerken dönüştür</translation>
+        <translation>渲染時轉換</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1484"/>
         <source>Smart Quotes</source>
-        <translation>Akıllı Tırnak İşaretleri</translation>
+        <translation>智慧引號</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1498"/>
         <source>Smart Dashes</source>
-        <translation>Akıllı Tireler</translation>
+        <translation>智慧破折號</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1512"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Ayrıştırırken Unicode noktalamayı yeniden eşle</translation>
+        <translation>解析時重新對應 Unicode 標點</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1526"/>
         <source>More Options...</source>
-        <translation>Diğer seçenekler...</translation>
+        <translation>更多選項...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1590"/>
         <source>Delete image file &quot;%1&quot;?
 This cannot be undone.</source>
-        <translation>&quot;%1&quot; resim dosyası silinsin mi?
-Bu işlem geri alınamaz.</translation>
+        <translation>刪除圖片檔案「%1」？
+此操作無法復原。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1616"/>
         <source>Copy Image To</source>
-        <translation>Resmi şuraya kopyala</translation>
+        <translation>複製圖片到</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1650"/>
         <source>Move Image To</source>
-        <translation>Resmi şuraya taşı</translation>
+        <translation>移動圖片到</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1672"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1678"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1694"/>
         <source>Upload Image</source>
-        <translation>Resmi yükle</translation>
+        <translation>上傳圖片</translation>
     </message>
     <message>
         <source>Image upload is not yet configured.
 Set up an image uploader in Preferences → Images.</source>
-        <translation type="vanished">Resim yükleme henüz yapılandırılmamış.
-Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
+        <translation type="vanished">尚未設定圖片上傳。
+請在 偏好設定 → 圖片 中設定圖片上傳器。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1718"/>
@@ -2848,84 +2864,84 @@ Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
         <location filename="../src/app/CommandDeclarations.cpp" line="1765"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1766"/>
         <source>Upload All Images</source>
-        <translation>Tüm resimleri yükle</translation>
+        <translation>上傳所有圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Image Size</source>
-        <translation>Görüntü Boyutu</translation>
+        <translation>圖片大小</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1841"/>
         <source>Zoom percent:</source>
-        <translation>Yakınlaştırma yüzdesi:</translation>
+        <translation>縮放百分比：</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1878"/>
         <source>Copy All Images To</source>
-        <translation>Tüm resimleri şuraya kopyala</translation>
+        <translation>複製所有圖片到</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1890"/>
         <source>Copy All Images</source>
-        <translation>Tüm resimleri kopyala</translation>
+        <translation>複製所有圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1891"/>
         <source>Copied %1 of %2 image(s).</source>
-        <translation>%2 resmin %1&apos;i kopyalandı.</translation>
+        <translation>已複製 %1/%2 張圖片。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1905"/>
         <source>Move All Images To</source>
-        <translation>Tüm resimleri şuraya taşı</translation>
+        <translation>移動所有圖片到</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1913"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1919"/>
         <location filename="../src/app/CommandDeclarations.cpp" line="1921"/>
         <source>Move All Images</source>
-        <translation>Tüm resimleri taşı</translation>
+        <translation>移動所有圖片</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1922"/>
         <source>Moved %1 image(s).</source>
-        <translation>%1 resim taşındı.</translation>
+        <translation>已移動 %1 張圖片。</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1155"/>
         <source>Code Language</source>
-        <translation>Kod Dili</translation>
+        <translation>程式碼語言</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1156"/>
         <source>Language:</source>
-        <translation>Dil:</translation>
+        <translation>語言：</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1244"/>
         <source>HTML Source</source>
-        <translation>HTML Kaynağı</translation>
+        <translation>HTML 原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1245"/>
         <source>HTML:</source>
-        <translation>HTML:</translation>
+        <translation>HTML：</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1281"/>
         <source>Math TeX</source>
-        <translation>Matematik TeX</translation>
+        <translation>數學 TeX</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="1282"/>
         <source>TeX:</source>
-        <translation>TeX:</translation>
+        <translation>TeX：</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="2133"/>
         <source>About Mufpen</source>
-        <translation>Mufpen Hakkında</translation>
+        <translation>關於 Mufpen</translation>
     </message>
     <message>
         <source>Mufpen %1
@@ -2933,43 +2949,43 @@ Tercihler → Resimler bölümünde bir yükleyici ayarlayın.</translation>
 A fast, lightweight native Markdown editor built with C++ and Qt 6 Widgets.</source>
         <translation type="vanished">Mufpen %1
 
-C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyici.</translation>
+一款使用 C++ 和 Qt 6 Widgets 建構的快速、輕量級原生 Markdown 編輯器。</translation>
     </message>
     <message>
         <source>table %1:%2 offset %3</source>
-        <translation type="vanished">tablo %1:%2 ofset %3</translation>
+        <translation type="vanished">表格 %1:%2 偏移 %3</translation>
     </message>
     <message>
         <source>%1 words</source>
-        <translation type="vanished">%1 sözcük</translation>
+        <translation type="vanished">%1 個字</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="181"/>
         <source>Rows:</source>
-        <translation>Satırlar:</translation>
+        <translation>列數：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="182"/>
         <source>Columns:</source>
-        <translation>Sütunlar:</translation>
+        <translation>欄數：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="185"/>
         <location filename="../src/app/MainWindowActions.cpp" line="227"/>
         <source>OK</source>
-        <translation>Tamam</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="186"/>
         <location filename="../src/app/MainWindowActions.cpp" line="228"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>İptal</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="207"/>
         <source>Insert Image</source>
-        <translation>Resim ekle</translation>
+        <translation>插入圖片</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="214"/>
@@ -2979,52 +2995,52 @@ C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyic
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="217"/>
         <source>Alternative text</source>
-        <translation>Alternatif metin</translation>
+        <translation>替代文字</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="220"/>
         <source>Title (optional)</source>
-        <translation>Başlık (isteğe bağlı)</translation>
+        <translation>標題（選填）</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="222"/>
         <source>URL:</source>
-        <translation>URL:</translation>
+        <translation>URL：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="223"/>
         <source>Alt Text:</source>
-        <translation>Alternatif metin:</translation>
+        <translation>替代文字：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="224"/>
         <source>Title:</source>
-        <translation>Başlık:</translation>
+        <translation>標題：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="258"/>
         <source>Images (%1)</source>
-        <translation>Resimler (%1)</translation>
+        <translation>圖片 (%1)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowActions.cpp" line="259"/>
         <source>Select Image</source>
-        <translation>Resim seç</translation>
+        <translation>選擇圖片</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="89"/>
         <source>Clear Recent Files</source>
-        <translation>Son Kullanılan Dosyaları Temizle</translation>
+        <translation>清除最近使用的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="145"/>
         <source>Import Theme...</source>
-        <translation>Tema içe aktar…</translation>
+        <translation>匯入佈景主題…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="147"/>
         <source>Open Themes Folder</source>
-        <translation>Tema klasörünü aç</translation>
+        <translation>開啟佈景主題資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
@@ -3035,43 +3051,43 @@ C++ ve Qt 6 Widgets ile oluşturulmuş hızlı, hafif yerel Markdown düzenleyic
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Import Theme</source>
-        <translation>Tema içe aktar</translation>
+        <translation>匯入佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="175"/>
         <source>Theme Files (*.css *.json)</source>
-        <translation>Tema dosyaları (*.css *.json)</translation>
+        <translation>佈景主題檔案 (*.css *.json)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="196"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="224"/>
         <source>Could not read the selected file.</source>
-        <translation>Seçilen dosya okunamadı.</translation>
+        <translation>無法讀取所選檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="202"/>
         <source>The selected file is not a valid theme.</source>
-        <translation>Seçilen dosya geçerli bir tema değil.</translation>
+        <translation>所選檔案不是有效的佈景主題。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="184"/>
         <source>A built-in theme named &quot;%1&quot; already exists; choose a different file name.</source>
-        <translation>&quot;%1&quot; adında yerleşik bir tema zaten var; başka bir dosya adı seçin.</translation>
+        <translation>名為「%1」的內建佈景主題已存在，請選擇其他檔案名稱。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="119"/>
         <source>Clear Recent Folders</source>
-        <translation>Son Klasörleri Temizle</translation>
+        <translation>清除最近開啟的資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="209"/>
         <source>The theme file is missing required colours (background and text).</source>
-        <translation>Tema dosyasında gerekli renkler (arka plan ve metin) eksik.</translation>
+        <translation>此佈景主題檔案缺少必要的顏色（背景色與文字色）。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="233"/>
         <source>Could not copy the theme into the themes folder.</source>
-        <translation>Tema, tema klasörüne kopyalanamadı.</translation>
+        <translation>無法將佈景主題複製到佈景主題資料夾。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="392"/>
@@ -3081,121 +3097,121 @@ Size: %3 bytes
 Modified: %4
 Words: %5
 Parse time: %6 ms</source>
-        <translation>Ad: %1
-Konum: %2
-Boyut: %3 bayt
-Değiştirilme: %4
-Kelime: %5
-Ayrıştırma süresi: %6 ms</translation>
+        <translation>名稱：%1
+位置：%2
+大小：%3 位元組
+修改時間：%4
+字數：%5
+解析耗時：%6 ms</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="580"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="591"/>
         <source>Unsaved Drafts Found</source>
-        <translation>Kaydedilmemiş Taslak Bulundu</translation>
+        <translation>發現未儲存的草稿</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="585"/>
         <source>Mufpen found %n unsaved draft(s) from a previous session. Restore one into this window, discard all of them, or keep them for later.</source>
         <translation>
-            <numerusform>Mufpen, önceki oturumdan %n kaydedilmemiş taslak buldu. Birini bu pencereye geri yükleyin, tamamını atın veya daha sonra için saklayın.</numerusform>
+            <numerusform>Mufpen 發現上次工作階段留下的 %n 個未儲存草稿。可將其中一個還原至目前視窗、全部捨棄，或留待稍後處理。</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="597"/>
         <location filename="../src/app/MainWindowExport.cpp" line="94"/>
         <source>Untitled</source>
-        <translation>Adsız</translation>
+        <translation>無標題</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/app/MainWindowFileOps.cpp" line="598"/>
         <source>%1  —  %2  (%n char(s))</source>
         <translation>
-            <numerusform>%1  —  %2  (%n karakter)</numerusform>
+            <numerusform>%1  —  %2  (%n 個字元)</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="606"/>
         <source>Restore</source>
-        <translation>Geri Yükle</translation>
+        <translation>還原</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="607"/>
         <source>Discard All</source>
-        <translation>Tümünü At</translation>
+        <translation>全部捨棄</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="608"/>
         <source>Later</source>
-        <translation>Daha sonra</translation>
+        <translation>稍後</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="689"/>
         <source>No files to open</source>
-        <translation>Açılacak dosya yok</translation>
+        <translation>沒有可開啟的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="711"/>
         <source>Import</source>
-        <translation>İçe Aktar</translation>
+        <translation>匯入</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="712"/>
         <source>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;All files (*)</source>
-        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;Tüm dosyalar (*)</translation>
+        <translation>Word (*.docx);;OpenDocument (*.odt);;RTF (*.rtf);;EPUB (*.epub);;HTML (*.html *.htm);;LaTeX (*.tex *.latex);;MediaWiki (*.wiki *.mediawini);;reStructuredText (*.rst);;Textile (*.textile);;OPML (*.opml);;所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="729"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="746"/>
         <source>Import Failed</source>
-        <translation>İçe Aktarma Başarısız</translation>
+        <translation>匯入失敗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="730"/>
         <location filename="../src/app/MainWindowExport.cpp" line="184"/>
         <source>Pandoc was not found. Install Pandoc or set its path in Preferences → Export.</source>
-        <translation>Pandoc bulunamadı. Pandoc&apos;u yükleyin veya Tercihler → Dışa Aktar bölümünde yolunu ayarlayın.</translation>
+        <translation>找不到 Pandoc。請安裝 Pandoc，或在偏好設定 → 匯出中設定其路徑。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="734"/>
         <source>Importing %1…</source>
-        <translation>%1 içe aktarılıyor…</translation>
+        <translation>正在匯入 %1…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="747"/>
         <source>Pandoc could not convert the file.</source>
-        <translation>Pandoc dosyayı dönüştüremedi.</translation>
+        <translation>Pandoc 無法轉換該檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="756"/>
         <source>Imported %1</source>
-        <translation>%1 içe aktarıldı</translation>
+        <translation>已匯入 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="119"/>
         <source>Nothing to export</source>
-        <translation>Dışa aktarılacak bir şey yok</translation>
+        <translation>沒有可匯出的內容</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="264"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="299"/>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>Export As</source>
-        <translation>Farklı Dışa Aktar</translation>
+        <translation>匯出</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="99"/>
         <source>%1 files (*%2)</source>
-        <translation>%1 dosyaları (*%2)</translation>
+        <translation>%1 檔案 (*%2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="164"/>
         <source>Exporting %1…</source>
-        <translation>%1 dışa aktarılıyor…</translation>
+        <translation>正在匯出 %1…</translation>
     </message>
     <message>
         <source>Pandoc failed:</source>
-        <translation type="vanished">Pandoc başarısız oldu:</translation>
+        <translation type="vanished">Pandoc 失敗：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="280"/>
@@ -3206,31 +3222,31 @@ Ayrıştırma süresi: %6 ms</translation>
         <location filename="../src/app/MainWindowExport.cpp" line="168"/>
         <location filename="../src/app/MainWindowExport.cpp" line="236"/>
         <source>Export Failed</source>
-        <translation>Dışa Aktarma Başarısız</translation>
+        <translation>匯出失敗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="283"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="321"/>
         <location filename="../src/app/MainWindowExport.cpp" line="243"/>
         <source>Exported to %1</source>
-        <translation>%1 konumuna dışa aktarıldı</translation>
+        <translation>已匯出到 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="895"/>
         <source>Save All</source>
-        <translation>Tümünü kaydet</translation>
+        <translation>全部儲存</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="896"/>
         <source>Saved %1 file(s). %2 file(s) could not be saved.</source>
-        <translation>%1 dosya kaydedildi. %2 dosya kaydedilemedi.</translation>
+        <translation>已儲存 %1 個檔案。%2 個檔案未能儲存。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="926"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="952"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete File</source>
-        <translation>Dosyayı sil</translation>
+        <translation>刪除檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="927"/>
@@ -3238,9 +3254,9 @@ Ayrıştırma süresi: %6 ms</translation>
         <source>Are you sure you want to move &quot;%1&quot; to the trash?
 
 This action cannot be undone.</source>
-        <translation>&quot;%1&quot; dosyasını çöpe taşımak istediğinizden emin misiniz?
+        <translation>確定要將「%1」移至垃圾桶嗎？
 
-Bu işlem geri alınamaz.</translation>
+此操作無法復原。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="953"/>
@@ -3248,37 +3264,37 @@ Bu işlem geri alınamaz.</translation>
         <source>Could not move to trash. Permanently delete &quot;%1&quot;?
 
 This action cannot be undone.</source>
-        <translation>Çöpe taşınamadı. &quot;%1&quot; kalıcı olarak silinsin mi?
+        <translation>無法移至垃圾桶。是否永久刪除「%1」？
 
-Bu işlem geri alınamaz.</translation>
+此操作無法復原。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Delete Failed</source>
-        <translation>Silme başarısız</translation>
+        <translation>刪除失敗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="963"/>
         <source>Could not delete file:
 %1</source>
-        <translation>Dosya silinemedi:
+        <translation>無法刪除檔案：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1073"/>
         <source>Name cannot be empty.</source>
-        <translation>Ad boş olamaz.</translation>
+        <translation>名稱不可為空。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1087"/>
         <source>An item named &quot;%1&quot; already exists.</source>
-        <translation>&quot;%1&quot; adlı bir öğe zaten var.</translation>
+        <translation>名為「%1」的項目已存在。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1109"/>
         <source>Could not rename: %1</source>
-        <translation>Yeniden adlandırılamadı: %1</translation>
+        <translation>無法重新命名：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1026"/>
@@ -3286,7 +3302,7 @@ Bu işlem geri alınamaz.</translation>
 %1
 
 %2</source>
-        <translation>Dosya oluşturulamadı:
+        <translation>無法建立檔案：
 %1
 
 %2</translation>
@@ -3294,53 +3310,53 @@ Bu işlem geri alınamaz.</translation>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="53"/>
         <source>Manage Export Presets...</source>
-        <translation>Dışa Aktarma Ön Ayarlarını Yönet...</translation>
+        <translation>管理匯出預設組...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="90"/>
         <source>Enter a valid output extension in the export preset.</source>
-        <translation>Dışa aktarma ön ayarına geçerli bir çıktı uzantısı girin.</translation>
+        <translation>請在匯出預設組中輸入有效的輸出副檔名。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="114"/>
         <location filename="../src/app/MainWindowExport.cpp" line="211"/>
         <source>The export destination is an open document. Choose another file.</source>
-        <translation>Dışa aktarma hedefi açık bir belgedir. Başka bir dosya seçin.</translation>
+        <translation>匯出目標是已開啟的文件。請選擇其他檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="136"/>
         <source>Could not create a temporary export file.</source>
-        <translation>Geçici dışa aktarma dosyası oluşturulamadı.</translation>
+        <translation>無法建立暫存匯出檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="147"/>
         <source>PDF export failed: the printer device could not be opened.</source>
-        <translation>PDF dışa aktarımı başarısız oldu: yazıcı aygıtı açılamadı.</translation>
+        <translation>PDF 匯出失敗：無法開啟印表機裝置。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="152"/>
         <source>Image export failed. The image must fit within 64 million pixels and 32,767 pixels in height. Try a smaller width or scale, or export as PDF.</source>
-        <translation>Görüntü dışa aktarılamadı. Görüntü 64 milyon pikseli ve 32,767 piksel yüksekliği aşmamalıdır. Daha küçük bir genişlik veya ölçek deneyin ya da PDF olarak dışa aktarın.</translation>
+        <translation>圖片匯出失敗。圖片總像素數不可超過 6400 萬，高度不可超過 32,767 像素。請減小寬度或縮放比例，或匯出為 PDF。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="179"/>
         <source>Configure an executable and arguments containing ${outputPath}. Supported variables: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Bir yürütülebilir dosya ve ${outputPath} içeren bağımsız değişkenler yapılandırın. Desteklenen değişkenler: ${inputPath}, ${outputPath}, ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>請設定可執行檔及包含 ${outputPath} 的參數。支援的變數：${inputPath}、${outputPath}、${currentPath}、${currentFolder}、${fileName}。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="188"/>
         <source>Export resource was not found: %1</source>
-        <translation>Dışa aktarma kaynağı bulunamadı: %1</translation>
+        <translation>找不到匯出所需的資源：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="192"/>
         <source>Additional arguments cannot override the input format, output format, output path, or defaults file.</source>
-        <translation>Ek bağımsız değişkenler girdi biçimini, çıktı biçimini, çıktı yolunu veya varsayılan ayarlar dosyasını geçersiz kılamaz.</translation>
+        <translation>附加參數不可覆寫輸入格式、輸出格式、輸出路徑或預設設定檔。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowExport.cpp" line="205"/>
         <source>Export command failed:</source>
-        <translation>Dışa aktarma komutu başarısız oldu:</translation>
+        <translation>匯出命令執行失敗：</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="778"/>
@@ -3365,157 +3381,157 @@ Bu işlem geri alınamaz.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="784"/>
         <source>Western</source>
-        <translation>Batı</translation>
+        <translation>西歐語言</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="786"/>
         <source>Western (Windows-1252)</source>
-        <translation>Batı (Windows-1252)</translation>
+        <translation>西歐語言 (Windows-1252)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="788"/>
         <source>Cyrillic</source>
-        <translation>Kiril</translation>
+        <translation>斯拉夫文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="790"/>
         <source>Cyrillic (Windows-1251)</source>
-        <translation>Kiril (Windows-1251)</translation>
+        <translation>斯拉夫文 (Windows-1251)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="791"/>
         <source>Cyrillic (ISO-8859-5)</source>
-        <translation>Kiril (ISO-8859-5)</translation>
+        <translation>斯拉夫文 (ISO-8859-5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="792"/>
         <source>Cyrillic (IBM866)</source>
-        <translation>Kiril (IBM866)</translation>
+        <translation>斯拉夫文 (IBM866)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="793"/>
         <source>Cyrillic (IBM855)</source>
-        <translation>Kiril (IBM855)</translation>
+        <translation>斯拉夫文 (IBM855)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="794"/>
         <source>Cyrillic (KOI8-R)</source>
-        <translation>Kiril (KOI8-R)</translation>
+        <translation>斯拉夫文 (KOI8-R)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="795"/>
         <source>Cyrillic (Mac)</source>
-        <translation>Kiril (Mac)</translation>
+        <translation>斯拉夫文 (Mac)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="797"/>
         <source>Central European</source>
-        <translation>Orta Avrupa</translation>
+        <translation>中歐語言</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="799"/>
         <source>Central European (Windows-1250)</source>
-        <translation>Orta Avrupa (Windows-1250)</translation>
+        <translation>中歐語言 (Windows-1250)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="800"/>
         <source>Central European (ISO-8859-2)</source>
-        <translation>Orta Avrupa (ISO-8859-2)</translation>
+        <translation>中歐語言 (ISO-8859-2)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="802"/>
         <source>Greek</source>
-        <translation>Yunanca</translation>
+        <translation>希臘文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="804"/>
         <source>Greek (Windows-1253)</source>
-        <translation>Yunanca (Windows-1253)</translation>
+        <translation>希臘文 (Windows-1253)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="805"/>
         <source>Greek (ISO-8859-7)</source>
-        <translation>Yunanca (ISO-8859-7)</translation>
+        <translation>希臘文 (ISO-8859-7)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="807"/>
         <source>Hebrew</source>
-        <translation>İbranice</translation>
+        <translation>希伯來文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="809"/>
         <source>Hebrew (Windows-1255)</source>
-        <translation>İbranice (Windows-1255)</translation>
+        <translation>希伯來文 (Windows-1255)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="810"/>
         <source>Hebrew (ISO-8859-8)</source>
-        <translation>İbranice (ISO-8859-8)</translation>
+        <translation>希伯來文 (ISO-8859-8)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="812"/>
         <source>Chinese Simplified</source>
-        <translation>Basitleştirilmiş Çince</translation>
+        <translation>簡體中文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="814"/>
         <source>Chinese Simplified (GB2312)</source>
-        <translation>Basitleştirilmiş Çince (GB2312)</translation>
+        <translation>簡體中文 (GB2312)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="815"/>
         <source>Chinese Simplified (GB18030)</source>
-        <translation>Basitleştirilmiş Çince (GB18030)</translation>
+        <translation>簡體中文 (GB18030)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="817"/>
         <source>Chinese Traditional</source>
-        <translation>Geleneksel Çince</translation>
+        <translation>繁體中文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="819"/>
         <source>Chinese Traditional (Big5)</source>
-        <translation>Geleneksel Çince (Big5)</translation>
+        <translation>繁體中文 (Big5)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="821"/>
         <source>Japanese</source>
-        <translation>Japonca</translation>
+        <translation>日文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="823"/>
         <source>Japanese (Shift_JIS)</source>
-        <translation>Japonca (Shift_JIS)</translation>
+        <translation>日文 (Shift_JIS)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="824"/>
         <source>Japanese (EUC-JP)</source>
-        <translation>Japonca (EUC-JP)</translation>
+        <translation>日文 (EUC-JP)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="826"/>
         <source>Korean</source>
-        <translation>Korece</translation>
+        <translation>韓文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="828"/>
         <source>Korean (EUC-KR)</source>
-        <translation>Korece (EUC-KR)</translation>
+        <translation>韓文 (EUC-KR)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="830"/>
         <source>Thai</source>
-        <translation>Tayca</translation>
+        <translation>泰文</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="832"/>
         <source>Thai (TIS-620)</source>
-        <translation>Tayca (TIS-620)</translation>
+        <translation>泰文 (TIS-620)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <source>Markdown Files (*.md *.markdown);;All Files (*)</source>
-        <translation>Markdown Dosyaları (*.md *.markdown);;Tüm Dosyalar (*)</translation>
+        <translation>Markdown 檔案 (*.md *.markdown);;所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1045"/>
@@ -3523,7 +3539,7 @@ Bu işlem geri alınamaz.</translation>
 %1
 
 %2</source>
-        <translation>Klasör oluşturulamadı:
+        <translation>無法建立資料夾：
 %1
 
 %2</translation>
@@ -3534,7 +3550,7 @@ Bu işlem geri alınamaz.</translation>
 %1
 
 %2</source>
-        <translation>Kopya oluşturulamadı:
+        <translation>無法建立複本：
 %1
 
 %2</translation>
@@ -3542,40 +3558,40 @@ Bu işlem geri alınamaz.</translation>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1154"/>
         <source>Delete Folder</source>
-        <translation>Klasörü Sil</translation>
+        <translation>刪除資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1157"/>
         <source>Are you sure you want to move &quot;%1&quot; and all its contents to the trash?
 
 This action cannot be undone.</source>
-        <translation>&quot;%1&quot; ve tüm içeriğini çöp kutusuna taşımak istediğinizden emin misiniz?
+        <translation>確定要將「%1」及其所有內容移至垃圾桶嗎？
 
-Bu işlem geri alınamaz.</translation>
+此操作無法復原。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1194"/>
         <source>Could not delete:
 %1</source>
-        <translation>Silinemedi:
+        <translation>無法刪除：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>Folder</source>
-        <translation>Klasör</translation>
+        <translation>資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1217"/>
         <source>File</source>
         <comment>properties: entry type</comment>
-        <translation>Dosya</translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1219"/>
         <source>Size: %1 bytes
 </source>
-        <translation>Boyut: %1 bayt
+        <translation>大小：%1 位元組
 </translation>
     </message>
     <message>
@@ -3584,16 +3600,16 @@ Bu işlem geri alınamaz.</translation>
 Type: %2
 Location: %3
 %4Modified: %5</source>
-        <translation>Ad: %1
-Tür: %2
-Konum: %3
-%4Değiştirilme: %5</translation>
+        <translation>名稱：%1
+類型：%2
+位置：%3
+%4修改時間：%5</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1240"/>
         <source>Could not reveal:
 %1</source>
-        <translation>Dosya yöneticisinde gösterilemedi:
+        <translation>無法顯示檔案位置：
 %1</translation>
     </message>
     <message>
@@ -3606,225 +3622,225 @@ Konum: %3
         <location filename="../src/app/MainWindowFileOps.cpp" line="938"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1263"/>
         <source>The current document has unsaved changes.</source>
-        <translation>Geçerli belgede kaydedilmemiş değişiklikler var.</translation>
+        <translation>目前文件有尚未儲存的變更。</translation>
     </message>
     <message>
         <source>Open Failed</source>
-        <translation type="vanished">Açma Başarısız</translation>
+        <translation type="vanished">開啟失敗</translation>
     </message>
     <message>
         <source>Render Diagnostics</source>
-        <translation type="vanished">İşleme Tanıları</translation>
+        <translation type="vanished">轉譯診斷</translation>
     </message>
     <message>
         <source>Developer Tools</source>
-        <translation type="vanished">Geliştirici Araçları</translation>
+        <translation type="vanished">開發人員工具</translation>
     </message>
     <message>
         <source>What&apos;s New...</source>
-        <translation type="vanished">Yenilikler...</translation>
+        <translation type="vanished">新增功能...</translation>
     </message>
     <message>
         <source>Install and Use Pandoc</source>
-        <translation type="vanished">Pandoc Kur ve Kullan</translation>
+        <translation type="vanished">安裝並使用 Pandoc</translation>
     </message>
     <message>
         <source>Use Images in Mufpen</source>
-        <translation type="vanished">Mufpen&apos;de Görüntü Kullan</translation>
+        <translation type="vanished">在 Mufpen 中使用圖片</translation>
     </message>
     <message>
         <source>Data Recovery and Version Control</source>
-        <translation type="vanished">Veri Kurtarma ve Sürüm Kontrolü</translation>
+        <translation type="vanished">資料復原與版本控制</translation>
     </message>
     <message>
         <source>More Themes...</source>
-        <translation type="vanished">Daha Fazla Tema...</translation>
+        <translation type="vanished">更多佈景主題...</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="vanished">Gizlilik Politikası</translation>
+        <translation type="vanished">隱私權政策</translation>
     </message>
     <message>
         <source>My License...</source>
-        <translation type="vanished">Lisansım...</translation>
+        <translation type="vanished">我的授權...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="624"/>
         <source>Find...</source>
-        <translation>Bul...</translation>
+        <translation>尋找...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="629"/>
         <source>Replace...</source>
-        <translation>Değiştir...</translation>
+        <translation>取代...</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="660"/>
         <source>Find Next</source>
-        <translation>Sonrakini bul</translation>
+        <translation>尋找下一個</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="671"/>
         <source>Find Previous</source>
-        <translation>Öncekini bul</translation>
+        <translation>尋找上一個</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="254"/>
         <source>File Already Open</source>
-        <translation>Dosya zaten açık</translation>
+        <translation>檔案已開啟</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="255"/>
         <source>This file is already open in another tab. Switch to that tab to edit or save it.</source>
-        <translation>Bu dosya başka bir sekmede zaten açık. Düzenlemek veya kaydetmek için o sekmeye geçin.</translation>
+        <translation>此檔案已在另一個分頁中開啟。請切換至該分頁進行編輯或儲存。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="406"/>
         <source>File Changed on Disk</source>
-        <translation>Dosya Diskte Değiştirildi</translation>
+        <translation>磁碟上的檔案已變更</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="407"/>
         <source>The file &quot;%1&quot; has changed outside Mufpen. Reload it?
 Unsaved changes in the editor will be lost.</source>
-        <translation>&quot;%1&quot; dosyası Mufpen dışında değiştirilmiş. Yeniden yüklensin mi?
-Düzenleyicideki kaydedilmemiş değişiklikler kaybolacak.</translation>
+        <translation>檔案「%1」已在 Mufpen 之外被修改。要重新載入嗎？
+編輯器中尚未儲存的變更將會遺失。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="491"/>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="503"/>
         <source>Update Available</source>
-        <translation>Güncelleme mevcut</translation>
+        <translation>有可用的更新</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="492"/>
         <source>A new version of Mufpen (%1) is available.
 
 Would you like to open the download page?</source>
-        <translation>Yeni bir Mufpen sürümü (%1) mevcut.
+        <translation>Mufpen 的新版本 (%1) 已可供下載。
 
-İndirme sayfasını açmak ister misiniz?</translation>
+是否要開啟下載頁面？</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="514"/>
         <source>Mufpen %1 is available. Use Help &gt; Check for Updates to download.</source>
-        <translation>Mufpen %1 mevcut. İndirmek için Yardım &gt; Güncellemeleri Denetle&apos;yi kullanın.</translation>
+        <translation>Mufpen %1 已可供下載。請使用 說明 &gt; 檢查更新 進行下載。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="520"/>
         <source>Up to Date</source>
-        <translation>Güncel</translation>
+        <translation>已是最新版本</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="521"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Mufpen&apos;in en son sürümünü kullanıyorsunuz.</translation>
+        <translation>您正在使用最新版本的 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="528"/>
         <source>Update Check Failed</source>
-        <translation>Güncelleme denetimi başarısız</translation>
+        <translation>更新檢查失敗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSignalBinder.cpp" line="529"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Güncellemeler denetlenemedi:
+        <translation>無法檢查更新：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="143"/>
         <source>Export Mermaid as SVG...</source>
-        <translation>Mermaid&apos;i SVG olarak dışa aktar...</translation>
+        <translation>將 Mermaid 匯出為 SVG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="145"/>
         <source>Export Mermaid as PNG...</source>
-        <translation>Mermaid&apos;i PNG olarak dışa aktar...</translation>
+        <translation>將 Mermaid 匯出為 PNG...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="158"/>
         <source>Resize</source>
-        <translation>Yeniden boyutlandır</translation>
+        <translation>調整大小</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="162"/>
         <source>Convert</source>
-        <translation>Dönüştür</translation>
+        <translation>轉換</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="196"/>
         <source>Copy as</source>
-        <translation>Farklı kopyala</translation>
+        <translation>複製為</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="340"/>
         <source>Open</source>
-        <translation>Aç</translation>
+        <translation>開啟</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="153"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="341"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="358"/>
         <source>Open in New Window</source>
-        <translation>Yeni Pencerede Aç</translation>
+        <translation>在新視窗開啟</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="50"/>
         <source>Insert Block Above</source>
-        <translation>Üstüne blok ekle</translation>
+        <translation>在上方插入區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="51"/>
         <source>Insert Block Below</source>
-        <translation>Altına blok ekle</translation>
+        <translation>在下方插入區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="53"/>
         <source>Copy Block</source>
-        <translation>Bloğu kopyala</translation>
+        <translation>複製區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="54"/>
         <source>Cut Block</source>
-        <translation>Bloğu kes</translation>
+        <translation>剪下區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="55"/>
         <source>Duplicate Block</source>
-        <translation>Bloğu çoğalt</translation>
+        <translation>建立區塊複本</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="57"/>
         <source>Turn Into</source>
-        <translation>Dönüştür</translation>
+        <translation>轉換為</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="62"/>
         <source>Bulleted List</source>
-        <translation>Madde işaretli liste</translation>
+        <translation>項目符號清單</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="63"/>
         <source>Numbered List</source>
-        <translation>Numaralı liste</translation>
+        <translation>編號清單</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="68"/>
         <source>Move Block Up</source>
-        <translation>Bloğu yukarı taşı</translation>
+        <translation>上移區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="69"/>
         <source>Move Block Down</source>
-        <translation>Bloğu aşağı taşı</translation>
+        <translation>下移區塊</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="343"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="360"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1025"/>
         <source>New File</source>
-        <translation>Yeni Dosya</translation>
+        <translation>新增檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="344"/>
@@ -3832,32 +3848,32 @@ Would you like to open the download page?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1038"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1044"/>
         <source>New Folder</source>
-        <translation>Yeni Klasör</translation>
+        <translation>新增資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="346"/>
         <source>Rename</source>
-        <translation>Yeniden Adlandır</translation>
+        <translation>重新命名</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="347"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="863"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="31"/>
         <source>Move To</source>
-        <translation>Şuraya taşı</translation>
+        <translation>移動到</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="348"/>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1140"/>
         <source>Duplicate</source>
-        <translation>Kopyasını Oluştur</translation>
+        <translation>建立複本</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="353"/>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="363"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="596"/>
         <source>Copy Path</source>
-        <translation>Yolu Kopyala</translation>
+        <translation>複製路徑</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="354"/>
@@ -3865,253 +3881,253 @@ Would you like to open the download page?</source>
         <location filename="../src/app/MainWindowFileOps.cpp" line="1239"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="602"/>
         <source>Reveal in File Manager</source>
-        <translation>Dosya Yöneticisinde Göster</translation>
+        <translation>在檔案管理員中顯示</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="149"/>
         <location filename="../src/app/MainWindowFind.cpp" line="193"/>
         <location filename="../src/app/MainWindowFind.cpp" line="242"/>
         <source>Invalid regular expression: %1</source>
-        <translation>Geçersiz düzenli ifade: %1</translation>
+        <translation>無效的正規表示式：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="208"/>
         <source>Replace</source>
-        <translation>Değiştir</translation>
+        <translation>取代</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowFind.cpp" line="258"/>
         <source>Replace All</source>
-        <translation>Tümünü değiştir</translation>
+        <translation>全部取代</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="240"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="277"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Unpin Tab</source>
-        <translation>Sekmenin sabitlemesini kaldır</translation>
+        <translation>取消固定分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="263"/>
         <source>Open Documents</source>
-        <translation>Açık belgeler</translation>
+        <translation>已開啟的文件</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="267"/>
         <location filename="../src/app/MainWindowTabs.cpp" line="270"/>
         <source>New Tab</source>
-        <translation>Yeni sekme</translation>
+        <translation>新增分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="580"/>
         <source>Close Others</source>
-        <translation>Diğer sekmeleri kapat</translation>
+        <translation>關閉其他分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="581"/>
         <source>Close Tabs to the Right</source>
-        <translation>Sağdaki sekmeleri kapat</translation>
+        <translation>關閉右側分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="582"/>
         <source>Close Saved Tabs</source>
-        <translation>Kaydedilmiş sekmeleri kapat</translation>
+        <translation>關閉已儲存的分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="583"/>
         <source>Close All Tabs</source>
-        <translation>Tüm sekmeleri kapat</translation>
+        <translation>關閉所有分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="585"/>
         <source>Pin Tab</source>
-        <translation>Sekmeyi sabitle</translation>
+        <translation>固定分頁</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="598"/>
         <source>Reveal in Finder</source>
-        <translation>Finder’da göster</translation>
+        <translation>在 Finder 中顯示</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="600"/>
         <source>Reveal in File Explorer</source>
-        <translation>Dosya Gezgini’nde göster</translation>
+        <translation>在檔案總管中顯示</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="606"/>
         <source>Move Tab to New Window</source>
-        <translation>Sekmeyi yeni pencereye taşı</translation>
+        <translation>將分頁移至新視窗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowTabs.cpp" line="609"/>
         <source>Copy Tab to New Window</source>
-        <translation>Sekmeyi yeni pencereye kopyala</translation>
+        <translation>將分頁複製到新視窗</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="166"/>
         <source>This file changed. Search again to update its matches.</source>
-        <translation>Bu dosya değişti. Eşleşmelerini güncellemek için yeniden arayın.</translation>
+        <translation>此檔案已變更。請重新搜尋以更新相符結果。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="216"/>
         <source>This match cannot be selected precisely in live preview. Showing it in source mode.</source>
-        <translation>Bu eşleşme canlı önizlemede tam olarak seçilemiyor. Kaynak modunda gösteriliyor.</translation>
+        <translation>無法在即時預覽中精確選取此相符項目，已切換至原始碼模式顯示。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="241"/>
         <source>Preview Folder Replacement</source>
-        <translation>Klasörde Değiştirmeyi Önizle</translation>
+        <translation>預覽資料夾取代</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="245"/>
         <source>Folder: %1
 Find: %2
 Replace with: %3</source>
-        <translation>Klasör: %1
-Bul: %2
-Şununla değiştir: %3</translation>
+        <translation>資料夾：%1
+尋找：%2
+取代為：%3</translation>
     </message>
     <message>
         <source>Include paths: %1 · Exclude paths: %2 · Match case: %3 · Regular expression: %4</source>
-        <translation type="vanished">Dahil edilecek yollar: %1 · Hariç tutulacak yollar: %2 · Büyük/küçük harf duyarlı: %3 · Düzenli ifade: %4</translation>
+        <translation type="vanished">包含路徑：%1 · 排除路徑：%2 · 區分大小寫：%3 · 正規表示式：%4</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>Yes</source>
-        <translation>Evet</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="253"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="255"/>
         <source>No</source>
-        <translation>Hayır</translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="264"/>
         <source>Matches</source>
-        <translation>Eşleşmeler</translation>
+        <translation>相符項目</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="43"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="216"/>
         <source>Rename / Move</source>
-        <translation>Yeniden Adlandır / Taşı</translation>
+        <translation>重新命名 / 移動</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="44"/>
         <source>The destination already exists or is inside the folder being moved.</source>
-        <translation>Hedef zaten var veya taşınan klasörün içinde bulunuyor.</translation>
+        <translation>目的地已存在，或位於要移動的資料夾內。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="51"/>
         <source>Checking links…</source>
-        <translation>Bağlantılar denetleniyor…</translation>
+        <translation>正在檢查連結…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="70"/>
         <source>Preview Link Updates</source>
-        <translation>Bağlantı Güncellemelerini Önizle</translation>
+        <translation>預覽連結更新</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="73"/>
         <source>%1 → %2
 Search folder: %3</source>
         <translation>%1 → %2
-Arama klasörü: %3</translation>
+搜尋資料夾：%3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="85"/>
         <source>Links</source>
-        <translation>Bağlantılar</translation>
+        <translation>連結</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="90"/>
         <source> (unsaved)</source>
-        <translation> (kaydedilmemiş)</translation>
+        <translation> （未儲存）</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="97"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="275"/>
         <source>Skipped</source>
-        <translation>Atlananlar</translation>
+        <translation>已略過</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="123"/>
         <source>Updates Markdown links, reference definitions and Markdown images in this folder. Code and external URLs are excluded. Unsaved notes stay unsaved and can be undone. Disk originals are backed up.
 Hidden folders, build folders, symbolic links, unreadable files and files over 8 MB are excluded; links outside this folder are not scanned.</source>
-        <translation>Bu klasördeki Markdown bağlantılarını, başvuru tanımlarını ve Markdown görsellerini günceller. Kod ve harici URL’ler kapsam dışıdır. Kaydedilmemiş notlar kaydedilmez ve değişiklikler geri alınabilir. Diskteki asıllar yedeklenir.
-Gizli klasörler, derleme klasörleri, sembolik bağlantılar, okunamayan dosyalar ve 8 MB’tan büyük dosyalar kapsam dışıdır; bu klasörün dışındaki bağlantılar taranmaz.</translation>
+        <translation>更新此資料夾中的 Markdown 連結、參照定義及 Markdown 圖片，不處理程式碼與外部網址。未儲存的筆記仍保持未儲存狀態，且可復原更新。磁碟上的原始檔案會備份。
+不處理隱藏資料夾、建置資料夾、符號連結、無法讀取的檔案及超過 8 MB 的檔案；不掃描此資料夾以外的連結。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="129"/>
         <source>Some files could not be checked. Their links may need manual updates.</source>
-        <translation>Bazı dosyalar denetlenemedi. Bağlantılarının elle güncellenmesi gerekebilir.</translation>
+        <translation>部分檔案無法檢查，其中的連結可能需要手動更新。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="134"/>
         <source>Rename / Move Only</source>
-        <translation>Yalnızca Yeniden Adlandır / Taşı</translation>
+        <translation>僅重新命名 / 移動</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="136"/>
         <source>Update Links</source>
-        <translation>Bağlantıları Güncelle</translation>
+        <translation>更新連結</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="165"/>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="169"/>
         <source>A note changed after the preview. Please try again.</source>
-        <translation>Önizlemeden sonra bir not değişti. Lütfen yeniden deneyin.</translation>
+        <translation>預覽後有筆記發生變更，請重試。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="174"/>
         <source>A file changed on disk after the preview. Please try again.</source>
-        <translation>Önizlemeden sonra diskteki bir dosya değişti. Lütfen yeniden deneyin.</translation>
+        <translation>預覽後磁碟上的檔案發生變更，請重試。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="186"/>
         <source>
 Some originals could not be restored. Backups: %1</source>
         <translation>
-Bazı asıllar geri yüklenemedi. Yedekler: %1</translation>
+部分原始檔案無法還原。備份位置：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="191"/>
         <source>Link updates could not be completed. The path was not changed.</source>
-        <translation>Bağlantı güncellemeleri tamamlanamadı. Yol değiştirilmedi.</translation>
+        <translation>無法完成連結更新，路徑未變更。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="206"/>
         <source>Could not rename or move: %1</source>
-        <translation>Yeniden adlandırılamadı veya taşınamadı: %1</translation>
+        <translation>無法重新命名或移動：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="244"/>
         <source>Update Note Links</source>
-        <translation>Not Bağlantılarını Güncelle</translation>
+        <translation>更新筆記連結</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNoteLinks.cpp" line="274"/>
         <source>Links updated. Originals backed up in %1</source>
-        <translation>Bağlantılar güncellendi. Asıllar %1 konumuna yedeklendi</translation>
+        <translation>連結已更新。原始檔案已備份至 %1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="277"/>
         <source>Unsaved, changed, unreadable, oversized, mixed line endings, or not losslessly writable.</source>
-        <translation>Kaydedilmemiş, değiştirilmiş, okunamıyor, çok büyük, karışık satır sonları içeriyor veya kayıpsız yazılamıyor.</translation>
+        <translation>含有未儲存的變更、檔案已變更、無法讀取、檔案過大、混用換行字元，或無法無損寫入。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="281"/>
         <source>Replacement preview</source>
-        <translation>Değiştirme önizlemesi</translation>
+        <translation>取代預覽</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="287"/>
         <source>
 … Preview truncated; the full file will be processed.</source>
         <translation>
-… Önizleme kısaltıldı; dosyanın tamamı işlenecek.</translation>
+… 預覽已截斷；將處理完整檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="290"/>
@@ -4120,32 +4136,32 @@ Bazı asıllar geri yüklenemedi. Yedekler: %1</translation>
 
 After:
 %2</source>
-        <translation>Önce:
+        <translation>取代前：
 %1
 
-Sonra:
+取代後：
 %2</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="295"/>
         <source>Files with unsaved changes are skipped. Originals are backed up for recovery. Files changed since this preview will not be overwritten.</source>
-        <translation>Kaydedilmemiş değişiklikleri olan dosyalar atlanır. Özgün dosyalar kurtarma için yedeklenir. Bu önizlemeden sonra değiştirilen dosyaların üzerine yazılmaz.</translation>
+        <translation>將略過含有未儲存變更的檔案。原始檔案會備份以供復原。預覽後發生變更的檔案不會被覆寫。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="309"/>
         <source>Replace %1 matches in %2 files</source>
-        <translation>%2 dosyadaki %1 eşleşmeyi değiştir</translation>
+        <translation>取代 %2 個檔案中的 %1 處相符項目</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="341"/>
         <source>Folder Replacement</source>
-        <translation>Klasörde Değiştirme</translation>
+        <translation>資料夾取代</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="342"/>
         <source>%1 files changed; %2 skipped.
 %3</source>
-        <translation>%1 dosya değiştirildi; %2 dosya atlandı.
+        <translation>已變更 %1 個檔案；已略過 %2 個。
 %3</translation>
     </message>
     <message>
@@ -4153,7 +4169,7 @@ Sonra:
         <source>
 Recovery folder: %1</source>
         <translation>
-Kurtarma klasörü: %1</translation>
+復原資料夾：%1</translation>
     </message>
     <message>
         <location filename="../src/app/CommandDeclarations.cpp" line="656"/>
@@ -4161,12 +4177,12 @@ Kurtarma klasörü: %1</translation>
         <location filename="../src/app/MainWindowSearch.cpp" line="357"/>
         <location filename="../src/app/MainWindowSearch.cpp" line="376"/>
         <source>Undo Folder Replacement</source>
-        <translation>Klasörde Değiştirmeyi Geri Al</translation>
+        <translation>復原資料夾取代</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="353"/>
         <source>No folder replacement is available to restore.</source>
-        <translation>Geri alınabilecek bir klasörde değiştirme işlemi yok.</translation>
+        <translation>沒有可復原的資料夾取代記錄。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="358"/>
@@ -4174,1243 +4190,1243 @@ Kurtarma klasörü: %1</translation>
 %1
 
 Files edited afterward or containing unsaved changes will be skipped.</source>
-        <translation>Bu değiştirme işleminden önceki özgün dosyalar geri yüklensin mi?
+        <translation>還原此次取代前的原始檔案嗎？
 %1
 
-Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atlanır.</translation>
+將略過取代後又經過編輯或含有未儲存變更的檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="361"/>
         <source>Restore Originals</source>
-        <translation>Özgün Dosyaları Geri Yükle</translation>
+        <translation>還原原始檔案</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="362"/>
         <source>Open Recovery Folder</source>
-        <translation>Kurtarma Klasörünü Aç</translation>
+        <translation>開啟復原資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="377"/>
         <source>%1 files restored; %2 skipped.
 %3</source>
-        <translation>%1 dosya geri yüklendi; %2 dosya atlandı.
+        <translation>已還原 %1 個檔案；已略過 %2 個。
 %3</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Updating files…</source>
-        <translation>Dosyalar güncelleniyor…</translation>
+        <translation>正在更新檔案…</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="420"/>
         <source>Stop after current file</source>
-        <translation>Geçerli dosyadan sonra durdur</translation>
+        <translation>處理完目前檔案後停止</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="32"/>
         <source>Linked file not found: %1</source>
-        <translation>Bağlantılı dosya bulunamadı: %1</translation>
+        <translation>找不到連結的檔案：%1</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowNavigation.cpp" line="114"/>
         <source>Heading not found: %1</source>
-        <translation>Başlık bulunamadı: %1</translation>
+        <translation>找不到標題：%1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::MarkdownSourceEdit</name>
+    <name>mufpen::MarkdownSourceEdit</name>
     <message>
         <source>(no spelling suggestions)</source>
-        <translation type="vanished">(yazım önerisi yok)</translation>
+        <translation type="vanished">(無拼寫建議)</translation>
     </message>
     <message>
         <source>Ignore &quot;%1&quot;</source>
-        <translation type="vanished">&quot;%1&quot; öğesini yoksay</translation>
+        <translation type="vanished">忽略「%1」</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PreferencesDialog</name>
+    <name>mufpen::PreferencesDialog</name>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="223"/>
         <location filename="../src/app/PreferencesDialog.cpp" line="225"/>
         <source>Preferences</source>
-        <translation>Tercihler</translation>
+        <translation>偏好設定</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Files</source>
-        <translation>Dosyalar</translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Editor</source>
-        <translation>Düzenleyici</translation>
+        <translation>編輯器</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="63"/>
         <source>Categories</source>
-        <translation>Kategoriler</translation>
+        <translation>分類</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Image</source>
-        <translation>Resim</translation>
+        <translation>圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Export</source>
-        <translation>Dışa Aktar</translation>
+        <translation>匯出</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>Appearance</source>
-        <translation>Görünüm</translation>
+        <translation>外觀</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="229"/>
         <source>General</source>
-        <translation>Genel</translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Klavye kısayolları</translation>
+        <translation>鍵盤快捷鍵</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="230"/>
         <source>Search</source>
-        <translation>Arama</translation>
+        <translation>搜尋</translation>
     </message>
     <message>
         <location filename="../src/app/PreferencesDialog.cpp" line="256"/>
         <source>No settings available.</source>
-        <translation>Kullanılabilir ayar yok.</translation>
+        <translation>沒有可用的設定。</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="vanished">Dil</translation>
+        <translation type="vanished">語言</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="vanished">Güncelleme</translation>
+        <translation type="vanished">更新</translation>
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation type="vanished">Güncellemeleri Denetle</translation>
+        <translation type="vanished">檢查更新</translation>
     </message>
     <message>
         <source>Automatically check for updates</source>
-        <translation type="vanished">Güncellemeleri otomatik denetle</translation>
+        <translation type="vanished">自動檢查更新</translation>
     </message>
     <message>
         <source>Include beta updates</source>
-        <translation type="vanished">Beta güncellemeleri dahil et</translation>
+        <translation type="vanished">包含 Beta 更新</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Gelişmiş</translation>
+        <translation type="vanished">進階</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Hata ayıklama modunu etkinleştir</translation>
+        <translation type="vanished">啟用除錯模式</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Anonim kullanım verileri gönder</translation>
+        <translation type="vanished">傳送匿名使用資料</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Gelişmiş Ayarları Aç</translation>
+        <translation type="vanished">開啟進階設定</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Gelişmiş Ayarları Sıfırla</translation>
+        <translation type="vanished">重設進階設定</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="vanished">Tema</translation>
+        <translation type="vanished">主題</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation type="vanished">Yakınlaştırma</translation>
+        <translation type="vanished">縮放</translation>
     </message>
     <message>
         <source>Text Size</source>
-        <translation type="vanished">Metin boyutu</translation>
+        <translation type="vanished">文字大小</translation>
     </message>
     <message>
         <source>Status Bar</source>
-        <translation type="vanished">Durum çubuğu</translation>
+        <translation type="vanished">狀態列</translation>
     </message>
     <message>
         <source>Show status bar</source>
-        <translation type="vanished">Durum çubuğunu göster</translation>
+        <translation type="vanished">顯示狀態列</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsAppearancePage</name>
+    <name>mufpen::PrefsAppearancePage</name>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="143"/>
         <source>Theme</source>
-        <translation>Tema</translation>
+        <translation>佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="144"/>
         <source>Zoom</source>
-        <translation>Yakınlaştırma</translation>
+        <translation>縮放</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="145"/>
         <source>Reset</source>
-        <translation>Sıfırla</translation>
+        <translation>重設</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="146"/>
         <source>Text Size</source>
-        <translation>Metin Boyutu</translation>
+        <translation>文字大小</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="147"/>
         <source>Content Width</source>
-        <translation>İçerik Genişliği</translation>
+        <translation>內容寬度</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="148"/>
         <source>Theme Default</source>
-        <translation>Tema Varsayılanı</translation>
+        <translation>佈景主題預設值</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="149"/>
         <source>Comfortable (1024 px)</source>
-        <translation>Rahat (1024 px)</translation>
+        <translation>舒適（1024 像素）</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="150"/>
         <source>Wide (1200 px)</source>
-        <translation>Geniş (1200 px)</translation>
+        <translation>寬（1200 像素）</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="151"/>
         <source>Full Width</source>
-        <translation>Tam Genişlik</translation>
+        <translation>全寬</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="152"/>
         <source>Status Bar</source>
-        <translation>Durum Çubuğu</translation>
+        <translation>狀態列</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="153"/>
         <source>Show status bar</source>
-        <translation>Durum çubuğunu göster</translation>
+        <translation>顯示狀態列</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsAppearancePage.cpp" line="155"/>
         <source>Import Theme...</source>
-        <translation>Tema içe aktar…</translation>
+        <translation>匯入佈景主題…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsEditorPage</name>
+    <name>mufpen::PrefsEditorPage</name>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="215"/>
         <source>Default Indent</source>
-        <translation>Varsayılan Girinti</translation>
+        <translation>預設縮排</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="216"/>
         <source>Only effective for references and lists generated via menu bar or shortcuts</source>
-        <translation>Yalnızca menü çubuğu veya kısayollarla oluşturulan başvurular ve listeler için geçerlidir</translation>
+        <translation>僅對透過選單列或快捷鍵產生的參照和清單生效</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="218"/>
         <source>Align Indent</source>
-        <translation>Hizalama Girintisi</translation>
+        <translation>對齊縮排</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="220"/>
         <source>Use Paired Symbols</source>
-        <translation>Eşli Semboller Kullan</translation>
+        <translation>使用成對符號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="221"/>
         <source>Match brackets and quotes</source>
-        <translation>Köşeli ayraçları ve tırnak işaretlerini eşleştir</translation>
+        <translation>配對括號和引號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="222"/>
         <source>Match Markdown characters</source>
-        <translation>Markdown karakterlerini eşleştir</translation>
+        <translation>配對 Markdown 字元</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="224"/>
         <source>Autocomplete</source>
-        <translation>Otomatik Tamamlama</translation>
+        <translation>自動完成</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="225"/>
         <source>Enable Emoji autocomplete</source>
-        <translation>Emoji otomatik tamamlamayı etkinleştir</translation>
+        <translation>啟用 Emoji 自動完成</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="227"/>
         <source>Live Rendering</source>
-        <translation>Canlı İşleme</translation>
+        <translation>即時渲染</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="228"/>
         <source>Show Markdown source of the current block element</source>
-        <translation>Geçerli blok öğesinin Markdown kaynağını göster</translation>
+        <translation>顯示目前區塊元素的 Markdown 原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="229"/>
         <source>Show block handles</source>
-        <translation>Blok tutamaçlarını göster</translation>
+        <translation>顯示區塊控點</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="230"/>
         <source>Hover to open a block menu or drag to move the complete block.</source>
-        <translation>Blok menüsünü açmak için imleci üzerine getirin veya tüm bloğu taşımak için sürükleyin.</translation>
+        <translation>將滑鼠停留在控點上以開啟區塊選單，或拖曳以移動整個區塊。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="231"/>
         <source>Show Mermaid diagrams as source code instead of rendering</source>
-        <translation>Mermaid diyagramlarını işlemek yerine kaynak kodu olarak göster</translation>
+        <translation>不轉譯 Mermaid 圖表，而是顯示原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="233"/>
         <source>Default Copy Behavior</source>
-        <translation>Varsayılan Kopyalama Davranışı</translation>
+        <translation>預設複製行為</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="234"/>
         <source>Copy Markdown source when copying plain text</source>
-        <translation>Düz metin kopyalanırken Markdown kaynağını kopyala</translation>
+        <translation>複製純文字時複製 Markdown 原始碼</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="235"/>
         <source>Copy or cut the entire line when no text is selected</source>
-        <translation>Metin seçili olmadığında tüm satırı kopyala veya kes</translation>
+        <translation>未選取文字時複製或剪下整行</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="237"/>
         <source>Default Line Break</source>
-        <translation>Varsayılan Satır Sonu</translation>
+        <translation>預設換行符號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="238"/>
         <source>Default line break for new files</source>
-        <translation>Yeni dosyalar için varsayılan satır sonu</translation>
+        <translation>新檔案的預設換行符號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="239"/>
         <source>LF (Unix Style)</source>
-        <translation>LF (Unix Tarzı)</translation>
+        <translation>LF (Unix 風格)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="240"/>
         <source>CRLF (Windows Style)</source>
-        <translation>CRLF (Windows Tarzı)</translation>
+        <translation>CRLF (Windows 風格)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="248"/>
         <source>Spell Check</source>
-        <translation>Yazım Denetimi</translation>
+        <translation>拼字檢查</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="249"/>
         <source>Enable spell checking</source>
-        <translation>Yazım denetimini etkinleştir</translation>
+        <translation>啟用拼寫檢查</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="250"/>
         <source>Language</source>
-        <translation>Dil</translation>
+        <translation>語言</translation>
     </message>
     <message>
         <source>Auto-detect language</source>
-        <translation type="vanished">Dili otomatik algıla</translation>
+        <translation type="vanished">自動偵測語言</translation>
     </message>
     <message>
         <source>Chinese (Simplified)</source>
-        <translation type="vanished">Çince (Basitleştirilmiş)</translation>
+        <translation type="vanished">簡體中文</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="252"/>
         <source>Typewriter Mode</source>
-        <translation>Daktilo Modu</translation>
+        <translation>打字機模式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="253"/>
         <source>Always keep the cursor in the middle of the screen</source>
-        <translation>İmleci her zaman ekranın ortasında tut</translation>
+        <translation>永遠將游標保持在螢幕中央</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="254"/>
         <source>Disable Typewriter / Focus Mode</source>
-        <translation>Daktilo / Odak Modunu devre dışı bırak</translation>
+        <translation>停用打字機 / 專注模式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="242"/>
         <source>Locked Editing</source>
-        <translation>Düzenleme kilidi</translation>
+        <translation>鎖定編輯</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="243"/>
         <source>Read-only reading mode: hides the caret and inline popups, rejects typing</source>
-        <translation>Salt okunur mod: metin imlecini ve satır içi açılır pencereleri gizler, yazmayı engeller</translation>
+        <translation>唯讀閱讀模式：隱藏游標和行內快顯視窗，並禁止輸入</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="244"/>
         <source>Enable locked editing</source>
-        <translation>Düzenleme kilidini etkinleştir</translation>
+        <translation>啟用鎖定編輯</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="245"/>
         <source>Each tab locks on its own</source>
-        <translation>Her sekmeyi ayrı kilitle</translation>
+        <translation>各分頁獨立鎖定</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsEditorPage.cpp" line="246"/>
         <source>One lock for the whole window</source>
-        <translation>Tüm pencere için tek kilit</translation>
+        <translation>整個視窗一併鎖定</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsExportPage</name>
+    <name>mufpen::PrefsExportPage</name>
     <message>
         <source>Select Pandoc Executable</source>
-        <translation type="vanished">Pandoc Çalıştırılabilir Dosyasını Seç</translation>
+        <translation type="vanished">選擇 Pandoc 執行檔</translation>
     </message>
     <message>
         <source>Executables (*.exe);;All Files (*)</source>
-        <translation type="vanished">Çalıştırılabilir dosyalar (*.exe);;Tüm Dosyalar (*)</translation>
+        <translation type="vanished">執行檔 (*.exe);;所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>General</source>
-        <translation>Genel</translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>HTML (without Styles)</source>
-        <translation>HTML (Biçemler olmadan)</translation>
+        <translation>HTML (不含樣式)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="108"/>
         <source>Image</source>
-        <translation>Resim</translation>
+        <translation>圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="93"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="106"/>
         <source>Formats</source>
-        <translation>Biçimler</translation>
+        <translation>格式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="246"/>
         <source>Default Export Folder</source>
-        <translation>Varsayılan Dışa Aktarma Klasörü</translation>
+        <translation>預設匯出資料夾</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="vanished">Otomatik</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="242"/>
         <source>Same folder as current file</source>
-        <translation>Geçerli dosya ile aynı klasör</translation>
+        <translation>與目前檔案相同的資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="243"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Custom...</source>
-        <translation>Özel...</translation>
+        <translation>自訂...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <source>Pandoc Path</source>
-        <translation>Pandoc Yolu</translation>
+        <translation>Pandoc 路徑</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="259"/>
         <source>(Auto-detect)</source>
-        <translation>(Otomatik algıla)</translation>
+        <translation>(自動偵測)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="178"/>
         <source>Browse...</source>
-        <translation>Gözat...</translation>
+        <translation>瀏覽...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="94"/>
         <source>New...</source>
-        <translation>Yeni...</translation>
+        <translation>新增...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="95"/>
         <source>Duplicate</source>
-        <translation>Kopyasını Oluştur</translation>
+        <translation>建立複本</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="96"/>
         <source>Rename...</source>
-        <translation>Yeniden Adlandır...</translation>
+        <translation>重新命名...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="97"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="98"/>
         <source>Up</source>
-        <translation>Yukarı</translation>
+        <translation>上移</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="99"/>
         <source>Down</source>
-        <translation>Aşağı</translation>
+        <translation>下移</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="239"/>
         <source>Shared defaults for all export formats. Select a format to configure its own options.</source>
-        <translation>Tüm dışa aktarma biçimleri için ortak varsayılan ayarlar. Biçime özel seçenekleri ayarlamak için bir biçim seçin.</translation>
+        <translation>所有匯出格式共用的預設設定。選擇一種格式可設定其專屬選項。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="249"/>
         <source>Custom Folder</source>
-        <translation>Özel klasör</translation>
+        <translation>自訂資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="256"/>
         <source>Untitled documents use the Documents folder.</source>
-        <translation>Adsız belgeler Belgeler klasörünü kullanır.</translation>
+        <translation>未命名文件使用系統的「文件」資料夾。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="257"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>All Files (*)</source>
-        <translation>Tüm dosyalar (*)</translation>
+        <translation>所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="260"/>
         <source>Auto-detect</source>
-        <translation>Otomatik algıla</translation>
+        <translation>自動偵測</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="269"/>
         <source>PDF, HTML and images use Mufpen&apos;s renderer. Other formats require Pandoc.</source>
-        <translation>PDF, HTML ve görüntüler Mufpen&apos;in işleme motorunu kullanır. Diğer biçimler Pandoc gerektirir.</translation>
+        <translation>PDF、HTML 和圖片使用 Mufpen 的算繪引擎。其他格式需要 Pandoc。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="277"/>
         <source>Used when exporting as %1. Changes are saved immediately.</source>
-        <translation>%1 olarak dışa aktarırken kullanılır. Değişiklikler hemen kaydedilir.</translation>
+        <translation>匯出為 %1 時使用。變更會立即儲存。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Theme</source>
-        <translation>Tema</translation>
+        <translation>佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Current theme</source>
-        <translation>Geçerli tema</translation>
+        <translation>目前的佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="279"/>
         <source>Default light theme</source>
-        <translation>Varsayılan açık tema</translation>
+        <translation>預設淺色佈景主題</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="283"/>
         <source>Executable</source>
-        <translation>Yürütülebilir Dosya</translation>
+        <translation>可執行檔</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="284"/>
         <source>Arguments</source>
-        <translation>Bağımsız Değişkenler</translation>
+        <translation>參數</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="285"/>
         <source>Output Extension</source>
-        <translation>Çıktı Uzantısı</translation>
+        <translation>輸出副檔名</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="286"/>
         <source>Arguments must contain ${outputPath}. ${inputPath} is a temporary Markdown copy including unsaved edits. Also available: ${currentPath}, ${currentFolder}, ${fileName}.</source>
-        <translation>Bağımsız değişkenler ${outputPath} içermelidir. ${inputPath}, kaydedilmemiş düzenlemeleri de içeren geçici bir Markdown kopyasıdır. Diğer kullanılabilir değişkenler: ${currentPath}, ${currentFolder}, ${fileName}.</translation>
+        <translation>參數必須包含 ${outputPath}。${inputPath} 是包含未儲存變更的暫存 Markdown 複本。亦可使用：${currentPath}、${currentFolder}、${fileName}。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="288"/>
         <source>Quote arguments containing spaces. Variables are expanded after splitting arguments; no command shell is used.</source>
-        <translation>Boşluk içeren bağımsız değişkenleri tırnak içine alın. Değişkenler, bağımsız değişkenler ayrıldıktan sonra genişletilir; komut kabuğu kullanılmaz.</translation>
+        <translation>包含空格的參數需加上引號。變數會在參數分割後展開；命令不透過 Shell 執行。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="290"/>
         <source>The command must create one file at ${outputPath}. Failed or canceled exports keep the existing destination.</source>
-        <translation>Komut, ${outputPath} konumunda tek bir dosya oluşturmalıdır. Başarısız olan veya iptal edilen dışa aktarma işlemlerinde mevcut hedef dosya korunur.</translation>
+        <translation>命令必須在 ${outputPath} 建立一個檔案。匯出失敗或取消時會保留現有目標檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="293"/>
         <source>Page Size</source>
-        <translation>Sayfa boyutu</translation>
+        <translation>頁面大小</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="295"/>
         <source>Width</source>
-        <translation>Genişlik</translation>
+        <translation>寬度</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="296"/>
         <source>Height</source>
-        <translation>Yükseklik</translation>
+        <translation>高度</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="318"/>
         <source>Landscape</source>
-        <translation>Yatay</translation>
+        <translation>橫向</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="319"/>
         <source>Page Margins</source>
-        <translation>Sayfa kenar boşlukları</translation>
+        <translation>頁面邊界</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="321"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="340"/>
         <source>Font Size (px)</source>
-        <translation>Yazı tipi boyutu (px)</translation>
+        <translation>字型大小（px）</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="322"/>
         <source>Start each level-one heading on a new page</source>
-        <translation>Her birinci düzey başlığı yeni sayfada başlat</translation>
+        <translation>每個一級標題另起一頁</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="323"/>
         <source>Header</source>
-        <translation>Üstbilgi</translation>
+        <translation>頁首</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="324"/>
         <source>Footer</source>
-        <translation>Altbilgi</translation>
+        <translation>頁尾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="326"/>
         <source>Show page numbers</source>
-        <translation>Sayfa numaralarını göster</translation>
+        <translation>顯示頁碼</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="327"/>
         <source>Header and footer variables: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Space is reserved automatically so they do not overlap the document.</source>
-        <translation>Üstbilgi ve altbilgi değişkenleri: ${title}, ${author}, ${fileName}, ${date}, ${pageNo}, ${pageCount}. Belgeyle üst üste gelmemeleri için otomatik olarak yer ayrılır.</translation>
+        <translation>頁首和頁尾可用變數：${title}、${author}、${fileName}、${date}、${pageNo}、${pageCount}。系統會自動保留空間，避免與文件內容重疊。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="330"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="358"/>
         <source>Include a table of contents</source>
-        <translation>İçindekiler tablosu ekle</translation>
+        <translation>包含目錄</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="333"/>
         <source>Add to &lt;head&gt;</source>
-        <translation>&lt;head&gt; bölümüne ekle</translation>
+        <translation>加入 &lt;head&gt;</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="334"/>
         <source>Add before document content</source>
-        <translation>Belge içeriğinden önce ekle</translation>
+        <translation>加入文件內容之前</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="336"/>
         <source>Mufpen adds no theme stylesheet to this format.</source>
-        <translation>Mufpen bu biçime tema stil sayfası eklemez.</translation>
+        <translation>Mufpen 不會為此格式加入佈景主題樣式表。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="338"/>
         <source>Width (px)</source>
-        <translation>Genişlik (px)</translation>
+        <translation>寬度（px）</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="339"/>
         <source>Output Scale</source>
-        <translation>Çıktı ölçeği</translation>
+        <translation>輸出縮放比例</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="342"/>
         <source>Exports one PNG. Maximum: 64 million pixels and 32,767 pixels in height. Use PDF for longer documents.</source>
-        <translation>Tek bir PNG dışa aktarır. Üst sınır: 64 milyon piksel ve 32,767 piksel yükseklik. Daha uzun belgeler için PDF kullanın.</translation>
+        <translation>匯出為一張 PNG。總像素數上限為 6400 萬，高度上限為 32,767 像素。較長的文件請使用 PDF。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="344"/>
         <source>Requires Pandoc. Configure its path under General.</source>
-        <translation>Pandoc gerektirir. Yolunu Genel bölümünde ayarlayın.</translation>
+        <translation>需要 Pandoc。請在「一般」中設定其路徑。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="346"/>
         <source>Reference Document</source>
-        <translation>Referans belge</translation>
+        <translation>參考樣式文件</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="349"/>
         <source>Custom CSS</source>
-        <translation>Özel CSS</translation>
+        <translation>自訂 CSS</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="352"/>
         <source>Title</source>
-        <translation>Başlık</translation>
+        <translation>標題</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="325"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="354"/>
         <source>Author</source>
-        <translation>Yazar</translation>
+        <translation>作者</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="359"/>
         <source>TOC Depth</source>
-        <translation>İçindekiler düzey sayısı</translation>
+        <translation>目錄層級</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="364"/>
         <source>Number sections</source>
-        <translation>Bölümleri numaralandır</translation>
+        <translation>為章節編號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Line Wrapping</source>
-        <translation>Satır kaydırma</translation>
+        <translation>換行方式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Do not wrap</source>
-        <translation>Satırları kaydırma</translation>
+        <translation>不換行</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Automatic</source>
-        <translation>Otomatik</translation>
+        <translation>自動</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="367"/>
         <source>Preserve source wrapping</source>
-        <translation>Kaynak satır sonlarını koru</translation>
+        <translation>保留原始文件換行</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="369"/>
         <source>Additional Pandoc Arguments</source>
-        <translation>Ek Pandoc bağımsız değişkenleri</translation>
+        <translation>Pandoc 附加參數</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="370"/>
         <source>Quote paths containing spaces. Mufpen manages the input format, output format and output path.</source>
-        <translation>Boşluk içeren yolları tırnak içine alın. Girdi biçimini, çıktı biçimini ve çıktı yolunu Mufpen yönetir.</translation>
+        <translation>包含空格的路徑需加上引號。輸入格式、輸出格式和輸出路徑由 Mufpen 管理。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="373"/>
         <source>After Export</source>
-        <translation>Dışa Aktarmadan Sonra</translation>
+        <translation>匯出後</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="375"/>
         <source>Open the exported file directory</source>
-        <translation>Dışa aktarılan dosyanın dizinini aç</translation>
+        <translation>開啟匯出檔案所在的目錄</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="377"/>
         <source>Open the exported file</source>
-        <translation>Dışa aktarılan dosyayı aç</translation>
+        <translation>開啟匯出的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="414"/>
         <source>New Export Preset</source>
-        <translation>Yeni Dışa Aktarma Ön Ayarı</translation>
+        <translation>新增匯出預設組</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="419"/>
         <source>%1 (copy)</source>
-        <translation>%1 (kopya)</translation>
+        <translation>%1 (複本)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="420"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <source>Name</source>
-        <translation>Ad</translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="425"/>
         <source>Custom Command</source>
-        <translation>Özel Komut</translation>
+        <translation>自訂命令</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="428"/>
         <source>Format</source>
-        <translation>Biçim</translation>
+        <translation>格式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="439"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Enter a non-empty, unique preset name.</source>
-        <translation>Boş olmayan, benzersiz bir ön ayar adı girin.</translation>
+        <translation>請輸入非空白且不重複的預設組名稱。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="463"/>
         <location filename="../src/app/PrefsExportPage.cpp" line="471"/>
         <source>Rename Export Preset</source>
-        <translation>Dışa Aktarma Ön Ayarını Yeniden Adlandır</translation>
+        <translation>重新命名匯出預設組</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="505"/>
         <source>Using: %1</source>
-        <translation>Kullanılıyor: %1</translation>
+        <translation>使用中：%1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="506"/>
         <source>Not a valid executable; will auto-detect.</source>
-        <translation>Geçerli bir yürütülebilir dosya değil; otomatik algılanacak.</translation>
+        <translation>不是有效的可執行檔；將自動偵測。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="513"/>
         <source>Detected: %1</source>
-        <translation>Algılandı: %1</translation>
+        <translation>偵測到：%1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsExportPage.cpp" line="512"/>
         <source>Pandoc was not found. Install it, or click Browse to locate.</source>
-        <translation>Pandoc bulunamadı. Yükleyin ya da bulmak için «Gözat»a tıklayın.</translation>
+        <translation>找不到 Pandoc。請安裝它，或點擊「瀏覽」以指定位置。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsFilesPage</name>
+    <name>mufpen::PrefsFilesPage</name>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="462"/>
         <source>Startup</source>
-        <translation>Başlangıç</translation>
+        <translation>啟動</translation>
     </message>
     <message>
         <source>Open new file</source>
-        <translation type="vanished">Yeni dosya aç</translation>
+        <translation type="vanished">開啟新檔案</translation>
     </message>
     <message>
         <source>Reopen last file</source>
-        <translation type="vanished">Son dosyayı yeniden aç</translation>
+        <translation type="vanished">重新開啟上次檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="448"/>
         <source>File Open Protection</source>
-        <translation>Dosya Açma Koruması</translation>
+        <translation>開啟檔案保護</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="449"/>
         <source>Extension protection</source>
-        <translation>Uzantı koruması</translation>
+        <translation>副檔名保護</translation>
     </message>
     <message>
         <source>Text file extensions (open without a warning)</source>
-        <translation type="vanished">Metin dosyası uzantıları (uyarı vermeden açılır)</translation>
+        <translation type="vanished">文字檔案副檔名（開啟時無需確認）</translation>
     </message>
     <message>
         <source>Separate extensions with commas, spaces, or semicolons. You can add or remove extensions.</source>
-        <translation type="vanished">Uzantıları virgül, boşluk veya noktalı virgülle ayırın. Uzantı ekleyebilir veya kaldırabilirsiniz.</translation>
+        <translation type="vanished">以逗號、空格或分號分隔副檔名，可自行新增或移除。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="450"/>
         <source>Allowed file extensions</source>
-        <translation>İzin verilen dosya uzantıları</translation>
+        <translation>允許直接開啟的副檔名</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="451"/>
         <source>Ask before opening files with extensions outside this list.</source>
-        <translation>Uzantısı bu listede olmayan dosyaları açmadan önce sor.</translation>
+        <translation>開啟副檔名不在此清單中的檔案時，先詢問是否繼續。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="452"/>
         <source>e.g. .txt, .log</source>
-        <translation>Örn. .txt, .log</translation>
+        <translation>例如 .txt、.log</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="453"/>
         <source>Add</source>
-        <translation>Ekle</translation>
+        <translation>新增</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="454"/>
         <source>Restore Defaults</source>
-        <translation>Varsayılanları geri yükle</translation>
+        <translation>還原預設值</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="455"/>
         <source>File size protection</source>
-        <translation>Dosya boyutu koruması</translation>
+        <translation>檔案大小保護</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="456"/>
         <source>Large files may take longer to open and use more memory.</source>
-        <translation>Büyük dosyaların açılması daha uzun sürebilir ve daha fazla bellek kullanabilir.</translation>
+        <translation>大型檔案可能需要更長的開啟時間，並佔用更多記憶體。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="457"/>
         <source>Warn before opening files larger than</source>
-        <translation>Şu boyuttan büyük dosyaları açmadan önce uyar</translation>
+        <translation>開啟超過此大小的檔案前提示</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="460"/>
         <source>File size unit</source>
-        <translation>Dosya boyutu birimi</translation>
+        <translation>檔案大小單位</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="463"/>
         <source>Opening Files</source>
-        <translation>Dosya Açma</translation>
+        <translation>開啟檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="464"/>
         <source>Open files in tabs by default</source>
-        <translation>Dosyaları varsayılan olarak sekmelerde aç</translation>
+        <translation>預設以分頁開啟檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="465"/>
         <source>Files opened from the file manager or command line use the existing Mufpen window. Turn this off to open them in a new window.</source>
-        <translation>Dosya yöneticisinden veya komut satırından açılan dosyalar mevcut Mufpen penceresinde açılır. Dosyaları yeni bir pencerede açmak için bu seçeneği kapatın.</translation>
+        <translation>從檔案管理員或命令列開啟的檔案會使用現有的 Mufpen 視窗。關閉此選項可在新視窗中開啟檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="471"/>
         <source>Always start fresh</source>
-        <translation>Her zaman yeni başla</translation>
+        <translation>一律全新開始</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="472"/>
         <source>Restore previous session</source>
-        <translation>Önceki oturumu geri yükle</translation>
+        <translation>還原上次工作階段</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="478"/>
         <source>Outline</source>
-        <translation>Ana Hat</translation>
+        <translation>大綱</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="479"/>
         <source>Allow collapsing and expanding the outline view in the sidebar</source>
-        <translation>Kenar çubuğundaki ana hat görünümünü daraltmaya ve genişletmeye izin ver</translation>
+        <translation>允許在側邊欄中摺疊和展開大綱檢視</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="481"/>
         <source>Default File Type / Extension</source>
-        <translation>Varsayılan Dosya Türü / Uzantısı</translation>
+        <translation>預設檔案類型 / 副檔名</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="488"/>
         <source>Plain Text (.txt)</source>
-        <translation>Düz Metin (.txt)</translation>
+        <translation>純文字 (.txt)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="494"/>
         <source>Save &amp; Restore</source>
-        <translation>Kaydet ve Geri Yükle</translation>
+        <translation>儲存與還原</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="495"/>
         <source>Auto Save</source>
-        <translation>Otomatik Kaydet</translation>
+        <translation>自動儲存</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="496"/>
         <source>Auto-save changes to the previous file when switching files</source>
-        <translation>Dosyalar arasında geçiş yaparken önceki dosyadaki değişiklikleri otomatik kaydet</translation>
+        <translation>切換檔案時自動儲存前一個檔案的變更</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="497"/>
         <source>Restore Unsaved Drafts</source>
-        <translation>Kaydedilmemiş Taslakları Geri Yükle</translation>
+        <translation>還原未儲存的草稿</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="499"/>
         <source>Recently Used Files</source>
-        <translation>Son Kullanılan Dosyalar</translation>
+        <translation>最近使用的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="500"/>
         <source>Record history files and folders</source>
-        <translation>Geçmiş dosyalarını ve klasörlerini kaydet</translation>
+        <translation>記錄歷史檔案和資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="501"/>
         <source>Clear History</source>
-        <translation>Geçmişi Temizle</translation>
+        <translation>清除歷史記錄</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="503"/>
         <source>When dragging files/folders into the window</source>
-        <translation>Dosyalar/klasörler pencereye sürüklendiğinde</translation>
+        <translation>將檔案 / 資料夾拖入視窗時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="504"/>
         <source>When dragging a folder</source>
-        <translation>Bir klasör sürüklendiğinde</translation>
+        <translation>拖入資料夾時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="509"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="520"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="532"/>
         <source>Open in Mufpen</source>
-        <translation>Mufpen ile Aç</translation>
+        <translation>在 Mufpen 中開啟</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="510"/>
         <source>Open in File Manager</source>
-        <translation>Dosya Yöneticisinde Aç</translation>
+        <translation>在檔案管理器中開啟</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="515"/>
         <source>When dragging a Markdown file</source>
-        <translation>Bir Markdown dosyası sürüklendiğinde</translation>
+        <translation>拖入 Markdown 檔案時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="521"/>
         <location filename="../src/app/PrefsFilesPage.cpp" line="531"/>
         <source>Import File</source>
-        <translation>Dosyayı İçe Aktar</translation>
+        <translation>匯入檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="526"/>
         <source>When dragging an importable file</source>
-        <translation>İçe aktarılabilir bir dosya sürüklendiğinde</translation>
+        <translation>拖入可匯入的檔案時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="539"/>
         <source>Windows Integration</source>
-        <translation>Windows Entegrasyonu</translation>
+        <translation>Windows 整合</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="540"/>
         <source>Add &quot;Open with Mufpen&quot; to File Explorer context menu for files and folders</source>
-        <translation>Dosya ve klasörler için Dosya Gezgini bağlam menüsüne &quot;Mufpen ile Aç&quot; seçeneğini ekle</translation>
+        <translation>在檔案總管中為檔案和資料夾的右鍵選單新增「用 Mufpen 開啟」</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="542"/>
         <source>Register Mufpen as an editor for Markdown files (.md, .markdown, .mdx, .mkd, .mdown)</source>
-        <translation>Mufpen&apos;i Markdown dosyaları (.md, .markdown, .mdx, .mkd, .mdown) için düzenleyici olarak kaydet</translation>
+        <translation>將 Mufpen 註冊為 Markdown 檔案（.md、.markdown、.mdx、.mkd、.mdown）的編輯器</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="543"/>
         <source>Set Mufpen as Default…</source>
-        <translation>Mufpen&apos;i Varsayılan Yap…</translation>
+        <translation>設為預設程式…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsFilesPage.cpp" line="587"/>
         <source>Remove .%1</source>
-        <translation>.%1 uzantısını kaldır</translation>
+        <translation>移除 .%1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsGeneralPage</name>
+    <name>mufpen::PrefsGeneralPage</name>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="126"/>
         <source>Checking...</source>
-        <translation>Denetleniyor...</translation>
+        <translation>檢查中...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="98"/>
         <source>Update Available</source>
-        <translation>Güncelleme mevcut</translation>
+        <translation>有可用的更新</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="99"/>
         <source>A new version of Mufpen (%1) is available.</source>
-        <translation>Yeni bir Mufpen sürümü (%1) mevcut.</translation>
+        <translation>Mufpen 的新版本 (%1) 已可供下載。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>Up to Date</source>
-        <translation>Güncel</translation>
+        <translation>已是最新版本</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="107"/>
         <source>You are running the latest version of Mufpen.</source>
-        <translation>Mufpen&apos;in en son sürümünü kullanıyorsunuz.</translation>
+        <translation>您正在使用最新版本的 Mufpen。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Update Check Failed</source>
-        <translation>Güncelleme denetimi başarısız</translation>
+        <translation>更新檢查失敗</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="115"/>
         <source>Could not check for updates:
 %1</source>
-        <translation>Güncellemeler denetlenemedi:
+        <translation>無法檢查更新：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="139"/>
         <source>Language</source>
-        <translation>Dil</translation>
+        <translation>語言</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="140"/>
         <source>Update</source>
-        <translation>Güncelleme</translation>
+        <translation>更新</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="141"/>
         <source>Check for Updates</source>
-        <translation>Güncellemeleri Denetle</translation>
+        <translation>檢查更新</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsGeneralPage.cpp" line="142"/>
         <source>Automatically check for updates</source>
-        <translation>Güncellemeleri otomatik denetle</translation>
+        <translation>自動檢查更新</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Gelişmiş</translation>
+        <translation type="vanished">進階</translation>
     </message>
     <message>
         <source>Enable debug mode</source>
-        <translation type="vanished">Hata ayıklama modunu etkinleştir</translation>
+        <translation type="vanished">啟用除錯模式</translation>
     </message>
     <message>
         <source>Send anonymous usage data</source>
-        <translation type="vanished">Anonim kullanım verileri gönder</translation>
+        <translation type="vanished">傳送匿名使用資料</translation>
     </message>
     <message>
         <source>Open Advanced Settings</source>
-        <translation type="vanished">Gelişmiş Ayarları Aç</translation>
+        <translation type="vanished">開啟進階設定</translation>
     </message>
     <message>
         <source>Reset Advanced Settings</source>
-        <translation type="vanished">Gelişmiş Ayarları Sıfırla</translation>
+        <translation type="vanished">重設進階設定</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsImagePage</name>
+    <name>mufpen::PrefsImagePage</name>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="185"/>
         <source>When Inserting Images</source>
-        <translation>Resim Eklenirken</translation>
+        <translation>插入圖片時</translation>
     </message>
     <message>
         <source>Learn more...</source>
-        <translation type="vanished">Daha fazla bilgi...</translation>
+        <translation type="vanished">瞭解更多...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="190"/>
         <source>No special operation</source>
-        <translation>Özel işlem yok</translation>
+        <translation>無特殊操作</translation>
     </message>
     <message>
         <source>Copy to custom folder</source>
-        <translation type="vanished">Özel klasöre kopyala</translation>
+        <translation type="vanished">複製到自訂資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="191"/>
         <source>Copy image to current folder (./)</source>
-        <translation>Resmi geçerli klasöre kopyala (./)</translation>
+        <translation>複製圖片到目前資料夾 (./)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="192"/>
         <source>Copy image to ./assets folder</source>
-        <translation>Resmi ./assets klasörüne kopyala</translation>
+        <translation>複製圖片到 ./assets 資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="193"/>
         <source>Copy image to ./%1 folder</source>
-        <translation>Resmi ./%1 klasörüne kopyala</translation>
+        <translation>複製圖片到 ./%1 資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="194"/>
         <source>Upload image</source>
-        <translation>Resmi yükle</translation>
+        <translation>上傳圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="195"/>
         <source>Copy to specified path</source>
-        <translation>Belirtilen yola kopyala</translation>
+        <translation>複製到指定路徑</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="200"/>
         <source>Destination folder for copied images</source>
-        <translation>Kopyalanan resimler için hedef klasör</translation>
+        <translation>複製圖片的目標資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="201"/>
         <source>Browse...</source>
-        <translation>Göz at...</translation>
+        <translation>瀏覽...</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="202"/>
         <source>Apply the above rules to local images</source>
-        <translation>Yukarıdaki kuralları yerel resimlere uygula</translation>
+        <translation>將上述規則套用至本機圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="203"/>
         <source>Apply the above rules to network images</source>
-        <translation>Yukarıdaki kuralları ağ resimlerine uygula</translation>
+        <translation>將上述規則套用至網路圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="204"/>
         <source>Allow automatic image upload based on YAML settings</source>
-        <translation>YAML ayarlarına göre otomatik resim yüklemeye izin ver</translation>
+        <translation>允許根據 YAML 設定自動上傳圖片</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="207"/>
         <source>Image Syntax Preferences</source>
-        <translation>Resim Sözdizimi Tercihleri</translation>
+        <translation>圖片語法偏好</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="208"/>
         <source>Prefer relative paths</source>
-        <translation>Göreli yolları tercih et</translation>
+        <translation>偏好使用相對路徑</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="209"/>
         <source>Add / to relative paths</source>
-        <translation>Göreli yollara / ekle</translation>
+        <translation>在相對路徑前加上 /</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="210"/>
         <source>Auto-escape image URLs on insertion</source>
-        <translation>Ekleme sırasında resim URL&apos;lerini otomatik olarak kaçış karakteri ile kodla</translation>
+        <translation>插入時自動跳脫圖片 URL</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="213"/>
         <source>Upload Service Settings</source>
-        <translation>Yükleme Hizmeti Ayarları</translation>
+        <translation>上傳服務設定</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="214"/>
         <source>Upload Service</source>
-        <translation>Yükleme Hizmeti</translation>
+        <translation>上傳服務</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="219"/>
         <source>None</source>
-        <translation>Yok</translation>
+        <translation>無</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="220"/>
         <source>Custom Command</source>
-        <translation>Özel Komut</translation>
+        <translation>自訂命令</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="225"/>
         <source>e.g. picgo upload or uPic -m upload</source>
-        <translation>örn. picgo upload veya uPic -m upload</translation>
+        <translation>例如 picgo upload 或 uPic -m upload</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="226"/>
         <source>Test</source>
-        <translation>Sına</translation>
+        <translation>測試</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="293"/>
         <source>Select Image Folder</source>
-        <translation>Resim Klasörü Seç</translation>
+        <translation>選擇圖片資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
@@ -5419,83 +5435,83 @@ Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atla
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Test Upload</source>
-        <translation>Yüklemeyi Sına</translation>
+        <translation>測試上傳</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="302"/>
         <source>Enter an upload command first.</source>
-        <translation>Önce bir yükleme komutu girin.</translation>
+        <translation>請先輸入上傳命令。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="310"/>
         <source>Could not create a test image.</source>
-        <translation>Bir sınama resmi oluşturulamadı.</translation>
+        <translation>無法建立測試圖片。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="316"/>
         <source>Upload canceled.</source>
-        <translation>Yükleme iptal edildi.</translation>
+        <translation>上傳已取消。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="318"/>
         <source>Upload succeeded. Returned URL:
 %1</source>
-        <translation>Yükleme başarılı. Döndürülen URL:
+        <translation>上傳成功。傳回的 URL：
 %1</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsImagePage.cpp" line="320"/>
         <source>Upload failed:
 %1</source>
-        <translation>Yükleme başarısız:
+        <translation>上傳失敗：
 %1</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsMarkdownPage</name>
+    <name>mufpen::PrefsMarkdownPage</name>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="256"/>
         <source>Markdown Syntax Preferences</source>
-        <translation>Markdown Sözdizimi Tercihleri</translation>
+        <translation>Markdown 語法偏好</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="257"/>
         <source>Strict Mode</source>
-        <translation>Katı Mod</translation>
+        <translation>嚴格模式</translation>
     </message>
     <message>
         <source>Strict Mode turns off tables, strikethrough, task lists, auto links and formulas for plain CommonMark output.</source>
-        <translation type="vanished">Sıkı Mod, düz CommonMark çıktısı için tabloları, üstü çiziliyi, görev listelerini, otomatik bağlantıları ve formülleri devre dışı bırakır.</translation>
+        <translation type="vanished">嚴格模式會關閉表格、刪除線、工作清單、自動連結和公式，以輸出純 CommonMark 文件。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="258"/>
         <source>Strict Mode turns off tables, strikethrough and task lists for plain CommonMark structure. Inline extensions (formulas, auto links, sub/superscript, etc.) always follow their own switches and are not affected by Strict Mode.</source>
-        <translation>Katı Mod, standart CommonMark yapısı için tabloları, üstü çizili metni ve görev listelerini kapatır. Satır içi uzantılar (formüller, otomatik bağlantılar, alt/üst simgeler vb.) her zaman kendi ayarlarına uyar ve Katı Mod&apos;dan etkilenmez.</translation>
+        <translation>嚴格模式會停用表格、刪除線與工作清單，採用標準 CommonMark 結構。行內擴充（公式、自動連結、上下標等）始終由各自的開關控制，不受嚴格模式影響。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="261"/>
         <source>Break on Single Newline</source>
-        <translation>Tek satır sonunda satır kır</translation>
+        <translation>單一換行符換行</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="263"/>
         <source>Render a single line break as a new line. Turn off for strict CommonMark, which joins soft-wrapped lines into one paragraph.</source>
-        <translation>Her tek satır sonunu yeni bir satır olarak göster. Yumuşak kaydırılan satırları tek paragrafta birleştiren katı CommonMark için kapatın.</translation>
+        <translation>將單一換行符轉譯為換行。關閉後採用嚴格 CommonMark 規則，會將軟換行的多行合併為單一段落。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="265"/>
         <source>Heading Style</source>
-        <translation>Başlık Stili</translation>
+        <translation>標題樣式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="267"/>
         <source>Unordered List</source>
-        <translation>Sırasız Liste</translation>
+        <translation>項目符號清單</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="269"/>
         <source>Ordered List</source>
-        <translation>Sıralı Liste</translation>
+        <translation>編號清單</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="270"/>
@@ -5510,1090 +5526,1090 @@ Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atla
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="273"/>
         <source>Markdown Extended Syntax</source>
-        <translation>Markdown Genişletilmiş Sözdizimi</translation>
+        <translation>Markdown 延伸語法</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="274"/>
         <source>Auto Recognize Links</source>
-        <translation>Bağlantıları Otomatik Tanı</translation>
+        <translation>自動辨識連結</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="275"/>
         <source>Inline Formula</source>
-        <translation>Satır İçi Formül</translation>
+        <translation>行內公式</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="276"/>
         <source>Allow Spaces Inside Formula Delimiters</source>
-        <translation>Formül Sınırlayıcılarının İçindeki Boşluklara İzin Ver</translation>
+        <translation>允許公式定界符內側有空格</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="278"/>
         <source>Accept spaces or tabs next to inline formula delimiters. Turn this off for Pandoc-style parsing that avoids ambiguous currency text.</source>
-        <translation>Satır içi formül sınırlayıcılarının yanında boşluk veya sekmeleri kabul eder. Belirsiz para birimi ifadelerini önleyen Pandoc tarzı ayrıştırma için bunu kapatın.</translation>
+        <translation>接受緊鄰行內公式定界符的空格或 Tab 字元。關閉此選項可使用 Pandoc 風格的解析，以避免有歧義的貨幣文字。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="280"/>
         <source>Subscript</source>
-        <translation>Alt Simge</translation>
+        <translation>下標</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="281"/>
         <source>Superscript</source>
-        <translation>Üst Simge</translation>
+        <translation>上標</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="282"/>
         <source>Highlight</source>
-        <translation>Vurgula</translation>
+        <translation>醒目提示</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="283"/>
         <source>Render Emoji Shortcodes</source>
-        <translation>Emoji Kısa Kodlarını İşle</translation>
+        <translation>轉譯 Emoji 短代碼</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="285"/>
         <source>Convert GitHub-style shortcodes like :smile: and :heart: into emoji glyphs when rendering. Turn off to keep the literal :shortcode: text (e.g. for technical documentation).</source>
-        <translation>İşleme sırasında :smile: ve :heart: gibi GitHub tarzı kısa kodları emoji karakterlerine dönüştür. :shortcode: metnini olduğu gibi korumak için kapatın (ör. teknik belgelerde).</translation>
+        <translation>轉譯時將 :smile:、:heart: 等 GitHub 風格的短代碼轉換為 Emoji 字元。關閉後保留原始的 :shortcode: 文字（例如用於技術文件）。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="287"/>
         <source>Github Style Alert Box</source>
-        <translation>GitHub Tarzı Uyarı Kutusu</translation>
+        <translation>GitHub 風格提示區塊</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="288"/>
         <source>Mermaid Diagrams</source>
-        <translation>Mermaid Diyagramları</translation>
+        <translation>Mermaid 圖表</translation>
     </message>
     <message>
         <source>Diagrams (Sequence, Flowchart, Mermaid)</source>
-        <translation type="vanished">Diyagramlar (Sıra, Akış Çizelgesi, Mermaid)</translation>
+        <translation type="vanished">圖表 (時序圖、流程圖、Mermaid)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="289"/>
         <source>Diagram Options</source>
-        <translation>Diyagram Seçenekleri</translation>
+        <translation>圖表選項</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="292"/>
         <source>Smart Punctuation</source>
-        <translation>Akıllı Noktalama</translation>
+        <translation>智慧標點</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="293"/>
         <source>Convert on Input</source>
-        <translation>Girdide Dönüştür</translation>
+        <translation>輸入時轉換</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>No conversion</source>
-        <translation>Dönüşüm yok</translation>
+        <translation>不轉換</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <source>When typing</source>
-        <translation>Yazarken</translation>
+        <translation>輸入時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="294"/>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Always</source>
-        <translation>Her zaman</translation>
+        <translation>永遠</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="295"/>
         <source>Smart Quotes</source>
-        <translation>Akıllı Tırnak İşaretleri</translation>
+        <translation>智慧引號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="304"/>
         <source>Smart Dashes</source>
-        <translation>Akıllı Tireler</translation>
+        <translation>智慧破折號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="305"/>
         <source>Convert on Rendering</source>
-        <translation>Görüntülerken dönüştür</translation>
+        <translation>渲染時轉換</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="306"/>
         <source>Remap Unicode Punctuation on Parse</source>
-        <translation>Ayrıştırırken Unicode noktalamayı yeniden eşle</translation>
+        <translation>解析時重新對應 Unicode 標點</translation>
     </message>
     <message>
         <source>Allow and convert Unicode punctuation when parsing Markdown</source>
-        <translation type="vanished">Markdown ayrıştırılırken Unicode noktalama işaretlerine izin ver ve dönüştür</translation>
+        <translation type="vanished">解析 Markdown 時允許並轉換 Unicode 標點符號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="309"/>
         <source>Code Blocks</source>
-        <translation>Kod Blokları</translation>
+        <translation>程式碼區塊</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="310"/>
         <source>Show Line Numbers</source>
-        <translation>Satır Numaralarını Göster</translation>
+        <translation>顯示行號</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="311"/>
         <source>Code Blocks Auto Wrap</source>
-        <translation>Kod Bloklarında Otomatik Kaydırma</translation>
+        <translation>程式碼區塊自動換行</translation>
     </message>
     <message>
         <source>Use Shift+Tab to auto adjust indent of selected code</source>
-        <translation type="vanished">Seçili kodun girintisini otomatik ayarlamak için Shift+Tab kullan</translation>
+        <translation type="vanished">使用 Shift+Tab 自動調整選取程式碼的縮排</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="312"/>
         <source>Code Indent</source>
-        <translation>Kod Girintisi</translation>
+        <translation>程式碼縮排</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="314"/>
         <source>Default Code Block Language</source>
-        <translation>Varsayılan Kod Bloğu Dili</translation>
+        <translation>預設程式碼區塊語言</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="315"/>
         <source>(empty)</source>
-        <translation>(boş)</translation>
+        <translation>(空白)</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="317"/>
         <source>Automatically add code block language</source>
-        <translation>Kod bloğu dilini otomatik olarak ekle</translation>
+        <translation>自動新增程式碼區塊語言</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>When inserting code blocks via Markdown code</source>
-        <translation>Markdown kodu aracılığıyla kod blokları eklenirken</translation>
+        <translation>透過 Markdown 程式碼插入程式碼區塊時</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsMarkdownPage.cpp" line="318"/>
         <source>Never</source>
-        <translation>Asla</translation>
+        <translation>從不</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsSearchPage</name>
+    <name>mufpen::PrefsSearchPage</name>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="120"/>
         <source>Search scope</source>
-        <translation>Arama kapsamı</translation>
+        <translation>搜尋範圍</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="121"/>
         <source>Applies to folder search and Quick Open. Changes take effect on the next search.</source>
-        <translation>Klasörde arama ve Hızlı Aç için geçerlidir. Değişiklikler bir sonraki aramada uygulanır.</translation>
+        <translation>適用於資料夾搜尋與快速開啟。變更將於下次搜尋時生效。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="122"/>
         <source>File extensions to search</source>
-        <translation>Aranacak dosya uzantıları</translation>
+        <translation>要搜尋的副檔名</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="123"/>
         <source>Separate extensions with commas, for example: md, txt. Use * for all file types; leave empty to search no files.</source>
-        <translation>Uzantıları virgülle ayırın, örneğin: md, txt. Tüm dosya türleri için * kullanın; hiçbir dosyada arama yapmamak için boş bırakın.</translation>
+        <translation>以逗號分隔副檔名，例如：md, txt。使用 * 搜尋所有檔案類型；留空則不搜尋任何檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="125"/>
         <source>Ignored files and folders</source>
-        <translation>Yok sayılan dosya ve klasörler</translation>
+        <translation>忽略的檔案與資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="126"/>
         <source>One rule per line: build/ ignores folders, *.bak ignores files, /drafts/ matches the search root, and ! includes a match again. Uses gitignore-style wildcards.</source>
-        <translation>Her satıra bir kural yazın: build/ klasörleri, *.bak dosyaları yok sayar; /drafts/ arama kökünden itibaren eşleşir ve ! bir eşleşmeyi yeniden dahil eder. gitignore tarzı joker karakterler kullanılır.</translation>
+        <translation>每行一條規則：build/ 忽略資料夾，*.bak 忽略檔案，/drafts/ 從搜尋根目錄比對，! 重新包含符合的項目。支援 gitignore 風格的萬用字元。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="128"/>
         <source>Include hidden files and folders</source>
-        <translation>Gizli dosya ve klasörleri dahil et</translation>
+        <translation>包含隱藏檔案與資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="129"/>
         <source>Read .gitignore files automatically</source>
-        <translation>.gitignore dosyalarını otomatik oku</translation>
+        <translation>自動讀取 .gitignore 檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="130"/>
         <source>Read .ignore files automatically</source>
-        <translation>.ignore dosyalarını otomatik oku</translation>
+        <translation>自動讀取 .ignore 檔案</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="131"/>
         <source>Reads rules in the search root and its subfolders. .ignore takes priority over .gitignore; the rules above take priority over both. Ignored folders are not traversed. Symbolic links are always skipped.</source>
-        <translation>Arama kökündeki ve alt klasörlerindeki kuralları okur. .ignore, .gitignore dosyasından önceliklidir; yukarıdaki kurallar her ikisinden de önceliklidir. Yok sayılan klasörlerin içine girilmez. Sembolik bağlantılar her zaman atlanır.</translation>
+        <translation>讀取搜尋根目錄及其子資料夾中的規則。.ignore 的優先順序高於 .gitignore；上方的規則優先於兩者。不會遍歷被忽略的資料夾。一律略過符號連結。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="133"/>
         <source>Content search limits</source>
-        <translation>İçerik arama sınırları</translation>
+        <translation>內容搜尋限制</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="134"/>
         <source>Maximum file size</source>
-        <translation>En büyük dosya boyutu</translation>
+        <translation>檔案大小上限</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="135"/>
         <source>Maximum file size for regex</source>
-        <translation>Düzenli ifadeler için en büyük dosya boyutu</translation>
+        <translation>正規表示式搜尋的檔案大小上限</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="136"/>
         <source>Regex searches obey both limits. File size does not restrict Quick Open. Folder replacement keeps its separate 8 MiB safety limit. File opening protection is configured on the Files page.</source>
-        <translation>Düzenli ifadeyle aramalar her iki sınıra da uyar. Dosya boyutu Hızlı Aç işlevini sınırlamaz. Klasörde değiştirme işleminin ayrı 8 MiB güvenlik sınırı korunur. Dosya açma koruması Dosyalar sayfasında yapılandırılır.</translation>
+        <translation>正規表示式搜尋同時受這兩項限制。快速開啟不受檔案大小限制。資料夾取代仍有獨立的 8 MiB 安全限制。檔案開啟保護可在「檔案」頁面設定。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsSearchPage.cpp" line="138"/>
         <source>Restore search defaults</source>
-        <translation>Varsayılan arama ayarlarını geri yükle</translation>
+        <translation>還原搜尋預設值</translation>
     </message>
 </context>
 <context>
-    <name>muffin::PrefsShortcutsPage</name>
+    <name>mufpen::PrefsShortcutsPage</name>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="115"/>
         <source>Keyboard Shortcuts</source>
-        <translation>Klavye kısayolları</translation>
+        <translation>鍵盤快捷鍵</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="96"/>
         <source>Restore all default shortcuts?</source>
-        <translation>Tüm varsayılan kısayollar geri yüklensin mi?</translation>
+        <translation>還原所有預設快捷鍵？</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="101"/>
         <source>All custom shortcuts will be removed. This cannot be undone.</source>
-        <translation>Tüm özel kısayollar kaldırılacak. Bu işlem geri alınamaz.</translation>
+        <translation>所有自訂快捷鍵都將被移除。此操作無法復原。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="102"/>
         <source>Restore Defaults</source>
-        <translation>Varsayılanları geri yükle</translation>
+        <translation>還原預設值</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="116"/>
         <source>Select a command and press a key combination. Changes apply to all windows immediately.</source>
-        <translation>Bir komut seçin ve bir tuş birleşimine basın. Değişiklikler tüm pencerelere hemen uygulanır.</translation>
+        <translation>選擇命令並按下組合鍵。變更會立即套用至所有視窗。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="117"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="118"/>
         <source>Search commands or shortcuts…</source>
-        <translation>Komut veya kısayol ara…</translation>
+        <translation>搜尋命令或快捷鍵…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Command</source>
-        <translation>Komut</translation>
+        <translation>命令</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="120"/>
         <source>Shortcut</source>
-        <translation>Kısayol</translation>
+        <translation>快捷鍵</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="119"/>
         <source>Default</source>
-        <translation>Varsayılan</translation>
+        <translation>預設</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="121"/>
         <source>Clear</source>
-        <translation>Temizle</translation>
+        <translation>清除</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="122"/>
         <source>Use Default</source>
-        <translation>Varsayılanı kullan</translation>
+        <translation>使用預設值</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="123"/>
         <source>Restore All Defaults…</source>
-        <translation>Tüm varsayılanları geri yükle…</translation>
+        <translation>還原所有預設值…</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="168"/>
         <source>No matching commands.</source>
-        <translation>Eşleşen komut yok.</translation>
+        <translation>沒有符合的命令。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Apply</source>
-        <translation>Uygula</translation>
+        <translation>套用</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="209"/>
         <source>Reassign</source>
-        <translation>Yeniden ata</translation>
+        <translation>重新指派</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="214"/>
         <source>This key is reserved for text entry or cursor navigation. Use a modifier key or a function key.</source>
-        <translation>Bu tuş metin girişi veya imleç hareketi için ayrılmıştır. Bir değiştirici tuş ya da işlev tuşu kullanın.</translation>
+        <translation>此鍵用於文字輸入或游標移動。請搭配修飾鍵使用，或使用功能鍵。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="220"/>
         <source>Used by: %1. Reassigning will clear those shortcuts.</source>
-        <translation>Kullanan: %1. Yeniden atama bu kısayolları temizler.</translation>
+        <translation>已用於：%1。重新指派會清除這些命令的快捷鍵。</translation>
     </message>
     <message>
         <location filename="../src/app/PrefsShortcutsPage.cpp" line="222"/>
         <source>Clear and Apply removes the shortcut. Use Default and Apply restores it.</source>
-        <translation>Kısayolu kaldırmak için Temizle ve Uygula&apos;ya basın. Geri yüklemek için Varsayılanı kullan ve Uygula&apos;ya basın.</translation>
+        <translation>按「清除」後再按「套用」可移除快捷鍵。按「使用預設值」後再按「套用」可還原預設快捷鍵。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::QuickOpenDialog</name>
+    <name>mufpen::QuickOpenDialog</name>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="82"/>
         <location filename="../src/app/QuickOpenDialog.cpp" line="294"/>
         <source>Quick Open</source>
-        <translation>Hızlı Aç</translation>
+        <translation>快速開啟</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="89"/>
         <source>Matching files</source>
-        <translation>Eşleşen dosyalar</translation>
+        <translation>符合的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="253"/>
         <source>Scanning folder…</source>
-        <translation>Klasör taranıyor…</translation>
+        <translation>正在掃描資料夾…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="254"/>
         <source>No matching files</source>
-        <translation>Eşleşen dosya yok</translation>
+        <translation>沒有相符的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="255"/>
         <source>%1 matching files</source>
-        <translation>%1 eşleşen dosya</translation>
+        <translation>%1 個相符的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="257"/>
         <source> · Showing the first %1; type to narrow results</source>
-        <translation> · İlk %1 sonuç gösteriliyor; sonuçları daraltmak için yazın</translation>
+        <translation> · 顯示前 %1 項；繼續輸入以縮小結果範圍</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="259"/>
         <source> · File limit reached; results are incomplete</source>
-        <translation> · Dosya sınırına ulaşıldı; sonuçlar eksik</translation>
+        <translation> · 已達檔案數量上限；結果不完整</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="261"/>
         <source> · %1 unreadable folders skipped</source>
-        <translation> · Okunamayan %1 klasör atlandı</translation>
+        <translation> · 已略過 %1 個無法讀取的資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="295"/>
         <source>Search file names or paths…</source>
-        <translation>Dosya adlarında veya yollarda ara…</translation>
+        <translation>搜尋檔案名稱或路徑…</translation>
     </message>
     <message>
         <location filename="../src/app/QuickOpenDialog.cpp" line="296"/>
         <source>Open and recent files</source>
-        <translation>Açık ve son kullanılan dosyalar</translation>
+        <translation>已開啟和最近使用的檔案</translation>
     </message>
     <message>
         <source>Type to filter files…</source>
-        <translation type="vanished">Dosyaları süzmek için yazın…</translation>
+        <translation type="vanished">輸入以篩選檔案…</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SearchPanelWidget</name>
+    <name>mufpen::SearchPanelWidget</name>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="305"/>
         <source> · Unsaved</source>
-        <translation> · Kaydedilmemiş</translation>
+        <translation> · 未儲存</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="325"/>
         <source>Open a folder to search its contents.</source>
-        <translation>İçeriğinde arama yapmak için bir klasör açın.</translation>
+        <translation>開啟資料夾後即可搜尋其中的內容。</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="327"/>
         <source>Search failed: %1</source>
-        <translation>Arama başarısız: %1</translation>
+        <translation>搜尋失敗：%1</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="329"/>
         <source>Search text files in this folder and its subfolders.</source>
-        <translation>Bu klasördeki ve alt klasörlerindeki metin dosyalarında arama yapın.</translation>
+        <translation>搜尋此資料夾及其子資料夾中的文字檔案。</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="331"/>
         <source>%1 matches in %2 files</source>
-        <translation>%2 dosyada %1 eşleşme</translation>
+        <translation>%2 個檔案中有 %1 處相符項目</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="333"/>
         <source> · Searching…</source>
-        <translation> · Aranıyor…</translation>
+        <translation> · 正在搜尋…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="335"/>
         <source> · Incomplete results; search again before replacing</source>
-        <translation> · Sonuçlar eksik; değiştirmeden önce yeniden arayın</translation>
+        <translation> · 結果不完整；請在取代前重新搜尋</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="337"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="353"/>
         <source>%1 files searched</source>
-        <translation>%1 dosyada arama yapıldı</translation>
+        <translation>已搜尋 %1 個檔案</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="339"/>
         <source> · %1 files or folders skipped</source>
-        <translation> · %1 dosya veya klasör atlandı</translation>
+        <translation> · 已略過 %1 個檔案或資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="341"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="400"/>
         <source>Result limit reached</source>
-        <translation>Sonuç sınırına ulaşıldı</translation>
+        <translation>已達結果數量上限</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="344"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="350"/>
         <source>Search details</source>
-        <translation>Arama ayrıntıları</translation>
+        <translation>搜尋詳細資訊</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Path</source>
-        <translation>Yol</translation>
+        <translation>路徑</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="356"/>
         <source>Reason</source>
-        <translation>Neden</translation>
+        <translation>原因</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="364"/>
         <source>File size exceeds %1 MiB</source>
-        <translation>Dosya boyutu %1 MiB sınırını aşıyor</translation>
+        <translation>檔案大小超過 %1 MiB</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="367"/>
         <source>Regular expression search is limited to %1 MiB per file</source>
-        <translation>Düzenli ifadeyle arama, dosya başına %1 MiB ile sınırlıdır</translation>
+        <translation>正規表示式搜尋僅支援不超過 %1 MiB 的檔案</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="371"/>
         <source>File is loading or has conflicting unsaved versions</source>
-        <translation>Dosya yükleniyor veya çakışan kaydedilmemiş sürümleri var</translation>
+        <translation>檔案正在載入，或存在互相衝突的未儲存版本</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="374"/>
         <source>Cannot read file or folder</source>
-        <translation>Dosya veya klasör okunamıyor</translation>
+        <translation>無法讀取檔案或資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="377"/>
         <source>Unsupported encoding or binary content</source>
-        <translation>Desteklenmeyen kodlama veya ikili içerik</translation>
+        <translation>編碼不受支援，或內容為二進位資料</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="380"/>
         <source>File changed during search</source>
-        <translation>Dosya arama sırasında değişti</translation>
+        <translation>檔案在搜尋期間發生變更</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="383"/>
         <source>Search exceeded its resource limit</source>
-        <translation>Arama kaynak sınırını aştı</translation>
+        <translation>搜尋超出資源限制</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="386"/>
         <source>Ignored directory</source>
-        <translation>Yok sayılan dizin</translation>
+        <translation>已忽略的目錄</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="389"/>
         <source>Excluded by search ignore rules</source>
-        <translation>Arama yok sayma kuralları tarafından dışlandı</translation>
+        <translation>已被搜尋忽略規則排除</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="392"/>
         <source>Cannot read ignore rules (UTF-8, up to 4 MiB)</source>
-        <translation>Yok sayma kuralları okunamıyor (UTF-8, en fazla 4 MiB)</translation>
+        <translation>無法讀取忽略規則（UTF-8，上限為 4 MiB）</translation>
     </message>
     <message>
         <source>No folder open</source>
-        <translation type="vanished">Açık klasör yok</translation>
+        <translation type="vanished">未開啟資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="408"/>
         <source>Search contents…</source>
-        <translation>İçerikte ara…</translation>
+        <translation>搜尋內容…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="409"/>
         <source>Search contents</source>
-        <translation>İçerikte ara</translation>
+        <translation>搜尋內容</translation>
     </message>
     <message>
         <source>Include paths (words or path segments)</source>
-        <translation type="vanished">Dahil edilecek yollar (sözcükler veya yol bölümleri)</translation>
+        <translation type="vanished">包含路徑（詞語或路徑片段）</translation>
     </message>
     <message>
         <source>Exclude paths (words or path segments)</source>
-        <translation type="vanished">Hariç tutulacak yollar (sözcükler veya yol bölümleri)</translation>
+        <translation type="vanished">排除路徑（詞語或路徑片段）</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="252"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="412"/>
         <source>Match case</source>
-        <translation>Büyük/küçük harf duyarlı</translation>
+        <translation>區分大小寫</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowSearch.cpp" line="254"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="414"/>
         <source>Regular expression</source>
-        <translation>Düzenli ifade</translation>
+        <translation>正規表示式</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="416"/>
         <source>Replace with…</source>
-        <translation>Şununla değiştir…</translation>
+        <translation>取代為…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="417"/>
         <source>Replace with</source>
-        <translation>Şununla değiştir</translation>
+        <translation>取代為</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="418"/>
         <location filename="../src/app/SearchPanelWidget.cpp" line="419"/>
         <source>Replace</source>
-        <translation>Değiştir</translation>
+        <translation>取代</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="420"/>
         <source>Preview folder replacement…</source>
-        <translation>Klasörde değiştirmeyi önizle…</translation>
+        <translation>預覽資料夾取代…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="421"/>
         <source>Search</source>
-        <translation>Ara</translation>
+        <translation>搜尋</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="422"/>
         <source>Stop</source>
-        <translation>Durdur</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <source>Undo folder replacement…</source>
-        <translation type="vanished">Klasörde değiştirmeyi geri al…</translation>
+        <translation type="vanished">復原資料夾取代…</translation>
     </message>
     <message>
         <location filename="../src/app/SearchPanelWidget.cpp" line="423"/>
         <source>Content search results</source>
-        <translation>İçerik arama sonuçları</translation>
+        <translation>內容搜尋結果</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SidebarWidget</name>
+    <name>mufpen::SidebarWidget</name>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="323"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1143"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1172"/>
         <source>Files</source>
-        <translation>Dosyalar</translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="475"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1146"/>
         <source>Outline</source>
-        <translation>Ana Hat</translation>
+        <translation>大綱</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="736"/>
         <source>Directory pinned — click to follow the active tab</source>
-        <translation>Dizin sabitlendi — etkin sekmeyi takip etmek için tıklayın</translation>
+        <translation>目錄已釘選 — 點擊以跟隨目前分頁</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="737"/>
         <source>Following active tab — click to pin this directory</source>
-        <translation>Etkin sekme takip ediliyor — bu dizini sabitlemek için tıklayın</translation>
+        <translation>正在跟隨目前分頁 — 點擊以釘選此目錄</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1123"/>
         <source>No folder open</source>
-        <translation>Açık klasör yok</translation>
+        <translation>未開啟資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1129"/>
         <source>New File</source>
-        <translation>Yeni Dosya</translation>
+        <translation>新增檔案</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1130"/>
         <source>New Folder</source>
-        <translation>Yeni Klasör</translation>
+        <translation>新增資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1132"/>
         <source>Refresh Files</source>
-        <translation>Dosyaları Yenile</translation>
+        <translation>重新整理檔案</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1133"/>
         <source>Sort Files</source>
-        <translation>Dosyaları Sırala</translation>
+        <translation>檔案排序</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1134"/>
         <source>File Name</source>
-        <translation>Dosya Adı</translation>
+        <translation>檔案名稱</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1135"/>
         <source>Date Modified</source>
-        <translation>Değiştirilme Tarihi</translation>
+        <translation>修改時間</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1136"/>
         <source>Date Created</source>
-        <translation>Oluşturulma Tarihi</translation>
+        <translation>建立時間</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1137"/>
         <source>File Type</source>
-        <translation>Dosya Türü</translation>
+        <translation>檔案類型</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1138"/>
         <source>File Size</source>
-        <translation>Dosya Boyutu</translation>
+        <translation>檔案大小</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1139"/>
         <source>Ascending</source>
-        <translation>Artan</translation>
+        <translation>遞增</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1140"/>
         <source>Descending</source>
-        <translation>Azalan</translation>
+        <translation>遞減</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1149"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1173"/>
         <source>Search</source>
-        <translation>Ara</translation>
+        <translation>搜尋</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="369"/>
         <source>Expand All Folders</source>
-        <translation>Tüm Klasörleri Genişlet</translation>
+        <translation>展開所有資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="370"/>
         <location filename="../src/app/SidebarWidget.cpp" line="1131"/>
         <source>Collapse All Folders</source>
-        <translation>Tüm Klasörleri Daralt</translation>
+        <translation>收合所有資料夾</translation>
     </message>
     <message>
         <source>Folder Actions</source>
-        <translation type="vanished">Klasör İşlemleri</translation>
+        <translation type="vanished">資料夾操作</translation>
     </message>
     <message>
         <source>Open Folder...</source>
-        <translation type="vanished">Klasör Aç...</translation>
+        <translation type="vanished">開啟資料夾...</translation>
     </message>
     <message>
         <location filename="../src/app/MainWindowContextMenu.cpp" line="371"/>
         <source>Close Folder</source>
-        <translation>Klasörü Kapat</translation>
+        <translation>關閉資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
-        <translation>Başlık Yok</translation>
+        <translation>沒有標題</translation>
     </message>
 </context>
 <context>
-    <name>muffin::SourceEditorWidget</name>
+    <name>mufpen::SourceEditorWidget</name>
     <message>
         <location filename="../src/editor/SourceEditorWidget.cpp" line="224"/>
         <source>Start writing...</source>
-        <translation>Yazmaya başlayın...</translation>
+        <translation>開始撰寫...</translation>
     </message>
 </context>
 <context>
-    <name>muffin::StatusBarWidget</name>
+    <name>mufpen::StatusBarWidget</name>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="233"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <location filename="../src/app/StatusBarWidget.cpp" line="590"/>
         <source>%1 words</source>
-        <translation>%1 sözcük</translation>
+        <translation>%1 個字</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="397"/>
         <source>Click to view document statistics</source>
-        <translation>Belge istatistiklerini görüntülemek için tıklayın</translation>
+        <translation>點擊查看文件統計</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Click to change the spell-check language</source>
-        <translation>Yazım denetimi dilini değiştirmek için tıklayın</translation>
+        <translation>點擊變更拼字檢查語言</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="400"/>
         <source>Spell check is off — click to enable</source>
-        <translation>Yazım denetimi kapalı — etkinleştirmek için tıklayın</translation>
+        <translation>拼字檢查已關閉 — 點擊啟用</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="403"/>
         <source>Cursor position (line : column)</source>
-        <translation>İmleç konumu (satır : sütun)</translation>
+        <translation>游標位置（行 : 列）</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="406"/>
         <source>File encoding · line ending</source>
-        <translation>Dosya kodlaması · satır sonu</translation>
+        <translation>檔案編碼 · 行尾</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="539"/>
         <source>Spell Check</source>
-        <translation>Yazım denetimi</translation>
+        <translation>拼字檢查</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="558"/>
         <source>Words</source>
-        <translation>Sözcükler</translation>
+        <translation>字數</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="559"/>
         <source>Characters</source>
-        <translation>Karakterler</translation>
+        <translation>字元</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="560"/>
         <source>Lines</source>
-        <translation>Satır</translation>
+        <translation>行數</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>Reading time</source>
-        <translation>Okuma süresi</translation>
+        <translation>閱讀時間</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>&lt; 1 min</source>
-        <translation>&lt; 1 dk</translation>
+        <translation>&lt; 1 分鐘</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="561"/>
         <source>%1 min</source>
-        <translation>%1 dk</translation>
+        <translation>%1 分鐘</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="563"/>
         <source>Selected</source>
-        <translation>Seçili</translation>
+        <translation>已選</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Hide sidebar</source>
-        <translation>Kenar çubuğunu gizle</translation>
+        <translation>隱藏側邊欄</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="598"/>
         <source>Show sidebar</source>
-        <translation>Kenar çubuğunu göster</translation>
+        <translation>顯示側邊欄</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to rendered mode</source>
-        <translation>İşlenmiş görünüme geç</translation>
+        <translation>切換至轉譯模式</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="600"/>
         <source>Switch to source mode</source>
-        <translation>Kaynak kodu moduna geç</translation>
+        <translation>切換至原始碼模式</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Exit split view</source>
-        <translation>Bölünmüş görünümden çık</translation>
+        <translation>結束分割檢視</translation>
     </message>
     <message>
         <location filename="../src/app/StatusBarWidget.cpp" line="605"/>
         <source>Source and preview side by side</source>
-        <translation>Kaynak ve önizleme yan yana</translation>
+        <translation>並排顯示原始碼與預覽</translation>
     </message>
 </context>
 <context>
-    <name>muffin::TableToolbar</name>
+    <name>mufpen::TableToolbar</name>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="319"/>
         <source>Resize Table</source>
-        <translation>Tabloyu Yeniden Boyutlandır</translation>
+        <translation>調整表格大小</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="320"/>
         <source>Align Left</source>
-        <translation>Sola Hizala</translation>
+        <translation>靠左對齊</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="321"/>
         <source>Align Center</source>
-        <translation>Ortala</translation>
+        <translation>置中對齊</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="322"/>
         <source>Align Right</source>
-        <translation>Sağa Hizala</translation>
+        <translation>靠右對齊</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="323"/>
         <source>More Actions</source>
-        <translation>Diğer İşlemler</translation>
+        <translation>更多操作</translation>
     </message>
     <message>
         <location filename="../src/editor/TableToolbar.cpp" line="324"/>
         <source>Delete Table</source>
-        <translation>Tabloyu Sil</translation>
+        <translation>刪除表格</translation>
     </message>
 </context>
 <context>
-    <name>muffin::UpdateChecker</name>
+    <name>mufpen::UpdateChecker</name>
     <message>
         <source>The update server returned an invalid version.</source>
-        <translation type="vanished">Güncelleme sunucusu geçersiz bir sürüm döndürdü.</translation>
+        <translation type="vanished">更新伺服器傳回了無效的版本號。</translation>
     </message>
     <message>
         <location filename="../src/app/UpdateChecker.cpp" line="84"/>
         <source>Could not reach the update service. Please try again later or download Mufpen from the official release page.</source>
-        <translation>Güncelleme hizmetine ulaşılamadı. Lütfen daha sonra tekrar deneyin veya Mufpen&apos;i resmî sürüm sayfasından indirin.</translation>
+        <translation>無法連線至更新服務。請稍後再試，或從官方發佈頁面下載 Mufpen。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::VirtualSourceEdit</name>
+    <name>mufpen::VirtualSourceEdit</name>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="310"/>
         <source>Markdown source editor</source>
-        <translation>Markdown kaynak kodu düzenleyici</translation>
+        <translation>Markdown 原始碼編輯器</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="311"/>
         <source>Plain-text Markdown source</source>
-        <translation>Düz metin Markdown kaynak kodu</translation>
+        <translation>純文字 Markdown 原始碼</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1679"/>
         <source>Undo</source>
-        <translation>Geri Al</translation>
+        <translation>復原</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1681"/>
         <source>Redo</source>
-        <translation>Yinele</translation>
+        <translation>重做</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1685"/>
         <source>Cut</source>
-        <translation>Kes</translation>
+        <translation>剪下</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1691"/>
         <source>Copy</source>
-        <translation>Kopyala</translation>
+        <translation>複製</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1695"/>
         <source>Paste</source>
-        <translation>Yapıştır</translation>
+        <translation>貼上</translation>
     </message>
     <message>
         <location filename="../src/editor/VirtualSourceEdit.cpp" line="1706"/>
         <source>Select All</source>
-        <translation>Tümünü Seç</translation>
+        <translation>全部選取</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsIntegration</name>
+    <name>mufpen::WindowsIntegration</name>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="20"/>
         <source>Open with Mufpen</source>
-        <translation>Mufpen ile Aç</translation>
+        <translation>用 Mufpen 開啟</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="24"/>
         <source>Mufpen Markdown Document</source>
-        <translation>Mufpen Markdown Belgesi</translation>
+        <translation>Mufpen Markdown 文件</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsIntegration.cpp" line="28"/>
         <source>Open</source>
-        <translation>Aç</translation>
+        <translation>開啟</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WindowsUpdater</name>
+    <name>mufpen::WindowsUpdater</name>
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="200"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="453"/>
         <source>Update Mufpen</source>
-        <translation>Mufpen&apos;i güncelle</translation>
+        <translation>更新 Mufpen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
         <source>The update was canceled or could not be installed (code %1). Your session has been restored. You can try again from Help &gt; Check for Updates.</source>
-        <translation>Güncelleme iptal edildi veya yüklenemedi (kod %1). Oturumunuz geri yüklendi. Yardım &gt; Güncellemeleri Denetle bölümünden yeniden deneyebilirsiniz.</translation>
+        <translation>更新已取消或無法安裝（代碼 %1）。工作階段已還原。您可以從「說明 &gt; 檢查更新」重試。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="211"/>
         <source>Cancel</source>
-        <translation>İptal</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="249"/>
         <source>Downloading Mufpen %1… You can continue writing.</source>
-        <translation>Mufpen %1 indiriliyor… Yazmaya devam edebilirsiniz.</translation>
+        <translation>正在下載 Mufpen %1… 您可以繼續寫作。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="255"/>
         <source>Mufpen %1 is ready. Your documents will be checked for unsaved changes before restarting. Windows may ask for administrator permission.</source>
-        <translation>Mufpen %1 hazır. Yeniden başlatmadan önce belgelerinizde kaydedilmemiş değişiklik olup olmadığı denetlenecek. Windows yönetici izni isteyebilir.</translation>
+        <translation>Mufpen %1 已準備就緒。重新啟動前將檢查文件中是否有未儲存的變更。Windows 可能會要求系統管理員權限。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="259"/>
         <source>Preparing to restart…</source>
-        <translation>Yeniden başlatmaya hazırlanılıyor…</translation>
+        <translation>正在準備重新啟動…</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="263"/>
         <source>Mufpen %1 is available. Download the update now?</source>
-        <translation>Mufpen %1 kullanılabilir. Güncelleme şimdi indirilsin mi?</translation>
+        <translation>Mufpen %1 已推出。要立即下載更新嗎？</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Restart and Update</source>
-        <translation>Yeniden başlat ve güncelle</translation>
+        <translation>重新啟動並更新</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="265"/>
         <source>Download Update</source>
-        <translation>Güncellemeyi indir</translation>
+        <translation>下載更新</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Cancel Download</source>
-        <translation>İndirmeyi iptal et</translation>
+        <translation>取消下載</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="268"/>
         <source>Later</source>
-        <translation>Daha sonra</translation>
+        <translation>稍後</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="294"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="320"/>
         <source>The update download could not be saved or exceeded its expected size.</source>
-        <translation>İndirilen güncelleme kaydedilemedi veya beklenen boyutu aştı.</translation>
+        <translation>無法儲存下載的更新，或下載大小超出預期。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="302"/>
         <source>The update manifest is too large.</source>
-        <translation>Güncelleme bildirimi çok büyük.</translation>
+        <translation>更新資訊清單過大。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="328"/>
         <source>Could not download the update: %1</source>
-        <translation>Güncelleme indirilemedi: %1</translation>
+        <translation>無法下載更新：%1</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="351"/>
         <source>The update signature is invalid or the package does not match this version of Windows. Nothing was installed.</source>
-        <translation>Güncelleme imzası geçersiz veya paket bu Windows sürümüyle uyumlu değil. Hiçbir şey yüklenmedi.</translation>
+        <translation>更新簽章無效，或安裝套件與此 Windows 版本不相容。未安裝任何內容。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="363"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="368"/>
         <source>Could not create the update download folder.</source>
-        <translation>Güncelleme indirme klasörü oluşturulamadı.</translation>
+        <translation>無法建立更新下載資料夾。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="377"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="467"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="476"/>
         <source>The downloaded update is incomplete or has been modified. Nothing was installed.</source>
-        <translation>İndirilen güncelleme eksik veya değiştirilmiş. Hiçbir şey yüklenmedi.</translation>
+        <translation>下載的更新不完整或已被修改。未安裝任何內容。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="454"/>
         <source>Close other running Mufpen instances before updating. Only installed copies can be updated in the app.</source>
-        <translation>Güncellemeden önce çalışan diğer Mufpen örneklerini kapatın. Yalnızca kurulu kopyalar uygulama içinden güncellenebilir.</translation>
+        <translation>更新前請關閉其他正在執行的 Mufpen 執行個體。只有已安裝的版本才能在應用程式內更新。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="525"/>
         <location filename="../src/app/WindowsUpdater.cpp" line="581"/>
         <source>Could not save the session before updating.</source>
-        <translation>Güncellemeden önce oturum kaydedilemedi.</translation>
+        <translation>無法在更新前儲存工作階段。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="545"/>
         <source>Could not start the update installer. Your current version is unchanged.</source>
-        <translation>Güncelleme yükleyicisi başlatılamadı. Mevcut sürümünüz değişmedi.</translation>
+        <translation>無法啟動更新安裝程式。目前版本未變更。</translation>
     </message>
     <message>
         <location filename="../src/app/WindowsUpdater.cpp" line="603"/>
         <source>The installer did not become ready. Mufpen will stay open; please try again.</source>
-        <translation>Yükleyici hazır duruma gelmedi. Mufpen açık kalacak; lütfen yeniden deneyin.</translation>
+        <translation>安裝程式未能準備就緒。Mufpen 將保持開啟，請重試。</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceReplace</name>
+    <name>mufpen::WorkspaceReplace</name>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="171"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="183"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="204"/>
         <source>Could not create recovery folder</source>
-        <translation>Kurtarma klasörü oluşturulamadı</translation>
+        <translation>無法建立復原資料夾</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="176"/>
         <location filename="../src/app/WorkspaceReplace.cpp" line="280"/>
         <source>Another folder replacement is running</source>
-        <translation>Başka bir klasörde değiştirme işlemi çalışıyor</translation>
+        <translation>另一個資料夾取代正在進行</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="285"/>
         <source>Could not read recovery journal</source>
-        <translation>Kurtarma günlüğü okunamadı</translation>
+        <translation>無法讀取復原記錄</translation>
     </message>
     <message>
         <location filename="../src/app/WorkspaceReplace.cpp" line="291"/>
         <source>Invalid recovery journal</source>
-        <translation>Geçersiz kurtarma günlüğü</translation>
+        <translation>復原記錄無效</translation>
     </message>
 </context>
 <context>
-    <name>muffin::WorkspaceSearch</name>
+    <name>mufpen::WorkspaceSearch</name>
     <message>
         <location filename="../src/app/WorkspaceSearch.cpp" line="381"/>
         <source>Folder is unavailable</source>
-        <translation>Klasör kullanılamıyor</translation>
+        <translation>資料夾無法使用</translation>
     </message>
     <message>
         <source>Regular expression exceeded its resource limit</source>
-        <translation type="vanished">Düzenli ifade kaynak sınırını aştı</translation>
+        <translation type="vanished">正規表示式超出資源限制</translation>
     </message>
 </context>
 </TS>

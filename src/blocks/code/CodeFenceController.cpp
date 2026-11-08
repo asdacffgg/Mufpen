@@ -8,7 +8,7 @@
 
 #include <QSettings>
 
-namespace muffin {
+namespace mufpen {
 
 namespace {
 
@@ -273,4 +273,4 @@ bool CodeFenceController::setLanguageForCodeFence(NodeId requestedCodeId, QStrin
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

@@ -32,7 +32,7 @@
 
 class QPainter;
 
-namespace muffin {
+namespace mufpen {
 
 class CssPaintContext;
 
@@ -391,4 +391,4 @@ private:
   std::function<bool(QStringView)> isMisspelled_;
 };
 
-} // namespace muffin
+} // namespace mufpen

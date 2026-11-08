@@ -16,7 +16,7 @@
 
 class QPainter;
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 void PieScene::paint(QPainter& painter, const MermaidPaintOptions& options) const {
   paintPieScene(*this, painter, options);
@@ -292,4 +292,4 @@ QJsonObject PieScene::toJsonObject() const {
   return expected;
 }
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

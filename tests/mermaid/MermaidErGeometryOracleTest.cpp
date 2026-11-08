@@ -1,4 +1,4 @@
-// ER geometry parity oracle: compares Muffin's native er::ErScene against real
+// ER geometry parity oracle: compares Mufpen's native er::ErScene against real
 // mermaid 11.16.0 ER geometry captured by scripts/generate_mermaid_er_geometry_
 // fixture.mjs (headless Chrome). Entity bounds by id (both sides normalized to
 // the first source entity's centre); relationships by (cardA, cardB, identifying)
@@ -10,11 +10,11 @@
 // are ASSERTED (fail-on-divergence) below.
 //
 // Entity WIDTHS, x/y positions, and relationship PATHS are NOT asserted: they
-// depend on per-text width measurement, which differs between Muffin's Qt
+// depend on per-text width measurement, which differs between Mufpen's Qt
 // rasterizer and Chrome's (~5px/text, summing across columns) - the same
 // font-coupling that limits the pixel goldens. They are REPORTED (printed) as a
 // diagnostic, not failed on. The `entity-alias` case is skipped entirely:
-// mermaid sizes alias entities by their id (narrow) while Muffin uses the alias,
+// mermaid sizes alias entities by their id (narrow) while Mufpen uses the alias,
 // and mermaid's alias+attribute rendering has its own quirks - a documented
 // edge-case divergence, not a model bug.
 //
@@ -35,7 +35,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 

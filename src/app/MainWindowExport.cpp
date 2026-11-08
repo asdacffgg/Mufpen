@@ -38,11 +38,11 @@ QString suggestedDirectory(const QString& path) {
 }
 }
 
-void muffin::MainWindow::rebuildExportPresetsMenu() {
+void mufpen::MainWindow::rebuildExportPresetsMenu() {
   if (!exportPresetsMenu_)
     return;
   exportPresetsMenu_->clear();
-  for (const auto& preset : muffin::exportPresets()) {
+  for (const auto& preset : mufpen::exportPresets()) {
     auto* action = exportPresetsMenu_->addAction(preset.name);
     action->setObjectName("export.preset." + preset.id);
     action->setEnabled(!exporting_ && !tab_->session.isOpenInProgress() && !tab_->session.markdownText().isEmpty());
@@ -56,14 +56,14 @@ void muffin::MainWindow::rebuildExportPresetsMenu() {
   });
 }
 
-void muffin::MainWindow::exportAs(ExportFormat format) {
+void mufpen::MainWindow::exportAs(ExportFormat format) {
   ExportRecord record;
   record.preset = builtInExportPreset(format);
   runExport(std::move(record), true);
 }
 
-void muffin::MainWindow::exportPreset(const QString& id) {
-  for (const auto& preset : muffin::exportPresets())
+void mufpen::MainWindow::exportPreset(const QString& id) {
+  for (const auto& preset : mufpen::exportPresets())
     if (preset.id == id) {
       ExportRecord record;
       record.preset = preset;
@@ -72,12 +72,12 @@ void muffin::MainWindow::exportPreset(const QString& id) {
     }
 }
 
-void muffin::MainWindow::repeatExport(bool overwrite) {
+void mufpen::MainWindow::repeatExport(bool overwrite) {
   if (tab_->lastExport)
     runExport(*tab_->lastExport, !overwrite);
 }
 
-void muffin::MainWindow::runExport(ExportRecord record, bool chooseTarget) {
+void mufpen::MainWindow::runExport(ExportRecord record, bool chooseTarget) {
   if (exporting_ || tab_->session.isOpenInProgress() || !tab_->pendingOpenPath.isEmpty())
     return;
   const QScopedValueRollback<bool> busy(exporting_, true);
@@ -131,7 +131,7 @@ void muffin::MainWindow::runExport(ExportRecord record, bool chooseTarget) {
                                     : themeManager_.currentTheme(100, fontSize);
     record.themeCss = name == "github" ? ThemeManager().currentThemeCss() : themeManager_.currentThemeCss();
   }
-  QTemporaryDir staging(QDir(QFileInfo(record.target).absolutePath()).filePath(".muffin-export-XXXXXX"));
+  QTemporaryDir staging(QDir(QFileInfo(record.target).absolutePath()).filePath(".mufpen-export-XXXXXX"));
   if (!staging.isValid()) {
     QMessageBox::critical(this, tr("Export Failed"), tr("Could not create a temporary export file."));
     return;

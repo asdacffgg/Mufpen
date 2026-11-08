@@ -9,7 +9,7 @@
 #include <QApplication>
 #include <functional>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Drives the image queries against a real DocumentSession + EditorController (no EditorView —
 // attach(session, nullptr) is safe since the image queries never touch the view). Guards the

@@ -21,7 +21,7 @@
 #include <algorithm>
 #include <limits>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 namespace {
 
@@ -463,4 +463,4 @@ void runDagreLayout(DagreGraph& g, std::vector<DagreSnapshot>* snapshots) {
   undoAcyclic(g);
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

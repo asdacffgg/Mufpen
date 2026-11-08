@@ -8,7 +8,7 @@
 
 #include "../TestUtils.h"
 
-using namespace muffin;
+using namespace mufpen;
 
 void testTopLevelBlockWalksToTop() {
   MarkdownNode root(BlockType::Document);

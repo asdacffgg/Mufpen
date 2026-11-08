@@ -6,7 +6,7 @@
 #include <QSettings>
 #include <QSizeF>
 
-namespace muffin {
+namespace mufpen {
 
 QString exportSettingsPrefix(ExportFormat format) {
   const char* name = "pdf";
@@ -192,4 +192,4 @@ bool pandocExportArguments(ExportFormat format, const QString& inputFormat, cons
   return true;
 }
 
-} // namespace muffin
+} // namespace mufpen

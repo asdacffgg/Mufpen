@@ -12,7 +12,7 @@
 #include <functional>
 #include <optional>
 
-namespace muffin {
+namespace mufpen {
 
 class MarkdownNode;
 
@@ -25,7 +25,7 @@ struct TableLocation {
   bool isValid() const { return (tableId.isValid() || tableIndex >= 0) && row >= 0 && column >= 0; }
 };
 
-class MUFFIN_UI_EXPORT TableController final : public QObject {
+class MUFPEN_UI_EXPORT TableController final : public QObject {
   Q_OBJECT
 
 public:
@@ -77,4 +77,4 @@ private:
   EditorContext ctx_;
 };
 
-} // namespace muffin
+} // namespace mufpen

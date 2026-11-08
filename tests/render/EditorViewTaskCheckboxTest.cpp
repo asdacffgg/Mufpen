@@ -4,7 +4,7 @@
 #include <QScrollBar>
 #include <QTimer>
 
-using namespace muffin;
+using namespace mufpen;
 
 // Regression for the rendering bug where an unchecked task item (isTaskItem()==true,
 // taskChecked()==false) rendered as a plain bullet instead of an empty checkbox,

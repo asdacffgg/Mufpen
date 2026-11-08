@@ -12,7 +12,7 @@
 #include <limits>
 #include <algorithm>
 
-namespace muffin::html {
+namespace mufpen::html {
 HtmlLayoutResult::HtmlLayoutResult() = default;
 HtmlLayoutResult::~HtmlLayoutResult() = default;
 
@@ -509,4 +509,4 @@ const QImage& HtmlLayoutResult::cachedImage(const QString& src) const {
   return it.value();
 }
 
-} // namespace muffin::html
+} // namespace mufpen::html

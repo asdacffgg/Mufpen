@@ -4,7 +4,7 @@
 #include <QtGlobal>
 #include <QVector>
 
-namespace muffin {
+namespace mufpen {
 
 struct DefinitionFieldRange {
   qsizetype start = -1;
@@ -54,4 +54,4 @@ struct DefinitionParseResult {
 QVector<DefinitionParseResult> scanDefinitionBlocks(QStringView markdown);
 DefinitionParseResult parseDefinitionBlockLine(QStringView line, qsizetype sourceStart);
 
-} // namespace muffin
+} // namespace mufpen

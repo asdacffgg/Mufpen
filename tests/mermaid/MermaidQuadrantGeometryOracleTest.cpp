@@ -1,4 +1,4 @@
-// quadrantChart geometry + structure oracle: compares Muffin's native
+// quadrantChart geometry + structure oracle: compares Mufpen's native
 // quadrant::QuadrantScene against real mermaid 11.16.0 captured in
 // tests/fixtures/mermaid/quadrant-geometry.json. The layout is pure formula
 // (font-independent): quadrant rects, point cx/cy/r, 6 borders, axis-label
@@ -20,7 +20,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& m) {

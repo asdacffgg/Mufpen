@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include <numeric>
 
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 namespace {
 [[noreturn]] void fail(const QString& message) {
@@ -361,7 +361,7 @@ int main(int argc, char** argv) {
     // nor the fragment label (top-left) paint.
     require(!scene->fragments.isEmpty(), QStringLiteral("dash-parity fragment"));
     const sequence::SequenceLayoutFragment& fragment = scene->fragments.first();
-    if (qEnvironmentVariableIsSet("MUFFIN_SAVE_DASH")) {
+    if (qEnvironmentVariableIsSet("MUFPEN_SAVE_DASH")) {
       image.save(QStringLiteral("dash-parity.png"));
       for (const auto& f : scene->fragments)
         qDebug() << "fragment" << f.kind << "rect" << f.rect << "sections" << f.sectionY;

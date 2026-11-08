@@ -10,7 +10,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::pie {
+namespace mufpen::mermaid::pie {
 
 PieParseError::PieParseError(const QString& message, int line)
     : std::runtime_error(message.toUtf8().constData()), line(line) {
@@ -328,4 +328,4 @@ int pieDrawCount(const QVector<PieSection>& sections) {
   return count;
 }
 
-} // namespace muffin::mermaid::pie
+} // namespace mufpen::mermaid::pie

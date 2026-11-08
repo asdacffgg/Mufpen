@@ -14,7 +14,7 @@
 #include <memory>
 
 namespace sankey_test {
-using namespace muffin::mermaid;
+using namespace mufpen::mermaid;
 
 [[noreturn]] inline void fail(const QString& message) {
   std::fprintf(stderr, "FAIL: %s\n", qPrintable(message));

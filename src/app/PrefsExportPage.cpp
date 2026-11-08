@@ -31,15 +31,15 @@
 #include <algorithm>
 
 namespace {
-const QVector<muffin::ExportFormat> formats{
-    muffin::ExportFormat::Pdf,       muffin::ExportFormat::Html, muffin::ExportFormat::HtmlPlain,
-    muffin::ExportFormat::Image,     muffin::ExportFormat::Docx, muffin::ExportFormat::Odt,
-    muffin::ExportFormat::Rtf,       muffin::ExportFormat::Epub, muffin::ExportFormat::Latex,
-    muffin::ExportFormat::MediaWiki, muffin::ExportFormat::Rst,  muffin::ExportFormat::Textile,
-    muffin::ExportFormat::Opml};
+const QVector<mufpen::ExportFormat> formats{
+    mufpen::ExportFormat::Pdf,       mufpen::ExportFormat::Html, mufpen::ExportFormat::HtmlPlain,
+    mufpen::ExportFormat::Image,     mufpen::ExportFormat::Docx, mufpen::ExportFormat::Odt,
+    mufpen::ExportFormat::Rtf,       mufpen::ExportFormat::Epub, mufpen::ExportFormat::Latex,
+    mufpen::ExportFormat::MediaWiki, mufpen::ExportFormat::Rst,  mufpen::ExportFormat::Textile,
+    mufpen::ExportFormat::Opml};
 }
 
-muffin::PrefsExportPage::PrefsExportPage(QWidget* parent) : PreferencesPage(parent) {
+mufpen::PrefsExportPage::PrefsExportPage(QWidget* parent) : PreferencesPage(parent) {
   presets_ = exportPresets();
   auto* root = new QHBoxLayout(this);
   root->setContentsMargins(0, 0, 0, 0);
@@ -86,7 +86,7 @@ muffin::PrefsExportPage::PrefsExportPage(QWidget* parent) : PreferencesPage(pare
   });
 }
 
-void muffin::PrefsExportPage::retranslateUi() {
+void mufpen::PrefsExportPage::retranslateUi() {
   const QSignalBlocker blocked(formatList_);
   const int row =
       formatList_->currentRow() < 0 ? QSettings().value("export/lastPage", 0).toInt() : formatList_->currentRow();
@@ -116,7 +116,7 @@ void muffin::PrefsExportPage::retranslateUi() {
   updatePresetButtons();
 }
 
-void muffin::PrefsExportPage::rebuildPage() {
+void mufpen::PrefsExportPage::rebuildPage() {
   pandocPathEdit_ = nullptr;
   pandocStatus_ = nullptr;
   delete content_->takeWidget();
@@ -377,13 +377,13 @@ void muffin::PrefsExportPage::rebuildPage() {
   check(tr("Open the exported file"), p + "openFile", false, "ExportOpenFile");
 }
 
-QVariant muffin::PrefsExportPage::setting(const QString& key, const QVariant& fallback) const {
+QVariant mufpen::PrefsExportPage::setting(const QString& key, const QVariant& fallback) const {
   const int index = formatList_->currentRow() - formats.size() - 1;
   return index >= 0 && index < presets_.size() ? presets_[index].options.value(key, fallback)
                                                : QSettings().value(key, fallback);
 }
 
-void muffin::PrefsExportPage::saveSetting(const QString& key, const QVariant& value) {
+void mufpen::PrefsExportPage::saveSetting(const QString& key, const QVariant& value) {
   const int index = formatList_->currentRow() - formats.size() - 1;
   if (index >= 0 && index < presets_.size()) {
     presets_[index].options.insert(key, value);
@@ -392,7 +392,7 @@ void muffin::PrefsExportPage::saveSetting(const QString& key, const QVariant& va
     QSettings().setValue(key, value);
 }
 
-void muffin::PrefsExportPage::updatePresetButtons() {
+void mufpen::PrefsExportPage::updatePresetButtons() {
   const int index = formatList_->currentRow() - formats.size() - 1;
   add_->setEnabled(presets_.size() < 64);
   duplicate_->setEnabled(formatList_->currentRow() > 0 && presets_.size() < 64);
@@ -402,7 +402,7 @@ void muffin::PrefsExportPage::updatePresetButtons() {
   down_->setEnabled(index >= 0 && index + 1 < presets_.size());
 }
 
-void muffin::PrefsExportPage::addPreset(bool duplicate) {
+void mufpen::PrefsExportPage::addPreset(bool duplicate) {
   if (presets_.size() >= 64)
     return;
   const int selected = formatList_->currentRow();
@@ -455,7 +455,7 @@ void muffin::PrefsExportPage::addPreset(bool duplicate) {
   formatList_->setCurrentRow(formats.size() + presets_.size());
 }
 
-void muffin::PrefsExportPage::renamePreset() {
+void mufpen::PrefsExportPage::renamePreset() {
   const int index = formatList_->currentRow() - formats.size() - 1;
   if (index < 0 || index >= presets_.size())
     return;
@@ -476,7 +476,7 @@ void muffin::PrefsExportPage::renamePreset() {
   retranslateUi();
 }
 
-void muffin::PrefsExportPage::removePreset() {
+void mufpen::PrefsExportPage::removePreset() {
   const int index = formatList_->currentRow() - formats.size() - 1;
   if (index < 0 || index >= presets_.size())
     return;
@@ -485,7 +485,7 @@ void muffin::PrefsExportPage::removePreset() {
   retranslateUi();
 }
 
-void muffin::PrefsExportPage::movePreset(int direction) {
+void mufpen::PrefsExportPage::movePreset(int direction) {
   const int index = formatList_->currentRow() - formats.size() - 1;
   const int target = index + direction;
   if (index < 0 || index >= presets_.size() || target < 0 || target >= presets_.size())
@@ -496,7 +496,7 @@ void muffin::PrefsExportPage::movePreset(int direction) {
   formatList_->setCurrentRow(formats.size() + target + 1);
 }
 
-void muffin::PrefsExportPage::refreshPandocStatus() {
+void mufpen::PrefsExportPage::refreshPandocStatus() {
   if (!pandocPathEdit_ || !pandocStatus_)
     return;
   const auto configured = pandocPathEdit_->text().trimmed();

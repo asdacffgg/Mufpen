@@ -5,7 +5,7 @@
 #include <QLoggingCategory>
 #include <QString>
 
-namespace muffin {
+namespace mufpen {
 
 Q_DECLARE_LOGGING_CATEGORY(themeStyleLog)
 Q_DECLARE_LOGGING_CATEGORY(renderLayoutDebugLog)
@@ -25,4 +25,4 @@ struct CssStyleDebugWinner {
 QString formatCssStyleWinner(const CssStyleDebugWinner& winner);
 QString formatThemeDefinitionSummary(const ThemeDefinition& definition);
 
-} // namespace muffin
+} // namespace mufpen

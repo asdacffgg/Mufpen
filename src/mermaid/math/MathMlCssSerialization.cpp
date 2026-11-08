@@ -2,7 +2,7 @@
 #include <QJsonArray>
 #include <cmath>
 
-namespace muffin::math {
+namespace mufpen::math {
 using mathml::kChromiumMathAxisOffsetPx;
 
 MathCssPaintKind MathCssPaintOperation::kind() const {
@@ -448,4 +448,4 @@ QJsonObject MathMlPaintFailure::toJson() const {
   return result;
 }
 
-} // namespace muffin::math
+} // namespace mufpen::math

@@ -13,7 +13,7 @@
 #include <functional>
 #include <optional>
 
-namespace muffin::mermaid::dagre {
+namespace mufpen::mermaid::dagre {
 
 // util.addDummyNode: create a node with a unique "<name><n>" id (counter on the
 // graph label, deterministic per layout) and the `dummy` type tag set.
@@ -62,4 +62,4 @@ template <typename T> Partition<T> partition(const QVector<T>& collection, const
   return result;
 }
 
-} // namespace muffin::mermaid::dagre
+} // namespace mufpen::mermaid::dagre

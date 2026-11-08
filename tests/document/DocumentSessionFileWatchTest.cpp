@@ -11,7 +11,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-using namespace muffin;
+using namespace mufpen;
 
 namespace {
 
@@ -25,7 +25,7 @@ void require(bool condition, const QString& message) {
 
 void atomicWrite(const QString& path, const QByteArray& data) {
   QString error;
-  const bool committed = muffin::test::writeFileAtomically(path, data, &error);
+  const bool committed = mufpen::test::writeFileAtomically(path, data, &error);
   require(committed, QStringLiteral("Atomic replacement: %1").arg(error));
 }
 

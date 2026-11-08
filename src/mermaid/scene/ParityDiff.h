@@ -1,8 +1,8 @@
 #pragma once
 
 // ParityDiff — shared semantic-comparison vocabulary for mermaid parity /
-// regression oracles. Header-only so it adds nothing to MuffinCore and is
-// instantiated only by test TUs (resolved via MuffinCore's PUBLIC src/ include).
+// regression oracles. Header-only so it adds nothing to MufpenCore and is
+// instantiated only by test TUs (resolved via MufpenCore's PUBLIC src/ include).
 //
 // Design rule: every comparator RETURNS the mismatch list (QStringList) instead
 // of aborting, so a caller sees all diffs in one run and the helpers stay
@@ -28,7 +28,7 @@
 
 #include <cmath>
 
-namespace muffin::mermaid::parity {
+namespace mufpen::mermaid::parity {
 
 struct Tier {
   qreal value;
@@ -167,4 +167,4 @@ inline QStringList compareJson(const QJsonValue& actual, const QJsonValue& expec
   return errs;
 }
 
-} // namespace muffin::mermaid::parity
+} // namespace mufpen::mermaid::parity

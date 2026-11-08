@@ -10,9 +10,9 @@
 #include "render/Blur.h"
 #include "theme/ThemeDefinition.h"
 
-namespace muffin {
+namespace mufpen {
 namespace {
-Q_LOGGING_CATEGORY(filterPerf, "muffin.perf.paint", QtWarningMsg)
+Q_LOGGING_CATEGORY(filterPerf, "mufpen.perf.paint", QtWarningMsg)
 using K = CssFilterOperation::Kind;
 std::vector<CssFilterOperation> legacyFilters(const ThemeElementPaintStyle& s, bool backdrop) {
   const std::array<std::pair<K, qreal>, 7> values{
@@ -374,4 +374,4 @@ void paintSparseCssFilter(QPainter& painter, QRectF sourceBounds, const ThemeEle
     painter.drawImage(origin, patch.image);
   }
 }
-} // namespace muffin
+} // namespace mufpen

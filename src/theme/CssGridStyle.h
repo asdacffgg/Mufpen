@@ -7,7 +7,7 @@
 #include <optional>
 #include <vector>
 
-namespace muffin {
+namespace mufpen {
 // Bounded like browser grid implementations; declarations exceeding this limit
 // are rejected before placement can allocate or iterate unbounded grids.
 inline constexpr int kMaxGridTracks = 1000;
@@ -67,4 +67,4 @@ std::optional<CssGridTrackList> parseCssGridTracks(const QString& value, const C
                                                    bool allowNone = true);
 std::optional<CssGridLine> parseCssGridLine(const QString& value);
 std::optional<CssGridAreas> parseCssGridAreas(const QString& value);
-} // namespace muffin
+} // namespace mufpen
