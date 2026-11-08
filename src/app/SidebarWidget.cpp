@@ -5,6 +5,7 @@
 #include "app/FileTreeModel.h"
 #include "app/SearchPanelWidget.h"
 #include "app/WorkspaceFiles.h"
+#include "io/DocumentFileType.h"
 
 #include "theme/ChromeStyleSheet.h"
 #include "theme/ThemeDefinition.h"
@@ -423,7 +424,8 @@ void mufpen::SidebarWidget::setupFilesPanel() {
   });
   connect(fileTree_, &QTreeView::doubleClicked, this, [this](const QModelIndex& index) {
     const QString path = fileModel_->filePath(index);
-    if (QFileInfo(path).isFile()) {
+    // Image rows are visible for reference but preview is a later phase.
+    if (QFileInfo(path).isFile() && isMarkdownDocumentPath(path)) {
       emit fileOpenRequested(path);
     }
   });

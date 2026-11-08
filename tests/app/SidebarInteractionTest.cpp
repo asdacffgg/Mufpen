@@ -1,5 +1,6 @@
 #include "app/SidebarWidget.h"
 #include "app/FileTreeModel.h"
+#include "io/DocumentFileType.h"
 
 #include "../TestUtils.h"
 
@@ -80,7 +81,13 @@ struct FileTreeFixture {
     file.close();
     if (prepare)
       prepare(dir);
-    const auto rootRows = QDir(dir.path()).entryList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot).size();
+    int rootRows = 0;
+    const auto entries = QDir(dir.path()).entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);
+    for (const auto& entry : entries) {
+      if (entry.isDir() || isMarkdownDocumentPath(entry.absoluteFilePath()) ||
+          isImageDocumentPath(entry.absoluteFilePath()))
+        ++rootRows;
+    }
     sidebar.resize(320, 600);
     sidebar.setFolderRoot(dir.path());
     sidebar.show();
@@ -155,6 +162,31 @@ void testFileDoubleClickStillOpensDocument() {
   doubleClick(f.tree->viewport(), pos);
   require(f.openedFiles == 1, "double-clicking a file should open it once");
   require(f.openedPath == f.dir.filePath(QStringLiteral("document.md")), "file open should target the clicked file");
+}
+
+void testFileTreeShowsOnlyMarkdownAndImages() {
+  FileTreeFixture f([](const QTemporaryDir& dir) {
+    const auto create = [&](const QString& name, const QByteArray& contents) {
+      QFile file(dir.filePath(name));
+      require(file.open(QIODevice::WriteOnly), "create filtered fixture");
+      file.write(contents);
+    };
+    create(QStringLiteral("data.json"), "{}");
+    create(QStringLiteral("events.log"), "log");
+    create(QStringLiteral("notes.txt"), "# Notes\n");
+    create(QStringLiteral("photo.png"), QByteArray());
+  });
+  require(!f.model->index(f.dir.filePath(QStringLiteral("data.json"))).isValid(),
+          "JSON data files are hidden from the tree");
+  require(!f.model->index(f.dir.filePath(QStringLiteral("events.log"))).isValid(),
+          "log files are hidden from the tree");
+  require(f.model->index(f.dir.filePath(QStringLiteral("notes.txt"))).isValid(),
+          "Markdown-whitelisted text files stay visible");
+  const QModelIndex image = f.model->index(f.dir.filePath(QStringLiteral("photo.png")));
+  require(image.isValid(), "image assets stay visible");
+  const QRect row = f.tree->visualRect(image);
+  doubleClick(f.tree->viewport(), QPoint(row.left() + 40, row.center().y()));
+  require(f.openedFiles == 0, "image double-click does not open a document");
 }
 
 void testRightClickAndInlineRenameDoNotToggleFolder() {
@@ -584,6 +616,7 @@ int main(int argc, char** argv) {
   runTest("testFolderDoubleClickTogglesOnlyOnce", testFolderDoubleClickTogglesOnlyOnce);
   runTest("testArrowAndNestedFolderClicks", testArrowAndNestedFolderClicks);
   runTest("testFileDoubleClickStillOpensDocument", testFileDoubleClickStillOpensDocument);
+  runTest("testFileTreeShowsOnlyMarkdownAndImages", testFileTreeShowsOnlyMarkdownAndImages);
   runTest("testRightClickAndInlineRenameDoNotToggleFolder", testRightClickAndInlineRenameDoNotToggleFolder);
   return 0;
 }

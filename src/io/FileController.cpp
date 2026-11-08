@@ -1,6 +1,7 @@
 #include "io/FileController.h"
 
 #include "document/DocumentSession.h"
+#include "io/DocumentFileType.h"
 #include "unicode/IcuRuntime.h"
 #include "diagnostics/OpenPerformance.h"
 
@@ -364,8 +365,7 @@ bool mufpen::FileController::newFile(DocumentSession& session, QWidget* parent) 
 }
 
 QString mufpen::FileController::chooseOpenPath(QWidget* parent) const {
-  return QFileDialog::getOpenFileName(parent, tr("Open"), QString(),
-                                      tr("Markdown and text files (*.md *.markdown *.mdown *.txt);;All files (*.*)"));
+  return QFileDialog::getOpenFileName(parent, tr("Open"), QString(), markdownFileDialogFilter());
 }
 
 void mufpen::FileController::setPathAvailableCheck(std::function<bool(const QString&)> check) {

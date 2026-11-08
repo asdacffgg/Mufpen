@@ -1250,6 +1250,13 @@ FrontMatterScanResult scanJsonFrontMatter(QStringView markdown) {
   if (start >= markdown.size() || markdown.at(start) != QLatin1Char('{')) {
     return {};
   }
+  // Match MarkText's brace fence: the opening `{` must be on its own line.
+  // A minified JSON data file (`{"key":...`) is not front matter; treating it
+  // as one giant literal block made Qt lay out millions of characters at once.
+  if (start + 1 >= markdown.size() ||
+      (markdown.at(start + 1) != QLatin1Char('\n') && markdown.at(start + 1) != QLatin1Char('\r'))) {
+    return {};
+  }
 
   const qsizetype end = scanJsonObjectEnd(markdown, start);
   if (end <= start) {

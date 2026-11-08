@@ -1,5 +1,6 @@
 #include "app/FileTreeModel.h"
 
+#include "io/DocumentFileType.h"
 #include "io/MufpenMime.h"
 
 #include <QDateTime>
@@ -88,6 +89,20 @@ void mufpen::FileTreeModel::setSortBy(SortBy field, Qt::SortOrder order) {
 QModelIndex mufpen::FileTreeModel::refresh(const QString& root) {
   replaceSource();
   return setRootPath(root);
+}
+
+bool mufpen::FileTreeModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const {
+  if (!files_)
+    return false;
+  const QModelIndex index = files_->index(sourceRow, 0, sourceParent);
+  if (!index.isValid())
+    return false;
+  if (files_->isDir(index))
+    return true;
+  const QString path = files_->filePath(index);
+  // MarkText-compatible workspace tree: Markdown documents and image assets.
+  // Images are visible for reference but are not openable until preview lands.
+  return isMarkdownDocumentPath(path) || isImageDocumentPath(path);
 }
 
 bool mufpen::FileTreeModel::lessThan(const QModelIndex& left, const QModelIndex& right) const {

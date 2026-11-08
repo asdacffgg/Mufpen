@@ -11,6 +11,7 @@
 #include "editor/EditorView.h"
 #include "editor/SourceEditorWidget.h"
 #include "export/PandocRunner.h"
+#include "io/DocumentFileType.h"
 #include "io/FilePathOps.h"
 #include "theme/ThemeDefinition.h"
 
@@ -247,7 +248,7 @@ void mufpen::MainWindow::openThemesFolder() {
 }
 
 void mufpen::MainWindow::addRecentFile(QString path) {
-  if (path.isEmpty()) {
+  if (path.isEmpty() || !isOpenableDocumentPath(path)) {
     return;
   }
   // files/recordHistory gates whether opening/saving/moving a file records it
@@ -271,7 +272,11 @@ void mufpen::MainWindow::addRecentFile(QString path) {
 
 QStringList mufpen::MainWindow::recentFiles() const {
   QSettings settings;
-  return settings.value(QStringLiteral("recentFiles")).toStringList();
+  QStringList paths = settings.value(QStringLiteral("recentFiles")).toStringList();
+  // Older settings may contain data files (for example the benchmark JSON).
+  // They are no longer openable, so keep them out of Open Recent / Quick Open.
+  paths.removeIf([](const QString& path) { return !isOpenableDocumentPath(path); });
+  return paths;
 }
 
 void mufpen::MainWindow::setRecentFiles(const QStringList& paths) const {
@@ -348,7 +353,7 @@ void mufpen::MainWindow::restoreSessionState(const QVariantMap& snapshot) {
           startNewDocument();
       } else {
         const QFileInfo info(path);
-        if (!info.isFile() || !info.isReadable())
+        if (!info.isFile() || !info.isReadable() || !isOpenableDocumentPath(path))
           continue;
         if (restoredAny && tab_->session.filePath().isEmpty() && tab_->pendingOpenPath.isEmpty())
           startNewDocument();

@@ -524,6 +524,13 @@ void testFrontMatterFalsePositives() {
   require(childAt(*invalidJson.root, 0).type() != BlockType::FrontMatter,
           QStringLiteral("Invalid JSON should not be front matter"));
 
+  // A minified data file starts with `{` but not on its own line. It must stay
+  // ordinary Markdown so a huge JSON dump is never rendered as front matter.
+  ParseResult minifiedJson = parser.parseDocument(QStringLiteral("{\"title\":\"x\"}\n# Heading\n"), options);
+  require(minifiedJson.root != nullptr, QStringLiteral("Parser returned null root for minified JSON"));
+  require(childAt(*minifiedJson.root, 0).type() != BlockType::FrontMatter,
+          QStringLiteral("Minified JSON without a brace fence should not be front matter"));
+
   ParseOptions disabledOptions;
   disabledOptions.enableFrontMatter = false;
   ParseResult disabled = parser.parseDocument(QStringLiteral("---\ntitle: x\n---\n"), disabledOptions);

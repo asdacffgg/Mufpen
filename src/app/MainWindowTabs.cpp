@@ -5,6 +5,7 @@
 #include "app/MarkdownSettings.h"
 #include "app/FileOpenConfirmation.h"
 #include "app/FileOpenProtection.h"
+#include "io/DocumentFileType.h"
 #include "app/SourceEditorBackend.h"
 #include "app/RenderEditorBackend.h"
 #include "app/StatusBarWidget.h"
@@ -298,6 +299,10 @@ bool mufpen::MainWindow::openFileImpl(QString path, bool importCopy) {
       return false;
     }
   }
+  // MarkText-compatible open policy: only Markdown documents are accepted.
+  // Images and other data files are ignored (image preview is a later phase).
+  if (QFileInfo(path).isFile() && !isOpenableDocumentPath(path))
+    return false;
   const QString key = pathKey(path);
   for (DocumentTab* document : documentTabs()) {
     if (!importCopy && (pathKey(document->session.filePath()) == key || pathKey(document->pendingOpenPath) == key)) {

@@ -598,8 +598,11 @@ void reopenClosedDocuments() {
 
 void reopeningWaitsForFileConfirmation() {
   SettingsOverride extensionProtection("files/extensionProtection", false);
+  // Keep Markdown openable but make the secondary Markdown extension warn, so
+  // the confirmation path stays covered under the Markdown-only open policy.
+  SettingsOverride extensions("files/textExtensions", "md");
   Fixture f;
-  const auto path = f.file("note.binary", "0123456789\n");
+  const auto path = f.file("note.txt", "0123456789\n");
   auto* document = f.open(path);
   action(f.window, "Source Code Mode")->trigger();
   document->editor->setSelection(8, 2);
@@ -3146,14 +3149,14 @@ void fileSizeUnitsConvertPersistAndProtectAtByteBoundaries() {
 
 void fileOpenConfirmationDefersReadingAndPreservesTabs() {
   SettingsOverride extensionsOn{"files/extensionProtection", true};
-  SettingsOverride extensions{"files/textExtensions", file_open_protection::defaultTextExtensions()};
+  SettingsOverride extensions{"files/textExtensions", "md"};
   SettingsOverride sizeOn{"files/sizeProtection", true};
   SettingsOverride limit{"files/sizeLimitMb", 1};
   Fixture f;
   auto* original = f.open(f.file("original.md", "Original document\n"));
   original->session.applyTextDelta(0, 0, "Unsaved ", true);
   const auto originalText = original->session.markdownText().toString();
-  const QString path = f.file("guard.binary", "Before confirmation\n");
+  const QString path = f.file("guard.txt", "Before confirmation\n");
   require(f.window.openFile(path), "guard accepts open request");
   auto* pending = f.current();
   require(pending != original && pending->pendingOpenPath == path, "guard has its own pending tab");
@@ -3193,7 +3196,7 @@ void fileOpenConfirmationDefersReadingAndPreservesTabs() {
   require(f.window.openFile(path), "reopen for acceptance");
   pending = f.current();
   // Replacing the bytes after the warning proves the file was not read speculatively.
-  f.file("guard.binary", "Read only after confirmation\n");
+  f.file("guard.txt", "Read only after confirmation\n");
   pending->openConfirmation->findChild<QPushButton*>("confirmFileOpen")->click();
   waitUntil([&] { return !pending->session.isOpenInProgress(); }, "confirmed file finishes loading");
   require(pending->session.filePath() == path &&
@@ -3204,7 +3207,7 @@ void fileOpenConfirmationDefersReadingAndPreservesTabs() {
 
 void fileOpenSizeConfirmationAndStartupCancellation() {
   SettingsOverride extensionsOn{"files/extensionProtection", true};
-  SettingsOverride extensions{"files/textExtensions", file_open_protection::defaultTextExtensions()};
+  SettingsOverride extensions{"files/textExtensions", "md"};
   SettingsOverride sizeOn{"files/sizeProtection", true};
   SettingsOverride limit{"files/sizeLimitMb", 1};
   Fixture f;
@@ -3227,7 +3230,7 @@ void fileOpenSizeConfirmationAndStartupCancellation() {
   require(f.tabs->count() == 1 && f.current() == startup && !startup->session.isOpenInProgress() &&
               startup->pendingOpenPath.isEmpty() && !startup->editor->isReadOnly(),
           "startup cancel restores editable empty document");
-  const QString combined = f.file("large.binary", "Combined warning\n");
+  const QString combined = f.file("large.txt", "Combined warning\n");
   file.setFileName(combined);
   require(file.open(QIODevice::ReadWrite) && file.resize(1024 * 1024 + 1), "combined warning fixture");
   file.close();
@@ -3235,29 +3238,29 @@ void fileOpenSizeConfirmationAndStartupCancellation() {
   require(startup->openConfirmation->findChild<QLabel*>("extensionWarning")->isVisible() &&
               startup->openConfirmation->findChild<QLabel*>("sizeWarning")->isVisible(),
           "both warnings share one confirmation page");
-  f.file("large.binary", "Confirmed combined warning\n");
+  f.file("large.txt", "Confirmed combined warning\n");
   startup->openConfirmation->findChild<QPushButton*>("confirmFileOpen")->click();
   waitUntil([&] { return !startup->session.isOpenInProgress(); }, "combined confirmation loads");
   require(startup->backend->isSourceMode() && !startup->editor->isReadOnly() &&
               startup->session.markdownText().toString() == "Confirmed combined warning\n",
           "confirmed open preserves source mode");
-  const QString pendingClose = f.file("close.binary", "Never loaded\n");
+  const QString pendingClose = f.file("close.txt", "Never loaded\n");
   require(f.window.openFile(pendingClose), "create pending tab to close");
   f.close(f.current());
   require(f.current() == startup && f.tabs->count() == 1, "closing an unconfirmed tab preserves loaded document");
   SettingsOverride extensionOff{"files/extensionProtection", false};
   SettingsOverride sizeOff{"files/sizeProtection", false};
-  const QString unknown = f.file("allowed.binary", "Guard disabled\n");
+  const QString unknown = f.file("allowed.txt", "Guard disabled\n");
   auto* opened = f.open(unknown);
   require(opened->pendingOpenPath.isEmpty() && opened->session.filePath() == unknown, "disabled guards open directly");
 }
 
 void sessionRestoreKeepsUnconfirmedFilesSeparate() {
   SettingsOverride extensionsOn{"files/extensionProtection", true};
-  SettingsOverride extensions{"files/textExtensions", file_open_protection::defaultTextExtensions()};
+  SettingsOverride extensions{"files/textExtensions", "md"};
   SettingsOverride startupMode{"files/startupBehavior", 1};
   Fixture f;
-  const QString unknown = f.file("restore.binary", "Unconfirmed text\n");
+  const QString unknown = f.file("restore.txt", "Unconfirmed text\n");
   const QString known = f.file("restore.md", "Confirmed text\n");
   QSettings().setValue("session/window",
                        QVariantMap{{"version", 1}, {"files", QStringList{unknown, known}}, {"active", 0}});
@@ -3859,10 +3862,10 @@ void copyingTabsIncludesUnsavedContentAndIndependentBuffers() {
 
 void pendingTabsDisableWindowTransfer() {
   SettingsOverride extensionsOn{"files/extensionProtection", true};
-  SettingsOverride extensions{"files/textExtensions", file_open_protection::defaultTextExtensions()};
+  SettingsOverride extensions{"files/textExtensions", "md"};
   Fixture f;
   f.open(f.file("loaded.md", "Loaded\n"));
-  const QString path = f.file("unknown.binary", "Not loaded\n");
+  const QString path = f.file("unknown.txt", "Not loaded\n");
   require(f.window.openFile(path), "request protected file");
   auto* pending = f.current();
   withTabMenu(f.window, pending, [&](QMenu& menu) {

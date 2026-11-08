@@ -955,8 +955,33 @@ void writingModesBelongToTheEditingPane() {
 }
 }
 
+void nonMarkdownIsNotOpened() {
+  Fixture f;
+  const auto jsonPath = f.directory.filePath(QStringLiteral("data.json"));
+  {
+    QFile file(jsonPath);
+    require(file.open(QIODevice::WriteOnly), "create JSON fixture");
+    file.write("{\"title\":\"minified\"}\n");
+  }
+  require(!f.window.openFile(jsonPath), "non-Markdown files are ignored");
+  require(f.tabs->count() == 1, "rejected open does not create a tab");
+
+  // `.txt` belongs to MarkText's Markdown whitelist and opens as Markdown.
+  const auto txtPath = f.directory.filePath(QStringLiteral("notes.txt"));
+  {
+    QFile file(txtPath);
+    require(file.open(QIODevice::WriteOnly), "create text fixture");
+    file.write("# Heading\n\nBody\n");
+  }
+  require(f.window.openFile(txtPath), "whitelisted .txt opens as Markdown");
+  auto* tab = f.current();
+  waitFor([&] { return !tab->session.isOpenInProgress(); }, "load text fixture");
+  require(tab->viewMode() == DocumentViewMode::Rendered, "whitelisted .txt still renders as Markdown");
+}
+
 void runSplitViewTests() {
   runTest("splitViewResizeAndArrangePanes", resizeAndArrangePanes);
+  runTest("splitViewNonMarkdownIsNotOpened", nonMarkdownIsNotOpened);
   runTest("splitViewWritingModesBelongToTheEditingPane", writingModesBelongToTheEditingPane);
   runTest("splitViewIndependentPreviewHistory", independentPreviewHistory);
   runTest("splitViewLargeHtmlPreviewYieldsAndSupersedes", largeHtmlPreviewYieldsAndSupersedes);
