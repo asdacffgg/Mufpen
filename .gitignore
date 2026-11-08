@@ -119,3 +119,7 @@ installer/*.exe
 # Python benchmark caches
 __pycache__/
 *.py[cod]
+
+# ======================== CodeGraph ========================
+# Local index/database; rebuilt per machine.
+.codegraph/
