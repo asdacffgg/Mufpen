@@ -92,6 +92,10 @@ public:
   void setCodeLanguageSuggestions(QStringList languages);
 
   QRectF nodeRect(NodeId id) const;
+  // Hover affordance exposed for tests: the magnifier button rect (viewport
+  // coordinates), or an empty rect when no image/diagram is hovered.
+  QRectF previewHoverButtonRect() const { return previewHoverButtonViewportRect(); }
+  bool previewHoverVisible() const { return previewHoverKind_ != PreviewHoverKind::None; }
   // Map a document-coordinate point to viewport coordinates (applies the current vertical scroll).
   QPointF mapDocumentToViewport(const QPointF& documentPos) const;
   // Exposed for tests: the current caret hit and the laid-out document height.
@@ -162,6 +166,9 @@ signals:
   void tableMoreActionsRequested(QPoint globalPos);
   void htmlEditToggleRequested(NodeId blockId);
   void taskCheckboxToggled(NodeId blockId);
+  // Hover "preview" affordance for rendered images and Mermaid diagrams.
+  void previewImageRequested(QString imageSrc);
+  void previewDiagramRequested(QString mermaidSource);
   // Right-click in rendered mode: carries the hit under the cursor (zone/link/
   // image/table context) plus the global position. The caret has already been
   // moved to the click (unless it landed on the current selection), so the
@@ -194,6 +201,16 @@ protected:
 private:
   bool blockHandlesAvailable() const;
   void updateBlockHandleHover(QPointF point);
+  void updatePreviewHover(QPointF viewportPos);
+  void clearPreviewHover();
+  QRectF previewHoverButtonViewportRect() const;
+  void paintPreviewHover(QPainter& painter) const;
+  void activatePreviewHover();
+  enum class PreviewHoverKind { None, Image, Diagram };
+  PreviewHoverKind previewHoverKind_ = PreviewHoverKind::None;
+  NodeId previewHoverBlockId_;
+  QString previewHoverImageSrc_;
+  QRectF previewHoverTargetDocumentRect_;
   BlockTarget blockTargetAt(QPointF point) const;
   bool blockHandlePress(QMouseEvent* event);
   bool blockHandleMove(QMouseEvent* event);

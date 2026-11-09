@@ -525,7 +525,7 @@ int mufpen::MainWindow::draftSnapshotIntervalMs(const DocumentTab* tab) const {
 }
 
 void mufpen::MainWindow::performAutoSave(DocumentTab* tab) {
-  if (updateClosePrepared_)
+  if (updateClosePrepared_ || tab->isImageDocument())
     return;
   // Silent write of a pathed, modified document when files/autoSave is on. Untitled
   // documents (no filePath) are handled by draft-recovery snapshots, not here.
@@ -548,6 +548,8 @@ void mufpen::MainWindow::performAutoSave(DocumentTab* tab) {
 }
 
 void mufpen::MainWindow::snapshotDraft(DocumentTab* tab) {
+  if (tab->isImageDocument())
+    return;
   mufpen::diag::ScopedPerfProbe perf("main.snapshotDraft", fileOpsPerf());
   // Persist a recovery snapshot while the document has unsaved content, so a
   // crash or forced exit can be restored on the next launch. Cleared on save.

@@ -424,8 +424,7 @@ void mufpen::SidebarWidget::setupFilesPanel() {
   });
   connect(fileTree_, &QTreeView::doubleClicked, this, [this](const QModelIndex& index) {
     const QString path = fileModel_->filePath(index);
-    // Image rows are visible for reference but preview is a later phase.
-    if (QFileInfo(path).isFile() && isMarkdownDocumentPath(path)) {
+    if (QFileInfo(path).isFile() && isOpenableDocumentPath(path)) {
       emit fileOpenRequested(path);
     }
   });

@@ -5021,6 +5021,7 @@ void runWindowsUpdateTests();
 int runWindowsUpdateHandoffTest();
 
 void runSplitViewTests();
+void runImagePreviewTests();
 
 int main(int argc, char** argv) {
   // A deterministic converter process for export plumbing tests. Actual
@@ -5087,6 +5088,10 @@ int main(int argc, char** argv) {
   }
   if (QCoreApplication::arguments().contains(QStringLiteral("--split-view"))) {
     runSplitViewTests();
+    return 0;
+  }
+  if (QCoreApplication::arguments().contains(QStringLiteral("--image-preview"))) {
+    runImagePreviewTests();
     return 0;
   }
   if (QCoreApplication::arguments().contains(QStringLiteral("--closed-and-presets"))) {

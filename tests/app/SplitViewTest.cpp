@@ -1,4 +1,5 @@
 #include "app/MainWindow.h"
+#include "app/ImageView.h"
 #include "app/PrefsShortcutsPage.h"
 #include "editor/EditorView.h"
 #include "editor/DocumentSearch.h"
@@ -12,13 +13,18 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
+#include <QDialog>
+#include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QFileInfo>
+#include <QImage>
 #include <QInputMethodEvent>
 #include <QKeySequenceEdit>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QMouseEvent>
 #include <QPushButton>
 #include <QScrollBar>
 #include <QSettings>
@@ -979,8 +985,166 @@ void nonMarkdownIsNotOpened() {
   require(tab->viewMode() == DocumentViewMode::Rendered, "whitelisted .txt still renders as Markdown");
 }
 
+void imagePreviewTab() {
+  Fixture f;
+  const auto path = f.directory.filePath(QStringLiteral("picture.png"));
+  QImage image(64, 32, QImage::Format_ARGB32);
+  image.fill(Qt::red);
+  require(image.save(path), "create image fixture");
+
+  require(f.window.openFile(path), "open image fixture");
+  auto* tab = f.current();
+  QApplication::processEvents();
+  require(tab->isImageDocument(), "image opens as an image tab");
+  require(tab->imageView() && tab->imageView()->hasImage(), "image tab loads pixels");
+  require(tab->imageView()->imageSize() == QSize(64, 32), "image tab keeps the source dimensions");
+  require(tab->viewMode() == DocumentViewMode::Rendered && !tab->hasSourcePane() && !tab->hasRenderPane(),
+          "image tab has no Markdown panes");
+  require(f.tabs->tabText(f.tabs->indexOf(tab)).contains(QStringLiteral("picture.png")), "image tab label");
+
+  tab->imageView()->setZoomPercent(200.0);
+  require(qAbs(tab->imageView()->zoomPercent() - 200.0) < 0.01, "image zoom is controllable");
+  tab->imageView()->actualSize();
+  require(qAbs(tab->imageView()->zoomPercent() - 100.0) < 0.01, "image actual size");
+  tab->imageView()->rotateRight();
+  require(tab->imageView()->imageSize() == QSize(64, 32), "rotation does not rewrite the source image");
+
+  auto* save = f.command(QStringLiteral("Save"));
+  auto* source = f.command(QStringLiteral("Source Code Mode"));
+  require(save && !save->isEnabled(), "image tab disables Markdown save");
+  require(source && !source->isEnabled(), "image tab disables source mode");
+
+  const auto state = f.window.sessionState();
+  Fixture restored;
+  restored.window.restoreSessionState(state);
+  QApplication::processEvents();
+  auto* restoredTab = restored.current();
+  require(restoredTab && restoredTab->isImageDocument(), "session restore keeps the image tab");
+  require(restoredTab->imageView() && restoredTab->imageView()->hasImage(), "restored image loads");
+}
+
+void imagePreviewHover() {
+  const auto closeDialogs = [] {
+    for (QWidget* widget : QApplication::topLevelWidgets())
+      if (auto* dialog = qobject_cast<QDialog*>(widget); dialog && dialog->isVisible())
+        dialog->close();
+  };
+  const auto findPoint = [](EditorView* view, const std::function<bool(const HitTestResult&)>& predicate) {
+    const QSize size = view->viewport()->size();
+    for (int y = 0; y < size.height(); y += 4) {
+      for (int x = 0; x < size.width(); x += 4) {
+        if (x == 0 && y == 0)
+          continue;
+        if (predicate(view->hitTest(QPointF(x, y))))
+          return QPointF(x, y);
+      }
+    }
+    return QPointF();
+  };
+
+  {
+    Fixture f;
+    QImage image(80, 40, QImage::Format_ARGB32);
+    image.fill(Qt::blue);
+    require(image.save(f.directory.filePath(QStringLiteral("hover.png"))), "create hover image");
+    auto* tab = f.open(QStringLiteral("![Hover](hover.png)\n"));
+    waitFor([&] { return !tab->renderView->isLayoutPending(); }, "hover image layout");
+    const QPointF point = findPoint(
+        tab->renderView, [](const HitTestResult& hit) { return !hit.imageSrc.isEmpty() && !hit.imageRect.isEmpty(); });
+    require(!point.isNull(), "image hit exists");
+    QMouseEvent moveImage(QEvent::MouseMove, point, tab->renderView->viewport()->mapToGlobal(point.toPoint()),
+                          Qt::NoButton, Qt::NoButton, Qt::NoModifier);
+    QApplication::sendEvent(tab->renderView->viewport(), &moveImage);
+    QTest::qWait(20);
+    QApplication::processEvents();
+    require(tab->renderView->previewHoverVisible(), "image preview button appears");
+    const QRectF button = tab->renderView->previewHoverButtonRect();
+    require(!button.isEmpty(), "image preview button has geometry");
+    QSignalSpy spy(tab->renderView, &EditorView::previewImageRequested);
+    QTest::mouseClick(tab->renderView->viewport(), Qt::LeftButton, Qt::NoModifier, button.center().toPoint());
+    require(spy.count() == 1 && !spy.at(0).at(0).toString().isEmpty(), "image preview requested");
+    closeDialogs();
+  }
+}
+
+void mermaidPreviewHover() {
+  const auto closeDialogs = [] {
+    for (QWidget* widget : QApplication::topLevelWidgets())
+      if (auto* dialog = qobject_cast<QDialog*>(widget); dialog && dialog->isVisible())
+        dialog->close();
+  };
+  Fixture f;
+  auto* tab = f.open(QStringLiteral("```mermaid\nflowchart LR\n  A[Start] --> B[End]\n```\n"));
+  waitFor([&] { return !tab->renderView->isLayoutPending(); }, "mermaid preview layout");
+  QPointF point;
+  waitFor(
+      [&] {
+        const QSize size = tab->renderView->viewport()->size();
+        for (int y = 4; y < size.height() && point.isNull(); y += 4)
+          for (int x = 4; x < size.width(); x += 4)
+            if (tab->renderView->hitTest(QPointF(x, y)).mermaidRendered) {
+              point = QPointF(x, y);
+              break;
+            }
+        return !point.isNull();
+      },
+      "mermaid diagram rendered");
+  QMouseEvent move(QEvent::MouseMove, point, tab->renderView->viewport()->mapToGlobal(point.toPoint()), Qt::NoButton,
+                   Qt::NoButton, Qt::NoModifier);
+  QApplication::sendEvent(tab->renderView->viewport(), &move);
+  QTest::qWait(20);
+  QApplication::processEvents();
+  require(tab->renderView->previewHoverVisible(), "diagram preview button appears");
+  const QRectF button = tab->renderView->previewHoverButtonRect();
+  require(!button.isEmpty(), "diagram preview button has geometry");
+  QSignalSpy spy(tab->renderView, &EditorView::previewDiagramRequested);
+  QTest::mouseClick(tab->renderView->viewport(), Qt::LeftButton, Qt::NoModifier, button.center().toPoint());
+  require(spy.count() == 1 && spy.at(0).at(0).toString().contains(QStringLiteral("flowchart")),
+          "diagram preview requested");
+  closeDialogs();
+}
+
+void imageViewFormats() {
+  QTemporaryDir directory;
+  require(directory.isValid(), "image format temp directory");
+  ImageView view;
+  QImage image(48, 24, QImage::Format_ARGB32);
+  image.fill(Qt::darkGreen);
+  const auto png = directory.filePath(QStringLiteral("sample.png"));
+  const auto svg = directory.filePath(QStringLiteral("sample.svg"));
+  const auto broken = directory.filePath(QStringLiteral("broken.png"));
+  const QString jpg = QFileInfo(QDir(QCoreApplication::applicationDirPath())
+                                    .absoluteFilePath(QStringLiteral("../../tests/fixtures/decode_test.jpg")))
+                          .absoluteFilePath();
+  require(image.save(png), "save PNG fixture");
+  require(QFileInfo::exists(jpg), "locate JPEG fixture");
+  {
+    QFile file(svg);
+    require(file.open(QIODevice::WriteOnly), "create SVG fixture");
+    file.write("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"24\">"
+               "<rect width=\"48\" height=\"24\" fill=\"green\"/></svg>");
+  }
+  {
+    QFile file(broken);
+    require(file.open(QIODevice::WriteOnly), "create broken image fixture");
+    file.write("not an image");
+  }
+  require(view.loadFile(png) && view.imageSize() == QSize(48, 24), "PNG loads");
+  require(view.loadFile(jpg) && view.imageSize() == QSize(4, 3), "JPEG loads");
+  require(view.loadFile(svg) && view.imageSize() == QSize(48, 24), "SVG loads through fallback");
+  require(!view.loadFile(broken) && !view.hasImage(), "broken image reports failure");
+}
+
+void runImagePreviewTests() {
+  runTest("imagePreviewHover", imagePreviewHover);
+  runTest("imageViewFormats", imageViewFormats);
+  runTest("mermaidPreviewHover", mermaidPreviewHover);
+}
+
 void runSplitViewTests() {
   runTest("splitViewResizeAndArrangePanes", resizeAndArrangePanes);
+  runTest("splitViewImagePreviewTab", imagePreviewTab);
+  runTest("splitViewImagePreviewHover", imagePreviewHover);
   runTest("splitViewNonMarkdownIsNotOpened", nonMarkdownIsNotOpened);
   runTest("splitViewWritingModesBelongToTheEditingPane", writingModesBelongToTheEditingPane);
   runTest("splitViewIndependentPreviewHistory", independentPreviewHistory);

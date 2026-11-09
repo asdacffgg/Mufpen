@@ -365,7 +365,7 @@ bool mufpen::FileController::newFile(DocumentSession& session, QWidget* parent) 
 }
 
 QString mufpen::FileController::chooseOpenPath(QWidget* parent) const {
-  return QFileDialog::getOpenFileName(parent, tr("Open"), QString(), markdownFileDialogFilter());
+  return QFileDialog::getOpenFileName(parent, tr("Open"), QString(), openDocumentFileDialogFilter());
 }
 
 void mufpen::FileController::setPathAvailableCheck(std::function<bool(const QString&)> check) {

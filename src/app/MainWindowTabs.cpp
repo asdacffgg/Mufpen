@@ -4,6 +4,7 @@
 
 #include "app/MarkdownSettings.h"
 #include "app/FileOpenConfirmation.h"
+#include "app/ImageView.h"
 #include "app/FileOpenProtection.h"
 #include "io/DocumentFileType.h"
 #include "app/SourceEditorBackend.h"
@@ -324,6 +325,27 @@ bool mufpen::MainWindow::openFileImpl(QString path, bool importCopy) {
   DocumentTab* document = reuse ? tab_ : createDocumentTab();
   document->pendingImportCopy = importCopy;
   const QString absolutePath = QFileInfo(path).absoluteFilePath();
+  if (isImageDocumentPath(absolutePath)) {
+    if (!document->openImage(absolutePath)) {
+      document->pendingImportCopy = false;
+      if (!reuse) {
+        const QSignalBlocker blocker(tabs_);
+        tabs_->removeTab(tabs_->indexOf(document));
+        updateTabBarVisibility();
+        delete document;
+      }
+      return false;
+    }
+    document->setSplitTheme(themeManager_.currentTheme(zoomPercent_, fontSizePx_));
+    tabs_->setCurrentWidget(document);
+    updateTabLabel(document);
+    updateTitle();
+    updateStatus();
+    addRecentFile(absolutePath);
+    saveSessionState();
+    updateAllActions();
+    return true;
+  }
   const auto warnings = file_open_protection::warningsForFile(absolutePath);
   if (warnings.any()) {
     document->openReturnTab = tab_;
@@ -459,20 +481,28 @@ void mufpen::MainWindow::activateTab(int index) {
     action->setChecked(tab_->viewMode() == DocumentViewMode::Split);
   sourceModeButton_->setChecked(tab_->viewMode() == DocumentViewMode::Source);
   splitViewButton_->setChecked(tab_->viewMode() == DocumentViewMode::Split);
-  if (tab_->renderViewDirty && tab_->hasRenderPane() && !tab_->session.isOpenInProgress()) {
-    tab_->ensureRenderViewCurrent();
+  sourceModeButton_->setEnabled(!tab_->isImageDocument());
+  splitViewButton_->setEnabled(!tab_->isImageDocument());
+  if (!tab_->isImageDocument()) {
+    if (tab_->renderViewDirty && tab_->hasRenderPane() && !tab_->session.isOpenInProgress()) {
+      tab_->ensureRenderViewCurrent();
+    }
+    tab_->renderView->refreshPendingResources();
   }
-  tab_->renderView->refreshPendingResources();
   updateTitle();
   updateStatus();
   updateAllActions();
   refreshSidebarDocumentInfo();
   refreshSidebarOutline();
   updateWordCountNow();
-  updateRenderCursorStatus(tab_->editorController.selection().currentHit());
-  updateBlockSourceLabel(tab_->editorController.selection().currentHit());
+  if (!tab_->isImageDocument()) {
+    updateRenderCursorStatus(tab_->editorController.selection().currentHit());
+    updateBlockSourceLabel(tab_->editorController.selection().currentHit());
+  }
   if (!tab_->pendingOpenPath.isEmpty())
     tab_->openConfirmation->setFocus(Qt::OtherFocusReason);
+  else if (tab_->isImageDocument())
+    tab_->imageView()->setFocus(Qt::OtherFocusReason);
   else
     tab_->viewStack->currentWidget()->setFocus(Qt::OtherFocusReason);
   scheduleSessionSave();
@@ -778,6 +808,10 @@ QVariantMap mufpen::MainWindow::sessionState() const {
 }
 
 QVariantMap mufpen::MainWindow::tabViewState(DocumentTab* document) const {
+  if (document->isImageDocument()) {
+    return {
+        {QStringLiteral("version"), 1}, {QStringLiteral("image"), true}, {QStringLiteral("pinned"), document->pinned}};
+  }
   if (document->pendingViewState) {
     auto state = *document->pendingViewState;
     state.insert(QStringLiteral("pinned"), document->pinned);
@@ -833,6 +867,10 @@ QVariantMap mufpen::MainWindow::tabViewState(DocumentTab* document) const {
 }
 
 void mufpen::MainWindow::restoreTabViewState(DocumentTab* document) {
+  if (document->isImageDocument()) {
+    document->pendingViewState.reset();
+    return;
+  }
   if (!document->pendingViewState || document != tab_ || sessionUpdatesPaused_ ||
       !document->pendingOpenPath.isEmpty() || document->session.isOpenInProgress() || !document->isVisible())
     return;

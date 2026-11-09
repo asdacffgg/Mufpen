@@ -43,10 +43,8 @@ inline bool isImageDocumentPath(const QString& path) {
   return hasDocumentExtension(path, imageExtensions());
 }
 
-// Phase 1 policy: only Markdown is openable. Images remain tree-only until the
-// image preview tab lands.
 inline bool isOpenableDocumentPath(const QString& path) {
-  return isMarkdownDocumentPath(path);
+  return isMarkdownDocumentPath(path) || isImageDocumentPath(path);
 }
 
 inline QString markdownFileDialogFilter() {
@@ -55,6 +53,16 @@ inline QString markdownFileDialogFilter() {
   for (const QString& extension : markdownExtensions())
     patterns.append(QStringLiteral("*.") + extension);
   return QStringLiteral("Markdown (%1)").arg(patterns.join(QLatin1Char(' ')));
+}
+
+inline QString openDocumentFileDialogFilter() {
+  QStringList patterns;
+  patterns.reserve(markdownExtensions().size() + imageExtensions().size());
+  for (const QString& extension : markdownExtensions())
+    patterns.append(QStringLiteral("*.") + extension);
+  for (const QString& extension : imageExtensions())
+    patterns.append(QStringLiteral("*.") + extension);
+  return QStringLiteral("Markdown and images (%1)").arg(patterns.join(QLatin1Char(' ')));
 }
 
 } // namespace mufpen

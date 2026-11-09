@@ -34,6 +34,9 @@ struct HitTestResult {
   qsizetype sourceOffset = -1;
   QRectF blockRect;
   QRectF cursorRect;
+  // Document-space bounds of the image under the cursor, when the hit landed on
+  // a rendered image. Used by the hover "preview image" affordance.
+  QRectF imageRect;
   int tableRow = -1;
   int tableColumn = -1;
   DefinitionField definitionField = DefinitionField::None;

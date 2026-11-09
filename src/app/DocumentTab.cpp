@@ -3,16 +3,22 @@
 #include "app/RenderEditorBackend.h"
 #include "app/SourceEditorBackend.h"
 #include "app/FileOpenConfirmation.h"
+#include "app/ImageView.h"
 #include "editor/EditorView.h"
 #include "editor/FindBarWidget.h"
+#include "editor/ResourceUrl.h"
 #include "editor/SourceEditorWidget.h"
 #include "editor/VirtualSourceEdit.h"
+#include "mermaid/editor/MermaidRenderCache.h"
+#include "render/ImageDecoder.h"
 
 #include <QApplication>
 #include <QActionGroup>
+#include <QDialog>
 #include <QMenu>
 #include <QEvent>
 #include <QFile>
+#include <QFileInfo>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPainter>
@@ -65,6 +71,8 @@ mufpen::DocumentTab::DocumentTab(QWidget* parent)
   contentStack->addWidget(editorPage);
   openConfirmation = new FileOpenConfirmation(contentStack);
   contentStack->addWidget(openConfirmation);
+  imageView_ = new ImageView(contentStack);
+  contentStack->addWidget(imageView_);
   layout = new QVBoxLayout(editorPage);
   layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
@@ -214,6 +222,10 @@ mufpen::DocumentTab::DocumentTab(QWidget* parent)
       synchronizeViewports(scrollFromSource_);
   });
   connect(renderView, &EditorView::layoutReady, this, &DocumentTab::scheduleViewportSynchronization);
+  connect(renderView, &EditorView::previewImageRequested, this,
+          [this](const QString& src) { showPreviewDialog(src, {}, QFileInfo(src).fileName()); });
+  connect(renderView, &EditorView::previewDiagramRequested, this,
+          [this](const QString& source) { showPreviewDialog({}, source, tr("Mermaid diagram")); });
 }
 
 mufpen::DocumentTab::~DocumentTab() {
@@ -232,8 +244,47 @@ mufpen::DocumentTab::~DocumentTab() {
   delete contentStack;
 }
 
+bool mufpen::DocumentTab::openImage(const QString& path) {
+  const QFileInfo info(path);
+  if (!info.isFile() || !info.isReadable())
+    return false;
+  imageMode_ = true;
+  imagePath_ = info.absoluteFilePath();
+  viewMode_ = DocumentViewMode::Rendered;
+  singleViewMode_ = DocumentViewMode::Rendered;
+  backend.reset();
+  renderViewDirty = false;
+  session.setFilePath(imagePath_);
+  contentStack->setCurrentWidget(imageView_);
+  imageView_->loadFile(imagePath_);
+  imageView_->setFocus(Qt::OtherFocusReason);
+  return true;
+}
+
+void mufpen::DocumentTab::showPreviewDialog(const QString& imageSrc, const QString& mermaidSource,
+                                            const QString& title) {
+  auto* dialog = new QDialog(window());
+  dialog->setAttribute(Qt::WA_DeleteOnClose);
+  dialog->setWindowTitle(title.isEmpty() ? tr("Preview") : title);
+  auto* layout = new QVBoxLayout(dialog);
+  layout->setContentsMargins(0, 0, 0, 0);
+  auto* preview = new ImageView(dialog);
+  preview->setBackgroundColor(renderView->theme().backgroundColor());
+  if (!mermaidSource.isEmpty()) {
+    const auto rendered = mermaid::editor::MermaidRenderCache::renderMermaidSourceToPng(mermaidSource, 2.0);
+    preview->setImage(image_decoder::decodeDataUri(rendered.dataUrl), tr("Mermaid"));
+  } else {
+    preview->loadUrl(resolvedUrlForDocumentResource(imageSrc, session.filePath()));
+  }
+  layout->addWidget(preview);
+  dialog->resize(960, 720);
+  dialog->show();
+  dialog->raise();
+  dialog->activateWindow();
+}
+
 void mufpen::DocumentTab::ensureRenderViewCurrent() {
-  if (!std::exchange(renderViewDirty, false))
+  if (imageMode_ || !std::exchange(renderViewDirty, false))
     return;
   const QScopedValueRollback<bool> guard(synchronizing_, true);
   const bool preview = viewMode_ == DocumentViewMode::Split;
@@ -248,7 +299,7 @@ void mufpen::DocumentTab::ensureRenderViewCurrent() {
 }
 
 bool mufpen::DocumentTab::refreshPreviewAfterLocalEdit() {
-  if (viewMode_ != DocumentViewMode::Split || renderViewDirty || !session.lastParseWasLocalEdit() ||
+  if (imageMode_ || viewMode_ != DocumentViewMode::Split || renderViewDirty || !session.lastParseWasLocalEdit() ||
       session.lastChangeWasBatch())
     return false;
   {
@@ -263,7 +314,7 @@ bool mufpen::DocumentTab::refreshPreviewAfterLocalEdit() {
 }
 
 void mufpen::DocumentTab::scheduleViewportSynchronization() {
-  if (synchronizing_ || synchronizationQueued_ || viewMode_ != DocumentViewMode::Split)
+  if (imageMode_ || synchronizing_ || synchronizationQueued_ || viewMode_ != DocumentViewMode::Split)
     return;
   synchronizationQueued_ = true;
   QTimer::singleShot(0, this, [this] {
@@ -273,6 +324,11 @@ void mufpen::DocumentTab::scheduleViewportSynchronization() {
 }
 
 void mufpen::DocumentTab::updateCommandTarget(bool preview) {
+  if (imageMode_) {
+    backend.reset();
+    previewActive_ = false;
+    return;
+  }
   previewActive_ = viewMode_ == DocumentViewMode::Split && preview;
   scrollFromSource_ = !previewActive_;
   const bool source = hasSourcePane() && !previewActive_;
@@ -287,7 +343,7 @@ void mufpen::DocumentTab::updateCommandTarget(bool preview) {
 }
 
 void mufpen::DocumentTab::setViewMode(DocumentViewMode mode) {
-  if (mode == viewMode_)
+  if (imageMode_ || mode == viewMode_)
     return;
   const QScopedValueRollback<bool> guard(synchronizing_, true);
   if (viewMode_ == DocumentViewMode::Split) {
@@ -321,6 +377,8 @@ void mufpen::DocumentTab::setViewMode(DocumentViewMode mode) {
 }
 
 void mufpen::DocumentTab::restoreViewMode(const QVariantMap& state) {
+  if (imageMode_)
+    return;
   const auto mode = state.value(QStringLiteral("splitView")).toBool()    ? DocumentViewMode::Split
                     : state.value(QStringLiteral("sourceMode")).toBool() ? DocumentViewMode::Source
                                                                          : DocumentViewMode::Rendered;
@@ -338,6 +396,10 @@ void mufpen::DocumentTab::restoreViewMode(const QVariantMap& state) {
 }
 
 void mufpen::DocumentTab::focusEditor() {
+  if (imageMode_) {
+    imageView_->setFocus(Qt::OtherFocusReason);
+    return;
+  }
   updateCommandTarget(false);
   (hasSourcePane() ? static_cast<QWidget*>(editor) : static_cast<QWidget*>(renderView))->setFocus(Qt::OtherFocusReason);
 }
@@ -347,11 +409,15 @@ bool mufpen::DocumentTab::synchronizedScrolling() const {
 }
 
 void mufpen::DocumentTab::setFocusMode(bool enabled) {
+  if (imageMode_)
+    return;
   focusMode_ = enabled;
   applyWritingModes();
 }
 
 void mufpen::DocumentTab::setTypewriterMode(bool enabled, bool cursorMiddle) {
+  if (imageMode_)
+    return;
   typewriterMode_ = enabled;
   typewriterCursorMiddle_ = cursorMiddle;
   applyWritingModes();
@@ -360,6 +426,8 @@ void mufpen::DocumentTab::setTypewriterMode(bool enabled, bool cursorMiddle) {
 }
 
 void mufpen::DocumentTab::applyWritingModes() {
+  if (imageMode_)
+    return;
   // Writing aids belong to the editable pane. A split preview has no writing
   // caret: its reading position is controlled only by explicit navigation and
   // the synchronization policy, never by a stale rendered selection.
@@ -412,8 +480,8 @@ void mufpen::DocumentTab::setSplitLayout(Qt::Orientation orientation, bool previ
 }
 
 void mufpen::DocumentTab::synchronizeViewports(bool fromSource) {
-  if (viewMode_ != DocumentViewMode::Split || !synchronizedScrolling() || synchronizing_ || !isVisible() ||
-      session.isOpenInProgress() || renderViewDirty)
+  if (imageMode_ || viewMode_ != DocumentViewMode::Split || !synchronizedScrolling() || synchronizing_ ||
+      !isVisible() || session.isOpenInProgress() || renderViewDirty)
     return;
   // Scrollbar callbacks follow the last input pane; explicit navigation can
   // choose a new driver. Preserve the other pane's horizontal position/caret.
@@ -461,6 +529,10 @@ void mufpen::DocumentTab::changeEvent(QEvent* event) {
 }
 
 void mufpen::DocumentTab::setSplitTheme(const RenderTheme& theme) {
+  if (imageMode_) {
+    imageView_->setBackgroundColor(theme.backgroundColor());
+    return;
+  }
   auto colors = splitPage_->palette();
   colors.setColor(QPalette::Window, theme.backgroundColor());
   colors.setColor(QPalette::WindowText, theme.mutedTextColor());

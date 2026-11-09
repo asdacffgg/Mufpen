@@ -174,6 +174,7 @@ set(MUFPEN_TRANSLATABLE_SOURCES
   src/app/WorkspaceReplace.cpp
   src/app/MainWindowTabs.cpp
   src/app/DocumentTab.cpp
+  src/app/ImageView.cpp
   src/app/FileOpenConfirmation.cpp
   src/app/PreferencesDialog.cpp
   src/app/HelpViewerDialog.cpp
@@ -1108,6 +1109,8 @@ add_executable(Mufpen
   src/app/MainWindow.h
   src/app/DocumentTab.cpp
   src/app/DocumentTab.h
+  src/app/ImageView.cpp
+  src/app/ImageView.h
   src/app/FileOpenConfirmation.cpp
   src/app/FileOpenConfirmation.h
   src/app/MainWindowActionBinder.cpp

@@ -241,6 +241,7 @@ void EditorView::paintDocument(QPainter& painter, const QRegion& dirtyRegion) {
   paintSelection(painter);
   paintCurrentTableCell(painter);
   paintHtmlHoverOverlay(painter);
+  paintPreviewHover(painter);
   paintPreedit(painter);
   paintInsertionCursor(painter);
   paintHeadingBadge(painter);

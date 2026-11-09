@@ -997,6 +997,12 @@ void EditorView::wheelEvent(QWheelEvent* event) {
 void EditorView::mousePressEvent(QMouseEvent* event) {
   if (blockHandlePress(event))
     return;
+  if (event->button() == Qt::LeftButton && previewHoverKind_ != PreviewHoverKind::None &&
+      previewHoverButtonViewportRect().contains(event->position())) {
+    activatePreviewHover();
+    event->accept();
+    return;
+  }
   if (event->button() == Qt::BackButton || event->button() == Qt::ForwardButton) {
     emit historyNavigationRequested(event->button() == Qt::ForwardButton);
     event->accept();
@@ -1138,6 +1144,7 @@ void EditorView::mouseMoveEvent(QMouseEvent* event) {
     }
   }
   updateHtmlHover(event->position());
+  updatePreviewHover(event->position());
   updateMouseCursor(event->position());
   updateBlockHandleHover(event->position());
   QAbstractScrollArea::mouseMoveEvent(event);
@@ -1775,6 +1782,88 @@ void EditorView::clearHtmlHover() {
   }
 }
 
+QRectF EditorView::previewHoverButtonViewportRect() const {
+  if (previewHoverKind_ == PreviewHoverKind::None || previewHoverTargetDocumentRect_.isEmpty())
+    return {};
+  const QRectF target = previewHoverTargetDocumentRect_.translated(0, -scrollY());
+  constexpr qreal buttonSize = 26.0;
+  constexpr qreal inset = 8.0;
+  return QRectF(target.right() - buttonSize - inset, target.top() + inset, buttonSize, buttonSize);
+}
+
+void EditorView::updatePreviewHover(QPointF viewportPos) {
+  if (previewHoverKind_ != PreviewHoverKind::None && previewHoverButtonViewportRect().contains(viewportPos))
+    return;
+  const HitTestResult hit = hitTest(viewportPos);
+  PreviewHoverKind kind = PreviewHoverKind::None;
+  NodeId blockId;
+  QString imageSrc;
+  QRectF targetRect;
+  if (hit.isValid() && !hit.imageSrc.isEmpty() && !hit.imageRect.isEmpty()) {
+    kind = PreviewHoverKind::Image;
+    blockId = hit.blockId;
+    imageSrc = hit.imageSrc;
+    targetRect = hit.imageRect;
+  } else if (hit.isValid() && hit.mermaidRendered && !hit.blockRect.isEmpty()) {
+    kind = PreviewHoverKind::Diagram;
+    blockId = hit.blockId;
+    targetRect = hit.blockRect;
+  }
+  if (kind == previewHoverKind_ && blockId == previewHoverBlockId_ && imageSrc == previewHoverImageSrc_ &&
+      targetRect == previewHoverTargetDocumentRect_)
+    return;
+  const QRect oldRect = previewHoverButtonViewportRect().adjusted(-2, -2, 2, 2).toAlignedRect();
+  previewHoverKind_ = kind;
+  previewHoverBlockId_ = blockId;
+  previewHoverImageSrc_ = imageSrc;
+  previewHoverTargetDocumentRect_ = targetRect;
+  const QRect newRect = previewHoverButtonViewportRect().adjusted(-2, -2, 2, 2).toAlignedRect();
+  const QRect dirty = oldRect.united(newRect);
+  if (!dirty.isEmpty())
+    diag::updateViewport(viewport(), dirty);
+}
+
+void EditorView::clearPreviewHover() {
+  if (previewHoverKind_ == PreviewHoverKind::None)
+    return;
+  const QRect oldRect = previewHoverButtonViewportRect().adjusted(-2, -2, 2, 2).toAlignedRect();
+  previewHoverKind_ = PreviewHoverKind::None;
+  previewHoverBlockId_ = {};
+  previewHoverImageSrc_.clear();
+  previewHoverTargetDocumentRect_ = {};
+  if (!oldRect.isEmpty())
+    diag::updateViewport(viewport(), oldRect);
+}
+
+void EditorView::paintPreviewHover(QPainter& painter) const {
+  const QRectF button = previewHoverButtonViewportRect();
+  if (button.isEmpty() || !viewport()->rect().intersects(button.toAlignedRect()))
+    return;
+  painter.save();
+  painter.setRenderHint(QPainter::Antialiasing, true);
+  painter.setPen(QPen(QColor(255, 255, 255, 180), 1.0));
+  painter.setBrush(QColor(32, 34, 38, 190));
+  painter.drawRoundedRect(button, 6.0, 6.0);
+  const QPointF center = button.center();
+  const QRectF lens(center.x() - 7.0, center.y() - 7.0, 10.0, 10.0);
+  painter.setBrush(Qt::NoBrush);
+  painter.setPen(QPen(QColor(248, 248, 248), 1.6));
+  painter.drawEllipse(lens);
+  painter.drawLine(QPointF(lens.right() - 1.2, lens.bottom() - 1.2), QPointF(lens.right() + 4.0, lens.bottom() + 4.0));
+  painter.restore();
+}
+
+void EditorView::activatePreviewHover() {
+  if (previewHoverKind_ == PreviewHoverKind::Image) {
+    emit previewImageRequested(previewHoverImageSrc_);
+  } else if (previewHoverKind_ == PreviewHoverKind::Diagram && layout_) {
+    if (const BlockLayout* block = layout_->blockIfPromoted(previewHoverBlockId_)) {
+      if (block->isMermaidRendered())
+        emit previewDiagramRequested(block->literal());
+    }
+  }
+}
+
 void EditorView::repaintAnimatedMermaidBlocks() {
   PerfTimer perf("view.repaintMermaidAnim");
   if (!layout_ || loading_ || !mermaidAnimationTimer_ || !mermaidAnimationTimer_->isActive())
@@ -1842,6 +1931,11 @@ void EditorView::updateDragSelection(QPointF viewportPos) {
 }
 
 void EditorView::updateMouseCursor(QPointF viewportPos) {
+  if (previewHoverKind_ != PreviewHoverKind::None && previewHoverButtonViewportRect().contains(viewportPos)) {
+    viewport()->setToolTip(previewHoverKind_ == PreviewHoverKind::Diagram ? tr("View diagram") : tr("View image"));
+    viewport()->setCursor(Qt::PointingHandCursor);
+    return;
+  }
   if (htmlHoverButtonViewportRect().contains(viewportPos)) {
     viewport()->setToolTip(QString());
     viewport()->setCursor(Qt::PointingHandCursor);

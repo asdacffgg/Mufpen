@@ -377,7 +377,9 @@ HitTestResult BlockLayout::hitSelf(QPointF documentPos, const RenderTheme& theme
       result.sourceOffset = contentSourceStart_ >= 0 ? contentSourceStart_ + localSourceOffset : localSourceOffset;
       result.cursorRect = inlineLayout_->hitTestCursorRect(localPos).translated(textRect.topLeft());
       result.linkHref = inlineLayout_->linkHrefAtLocalPos(localPos);
-      result.imageSrc = inlineLayout_->imageSrcAtLocalPos(localPos);
+      const InlineLayout::ImageHit imageHit = inlineLayout_->imageHitAtLocalPos(localPos);
+      result.imageSrc = imageHit.src;
+      result.imageRect = imageHit.rect.translated(textRect.topLeft());
     }
     break;
   case BlockType::FrontMatter:

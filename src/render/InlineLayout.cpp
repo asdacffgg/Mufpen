@@ -790,18 +790,41 @@ QString InlineLayout::linkHrefAtLocalPos(QPointF localPos) const {
   return projection_.linkHrefAtDisplayOffset(projOffset);
 }
 
-QString InlineLayout::imageSrcAtLocalPos(QPointF localPos) const {
-  for (const auto& atom : htmlAtoms_)
-    if (atom.rect.contains(localPos))
-      return atom.layout->hitTest(localPos - atom.rect.topLeft() + atom.crop.topLeft()).imageSrc;
+InlineLayout::ImageHit InlineLayout::imageHitAtLocalPos(QPointF localPos) const {
+  for (const auto& atom : htmlAtoms_) {
+    if (!atom.rect.contains(localPos))
+      continue;
+    const QString src = atom.layout->hitTest(localPos - atom.rect.topLeft() + atom.crop.topLeft()).imageSrc;
+    if (!src.isEmpty())
+      return {src, atom.rect};
+  }
   if (!textLayout_)
     return {};
   for (const ImageAtom& atom : imageAtoms_) {
-    if (imageAtomRect(atom).contains(localPos)) {
-      return atom.srcUrl;
+    const QRectF rect = imageAtomRect(atom);
+    if (rect.contains(localPos))
+      return {atom.srcUrl, rect};
+  }
+  // The image under the caret is painted as a block preview below the source
+  // text (paintImagePreview). It has no text-layout cursor rect, so mirror that
+  // vertical stack here for hit-testing the hover affordance.
+  if (!previewAtoms_.isEmpty()) {
+    constexpr qreal previewSpacing = 6.0;
+    qreal y = size_.height() - previewHeight_ + previewSpacing;
+    for (const ImageAtom& atom : previewAtoms_) {
+      if (!atom.loaded || atom.image.isNull())
+        continue;
+      const QRectF rect(0, y, atom.displaySize.width(), atom.displaySize.height());
+      if (rect.contains(localPos))
+        return {atom.srcUrl, rect};
+      y += atom.displaySize.height() + previewSpacing;
     }
   }
   return {};
+}
+
+QString InlineLayout::imageSrcAtLocalPos(QPointF localPos) const {
+  return imageHitAtLocalPos(localPos).src;
 }
 
 QRectF InlineLayout::cursorRect(qsizetype textOffset) const {

@@ -29,6 +29,7 @@ namespace mufpen {
 class EditorView;
 class FindBarWidget;
 class FileOpenConfirmation;
+class ImageView;
 class SourceEditorWidget;
 
 enum class DocumentViewMode { Rendered, Source, Split };
@@ -47,11 +48,15 @@ class DocumentTab final : public QWidget {
 public:
   explicit DocumentTab(QWidget* parent = nullptr);
   ~DocumentTab() override;
+  bool openImage(const QString& path);
+  bool isImageDocument() const { return imageMode_; }
+  QString imagePath() const { return imagePath_; }
+  ImageView* imageView() const { return imageView_; }
   void ensureRenderViewCurrent();
   bool refreshPreviewAfterLocalEdit();
   DocumentViewMode viewMode() const { return viewMode_; }
-  bool hasSourcePane() const { return viewMode_ != DocumentViewMode::Rendered; }
-  bool hasRenderPane() const { return viewMode_ != DocumentViewMode::Source; }
+  bool hasSourcePane() const { return !imageMode_ && viewMode_ != DocumentViewMode::Rendered; }
+  bool hasRenderPane() const { return !imageMode_ && viewMode_ != DocumentViewMode::Source; }
   DocumentViewMode singleViewMode() const { return singleViewMode_; }
   void setViewMode(DocumentViewMode mode);
   void restoreViewMode(const QVariantMap& state);
@@ -137,6 +142,7 @@ private:
   bool eventFilter(QObject* watched, QEvent* event) override;
   void changeEvent(QEvent* event) override;
   void retranslateSplitUi();
+  void showPreviewDialog(const QString& imageSrc, const QString& mermaidSource, const QString& title);
   void updateCommandTarget(bool preview);
   void applyWritingModes();
   void scheduleViewportSynchronization();
@@ -150,6 +156,9 @@ private:
   QAction* swapPanesAction_ = nullptr;
   DocumentViewMode viewMode_ = DocumentViewMode::Rendered;
   DocumentViewMode singleViewMode_ = DocumentViewMode::Rendered;
+  bool imageMode_ = false;
+  QString imagePath_;
+  ImageView* imageView_ = nullptr;
   bool previewActive_ = false;
   bool synchronizing_ = false;
   bool synchronizationQueued_ = false;

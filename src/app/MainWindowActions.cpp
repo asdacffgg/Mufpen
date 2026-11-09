@@ -151,6 +151,11 @@ void mufpen::MainWindow::updateWordCountNow() {
   if (!statusBar_ || !tab_->wordCountDirty) {
     return;
   }
+  if (tab_->isImageDocument()) {
+    statusBar_->setWordCount(0);
+    tab_->wordCountDirty = false;
+    return;
+  }
   const int words = text_stats::countWords(tab_->session.markdownText());
   statusBar_->setWordCount(words);
   tab_->wordCountDirty = false;

@@ -8,6 +8,7 @@
 #include <QFileInfo>
 #include <QLoggingCategory>
 #include <QMenu>
+#include <QSet>
 #include <QSettings>
 #include <QScopedValueRollback>
 #include <QTimer>
@@ -33,6 +34,20 @@ void updateCommandHint(QAction* action, const CommandDeclaration& declaration, c
       action->isEnabled() || !declaration.disabledReason ? QString() : declaration.disabledReason(window);
   action->setToolTip(reason);
   action->setStatusTip(reason);
+}
+
+bool imageSafeCommand(const QString& id) {
+  static const QSet<QString> safe{
+      QStringLiteral("app.quit"),         QStringLiteral("file.new"),           QStringLiteral("file.new_window"),
+      QStringLiteral("file.open_folder"), QStringLiteral("file.open"),          QStringLiteral("file.quick_open"),
+      QStringLiteral("file.open_recent"), QStringLiteral("file.reopen_closed"), QStringLiteral("file.reveal"),
+      QStringLiteral("file.sidebar"),     QStringLiteral("file.preferences"),   QStringLiteral("file.close"),
+      QStringLiteral("file.delete"),      QStringLiteral("view.next_tab"),      QStringLiteral("view.previous_tab"),
+      QStringLiteral("view.sidebar"),     QStringLiteral("view.file_tree"),     QStringLiteral("view.always_on_top"),
+      QStringLiteral("view.fullscreen"),  QStringLiteral("view.status_bar"),    QStringLiteral("view.zoom_in"),
+      QStringLiteral("view.zoom_out"),    QStringLiteral("view.window_switch"),
+  };
+  return safe.contains(id);
 }
 }
 
@@ -137,6 +152,10 @@ bool MainWindow::commandOnLocalImage() const {
 MainWindow::CommandContextSnapshot MainWindow::captureCommandContext() const {
   diag::ScopedPerfProbe perf("main.captureCommandContext", actionDetailProbe());
   CommandContextSnapshot snapshot;
+  // Image tabs own no editor backend; every command predicate must stay inert
+  // until the user switches back to a Markdown tab.
+  if (tab_->isImageDocument())
+    return snapshot;
   const bool sourceMode = tab_->backend->isSourceMode();
   snapshot.hasCursor = sourceMode || tab_->editorController.selection().hasCursor();
   snapshot.hasSelection = sourceMode
@@ -168,6 +187,7 @@ CursorFormatState MainWindow::commandInlineFormats() const {
 // ---- action state refresh (table-driven) -----------------------------------
 
 void MainWindow::updateActionsForCategory(CommandCategory category) {
+  const bool image = tab_->isImageDocument();
   const bool needsContext = category != CommandCategory::File && category != CommandCategory::Theme;
   const QScopedValueRollback<CommandContextSnapshot> context(
       commandContextSnapshot_, needsContext ? captureCommandContext() : commandContextSnapshot_);
@@ -178,6 +198,14 @@ void MainWindow::updateActionsForCategory(CommandCategory category) {
     }
     QAction* action = commands_.action(decl.id);
     if (!action) {
+      continue;
+    }
+    if (image) {
+      const bool safe =
+          imageSafeCommand(decl.id) || category == CommandCategory::Help || category == CommandCategory::Theme;
+      action->setEnabled(safe);
+      if (safe && decl.checked)
+        action->setChecked(decl.checked(*this));
       continue;
     }
     if (decl.enabled || decl.requiresEditableDocument) {
@@ -205,17 +233,27 @@ void MainWindow::updateActionsForCategory(CommandCategory category) {
 }
 
 void MainWindow::updateAllActions() {
+  const bool image = tab_->isImageDocument();
   commandContextSnapshot_ = captureCommandContext();
   commandContextSnapshotActive_ = true;
   for (const CommandDeclaration& decl : commandDeclarations()) {
     if (QAction* action = commands_.action(decl.id)) {
-      if (decl.enabled || decl.requiresEditableDocument) {
-        action->setEnabled(commandEnabled(decl));
+      if (image) {
+        const bool safe = imageSafeCommand(decl.id) || decl.category == CommandCategory::Help ||
+                          decl.category == CommandCategory::Theme;
+        action->setEnabled(safe);
+        if (safe && decl.checked)
+          action->setChecked(decl.checked(*this));
+      } else {
+        if (decl.enabled || decl.requiresEditableDocument) {
+          action->setEnabled(commandEnabled(decl));
+        }
+        if (decl.checked) {
+          action->setChecked(decl.checked(*this));
+        }
       }
-      if (decl.checked) {
-        action->setChecked(decl.checked(*this));
-      }
-      updateCommandHint(action, decl, *this);
+      if (!image)
+        updateCommandHint(action, decl, *this);
     }
   }
   commandContextSnapshotActive_ = false;
@@ -226,7 +264,7 @@ void MainWindow::updateFileActions() {
   // The Reopen-with-Encoding submenu is not a registered action; it mirrors file
   // presence directly, as the old procedural updateFileActions did.
   if (reopenEncodingMenu_) {
-    reopenEncodingMenu_->setEnabled(!tab_->session.filePath().isEmpty());
+    reopenEncodingMenu_->setEnabled(!tab_->isImageDocument() && !tab_->session.filePath().isEmpty());
   }
 }
 void MainWindow::updateEditActions() {
@@ -259,6 +297,26 @@ void MainWindow::updateThemeActions() {
 
 void MainWindow::updateContextActions() {
   diag::ScopedPerfProbe perf("main.contextActions", actionDetailProbe());
+  if (tab_->isImageDocument()) {
+    for (const CommandDeclaration& decl : commandDeclarations()) {
+      switch (decl.category) {
+      case CommandCategory::Edit:
+      case CommandCategory::Table:
+      case CommandCategory::Paragraph:
+      case CommandCategory::Code:
+      case CommandCategory::Html:
+      case CommandCategory::Math:
+      case CommandCategory::Image:
+      case CommandCategory::Format:
+        if (QAction* action = commands_.action(decl.id))
+          action->setEnabled(false);
+        break;
+      default:
+        break;
+      }
+    }
+    return;
+  }
   commandContextSnapshot_ = captureCommandContext();
   commandContextSnapshotActive_ = true;
   diag::ScopedPerfProbe predicatesPerf("main.actionPredicates", actionDetailProbe());

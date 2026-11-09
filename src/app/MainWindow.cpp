@@ -4,6 +4,7 @@
 #include "app/FileOpenConfirmation.h"
 #include "diagnostics/ScopedPerfProbe.h"
 
+#include "app/ImageView.h"
 #include "app/LanguageManager.h"
 #include "app/MarkdownSettings.h"
 #include "app/RenderEditorBackend.h"
@@ -444,7 +445,7 @@ bool mufpen::MainWindow::editingLocked() const {
 }
 
 bool mufpen::MainWindow::editingLocked(const DocumentTab* document) const {
-  if (!lockEditingEnabled_) {
+  if (!lockEditingEnabled_ || (document && document->isImageDocument())) {
     return false;
   }
   return lockEditingPerTab_ ? (document != nullptr && document->editingLocked) : editingLocked_;
@@ -494,6 +495,8 @@ void mufpen::MainWindow::syncLockEditingAction() {
 }
 
 QString mufpen::MainWindow::commandEditingDisabledReason() const {
+  if (tab_->isImageDocument())
+    return tr("Image preview is read-only.");
   if (tab_->previewActive())
     return tr("This pane is a read-only preview. Edit the Markdown source on the left.");
   if (editingLocked())
@@ -534,7 +537,7 @@ void mufpen::MainWindow::applyLockEditingSettings() {
 // inline popups, the source view goes read-only, and the session rejects every
 // incremental edit (typing, paste, format, undo).
 void mufpen::MainWindow::applyEditingLockedTo(DocumentTab* document) {
-  if (document == nullptr) {
+  if (document == nullptr || document->isImageDocument()) {
     return;
   }
   const bool locked = editingLocked(document);
@@ -547,6 +550,17 @@ void mufpen::MainWindow::applyEditingLockedTo(DocumentTab* document) {
 
 void mufpen::MainWindow::updateStatus() {
   if (!statusBar_) {
+    return;
+  }
+  if (tab_->isImageDocument()) {
+    const ImageView* view = tab_->imageView();
+    if (view && view->hasImage())
+      statusBar_->setCursorStatus(tr("%1 × %2").arg(view->imageSize().width()).arg(view->imageSize().height()));
+    else
+      statusBar_->setCursorStatus(tr("Image"));
+    statusBar_->setEncodingLineEnding(QString());
+    statusBar_->setBlockSource(QString(), QString());
+    statusBar_->setWordCount(0);
     return;
   }
   if (!tab_->backend->isSourceMode() && !tab_->renderCursorStatus.isEmpty()) {
@@ -677,6 +691,12 @@ void mufpen::MainWindow::refreshSidebarDocumentInfo() {
 void mufpen::MainWindow::refreshSidebarOutline() {
   static const QLoggingCategory category("mufpen.perf.detail", QtWarningMsg);
   mufpen::diag::ScopedPerfProbe perf("main.outline", category);
+  if (tab_->isImageDocument()) {
+    if (sidebar_)
+      sidebar_->clearOutline();
+    tab_->outlineDirty = false;
+    return;
+  }
   const QAction* sidebarAction = commands_.action(QStringLiteral("view.sidebar"));
   if (!sidebar_ || !tab_->outlineDirty || !sidebarAction || !sidebarAction->isChecked() ||
       sidebar_->panel() != SidebarWidget::Panel::Outline) {
@@ -716,7 +736,7 @@ void mufpen::MainWindow::activateOutlineNode(NodeId nodeId, SourceRange sourceRa
 }
 
 void mufpen::MainWindow::updateViewMode() {
-  if (!tab_->viewStack || !tab_->renderView || !tab_->editor) {
+  if (tab_->isImageDocument() || !tab_->viewStack || !tab_->renderView || !tab_->editor) {
     return;
   }
   const QAction* action = commands_.action(QStringLiteral("view.source_mode"));

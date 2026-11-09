@@ -182,11 +182,12 @@ void testFileTreeShowsOnlyMarkdownAndImages() {
           "log files are hidden from the tree");
   require(f.model->index(f.dir.filePath(QStringLiteral("notes.txt"))).isValid(),
           "Markdown-whitelisted text files stay visible");
-  const QModelIndex image = f.model->index(f.dir.filePath(QStringLiteral("photo.png")));
+  const QString imagePath = f.dir.filePath(QStringLiteral("photo.png"));
+  const QModelIndex image = f.model->index(imagePath);
   require(image.isValid(), "image assets stay visible");
   const QRect row = f.tree->visualRect(image);
   doubleClick(f.tree->viewport(), QPoint(row.left() + 40, row.center().y()));
-  require(f.openedFiles == 0, "image double-click does not open a document");
+  require(f.openedFiles == 1 && f.openedPath == imagePath, "image double-click opens the preview tab");
 }
 
 void testRightClickAndInlineRenameDoNotToggleFolder() {
