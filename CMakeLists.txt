@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 project(Mufpen
-  VERSION 0.7.11
+  VERSION 0.7.13
   DESCRIPTION "A fast native Markdown WYSIWYG editor built with C++ and Qt 6 Widgets"
   LANGUAGES C CXX
 )
