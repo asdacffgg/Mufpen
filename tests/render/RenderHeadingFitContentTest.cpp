@@ -487,7 +487,12 @@ void testQtTextLayoutSetFormatsAfterEndLayout() {
     }
   }
   require(selInk > 30, QStringLiteral("selection draw should still paint text (ink=%1)").arg(selInk));
-  require(selRed > 20, QStringLiteral("foreground-only selection should recolour text (selRed=%1)").arg(selRed));
+  // The exact red-pixel count depends on the font rasterizer; assert that the
+  // recoloured text contributes a meaningful share of the ink instead of
+  // pinning a fixed antialiasing threshold.
+  require(
+      selRed * 3 >= selInk,
+      QStringLiteral("foreground-only selection should recolour text (selRed=%1 selInk=%2)").arg(selRed).arg(selInk));
 }
 
 } // namespace
