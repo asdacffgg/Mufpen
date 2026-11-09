@@ -1,8 +1,42 @@
-# CLAUDE.md
+# AGENTS.md
+
+## Build acceleration
+
+`ccache` and `ninja` are installed locally. The existing `build/Release` tree
+uses Unix Makefiles, so keep that generator for CI parity and enable ccache on
+it once:
+
+```bash
+cmake --preset conan-release \
+  -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+```
+
+The first build after enabling ccache may still compile everything; later
+rebuilds hit the cache. Prefer target-specific incremental builds and always
+override Conan's generated `-j16` with `-j8`:
+
+```bash
+cmake --build --preset conan-release --target Mufpen -j 8
+cmake --build --preset conan-release --target MufpenDocumentTabsTest -j 8
+ctest --preset conan-release -j 8 -R MufpenSplitViewTest --output-on-failure
+```
+
+`-j16` can be OOM-killed on a 15 GB machine. Do not run the unscoped
+`cmake --build --preset conan-release` (it builds all test targets) unless a
+full build is intended.
+
+Switching to Ninja requires a new build directory and therefore a full rebuild;
+it is optional. The current Makefiles + ccache + target-specific builds are
+sufficient for day-to-day incremental work.
 
 ## Build
 
 This project uses Conan-generated CMake presets. Use the Release preset for local verification:
+
+Install the build-time font conversion dependencies once with
+`python -m pip install -r requirements-build.txt`. CMake converts the original
+WOFF/WOFF2 fonts into `build/theme-fonts/`; do not commit generated TTF files.
 
 ```powershell
 conan install . -s build_type=Release -s compiler.cppstd=20 --build=missing
@@ -30,6 +64,8 @@ ctest --preset conan-release --output-on-failure
 ```
 
 ## Package And Run
+
+MufpenCore/MufpenUi build as SHARED libraries by default (`MUFPEN_LIB_TYPE`); `Mufpen.exe` and `mufpen-mmdc.exe` are thin executables that need `MufpenCore.dll`/`MufpenUi.dll` beside them. The dist target and the MSI assume this layout. Run the packaged app (or any test exe) from its own directory — the DLLs sit next to it.
 
 `cmake --build --preset conan-release` updates `build\Release\Mufpen.exe`, but it does not update `build\dist\Mufpen.exe`.
 
