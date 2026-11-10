@@ -63,6 +63,36 @@ cmake --build --preset conan-release
 ctest --preset conan-release --output-on-failure
 ```
 
+## Verification checklist
+
+These rules come from the 2026-11-07..09 development session; see
+`docs/development-retrospective-2026-11-09.zh.md` for the cases behind them.
+
+- Capture the real exit code when piping build/test output. A bare
+  `... | tail -n` reports `tail`'s status:
+
+  ```bash
+  ctest --preset conan-release -j 8 --output-on-failure 2>&1 | tail -20
+  rc=${PIPESTATUS[0]}
+  ```
+
+- Choose the test platform by dependency: `QT_QPA_PLATFORM=minimal` for geometry
+  and layout; `QT_QPA_PLATFORM=offscreen` for Mermaid, image fonts, and
+  rasterization. Mermaid font registration crashes under `minimal`.
+- Do not measure memory or performance under `offscreen`; it has no real
+  viewport and takes the full-layout path. Use Xvfb or the real desktop and sum
+  PSS across the whole process tree.
+- Before debugging runtime behaviour, confirm which binary is running
+  (`readlink -f "$(command -v mufpen)"`, `pgrep -a -x Mufpen`).
+  `build/Release`, `build/dist`, and `~/.local/opt/Mufpen` are different trees.
+- After moving or renaming the checkout, reconfigure CMake and rebuild fully
+  (the build tree embeds absolute source paths), then run `codegraph index .`.
+- After installing or replacing icons, refresh the GTK cache:
+  `gtk-update-icon-cache -f -t ~/.local/share/icons/hicolor` (the user-local
+  hicolor has no `index.theme`, so a stale cache hides new icons).
+- Only call a failure pre-existing after reproducing it on the previous binary
+  or the previous CI run; do not infer it from the message alone.
+
 ## Package And Run
 
 MufpenCore/MufpenUi build as SHARED libraries by default (`MUFPEN_LIB_TYPE`); `Mufpen.exe` and `mufpen-mmdc.exe` are thin executables that need `MufpenCore.dll`/`MufpenUi.dll` beside them. The dist target and the MSI assume this layout. Run the packaged app (or any test exe) from its own directory — the DLLs sit next to it.
