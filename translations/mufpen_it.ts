@@ -6108,6 +6108,10 @@ I file modificati in seguito o contenenti modifiche non salvate verranno ignorat
         <source>Content search results</source>
         <translation>Risultati della ricerca nel contenuto</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Cerca file di testo in tutte le cartelle aperte e nelle loro sottocartelle.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6228,6 +6232,14 @@ I file modificati in seguito o contenenti modifiche non salvate verranno ignorat
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Nessuna intestazione</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Aggiungi cartella all'area di lavoro…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Rimuovi cartella dall'area di lavoro</translation>
     </message>
 </context>
 <context>

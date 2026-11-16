@@ -64,6 +64,23 @@ public:
   }
 };
 
+// Display/match path relative to the deepest open root that contains it, so
+// files from different workspace roots keep their per-project relative paths.
+QString relativeToRoots(const QString& path, const QStringList& roots) {
+  if (roots.isEmpty()) {
+    return path;
+  }
+  QString best = path;
+  int bestLength = -1;
+  for (const QString& root : roots) {
+    if (mufpen::WorkspaceFileIndex::contains(root, path) && root.size() > bestLength) {
+      bestLength = root.size();
+      best = QDir(root).relativeFilePath(path);
+    }
+  }
+  return best;
+}
+
 } // namespace
 
 mufpen::QuickOpenDialog::QuickOpenDialog(QWidget* parent) : QDialog(parent) {
@@ -112,12 +129,17 @@ mufpen::QuickOpenDialog::~QuickOpenDialog() {
 }
 
 void mufpen::QuickOpenDialog::setWorkspace(const QString& root, const QStringList& extensions) {
+  setWorkspaces(root.isEmpty() ? QStringList{} : QStringList{root}, extensions);
+}
+
+void mufpen::QuickOpenDialog::setWorkspaces(const QStringList& roots, const QStringList& extensions) {
   if (cancel_)
     cancel_->store(true);
-  root_ = root;
+  roots_ = roots;
+  root_ = roots_.isEmpty() ? QString() : roots_.first();
   truncated_ = false;
   unreadable_ = 0;
-  if (root.isEmpty()) {
+  if (roots_.isEmpty()) {
     scanning_ = false;
     retranslateUi();
     return;
@@ -148,8 +170,26 @@ void mufpen::QuickOpenDialog::setWorkspace(const QString& root, const QStringLis
     applyFilter(filterEdit_->text());
   });
   const auto options = SearchSettings::load().scan;
-  watcher->setFuture(QtConcurrent::run([root, extensions, cancellation, options] {
-    return WorkspaceFileIndex::scan(root, extensions, cancellation, options);
+  const QStringList scanRoots = roots_;
+  watcher->setFuture(QtConcurrent::run([scanRoots, extensions, cancellation, options] {
+    WorkspaceFiles merged;
+    QSet<QString> seen;
+    for (const QString& root : scanRoots) {
+      const WorkspaceFiles part = WorkspaceFileIndex::scan(root, extensions, cancellation, options);
+      for (const QString& path : part.paths) {
+        const QString key = WorkspaceFileIndex::pathKey(path);
+        if (seen.contains(key))
+          continue;
+        seen.insert(key);
+        merged.paths.append(path);
+      }
+      merged.truncated = merged.truncated || part.truncated;
+      merged.unreadableDirectories.append(part.unreadableDirectories);
+      merged.unreadableIgnoreFiles.append(part.unreadableIgnoreFiles);
+      if (cancellation->load())
+        break;
+    }
+    return merged;
   }));
   retranslateUi();
 }
@@ -231,9 +271,8 @@ void mufpen::QuickOpenDialog::applyFilter(const QString& text) {
     int score;
   };
   QVector<Ranked> ranked;
-  const QDir rootDirectory(root_);
   for (const auto& path : candidates_) {
-    const QString relative = root_.isEmpty() ? path : rootDirectory.relativeFilePath(path);
+    const QString relative = relativeToRoots(path, roots_);
     const int score = !absoluteQuery.isEmpty() && absoluteQuery == WorkspaceFileIndex::pathKey(path)
                           ? 100000
                           : PathMatcher::score(needle, relative);
@@ -265,8 +304,9 @@ void mufpen::QuickOpenDialog::applyFilter(const QString& text) {
 void mufpen::QuickOpenDialog::addPathItem(const QString& path) {
   auto* item = new QListWidgetItem(QFileInfo(path).fileName(), list_);
   item->setData(Qt::UserRole, path);
-  QString parent =
-      root_.isEmpty() ? QFileInfo(path).absolutePath() : QDir(root_).relativeFilePath(QFileInfo(path).absolutePath());
+  QString parent = relativeToRoots(QFileInfo(path).absolutePath(), roots_);
+  if (parent == QLatin1String("."))
+    parent.clear();
   if (parent == QLatin1String("."))
     parent.clear();
   item->setData(Qt::UserRole + 1, QDir::toNativeSeparators(parent));
@@ -293,6 +333,9 @@ void mufpen::QuickOpenDialog::setThemeDefinition(const ThemeDefinition& definiti
 void mufpen::QuickOpenDialog::retranslateUi() {
   setWindowTitle(tr("Quick Open"));
   filterEdit_->setPlaceholderText(tr("Search file names or paths…"));
-  scopeLabel_->setText(root_.isEmpty() ? tr("Open and recent files") : QDir::toNativeSeparators(root_));
+  QStringList display;
+  for (const QString& root : roots_)
+    display.append(QDir::toNativeSeparators(root));
+  scopeLabel_->setText(display.isEmpty() ? tr("Open and recent files") : display.join(QStringLiteral("  ·  ")));
   applyFilter(filterEdit_->text());
 }

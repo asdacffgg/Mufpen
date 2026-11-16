@@ -6102,6 +6102,10 @@ Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atla
         <source>Content search results</source>
         <translation>İçerik arama sonuçları</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Açık tüm klasörlerde ve alt klasörlerindeki metin dosyalarında ara.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6222,6 +6226,14 @@ Daha sonra düzenlenen veya kaydedilmemiş değişiklikler içeren dosyalar atla
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Başlık Yok</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Klasörü çalışma alanına ekle…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Klasörü çalışma alanından kaldır</translation>
     </message>
 </context>
 <context>

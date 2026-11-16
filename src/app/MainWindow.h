@@ -20,6 +20,7 @@
 #include <QHash>
 #include <QMainWindow>
 #include <QString>
+#include <QStringList>
 #include <memory>
 
 class QLabel;
@@ -62,11 +63,13 @@ public:
   // True when opened or awaiting confirmation in its tab. Rejection happens asynchronously.
   bool openFile(QString path);
   bool hasOpenFile(const QString& path) const;
-  // Open <path> as the sidebar folder root (switches to the Files panel).
-  // Shared body of the File → Open Folder command and the new-window path,
-  // and the entry point for the command-line --folder argument and the
-  // Explorer "Open with Mufpen" directory verb.
+  // Add <path> as a workspace root in the sidebar (switches to the Files
+  // panel). Multiple roots coexist in the file tree; opening a folder no
+  // longer replaces the ones already open. Shared body of the File → Open
+  // Folder command and the entry point for --folder / Explorer directory verb.
   void openFolderAtPath(QString path);
+  // Remove a single workspace root, leaving the others open.
+  void closeFolderRoot(QString path);
   // Restore the actual open tabs/workspace, independently of recent-file history.
   // Command-line files/folders and recovered drafts take precedence.
   void restoreStartupFile();
@@ -465,7 +468,8 @@ private:
   // Exclusive radio groups (image resize, image insert action), keyed by the
   // declaration's actionGroup id. Rebuilt on every menu rebuild.
   QHash<QString, QActionGroup*> actionGroups_;
-  QString sidebarFolderRoot_;
+  QString sidebarFolderRoot_;      // active root (the one following the open document)
+  QStringList sidebarFolderRoots_; // all open workspace roots, in session order
   int zoomPercent_ = 100;
   int fontSizePx_ = 16;
   int contentWidthPx_ = 0;

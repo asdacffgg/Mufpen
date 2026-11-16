@@ -626,6 +626,7 @@ void mufpen::MainWindow::connectSidebarSignals() {
   connect(search, &SearchPanelWidget::replaceRequested, this, &MainWindow::previewWorkspaceReplace);
   connect(sidebar_, &SidebarWidget::folderStateChanged, this, [this] {
     sidebarFolderRoot_ = sidebar_->folderRoot();
+    sidebarFolderRoots_ = sidebar_->folderRoots();
     updateFileActions();
     scheduleSessionSave();
   });

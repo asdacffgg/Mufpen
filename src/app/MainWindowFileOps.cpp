@@ -5,6 +5,7 @@
 #include "app/PreferencesDialog.h"
 #include "app/QuickOpenDialog.h"
 #include "app/SidebarWidget.h"
+#include "app/WorkspaceFiles.h"
 #include "app/RenderEditorBackend.h"
 #include "app/SourceEditorBackend.h"
 #include "document/TextStats.h"
@@ -336,9 +337,25 @@ void mufpen::MainWindow::restoreSessionState(const QVariantMap& snapshot) {
     // Explicitly suppress the automatic parent-folder fallback: an empty saved
     // workspace means the user closed it, even if some files remain open.
     sidebar_->setFolderRoot({});
-    const QString folder = snapshot.value(QStringLiteral("folder")).toString();
-    if (QFileInfo(folder).isDir())
-      openFolderAtPath(folder);
+    sidebarFolderRoots_.clear();
+    sidebarFolderRoot_.clear();
+    QStringList folders;
+    const QVariant savedFolders = snapshot.value(QStringLiteral("folders"));
+    if (savedFolders.isValid()) {
+      folders = savedFolders.toStringList();
+    } else if (const QString folder = snapshot.value(QStringLiteral("folder")).toString();
+               QFileInfo(folder).isDir()) {
+      folders = {folder}; // old single-root session
+    }
+    for (const QString& folder : std::as_const(folders)) {
+      if (QFileInfo(folder).isDir() && !sidebarFolderRoots_.contains(folder))
+        sidebarFolderRoots_.append(folder);
+    }
+    if (!sidebarFolderRoots_.isEmpty()) {
+      sidebar_->setFolderRoots(sidebarFolderRoots_);
+      sidebarFolderRoot_ = sidebar_->folderRoot();
+      setSidebarPanel(SidebarWidget::Panel::Files);
+    }
     if (snapshot.contains(QStringLiteral("folderState")))
       sidebar_->restoreFolderState(snapshot.value(QStringLiteral("folderState")).toMap());
     const QStringList files = snapshot.value(QStringLiteral("files")).toStringList();
@@ -699,7 +716,7 @@ void mufpen::MainWindow::quickOpen() {
   QuickOpenDialog dialog(this);
   dialog.setThemeDefinition(themeManager_.currentDefinition());
   dialog.setCandidates(candidates);
-  dialog.setWorkspace(sidebar_->folderRoot(), WorkspaceFileIndex::textExtensions());
+  dialog.setWorkspaces(sidebar_->folderRoots(), WorkspaceFileIndex::textExtensions());
   if (dialog.exec() == QDialog::Accepted) {
     const QString path = dialog.selectedPath();
     if (!path.isEmpty()) {
@@ -909,10 +926,14 @@ void mufpen::MainWindow::showInSidebar() {
     return;
   }
   const QString path = tab_->session.filePath();
-  const QString root = sidebar_->folderRoot();
-  const QString relative = QDir(root).relativeFilePath(path);
-  if (root.isEmpty() || relative == QStringLiteral("..") || relative.startsWith(QStringLiteral("../")) ||
-      QDir::isAbsolutePath(relative)) {
+  bool inside = false;
+  for (const QString& root : sidebar_->folderRoots()) {
+    if (WorkspaceFileIndex::contains(root, path)) {
+      inside = true;
+      break;
+    }
+  }
+  if (!inside) {
     openFolderAtPath(QFileInfo(path).absolutePath());
   }
   setSidebarPanel(SidebarWidget::Panel::Files);
@@ -995,10 +1016,22 @@ void mufpen::MainWindow::openFolderAtPath(QString path) {
   const QString openedPath = path; // capture before the move, for recent-folders recording
   sidebarFolderRoot_ = std::move(path);
   if (sidebar_) {
-    sidebar_->setFolderRoot(sidebarFolderRoot_);
+    sidebar_->addFolderRoot(sidebarFolderRoot_);
+    sidebarFolderRoots_ = sidebar_->folderRoots();
     setSidebarPanel(SidebarWidget::Panel::Files);
   }
+  if (!sidebarFolderRoots_.contains(openedPath))
+    sidebarFolderRoots_.append(openedPath);
   addRecentFolder(openedPath);
+  saveSessionState();
+}
+
+void mufpen::MainWindow::closeFolderRoot(QString path) {
+  if (!sidebar_ || path.isEmpty())
+    return;
+  sidebar_->removeFolderRoot(path);
+  sidebarFolderRoots_ = sidebar_->folderRoots();
+  sidebarFolderRoot_ = sidebar_->folderRoot();
   saveSessionState();
 }
 

@@ -60,7 +60,15 @@ public:
   // for F6 pane cycling.
   QWidget* activeTreeWidget() const;
   void setCurrentDocument(QString displayName, QString filePath, bool modified);
+  // Replace the whole root list (used by session restore / explicit close).
   void setFolderRoot(QString path);
+  // Add / remove a single workspace root; the tree shows all of them at once.
+  void addFolderRoot(QString path);
+  void removeFolderRoot(QString path);
+  void setFolderRoots(QStringList paths);
+  QStringList folderRoots() const;
+  // The active root: the one containing the current document, or the most
+  // recently opened one. Single-root callers (creation, search, pin) use it.
   QString folderRoot() const;
   bool folderPinned() const { return folderPinned_; }
   void setFolderPinned(bool pinned);
@@ -68,6 +76,8 @@ public:
   void restoreFolderState(const QVariantMap& state);
   QStringList expandedFolders() const;
   void restoreExpandedFolders(const QStringList& paths);
+  // Maximum number of simultaneously open workspace roots.
+  static constexpr int kMaxRoots = 16;
   void collapseAllFolders();
   void expandAllFolders();
   void refreshFolders();
@@ -114,8 +124,11 @@ private:
   void updateFolderControls();
   void updateFolderPin();
   void changeFolderRoot(QString path);
+  void activateRoot(QString path, bool addIfMissing);
   void followCurrentDocument();
-  QVariantMap captureFolderView() const;
+  QVariantMap captureFolderView(const QString& root) const;
+  QStringList expandedFoldersFor(const QString& root) const;
+  void restoreExpandedFoldersFor(const QString& root, const QStringList& paths);
   void restoreFolderView();
   void updateFileSort();
   void processFolderExpansions();

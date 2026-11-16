@@ -1,4 +1,5 @@
 #include "app/MainWindow.h"
+#include "app/WorkspaceFiles.h"
 
 #include "document/MarkdownDocument.h"
 #include "editor/CursorPosition.h"
@@ -365,8 +366,16 @@ void mufpen::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool 
     add(tr("Reveal in File Manager"), [this, path] { revealPathInManager(path); });
   }
 
-  if (!sidebar_->folderRoot().isEmpty()) {
+  if (!sidebar_->folderRoots().isEmpty()) {
     menu.addSeparator();
+    add(mufpen::SidebarWidget::tr("Add Folder to Workspace…"), [this] { openFolder(); });
+    const QString key = mufpen::WorkspaceFileIndex::pathKey(path);
+    for (const QString& root : sidebar_->folderRoots()) {
+      if (onItem && isDir && !key.isEmpty() && mufpen::WorkspaceFileIndex::pathKey(root) == key) {
+        add(mufpen::SidebarWidget::tr("Remove Folder from Workspace"), [this, root] { closeFolderRoot(root); });
+        break;
+      }
+    }
     add(mufpen::SidebarWidget::tr("Expand All Folders"), [this] { sidebar_->expandAllFolders(); });
     add(mufpen::SidebarWidget::tr("Collapse All Folders"), [this] { sidebar_->collapseAllFolders(); });
     add(mufpen::SidebarWidget::tr("Close Folder"), [this] { closeFolder(); });

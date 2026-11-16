@@ -6114,6 +6114,10 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <source>Content search results</source>
         <translation>Результаты поиска по содержимому</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Поиск текстовых файлов во всех открытых папках и их подпапках.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6234,6 +6238,14 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Нет заголовков</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Добавить папку в рабочую область…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Удалить папку из рабочей области</translation>
     </message>
 </context>
 <context>

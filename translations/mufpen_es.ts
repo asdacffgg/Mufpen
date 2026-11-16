@@ -6112,6 +6112,10 @@ Se omitirán los archivos editados posteriormente o que contengan cambios sin gu
         <source>Content search results</source>
         <translation>Resultados de búsqueda en el contenido</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Buscar archivos de texto en todas las carpetas abiertas y sus subcarpetas.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6232,6 +6236,14 @@ Se omitirán los archivos editados posteriormente o que contengan cambios sin gu
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Sin encabezados</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Añadir carpeta al espacio de trabajo…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Quitar carpeta del espacio de trabajo</translation>
     </message>
 </context>
 <context>

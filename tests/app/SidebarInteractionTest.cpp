@@ -1,5 +1,6 @@
 #include "app/SidebarWidget.h"
 #include "app/FileTreeModel.h"
+#include "app/MultiRootSourceModel.h"
 #include "io/DocumentFileType.h"
 
 #include "../TestUtils.h"
@@ -98,7 +99,7 @@ struct FileTreeFixture {
     waitUntil(
         [&] {
           folder = QPersistentModelIndex(model->index(dir.filePath(QStringLiteral("Folder"))));
-          return model->rowCount(tree->rootIndex()) == rootRows && folder.isValid() &&
+          return model->rowCount(model->index(sidebar.folderRoot())) == rootRows && folder.isValid() &&
                  !tree->visualRect(folder).isEmpty();
         },
         "file tree should load its root rows");
@@ -188,6 +189,62 @@ void testFileTreeShowsOnlyMarkdownAndImages() {
   const QRect row = f.tree->visualRect(image);
   doubleClick(f.tree->viewport(), QPoint(row.left() + 40, row.center().y()));
   require(f.openedFiles == 1 && f.openedPath == imagePath, "image double-click opens the preview tab");
+}
+
+void testMultipleWorkspaceRoots() {
+  QTemporaryDir first, second;
+  const auto write = [](const QTemporaryDir& dir, const QString& name) {
+    QFile file(dir.filePath(name));
+    require(file.open(QIODevice::WriteOnly), "create multi-root fixture file");
+    file.write("# Note\n");
+  };
+  require(QDir(first.path()).mkpath("Sub") && QDir(second.path()).mkpath("Docs"), "create multi-root subfolders");
+  write(first, "alpha.md");
+  write(first, "Sub/nested.md");
+  write(second, "beta.md");
+  write(second, "Docs/deep.md");
+
+  SidebarWidget sidebar;
+  sidebar.resize(320, 600);
+  sidebar.show();
+  auto* tree = sidebar.findChild<QTreeView*>("FileTree");
+  auto* model = qobject_cast<FileTreeModel*>(tree->model());
+  require(model && tree->isVisible() == false, "a fresh sidebar starts with no roots");
+
+  sidebar.addFolderRoot(first.path());
+  sidebar.addFolderRoot(second.path());
+  require(sidebar.folderRoots().size() == 2, "two directories can be open at once");
+  require(sidebar.folderRoot() == second.path(), "the newly added root becomes active");
+  waitUntil(
+      [&] {
+        return model->rowCount() == 2 && model->index(first.path()).isValid() &&
+               model->index(second.path()).isValid();
+      },
+      "both roots appear as top-level rows");
+  require(tree->isExpanded(model->index(first.path())) && tree->isExpanded(model->index(second.path())),
+          "both root folders are expanded so their contents coexist");
+
+  // Opening a document in the first root changes the active root without
+  // dropping the second one.
+  sidebar.setFolderPinned(false); // allow follow mode to locate the document's root
+  sidebar.setCurrentDocument("alpha.md", first.filePath("alpha.md"), false);
+  require(sidebar.folderRoot() == first.path() && sidebar.folderRoots().size() == 2,
+          "following a document locates it in its own root and keeps the others");
+
+  // Session state carries every root, not only the active one.
+  {
+    SidebarWidget restored;
+    restored.restoreFolderState(sidebar.folderState());
+    require(restored.folderRoots().size() == 2 && restored.folderRoot() == first.path(),
+            "all open roots survive a session round-trip");
+  }
+
+  sidebar.removeFolderRoot(first.path());
+  require(sidebar.folderRoots() == QStringList{second.path()} && sidebar.folderRoot() == second.path(),
+          "closing one root leaves the others open");
+  sidebar.removeFolderRoot(second.path());
+  require(sidebar.folderRoots().isEmpty() && sidebar.folderRoot().isEmpty() && !tree->isVisible(),
+          "closing the last root returns to the empty state");
 }
 
 void testRightClickAndInlineRenameDoNotToggleFolder() {
@@ -344,7 +401,7 @@ void testFolderPinAndFollowState() {
   const auto emptyState = sidebar.folderState();
   const QString a = dir.filePath("A"), c = dir.filePath("C");
   sidebar.setCurrentDocument("note000.md", a + "/note000.md", false);
-  waitUntil([&] { return model->rowCount(tree->rootIndex()) == 81; }, "first followed directory loads");
+  waitUntil([&] { return model->rowCount(model->index(sidebar.folderRoot())) == 81; }, "first followed directory loads");
   require(sidebar.folderRoot() == a && !pin->isChecked() && pin->isEnabled(), "direct file open follows its directory");
   sidebar.restoreExpandedFolders({"Branch", "Branch/Deep"});
   waitUntil(
@@ -357,10 +414,13 @@ void testFolderPinAndFollowState() {
   QApplication::processEvents();
   const int scroll = tree->verticalScrollBar()->value();
   const auto anchor = QPersistentModelIndex(tree->indexAt({60, 0}));
+  // Capture the path while the index is fresh; proxy persistent-index rows can
+  // shift when a new root is added to the aggregate source.
+  const QString savedAnchorPath = model->filePath(anchor);
   const int y = tree->visualRect(anchor).top();
   require(scroll > 0 && anchor.isValid(), "following fixture has a scrolled view");
   sidebar.setCurrentDocument("note000.md", c + "/note000.md", false);
-  waitUntil([&] { return model->rowCount(tree->rootIndex()) == 80; }, "second followed directory loads");
+  waitUntil([&] { return model->rowCount(model->index(sidebar.folderRoot())) == 80; }, "second followed directory loads");
   require(sidebar.folderRoot() == c, "another file changes the followed root");
   sidebar.setCurrentDocument("note000.md", a + "/note000.md", false);
   waitUntil(
@@ -377,7 +437,7 @@ void testFolderPinAndFollowState() {
     restored.restoreFolderState(sidebar.folderState());
     auto* restoredTree = restored.findChild<QTreeView*>("FileTree");
     auto* restoredModel = qobject_cast<FileTreeModel*>(restoredTree->model());
-    const QString anchorPath = model->filePath(anchor);
+    const QString anchorPath = savedAnchorPath;
     require(anchorPath.startsWith(a + "/Branch/Deep/"), "saved viewport starts inside a nested branch");
     waitUntil(
         [&] {
@@ -419,6 +479,7 @@ void testFolderPinAndFollowState() {
     restored.setCurrentDocument("note000.md", c + "/note000.md", false);
     require(restored.folderRoot().isEmpty(), "explicitly closed tree stays closed after restart");
     restored.restoreFolderState(emptyState);
+    restored.setCurrentDocument("note000.md", c + "/note000.md", false);
     require(restored.folderRoot() == c && !restored.folderPinned(),
             "fresh empty session can still follow its first opened file after restart");
   }
@@ -459,8 +520,8 @@ void testClosingWorkspaceAndToolbarCreationTargets() {
 
 QStringList fileNames(FileTreeFixture& f) {
   QStringList result;
-  for (int row = 0; row < f.model->rowCount(f.tree->rootIndex()); ++row) {
-    const auto index = f.model->index(row, 0, f.tree->rootIndex());
+  for (int row = 0; row < f.model->rowCount(f.model->index(f.sidebar.folderRoot())); ++row) {
+    const auto index = f.model->index(row, 0, f.model->index(f.sidebar.folderRoot()));
     if (!f.model->isDir(index))
       result.append(f.model->fileName(index));
   }
@@ -485,7 +546,7 @@ void testSortMenuAndPersistence() {
     writeFile("note2.md", 2, 1200000000);
     writeFile("a.txt", 30, 1100000000);
   });
-  waitUntil([&] { return f.model->rowCount(f.tree->rootIndex()) == 5; }, "new files join the sorted tree");
+  waitUntil([&] { return f.model->rowCount(f.model->index(f.sidebar.folderRoot())) == 5; }, "new files join the sorted tree");
   auto* menu = f.sidebar.findChild<QMenu*>("FileSortMenu");
   require(menu && f.sidebar.findChild<QToolButton*>("SortFilesButton")->menu() == menu,
           "sort icon opens a dropdown menu");
@@ -494,7 +555,7 @@ void testSortMenuAndPersistence() {
     require(action && !action->text().isEmpty(), "sort option has a translated label");
     action->trigger();
     QApplication::processEvents();
-    require(f.model->isDir(f.model->index(0, 0, f.tree->rootIndex())), "folders stay first in either sort direction");
+    require(f.model->isDir(f.model->index(0, 0, f.model->index(f.sidebar.folderRoot()))), "folders stay first in either sort direction");
   };
   f.tree->setCurrentIndex(f.model->index(f.dir.filePath("document.md")));
   QPersistentModelIndex selected(f.tree->currentIndex());
@@ -523,7 +584,10 @@ void testSortMenuAndPersistence() {
             "creation dates are ordered with a fallback on unsupported filesystems");
     previous = created;
   }
-  require(selected.isValid() && f.tree->currentIndex() == selected && f.model->fileName(selected) == "document.md",
+  // The aggregate source can shift proxy rows on re-sort, so verify the
+  // user-visible selection by path from a freshly resolved current index.
+  require(selected.isValid() && f.tree->currentIndex().isValid() &&
+              f.model->fileName(f.tree->currentIndex()) == "document.md",
           "sorting preserves the selected file");
   std::unique_ptr<QMimeData> mime(f.model->mimeData({selected}));
   require(mime && mime->hasFormat(kMufpenFileTreeDragMime) && mime->hasUrls(),
@@ -554,7 +618,8 @@ void testRefreshRescansWithoutLosingState() {
       "nested selection is loaded before refresh");
   f.tree->setCurrentIndex(f.model->index(inside));
   const auto saved = f.sidebar.expandedFolders();
-  auto* oldSource = qobject_cast<QFileSystemModel*>(f.model->sourceModel());
+  auto* aggregate = qobject_cast<MultiRootSourceModel*>(f.model->sourceModel());
+  auto* oldSource = aggregate ? aggregate->sourceForPath(f.dir.path()) : nullptr;
   require(oldSource != nullptr, "refresh fixture exposes the asynchronous filesystem source");
   // Simulate missed watcher notifications: refresh must discard stale caches,
   // rather than merely repainting the tree or reusing the same root index.
@@ -571,10 +636,13 @@ void testRefreshRescansWithoutLosingState() {
   refresh->click();
   waitUntil(
       [&] {
-        return f.model->sourceModel() != oldSource && f.model->index(added).isValid() &&
-               !f.model->index(f.dir.filePath("document.md")).isValid() &&
-               f.tree->isExpanded(f.model->index(f.dir.filePath("Folder/Nested"))) &&
-               f.model->filePath(f.tree->currentIndex()) == inside;
+        auto* currentAggregate = qobject_cast<MultiRootSourceModel*>(f.model->sourceModel());
+        const bool replaced = currentAggregate && currentAggregate->sourceForPath(f.dir.path()) != oldSource;
+        const bool addedOk = f.model->index(added).isValid();
+        const bool removedOk = !f.model->index(f.dir.filePath("document.md")).isValid();
+        const bool expandedOk = f.tree->isExpanded(f.model->index(f.dir.filePath("Folder/Nested")));
+        const bool selOk = f.model->filePath(f.tree->currentIndex()) == inside;
+        return replaced && addedOk && removedOk && expandedOk && selOk;
       },
       "manual refresh reloads missed changes and restores nested expansion and selection");
   require(f.sidebar.expandedFolders() == saved && f.openedFiles == 0,
@@ -611,6 +679,7 @@ int main(int argc, char** argv) {
         QLocale::setDefault(previousLocale);
       });
   runTest("testRefreshRescansWithoutLosingState", testRefreshRescansWithoutLosingState);
+  runTest("testMultipleWorkspaceRoots", testMultipleWorkspaceRoots);
   runTest("testToolbarCollapsesFoldersAndRestoresState", testToolbarCollapsesFoldersAndRestoresState);
   runTest("testClosingWorkspaceAndToolbarCreationTargets", testClosingWorkspaceAndToolbarCreationTargets);
   runTest("testFolderNameAndRowToggleOnSingleClick", testFolderNameAndRowToggleOnSingleClick);

@@ -6136,6 +6136,10 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <source>Content search results</source>
         <translation>内容搜索结果</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>在所有打开的文件夹及其子文件夹中搜索文本文件</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6256,6 +6260,14 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>没有标题</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>添加文件夹到工作区…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>从工作区移除文件夹</translation>
     </message>
 </context>
 <context>

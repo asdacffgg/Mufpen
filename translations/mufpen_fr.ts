@@ -6112,6 +6112,10 @@ Les fichiers modifiés par la suite ou contenant des modifications non enregistr
         <source>Content search results</source>
         <translation>Résultats de recherche dans le contenu</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Rechercher dans les fichiers texte de tous les dossiers ouverts et de leurs sous-dossiers.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6232,6 +6236,14 @@ Les fichiers modifiés par la suite ou contenant des modifications non enregistr
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Aucun titre</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Ajouter un dossier à l'espace de travail…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Retirer le dossier de l'espace de travail</translation>
     </message>
 </context>
 <context>

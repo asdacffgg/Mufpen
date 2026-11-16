@@ -6114,6 +6114,10 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <source>Content search results</source>
         <translation>내용 검색 결과</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>열려 있는 모든 폴더와 하위 폴더의 텍스트 파일을 검색합니다.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6234,6 +6238,14 @@ Files edited afterward or containing unsaved changes will be skipped.</source>
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>제목 없음</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>작업 영역에 폴더 추가…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>작업 영역에서 폴더 제거</translation>
     </message>
 </context>
 <context>

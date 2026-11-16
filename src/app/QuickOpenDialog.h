@@ -30,6 +30,8 @@ public:
 
   void setCandidates(QStringList paths);
   void setWorkspace(const QString& root, const QStringList& extensions);
+  // Scan every open workspace root and merge the candidates (deduplicated).
+  void setWorkspaces(const QStringList& roots, const QStringList& extensions);
   void setThemeDefinition(const ThemeDefinition& definition);
   QString selectedPath() const;
 
@@ -51,6 +53,7 @@ private:
   QTimer* filterTimer_ = nullptr;
   QStringList candidates_;
   QString root_;
+  QStringList roots_;
   QString lastFilter_;
   SearchCancellation cancel_;
   bool scanning_ = false;

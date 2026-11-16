@@ -378,8 +378,16 @@ void mufpen::SidebarWidget::setupFilesPanel() {
   connect(fileModel_, &FileTreeModel::directoryLoaded, this, [this](const QString& directory) {
     if (expandAllRequested_)
       queueFolderExpansion(directory);
-    else if (!expandedFolderPaths_.isEmpty())
-      queueFolderExpansion(folderRoot_);
+    else if (!expandedFolderPaths_.isEmpty()) {
+      // Refresh only the root whose directory just loaded; other roots keep
+      // their already-restored expansion state.
+      for (const QString& root : fileModel_->roots()) {
+        if (WorkspaceFileIndex::contains(root, directory)) {
+          queueFolderExpansion(root);
+          break;
+        }
+      }
+    }
     if (!pendingFolderView_.isEmpty() || !pendingRevealPath_.isEmpty())
       folderViewTimer_->start(0);
     if (!refreshSelectionPath_.isEmpty()) {
@@ -535,7 +543,19 @@ void mufpen::SidebarWidget::setCurrentDocument(QString displayName, QString file
   if (!currentFilePath_.isEmpty() && WorkspaceFileIndex::contains(folderRoot_, currentFilePath_)) {
     const QModelIndex index = fileModel_->index(currentFilePath_);
     if (index.isValid()) {
+      // QTreeView auto-expands ancestors to reveal the current row, and the
+      // `expanded` signal would record those as user expansions. Snapshot the
+      // saved branch set and restore it exactly afterwards.
+      const QSet<QString> savedBranches = expandedFolderPaths_;
       fileTree_->setCurrentIndex(index);
+      for (const QString& path : std::as_const(expandedFolderPaths_)) {
+        if (savedBranches.contains(path))
+          continue;
+        const QModelIndex branch = fileModel_->index(path);
+        if (branch.isValid() && fileTree_->isExpanded(branch))
+          fileTree_->setExpanded(branch, false);
+      }
+      expandedFolderPaths_ = savedBranches;
       // Status and parse notifications for the same document must not undo
       // the user's collapsed folders (or the restored expansion state).
       // A file opened from a visible row stays where the user clicked it.
@@ -550,12 +570,92 @@ void mufpen::SidebarWidget::setCurrentDocument(QString displayName, QString file
 }
 
 void mufpen::SidebarWidget::setFolderRoot(QString path) {
-  folderExplicitlyClosed_ = path.isEmpty();
-  folderPinned_ = !path.isEmpty();
-  changeFolderRoot(std::move(path));
+  const QString cleaned = path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
+  folderExplicitlyClosed_ = cleaned.isEmpty();
+  folderPinned_ = !cleaned.isEmpty();
+  fileModel_->setRoots(cleaned.isEmpty() ? QStringList{} : QStringList{cleaned});
+  folderRoot_ = cleaned;
+  for (const QString& root : fileModel_->roots()) {
+    const QModelIndex rootIndex = fileModel_->index(root);
+    if (rootIndex.isValid())
+      fileTree_->setExpanded(rootIndex, true);
+  }
   if (searchPanel_)
-    searchPanel_->setRoot(folderRoot_);
-  updateFolderPin();
+    searchPanel_->setRoots(fileModel_->roots());
+  updateFolderControls();
+  emit folderStateChanged();
+}
+
+void mufpen::SidebarWidget::setFolderRoots(QStringList paths) {
+  fileModel_->setRoots(std::move(paths));
+  const QStringList roots = fileModel_->roots();
+  if (roots.isEmpty()) {
+    folderRoot_.clear();
+  } else if (fileModel_->rootForPath(folderRoot_) < 0) {
+    folderRoot_ = roots.first();
+  }
+  folderExplicitlyClosed_ = roots.isEmpty();
+  for (const QString& root : roots) {
+    const QModelIndex rootIndex = fileModel_->index(root);
+    if (rootIndex.isValid())
+      fileTree_->setExpanded(rootIndex, true);
+  }
+  if (searchPanel_)
+    searchPanel_->setRoots(roots);
+  updateFolderControls();
+  emit folderStateChanged();
+}
+
+QStringList mufpen::SidebarWidget::folderRoots() const {
+  return fileModel_->roots();
+}
+
+void mufpen::SidebarWidget::addFolderRoot(QString path) {
+  const QString cleaned = path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
+  if (cleaned.isEmpty() || !QFileInfo(cleaned).isDir()) {
+    return;
+  }
+  if (fileModel_->rootForPath(cleaned) >= 0) {
+    activateRoot(cleaned, false); // already open: just make it the active root
+    return;
+  }
+  if (fileModel_->rootCount() >= kMaxRoots) {
+    return;
+  }
+  folderExplicitlyClosed_ = false;
+  folderPinned_ = true; // Open Folder pins the newly added root, as before.
+  fileModel_->addRoot(cleaned);
+  if (searchPanel_)
+    searchPanel_->setRoots(fileModel_->roots());
+  activateRoot(cleaned, false);
+}
+
+void mufpen::SidebarWidget::removeFolderRoot(QString path) {
+  const QString key = WorkspaceFileIndex::pathKey(path);
+  if (key.isEmpty() || !fileModel_->removeRoot(path)) {
+    return;
+  }
+  for (qsizetype i = folderViews_.size(); i > 0; --i) {
+    if (WorkspaceFileIndex::pathKey(folderViews_.at(i - 1).toMap().value("root").toString()) == key) {
+      folderViews_.removeAt(i - 1);
+    }
+  }
+  for (const QString& expanded : std::as_const(expandedFolderPaths_)) {
+    if (WorkspaceFileIndex::contains(path, expanded)) {
+      expandedFolderPaths_.remove(expanded);
+    }
+  }
+  const QStringList roots = fileModel_->roots();
+  if (roots.isEmpty()) {
+    folderRoot_.clear();
+    folderPinned_ = false;
+    folderExplicitlyClosed_ = true;
+  } else if (WorkspaceFileIndex::pathKey(folderRoot_) == key) {
+    folderRoot_ = roots.first();
+  }
+  if (searchPanel_)
+    searchPanel_->setRoots(roots);
+  updateFolderControls();
   emit folderStateChanged();
 }
 
@@ -573,49 +673,74 @@ void mufpen::SidebarWidget::setFolderPinned(bool pinned) {
 void mufpen::SidebarWidget::followCurrentDocument() {
   if (folderPinned_ || folderExplicitlyClosed_ || currentFilePath_.isEmpty())
     return;
+  // Reveal the document inside the deepest open root that contains it.
+  QString target;
+  int bestLength = -1;
+  for (const QString& root : fileModel_->roots()) {
+    if (WorkspaceFileIndex::contains(root, currentFilePath_) && root.size() > bestLength) {
+      bestLength = root.size();
+      target = root;
+    }
+  }
+  if (!target.isEmpty()) {
+    changeFolderRoot(target);
+    return;
+  }
+  // No open root contains it: auto-add its directory, keeping follow behaviour
+  // useful without replacing the roots the user already opened.
   const QString parent = QFileInfo(currentFilePath_).absolutePath();
   if (QFileInfo(parent).isDir())
     changeFolderRoot(parent);
 }
 
 void mufpen::SidebarWidget::changeFolderRoot(QString path) {
-  path = path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
-  if (WorkspaceFileIndex::pathKey(path) == WorkspaceFileIndex::pathKey(folderRoot_)) {
+  activateRoot(std::move(path), true);
+}
+
+void mufpen::SidebarWidget::activateRoot(QString path, bool addIfMissing) {
+  const QString cleaned = path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
+  if (!cleaned.isEmpty() && fileModel_->rootForPath(cleaned) < 0) {
+    if (!addIfMissing || !QFileInfo(cleaned).isDir() || fileModel_->rootCount() >= kMaxRoots) {
+      return;
+    }
+    fileModel_->addRoot(cleaned);
+    if (searchPanel_)
+      searchPanel_->setRoots(fileModel_->roots());
+  }
+  if (WorkspaceFileIndex::pathKey(cleaned) == WorkspaceFileIndex::pathKey(folderRoot_)) {
     updateFolderControls();
     return;
   }
-  // Preserve each root before collapsing the shared view. Keep the cache bounded
-  // even when the user opens files from many unrelated directories.
-  const auto previous = captureFolderView();
+  // Remember the previous root's viewport before switching the active one.
+  const auto previous = captureFolderView(folderRoot_);
   if (!previous.isEmpty()) {
     const QString key = WorkspaceFileIndex::pathKey(folderRoot_);
-    for (qsizetype i = folderViews_.size(); i > 0; --i)
-      if (WorkspaceFileIndex::pathKey(folderViews_.at(i - 1).toMap().value("root").toString()) == key)
+    for (qsizetype i = folderViews_.size(); i > 0; --i) {
+      if (WorkspaceFileIndex::pathKey(folderViews_.at(i - 1).toMap().value("root").toString()) == key) {
         folderViews_.removeAt(i - 1);
+      }
+    }
     folderViews_.prepend(previous);
-    while (folderViews_.size() > 15)
+    while (folderViews_.size() > kMaxRoots) {
       folderViews_.removeLast();
+    }
   }
-  const QSignalBlocker blockTree(fileTree_);
-  expandAllRequested_ = false;
+  folderRoot_ = cleaned;
+  // Keep the search panel following the active root until the user types a
+  // query; an existing search scope is deliberately preserved.
+  if (searchPanel_)
+    searchPanel_->setDefaultRoot(folderRoot_);
   folderViewTimer_->stop();
   pendingFolderView_.clear();
   pendingRevealPath_.clear();
-  folderExpansionTimer_->stop();
-  folderExpansionQueue_.clear();
-  queuedFolderExpansions_.clear();
-  refreshSelectionPath_.clear();
-  refreshAnchorPath_.clear();
-  fileTree_->collapseAll();
-  expandedFolderPaths_.clear();
-  folderRoot_ = std::move(path);
-  if (searchPanel_)
-    searchPanel_->setDefaultRoot(folderRoot_);
-  fileTree_->clearSelection();
-  fileTree_->setCurrentIndex({});
-  fileTree_->setRootIndex(folderRoot_.isEmpty() ? QModelIndex() : fileModel_->setRootPath(folderRoot_));
+  for (const QString& root : fileModel_->roots()) {
+    const QModelIndex rootIndex = fileModel_->index(root);
+    if (rootIndex.isValid()) {
+      fileTree_->setExpanded(rootIndex, true);
+    }
+  }
   updateFolderControls();
-  if (WorkspaceFileIndex::contains(folderRoot_, currentFilePath_)) {
+  if (!folderRoot_.isEmpty() && WorkspaceFileIndex::contains(folderRoot_, currentFilePath_)) {
     const QModelIndex currentIndex = fileModel_->index(currentFilePath_);
     if (currentIndex.isValid()) {
       fileTree_->setCurrentIndex(currentIndex);
@@ -624,7 +749,7 @@ void mufpen::SidebarWidget::changeFolderRoot(QString path) {
   for (const auto& value : std::as_const(folderViews_)) {
     const auto state = value.toMap();
     if (WorkspaceFileIndex::pathKey(state.value("root").toString()) == WorkspaceFileIndex::pathKey(folderRoot_)) {
-      restoreExpandedFolders(state.value("expanded").toStringList());
+      restoreExpandedFoldersFor(folderRoot_, state.value("expanded").toStringList());
       pendingFolderView_ = state;
       folderViewTimer_->start(0);
       break;
@@ -633,58 +758,109 @@ void mufpen::SidebarWidget::changeFolderRoot(QString path) {
   emit folderStateChanged();
 }
 
-QVariantMap mufpen::SidebarWidget::captureFolderView() const {
-  if (folderRoot_.isEmpty())
+QVariantMap mufpen::SidebarWidget::captureFolderView(const QString& root) const {
+  if (root.isEmpty())
     return {};
   // A root switched away before asynchronous loading completed still owns its
   // saved position, not the temporary empty view shown during that loading.
-  if (!pendingFolderView_.isEmpty()) {
+  if (!pendingFolderView_.isEmpty() &&
+      WorkspaceFileIndex::pathKey(pendingFolderView_.value("root").toString()) == WorkspaceFileIndex::pathKey(root)) {
     auto state = pendingFolderView_;
-    state.insert("expanded", expandedFolders());
+    state.insert("expanded", expandedFoldersFor(root));
     return state;
   }
-  const auto anchor = fileTree_->indexAt({fileTree_->viewport()->width() / 2, 0});
-  return {{"root", folderRoot_},
-          {"expanded", expandedFolders()},
-          {"anchor", fileModel_->filePath(anchor)},
-          {"offset", fileTree_->visualRect(anchor).top()},
-          {"vertical", fileTree_->verticalScrollBar()->value()},
-          {"horizontal", fileTree_->horizontalScrollBar()->value()}};
+  QVariantMap state{{"root", root}, {"expanded", expandedFoldersFor(root)}};
+  // Scroll position belongs to the active root only; hidden roots keep just
+  // their expansion state so switching back restores the branch set.
+  if (WorkspaceFileIndex::pathKey(root) == WorkspaceFileIndex::pathKey(folderRoot_)) {
+    const auto anchor = fileTree_->indexAt({fileTree_->viewport()->width() / 2, 0});
+    state.insert("anchor", fileModel_->filePath(anchor));
+    state.insert("offset", fileTree_->visualRect(anchor).top());
+    state.insert("vertical", fileTree_->verticalScrollBar()->value());
+    state.insert("horizontal", fileTree_->horizontalScrollBar()->value());
+  }
+  return state;
 }
 
 QVariantMap mufpen::SidebarWidget::folderState() const {
   QVariantList views;
-  const auto current = captureFolderView();
-  if (!current.isEmpty())
-    views.append(current);
-  for (const auto& value : folderViews_)
-    if (views.size() < 16 &&
-        WorkspaceFileIndex::pathKey(value.toMap().value("root").toString()) != WorkspaceFileIndex::pathKey(folderRoot_))
+  for (const QString& root : fileModel_->roots()) {
+    if (views.size() >= kMaxRoots)
+      break;
+    views.append(captureFolderView(root));
+  }
+  for (const auto& value : folderViews_) {
+    if (views.size() >= kMaxRoots)
+      break;
+    const QString root = value.toMap().value("root").toString();
+    if (root.isEmpty())
+      continue;
+    bool known = false;
+    for (const auto& saved : views) {
+      if (WorkspaceFileIndex::pathKey(saved.toMap().value("root").toString()) == WorkspaceFileIndex::pathKey(root)) {
+        known = true;
+        break;
+      }
+    }
+    if (!known)
       views.append(value);
-  return {{"pinned", folderPinned_}, {"closed", folderExplicitlyClosed_}, {"views", views}};
+  }
+  return {{"pinned", folderPinned_},
+          {"closed", folderExplicitlyClosed_},
+          {"active", folderRoot_},
+          {"views", views}};
 }
 
 void mufpen::SidebarWidget::restoreFolderState(const QVariantMap& state) {
-  folderViews_.clear();
-  for (const auto& value : state.value("views").toList()) {
-    auto view = value.toMap();
-    const auto root = view.value("root").toString();
-    if (folderViews_.size() < 16 && !root.isEmpty() && QFileInfo(root).isDir())
-      folderViews_.append(view);
-  }
+  folderViews_ = state.value("views").toList();
+  while (folderViews_.size() > kMaxRoots)
+    folderViews_.removeLast();
   folderPinned_ = state.value("pinned", true).toBool();
   folderExplicitlyClosed_ = state.value("closed", folderRoot_.isEmpty()).toBool();
-  followCurrentDocument();
+  if (folderExplicitlyClosed_) {
+    // An explicitly closed workspace stays closed even though old sessions
+    // still carry saved views for the previously opened folders.
+    if (!fileModel_->isEmpty())
+      fileModel_->setRoots({});
+    folderRoot_.clear();
+  } else if (fileModel_->isEmpty()) {
+    // Old sessions saved roots only inside folderState; newer ones call
+    // setFolderRoots() first. Derive them when the model is still empty.
+    QStringList roots;
+    for (const auto& value : std::as_const(folderViews_)) {
+      const QString root = value.toMap().value("root").toString();
+      if (!root.isEmpty() && QFileInfo(root).isDir() && !roots.contains(root))
+        roots.append(root);
+    }
+    if (!roots.isEmpty())
+      setFolderRoots(roots);
+  }
+  const QString active = state.value("active").toString();
+  if (!active.isEmpty() && fileModel_->rootForPath(active) >= 0) {
+    folderRoot_ = active;
+  } else if (!folderRoot_.isEmpty() && fileModel_->rootForPath(folderRoot_) < 0) {
+    folderRoot_ = fileModel_->roots().value(0);
+  }
+  for (const QString& root : fileModel_->roots()) {
+    const QModelIndex rootIndex = fileModel_->index(root);
+    if (rootIndex.isValid())
+      fileTree_->setExpanded(rootIndex, true);
+  }
+  for (const auto& value : std::as_const(folderViews_)) {
+    const auto view = value.toMap();
+    const QString root = view.value("root").toString();
+    if (!root.isEmpty() && fileModel_->rootForPath(root) >= 0)
+      restoreExpandedFoldersFor(root, view.value("expanded").toStringList());
+  }
   for (const auto& value : std::as_const(folderViews_)) {
     const auto view = value.toMap();
     if (WorkspaceFileIndex::pathKey(view.value("root").toString()) == WorkspaceFileIndex::pathKey(folderRoot_)) {
-      restoreExpandedFolders(view.value("expanded").toStringList());
       pendingFolderView_ = view;
       folderViewTimer_->start(0);
       break;
     }
   }
-  updateFolderPin();
+  updateFolderControls();
   emit folderStateChanged();
 }
 
@@ -693,9 +869,14 @@ void mufpen::SidebarWidget::restoreFolderView() {
     return;
   // Wait for the root listing / saved branches. directoryLoaded retries this
   // when the asynchronous filesystem model supplies their rows.
-  const auto root = fileTree_->rootIndex();
-  if (!fileModel_->isDirectoryLoaded(root))
-    return;
+  // The view root is now the virtual root (invalid); wait for each open root
+  // folder to finish loading before restoring the saved viewport / reveal.
+  for (const QString& rootPath : fileModel_->roots()) {
+    const QModelIndex rootIndex = fileModel_->index(rootPath);
+    if (!rootIndex.isValid() || !fileModel_->isDirectoryLoaded(rootIndex)) {
+      return;
+    }
+  }
   for (const auto& path : std::as_const(expandedFolderPaths_)) {
     const QFileInfo info(path);
     if (!info.isDir() || info.isSymLink() || info.isJunction())
@@ -706,7 +887,7 @@ void mufpen::SidebarWidget::restoreFolderView() {
   }
   if (!pendingRevealPath_.isEmpty()) {
     const auto target = fileModel_->index(pendingRevealPath_);
-    for (auto parent = target.parent(); parent.isValid() && parent != root; parent = parent.parent())
+    for (auto parent = target.parent(); parent.isValid(); parent = parent.parent())
       if (!fileModel_->isDirectoryLoaded(parent))
         return;
     if (target.isValid()) {
@@ -718,13 +899,23 @@ void mufpen::SidebarWidget::restoreFolderView() {
   }
   const QString anchorPath = pendingFolderView_.value("anchor").toString();
   const auto anchor = fileModel_->index(anchorPath);
-  if (anchor.isValid() && WorkspaceFileIndex::contains(folderRoot_, anchorPath) &&
-      !fileTree_->visualRect(anchor).isEmpty()) {
-    fileTree_->scrollTo(anchor, QAbstractItemView::PositionAtTop);
-    auto* bar = fileTree_->verticalScrollBar();
-    bar->setValue(bar->value() + fileTree_->visualRect(anchor).top() - pendingFolderView_.value("offset").toInt());
-  } else {
-    fileTree_->verticalScrollBar()->setValue(pendingFolderView_.value("vertical").toInt());
+  auto* bar = fileTree_->verticalScrollBar();
+  const int savedVertical = pendingFolderView_.value("vertical").toInt();
+  const int savedOffset = pendingFolderView_.value("offset").toInt();
+  bar->setValue(savedVertical);
+  if (anchor.isValid() && fileModel_->rootForPath(anchorPath) >= 0) {
+    // Correct after layout settles: QTreeView.geometry/visualRect is stale
+    // immediately after setValue while asynchronously loaded rows arrive.
+    const QPersistentModelIndex persistentAnchor(anchor);
+    QTimer::singleShot(0, this, [this, persistentAnchor, savedOffset]() {
+      if (!persistentAnchor.isValid() || fileTree_->visualRect(persistentAnchor).isEmpty())
+        return;
+      const int delta = fileTree_->visualRect(persistentAnchor).top() - savedOffset;
+      if (delta != 0) {
+        auto* scrollbar = fileTree_->verticalScrollBar();
+        scrollbar->setValue(scrollbar->value() + delta);
+      }
+    });
   }
   fileTree_->horizontalScrollBar()->setValue(pendingFolderView_.value("horizontal").toInt());
   pendingFolderView_.clear();
@@ -742,18 +933,16 @@ void mufpen::SidebarWidget::updateFolderPin() {
 }
 
 QString mufpen::SidebarWidget::selectedDirectory() const {
-  if (folderRoot_.isEmpty())
-    return {};
   const QString selected = fileModel_->filePath(fileTree_->currentIndex());
-  const QString relative = QDir(folderRoot_).relativeFilePath(selected);
-  if (relative == QStringLiteral("..") || relative.startsWith(QStringLiteral("../")) || QDir::isAbsolutePath(relative))
-    return folderRoot_;
-  return selected.isEmpty() ? folderRoot_ : QFileInfo(selected).isDir() ? selected : QFileInfo(selected).absolutePath();
+  if (!selected.isEmpty() && fileModel_->rootForPath(selected) >= 0) {
+    return QFileInfo(selected).isDir() ? selected : QFileInfo(selected).absolutePath();
+  }
+  return folderRoot_;
 }
 
 void mufpen::SidebarWidget::updateFolderControls() {
   updateFolderPin();
-  const bool open = !folderRoot_.isEmpty();
+  const bool open = !fileModel_->isEmpty();
   fileTree_->setVisible(open);
   filesEmptyLabel_->setVisible(!open);
   for (auto* button :
@@ -772,15 +961,28 @@ void mufpen::SidebarWidget::updateFileSort() {
   for (auto* action : sortFilesMenu_->actions()) {
     if (action->data().isValid() && action->isChecked()) {
       const bool descending = sortFilesMenu_->findChild<QAction*>("SortDescending")->isChecked();
+      // Remember the selected file across the re-sort. With several aggregated
+      // roots the proxy's persistent index can shift rows, so re-resolve it by
+      // path afterwards to keep the same file selected.
+      const QString selectedPath = fileTree_ ? fileModel_->filePath(fileTree_->currentIndex()) : QString();
       fileModel_->setSortBy(static_cast<FileTreeModel::SortBy>(action->data().toInt()),
                             descending ? Qt::DescendingOrder : Qt::AscendingOrder);
+      if (!selectedPath.isEmpty()) {
+        const auto reselect = [this, selectedPath] {
+          const QModelIndex reselected = fileModel_->index(selectedPath);
+          if (reselected.isValid())
+            fileTree_->setCurrentIndex(reselected);
+        };
+        reselect();
+        QTimer::singleShot(0, this, reselect);
+      }
       return;
     }
   }
 }
 
 void mufpen::SidebarWidget::refreshFolders() {
-  if (folderRoot_.isEmpty() || inlineEditor_)
+  if (fileModel_->isEmpty() || inlineEditor_)
     return;
   refreshSelectionPath_ = fileModel_->filePath(fileTree_->currentIndex());
   const auto anchor = fileTree_->indexAt({fileTree_->viewport()->width() / 2, 0});
@@ -789,17 +991,32 @@ void mufpen::SidebarWidget::refreshFolders() {
   folderExpansionTimer_->stop();
   folderExpansionQueue_.clear();
   queuedFolderExpansions_.clear();
-  fileTree_->setRootIndex(fileModel_->refresh(folderRoot_));
-  queueFolderExpansion(folderRoot_);
+  const QString selectionToRestore = refreshSelectionPath_;
+  fileModel_->refresh();
+  QTimer::singleShot(0, this, [this, selectionToRestore] {
+    if (selectionToRestore.isEmpty())
+      return;
+    const QModelIndex index = fileModel_->index(selectionToRestore);
+    if (index.isValid())
+      fileTree_->setCurrentIndex(index);
+  });
+  for (const QString& root : fileModel_->roots()) {
+    const QModelIndex rootIndex = fileModel_->index(root);
+    if (rootIndex.isValid())
+      fileTree_->setExpanded(rootIndex, true);
+    queueFolderExpansion(root);
+  }
 }
 
-QStringList mufpen::SidebarWidget::expandedFolders() const {
+QStringList mufpen::SidebarWidget::expandedFoldersFor(const QString& root) const {
   QStringList paths;
-  if (folderRoot_.isEmpty())
+  if (root.isEmpty())
     return paths;
-  const QDir root(folderRoot_);
+  const QDir directory(root);
   for (const QString& path : expandedFolderPaths_) {
-    const QString relative = root.relativeFilePath(path);
+    if (!WorkspaceFileIndex::contains(root, path))
+      continue;
+    const QString relative = directory.relativeFilePath(path);
     if (relative != QStringLiteral(".") && relative != QStringLiteral("..") &&
         !relative.startsWith(QStringLiteral("../")) && !QDir::isAbsolutePath(relative))
       paths.append(relative);
@@ -808,27 +1025,32 @@ QStringList mufpen::SidebarWidget::expandedFolders() const {
   return paths;
 }
 
-void mufpen::SidebarWidget::restoreExpandedFolders(const QStringList& paths) {
-  if (folderRoot_.isEmpty())
+QStringList mufpen::SidebarWidget::expandedFolders() const {
+  return expandedFoldersFor(folderRoot_);
+}
+
+void mufpen::SidebarWidget::restoreExpandedFoldersFor(const QString& root, const QStringList& paths) {
+  if (root.isEmpty())
     return;
-  collapseAllFolders();
+  const QDir directory(root);
   for (const QString& path : paths) {
     const QString relative = QDir::cleanPath(path);
     if (QDir::isAbsolutePath(relative) || relative == QStringLiteral("..") ||
         relative.startsWith(QStringLiteral("../")))
       continue;
-    const QString absolute = QDir(folderRoot_).absoluteFilePath(relative);
+    const QString absolute = directory.absoluteFilePath(relative);
     if (QFileInfo(absolute).isDir())
       expandedFolderPaths_.insert(absolute);
   }
-  queueFolderExpansion(folderRoot_);
+  queueFolderExpansion(root);
+}
+
+void mufpen::SidebarWidget::restoreExpandedFolders(const QStringList& paths) {
+  restoreExpandedFoldersFor(folderRoot_, paths);
 }
 
 void mufpen::SidebarWidget::queueFolderExpansion(const QString& path) {
-  if (folderRoot_.isEmpty())
-    return;
-  const QString relative = QDir(folderRoot_).relativeFilePath(path);
-  if (relative == QStringLiteral("..") || relative.startsWith(QStringLiteral("../")) || QDir::isAbsolutePath(relative))
+  if (path.isEmpty() || fileModel_->rootForPath(path) < 0)
     return;
   if (!queuedFolderExpansions_.contains(path)) {
     queuedFolderExpansions_.insert(path);
@@ -897,10 +1119,11 @@ void mufpen::SidebarWidget::collapseAllFolders() {
 }
 
 void mufpen::SidebarWidget::expandAllFolders() {
-  if (folderRoot_.isEmpty())
+  if (fileModel_->isEmpty())
     return;
   expandAllRequested_ = true;
-  queueFolderExpansion(folderRoot_);
+  for (const QString& root : fileModel_->roots())
+    queueFolderExpansion(root);
 }
 
 QString mufpen::SidebarWidget::folderRoot() const {
@@ -908,7 +1131,7 @@ QString mufpen::SidebarWidget::folderRoot() const {
 }
 
 void mufpen::SidebarWidget::setCurrentPath(QString path) {
-  if (path.isEmpty() || !WorkspaceFileIndex::contains(folderRoot_, path)) {
+  if (path.isEmpty() || fileModel_->rootForPath(path) < 0) {
     return;
   }
   // Explicit navigation takes precedence over an asynchronous saved viewport.
@@ -918,7 +1141,7 @@ void mufpen::SidebarWidget::setCurrentPath(QString path) {
   // index until that parent's children are fetched, so expand/fetch every
   // ancestor first (the QFileSystemModel populates lazily per directory).
   QModelIndex ancestor = fileModel_->index(QFileInfo(path).absolutePath());
-  while (ancestor.isValid() && ancestor != fileTree_->rootIndex()) {
+  while (ancestor.isValid()) {
     fileTree_->expand(ancestor);
     if (fileModel_->canFetchMore(ancestor))
       fileModel_->fetchMore(ancestor);

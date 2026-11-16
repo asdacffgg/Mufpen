@@ -6112,6 +6112,10 @@ Dateien, die danach bearbeitet wurden oder ungespeicherte Änderungen enthalten,
         <source>Content search results</source>
         <translation>Ergebnisse der Inhaltssuche</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Textdateien in allen geöffneten Ordnern und ihren Unterordnern durchsuchen.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6232,6 +6236,14 @@ Dateien, die danach bearbeitet wurden oder ungespeicherte Änderungen enthalten,
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Keine Überschriften</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Ordner zum Arbeitsbereich hinzufügen…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Ordner aus Arbeitsbereich entfernen</translation>
     </message>
 </context>
 <context>

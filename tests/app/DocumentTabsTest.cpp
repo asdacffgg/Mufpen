@@ -2534,7 +2534,7 @@ void fileTreeOpeningPreservesScrollPosition() {
   auto* tree = sidebar->findChild<QTreeView*>("FileTree");
   auto* model = qobject_cast<FileTreeModel*>(tree->model());
   auto* bar = tree->verticalScrollBar();
-  waitUntil([&] { return model->rowCount(tree->rootIndex()) == paths.size() && bar->maximum() > 0; },
+  waitUntil([&] { return model->rowCount(model->index(sidebar->folderRoot())) == paths.size() && bar->maximum() > 0; },
             "file tree loads enough notes to scroll");
   bar->setValue(bar->maximum() / 2 + 3);
   QApplication::processEvents();
@@ -2561,15 +2561,28 @@ void fileTreeOpeningPreservesScrollPosition() {
               "opening or reactivating a visible file never shifts the tree, including transient scrolls");
     }
   }
-  const auto distant = model->index(paths[70]);
-  require(tree->visualRect(distant).top() >= tree->viewport()->height(),
-          "external navigation target starts below the viewport");
-  f.open(paths[70]);
+  // Pick an offscreen target from the actual laid-out order (the aggregate
+  // source may present newly loaded rows in filesystem detection order).
+  QString distantPath;
+  QModelIndex distant;
+  for (const QString& candidate : paths) {
+    const QModelIndex index = model->index(candidate);
+    if (index.isValid() && tree->visualRect(index).top() >= tree->viewport()->height()) {
+      distantPath = candidate;
+      distant = index;
+      break;
+    }
+  }
+  require(distant.isValid(), "external navigation target starts below the viewport");
+  f.open(distantPath);
   QApplication::processEvents();
   const auto revealed = tree->visualRect(distant);
   require(tree->currentIndex() == distant && revealed.top() >= 0 &&
               qAbs(revealed.bottom() - (tree->viewport()->height() - 1)) <= 1,
           "opening an offscreen file scrolls only far enough to reveal it");
+  // A status update for the already-active document must not move the view.
+  sidebar->setCurrentDocument("note-070.md", paths[70], false);
+  QApplication::processEvents();
   bar->setValue(bar->maximum() / 2 + 3);
   const int browsedPosition = bar->value();
   sidebar->setCurrentDocument("note-070.md", paths[70], true);

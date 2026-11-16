@@ -6118,6 +6118,10 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
         <source>Content search results</source>
         <translation>Wyniki wyszukiwania w zawartości</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Szukaj plików tekstowych we wszystkich otwartych folderach i ich podfolderach.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6238,6 +6242,14 @@ Pliki edytowane później lub zawierające niezapisane zmiany zostaną pominięt
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Brak nagłówków</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Dodaj folder do obszaru roboczego…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Usuń folder z obszaru roboczego</translation>
     </message>
 </context>
 <context>

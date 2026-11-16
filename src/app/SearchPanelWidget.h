@@ -16,9 +16,12 @@ public:
   explicit SearchPanelWidget(QWidget* parent = nullptr);
   ~SearchPanelWidget() override;
   void setRoot(const QString& root);
+  // All open workspace roots; search scans every one of them.
+  void setRoots(const QStringList& roots);
   // Follow the file tree only while there is no active search query.
   void setDefaultRoot(const QString& root);
   QString root() const { return root_; }
+  QStringList roots() const { return roots_; }
   void activate(bool replace);
   void startSearch(const OpenSearchBuffers& buffers);
   void retranslateUi();
@@ -41,6 +44,7 @@ private:
   void cancelSearch();
   void changeEvent(QEvent* event) override;
   QString root_;
+  QStringList roots_;
   QLineEdit *query_, *replacement_;
   QCheckBox *case_, *regex_;
   QLabel* summary_;

@@ -10,6 +10,7 @@
 #include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
+#include <QHash>
 #include <QRegularExpression>
 #include <QStringConverter>
 #include <QThread>
@@ -377,12 +378,31 @@ mufpen::WorkspaceSearch::run(const WorkspaceQuery& query, const OpenSearchBuffer
     result.complete = false;
     return result;
   }
-  if (!QFileInfo(query.root).isDir()) {
+  const QStringList roots = query.roots.isEmpty() ? QStringList{query.root} : query.roots;
+  bool anyDirectory = false;
+  WorkspaceFiles index;
+  QHash<QString, QString> fileRoot;
+  for (const QString& root : roots) {
+    if (!QFileInfo(root).isDir()) {
+      continue;
+    }
+    anyDirectory = true;
+    const WorkspaceFiles part = WorkspaceFileIndex::scan(root, query.extensions, cancel, query.scanOptions);
+    for (const QString& path : part.paths) {
+      fileRoot.insert(WorkspaceFileIndex::pathKey(path), root);
+      index.paths.append(path);
+    }
+    index.unreadableDirectories.append(part.unreadableDirectories);
+    index.ignoredDirectories.append(part.ignoredDirectories);
+    index.ignoredFiles.append(part.ignoredFiles);
+    index.unreadableIgnoreFiles.append(part.unreadableIgnoreFiles);
+    index.truncated = index.truncated || part.truncated;
+  }
+  if (!anyDirectory) {
     result.error = QCoreApplication::translate("mufpen::WorkspaceSearch", "Folder is unavailable");
     result.complete = false;
     return result;
   }
-  const auto index = WorkspaceFileIndex::scan(query.root, query.extensions, cancel, query.scanOptions);
   result.complete = !index.truncated && index.unreadableIgnoreFiles.isEmpty();
   for (const auto& path : index.unreadableDirectories) {
     result.skipped.append(path);
@@ -413,7 +433,8 @@ mufpen::WorkspaceSearch::run(const WorkspaceQuery& query, const OpenSearchBuffer
       if (i >= qsizetype(index.paths.size()))
         break;
       const auto& path = index.paths[i];
-      const auto relative = QDir(query.root).relativeFilePath(path);
+      const QString fileRootPath = fileRoot.value(WorkspaceFileIndex::pathKey(path), query.root);
+      const auto relative = QDir(fileRootPath).relativeFilePath(path);
       if (PathMatcher::score(query.includePath, relative) < 0 ||
           (!query.excludePath.trimmed().isEmpty() && PathMatcher::score(query.excludePath, relative) >= 0))
         continue;

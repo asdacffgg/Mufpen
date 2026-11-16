@@ -19,6 +19,9 @@ struct OpenSearchBuffer {
 using OpenSearchBuffers = QHash<QString, OpenSearchBuffer>;
 struct WorkspaceQuery {
   QString root, pattern, includePath, excludePath;
+  // When non-empty, search every root (multi-root workspace). `root` remains
+  // the primary/first root for display and backward compatibility.
+  QStringList roots;
   QStringList extensions;
   WorkspaceScanOptions scanOptions;
   SearchOptions options;

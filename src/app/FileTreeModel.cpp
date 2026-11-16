@@ -1,30 +1,19 @@
 #include "app/FileTreeModel.h"
 
+#include "app/MultiRootSourceModel.h"
+#include "app/WorkspaceFiles.h"
 #include "io/DocumentFileType.h"
-#include "io/MufpenMime.h"
 
 #include <QDateTime>
 #include <QDir>
 #include <QLocale>
-#include <QMimeData>
 
 namespace {
-class FileSourceModel final : public QFileSystemModel {
-public:
-  using QFileSystemModel::QFileSystemModel;
-
-protected:
-  QMimeData* mimeData(const QModelIndexList& indexes) const override {
-    auto* data = QFileSystemModel::mimeData(indexes);
-    if (data)
-      data->setData(mufpen::kMufpenFileTreeDragMime, {});
-    return data;
-  }
-};
 
 template <typename T> int compare(const T& a, const T& b) {
   return a < b ? -1 : b < a ? 1 : 0;
 }
+
 } // namespace
 
 mufpen::FileTreeModel::FileTreeModel(QObject* parent) : QSortFilterProxyModel(parent) {
@@ -40,13 +29,9 @@ mufpen::FileTreeModel::FileTreeModel(QObject* parent) : QSortFilterProxyModel(pa
 
 void mufpen::FileTreeModel::replaceSource() {
   auto* previous = files_;
-  loadedDirectories_.clear();
-  files_ = new FileSourceModel(this);
-  files_->setFilter(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);
-  connect(files_, &QFileSystemModel::directoryLoaded, this, [this](const QString& path) {
-    loadedDirectories_.insert(QPersistentModelIndex(files_->index(path)));
-    emit directoryLoaded(path);
-  });
+  files_ = new MultiRootSourceModel(this);
+  connect(files_, &MultiRootSourceModel::directoryLoaded, this, &FileTreeModel::directoryLoaded);
+  connect(files_, &MultiRootSourceModel::rootsChanged, this, &FileTreeModel::rootsChanged);
   setSourceModel(files_);
   if (previous) {
     disconnect(previous, nullptr, this, nullptr);
@@ -55,11 +40,38 @@ void mufpen::FileTreeModel::replaceSource() {
 }
 
 QModelIndex mufpen::FileTreeModel::index(const QString& path) const {
-  return mapFromSource(files_->index(path));
-}
-
-QModelIndex mufpen::FileTreeModel::setRootPath(const QString& path) {
-  return mapFromSource(files_->setRootPath(path));
+  if (path.isEmpty()) {
+    return {};
+  }
+  // Walk the visible proxy tree: mapFromSource() guesses the proxy row from
+  // the unsorted source row for source indices the proxy has not seen, which
+  // points at a different file once a non-default sort is active.
+  const QString key = WorkspaceFileIndex::pathKey(path);
+  const auto find = [this, &key](const QModelIndex& parent, const auto& self) -> QModelIndex {
+    for (int row = 0; row < rowCount(parent); ++row) {
+      const QModelIndex child = QSortFilterProxyModel::index(row, 0, parent);
+      if (!child.isValid())
+        continue;
+      if (WorkspaceFileIndex::pathKey(filePath(child)) == key)
+        return child;
+      if (isDir(child)) {
+        const QModelIndex found = self(child, self);
+        if (found.isValid())
+          return found;
+      }
+    }
+    return {};
+  };
+  const QModelIndex visible = find({}, find);
+  if (visible.isValid())
+    return visible;
+  const QModelIndex source = files_->index(path);
+  if (!source.isValid())
+    return {};
+  const QString resolved = files_->filePath(source);
+  if (!files_->isDir(source) && !isMarkdownDocumentPath(resolved) && !isImageDocumentPath(resolved))
+    return {};
+  return mapFromSource(source);
 }
 
 QString mufpen::FileTreeModel::filePath(const QModelIndex& index) const {
@@ -75,25 +87,54 @@ bool mufpen::FileTreeModel::isDir(const QModelIndex& index) const {
 }
 
 bool mufpen::FileTreeModel::isDirectoryLoaded(const QModelIndex& index) const {
-  return index.isValid() && loadedDirectories_.contains(QPersistentModelIndex(mapToSource(index)));
+  return index.isValid() && files_->isDirectoryLoaded(mapToSource(index));
 }
 
 void mufpen::FileTreeModel::setSortBy(SortBy field, Qt::SortOrder order) {
-  if (sortBy_ != field) {
-    sortBy_ = field;
-    invalidate();
-  }
+  sortBy_ = field;
+  // The aggregate source can receive rows asynchronously; force a clean
+  // rebuild of the proxy's sorted mapping rather than a no-op sort().
+  invalidate();
   sort(0, order);
 }
 
-QModelIndex mufpen::FileTreeModel::refresh(const QString& root) {
-  replaceSource();
-  return setRootPath(root);
+int mufpen::FileTreeModel::addRoot(const QString& path) {
+  return files_->addRoot(path);
+}
+
+bool mufpen::FileTreeModel::removeRoot(const QString& path) {
+  return files_->removeRoot(path);
+}
+
+void mufpen::FileTreeModel::setRoots(const QStringList& paths) {
+  files_->setRoots(paths);
+}
+
+QStringList mufpen::FileTreeModel::roots() const {
+  return files_->roots();
+}
+
+int mufpen::FileTreeModel::rootCount() const {
+  return files_->rootCount();
+}
+
+bool mufpen::FileTreeModel::isEmpty() const {
+  return files_->isEmpty();
+}
+
+int mufpen::FileTreeModel::rootForPath(const QString& path) const {
+  return files_->rootForPath(path);
+}
+
+QModelIndex mufpen::FileTreeModel::rootIndex(int rootId) const {
+  return mapFromSource(files_->rootIndex(rootId));
+}
+
+void mufpen::FileTreeModel::refresh() {
+  files_->refresh();
 }
 
 bool mufpen::FileTreeModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const {
-  if (!files_)
-    return false;
   const QModelIndex index = files_->index(sourceRow, 0, sourceParent);
   if (!index.isValid())
     return false;

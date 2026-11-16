@@ -802,6 +802,7 @@ QVariantMap mufpen::MainWindow::sessionState() const {
                              {QStringLiteral("active"), active},
                              {QStringLiteral("views"), views},
                              {QStringLiteral("folder"), sidebar_->folderRoot()},
+                             {QStringLiteral("folders"), sidebar_->folderRoots()},
                              {QStringLiteral("folderState"), sidebar_->folderState()},
                              {QStringLiteral("expanded"), sidebar_->expandedFolders()}};
   return snapshot;
@@ -952,6 +953,7 @@ void mufpen::MainWindow::restoreTabViewState(DocumentTab* document) {
 
 void mufpen::MainWindow::closeFolder() {
   sidebarFolderRoot_.clear();
+  sidebarFolderRoots_.clear();
   sidebar_->setFolderRoot({});
   saveSessionState();
 }

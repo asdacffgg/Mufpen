@@ -86,7 +86,7 @@ bool renderedSearchRange(mufpen::DocumentTab& document, qsizetype start, qsizety
 
 void mufpen::MainWindow::showWorkspaceSearch(bool replace, const QString& directory) {
   setSidebarPanel(SidebarWidget::Panel::Search);
-  sidebar_->searchPanel()->setRoot(directory.isEmpty() ? sidebar_->folderRoot() : directory);
+  sidebar_->searchPanel()->setRoots(directory.isEmpty() ? sidebar_->folderRoots() : QStringList{directory});
   sidebar_->searchPanel()->activate(replace);
 }
 mufpen::OpenSearchBuffers mufpen::MainWindow::openSearchBuffers() const {

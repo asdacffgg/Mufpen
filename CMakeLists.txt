@@ -1254,6 +1254,8 @@ set(MUFPEN_UI_SOURCES
   src/app/SidebarWidget.h
   src/app/FileTreeModel.cpp
   src/app/FileTreeModel.h
+  src/app/MultiRootSourceModel.cpp
+  src/app/MultiRootSourceModel.h
   src/app/OutlineModel.cpp
   src/app/OutlineModel.h
   src/app/StatusBarWidget.cpp

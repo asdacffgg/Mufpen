@@ -6110,6 +6110,10 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
         <source>Content search results</source>
         <translation>Kết quả tìm kiếm nội dung</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Tìm kiếm tệp văn bản trong tất cả các thư mục đang mở và thư mục con.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6230,6 +6234,14 @@ Các tệp được chỉnh sửa sau đó hoặc có thay đổi chưa lưu s�
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Không có tiêu đề</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Thêm thư mục vào không gian làm việc…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Xóa thư mục khỏi không gian làm việc</translation>
     </message>
 </context>
 <context>

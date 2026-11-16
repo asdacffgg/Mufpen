@@ -27,6 +27,8 @@
 #include <QCryptographicHash>
 #include <QSignalBlocker>
 
+#include <utility>
+
 namespace {
 class MatchDelegate final : public QStyledItemDelegate {
 public:
@@ -213,6 +215,19 @@ void mufpen::SearchPanelWidget::setRoot(const QString& root) {
   case_->setChecked(settings.value("case", false).toBool());
   regex_->setChecked(settings.value("regex", false).toBool());
 }
+void mufpen::SearchPanelWidget::setRoots(const QStringList& roots) {
+  QStringList cleaned;
+  for (const QString& root : roots) {
+    if (!root.isEmpty() && QFileInfo(root).isDir() && !cleaned.contains(root)) {
+      cleaned.append(root);
+    }
+  }
+  roots_ = std::move(cleaned);
+  // Never discard an explicit search scope once the user has typed a query.
+  if (query_->text().isEmpty() && !running_)
+    setRoot(roots_.isEmpty() ? QString() : roots_.first());
+  retranslateUi();
+}
 void mufpen::SearchPanelWidget::setDefaultRoot(const QString& root) {
   if (query_->text().isEmpty() && !running_)
     setRoot(root);
@@ -237,6 +252,7 @@ void mufpen::SearchPanelWidget::startSearch(const OpenSearchBuffers& buffers) {
   const auto cancellation = cancel_;
   WorkspaceQuery query;
   query.root = root_;
+  query.roots = roots_;
   query.pattern = query_->text();
   query.options = {regex_->isChecked(), case_->isChecked()};
   const auto settings = SearchSettings::load();
@@ -300,7 +316,18 @@ void mufpen::SearchPanelWidget::startSearch(const OpenSearchBuffers& buffers) {
 }
 void mufpen::SearchPanelWidget::addFile(const WorkspaceSearchFile& file) {
   const int fileIndex = result_.files.size();
-  const QString parent = QDir(root_).relativeFilePath(QFileInfo(file.path).absolutePath());
+  const QString absoluteDir = QFileInfo(file.path).absolutePath();
+  QString parent;
+  int bestLength = -1;
+  for (const QString& root : roots_) {
+    if (WorkspaceFileIndex::contains(root, absoluteDir) && root.size() > bestLength) {
+      bestLength = root.size();
+      parent = QDir(root).relativeFilePath(absoluteDir);
+    }
+  }
+  if (bestLength < 0) {
+    parent = root_.isEmpty() ? absoluteDir : QDir(root_).relativeFilePath(absoluteDir);
+  }
   QString title = QFileInfo(file.path).fileName() + QStringLiteral(" (%1)").arg(file.hits.size()) +
                   (file.modified ? tr(" · Unsaved") : QString());
   if (parent != QLatin1String("."))
@@ -326,7 +353,8 @@ void mufpen::SearchPanelWidget::updateSummary() {
   else if (!result_.error.isEmpty())
     text = tr("Search failed: %1").arg(result_.error);
   else if (query_->text().isEmpty())
-    text = tr("Search text files in this folder and its subfolders.");
+    text = roots_.size() > 1 ? tr("Search text files in all open folders and their subfolders.")
+                             : tr("Search text files in this folder and its subfolders.");
   else
     text = tr("%1 matches in %2 files").arg(result_.matches).arg(result_.files.size());
   if (running_)

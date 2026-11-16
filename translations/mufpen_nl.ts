@@ -6112,6 +6112,10 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
         <source>Content search results</source>
         <translation>Resultaten van zoeken in inhoud</translation>
     </message>
+    <message>
+        <source>Search text files in all open folders and their subfolders.</source>
+        <translation>Zoek in tekstbestanden in alle geopende mappen en hun submappen.</translation>
+    </message>
 </context>
 <context>
     <name>mufpen::SidebarWidget</name>
@@ -6232,6 +6236,14 @@ Bestanden die daarna zijn bewerkt of niet-opgeslagen wijzigingen bevatten, worde
         <location filename="../src/app/SidebarWidget.cpp" line="1152"/>
         <source>No Headings</source>
         <translation>Geen koppen</translation>
+    </message>
+    <message>
+        <source>Add Folder to Workspace…</source>
+        <translation>Map toevoegen aan werkruimte…</translation>
+    </message>
+    <message>
+        <source>Remove Folder from Workspace</source>
+        <translation>Map verwijderen uit werkruimte</translation>
     </message>
 </context>
 <context>
