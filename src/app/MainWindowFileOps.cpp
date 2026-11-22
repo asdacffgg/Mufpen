@@ -28,9 +28,11 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QHBoxLayout>
+#include <QInputDialog>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QLabel>
+#include <QLineEdit>
 #include <QLocale>
 #include <QListWidget>
 #include <QListWidgetItem>
@@ -1098,6 +1100,18 @@ void mufpen::MainWindow::renamePath(QString path) {
   if (sidebar_) {
     sidebar_->beginInlineRename(path);
   }
+}
+
+void mufpen::MainWindow::renameWorkspace(QString path) {
+  if (path.isEmpty() || !sidebar_) {
+    return;
+  }
+  bool accepted = false;
+  const QString current = sidebar_->workspaceLabel(path);
+  const QString name = QInputDialog::getText(this, tr("Rename Workspace"), tr("Workspace name:"), QLineEdit::Normal,
+                                             current, &accepted);
+  if (accepted)
+    sidebar_->setWorkspaceLabel(path, name.trimmed());
 }
 
 // Validate an inline name WITHOUT touching the filesystem — the delegate uses this to decide

@@ -47,6 +47,10 @@ public:
   int rootForPath(const QString& path) const;
   bool contains(const QString& path) const { return rootForPath(path) >= 0; }
   QModelIndex rootIndex(int rootId) const;
+  // True when `index` is one of the top-level workspace-root rows (the folder
+  // itself). String comparison only: callers hit this per paint/sizeHint, so it
+  // must never touch the filesystem (no canonicalFilePath()).
+  bool isRootRow(const QModelIndex& index) const;
   // Underlying filesystem model for a root (used by refresh diagnostics/tests).
   QFileSystemModel* sourceForPath(const QString& path) const;
 

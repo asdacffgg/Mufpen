@@ -5,6 +5,7 @@
 #include "app/FileTreeModel.h"
 #include "app/SearchPanelWidget.h"
 #include "app/WorkspaceFiles.h"
+#include "app/WorkspaceRootDelegate.h"
 #include "io/DocumentFileType.h"
 
 #include "theme/ChromeStyleSheet.h"
@@ -324,6 +325,7 @@ void mufpen::SidebarWidget::setupFilesPanel() {
   fileTree_->setAccessibleName(tr("Files"));
   fileTree_->setObjectName(QStringLiteral("FileTree"));
   fileTree_->setModel(fileModel_);
+  fileTree_->setItemDelegate(workspaceDelegate_ = new WorkspaceRootDelegate(fileModel_, fileTree_));
   fileTree_->setHeaderHidden(true);
   fileTree_->setAnimated(false);
   // Folder rows toggle on a single click. Disable Qt's additional double-click
@@ -367,6 +369,9 @@ void mufpen::SidebarWidget::setupFilesPanel() {
     fileTree_->hideColumn(column);
   }
   layout->addWidget(fileTree_, 1);
+  // Every row keeps the standard height: the workspace header is painted inside
+  // the root row. Uniform heights let QTreeView skip per-row sizeHint() calls,
+  // which is what keeps expanding large folders fast.
   fileTree_->setUniformRowHeights(true);
   fileTree_->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
   folderExpansionTimer_ = new QTimer(this);
@@ -444,10 +449,12 @@ void mufpen::SidebarWidget::setupFilesPanel() {
     QString path;
     bool isDir = true;
     bool onItem = false;
+    bool isWorkspaceRoot = false;
     if (index.isValid()) {
       path = fileModel_->filePath(index);
       isDir = QFileInfo(path).isDir();
       onItem = true;
+      isWorkspaceRoot = fileModel_->isWorkspaceRoot(index);
       fileTree_->setCurrentIndex(index);
     } else {
       path = folderRoot_;
@@ -456,7 +463,8 @@ void mufpen::SidebarWidget::setupFilesPanel() {
     if (path.isEmpty()) {
       return; // no folder open and no item: nothing to act on
     }
-    emit fileTreeContextMenuRequested(path, isDir, onItem, fileTree_->viewport()->mapToGlobal(pos));
+    emit fileTreeContextMenuRequested(path, isDir, onItem, isWorkspaceRoot,
+                                      fileTree_->viewport()->mapToGlobal(pos));
   });
 
   stack_->addWidget(filesPanel_);
@@ -608,6 +616,22 @@ void mufpen::SidebarWidget::setFolderRoots(QStringList paths) {
 
 QStringList mufpen::SidebarWidget::folderRoots() const {
   return fileModel_->roots();
+}
+
+QString mufpen::SidebarWidget::workspaceLabel(const QString& path) const {
+  return fileModel_->workspaceLabel(path);
+}
+
+QString mufpen::SidebarWidget::workspaceColorKey(const QString& path) const {
+  return fileModel_->workspaceColorKey(path);
+}
+
+void mufpen::SidebarWidget::setWorkspaceLabel(const QString& path, const QString& label) {
+  fileModel_->setWorkspaceLabel(path, label);
+}
+
+void mufpen::SidebarWidget::setWorkspaceColorKey(const QString& path, const QString& key) {
+  fileModel_->setWorkspaceColorKey(path, key);
 }
 
 void mufpen::SidebarWidget::addFolderRoot(QString path) {
@@ -1400,6 +1424,13 @@ void mufpen::SidebarWidget::updateTabButtons() {
 
 void mufpen::SidebarWidget::applyStyle() {
   setStyleSheet(sidebarStyleSheet(currentTheme_, outlineFoldable_));
+  if (workspaceDelegate_) {
+    // The style sheet colours items without touching the palette, so hand the
+    // delegate the theme colours it needs to keep the accent legible.
+    workspaceDelegate_->setThemeColors(currentTheme_.colors.chromeText, currentTheme_.colors.surface);
+    if (fileTree_)
+      fileTree_->viewport()->update();
+  }
   searchPanel_->setThemeDefinition(currentTheme_);
   const auto color = currentTheme_.colors.chromeText;
   newFileButton_->setIcon(

@@ -1,5 +1,6 @@
 #include "app/MainWindow.h"
 #include "app/WorkspaceFiles.h"
+#include "app/WorkspaceStyle.h"
 
 #include "document/MarkdownDocument.h"
 #include "editor/CursorPosition.h"
@@ -13,8 +14,11 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QIcon>
 #include <QMenu>
 #include <QMessageBox>
+#include <QPainter>
+#include <QPixmap>
 #include <QPoint>
 #include <QPointer>
 #include <QSaveFile>
@@ -328,7 +332,8 @@ void mufpen::MainWindow::exportMermaidDiagramPng(NodeId blockId) {
 // document. The variant is decided from `onItem`/`isDir`: a file gets the full
 // set, a directory or empty space gets the reduced set (per spec). New File /
 // New Folder target the clicked directory, or the file's parent for a file.
-void mufpen::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool onItem, QPoint globalPos) {
+void mufpen::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool onItem, bool isWorkspaceRoot,
+                                                  QPoint globalPos) {
   QMenu menu(this);
   const QString targetDir = isDir ? path : QFileInfo(path).absolutePath();
 
@@ -364,6 +369,37 @@ void mufpen::MainWindow::buildSidebarContextMenu(QString path, bool isDir, bool 
     menu.addSeparator();
     add(tr("Copy Path"), [this, path] { copyPathToClipboard(path); });
     add(tr("Reveal in File Manager"), [this, path] { revealPathInManager(path); });
+
+    // Workspace-root appearance: custom label + accent colour for the section header.
+    if (onItem && isWorkspaceRoot && sidebar_) {
+      menu.addSeparator();
+      add(tr("Rename Workspace…"), [this, path] { renameWorkspace(path); });
+      QMenu* colors = menu.addMenu(tr("Workspace Color"));
+      for (const auto& accent : mufpen::workspace_style::accents()) {
+        QAction* action = colors->addAction(QObject::tr(accent.label));
+        // A small colour swatch makes the choice obvious without a dialog.
+        QPixmap swatch(14, 14);
+        swatch.fill(Qt::transparent);
+        {
+          QPainter painter(&swatch);
+          painter.setRenderHint(QPainter::Antialiasing);
+          painter.setBrush(accent.color);
+          painter.setPen(Qt::NoPen);
+          painter.drawRoundedRect(swatch.rect().adjusted(1, 1, -1, -1), 4, 4);
+        }
+        action->setIcon(QIcon(swatch));
+        action->setCheckable(true);
+        action->setChecked(sidebar_->workspaceColorKey(path).compare(QLatin1String(accent.key), Qt::CaseInsensitive) == 0);
+        connect(action, &QAction::triggered, action, [this, path, key = QByteArray(accent.key)] {
+          sidebar_->setWorkspaceColorKey(path, QString::fromLatin1(key.constData()));
+        });
+      }
+      colors->addSeparator();
+      QAction* reset = colors->addAction(tr("Reset to Default"));
+      connect(reset, &QAction::triggered, reset, [this, path] {
+        sidebar_->setWorkspaceColorKey(path, mufpen::workspace_style::defaultKey());
+      });
+    }
   }
 
   if (!sidebar_->folderRoots().isEmpty()) {

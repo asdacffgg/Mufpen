@@ -1186,6 +1186,9 @@ set(MUFPEN_UI_SOURCES
   src/app/QuickOpenDialog.h
   src/app/WorkspaceFiles.cpp
   src/app/WorkspaceFiles.h
+  src/app/WorkspaceRootDelegate.cpp
+  src/app/WorkspaceRootDelegate.h
+  src/app/WorkspaceStyle.h
   src/app/SearchSettings.cpp
   src/app/SearchSettings.h
   src/app/WorkspaceIgnoreRules.cpp

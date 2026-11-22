@@ -3915,7 +3915,8 @@ void closeFolder(MainWindow& window) {
     triggered = true;
     menu->close();
   });
-  sidebar->fileTreeContextMenuRequested(sidebar->folderRoot(), true, false, tree->mapToGlobal(tree->rect().center()));
+  sidebar->fileTreeContextMenuRequested(sidebar->folderRoot(), true, false, false,
+                                        tree->mapToGlobal(tree->rect().center()));
   require(triggered, "closing the workspace remains accessible from the context menu");
 }
 

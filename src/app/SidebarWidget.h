@@ -25,6 +25,7 @@ namespace mufpen {
 class OutlineModel;
 class FileTreeModel;
 class SearchPanelWidget;
+class WorkspaceRootDelegate;
 
 // Context for an in-progress inline edit of a file-tree row. `pendingCreate` marks a temp
 // entry the MainWindow created on disk so the tree shows a row to rename; on cancel/empty
@@ -67,6 +68,12 @@ public:
   void removeFolderRoot(QString path);
   void setFolderRoots(QStringList paths);
   QStringList folderRoots() const;
+  // Per-workspace display label + accent key (see WorkspaceStyle.h). Stored by
+  // the file model and persisted via QSettings.
+  QString workspaceLabel(const QString& path) const;
+  QString workspaceColorKey(const QString& path) const;
+  void setWorkspaceLabel(const QString& path, const QString& label);
+  void setWorkspaceColorKey(const QString& path, const QString& key);
   // The active root: the one containing the current document, or the most
   // recently opened one. Single-root callers (creation, search, pin) use it.
   QString folderRoot() const;
@@ -110,7 +117,7 @@ signals:
   // Right-click on the file tree. `path` is the clicked file/dir, or the folder
   // root when the click landed on empty space. `isDir` says which. `onItem` is
   // false for empty space (menu omits per-item actions). Empty path ⇒ no menu.
-  void fileTreeContextMenuRequested(QString path, bool isDir, bool onItem, QPoint globalPos);
+  void fileTreeContextMenuRequested(QString path, bool isDir, bool onItem, bool isWorkspaceRoot, QPoint globalPos);
   void outlineActivated(NodeId nodeId, SourceRange sourceRange);
   // Inline-edit lifecycle, driven by the file-tree delegate. Validate is synchronous with an
   // out-param so the delegate can decide commit-vs-keep-open on the same call.
@@ -164,6 +171,7 @@ private:
   QWidget* outlinePanel_ = nullptr;
   FileTreeModel* fileModel_ = nullptr;
   QTreeView* fileTree_ = nullptr;
+  WorkspaceRootDelegate* workspaceDelegate_ = nullptr;
   QLabel* filesEmptyLabel_ = nullptr;
   QToolButton* newFileButton_ = nullptr;
   QToolButton* newFolderButton_ = nullptr;

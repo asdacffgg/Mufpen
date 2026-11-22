@@ -15,6 +15,22 @@ QString cleanPath(const QString& path) {
   return path.isEmpty() ? QString() : QDir::cleanPath(QFileInfo(path).absoluteFilePath());
 }
 
+// Syscall-free path equality for the hot index-creation path. Both strings are
+// absolute paths produced by this model, so an exact/case-insensitive compare is
+// enough; canonicalFilePath() would add two filesystem round-trips per created
+// index, and QTreeView creates an index for every visible row.
+bool samePath(const QString& a, const QString& b) {
+  if (a.isEmpty() || b.isEmpty() || a.size() != b.size())
+    return false;
+  if (a == b)
+    return true;
+#ifdef Q_OS_WIN
+  return a.compare(b, Qt::CaseInsensitive) == 0;
+#else
+  return false;
+#endif
+}
+
 } // namespace
 
 mufpen::MultiRootSourceModel::MultiRootSourceModel(QObject* parent) : QAbstractItemModel(parent) {}
@@ -188,6 +204,20 @@ QModelIndex mufpen::MultiRootSourceModel::rootIndex(int rootId) const {
   return makeIndex(row, 0, rootId, roots_.at(row).path);
 }
 
+bool mufpen::MultiRootSourceModel::isRootRow(const QModelIndex& index) const {
+  const Handle* handle = handleFor(index);
+  if (!handle) {
+    return false;
+  }
+  const Root* root = rootById(handle->rootId);
+  if (!root) {
+    return false;
+  }
+  // Both paths are already cleaned absolute paths from the same filesystem
+  // model, so a plain string compare is enough (and syscall-free).
+  return samePath(handle->path, root->path);
+}
+
 QModelIndex mufpen::MultiRootSourceModel::index(const QString& path) const {
   const int rootId = rootForPath(path);
   const Root* root = rootById(rootId);
@@ -275,7 +305,7 @@ QModelIndex mufpen::MultiRootSourceModel::parent(const QModelIndex& child) const
   if (!root || !handle) {
     return {};
   }
-  if (WorkspaceFileIndex::pathKey(handle->path) == WorkspaceFileIndex::pathKey(root->path)) {
+  if (samePath(handle->path, root->path)) {
     return {}; // root folder item -> virtual root
   }
   const QModelIndex sourceParent = sourceIndex(root, handle->path).parent();
@@ -397,7 +427,7 @@ QModelIndex mufpen::MultiRootSourceModel::makeIndex(int row, int column, int roo
   // A root folder item is row 0 inside its own QFileSystemModel, but sits at
   // `rowOfRoot(rootId)` under this model's virtual root.
   const Root* root = rootById(rootId);
-  if (root && WorkspaceFileIndex::pathKey(path) == WorkspaceFileIndex::pathKey(root->path)) {
+  if (root && samePath(path, root->path)) {
     row = rowOfRoot(rootId);
   }
   return createIndex(row, column, registerHandle(rootId, path));

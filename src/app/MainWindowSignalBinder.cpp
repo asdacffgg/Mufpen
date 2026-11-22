@@ -649,8 +649,9 @@ void mufpen::MainWindow::connectSidebarSignals() {
   QObject::connect(window.sidebar_, &SidebarWidget::fileOpenRequested, &window,
                    [&window](const QString& path) { window.openFile(path); });
   QObject::connect(window.sidebar_, &SidebarWidget::fileTreeContextMenuRequested, &window,
-                   [&window](const QString& path, bool isDir, bool onItem, const QPoint& globalPos) {
-                     window.buildSidebarContextMenu(path, isDir, onItem, globalPos);
+                   [&window](const QString& path, bool isDir, bool onItem, bool isWorkspaceRoot,
+                             const QPoint& globalPos) {
+                     window.buildSidebarContextMenu(path, isDir, onItem, isWorkspaceRoot, globalPos);
                    });
   // Inline file-tree edit lifecycle: validate is synchronous (out-param) so the delegate can
   // decide commit-vs-keep-open on the same call; commit does the FS op + post-steps; cancel

@@ -2,12 +2,15 @@
 #include "app/FileTreeModel.h"
 #include "app/MultiRootSourceModel.h"
 #include "io/DocumentFileType.h"
+#include "theme/ThemeDefinition.h"
 
 #include "../TestUtils.h"
 
 #include <QApplication>
 #include <QAction>
+#include <QColor>
 #include <QDateTime>
+#include <QFileInfo>
 #include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
@@ -223,6 +226,37 @@ void testMultipleWorkspaceRoots() {
       "both roots appear as top-level rows");
   require(tree->isExpanded(model->index(first.path())) && tree->isExpanded(model->index(second.path())),
           "both root folders are expanded so their contents coexist");
+
+  // Keep the layout fast path: a taller root row would force
+  // setUniformRowHeights(false), which slows expanding large folders ~10x.
+  require(tree->uniformRowHeights(), "file tree keeps uniform row heights for fast layout");
+
+  // Workspace section headers: each top-level root row must be recognised as a
+  // workspace root and expose its label/colour through the delegate roles.
+  // (Regression: rootForPath() ids are 1-based, roots() is a 0-based list.)
+  const QModelIndex firstRoot = model->index(first.path());
+  const QModelIndex secondRoot = model->index(second.path());
+  require(model->isWorkspaceRoot(firstRoot) && model->isWorkspaceRoot(secondRoot),
+          "both top-level rows are recognised as workspace roots");
+  const QModelIndex nested = model->index(first.filePath(QStringLiteral("Sub")));
+  require(!model->isWorkspaceRoot(nested), "child folders are not workspace roots");
+  require(model->data(firstRoot, FileTreeModel::WorkspaceIsRootRole).toBool(),
+          "workspace root role is exposed to the delegate");
+  require(model->data(firstRoot, FileTreeModel::WorkspaceLabelRole).toString() == QFileInfo(first.path()).fileName(),
+          "default workspace label falls back to the folder name");
+  sidebar.setWorkspaceLabel(first.path(), QStringLiteral("Project One"));
+  sidebar.setWorkspaceColorKey(first.path(), QStringLiteral("sky"));
+  require(model->data(firstRoot, FileTreeModel::WorkspaceLabelRole).toString() == QStringLiteral("Project One"),
+          "custom workspace label is applied");
+  require(model->data(firstRoot, FileTreeModel::WorkspaceHasLabelRole).toBool(),
+          "custom workspace label is flagged so the delegate can draw its pill");
+  require(!model->data(secondRoot, FileTreeModel::WorkspaceHasLabelRole).toBool(),
+          "an unnamed workspace keeps the plain folder title");
+  require(model->data(firstRoot, FileTreeModel::WorkspaceColorRole).value<QColor>().isValid(),
+          "custom workspace colour resolves to a valid QColor");
+  const QColor defaultColor = model->data(secondRoot, FileTreeModel::WorkspaceColorRole).value<QColor>();
+  require(defaultColor.isValid() && defaultColor != model->data(firstRoot, FileTreeModel::WorkspaceColorRole).value<QColor>(),
+          "an uncoloured workspace keeps the default accent");
 
   // Opening a document in the first root changes the active root without
   // dropping the second one.

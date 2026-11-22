@@ -362,10 +362,11 @@ private:
   // ---- Sidebar file-tree context menu operations ----
   // Build and exec the right-click menu for the file tree; the variant (file /
   // directory / empty space) is decided from the click target.
-  void buildSidebarContextMenu(QString path, bool isDir, bool onItem, QPoint globalPos);
+  void buildSidebarContextMenu(QString path, bool isDir, bool onItem, bool isWorkspaceRoot, QPoint globalPos);
   void newFileInDirectory(QString dir);
   void newFolderInDirectory(QString dir);
   void renamePath(QString path);
+  void renameWorkspace(QString path);
   void movePath(QString path);
   void duplicateFile(QString path);
   void deletePath(QString path);
