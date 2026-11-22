@@ -41,9 +41,43 @@ cmake --build --preset conan-release --target Mufpen -j 8
 
 `-j8` 在这台机器上明显快于 `-j4`，又不会像 `-j16` 那样稳定触发 OOM。
 
-**规则**：本机默认 `-j8`；不要用未限流的 preset；不要用 `-j16`。
+**规则**：不要用未限流的 preset（见 §2.2 按设备选择 `-j`）。这段是当时那台
+16 核 / 15 GB 机器的历史案例，不是所有设备的通用结论。
 
-### 2.2 为什么感觉“每次都在全量编译”
+### 2.2 按设备选择 `-j` 并行度
+
+`-j` 应取决于当前设备，而不是写死某个值。Conan 生成的 preset 默认 `-j16`，
+在内存充足的机器上没问题，但在小内存机器上会像 §2.1 那样被 OOM killer 杀掉。
+按下面三步估算：
+
+1. **CPU 上限**——逻辑线程数：
+   - Windows / PowerShell：`$env:NUMBER_OF_PROCESSORS`
+   - Linux：`nproc`
+2. **内存上限**——这里每个 C++ 编译 job（Qt/MOC/测试目标）平均约 1 GB，链接阶段
+   更多。让 `-j` 不超过 `RAM_GB - 2`，给系统和桌面留 2 GB。例如 16 GB 机器可跑
+   `-j16`，8 GB 机器应留在 `-j8` 或更低。
+3. **混合架构**（P 核 + E 核）：E 核慢得多，堆满所有逻辑线程收益有限，停在实际
+   性能核数附近通常就够。
+
+不确定时从低往高试：因内存不足被杀的构建，代价远大于稍慢一点。
+
+先查机器，再传你选的值：
+
+```powershell
+# Windows / PowerShell
+$env:NUMBER_OF_PROCESSORS
+[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB)
+cmake --build --preset conan-release --target Mufpen -j 16   # 示例：换成你选的值
+```
+
+```bash
+# Linux
+nproc
+free -g
+cmake --build --preset conan-release --target Mufpen -j 16   # 示例：换成你选的值
+```
+
+### 2.3 为什么感觉“每次都在全量编译”
 
 不是每次都全量，而是这轮改动同时踩了四个放大器：
 
@@ -71,7 +105,7 @@ ctest --preset conan-release -j 8 --output-on-failure
 
 **规则**：默认按目标增量构建；只有确实需要全量回归时才构建全部测试。
 
-### 2.3 `ctest | tail` 吃掉了真实退出码
+### 2.4 `ctest | tail` 吃掉了真实退出码
 
 **现象**：一次全量测试报告“exit 0”，实际有 5 个测试失败。
 
@@ -94,7 +128,7 @@ rc=$?
 
 **规则**：任何带管道的构建/测试命令，都必须显式检查 `${PIPESTATUS[0]}` 或先落盘。
 
-### 2.4 目录改名会让构建树失效
+### 2.5 目录改名会让构建树失效
 
 **现象**：把 checkout 从 `Muffin` 改名为 `Mufpen` 后，增量构建找不到源文件；
 测试里的编译定义仍然指向旧路径。
@@ -111,7 +145,7 @@ rc=$?
 **规则**：移动/重命名 checkout 属于迁移，不是增量操作；必须 reconfigure + 全量构建 +
 重新索引。
 
-### 2.5 `build/Release`、`build/dist`、已安装应用是三份不同的东西
+### 2.6 `build/Release`、`build/dist`、已安装应用是三份不同的东西
 
 **现象**：排查内存时用户运行的是 `~/.local/opt/Muffin/Muffin`，这是 11 月 7 日安装的
 旧快照，进程名还是 Muffin；而当前工作树的产物在 `build/Release/Mufpen`。结论一度建立在
@@ -131,7 +165,7 @@ pgrep -a -x Mufpen
 **规则**：排查运行问题时，先确认进程的可执行文件路径；要验证“安装后的行为”，必须走
 `dist` / 安装脚本，而不是直接跑 `build/Release`。
 
-### 2.6 后台长构建 + 机器重启 = 会话中断
+### 2.7 后台长构建 + 机器重启 = 会话中断
 
 **现象**：改名后的全量构建在后台运行，机器重启，构建被杀；Claude 会话也在另一个项目
 目录下（目录已改名），续接时需要从 JSONL transcript 恢复上下文。
@@ -144,7 +178,7 @@ pgrep -a -x Mufpen
 - 会话记录是恢复工作的第一手资料，比记忆可靠；
 - 恢复时先确认工作树状态（`git status`、`git log`）和中断点，再动手。
 
-### 2.7 CI 的 ASan job 在配置阶段失败
+### 2.8 CI 的 ASan job 在配置阶段失败
 
 **现象**：`Linux ASan (blocking)` 失败，日志是 CMake 配置错误，不是编译器/测试错误。
 
@@ -570,8 +604,8 @@ GUI 功能还要做：
 
 | 规则 | 位置 |
 |:--|:--|
-| ccache + `-j8` + 按目标构建 | `AGENTS.md` Build acceleration |
-| 不要跑未限流的 preset；`-j16` 会 OOM | `AGENTS.md` Build acceleration |
+| ccache + 按目标增量构建 | `AGENTS.md` Build acceleration |
+| 按设备选择 `-j`；不要用未限流的 preset | 本文档 §2.2（`-j16` OOM 案例见 §2.1） |
 | dist 与 `build/Release` 是两回事 | `AGENTS.md` Package And Run |
 | Linux bundle 的 fcitx5 插件与 ECM 依赖 | `AGENTS.md` Linux input methods |
 | 可翻译 `.cpp` 不得包 `namespace mufpen { }` | `AGENTS.md` Translation |

@@ -2,9 +2,9 @@
 
 ## Build acceleration
 
-`ccache` and `ninja` are installed locally. The existing `build/Release` tree
-uses Unix Makefiles, so keep that generator for CI parity and enable ccache on
-it once:
+`ccache` and `ninja` are installed locally. The current `build/Release` tree uses
+the **Ninja** generator (see Conan profile note in the Build section below) with
+ccache enabled. ccache was enabled once at configure time via:
 
 ```bash
 cmake --preset conan-release \
@@ -13,22 +13,23 @@ cmake --preset conan-release \
 ```
 
 The first build after enabling ccache may still compile everything; later
-rebuilds hit the cache. Prefer target-specific incremental builds and always
-override Conan's generated `-j16` with `-j8`:
+rebuilds hit the cache. Prefer target-specific incremental builds. For how to
+pick a `-j` value for the current machine, see
+`docs/development-retrospective-2026-11-09.zh.md` §2.2.
 
-```bash
-cmake --build --preset conan-release --target Mufpen -j 8
-cmake --build --preset conan-release --target MufpenDocumentTabsTest -j 8
-ctest --preset conan-release -j 8 -R MufpenSplitViewTest --output-on-failure
+Do not run the unscoped `cmake --build --preset conan-release` (it builds all
+test targets) unless a full build is intended.
+
+### MSVC environment (Windows)
+
+`cl.exe` is not on the parent PATH, so a bare `cmake --preset conan-release` or
+`cmake --build` fails with "cl is not a full path". Run the Conan-generated
+`conanvcvars.bat` first, in the same command, to init the VS environment:
+
+```powershell
+cmd /c 'call "build\Release\generators\conanvcvars.bat" && cmake --preset conan-release ...'
+cmd /c 'call "build\Release\generators\conanvcvars.bat" && cmake --build --preset conan-release --target Mufpen -j 16'
 ```
-
-`-j16` can be OOM-killed on a 15 GB machine. Do not run the unscoped
-`cmake --build --preset conan-release` (it builds all test targets) unless a
-full build is intended.
-
-Switching to Ninja requires a new build directory and therefore a full rebuild;
-it is optional. The current Makefiles + ccache + target-specific builds are
-sufficient for day-to-day incremental work.
 
 ## Build
 
@@ -37,6 +38,56 @@ This project uses Conan-generated CMake presets. Use the Release preset for loca
 Install the build-time font conversion dependencies once with
 `python -m pip install -r requirements-build.txt`. CMake converts the original
 WOFF/WOFF2 fonts into `build/theme-fonts/`; do not commit generated TTF files.
+PySide6 is also required (`pip install PySide6`): CMake copies the `qtbase_*.qm`
+translations from it because Conan's Qt package ships no translations.
+
+### Local Conan profile (this workspace, Windows / VS 2026)
+
+The machine has **Visual Studio 2026 Insiders** (`cl` 19.51, Conan
+`compiler.version=195`). ConanCenter has no prebuilt Qt/freetype/icu/etc.
+binaries for MSVC 19.5 + `cppstd=20`, so all 34 dependencies are built from
+source once and then cached. The global profile `~/.conan2/profiles/default`
+carries these fixes (keep them — removing any one breaks the source build):
+
+```ini
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja      # CMake 3.30/3.31 can't emit "Visual Studio 18 2026"
+tools.build:jobs=16
+tools.build:cxxflags=["/utf-8"]                  # avoid C4819 under codepage 936 (/WX in yoga)
+tools.build:cflags=["/utf-8"]
+qt/*:tools.cmake.cmaketoolchain:user_toolchain=["D:/conan2/freetype-fix-toolchain.cmake"]
+
+[buildenv]
+MSYS2_ARG_CONV_EXCL=/utf-8                       # MSYS2 must not rewrite the /utf-8 flag
+```
+
+`D:/conan2/freetype-fix-toolchain.cmake` + `D:/conan2/my-freetype-config/` pin
+`Freetype_DIR`/`freetype_DIR` to Conan's freetype. Without this, Qt's
+`find_package(Freetype CONFIG)` picks up Anaconda's incompatible
+`D:/Anaconda3/Library/lib/cmake/freetype` and fails on `ft2build.h`.
+
+The Conan cache lives on **D:** (`C:\Users\asus\.conan2` is a junction to
+`D:\conan2`) to keep the 16+ GB cache off C:. The ccache cache is also on D:
+(`CCACHE_DIR=D:\ccache`, set as a user env var). PySide6 (~0.6 GB) lives in the
+user site-packages on C: and is needed at configure time to source `qtbase_*.qm`
+translations; those .qm files are gitignored in `translations/`, so keep PySide6
+installed unless you re-source the translations.
+
+### Q_OBJECT export-macro rule (source of a past build break)
+
+A `Q_OBJECT` class whose `.cpp` is compiled only into `Mufpen.exe` / test
+targets must **not** carry `MUFPEN_UI_EXPORT` or `MUFPEN_CORE_EXPORT`. In the exe
+those macros expand to `Q_DECL_IMPORT`, so moc's generated `staticMetaObject`
+definition fails with C2491/C2127. Only classes actually compiled into
+`MufpenUi.dll` (listed in `MUFPEN_UI_SOURCES`) may use `MUFPEN_UI_EXPORT`.
+`ImageView` was wrongly marked `MUFPEN_UI_EXPORT` while its `.cpp` lives only in
+the exe/test targets; the macro was removed to fix the build.
+
+CMake's ICU-data `FetchContent` step downloads a zip from GitHub at configure
+time; if curl resets the connection, download
+`icu4c-74_2-data-bin-l.zip` manually into
+`build/Release/_deps/mufpen_icu_data-subbuild/mufpen_icu_data-populate-prefix/src/`
+and reconfigure (SHA256 is verified by `cmake/MufpenIcuData.cmake`).
 
 ```powershell
 conan install . -s build_type=Release -s compiler.cppstd=20 --build=missing
@@ -72,7 +123,7 @@ These rules come from the 2026-11-07..09 development session; see
   `... | tail -n` reports `tail`'s status:
 
   ```bash
-  ctest --preset conan-release -j 8 --output-on-failure 2>&1 | tail -20
+  ctest --preset conan-release --output-on-failure 2>&1 | tail -20
   rc=${PIPESTATUS[0]}
   ```
 
