@@ -21,7 +21,7 @@ class ImageViewCanvas;
 // Standalone image preview surface. Owns the loaded pixels, viewport zoom/pan,
 // rotation and reload-on-change behavior. Markdown image/Mermaid previews reuse
 // the same widget in a short-lived dialog.
-class MUFPEN_UI_EXPORT ImageView final : public QWidget {
+class ImageView final : public QWidget {
   Q_OBJECT
 
 public:
